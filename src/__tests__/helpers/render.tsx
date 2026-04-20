@@ -1,20 +1,18 @@
-import { render, type RenderOptions } from "@testing-library/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { render, type RenderOptions } from '@testing-library/react';
 
 function createTestQueryClient() {
   return new QueryClient({
     defaultOptions: {
-      queries:   { retry: false, gcTime: 0 },
+      queries: { retry: false, gcTime: 0 },
       mutations: { retry: false },
     },
   });
 }
 
-function Providers({ children }: { children: React.ReactNode }) {
+function Providers({ children }: { readonly children: React.ReactNode }) {
   const queryClient = createTestQueryClient();
-  return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  );
+  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
 }
 
 export function renderWithProviders(ui: React.ReactElement, options?: RenderOptions) {

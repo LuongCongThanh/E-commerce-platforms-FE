@@ -1,6 +1,7 @@
-import { QueryClient } from "@tanstack/react-query";
-import { toast } from "sonner";
-import { ApiError } from "@/shared/lib/errors/api-error";
+import { QueryClient } from '@tanstack/react-query';
+import { toast } from 'sonner';
+
+import { ApiError } from '@/shared/lib/errors/api-error';
 
 export function makeQueryClient() {
   return new QueryClient({
@@ -14,11 +15,8 @@ export function makeQueryClient() {
         },
       },
       mutations: {
-        onError: (error) => {
-          const message =
-            error instanceof ApiError
-              ? error.message
-              : "Đã có lỗi xảy ra, vui lòng thử lại";
+        onError: error => {
+          const message = error instanceof ApiError ? error.message : 'Đã có lỗi xảy ra, vui lòng thử lại';
           toast.error(message);
         },
       },

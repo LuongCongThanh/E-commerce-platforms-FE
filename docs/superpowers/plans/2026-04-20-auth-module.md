@@ -12,27 +12,28 @@
 
 ## File Map
 
-| File | Role |
-|---|---|
-| `src/app/[locale]/(auth)/_lib/types.ts` | Re-export shared auth types |
-| `src/app/[locale]/(auth)/_lib/schemas.ts` | Zod form schemas (re-export from shared) |
-| `src/app/[locale]/(auth)/_lib/actions.ts` | Axios calls to Next.js API routes |
-| `src/app/[locale]/(auth)/_lib/hooks.ts` | useMutation hooks |
-| `src/app/[locale]/(auth)/_components/login-form.tsx` | RHF login form |
-| `src/app/[locale]/(auth)/_components/register-form.tsx` | RHF register form |
-| `src/app/[locale]/(auth)/login/page.tsx` | Login page |
-| `src/app/[locale]/(auth)/register/page.tsx` | Register page |
-| `src/app/[locale]/(auth)/forgot-password/page.tsx` | Forgot password page |
-| `src/app/api/auth/login/route.ts` | POST → Django login, sets cookie |
-| `src/app/api/auth/register/route.ts` | POST → Django register |
-| `src/app/api/auth/logout/route.ts` | POST → clears cookie |
-| `src/app/api/auth/refresh/route.ts` | POST → Django refresh, rotates cookie |
+| File                                                    | Role                                     |
+| ------------------------------------------------------- | ---------------------------------------- |
+| `src/app/[locale]/(auth)/_lib/types.ts`                 | Re-export shared auth types              |
+| `src/app/[locale]/(auth)/_lib/schemas.ts`               | Zod form schemas (re-export from shared) |
+| `src/app/[locale]/(auth)/_lib/actions.ts`               | Axios calls to Next.js API routes        |
+| `src/app/[locale]/(auth)/_lib/hooks.ts`                 | useMutation hooks                        |
+| `src/app/[locale]/(auth)/_components/login-form.tsx`    | RHF login form                           |
+| `src/app/[locale]/(auth)/_components/register-form.tsx` | RHF register form                        |
+| `src/app/[locale]/(auth)/login/page.tsx`                | Login page                               |
+| `src/app/[locale]/(auth)/register/page.tsx`             | Register page                            |
+| `src/app/[locale]/(auth)/forgot-password/page.tsx`      | Forgot password page                     |
+| `src/app/api/auth/login/route.ts`                       | POST → Django login, sets cookie         |
+| `src/app/api/auth/register/route.ts`                    | POST → Django register                   |
+| `src/app/api/auth/logout/route.ts`                      | POST → clears cookie                     |
+| `src/app/api/auth/refresh/route.ts`                     | POST → Django refresh, rotates cookie    |
 
 ---
 
 ## Task 1: Types and schemas
 
-**Files:**
+#### Files
+
 - Create: `src/app/[locale]/(auth)/_lib/types.ts`
 - Create: `src/app/[locale]/(auth)/_lib/schemas.ts`
 
@@ -42,7 +43,7 @@ Re-export from shared — do not duplicate type definitions.
 
 ```ts
 // src/app/[locale]/(auth)/_lib/types.ts
-export type { LoginInput, RegisterInput, AuthToken, User } from "@/shared/types/user";
+export type { LoginInput, RegisterInput, AuthToken, User } from '@/shared/types/user';
 ```
 
 - [ ] **Step 2: Create `schemas.ts`**
@@ -51,12 +52,12 @@ Re-export from shared. Add a ForgotPasswordSchema here since it's auth-module-sp
 
 ```ts
 // src/app/[locale]/(auth)/_lib/schemas.ts
-import { z } from "zod";
+import { z } from 'zod';
 
-export { LoginSchema, RegisterSchema } from "@/shared/types/user";
+export { LoginSchema, RegisterSchema } from '@/shared/types/user';
 
 export const ForgotPasswordSchema = z.object({
-  email: z.string().email("Email không hợp lệ"),
+  email: z.string().email('Email không hợp lệ'),
 });
 
 export type ForgotPasswordInput = z.infer<typeof ForgotPasswordSchema>;
@@ -79,7 +80,8 @@ git commit -m "feat(auth): add auth types and schemas"
 
 ## Task 2: API Route Handlers
 
-**Files:**
+#### Files
+
 - Create: `src/app/api/auth/login/route.ts`
 - Create: `src/app/api/auth/register/route.ts`
 - Create: `src/app/api/auth/logout/route.ts`
@@ -89,10 +91,10 @@ git commit -m "feat(auth): add auth types and schemas"
 
 ```ts
 // src/app/api/auth/login/route.ts
-import { cookies } from "next/headers";
-import axios from "axios";
+import { cookies } from 'next/headers';
+import axios from 'axios';
 
-const DJANGO_URL = process.env.DJANGO_API_URL ?? "http://localhost:8000";
+const DJANGO_URL = process.env.DJANGO_API_URL ?? 'http://localhost:8000';
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -101,31 +103,28 @@ export async function POST(request: Request) {
     const { data } = await axios.post(`${DJANGO_URL}/api/auth/login/`, body);
     const cookieStore = await cookies();
 
-    cookieStore.set("access_token", data.access, {
+    cookieStore.set('access_token', data.access, {
       httpOnly: true,
-      secure:   process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      maxAge:   60 * 60 * 24,     // 24h
-      path:     "/",
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 60 * 60 * 24, // 24h
+      path: '/',
     });
 
-    cookieStore.set("refresh_token", data.refresh, {
+    cookieStore.set('refresh_token', data.refresh, {
       httpOnly: true,
-      secure:   process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      maxAge:   60 * 60 * 24 * 7, // 7 days
-      path:     "/",
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+      path: '/',
     });
 
     return Response.json({ user: data.user });
   } catch (err: unknown) {
     if (axios.isAxiosError(err)) {
-      return Response.json(
-        { detail: err.response?.data?.detail ?? "Email hoặc mật khẩu không đúng" },
-        { status: err.response?.status ?? 400 },
-      );
+      return Response.json({ detail: err.response?.data?.detail ?? 'Email hoặc mật khẩu không đúng' }, { status: err.response?.status ?? 400 });
     }
-    return Response.json({ detail: "Lỗi hệ thống" }, { status: 500 });
+    return Response.json({ detail: 'Lỗi hệ thống' }, { status: 500 });
   }
 }
 ```
@@ -134,9 +133,9 @@ export async function POST(request: Request) {
 
 ```ts
 // src/app/api/auth/register/route.ts
-import axios from "axios";
+import axios from 'axios';
 
-const DJANGO_URL = process.env.DJANGO_API_URL ?? "http://localhost:8000";
+const DJANGO_URL = process.env.DJANGO_API_URL ?? 'http://localhost:8000';
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -146,12 +145,9 @@ export async function POST(request: Request) {
     return Response.json(data, { status: 201 });
   } catch (err: unknown) {
     if (axios.isAxiosError(err)) {
-      return Response.json(
-        { detail: err.response?.data?.detail ?? "Đăng ký thất bại" },
-        { status: err.response?.status ?? 400 },
-      );
+      return Response.json({ detail: err.response?.data?.detail ?? 'Đăng ký thất bại' }, { status: err.response?.status ?? 400 });
     }
-    return Response.json({ detail: "Lỗi hệ thống" }, { status: 500 });
+    return Response.json({ detail: 'Lỗi hệ thống' }, { status: 500 });
   }
 }
 ```
@@ -160,12 +156,12 @@ export async function POST(request: Request) {
 
 ```ts
 // src/app/api/auth/logout/route.ts
-import { cookies } from "next/headers";
+import { cookies } from 'next/headers';
 
 export async function POST() {
   const cookieStore = await cookies();
-  cookieStore.delete("access_token");
-  cookieStore.delete("refresh_token");
+  cookieStore.delete('access_token');
+  cookieStore.delete('refresh_token');
   return Response.json({ ok: true });
 }
 ```
@@ -174,17 +170,17 @@ export async function POST() {
 
 ```ts
 // src/app/api/auth/refresh/route.ts
-import { cookies } from "next/headers";
-import axios from "axios";
+import { cookies } from 'next/headers';
+import axios from 'axios';
 
-const DJANGO_URL = process.env.DJANGO_API_URL ?? "http://localhost:8000";
+const DJANGO_URL = process.env.DJANGO_API_URL ?? 'http://localhost:8000';
 
 export async function POST() {
   const cookieStore = await cookies();
-  const refresh = cookieStore.get("refresh_token")?.value;
+  const refresh = cookieStore.get('refresh_token')?.value;
 
   if (!refresh) {
-    return Response.json({ detail: "No refresh token" }, { status: 401 });
+    return Response.json({ detail: 'No refresh token' }, { status: 401 });
   }
 
   try {
@@ -192,19 +188,19 @@ export async function POST() {
       refresh,
     });
 
-    cookieStore.set("access_token", data.access, {
+    cookieStore.set('access_token', data.access, {
       httpOnly: true,
-      secure:   process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      maxAge:   60 * 60 * 24,
-      path:     "/",
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 60 * 60 * 24,
+      path: '/',
     });
 
     return Response.json({ access: data.access });
   } catch {
-    cookieStore.delete("access_token");
-    cookieStore.delete("refresh_token");
-    return Response.json({ detail: "Token hết hạn" }, { status: 401 });
+    cookieStore.delete('access_token');
+    cookieStore.delete('refresh_token');
+    return Response.json({ detail: 'Token hết hạn' }, { status: 401 });
   }
 }
 ```
@@ -226,7 +222,8 @@ git commit -m "feat(auth): add auth API route handlers (login, register, logout,
 
 ## Task 3: Actions and hooks
 
-**Files:**
+#### Files
+
 - Create: `src/app/[locale]/(auth)/_lib/actions.ts`
 - Create: `src/app/[locale]/(auth)/_lib/hooks.ts`
 
@@ -234,28 +231,28 @@ git commit -m "feat(auth): add auth API route handlers (login, register, logout,
 
 ```ts
 // src/app/[locale]/(auth)/_lib/actions.ts
-import { http } from "@/shared/lib/http/methods";
-import type { LoginInput, RegisterInput, User } from "./types";
+import { http } from '@/shared/lib/http/methods';
+import type { LoginInput, RegisterInput, User } from './types';
 
 export async function loginAction(data: LoginInput): Promise<{ user: User }> {
-  return http.post("/api/auth/login/", data);
+  return http.post('/api/auth/login/', data);
 }
 
 export async function registerAction(data: RegisterInput): Promise<void> {
-  return http.post("/api/auth/register/", {
-    email:     data.email,
-    password:  data.password,
+  return http.post('/api/auth/register/', {
+    email: data.email,
+    password: data.password,
     firstName: data.firstName,
-    lastName:  data.lastName,
+    lastName: data.lastName,
   });
 }
 
 export async function logoutAction(): Promise<void> {
-  return http.post("/api/auth/logout/");
+  return http.post('/api/auth/logout/');
 }
 
 export async function forgotPasswordAction(email: string): Promise<void> {
-  return http.post("/api/auth/forgot-password/", { email });
+  return http.post('/api/auth/forgot-password/', { email });
 }
 ```
 
@@ -263,22 +260,22 @@ export async function forgotPasswordAction(email: string): Promise<void> {
 
 ```ts
 // src/app/[locale]/(auth)/_lib/hooks.ts
-import { useMutation }  from "@tanstack/react-query";
-import { useRouter }    from "next/navigation";
-import { toast }        from "sonner";
-import { useAuthStore } from "@/shared/stores/auth-store";
-import { loginAction, registerAction, logoutAction, forgotPasswordAction } from "./actions";
-import type { LoginInput, RegisterInput } from "./types";
+import { useMutation } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
+import { useAuthStore } from '@/shared/stores/auth-store';
+import { loginAction, registerAction, logoutAction, forgotPasswordAction } from './actions';
+import type { LoginInput, RegisterInput } from './types';
 
 export function useLogin(locale: string) {
-  const router    = useRouter();
-  const setUser   = useAuthStore((s) => s.setUser);
+  const router = useRouter();
+  const setUser = useAuthStore(s => s.setUser);
 
   return useMutation({
     mutationFn: (data: LoginInput) => loginAction(data),
-    onSuccess: (res) => {
+    onSuccess: res => {
       setUser(res.user);
-      toast.success("Đăng nhập thành công");
+      toast.success('Đăng nhập thành công');
       router.push(`/${locale}`);
       router.refresh();
     },
@@ -291,15 +288,15 @@ export function useRegister(locale: string) {
   return useMutation({
     mutationFn: (data: RegisterInput) => registerAction(data),
     onSuccess: () => {
-      toast.success("Đăng ký thành công! Vui lòng đăng nhập.");
+      toast.success('Đăng ký thành công! Vui lòng đăng nhập.');
       router.push(`/${locale}/login`);
     },
   });
 }
 
 export function useLogout(locale: string) {
-  const router    = useRouter();
-  const clearAuth = useAuthStore((s) => s.clearAuth);
+  const router = useRouter();
+  const clearAuth = useAuthStore(s => s.clearAuth);
 
   return useMutation({
     mutationFn: logoutAction,
@@ -315,7 +312,7 @@ export function useForgotPassword() {
   return useMutation({
     mutationFn: (email: string) => forgotPasswordAction(email),
     onSuccess: () => {
-      toast.success("Email đặt lại mật khẩu đã được gửi");
+      toast.success('Email đặt lại mật khẩu đã được gửi');
     },
   });
 }
@@ -325,32 +322,27 @@ export function useForgotPassword() {
 
 ```ts
 // src/app/[locale]/(auth)/_lib/hooks.test.ts
-import { renderHook, waitFor } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
-import { server } from "@/__tests__/helpers/mock-handlers";
-import { http as mswHttp, HttpResponse } from "msw";
-import { renderWithProviders } from "@/__tests__/helpers/render";
-import { useLogin } from "./hooks";
+import { renderHook, waitFor } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import { server } from '@/__tests__/helpers/mock-handlers';
+import { http as mswHttp, HttpResponse } from 'msw';
+import { renderWithProviders } from '@/__tests__/helpers/render';
+import { useLogin } from './hooks';
 
 // Note: renderWithProviders wraps with QueryClient; useRouter is mocked below
-vi.mock("next/navigation", () => ({
+vi.mock('next/navigation', () => ({
   useRouter: () => ({ push: vi.fn(), refresh: vi.fn() }),
 }));
 
-describe("useLogin", () => {
-  it("calls /api/auth/login/ and sets user on success", async () => {
-    server.use(
-      mswHttp.post("/api/auth/login/", () =>
-        HttpResponse.json({ user: { id: 1, email: "a@b.com", name: "Test", is_staff: false } }),
-      ),
-    );
+describe('useLogin', () => {
+  it('calls /api/auth/login/ and sets user on success', async () => {
+    server.use(mswHttp.post('/api/auth/login/', () => HttpResponse.json({ user: { id: 1, email: 'a@b.com', name: 'Test', is_staff: false } })));
 
-    const { result } = renderHook(() => useLogin("vi"), {
-      wrapper: ({ children }) => renderWithProviders(children as React.ReactElement).container
-        .firstChild as React.FC,
+    const { result } = renderHook(() => useLogin('vi'), {
+      wrapper: ({ children }) => renderWithProviders(children as React.ReactElement).container.firstChild as React.FC,
     });
 
-    result.current.mutate({ email: "a@b.com", password: "password123" });
+    result.current.mutate({ email: 'a@b.com', password: 'password123' });
     await waitFor(() => expect(result.current.isSuccess).toBe(true));
   });
 });
@@ -373,24 +365,25 @@ git commit -m "feat(auth): add auth actions, hooks, and hook tests"
 
 ## Task 4: Login form component
 
-**Files:**
+#### Files
+
 - Create: `src/app/[locale]/(auth)/_components/login-form.tsx`
 
 - [ ] **Step 1: Create `login-form.tsx`**
 
 ```tsx
 // src/app/[locale]/(auth)/_components/login-form.tsx
-"use client";
+'use client';
 
-import { useForm }          from "react-hook-form";
-import { zodResolver }      from "@hookform/resolvers/zod";
-import Link                  from "next/link";
-import { Button }            from "@/shared/components/ui/button";
-import { Input }             from "@/shared/components/ui/input";
-import { Label }             from "@/shared/components/ui/label";
-import { LoginSchema }       from "../_lib/schemas";
-import { useLogin }          from "../_lib/hooks";
-import type { LoginInput }   from "../_lib/types";
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
+import { Button } from '@/shared/components/ui/button';
+import { Input } from '@/shared/components/ui/input';
+import { Label } from '@/shared/components/ui/label';
+import { LoginSchema } from '../_lib/schemas';
+import { useLogin } from '../_lib/hooks';
+import type { LoginInput } from '../_lib/types';
 
 export function LoginForm({ locale }: { locale: string }) {
   const login = useLogin(locale);
@@ -402,48 +395,31 @@ export function LoginForm({ locale }: { locale: string }) {
   } = useForm<LoginInput>({ resolver: zodResolver(LoginSchema) });
 
   return (
-    <form onSubmit={handleSubmit((d) => login.mutate(d))} className="space-y-4">
+    <form onSubmit={handleSubmit(d => login.mutate(d))} className="space-y-4">
       <div className="space-y-1">
         <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          type="email"
-          placeholder="you@example.com"
-          {...register("email")}
-        />
-        {errors.email && (
-          <p className="text-sm text-destructive">{errors.email.message}</p>
-        )}
+        <Input id="email" type="email" placeholder="you@example.com" {...register('email')} />
+        {errors.email && <p className="text-destructive text-sm">{errors.email.message}</p>}
       </div>
 
       <div className="space-y-1">
         <Label htmlFor="password">Mật khẩu</Label>
-        <Input
-          id="password"
-          type="password"
-          placeholder="••••••••"
-          {...register("password")}
-        />
-        {errors.password && (
-          <p className="text-sm text-destructive">{errors.password.message}</p>
-        )}
+        <Input id="password" type="password" placeholder="••••••••" {...register('password')} />
+        {errors.password && <p className="text-destructive text-sm">{errors.password.message}</p>}
       </div>
 
       <div className="flex items-center justify-between">
-        <Link
-          href={`/${locale}/forgot-password`}
-          className="text-sm text-primary hover:underline"
-        >
+        <Link href={`/${locale}/forgot-password`} className="text-primary text-sm hover:underline">
           Quên mật khẩu?
         </Link>
       </div>
 
       <Button type="submit" className="w-full" disabled={login.isPending}>
-        {login.isPending ? "Đang đăng nhập..." : "Đăng nhập"}
+        {login.isPending ? 'Đang đăng nhập...' : 'Đăng nhập'}
       </Button>
 
-      <p className="text-center text-sm text-muted-foreground">
-        Chưa có tài khoản?{" "}
+      <p className="text-muted-foreground text-center text-sm">
+        Chưa có tài khoản?{' '}
         <Link href={`/${locale}/register`} className="text-primary hover:underline">
           Đăng ký ngay
         </Link>
@@ -464,24 +440,25 @@ git commit -m "feat(auth): add login form component"
 
 ## Task 5: Register form component
 
-**Files:**
+#### Files
+
 - Create: `src/app/[locale]/(auth)/_components/register-form.tsx`
 
 - [ ] **Step 1: Create `register-form.tsx`**
 
 ```tsx
 // src/app/[locale]/(auth)/_components/register-form.tsx
-"use client";
+'use client';
 
-import { useForm }             from "react-hook-form";
-import { zodResolver }         from "@hookform/resolvers/zod";
-import Link                     from "next/link";
-import { Button }               from "@/shared/components/ui/button";
-import { Input }                from "@/shared/components/ui/input";
-import { Label }                from "@/shared/components/ui/label";
-import { RegisterSchema }       from "../_lib/schemas";
-import { useRegister }          from "../_lib/hooks";
-import type { RegisterInput }   from "../_lib/types";
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
+import { Button } from '@/shared/components/ui/button';
+import { Input } from '@/shared/components/ui/input';
+import { Label } from '@/shared/components/ui/label';
+import { RegisterSchema } from '../_lib/schemas';
+import { useRegister } from '../_lib/hooks';
+import type { RegisterInput } from '../_lib/types';
 
 export function RegisterForm({ locale }: { locale: string }) {
   const register_ = useRegister(locale);
@@ -493,54 +470,44 @@ export function RegisterForm({ locale }: { locale: string }) {
   } = useForm<RegisterInput>({ resolver: zodResolver(RegisterSchema) });
 
   return (
-    <form onSubmit={handleSubmit((d) => register_.mutate(d))} className="space-y-4">
+    <form onSubmit={handleSubmit(d => register_.mutate(d))} className="space-y-4">
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1">
           <Label htmlFor="lastName">Họ</Label>
-          <Input id="lastName" placeholder="Nguyễn" {...register("lastName")} />
-          {errors.lastName && (
-            <p className="text-sm text-destructive">{errors.lastName.message}</p>
-          )}
+          <Input id="lastName" placeholder="Nguyễn" {...register('lastName')} />
+          {errors.lastName && <p className="text-destructive text-sm">{errors.lastName.message}</p>}
         </div>
         <div className="space-y-1">
           <Label htmlFor="firstName">Tên</Label>
-          <Input id="firstName" placeholder="Văn A" {...register("firstName")} />
-          {errors.firstName && (
-            <p className="text-sm text-destructive">{errors.firstName.message}</p>
-          )}
+          <Input id="firstName" placeholder="Văn A" {...register('firstName')} />
+          {errors.firstName && <p className="text-destructive text-sm">{errors.firstName.message}</p>}
         </div>
       </div>
 
       <div className="space-y-1">
         <Label htmlFor="email">Email</Label>
-        <Input id="email" type="email" placeholder="you@example.com" {...register("email")} />
-        {errors.email && (
-          <p className="text-sm text-destructive">{errors.email.message}</p>
-        )}
+        <Input id="email" type="email" placeholder="you@example.com" {...register('email')} />
+        {errors.email && <p className="text-destructive text-sm">{errors.email.message}</p>}
       </div>
 
       <div className="space-y-1">
         <Label htmlFor="password">Mật khẩu</Label>
-        <Input id="password" type="password" placeholder="Tối thiểu 8 ký tự" {...register("password")} />
-        {errors.password && (
-          <p className="text-sm text-destructive">{errors.password.message}</p>
-        )}
+        <Input id="password" type="password" placeholder="Tối thiểu 8 ký tự" {...register('password')} />
+        {errors.password && <p className="text-destructive text-sm">{errors.password.message}</p>}
       </div>
 
       <div className="space-y-1">
         <Label htmlFor="confirmPassword">Xác nhận mật khẩu</Label>
-        <Input id="confirmPassword" type="password" placeholder="••••••••" {...register("confirmPassword")} />
-        {errors.confirmPassword && (
-          <p className="text-sm text-destructive">{errors.confirmPassword.message}</p>
-        )}
+        <Input id="confirmPassword" type="password" placeholder="••••••••" {...register('confirmPassword')} />
+        {errors.confirmPassword && <p className="text-destructive text-sm">{errors.confirmPassword.message}</p>}
       </div>
 
       <Button type="submit" className="w-full" disabled={register_.isPending}>
-        {register_.isPending ? "Đang đăng ký..." : "Đăng ký"}
+        {register_.isPending ? 'Đang đăng ký...' : 'Đăng ký'}
       </Button>
 
-      <p className="text-center text-sm text-muted-foreground">
-        Đã có tài khoản?{" "}
+      <p className="text-muted-foreground text-center text-sm">
+        Đã có tài khoản?{' '}
         <Link href={`/${locale}/login`} className="text-primary hover:underline">
           Đăng nhập
         </Link>
@@ -561,7 +528,8 @@ git commit -m "feat(auth): add register form component"
 
 ## Task 6: Auth pages
 
-**Files:**
+#### Files
+
 - Create: `src/app/[locale]/(auth)/login/page.tsx`
 - Create: `src/app/[locale]/(auth)/register/page.tsx`
 - Create: `src/app/[locale]/(auth)/forgot-password/page.tsx`
@@ -570,22 +538,16 @@ git commit -m "feat(auth): add register form component"
 
 ```tsx
 // src/app/[locale]/(auth)/login/page.tsx
-import { LoginForm } from "../_components/login-form";
+import { LoginForm } from '../_components/login-form';
 
-export default async function LoginPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function LoginPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/30 px-4">
-      <div className="w-full max-w-md rounded-2xl bg-background p-8 shadow-lg">
+    <div className="bg-muted/30 flex min-h-screen items-center justify-center px-4">
+      <div className="bg-background w-full max-w-md rounded-2xl p-8 shadow-lg">
         <h1 className="mb-2 text-2xl font-bold">Đăng nhập</h1>
-        <p className="mb-6 text-sm text-muted-foreground">
-          Chào mừng trở lại! Vui lòng đăng nhập để tiếp tục.
-        </p>
+        <p className="text-muted-foreground mb-6 text-sm">Chào mừng trở lại! Vui lòng đăng nhập để tiếp tục.</p>
         <LoginForm locale={locale} />
       </div>
     </div>
@@ -597,22 +559,16 @@ export default async function LoginPage({
 
 ```tsx
 // src/app/[locale]/(auth)/register/page.tsx
-import { RegisterForm } from "../_components/register-form";
+import { RegisterForm } from '../_components/register-form';
 
-export default async function RegisterPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function RegisterPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/30 px-4">
-      <div className="w-full max-w-md rounded-2xl bg-background p-8 shadow-lg">
+    <div className="bg-muted/30 flex min-h-screen items-center justify-center px-4">
+      <div className="bg-background w-full max-w-md rounded-2xl p-8 shadow-lg">
         <h1 className="mb-2 text-2xl font-bold">Tạo tài khoản</h1>
-        <p className="mb-6 text-sm text-muted-foreground">
-          Điền thông tin bên dưới để đăng ký tài khoản mới.
-        </p>
+        <p className="text-muted-foreground mb-6 text-sm">Điền thông tin bên dưới để đăng ký tài khoản mới.</p>
         <RegisterForm locale={locale} />
       </div>
     </div>
@@ -624,24 +580,20 @@ export default async function RegisterPage({
 
 ```tsx
 // src/app/[locale]/(auth)/forgot-password/page.tsx
-"use client";
+'use client';
 
-import { use }             from "react";
-import { useForm }         from "react-hook-form";
-import { zodResolver }     from "@hookform/resolvers/zod";
-import Link                from "next/link";
-import { Button }          from "@/shared/components/ui/button";
-import { Input }           from "@/shared/components/ui/input";
-import { Label }           from "@/shared/components/ui/label";
-import { ForgotPasswordSchema } from "../_lib/schemas";
-import { useForgotPassword }    from "../_lib/hooks";
-import type { ForgotPasswordInput } from "../_lib/schemas";
+import { use } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
+import { Button } from '@/shared/components/ui/button';
+import { Input } from '@/shared/components/ui/input';
+import { Label } from '@/shared/components/ui/label';
+import { ForgotPasswordSchema } from '../_lib/schemas';
+import { useForgotPassword } from '../_lib/hooks';
+import type { ForgotPasswordInput } from '../_lib/schemas';
 
-export default function ForgotPasswordPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default function ForgotPasswordPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = use(params);
   const forgot = useForgotPassword();
 
@@ -652,24 +604,20 @@ export default function ForgotPasswordPage({
   } = useForm<ForgotPasswordInput>({ resolver: zodResolver(ForgotPasswordSchema) });
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/30 px-4">
-      <div className="w-full max-w-md rounded-2xl bg-background p-8 shadow-lg">
+    <div className="bg-muted/30 flex min-h-screen items-center justify-center px-4">
+      <div className="bg-background w-full max-w-md rounded-2xl p-8 shadow-lg">
         <h1 className="mb-2 text-2xl font-bold">Quên mật khẩu</h1>
-        <p className="mb-6 text-sm text-muted-foreground">
-          Nhập email của bạn, chúng tôi sẽ gửi link đặt lại mật khẩu.
-        </p>
+        <p className="text-muted-foreground mb-6 text-sm">Nhập email của bạn, chúng tôi sẽ gửi link đặt lại mật khẩu.</p>
 
-        <form onSubmit={handleSubmit((d) => forgot.mutate(d.email))} className="space-y-4">
+        <form onSubmit={handleSubmit(d => forgot.mutate(d.email))} className="space-y-4">
           <div className="space-y-1">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="you@example.com" {...register("email")} />
-            {errors.email && (
-              <p className="text-sm text-destructive">{errors.email.message}</p>
-            )}
+            <Input id="email" type="email" placeholder="you@example.com" {...register('email')} />
+            {errors.email && <p className="text-destructive text-sm">{errors.email.message}</p>}
           </div>
 
           <Button type="submit" className="w-full" disabled={forgot.isPending}>
-            {forgot.isPending ? "Đang gửi..." : "Gửi email"}
+            {forgot.isPending ? 'Đang gửi...' : 'Gửi email'}
           </Button>
         </form>
 

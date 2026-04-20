@@ -7,9 +7,9 @@
 
 ## Đánh giá khả thi
 
-**Có thể làm trong 1 tháng không?**
+## Có thể làm trong 1 tháng không?
 
-**Được — nhưng chỉ MVP cơ bản, không phải full e-commerce.**
+### Được — nhưng chỉ MVP cơ bản, không phải full e-commerce
 
 | Điều kiện                                      | Kết quả           |
 | ---------------------------------------------- | ----------------- |
@@ -104,7 +104,7 @@
 
 ### Tuần 1 — Setup & Backend Core (Ngày 1–7)
 
-**Ngày 1–2: Project Setup**
+### Ngày 1–2: Project Setup
 
 - Tạo GitHub repo, cấu trúc thư mục `frontend/` + `backend/`
 - Viết `docker-compose.yml`: Django + PostgreSQL + Next.js
@@ -112,7 +112,7 @@
 - Tạo Django project + DRF install
 - Tạo Next.js 15 project với TypeScript + Tailwind + Shadcn
 
-**Ngày 3–4: Database Models**
+### Ngày 3–4: Database Models
 
 ```
 User (extend AbstractUser)
@@ -126,28 +126,28 @@ User (extend AbstractUser)
 └── Payment
 ```
 
-**Ngày 5–6: Django Admin + API**
+### Ngày 5–6: Django Admin + API
 
 - Đăng ký models vào Django Admin (tùy chỉnh list_display, search_fields)
 - DRF serializers cho Product, Category
 - API endpoints: `GET /api/products/`, `GET /api/products/:slug/`, `GET /api/categories/`
 - Swagger / ReDoc tự động qua `drf-spectacular`
 
-**Ngày 7: Auth + Deploy Backend**
+### Ngày 7: Auth + Deploy Backend
 
 - Cài django-allauth + SimpleJWT
 - API: register, login, refresh token, profile
 - Deploy Django lên Railway
 - Test API bằng Swagger UI trên production
 
-**Gate cuối Tuần 1 — không chuyển sang Tuần 2 nếu chưa đạt:**
+### Gate cuối Tuần 1 — không chuyển sang Tuần 2 nếu chưa đạt
 
 - [ ] Swagger UI trên production URL trả đúng dữ liệu
 - [ ] `POST /api/auth/register/` + `login/` hoạt động trên production
 - [ ] `GET /api/products/` trả danh sách (dù chỉ 1–2 sản phẩm test)
 - [ ] Docker Compose local chạy được 3 services không lỗi
 
-**API Contract (cuối Tuần 1, trước khi FE bắt đầu):**
+### API Contract (cuối Tuần 1, trước khi FE bắt đầu)
 
 Ghi lại response shape chính xác của các endpoint FE sẽ dùng:
 
@@ -166,28 +166,28 @@ FE không bắt đầu viết code gọi API nếu contract chưa được confi
 
 ### Tuần 2 — Frontend + Kết nối API (Ngày 8–14)
 
-**Ngày 8–9: Frontend Foundation**
+### Ngày 8–9: Frontend Foundation
 
 - Setup TanStack Query, Zustand, React Hook Form, Zod
 - Cấu hình API client (axios hoặc fetch wrapper với interceptor JWT)
 - Layout chung: Header (navbar, giỏ hàng icon), Footer
 - Setup Cloudinary cho ảnh sản phẩm
 
-**Ngày 10–11: Trang sản phẩm**
+### Ngày 10–11: Trang sản phẩm
 
 - Trang chủ: banner tĩnh + product grid
 - Trang danh mục + lọc (filter sidebar)
 - Trang chi tiết sản phẩm (SSR với `generateMetadata`)
 - Tối ưu ảnh: `next/image` + Cloudinary URL transforms
 
-**Ngày 12–13: Giỏ hàng**
+### Ngày 12–13: Giỏ hàng
 
 - Zustand store cho cart (persist qua localStorage)
 - Cart drawer / Cart page
 - Add to cart, update quantity, remove item
 - Tính tổng tiền client-side
 
-**Ngày 14: Auth Frontend + Kết nối hoàn chỉnh**
+### Ngày 14: Auth Frontend + Kết nối hoàn chỉnh
 
 - Trang đăng ký / đăng nhập / quên mật khẩu
 - Protected routes (middleware Next.js)
@@ -197,7 +197,7 @@ FE không bắt đầu viết code gọi API nếu contract chưa được confi
 
 ### Tuần 3 — Checkout & Thanh toán (Ngày 15–21)
 
-**Ngày 15–17: Checkout Flow**
+### Ngày 15–17: Checkout Flow
 
 - Checkout page với React Hook Form + Zod:
   - Bước 1: Địa chỉ giao hàng
@@ -218,21 +218,21 @@ FE không bắt đầu viết code gọi API nếu contract chưa được confi
 
 - Error handling: retry logic cho DB timeout, rollback tồn kho khi lỗi
 
-**Ngày 18–19: Order Confirmation + Email**
+### Ngày 18–19: Order Confirmation + Email
 
 - Trang `/orders/:id` — chi tiết đơn hàng
 - Gửi email xác nhận đơn qua Django (HTML template)
 - Trang lịch sử đơn hàng của khách (`/account/orders`)
 - Error boundary cho checkout page — hiển thị lỗi thân thiện thay vì crash
 
-**Ngày 20–21: COD Flow hoàn chỉnh + Django Admin nâng cao**
+### Ngày 20–21: COD Flow hoàn chỉnh + Django Admin nâng cao
 
 - Luồng COD: tạo order → status `PENDING` → redirect trang success → gửi email
 - Trang `/checkout/success` và `/checkout/failed`
 - Custom action trong Admin: xác nhận / đánh dấu đang giao / hủy đơn hàng hàng loạt
 - Dashboard đơn giản trong Admin: đơn hôm nay, doanh thu hôm nay, sản phẩm sắp hết hàng
 
-**Gate cuối Tuần 3 — không chuyển sang Tuần 4 nếu chưa đạt:**
+### Gate cuối Tuần 3 — không chuyển sang Tuần 4 nếu chưa đạt
 
 - [ ] Luồng COD end-to-end chạy thông suốt (đặt hàng → email → xem đơn)
 - [ ] Email xác nhận gửi được thật (không chỉ log)
@@ -243,7 +243,7 @@ FE không bắt đầu viết code gọi API nếu contract chưa được confi
 
 ### Tuần 4 — Polish, Test & Deploy (Ngày 22–30)
 
-**Ngày 22–24: Testing**
+### Ngày 22–24: Testing
 
 - **Backend (pytest-django):**
   - Test tạo đơn hàng COD (happy path + edge cases)
@@ -254,7 +254,7 @@ FE không bắt đầu viết code gọi API nếu contract chưa được confi
   - Luồng: vào web → tìm sản phẩm → thêm giỏ → checkout COD → nhận email
   - Luồng: đăng ký tài khoản mới → đăng nhập → xem lịch sử đơn
 
-**Ngày 25–26: SEO & Performance**
+### Ngày 25–26: SEO & Performance
 
 - `generateMetadata()` cho tất cả trang sản phẩm / danh mục
 - `sitemap.ts` tự động generate từ database
@@ -262,7 +262,7 @@ FE không bắt đầu viết code gọi API nếu contract chưa được confi
 - `next/image` lazy loading cho tất cả ảnh
 - Lighthouse score > 80 (mobile)
 
-**Ngày 27–28: Production Deploy**
+### Ngày 27–28: Production Deploy
 
 - Setup biến môi trường production (Vercel + Railway)
 - GitHub Actions: test → build → deploy tự động khi push `main`
@@ -270,7 +270,7 @@ FE không bắt đầu viết code gọi API nếu contract chưa được confi
 - Sentry DSN cấu hình cho cả FE lẫn BE
 - Test end-to-end toàn bộ luồng COD trên production (điện thoại thật)
 
-**Ngày 29–30: Final Check & Launch**
+### Ngày 29–30: Final Check & Launch
 
 - Test toàn bộ luồng mua hàng trên production (điện thoại thật)
 - Fix bug phát sinh

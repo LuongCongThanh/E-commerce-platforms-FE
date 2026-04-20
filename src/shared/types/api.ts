@@ -1,12 +1,12 @@
 export interface PaginatedResponse<T> {
-  count:    number;
-  next:     string | null;
+  count: number;
+  next: string | null;
   previous: string | null;
-  results:  T[];
+  results: T[];
 }
 
 export interface DjangoErrorResponse {
   detail?: string;
-  code?:   string;
+  code?: string;
   [field: string]: string | string[] | undefined;
 }

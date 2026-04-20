@@ -1,0 +1,13 @@
+{
+  "loading": "Đang tải...",
+  "error": "Đã có lỗi xảy ra",
+  "retry": "Thử lại",
+  "cancel": "Huỷ",
+  "confirm": "Xác nhận",
+  "save": "Lưu",
+  "delete": "Xoá",
+  "edit": "Chỉnh sửa",
+  "search": "Tìm kiếm",
+  "back": "Quay lại",
+  "viewAll": "Xem tất cả"
+}

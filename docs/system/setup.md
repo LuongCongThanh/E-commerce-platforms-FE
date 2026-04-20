@@ -138,7 +138,9 @@ npx playwright install
 npm install -D \
   eslint \
   eslint-config-next \
+  eslint-plugin-tailwindcss@beta \
   prettier \
+  prettier-plugin-tailwindcss \
   eslint-config-prettier \
   husky \
   lint-staged \
@@ -200,7 +202,9 @@ npm install -D \
   @playwright/test \
   eslint \
   eslint-config-next \
+  eslint-plugin-tailwindcss@beta \
   prettier \
+  prettier-plugin-tailwindcss \
   eslint-config-prettier \
   husky \
   lint-staged \
@@ -274,8 +278,10 @@ mkdir -p src/shared/constants
 mkdir -p src/__tests__/helpers
 mkdir -p src/__tests__/integration
 
-# ── messages/ ────────────────────────────────────────────────────────────────
-mkdir -p src/messages
+# ── i18n/ ────────────────────────────────────────────────────────────────────
+mkdir -p src/i18n
+mkdir -p src/lang/en
+mkdir -p src/lang/vi
 
 # ── e2e/ ─────────────────────────────────────────────────────────────────────
 mkdir -p e2e
@@ -329,16 +335,19 @@ touch src/shared/hooks/use-local-storage.ts
 touch src/shared/hooks/use-media-query.ts
 
 # ── shared/components ────────────────────────────────────────────────────────
-touch src/shared/components/layouts/header.tsx
-touch src/shared/components/layouts/footer.tsx
-touch src/shared/components/skeletons/product-card-skeleton.tsx
-touch src/shared/components/skeletons/product-grid-skeleton.tsx
-touch src/shared/components/skeletons/order-list-skeleton.tsx
-touch src/shared/components/rich-text-editor.tsx
+touch src/shared/components/layouts/Header.tsx
+touch src/shared/components/layouts/Footer.tsx
+touch src/shared/components/skeletons/ProductCardSkeleton.tsx
+touch src/shared/components/skeletons/ProductGridSkeleton.tsx
+touch src/shared/components/skeletons/OrderListSkeleton.tsx
+touch src/shared/components/RichTextEditor.tsx
 
-# ── messages ─────────────────────────────────────────────────────────────────
-touch src/messages/vi.json
-touch src/messages/en.json
+# ── i18n ─────────────────────────────────────────────────────────────────────
+touch src/i18n/request.ts
+touch src/lang/en/common.json
+touch src/lang/en/home.json
+touch src/lang/vi/common.json
+touch src/lang/vi/home.json
 
 # ── tests ────────────────────────────────────────────────────────────────────
 touch src/__tests__/setup.ts
@@ -405,20 +414,20 @@ SENTRY_AUTH_TOKEN=
 ### `vitest.config.ts`
 
 ```typescript
-import { defineConfig } from "vitest/config";
-import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   test: {
-    environment: "jsdom",
-    setupFiles: ["./src/__tests__/setup.ts"],
+    environment: 'jsdom',
+    setupFiles: ['./src/__tests__/setup.ts'],
     globals: true,
     coverage: {
-      provider: "v8",
-      reporter: ["text", "lcov"],
-      include: ["src/shared/lib/**", "src/shared/utils/**"],
+      provider: 'v8',
+      reporter: ['text', 'lcov'],
+      include: ['src/shared/lib/**', 'src/shared/utils/**'],
       thresholds: { lines: 70, functions: 70, branches: 70 },
     },
   },
@@ -428,29 +437,67 @@ export default defineConfig({
 ### `eslint.config.mjs`
 
 ```js
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import path from 'node:path';
+import js from '@eslint/js';
+import nextPlugin from '@next/eslint-plugin-next';
+import typescript from '@typescript-eslint/eslint-plugin';
+import typescriptParser from '@typescript-eslint/parser';
+import prettier from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import tailwindcss from 'eslint-plugin-tailwindcss';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const tailwindEntryCss = path.join(import.meta.dirname, 'src/app/globals.css');
 
-const compat = new FlatCompat({ baseDirectory: __dirname });
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
+export default [
   {
+    plugins: { '@next/next': nextPlugin },
     rules: {
-      "@typescript-eslint/no-explicit-any": "error",
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        { argsIgnorePattern: "^_" },
-      ],
+      ...(nextPlugin.configs.recommended?.rules ?? {}),
+      ...(nextPlugin.configs['core-web-vitals']?.rules ?? {}),
     },
   },
+  js.configs.recommended,
+  {
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: typescriptParser,
+      parserOptions: {
+        project: './tsconfig.json',
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    plugins: {
+      '@typescript-eslint': typescript,
+      import: importPlugin,
+      react,
+      'react-hooks': reactHooks,
+      'simple-import-sort': simpleImportSort,
+      tailwindcss,
+    },
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
+      'simple-import-sort/imports': 'warn',
+      'simple-import-sort/exports': 'error',
+      'tailwindcss/classnames-order': 'off',
+      'tailwindcss/no-custom-classname': 'off',
+      'tailwindcss/no-contradicting-classname': 'error',
+      'tailwindcss/enforces-shorthand': 'warn',
+      'tailwindcss/no-unnecessary-arbitrary-value': 'warn',
+    },
+    settings: {
+      tailwindcss: {
+        callees: ['cn', 'clsx', 'cva'],
+        classRegex: '^class(Name)?$',
+        config: tailwindEntryCss,
+      },
+    },
+  },
+  prettier,
 ];
-
-export default eslintConfig;
 ```
 
 ### `.prettierrc`
@@ -468,6 +515,25 @@ export default eslintConfig;
 
 > Cần cài thêm: `npm install -D prettier-plugin-tailwindcss`
 
+### Naming & function style
+
+- Folder dùng `kebab-case`
+- Component file dùng `PascalCase`
+- File không phải component dùng `kebab-case`
+- Hook file dùng `kebab-case` với tiền tố `use-`
+- Store file dùng `kebab-case` với hậu tố `-store`
+- Schema file dùng `kebab-case` với hậu tố `-schema` hoặc `schemas.ts`
+- Util file dùng `kebab-case` với hậu tố `-utils` hoặc `utils.ts`
+- Constant file dùng `kebab-case` với hậu tố `-config`, `-constants`, hoặc `-enum`
+- Component mới và code TypeScript mới nên ưu tiên arrow function
+
+```tsx
+// src/shared/components/layouts/Header.tsx
+export const Header = () => {
+  return <header />;
+};
+```
+
 ### `package.json` — thêm scripts
 
 ```json
@@ -476,9 +542,10 @@ export default eslintConfig;
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write . && eslint . --fix",
+    "format:check": "prettier --check . && eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
@@ -517,32 +584,32 @@ Thêm vào `package.json`:
 ### 7.1 `next.config.ts`
 
 ```typescript
-import type { NextConfig } from "next";
-import withBundleAnalyzer from "@next/bundle-analyzer";
-import withPWA from "@ducanh2912/next-pwa";
+import type { NextConfig } from 'next';
+import withBundleAnalyzer from '@next/bundle-analyzer';
+import withPWA from '@ducanh2912/next-pwa';
 
 const withAnalyzer = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
+  enabled: process.env.ANALYZE === 'true',
 });
 
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      { protocol: "https", hostname: "**.amazonaws.com" }, // S3
-      { protocol: "http", hostname: "localhost" },
+      { protocol: 'https', hostname: '**.amazonaws.com' }, // S3
+      { protocol: 'http', hostname: 'localhost' },
     ],
   },
 };
 
 export default withAnalyzer(
   withPWA({
-    dest: "public",
-    disable: process.env.NODE_ENV === "development",
+    dest: 'public',
+    disable: process.env.NODE_ENV === 'development',
     register: true,
     skipWaiting: true,
     cacheOnFrontEndNav: true,
     reloadOnOnline: true,
-  })(nextConfig),
+  })(nextConfig)
 );
 ```
 
@@ -551,12 +618,12 @@ export default withAnalyzer(
 ### 7.2 `middleware.ts`
 
 ```typescript
-import createMiddleware from "next-intl/middleware";
-import { NextRequest, NextResponse } from "next/server";
+import createMiddleware from 'next-intl/middleware';
+import { NextRequest, NextResponse } from 'next/server';
 
 const intlMiddleware = createMiddleware({
-  locales: ["vi", "en"],
-  defaultLocale: "vi",
+  locales: ['vi', 'en'],
+  defaultLocale: 'vi',
 });
 
 export function middleware(request: NextRequest) {
@@ -564,9 +631,9 @@ export function middleware(request: NextRequest) {
 
   // Auth guard cho /admin — kiểm tra cookie, không phụ thuộc JS client
   if (pathname.match(/^\/(vi|en)\/admin/)) {
-    const token = request.cookies.get("access_token");
+    const token = request.cookies.get('access_token');
     if (!token) {
-      return NextResponse.redirect(new URL("/vi/login", request.url));
+      return NextResponse.redirect(new URL('/vi/login', request.url));
     }
   }
 
@@ -574,7 +641,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|.*\\..*).*)"],
+  matcher: ['/((?!api|_next|.*\\..*).*)'],
 };
 ```
 
@@ -583,33 +650,29 @@ export const config = {
 ### 7.3 `src/app/layout.tsx`
 
 ```tsx
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
 
 const inter = Inter({
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-inter",
-  display: "swap",
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-inter',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: { default: "E-Commerce Shop", template: "%s | E-Commerce Shop" },
-  description: "Mua sắm trực tuyến nhanh chóng, tiện lợi",
-  manifest: "/manifest.json",
-  themeColor: "#e85d04",
+  title: { default: 'E-Commerce Shop', template: '%s | E-Commerce Shop' },
+  description: 'Mua sắm trực tuyến nhanh chóng, tiện lợi',
+  manifest: '/manifest.json',
+  themeColor: '#e85d04',
   appleWebApp: {
     capable: true,
-    statusBarStyle: "default",
-    title: "E-Commerce Shop",
+    statusBarStyle: 'default',
+    title: 'E-Commerce Shop',
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi" suppressHydrationWarning className={inter.variable}>
       <body>{children}</body>
@@ -623,37 +686,29 @@ export default function RootLayout({
 ### 7.4 `src/app/providers.tsx`
 
 ```tsx
-"use client";
-import { useState } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { ThemeProvider } from "next-themes";
-import { Toaster } from "sonner";
-import { AppProgressBar } from "next-nprogress-bar";
-import { makeQueryClient } from "@/shared/lib/query-client";
+'use client';
+import { useState } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { ThemeProvider } from 'next-themes';
+import { Toaster } from 'sonner';
+import { AppProgressBar } from 'next-nprogress-bar';
+import { makeQueryClient } from '@/shared/lib/query-client';
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export const Providers = ({ children }: { children: React.ReactNode }) => {
   const [queryClient] = useState(() => makeQueryClient());
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="light"
-        enableSystem={false}
-      >
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
         {children}
         <Toaster richColors position="top-right" />
-        <AppProgressBar
-          color="#e85d04"
-          height="2px"
-          options={{ showSpinner: false }}
-        />
+        <AppProgressBar color="#e85d04" height="2px" options={{ showSpinner: false }} />
         <ReactQueryDevtools initialIsOpen={false} />
       </ThemeProvider>
     </QueryClientProvider>
   );
-}
+};
 ```
 
 ---
@@ -661,24 +716,18 @@ export function Providers({ children }: { children: React.ReactNode }) {
 ### 7.5 `src/app/[locale]/layout.tsx`
 
 ```tsx
-import { notFound } from "next/navigation";
-import { getMessages, setRequestLocale } from "next-intl/server";
-import { NextIntlClientProvider } from "next-intl";
-import { Providers } from "@/app/providers";
+import { notFound } from 'next/navigation';
+import { getMessages, setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { Providers } from '@/app/providers';
 
-const locales = ["vi", "en"];
+const locales = ['vi', 'en'];
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return locales.map(locale => ({ locale }));
 }
 
-export default async function LocaleLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
+export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
   const { locale } = await params;
 
   if (!locales.includes(locale)) notFound();
@@ -699,15 +748,13 @@ export default async function LocaleLayout({
 ### 7.6 `src/shared/lib/env.ts`
 
 ```typescript
-import { z } from "zod";
+import { z } from 'zod';
 
 const envSchema = z.object({
   NEXT_PUBLIC_APP_URL: z.string().url(),
   NEXT_PUBLIC_API_URL: z.string().url(),
   DJANGO_API_URL: z.string().url().optional(),
-  NODE_ENV: z
-    .enum(["development", "production", "test"])
-    .default("development"),
+  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
 
   // VNPay
   VNPAY_TMN_CODE: z.string().optional(),
@@ -736,37 +783,37 @@ export const env = envSchema.parse(process.env);
 ### 7.7 `src/shared/lib/utils.ts`
 
 ```typescript
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
-import { format } from "date-fns";
-import { vi } from "date-fns/locale";
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import { format } from 'date-fns';
+import { vi } from 'date-fns/locale';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
 export function formatCurrency(amount: number): string {
-  return new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency: "VND",
+  return new Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
   }).format(amount);
 }
 
 export function formatDate(date: string | Date): string {
-  return format(new Date(date), "dd/MM/yyyy", { locale: vi });
+  return format(new Date(date), 'dd/MM/yyyy', { locale: vi });
 }
 
 export function formatDateTime(date: string | Date): string {
-  return format(new Date(date), "HH:mm dd/MM/yyyy", { locale: vi });
+  return format(new Date(date), 'HH:mm dd/MM/yyyy', { locale: vi });
 }
 
 export function slugify(text: string): string {
   return text
     .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
 }
 ```
 
@@ -775,9 +822,9 @@ export function slugify(text: string): string {
 ### 7.8 `src/shared/lib/query-client.ts`
 
 ```typescript
-import { QueryClient } from "@tanstack/react-query";
-import { toast } from "sonner";
-import { ApiError } from "@/shared/lib/errors/api-error";
+import { QueryClient } from '@tanstack/react-query';
+import { toast } from 'sonner';
+import { ApiError } from '@/shared/lib/errors/api-error';
 
 export function makeQueryClient() {
   return new QueryClient({
@@ -791,11 +838,8 @@ export function makeQueryClient() {
         },
       },
       mutations: {
-        onError: (error) => {
-          const message =
-            error instanceof ApiError
-              ? error.message
-              : "Đã có lỗi xảy ra, vui lòng thử lại";
+        onError: error => {
+          const message = error instanceof ApiError ? error.message : 'Đã có lỗi xảy ra, vui lòng thử lại';
           toast.error(message);
         },
       },
@@ -809,13 +853,13 @@ export function makeQueryClient() {
 ### 7.9 `src/shared/lib/http/client.ts`
 
 ```typescript
-import axios from "axios";
-import { env } from "@/shared/lib/env";
+import axios from 'axios';
+import { env } from '@/shared/lib/env';
 
 export const httpClient = axios.create({
   baseURL: env.NEXT_PUBLIC_API_URL,
   timeout: 10_000,
-  headers: { "Content-Type": "application/json" },
+  headers: { 'Content-Type': 'application/json' },
   withCredentials: true,
 });
 ```
@@ -825,22 +869,18 @@ export const httpClient = axios.create({
 ### 7.10 `src/shared/lib/http/methods.ts`
 
 ```typescript
-import { httpClient } from "./client";
+import { httpClient } from './client';
 
 export const http = {
-  get: <T>(url: string, params?: object) =>
-    httpClient.get<T>(url, { params }).then((r) => r.data),
+  get: <T>(url: string, params?: object) => httpClient.get<T>(url, { params }).then(r => r.data),
 
-  post: <T>(url: string, body?: unknown) =>
-    httpClient.post<T>(url, body).then((r) => r.data),
+  post: <T>(url: string, body?: unknown) => httpClient.post<T>(url, body).then(r => r.data),
 
-  put: <T>(url: string, body?: unknown) =>
-    httpClient.put<T>(url, body).then((r) => r.data),
+  put: <T>(url: string, body?: unknown) => httpClient.put<T>(url, body).then(r => r.data),
 
-  patch: <T>(url: string, body?: unknown) =>
-    httpClient.patch<T>(url, body).then((r) => r.data),
+  patch: <T>(url: string, body?: unknown) => httpClient.patch<T>(url, body).then(r => r.data),
 
-  delete: <T>(url: string) => httpClient.delete<T>(url).then((r) => r.data),
+  delete: <T>(url: string) => httpClient.delete<T>(url).then(r => r.data),
 };
 ```
 
@@ -849,22 +889,22 @@ export const http = {
 ### 7.11 `src/shared/lib/http/interceptors/auth.interceptor.ts`
 
 ```typescript
-import { AxiosError, AxiosRequestConfig } from "axios";
-import { httpClient } from "../client";
-import { useAuthStore } from "@/shared/stores/auth-store";
-import { API } from "@/shared/constants/api-endpoints";
-import { http } from "../methods";
+import { AxiosError, AxiosRequestConfig } from 'axios';
+import { httpClient } from '../client';
+import { useAuthStore } from '@/shared/stores/auth-store';
+import { API } from '@/shared/constants/api-endpoints';
+import { http } from '../methods';
 
 let refreshPromise: Promise<string> | null = null; // mutex — tránh race condition
 
-httpClient.interceptors.request.use((config) => {
+httpClient.interceptors.request.use(config => {
   const token = useAuthStore.getState().accessToken;
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
 
 httpClient.interceptors.response.use(
-  (res) => res,
+  res => res,
   async (error: AxiosError) => {
     const original = error.config as AxiosRequestConfig & { _retry?: boolean };
 
@@ -884,12 +924,12 @@ httpClient.interceptors.response.use(
         return httpClient(original);
       } catch {
         useAuthStore.getState().clearAuth();
-        window.location.href = "/vi/login";
+        window.location.href = '/vi/login';
       }
     }
 
     return Promise.reject(error);
-  },
+  }
 );
 ```
 
@@ -898,26 +938,25 @@ httpClient.interceptors.response.use(
 ### 7.12 `src/shared/lib/http/interceptors/error.interceptor.ts`
 
 ```typescript
-import { AxiosError } from "axios";
-import { httpClient } from "../client";
-import { ApiError } from "@/shared/lib/errors/api-error";
-import { captureError } from "@/shared/lib/monitoring/sentry";
-import type { DjangoErrorResponse } from "@/shared/types/api";
+import { AxiosError } from 'axios';
+import { httpClient } from '../client';
+import { ApiError } from '@/shared/lib/errors/api-error';
+import { captureError } from '@/shared/lib/monitoring/sentry';
+import type { DjangoErrorResponse } from '@/shared/types/api';
 
 httpClient.interceptors.response.use(
-  (res) => res,
+  res => res,
   (error: AxiosError<DjangoErrorResponse>) => {
     const status = error.response?.status ?? 0;
     const data = error.response?.data;
-    const message =
-      typeof data?.detail === "string" ? data.detail : "Đã có lỗi xảy ra";
+    const message = typeof data?.detail === 'string' ? data.detail : 'Đã có lỗi xảy ra';
 
     if (status >= 500) {
       captureError(error, { url: error.config?.url, status });
     }
 
     return Promise.reject(new ApiError(status, message, data));
-  },
+  }
 );
 ```
 
@@ -930,10 +969,10 @@ export class ApiError extends Error {
   constructor(
     public readonly status: number,
     message: string,
-    public readonly data?: unknown,
+    public readonly data?: unknown
   ) {
     super(message);
-    this.name = "ApiError";
+    this.name = 'ApiError';
   }
 
   get isUnauthorized() {
@@ -961,20 +1000,20 @@ export class ApiError extends Error {
 ```typescript
 export const ERROR_CODES = {
   // Django SimpleJWT
-  TOKEN_INVALID: "token_not_valid",
-  TOKEN_EXPIRED: "token_expired",
-  NOT_AUTHENTICATED: "not_authenticated",
-  PERMISSION_DENIED: "permission_denied",
+  TOKEN_INVALID: 'token_not_valid',
+  TOKEN_EXPIRED: 'token_expired',
+  NOT_AUTHENTICATED: 'not_authenticated',
+  PERMISSION_DENIED: 'permission_denied',
 
   // Business logic
-  PRODUCT_NOT_FOUND: "product_not_found",
-  OUT_OF_STOCK: "out_of_stock",
-  ORDER_ALREADY_PAID: "order_already_paid",
+  PRODUCT_NOT_FOUND: 'product_not_found',
+  OUT_OF_STOCK: 'out_of_stock',
+  ORDER_ALREADY_PAID: 'order_already_paid',
 
   // DRF validation
-  FIELD_REQUIRED: "required",
-  INVALID_FORMAT: "invalid",
-  UNIQUE_VIOLATION: "unique",
+  FIELD_REQUIRED: 'required',
+  INVALID_FORMAT: 'invalid',
+  UNIQUE_VIOLATION: 'unique',
 } as const;
 
 export type ErrorCode = (typeof ERROR_CODES)[keyof typeof ERROR_CODES];
@@ -985,24 +1024,18 @@ export type ErrorCode = (typeof ERROR_CODES)[keyof typeof ERROR_CODES];
 ### 7.15 `src/shared/lib/monitoring/sentry.ts`
 
 ```typescript
-import * as Sentry from "@sentry/nextjs";
+import * as Sentry from '@sentry/nextjs';
 
-export function captureError(
-  error: unknown,
-  context?: Record<string, unknown>,
-) {
-  if (process.env.NODE_ENV === "production") {
+export function captureError(error: unknown, context?: Record<string, unknown>) {
+  if (process.env.NODE_ENV === 'production') {
     Sentry.captureException(error, { extra: context });
   } else {
-    console.error("[Dev Error]", error, context);
+    console.error('[Dev Error]', error, context);
   }
 }
 
-export function captureMessage(
-  message: string,
-  level: Sentry.SeverityLevel = "info",
-) {
-  if (process.env.NODE_ENV === "production") {
+export function captureMessage(message: string, level: Sentry.SeverityLevel = 'info') {
+  if (process.env.NODE_ENV === 'production') {
     Sentry.captureMessage(message, level);
   }
 }
@@ -1013,17 +1046,17 @@ export function captureMessage(
 ### 7.16 `src/shared/lib/guards/auth-guard.tsx`
 
 ```tsx
-"use client";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useAuthStore } from "@/shared/stores/auth-store";
+'use client';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAuthStore } from '@/shared/stores/auth-store';
 
 export function AuthGuard({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const isAuthenticated = useAuthStore((s) => !!s.accessToken);
+  const isAuthenticated = useAuthStore(s => !!s.accessToken);
 
   useEffect(() => {
-    if (!isAuthenticated) router.replace("/vi/login");
+    if (!isAuthenticated) router.replace('/vi/login');
   }, [isAuthenticated, router]);
 
   if (!isAuthenticated) return null;
@@ -1036,8 +1069,8 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
 ### 7.17 `src/shared/stores/auth-store.ts`
 
 ```typescript
-import { create } from "zustand";
-import { subscribeWithSelector, persist } from "zustand/middleware";
+import { create } from 'zustand';
+import { subscribeWithSelector, persist } from 'zustand/middleware';
 
 interface AuthState {
   accessToken: string | null;
@@ -1060,16 +1093,16 @@ interface AuthActions {
 export const useAuthStore = create<AuthState & AuthActions>()(
   subscribeWithSelector(
     persist(
-      (set) => ({
+      set => ({
         accessToken: null,
         user: null,
-        setAccessToken: (token) => set({ accessToken: token }),
-        setUser: (user) => set({ user }),
+        setAccessToken: token => set({ accessToken: token }),
+        setUser: user => set({ user }),
         clearAuth: () => set({ accessToken: null, user: null }),
       }),
-      { name: "auth-storage", partialize: (state) => ({ user: state.user }) },
-    ),
-  ),
+      { name: 'auth-storage', partialize: state => ({ user: state.user }) }
+    )
+  )
 );
 ```
 
@@ -1078,8 +1111,8 @@ export const useAuthStore = create<AuthState & AuthActions>()(
 ### 7.18 `src/shared/stores/cart-store.ts`
 
 ```typescript
-import { create } from "zustand";
-import { subscribeWithSelector, persist } from "zustand/middleware";
+import { create } from 'zustand';
+import { subscribeWithSelector, persist } from 'zustand/middleware';
 
 export interface CartItem {
   variantId: string;
@@ -1118,15 +1151,11 @@ export const useCartStore = create<CartState & CartActions>()(
         total: 0,
         itemCount: 0,
 
-        addToCart: (item) => {
+        addToCart: item => {
           const items = get().items;
-          const existing = items.find((i) => i.variantId === item.variantId);
+          const existing = items.find(i => i.variantId === item.variantId);
           const updated = existing
-            ? items.map((i) =>
-                i.variantId === item.variantId
-                  ? { ...i, quantity: i.quantity + item.quantity }
-                  : i,
-              )
+            ? items.map(i => (i.variantId === item.variantId ? { ...i, quantity: i.quantity + item.quantity } : i))
             : [...items, item];
           set({
             items: updated,
@@ -1135,8 +1164,8 @@ export const useCartStore = create<CartState & CartActions>()(
           });
         },
 
-        removeCartItem: (variantId) => {
-          const updated = get().items.filter((i) => i.variantId !== variantId);
+        removeCartItem: variantId => {
+          const updated = get().items.filter(i => i.variantId !== variantId);
           set({
             items: updated,
             total: calcTotal(updated),
@@ -1145,9 +1174,7 @@ export const useCartStore = create<CartState & CartActions>()(
         },
 
         updateQuantity: (variantId, quantity) => {
-          const updated = get().items.map((i) =>
-            i.variantId === variantId ? { ...i, quantity } : i,
-          );
+          const updated = get().items.map(i => (i.variantId === variantId ? { ...i, quantity } : i));
           set({
             items: updated,
             total: calcTotal(updated),
@@ -1157,9 +1184,9 @@ export const useCartStore = create<CartState & CartActions>()(
 
         clearCart: () => set({ items: [], total: 0, itemCount: 0 }),
       }),
-      { name: "cart-storage" },
-    ),
-  ),
+      { name: 'cart-storage' }
+    )
+  )
 );
 ```
 
@@ -1187,17 +1214,11 @@ export interface DjangoErrorResponse {
 ### 7.20 `src/shared/types/order.ts`
 
 ```typescript
-export type OrderStatus =
-  | "pending"
-  | "confirmed"
-  | "processing"
-  | "shipped"
-  | "delivered"
-  | "cancelled";
+export type OrderStatus = 'pending' | 'confirmed' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
 
-export type PaymentMethod = "cod" | "vnpay" | "momo" | "zalopay";
+export type PaymentMethod = 'cod' | 'vnpay' | 'momo' | 'zalopay';
 
-export type PaymentStatus = "pending" | "paid" | "failed" | "refunded";
+export type PaymentStatus = 'pending' | 'paid' | 'failed' | 'refunded';
 
 export interface OrderItem {
   id: number;
@@ -1233,34 +1254,34 @@ export interface Order {
 ```typescript
 export const API = {
   AUTH: {
-    LOGIN: "/api/auth/login/",
-    REGISTER: "/api/auth/register/",
-    REFRESH: "/api/auth/token/refresh/",
-    LOGOUT: "/api/auth/logout/",
+    LOGIN: '/api/auth/login/',
+    REGISTER: '/api/auth/register/',
+    REFRESH: '/api/auth/token/refresh/',
+    LOGOUT: '/api/auth/logout/',
   },
   PRODUCTS: {
-    LIST: "/api/products/",
+    LIST: '/api/products/',
     DETAIL: (slug: string) => `/api/products/${slug}/`,
-    CATEGORIES: "/api/categories/",
+    CATEGORIES: '/api/categories/',
   },
   ORDERS: {
-    LIST: "/api/orders/",
+    LIST: '/api/orders/',
     DETAIL: (id: string) => `/api/orders/${id}/`,
     CANCEL: (id: string) => `/api/orders/${id}/cancel/`,
   },
   PROFILE: {
-    ME: "/api/auth/me/",
-    UPDATE: "/api/auth/me/update/",
+    ME: '/api/auth/me/',
+    UPDATE: '/api/auth/me/update/',
   },
   ADMIN: {
-    PRODUCTS: "/api/admin/products/",
+    PRODUCTS: '/api/admin/products/',
     PRODUCT_DETAIL: (id: string) => `/api/admin/products/${id}/`,
-    ORDERS: "/api/admin/orders/",
+    ORDERS: '/api/admin/orders/',
     ORDER_DETAIL: (id: string) => `/api/admin/orders/${id}/`,
     ORDER_STATUS: (id: string) => `/api/admin/orders/${id}/status/`,
-    USERS: "/api/admin/users/",
+    USERS: '/api/admin/users/',
     USER_DETAIL: (id: string) => `/api/admin/users/${id}/`,
-    DASHBOARD_STATS: "/api/admin/dashboard/",
+    DASHBOARD_STATS: '/api/admin/dashboard/',
   },
 } as const;
 ```
@@ -1273,24 +1294,24 @@ export const API = {
 export const APP_CONFIG = {
   ITEMS_PER_PAGE: 20,
   MAX_CART_QUANTITY: 99,
-  LOCALES: ["vi", "en"] as const,
-  DEFAULT_LOCALE: "vi" as const,
+  LOCALES: ['vi', 'en'] as const,
+  DEFAULT_LOCALE: 'vi' as const,
 } as const;
 
 export const ORDER_STATUS_LABEL: Record<string, string> = {
-  pending: "Chờ xác nhận",
-  confirmed: "Đã xác nhận",
-  processing: "Đang xử lý",
-  shipped: "Đang giao",
-  delivered: "Đã giao",
-  cancelled: "Đã huỷ",
+  pending: 'Chờ xác nhận',
+  confirmed: 'Đã xác nhận',
+  processing: 'Đang xử lý',
+  shipped: 'Đang giao',
+  delivered: 'Đã giao',
+  cancelled: 'Đã huỷ',
 };
 
 export const PAYMENT_METHOD_LABEL: Record<string, string> = {
-  cod: "Thanh toán khi nhận hàng",
-  vnpay: "VNPay",
-  momo: "Momo",
-  zalopay: "ZaloPay",
+  cod: 'Thanh toán khi nhận hàng',
+  vnpay: 'VNPay',
+  momo: 'Momo',
+  zalopay: 'ZaloPay',
 };
 ```
 
@@ -1299,9 +1320,9 @@ export const PAYMENT_METHOD_LABEL: Record<string, string> = {
 ### 7.23 `src/shared/hooks/use-debounce.ts`
 
 ```typescript
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-export function useDebounce<T>(value: T, delay = 500): T {
+export const useDebounce = <T>(value: T, delay = 500): T => {
   const [debounced, setDebounced] = useState<T>(value);
 
   useEffect(() => {
@@ -1310,7 +1331,7 @@ export function useDebounce<T>(value: T, delay = 500): T {
   }, [value, delay]);
 
   return debounced;
-}
+};
 ```
 
 ---
@@ -1318,11 +1339,11 @@ export function useDebounce<T>(value: T, delay = 500): T {
 ### 7.24 `src/shared/hooks/use-local-storage.ts`
 
 ```typescript
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export function useLocalStorage<T>(key: string, initialValue: T) {
   const [value, setValue] = useState<T>(() => {
-    if (typeof window === "undefined") return initialValue;
+    if (typeof window === 'undefined') return initialValue;
     try {
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
@@ -1349,9 +1370,9 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
 
 ```typescript
 export function registerServiceWorker() {
-  if (typeof window !== "undefined" && "serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/sw.js").catch(console.error);
+  if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(console.error);
     });
   }
 }
@@ -1362,7 +1383,7 @@ export function registerServiceWorker() {
 ### 7.26 `src/__tests__/setup.ts`
 
 ```typescript
-import "@testing-library/jest-dom";
+import '@testing-library/jest-dom';
 ```
 
 ---
@@ -1370,8 +1391,8 @@ import "@testing-library/jest-dom";
 ### 7.27 `src/__tests__/helpers/render.tsx`
 
 ```tsx
-import { render, type RenderOptions } from "@testing-library/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { render, type RenderOptions } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function createTestQueryClient() {
   return new QueryClient({
@@ -1382,24 +1403,19 @@ function createTestQueryClient() {
   });
 }
 
-function Providers({ children }: { children: React.ReactNode }) {
+const Providers = ({ children }: { children: React.ReactNode }) => {
   const queryClient = createTestQueryClient();
-  return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  );
-}
+  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
+};
 
-export function renderWithProviders(
-  ui: React.ReactElement,
-  options?: RenderOptions,
-) {
+export function renderWithProviders(ui: React.ReactElement, options?: RenderOptions) {
   return render(ui, { wrapper: Providers, ...options });
 }
 ```
 
 ---
 
-### 7.28 `src/messages/vi.json`
+### 7.28 `src/lang/vi/common.json`
 
 ```json
 {
@@ -1469,26 +1485,26 @@ export function renderWithProviders(
 ### 7.29 `playwright.config.ts`
 
 ```typescript
-import { defineConfig, devices } from "@playwright/test";
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: "./e2e",
+  testDir: './e2e',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: "html",
+  reporter: 'html',
   use: {
-    baseURL: "http://localhost:3000",
-    trace: "on-first-retry",
+    baseURL: 'http://localhost:3000',
+    trace: 'on-first-retry',
   },
   projects: [
-    { name: "chromium", use: { ...devices["Desktop Chrome"] } },
-    { name: "Mobile Safari", use: { ...devices["iPhone 13"] } },
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    { name: 'Mobile Safari', use: { ...devices['iPhone 13'] } },
   ],
   webServer: {
-    command: "npm run dev",
-    url: "http://localhost:3000",
+    command: 'npm run dev',
+    url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
   },
 });

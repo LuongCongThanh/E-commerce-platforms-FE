@@ -13,7 +13,8 @@ ecommerce-next/
 ├── src/
 │   ├── app/            # Next.js App Router — routing only
 │   ├── shared/         # Code dùng chung toàn app (no business logic)
-│   └── messages/       # i18n JSON (vi.json, en.json)
+│   ├── i18n/           # next-intl request config, routing helpers
+│   └── lang/           # i18n JSON theo locale/domain
 ├── public/
 │   ├── images/
 │   ├── icons/          # PWA icons
@@ -53,8 +54,8 @@ ecommerce-next/
 │   │   │   │
 │   │   │   ├── (auth)/                         # ── Xác thực ───────────────────────────
 │   │   │   │   ├── _components/
-│   │   │   │   │   ├── login-form.tsx          # 'use client' — RHF + Zod
-│   │   │   │   │   └── register-form.tsx
+│   │   │   │   │   ├── LoginForm.tsx           # 'use client' — RHF + Zod
+│   │   │   │   │   └── RegisterForm.tsx
 │   │   │   │   ├── _lib/
 │   │   │   │   │   ├── actions.ts              # proxy → Django /api/auth/
 │   │   │   │   │   ├── hooks.ts                # useLogin(), useRegister()
@@ -66,16 +67,16 @@ ecommerce-next/
 │   │   │   │
 │   │   │   ├── (shop)/                         # ── Khu vực mua sắm (Customer) ─────────
 │   │   │   │   ├── _components/
-│   │   │   │   │   ├── product-card.tsx
-│   │   │   │   │   ├── product-grid.tsx        # Server Component
-│   │   │   │   │   ├── product-filters.tsx     # 'use client' — URL search params
-│   │   │   │   │   ├── product-gallery.tsx     # 'use client' — ảnh zoom
-│   │   │   │   │   ├── add-to-cart-button.tsx  # 'use client' — useTransition
-│   │   │   │   │   ├── cart-drawer.tsx         # 'use client' — Vaul drawer
-│   │   │   │   │   ├── cart-item.tsx
-│   │   │   │   │   ├── checkout-form.tsx       # 'use client' — RHF + Zod
-│   │   │   │   │   ├── payment-method-selector.tsx  # COD / VNPay / Momo / ZaloPay
-│   │   │   │   │   └── order-status-badge.tsx
+│   │   │   │   │   ├── ProductCard.tsx
+│   │   │   │   │   ├── ProductGrid.tsx         # Server Component
+│   │   │   │   │   ├── ProductFilters.tsx      # 'use client' — URL search params
+│   │   │   │   │   ├── ProductGallery.tsx      # 'use client' — ảnh zoom
+│   │   │   │   │   ├── AddToCartButton.tsx     # 'use client' — useTransition
+│   │   │   │   │   ├── CartDrawer.tsx          # 'use client' — Vaul drawer
+│   │   │   │   │   ├── CartItem.tsx
+│   │   │   │   │   ├── CheckoutForm.tsx        # 'use client' — RHF + Zod
+│   │   │   │   │   ├── PaymentMethodSelector.tsx  # COD / VNPay / Momo / ZaloPay
+│   │   │   │   │   └── OrderStatusBadge.tsx
 │   │   │   │   ├── _lib/
 │   │   │   │   │   ├── actions.ts              # createOrder(), cancelOrder(), applyVoucher()
 │   │   │   │   │   ├── hooks.ts                # useProducts(), useProduct(), useCreateOrder()
@@ -116,10 +117,10 @@ ecommerce-next/
 │   │   │   └── (admin)/                        # ── Quản trị (Admin) ────────────────────
 │   │   │       ├── layout.tsx                  # Admin layout: sidebar + header + auth check
 │   │   │       ├── _components/
-│   │   │       │   ├── admin-sidebar.tsx       # 'use client' — navigation links
-│   │   │       │   ├── admin-header.tsx        # Breadcrumb + user menu
-│   │   │       │   ├── admin-stats-card.tsx    # Card thống kê dashboard
-│   │   │       │   └── data-table.tsx          # Reusable TanStack Table wrapper
+│   │   │       │   ├── AdminSidebar.tsx        # 'use client' — navigation links
+│   │   │       │   ├── AdminHeader.tsx         # Breadcrumb + user menu
+│   │   │       │   ├── AdminStatsCard.tsx      # Card thống kê dashboard
+│   │   │       │   └── DataTable.tsx           # Reusable TanStack Table wrapper
 │   │   │       ├── _lib/
 │   │   │       │   ├── hooks.ts                # useAdminProducts(), useAdminOrders()
 │   │   │       │   ├── actions.ts              # createProduct(), updateOrderStatus()
@@ -177,21 +178,21 @@ ecommerce-next/
 │   ├── shared/
 │   │   ├── components/
 │   │   │   ├── ui/                             # Shadcn/UI — CLI generated (không sửa tay)
-│   │   │   │   ├── button.tsx
-│   │   │   │   ├── input.tsx
-│   │   │   │   ├── dialog.tsx
-│   │   │   │   ├── table.tsx
-│   │   │   │   ├── badge.tsx
-│   │   │   │   ├── skeleton.tsx
+│   │   │   │   ├── Button.tsx
+│   │   │   │   ├── Input.tsx
+│   │   │   │   ├── Dialog.tsx
+│   │   │   │   ├── Table.tsx
+│   │   │   │   ├── Badge.tsx
+│   │   │   │   ├── Skeleton.tsx
 │   │   │   │   └── ...
 │   │   │   ├── layouts/
-│   │   │   │   ├── header.tsx                  # Nav + cart icon + user menu + locale switcher
-│   │   │   │   └── footer.tsx
+│   │   │   │   ├── Header.tsx                  # Nav + cart icon + user menu + locale switcher
+│   │   │   │   └── Footer.tsx
 │   │   │   ├── skeletons/
-│   │   │   │   ├── product-card-skeleton.tsx
-│   │   │   │   ├── product-grid-skeleton.tsx
-│   │   │   │   └── order-list-skeleton.tsx
-│   │   │   └── rich-text-editor.tsx            # Tiptap wrapper — dynamic import only
+│   │   │   │   ├── ProductCardSkeleton.tsx
+│   │   │   │   ├── ProductGridSkeleton.tsx
+│   │   │   │   └── OrderListSkeleton.tsx
+│   │   │   └── RichTextEditor.tsx              # Tiptap wrapper — dynamic import only
 │   │   │
 │   │   ├── hooks/
 │   │   │   ├── use-debounce.ts
@@ -244,9 +245,15 @@ ecommerce-next/
 │   │       ├── render.tsx                      # Custom render với Providers
 │   │       └── mock-handlers.ts                # MSW handlers cho test
 │   │
-│   └── messages/
-│       ├── vi.json
-│       └── en.json
+│   ├── i18n/
+│   │   └── request.ts
+│   └── lang/
+│       ├── en/
+│       │   ├── common.json
+│       │   └── home.json
+│       └── vi/
+│           ├── common.json
+│           └── home.json
 │
 ├── public/
 │   ├── images/                                 # logo, placeholder, og-default
@@ -269,14 +276,14 @@ ecommerce-next/
 
 ## 3. Nguyên tắc cốt lõi
 
-| Nguyên tắc | Quy tắc |
-| --- | --- |
-| **Routing** | `app/` chỉ chứa `page.tsx`, `layout.tsx`, `loading.tsx`, `error.tsx` |
-| **Business logic** | Nằm trong `_lib/hooks.ts` — không viết trong page |
-| **API call** | Qua `_lib/actions.ts` → `shared/lib/http/methods.ts` — không fetch trực tiếp trong component |
-| **Shared** | Component/hook dùng ≥ 2 module → chuyển vào `shared/` |
-| **Import** | `shared` không import từ feature; feature không import từ feature khác |
-| **Types** | Dùng `z.infer<typeof Schema>` — không viết interface riêng song song |
+| Nguyên tắc         | Quy tắc                                                                                      |
+| ------------------ | -------------------------------------------------------------------------------------------- |
+| **Routing**        | `app/` chỉ chứa `page.tsx`, `layout.tsx`, `loading.tsx`, `error.tsx`                         |
+| **Business logic** | Nằm trong `_lib/hooks.ts` — không viết trong page                                            |
+| **API call**       | Qua `_lib/actions.ts` → `shared/lib/http/methods.ts` — không fetch trực tiếp trong component |
+| **Shared**         | Component/hook dùng ≥ 2 module → chuyển vào `shared/`                                        |
+| **Import**         | `shared` không import từ feature; feature không import từ feature khác                       |
+| **Types**          | Ưu tiên `z.infer<typeof schema>` và arrow function cho code TypeScript mới                   |
 
 ---
 
@@ -291,14 +298,14 @@ Client render → (admin)/layout.tsx
               └── Kiểm tra role is_staff từ authStore → redirect nếu không đủ quyền
 ```
 
-**Phân vai:**
+### 4.1 Phân vai
 
-| | `middleware.ts` | `AuthGuard` client |
-| --- | --- | --- |
-| Runtime | Server (Edge) | Client (browser) |
-| Dùng cho | `/admin/**` | `/orders`, `/checkout`, `/profile` |
-| Token từ | Cookie `access_token` | Zustand `authStore` |
-| UX | Hard redirect, không render | Render 1 frame → redirect |
+|          | `middleware.ts`             | `AuthGuard` client                 |
+| -------- | --------------------------- | ---------------------------------- |
+| Runtime  | Server (Edge)               | Client (browser)                   |
+| Dùng cho | `/admin/**`                 | `/orders`, `/checkout`, `/profile` |
+| Token từ | Cookie `access_token`       | Zustand `authStore`                |
+| UX       | Hard redirect, không render | Render 1 frame → redirect          |
 
 ---
 
@@ -345,16 +352,16 @@ React Components
 
 ### 7.1 Loading — 3 lớp
 
-| Lớp | Cơ chế | Dùng khi |
-| --- | --- | --- |
-| Route transition | `next-nprogress-bar` | Chuyển trang |
-| Page render | `loading.tsx` | Server Component đang stream |
-| Data fetch | `isPending` + Skeleton | Client đang gọi API |
+| Lớp              | Cơ chế                 | Dùng khi                     |
+| ---------------- | ---------------------- | ---------------------------- |
+| Route transition | `next-nprogress-bar`   | Chuyển trang                 |
+| Page render      | `loading.tsx`          | Server Component đang stream |
+| Data fetch       | `isPending` + Skeleton | Client đang gọi API          |
 
-**Lớp 1 — Route transition (`app/providers.tsx`):**
+#### Lớp 1 — Route transition (`app/providers.tsx`)
 
 ```tsx
-import { AppProgressBar } from 'next-nprogress-bar'
+import { AppProgressBar } from 'next-nprogress-bar';
 
 export function Providers({ children }) {
   return (
@@ -362,86 +369,98 @@ export function Providers({ children }) {
       {children}
       <AppProgressBar color="#e85d04" height="2px" options={{ showSpinner: false }} />
     </QueryClientProvider>
-  )
+  );
 }
 ```
 
-**Lớp 2 — Page loading (`loading.tsx`):**
+#### Lớp 2 — Page loading (`loading.tsx`)
 
 ```tsx
 // app/[locale]/loading.tsx — root
 export default function RootLoading() {
-  return <div className="flex h-screen items-center justify-center"><Spinner /></div>
+  return (
+    <div className="flex h-screen items-center justify-center">
+      <Spinner />
+    </div>
+  );
 }
 
 // app/[locale]/(shop)/products/loading.tsx — route specific
 export default function ProductsLoading() {
-  return <ProductGridSkeleton />
+  return <ProductGridSkeleton />;
 }
 ```
 
-**Lớp 3 — Data loading (TanStack Query):**
+#### Lớp 3 — Data loading (TanStack Query)
 
 ```tsx
 export function ProductGrid({ filters }) {
-  const { data, isPending } = useProducts(filters)
-  if (isPending) return <ProductGridSkeleton />
-  return <div className="grid ...">{data.map(p => <ProductCard key={p.id} product={p} />)}</div>
+  const { data, isPending } = useProducts(filters);
+  if (isPending) return <ProductGridSkeleton />;
+  return (
+    <div className="grid ...">
+      {data.map(p => (
+        <ProductCard key={p.id} product={p} />
+      ))}
+    </div>
+  );
 }
 ```
 
 ### 7.2 Error Handling — 4 tầng
 
-| Tầng | Cơ chế | Bắt lỗi |
-| --- | --- | --- |
-| Route | `error.tsx` | Server Component throw |
-| HTTP | `error.interceptor.ts` → `ApiError` | Axios response 4xx/5xx |
-| Query/Mutation | TanStack Query `onError` global | Mọi mutation thất bại |
-| Component | `<ErrorBoundary>` | Widget lỗi không sập cả trang |
+| Tầng           | Cơ chế                              | Bắt lỗi                       |
+| -------------- | ----------------------------------- | ----------------------------- |
+| Route          | `error.tsx`                         | Server Component throw        |
+| HTTP           | `error.interceptor.ts` → `ApiError` | Axios response 4xx/5xx        |
+| Query/Mutation | TanStack Query `onError` global     | Mọi mutation thất bại         |
+| Component      | `<ErrorBoundary>`                   | Widget lỗi không sập cả trang |
 
-**Tầng 1 — `app/[locale]/error.tsx`:**
+#### Tầng 1 — `app/[locale]/error.tsx`
 
 ```tsx
-'use client'
-import * as Sentry from '@sentry/nextjs'
+'use client';
+import * as Sentry from '@sentry/nextjs';
 
 export default function GlobalError({ error, reset }: { error: Error; reset: () => void }) {
-  useEffect(() => { Sentry.captureException(error) }, [error])
+  useEffect(() => {
+    Sentry.captureException(error);
+  }, [error]);
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-4">
       <h2 className="text-xl font-semibold">Đã có lỗi xảy ra</h2>
       <p className="text-muted-foreground">{error.message}</p>
-      <button onClick={reset} className="rounded bg-primary-500 px-4 py-2 text-white">
+      <button onClick={reset} className="bg-primary-500 rounded px-4 py-2 text-white">
         Thử lại
       </button>
     </div>
-  )
+  );
 }
 ```
 
-**Tầng 2 — `shared/lib/http/interceptors/error.interceptor.ts`:**
+#### Tầng 2 — `shared/lib/http/interceptors/error.interceptor.ts`
 
 ```tsx
 httpClient.interceptors.response.use(
-  (res) => res,
+  res => res,
   (error: AxiosError<DjangoErrorResponse>) => {
-    const status = error.response?.status ?? 0
-    const data = error.response?.data
-    const message = typeof data?.detail === 'string' ? data.detail : 'Đã có lỗi xảy ra'
+    const status = error.response?.status ?? 0;
+    const data = error.response?.data;
+    const message = typeof data?.detail === 'string' ? data.detail : 'Đã có lỗi xảy ra';
 
-    if (status === 401) useAuthStore.getState().clearAuth()
+    if (status === 401) useAuthStore.getState().clearAuth();
 
-    return Promise.reject(new ApiError(status, message, data))
+    return Promise.reject(new ApiError(status, message, data));
   }
-)
+);
 ```
 
-**Tầng 3 — `shared/lib/query-client.ts`:**
+#### Tầng 3 — `shared/lib/query-client.ts`
 
 ```tsx
-import { toast } from 'sonner'
-import { ApiError } from '@/shared/lib/errors/api-error'
+import { toast } from 'sonner';
+import { ApiError } from '@/shared/lib/errors/api-error';
 
 export function makeQueryClient() {
   return new QueryClient({
@@ -450,25 +469,25 @@ export function makeQueryClient() {
         staleTime: 60_000,
         refetchOnWindowFocus: false,
         retry: (failureCount, error) => {
-          if (error instanceof ApiError && error.status < 500) return false
-          return failureCount < 2
+          if (error instanceof ApiError && error.status < 500) return false;
+          return failureCount < 2;
         },
       },
       mutations: {
-        onError: (error) => {
-          const message = error instanceof ApiError ? error.message : 'Đã có lỗi xảy ra'
-          toast.error(message)
+        onError: error => {
+          const message = error instanceof ApiError ? error.message : 'Đã có lỗi xảy ra';
+          toast.error(message);
         },
       },
     },
-  })
+  });
 }
 ```
 
-**Tầng 4 — Component `<ErrorBoundary>`:**
+#### Tầng 4 — Component `<ErrorBoundary>`
 
 ```tsx
-import { ErrorBoundary } from 'react-error-boundary'
+import { ErrorBoundary } from 'react-error-boundary';
 
 export default function ProductDetailPage() {
   return (
@@ -478,7 +497,7 @@ export default function ProductDetailPage() {
         <ReviewSection />
       </ErrorBoundary>
     </div>
-  )
+  );
 }
 ```
 
@@ -555,7 +574,7 @@ analyze/
 
 ## 9. PWA Configuration
 
-**`public/manifest.json`:**
+### 9.1 `public/manifest.json`
 
 ```json
 {
@@ -575,13 +594,13 @@ analyze/
 }
 ```
 
-**`next.config.ts`:**
+### 9.2 `next.config.ts`
 
 ```typescript
-import withBundleAnalyzer from '@next/bundle-analyzer'
-import withPWA from '@ducanh2912/next-pwa'
+import withBundleAnalyzer from '@next/bundle-analyzer';
+import withPWA from '@ducanh2912/next-pwa';
 
-const withAnalyzer = withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })
+const withAnalyzer = withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' });
 
 const nextConfig = withPWA({
   dest: 'public',
@@ -592,22 +611,23 @@ const nextConfig = withPWA({
   reloadOnOnline: true,
 })({
   // next config options
-})
+});
 
-export default withAnalyzer(nextConfig)
+export default withAnalyzer(nextConfig);
 ```
 
-**`app/layout.tsx`:**
+### 9.3 `app/layout.tsx`
 
 ```tsx
 export const metadata: Metadata = {
   manifest: '/manifest.json',
   themeColor: '#e85d04',
   appleWebApp: { capable: true, statusBarStyle: 'default', title: 'E-Commerce Shop' },
-}
+};
 ```
 
-**Lưu ý:**
+### 9.4 Lưu ý
+
 - PWA tự tạo `public/sw.js` khi build → đã thêm vào `.gitignore`
 - Disable trong development để tránh cache cản trở hot reload
 - Chỉ hoạt động trên HTTPS (localhost được miễn trừ)

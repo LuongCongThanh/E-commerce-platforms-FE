@@ -47,7 +47,7 @@ All paths below are relative to `src/app/[locale]/(admin)/` unless specified.
 
 ## Task 1: Types, query keys, and actions
 
-**Files:**
+#### Files
 
 - Create: `src/app/[locale]/(admin)/_lib/types.ts`
 - Create: `src/app/[locale]/(admin)/_lib/query-keys.ts`
@@ -57,58 +57,58 @@ All paths below are relative to `src/app/[locale]/(admin)/` unless specified.
 
 ```ts
 // src/app/[locale]/(admin)/_lib/types.ts
-import { z } from 'zod'
-import type { OrderStatus, PaymentMethod, PaymentStatus } from '@/shared/types/order'
+import { z } from 'zod';
+import type { OrderStatus, PaymentMethod, PaymentStatus } from '@/shared/types/order';
 
 export interface AdminProduct {
-  id: number
-  name: string
-  slug: string
-  price: number
-  salePrice: number | null
-  stock: number
-  isActive: boolean
-  category: { id: number; name: string }
-  images: string[]
-  createdAt: string
+  id: number;
+  name: string;
+  slug: string;
+  price: number;
+  salePrice: number | null;
+  stock: number;
+  isActive: boolean;
+  category: { id: number; name: string };
+  images: string[];
+  createdAt: string;
 }
 
 export interface AdminOrder {
-  id: number
-  code: string
-  status: OrderStatus
-  payment_method: PaymentMethod
-  payment_status: PaymentStatus
-  total: number
-  created_at: string
-  customer_name: string
-  customer_email: string
+  id: number;
+  code: string;
+  status: OrderStatus;
+  payment_method: PaymentMethod;
+  payment_status: PaymentStatus;
+  total: number;
+  created_at: string;
+  customer_name: string;
+  customer_email: string;
 }
 
 export interface DashboardStats {
-  totalRevenue: number
-  totalOrders: number
-  totalProducts: number
-  totalUsers: number
-  revenueChange: number // % change from last period
-  ordersChange: number
+  totalRevenue: number;
+  totalOrders: number;
+  totalProducts: number;
+  totalUsers: number;
+  revenueChange: number; // % change from last period
+  ordersChange: number;
 }
 
 export interface AdminUser {
-  id: number
-  email: string
-  firstName: string
-  lastName: string
-  isActive: boolean
-  is_staff: boolean
-  createdAt: string
+  id: number;
+  email: string;
+  firstName: string;
+  lastName: string;
+  isActive: boolean;
+  is_staff: boolean;
+  createdAt: string;
 }
 
 export interface AdminCategory {
-  id: number
-  name: string
-  slug: string
-  productCount: number
+  id: number;
+  name: string;
+  slug: string;
+  productCount: number;
 }
 
 export const adminProductSchema = z.object({
@@ -119,9 +119,9 @@ export const adminProductSchema = z.object({
   categoryId: z.coerce.number().min(1, 'Chọn danh mục'),
   isActive: z.boolean().default(true),
   description: z.string().min(1, 'Mô tả là bắt buộc'),
-})
+});
 
-export type AdminProductInput = z.infer<typeof adminProductSchema>
+export type AdminProductInput = z.infer<typeof adminProductSchema>;
 ```
 
 - [ ] **Step 2: Create `query-keys.ts`**
@@ -132,79 +132,66 @@ export const adminProductKeys = {
   all: ['admin', 'products'] as const,
   list: (page: number, search?: string) => [...adminProductKeys.all, 'list', page, search] as const,
   detail: (id: string) => [...adminProductKeys.all, 'detail', id] as const,
-}
+};
 
 export const adminOrderKeys = {
   all: ['admin', 'orders'] as const,
   list: (page: number, status?: string) => [...adminOrderKeys.all, 'list', page, status] as const,
   detail: (id: string) => [...adminOrderKeys.all, 'detail', id] as const,
-}
+};
 
 export const adminUserKeys = {
   all: ['admin', 'users'] as const,
   list: () => [...adminUserKeys.all, 'list'] as const,
   detail: (id: string) => [...adminUserKeys.all, 'detail', id] as const,
-}
+};
 
 export const adminCategoryKeys = {
   all: ['admin', 'categories'] as const,
   list: () => [...adminCategoryKeys.all, 'list'] as const,
-}
+};
 
-export const dashboardStatsKey = ['admin', 'dashboard'] as const
+export const dashboardStatsKey = ['admin', 'dashboard'] as const;
 ```
 
 - [ ] **Step 3: Create `actions.ts`**
 
 ```ts
 // src/app/[locale]/(admin)/_lib/actions.ts
-import { http } from '@/shared/lib/http/methods'
-import { API } from '@/shared/constants/api-endpoints'
-import type {
-  AdminProduct,
-  AdminOrder,
-  DashboardStats,
-  AdminUser,
-  AdminCategory,
-  AdminProductInput,
-} from './types'
+import { http } from '@/shared/lib/http/methods';
+import { API } from '@/shared/constants/api-endpoints';
+import type { AdminProduct, AdminOrder, DashboardStats, AdminUser, AdminCategory, AdminProductInput } from './types';
 
 export const adminProductActions = {
-  list: (page: number, search?: string) =>
-    http.get<{ results: AdminProduct[]; count: number }>(API.ADMIN.PRODUCTS, { page, search }),
+  list: (page: number, search?: string) => http.get<{ results: AdminProduct[]; count: number }>(API.ADMIN.PRODUCTS, { page, search }),
   detail: (id: string) => http.get<AdminProduct>(API.ADMIN.PRODUCT_DETAIL(id)),
   create: (data: AdminProductInput) => http.post<AdminProduct>(API.ADMIN.PRODUCTS, data),
-  update: (id: string, data: Partial<AdminProductInput>) =>
-    http.patch<AdminProduct>(API.ADMIN.PRODUCT_DETAIL(id), data),
+  update: (id: string, data: Partial<AdminProductInput>) => http.patch<AdminProduct>(API.ADMIN.PRODUCT_DETAIL(id), data),
   delete: (id: string) => http.delete<void>(API.ADMIN.PRODUCT_DETAIL(id)),
-}
+};
 
 export const adminOrderActions = {
-  list: (page: number, status?: string) =>
-    http.get<{ results: AdminOrder[]; count: number }>(API.ADMIN.ORDERS, { page, status }),
+  list: (page: number, status?: string) => http.get<{ results: AdminOrder[]; count: number }>(API.ADMIN.ORDERS, { page, status }),
   detail: (id: string) => http.get<AdminOrder>(API.ADMIN.ORDER_DETAIL(id)),
-  updateStatus: (id: string, status: string) =>
-    http.patch<AdminOrder>(API.ADMIN.ORDER_STATUS(id), { status }),
-}
+  updateStatus: (id: string, status: string) => http.patch<AdminOrder>(API.ADMIN.ORDER_STATUS(id), { status }),
+};
 
 export const adminUserActions = {
   list: () => http.get<AdminUser[]>(API.ADMIN.USERS),
   detail: (id: string) => http.get<AdminUser>(API.ADMIN.USER_DETAIL(id)),
-  toggle: (id: string, isActive: boolean) =>
-    http.patch<AdminUser>(API.ADMIN.USER_DETAIL(id), { isActive }),
-}
+  toggle: (id: string, isActive: boolean) => http.patch<AdminUser>(API.ADMIN.USER_DETAIL(id), { isActive }),
+};
 
 export const adminCategoryActions = {
   list: () => http.get<AdminCategory[]>('/api/admin/categories/'),
   create: (name: string) => http.post<AdminCategory>('/api/admin/categories/', { name }),
-  update: (id: number, name: string) =>
-    http.patch<AdminCategory>(`/api/admin/categories/${id}/`, { name }),
+  update: (id: number, name: string) => http.patch<AdminCategory>(`/api/admin/categories/${id}/`, { name }),
   delete: (id: number) => http.delete<void>(`/api/admin/categories/${id}/`),
-}
+};
 
 export const adminDashboardActions = {
   stats: () => http.get<DashboardStats>(API.ADMIN.DASHBOARD_STATS),
-}
+};
 ```
 
 - [ ] **Step 4: Commit**
@@ -218,7 +205,7 @@ git commit -m "feat(admin): add admin types, query keys, and actions"
 
 ## Task 2: Admin hooks
 
-**Files:**
+#### Files
 
 - Create: `src/app/[locale]/(admin)/_lib/hooks.ts`
 
@@ -226,150 +213,138 @@ git commit -m "feat(admin): add admin types, query keys, and actions"
 
 ```ts
 // src/app/[locale]/(admin)/_lib/hooks.ts
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { toast } from 'sonner'
-import {
-  adminProductActions,
-  adminOrderActions,
-  adminUserActions,
-  adminCategoryActions,
-  adminDashboardActions,
-} from './actions'
-import {
-  adminProductKeys,
-  adminOrderKeys,
-  adminUserKeys,
-  adminCategoryKeys,
-  dashboardStatsKey,
-} from './query-keys'
-import type { AdminProductInput } from './types'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { toast } from 'sonner';
+import { adminProductActions, adminOrderActions, adminUserActions, adminCategoryActions, adminDashboardActions } from './actions';
+import { adminProductKeys, adminOrderKeys, adminUserKeys, adminCategoryKeys, dashboardStatsKey } from './query-keys';
+import type { AdminProductInput } from './types';
 
 export function useDashboardStats() {
   return useQuery({
     queryKey: dashboardStatsKey,
     queryFn: adminDashboardActions.stats,
     staleTime: 5 * 60_000,
-  })
+  });
 }
 
 export function useAdminProducts(page: number, search?: string) {
   return useQuery({
     queryKey: adminProductKeys.list(page, search),
     queryFn: () => adminProductActions.list(page, search),
-  })
+  });
 }
 
 export function useAdminProduct(id: string) {
   return useQuery({
     queryKey: adminProductKeys.detail(id),
     queryFn: () => adminProductActions.detail(id),
-  })
+  });
 }
 
 export function useCreateProduct() {
-  const qc = useQueryClient()
+  const qc = useQueryClient();
   return useMutation({
     mutationFn: adminProductActions.create,
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: adminProductKeys.all })
-      toast.success('Tạo sản phẩm thành công')
+      qc.invalidateQueries({ queryKey: adminProductKeys.all });
+      toast.success('Tạo sản phẩm thành công');
     },
-  })
+  });
 }
 
 export function useUpdateProduct(id: string) {
-  const qc = useQueryClient()
+  const qc = useQueryClient();
   return useMutation({
     mutationFn: (data: Partial<AdminProductInput>) => adminProductActions.update(id, data),
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: adminProductKeys.all })
-      toast.success('Cập nhật sản phẩm thành công')
+      qc.invalidateQueries({ queryKey: adminProductKeys.all });
+      toast.success('Cập nhật sản phẩm thành công');
     },
-  })
+  });
 }
 
 export function useDeleteProduct() {
-  const qc = useQueryClient()
+  const qc = useQueryClient();
   return useMutation({
     mutationFn: adminProductActions.delete,
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: adminProductKeys.all })
-      toast.success('Đã xoá sản phẩm')
+      qc.invalidateQueries({ queryKey: adminProductKeys.all });
+      toast.success('Đã xoá sản phẩm');
     },
-  })
+  });
 }
 
 export function useAdminOrders(page: number, status?: string) {
   return useQuery({
     queryKey: adminOrderKeys.list(page, status),
     queryFn: () => adminOrderActions.list(page, status),
-  })
+  });
 }
 
 export function useAdminOrder(id: string) {
   return useQuery({
     queryKey: adminOrderKeys.detail(id),
     queryFn: () => adminOrderActions.detail(id),
-  })
+  });
 }
 
 export function useUpdateOrderStatus(id: string) {
-  const qc = useQueryClient()
+  const qc = useQueryClient();
   return useMutation({
     mutationFn: (status: string) => adminOrderActions.updateStatus(id, status),
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: adminOrderKeys.all })
-      toast.success('Cập nhật trạng thái đơn hàng thành công')
+      qc.invalidateQueries({ queryKey: adminOrderKeys.all });
+      toast.success('Cập nhật trạng thái đơn hàng thành công');
     },
-  })
+  });
 }
 
 export function useAdminUsers() {
-  return useQuery({ queryKey: adminUserKeys.list(), queryFn: adminUserActions.list })
+  return useQuery({ queryKey: adminUserKeys.list(), queryFn: adminUserActions.list });
 }
 
 export function useAdminUser(id: string) {
   return useQuery({
     queryKey: adminUserKeys.detail(id),
     queryFn: () => adminUserActions.detail(id),
-  })
+  });
 }
 
 export function useToggleUserActive(id: string) {
-  const qc = useQueryClient()
+  const qc = useQueryClient();
   return useMutation({
     mutationFn: (isActive: boolean) => adminUserActions.toggle(id, isActive),
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: adminUserKeys.all })
-      toast.success('Cập nhật trạng thái người dùng')
+      qc.invalidateQueries({ queryKey: adminUserKeys.all });
+      toast.success('Cập nhật trạng thái người dùng');
     },
-  })
+  });
 }
 
 export function useAdminCategories() {
-  return useQuery({ queryKey: adminCategoryKeys.list(), queryFn: adminCategoryActions.list })
+  return useQuery({ queryKey: adminCategoryKeys.list(), queryFn: adminCategoryActions.list });
 }
 
 export function useCreateCategory() {
-  const qc = useQueryClient()
+  const qc = useQueryClient();
   return useMutation({
     mutationFn: adminCategoryActions.create,
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: adminCategoryKeys.all })
-      toast.success('Tạo danh mục thành công')
+      qc.invalidateQueries({ queryKey: adminCategoryKeys.all });
+      toast.success('Tạo danh mục thành công');
     },
-  })
+  });
 }
 
 export function useDeleteCategory() {
-  const qc = useQueryClient()
+  const qc = useQueryClient();
   return useMutation({
     mutationFn: adminCategoryActions.delete,
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: adminCategoryKeys.all })
-      toast.success('Đã xoá danh mục')
+      qc.invalidateQueries({ queryKey: adminCategoryKeys.all });
+      toast.success('Đã xoá danh mục');
     },
-  })
+  });
 }
 ```
 
@@ -390,7 +365,7 @@ git commit -m "feat(admin): add admin hooks"
 
 ## Task 3: Admin layout and sidebar
 
-**Files:**
+#### Files
 
 - Create: `src/app/[locale]/(admin)/layout.tsx`
 - Create: `src/app/[locale]/(admin)/_components/admin-sidebar.tsx`
@@ -400,17 +375,11 @@ git commit -m "feat(admin): add admin hooks"
 
 ```tsx
 // src/app/[locale]/(admin)/layout.tsx
-import { AdminSidebar } from './_components/admin-sidebar'
-import { AdminHeader } from './_components/admin-header'
+import { AdminSidebar } from './_components/admin-sidebar';
+import { AdminHeader } from './_components/admin-header';
 
-export default async function AdminLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode
-  params: Promise<{ locale: string }>
-}) {
-  const { locale } = await params
+export default async function AdminLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
 
   return (
     <div className="bg-muted/30 flex min-h-screen">
@@ -420,7 +389,7 @@ export default async function AdminLayout({
         <main className="flex-1 p-6">{children}</main>
       </div>
     </div>
-  )
+  );
 }
 ```
 
@@ -428,12 +397,12 @@ export default async function AdminLayout({
 
 ```tsx
 // src/app/[locale]/(admin)/_components/admin-sidebar.tsx
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Package, ShoppingBag, Users, Tag, Store } from 'lucide-react'
-import { cn } from '@/shared/lib/utils'
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { LayoutDashboard, Package, ShoppingBag, Users, Tag, Store } from 'lucide-react';
+import { cn } from '@/shared/lib/utils';
 
 const NAV_ITEMS = [
   { href: '/dashboard', label: 'Tổng quan', icon: LayoutDashboard },
@@ -441,10 +410,10 @@ const NAV_ITEMS = [
   { href: '/orders', label: 'Đơn hàng', icon: ShoppingBag },
   { href: '/users', label: 'Người dùng', icon: Users },
   { href: '/categories', label: 'Danh mục', icon: Tag },
-]
+];
 
 export function AdminSidebar({ locale }: { locale: string }) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <aside className="bg-background flex w-60 flex-col border-r">
@@ -454,27 +423,25 @@ export function AdminSidebar({ locale }: { locale: string }) {
       </div>
       <nav className="flex-1 space-y-1 p-3">
         {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
-          const fullHref = `/${locale}/admin${href}`
-          const isActive = pathname.startsWith(fullHref)
+          const fullHref = `/${locale}/admin${href}`;
+          const isActive = pathname.startsWith(fullHref);
           return (
             <Link
               key={href}
               href={fullHref}
               className={cn(
                 'flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition',
-                isActive
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                isActive ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-foreground'
               )}
             >
               <Icon className="h-4 w-4" />
               {label}
             </Link>
-          )
+          );
         })}
       </nav>
     </aside>
-  )
+  );
 }
 ```
 
@@ -482,29 +449,29 @@ export function AdminSidebar({ locale }: { locale: string }) {
 
 ```tsx
 // src/app/[locale]/(admin)/_components/admin-header.tsx
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { LogOut, User } from 'lucide-react'
-import { Button } from '@/shared/components/ui/button'
-import { useAuthStore } from '@/shared/stores/auth-store'
-import { useLogout } from '@/app/[locale]/(auth)/_lib/hooks'
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { LogOut, User } from 'lucide-react';
+import { Button } from '@/shared/components/ui/button';
+import { useAuthStore } from '@/shared/stores/auth-store';
+import { useLogout } from '@/app/[locale]/(auth)/_lib/hooks';
 
 function getBreadcrumb(pathname: string): string {
-  if (pathname.includes('/dashboard')) return 'Tổng quan'
-  if (pathname.includes('/products/new')) return 'Thêm sản phẩm'
-  if (pathname.includes('/products')) return 'Sản phẩm'
-  if (pathname.includes('/orders')) return 'Đơn hàng'
-  if (pathname.includes('/users')) return 'Người dùng'
-  if (pathname.includes('/categories')) return 'Danh mục'
-  return 'Admin'
+  if (pathname.includes('/dashboard')) return 'Tổng quan';
+  if (pathname.includes('/products/new')) return 'Thêm sản phẩm';
+  if (pathname.includes('/products')) return 'Sản phẩm';
+  if (pathname.includes('/orders')) return 'Đơn hàng';
+  if (pathname.includes('/users')) return 'Người dùng';
+  if (pathname.includes('/categories')) return 'Danh mục';
+  return 'Admin';
 }
 
 export function AdminHeader({ locale }: { locale: string }) {
-  const pathname = usePathname()
-  const user = useAuthStore((s) => s.user)
-  const logout = useLogout(locale)
+  const pathname = usePathname();
+  const user = useAuthStore(s => s.user);
+  const logout = useLogout(locale);
 
   return (
     <header className="bg-background flex h-14 items-center justify-between border-b px-6">
@@ -514,18 +481,13 @@ export function AdminHeader({ locale }: { locale: string }) {
           <User className="text-muted-foreground h-4 w-4" />
           <span>{user?.name ?? 'Admin'}</span>
         </div>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => logout.mutate()}
-          disabled={logout.isPending}
-        >
+        <Button variant="ghost" size="sm" onClick={() => logout.mutate()} disabled={logout.isPending}>
           <LogOut className="mr-1 h-4 w-4" />
           Đăng xuất
         </Button>
       </div>
     </header>
-  )
+  );
 }
 ```
 
@@ -540,7 +502,7 @@ git commit -m "feat(admin): add admin layout, sidebar, and header"
 
 ## Task 4: Stats card and data table
 
-**Files:**
+#### Files
 
 - Create: `src/app/[locale]/(admin)/_components/admin-stats-card.tsx`
 - Create: `src/app/[locale]/(admin)/_components/data-table.tsx`
@@ -549,9 +511,9 @@ git commit -m "feat(admin): add admin layout, sidebar, and header"
 
 ```tsx
 // src/app/[locale]/(admin)/_components/admin-stats-card.tsx
-import { type LucideIcon } from 'lucide-react'
-import { cn } from '@/shared/lib/utils'
-import { Card } from '@/shared/components/ui/card'
+import { type LucideIcon } from 'lucide-react';
+import { cn } from '@/shared/lib/utils';
+import { Card } from '@/shared/components/ui/card';
 
 export function AdminStatsCard({
   label,
@@ -560,14 +522,14 @@ export function AdminStatsCard({
   change,
   formatValue,
 }: {
-  label: string
-  value: number
-  icon: LucideIcon
-  change?: number
-  formatValue?: (v: number) => string
+  label: string;
+  value: number;
+  icon: LucideIcon;
+  change?: number;
+  formatValue?: (v: number) => string;
 }) {
-  const displayValue = formatValue ? formatValue(value) : value.toLocaleString('vi-VN')
-  const isPositive = (change ?? 0) >= 0
+  const displayValue = formatValue ? formatValue(value) : value.toLocaleString('vi-VN');
+  const isPositive = (change ?? 0) >= 0;
 
   return (
     <Card className="flex items-start gap-4 p-5">
@@ -585,7 +547,7 @@ export function AdminStatsCard({
         )}
       </div>
     </Card>
-  )
+  );
 }
 ```
 
@@ -593,57 +555,40 @@ export function AdminStatsCard({
 
 ```tsx
 // src/app/[locale]/(admin)/_components/data-table.tsx
-'use client'
+'use client';
 
-import { type ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/shared/components/ui/table'
-import { Button } from '@/shared/components/ui/button'
+import { type ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/shared/components/ui/table';
+import { Button } from '@/shared/components/ui/button';
 
 interface DataTableProps<TData> {
-  columns: ColumnDef<TData>[]
-  data: TData[]
-  pageIndex: number
-  pageCount: number
-  onPrev: () => void
-  onNext: () => void
-  isLoading?: boolean
+  columns: ColumnDef<TData>[];
+  data: TData[];
+  pageIndex: number;
+  pageCount: number;
+  onPrev: () => void;
+  onNext: () => void;
+  isLoading?: boolean;
 }
 
-export function DataTable<TData>({
-  columns,
-  data,
-  pageIndex,
-  pageCount,
-  onPrev,
-  onNext,
-  isLoading,
-}: DataTableProps<TData>) {
+export function DataTable<TData>({ columns, data, pageIndex, pageCount, onPrev, onNext, isLoading }: DataTableProps<TData>) {
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     manualPagination: true,
     pageCount,
-  })
+  });
 
   return (
     <div className="space-y-3">
       <div className="rounded-xl border">
         <Table>
           <TableHeader>
-            {table.getHeaderGroups().map((hg) => (
+            {table.getHeaderGroups().map(hg => (
               <TableRow key={hg.id}>
-                {hg.headers.map((h) => (
-                  <TableHead key={h.id}>
-                    {h.isPlaceholder ? null : flexRender(h.column.columnDef.header, h.getContext())}
-                  </TableHead>
+                {hg.headers.map(h => (
+                  <TableHead key={h.id}>{h.isPlaceholder ? null : flexRender(h.column.columnDef.header, h.getContext())}</TableHead>
                 ))}
               </TableRow>
             ))}
@@ -651,29 +596,21 @@ export function DataTable<TData>({
           <TableBody>
             {isLoading ? (
               <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="text-muted-foreground py-10 text-center"
-                >
+                <TableCell colSpan={columns.length} className="text-muted-foreground py-10 text-center">
                   Đang tải...
                 </TableCell>
               </TableRow>
             ) : table.getRowModel().rows.length === 0 ? (
               <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="text-muted-foreground py-10 text-center"
-                >
+                <TableCell colSpan={columns.length} className="text-muted-foreground py-10 text-center">
                   Không có dữ liệu
                 </TableCell>
               </TableRow>
             ) : (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map(row => (
                 <TableRow key={row.id}>
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </TableCell>
+                  {row.getVisibleCells().map(cell => (
+                    <TableCell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</TableCell>
                   ))}
                 </TableRow>
               ))
@@ -690,18 +627,13 @@ export function DataTable<TData>({
           <Button variant="outline" size="sm" onClick={onPrev} disabled={pageIndex === 0}>
             Trước
           </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={onNext}
-            disabled={pageIndex >= pageCount - 1}
-          >
+          <Button variant="outline" size="sm" onClick={onNext} disabled={pageIndex >= pageCount - 1}>
             Sau
           </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }
 ```
 
@@ -716,7 +648,7 @@ git commit -m "feat(admin): add stats-card and data-table components"
 
 ## Task 5: Dashboard page
 
-**Files:**
+#### Files
 
 - Create: `src/app/[locale]/(admin)/dashboard/page.tsx`
 - Create: `src/app/[locale]/(admin)/dashboard/loading.tsx`
@@ -725,18 +657,18 @@ git commit -m "feat(admin): add stats-card and data-table components"
 
 ```tsx
 // src/app/[locale]/(admin)/dashboard/page.tsx
-'use client'
+'use client';
 
-import { TrendingUp, ShoppingBag, Package, Users } from 'lucide-react'
-import { AdminStatsCard } from '../_components/admin-stats-card'
-import { useDashboardStats } from '../_lib/hooks'
+import { TrendingUp, ShoppingBag, Package, Users } from 'lucide-react';
+import { AdminStatsCard } from '../_components/admin-stats-card';
+import { useDashboardStats } from '../_lib/hooks';
 
 function formatVND(n: number) {
-  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n)
+  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n);
 }
 
 export default function DashboardPage() {
-  const { data: stats, isPending } = useDashboardStats()
+  const { data: stats, isPending } = useDashboardStats();
 
   if (isPending) {
     return (
@@ -745,33 +677,22 @@ export default function DashboardPage() {
           <div key={i} className="bg-muted h-28 animate-pulse rounded-xl" />
         ))}
       </div>
-    )
+    );
   }
 
-  if (!stats) return null
+  if (!stats) return null;
 
   return (
     <div className="space-y-6">
       <h1 className="text-xl font-bold">Tổng quan</h1>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <AdminStatsCard
-          label="Doanh thu"
-          value={stats.totalRevenue}
-          icon={TrendingUp}
-          change={stats.revenueChange}
-          formatValue={formatVND}
-        />
-        <AdminStatsCard
-          label="Đơn hàng"
-          value={stats.totalOrders}
-          icon={ShoppingBag}
-          change={stats.ordersChange}
-        />
+        <AdminStatsCard label="Doanh thu" value={stats.totalRevenue} icon={TrendingUp} change={stats.revenueChange} formatValue={formatVND} />
+        <AdminStatsCard label="Đơn hàng" value={stats.totalOrders} icon={ShoppingBag} change={stats.ordersChange} />
         <AdminStatsCard label="Sản phẩm" value={stats.totalProducts} icon={Package} />
         <AdminStatsCard label="Người dùng" value={stats.totalUsers} icon={Users} />
       </div>
     </div>
-  )
+  );
 }
 ```
 
@@ -789,7 +710,7 @@ export default function DashboardLoading() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 ```
 
@@ -804,7 +725,7 @@ git commit -m "feat(admin): add dashboard page"
 
 ## Task 6: Product management
 
-**Files:**
+#### Files
 
 - Create: `src/app/[locale]/(admin)/products/_lib/columns.tsx`
 - Create: `src/app/[locale]/(admin)/products/page.tsx`
@@ -817,30 +738,25 @@ git commit -m "feat(admin): add dashboard page"
 
 ```tsx
 // src/app/[locale]/(admin)/products/_lib/columns.tsx
-'use client'
+'use client';
 
-import type { ColumnDef } from '@tanstack/react-table'
-import Link from 'next/link'
-import { Badge } from '@/shared/components/ui/badge'
-import { Button } from '@/shared/components/ui/button'
-import { Pencil, Trash2 } from 'lucide-react'
-import type { AdminProduct } from '../../_lib/types'
+import type { ColumnDef } from '@tanstack/react-table';
+import Link from 'next/link';
+import { Badge } from '@/shared/components/ui/badge';
+import { Button } from '@/shared/components/ui/button';
+import { Pencil, Trash2 } from 'lucide-react';
+import type { AdminProduct } from '../../_lib/types';
 
 function formatVND(n: number) {
-  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n)
+  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n);
 }
 
-export function buildProductColumns(
-  locale: string,
-  onDelete: (id: string) => void
-): ColumnDef<AdminProduct>[] {
+export function buildProductColumns(locale: string, onDelete: (id: string) => void): ColumnDef<AdminProduct>[] {
   return [
     {
       accessorKey: 'name',
       header: 'Tên sản phẩm',
-      cell: ({ row }) => (
-        <span className="max-w-[200px] truncate font-medium">{row.original.name}</span>
-      ),
+      cell: ({ row }) => <span className="max-w-[200px] truncate font-medium">{row.original.name}</span>,
     },
     {
       accessorKey: 'category',
@@ -855,20 +771,12 @@ export function buildProductColumns(
     {
       accessorKey: 'stock',
       header: 'Kho',
-      cell: ({ row }) => (
-        <span className={row.original.stock === 0 ? 'text-destructive' : ''}>
-          {row.original.stock}
-        </span>
-      ),
+      cell: ({ row }) => <span className={row.original.stock === 0 ? 'text-destructive' : ''}>{row.original.stock}</span>,
     },
     {
       accessorKey: 'isActive',
       header: 'Trạng thái',
-      cell: ({ row }) => (
-        <Badge variant={row.original.isActive ? 'default' : 'secondary'}>
-          {row.original.isActive ? 'Hiển thị' : 'Ẩn'}
-        </Badge>
-      ),
+      cell: ({ row }) => <Badge variant={row.original.isActive ? 'default' : 'secondary'}>{row.original.isActive ? 'Hiển thị' : 'Ẩn'}</Badge>,
     },
     {
       id: 'actions',
@@ -879,18 +787,13 @@ export function buildProductColumns(
               <Pencil className="h-4 w-4" />
             </Link>
           </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-destructive hover:text-destructive"
-            onClick={() => onDelete(String(row.original.id))}
-          >
+          <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive" onClick={() => onDelete(String(row.original.id))}>
             <Trash2 className="h-4 w-4" />
           </Button>
         </div>
       ),
     },
-  ]
+  ];
 }
 ```
 
@@ -898,29 +801,29 @@ export function buildProductColumns(
 
 ```tsx
 // src/app/[locale]/(admin)/products/page.tsx
-'use client'
+'use client';
 
-import { use, useState } from 'react'
-import Link from 'next/link'
-import { Plus } from 'lucide-react'
-import { Button } from '@/shared/components/ui/button'
-import { Input } from '@/shared/components/ui/input'
-import { DataTable } from '../_components/data-table'
-import { useAdminProducts, useDeleteProduct } from '../_lib/hooks'
-import { buildProductColumns } from './_lib/columns'
+import { use, useState } from 'react';
+import Link from 'next/link';
+import { Plus } from 'lucide-react';
+import { Button } from '@/shared/components/ui/button';
+import { Input } from '@/shared/components/ui/input';
+import { DataTable } from '../_components/data-table';
+import { useAdminProducts, useDeleteProduct } from '../_lib/hooks';
+import { buildProductColumns } from './_lib/columns';
 
 export default function AdminProductsPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = use(params)
-  const [page, setPage] = useState(0)
-  const [search, setSearch] = useState('')
+  const { locale } = use(params);
+  const [page, setPage] = useState(0);
+  const [search, setSearch] = useState('');
 
-  const { data, isPending } = useAdminProducts(page + 1, search || undefined)
-  const deleteProduct = useDeleteProduct()
-  const pageCount = data ? Math.ceil(data.count / 20) : 1
+  const { data, isPending } = useAdminProducts(page + 1, search || undefined);
+  const deleteProduct = useDeleteProduct();
+  const pageCount = data ? Math.ceil(data.count / 20) : 1;
 
-  const columns = buildProductColumns(locale, (id) => {
-    if (confirm('Xác nhận xoá sản phẩm này?')) deleteProduct.mutate(id)
-  })
+  const columns = buildProductColumns(locale, id => {
+    if (confirm('Xác nhận xoá sản phẩm này?')) deleteProduct.mutate(id);
+  });
 
   return (
     <div className="space-y-4">
@@ -936,9 +839,9 @@ export default function AdminProductsPage({ params }: { params: Promise<{ locale
       <Input
         placeholder="Tìm kiếm sản phẩm..."
         value={search}
-        onChange={(e) => {
-          setSearch(e.target.value)
-          setPage(0)
+        onChange={e => {
+          setSearch(e.target.value);
+          setPage(0);
         }}
         className="max-w-sm"
       />
@@ -948,12 +851,12 @@ export default function AdminProductsPage({ params }: { params: Promise<{ locale
         data={data?.results ?? []}
         pageIndex={page}
         pageCount={pageCount}
-        onPrev={() => setPage((p) => p - 1)}
-        onNext={() => setPage((p) => p + 1)}
+        onPrev={() => setPage(p => p - 1)}
+        onNext={() => setPage(p => p + 1)}
         isLoading={isPending}
       />
     </div>
-  )
+  );
 }
 ```
 
@@ -961,7 +864,7 @@ export default function AdminProductsPage({ params }: { params: Promise<{ locale
 
 ```tsx
 // src/app/[locale]/(admin)/products/loading.tsx
-import { Skeleton } from '@/shared/components/ui/skeleton'
+import { Skeleton } from '@/shared/components/ui/skeleton';
 
 export default function AdminProductsLoading() {
   return (
@@ -973,7 +876,7 @@ export default function AdminProductsLoading() {
       <Skeleton className="h-10 w-72" />
       <Skeleton className="h-64 w-full rounded-xl" />
     </div>
-  )
+  );
 }
 ```
 
@@ -981,25 +884,25 @@ export default function AdminProductsLoading() {
 
 ```tsx
 // src/app/[locale]/(admin)/products/new/page.tsx
-'use client'
+'use client';
 
-import { use } from 'react'
-import { useRouter } from 'next/navigation'
-import { useForm, Controller } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Button } from '@/shared/components/ui/button'
-import { Input } from '@/shared/components/ui/input'
-import { Label } from '@/shared/components/ui/label'
-import { Textarea } from '@/shared/components/ui/textarea'
-import { Checkbox } from '@/shared/components/ui/checkbox'
-import { useCreateProduct } from '../../_lib/hooks'
-import { adminProductSchema } from '../../_lib/types'
-import type { AdminProductInput } from '../../_lib/types'
+import { use } from 'react';
+import { useRouter } from 'next/navigation';
+import { useForm, Controller } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@/shared/components/ui/button';
+import { Input } from '@/shared/components/ui/input';
+import { Label } from '@/shared/components/ui/label';
+import { Textarea } from '@/shared/components/ui/textarea';
+import { Checkbox } from '@/shared/components/ui/checkbox';
+import { useCreateProduct } from '../../_lib/hooks';
+import { adminProductSchema } from '../../_lib/types';
+import type { AdminProductInput } from '../../_lib/types';
 
 export default function NewProductPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = use(params)
-  const router = useRouter()
-  const create = useCreateProduct()
+  const { locale } = use(params);
+  const router = useRouter();
+  const create = useCreateProduct();
 
   const {
     register,
@@ -1009,18 +912,13 @@ export default function NewProductPage({ params }: { params: Promise<{ locale: s
   } = useForm<AdminProductInput>({
     resolver: zodResolver(adminProductSchema),
     defaultValues: { isActive: true },
-  })
+  });
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <h1 className="text-xl font-bold">Thêm sản phẩm mới</h1>
 
-      <form
-        onSubmit={handleSubmit((d) =>
-          create.mutate(d, { onSuccess: () => router.push(`/${locale}/admin/products`) })
-        )}
-        className="space-y-4"
-      >
+      <form onSubmit={handleSubmit(d => create.mutate(d, { onSuccess: () => router.push(`/${locale}/admin/products`) }))} className="space-y-4">
         <div>
           <Label htmlFor="name">Tên sản phẩm</Label>
           <Input id="name" {...register('name')} />
@@ -1031,9 +929,7 @@ export default function NewProductPage({ params }: { params: Promise<{ locale: s
           <div>
             <Label htmlFor="price">Giá gốc (VNĐ)</Label>
             <Input id="price" type="number" {...register('price')} />
-            {errors.price && (
-              <p className="text-destructive mt-1 text-sm">{errors.price.message}</p>
-            )}
+            {errors.price && <p className="text-destructive mt-1 text-sm">{errors.price.message}</p>}
           </div>
           <div>
             <Label htmlFor="salePrice">Giá khuyến mãi (tuỳ chọn)</Label>
@@ -1045,34 +941,26 @@ export default function NewProductPage({ params }: { params: Promise<{ locale: s
           <div>
             <Label htmlFor="stock">Tồn kho</Label>
             <Input id="stock" type="number" {...register('stock')} />
-            {errors.stock && (
-              <p className="text-destructive mt-1 text-sm">{errors.stock.message}</p>
-            )}
+            {errors.stock && <p className="text-destructive mt-1 text-sm">{errors.stock.message}</p>}
           </div>
           <div>
             <Label htmlFor="categoryId">ID Danh mục</Label>
             <Input id="categoryId" type="number" {...register('categoryId')} />
-            {errors.categoryId && (
-              <p className="text-destructive mt-1 text-sm">{errors.categoryId.message}</p>
-            )}
+            {errors.categoryId && <p className="text-destructive mt-1 text-sm">{errors.categoryId.message}</p>}
           </div>
         </div>
 
         <div>
           <Label htmlFor="description">Mô tả</Label>
           <Textarea id="description" rows={4} {...register('description')} />
-          {errors.description && (
-            <p className="text-destructive mt-1 text-sm">{errors.description.message}</p>
-          )}
+          {errors.description && <p className="text-destructive mt-1 text-sm">{errors.description.message}</p>}
         </div>
 
         <div className="flex items-center gap-2">
           <Controller
             control={control}
             name="isActive"
-            render={({ field }) => (
-              <Checkbox id="isActive" checked={field.value} onCheckedChange={field.onChange} />
-            )}
+            render={({ field }) => <Checkbox id="isActive" checked={field.value} onCheckedChange={field.onChange} />}
           />
           <Label htmlFor="isActive">Hiển thị sản phẩm</Label>
         </div>
@@ -1087,7 +975,7 @@ export default function NewProductPage({ params }: { params: Promise<{ locale: s
         </div>
       </form>
     </div>
-  )
+  );
 }
 ```
 
@@ -1095,30 +983,26 @@ export default function NewProductPage({ params }: { params: Promise<{ locale: s
 
 ```tsx
 // src/app/[locale]/(admin)/products/[id]/page.tsx
-'use client'
+'use client';
 
-import { use, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import { useForm, Controller } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Button } from '@/shared/components/ui/button'
-import { Input } from '@/shared/components/ui/input'
-import { Label } from '@/shared/components/ui/label'
-import { Textarea } from '@/shared/components/ui/textarea'
-import { Checkbox } from '@/shared/components/ui/checkbox'
-import { useAdminProduct, useUpdateProduct } from '../../_lib/hooks'
-import { adminProductSchema } from '../../_lib/types'
-import type { AdminProductInput } from '../../_lib/types'
+import { use, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useForm, Controller } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@/shared/components/ui/button';
+import { Input } from '@/shared/components/ui/input';
+import { Label } from '@/shared/components/ui/label';
+import { Textarea } from '@/shared/components/ui/textarea';
+import { Checkbox } from '@/shared/components/ui/checkbox';
+import { useAdminProduct, useUpdateProduct } from '../../_lib/hooks';
+import { adminProductSchema } from '../../_lib/types';
+import type { AdminProductInput } from '../../_lib/types';
 
-export default function EditProductPage({
-  params,
-}: {
-  params: Promise<{ locale: string; id: string }>
-}) {
-  const { locale, id } = use(params)
-  const router = useRouter()
-  const { data: product } = useAdminProduct(id)
-  const update = useUpdateProduct(id)
+export default function EditProductPage({ params }: { params: Promise<{ locale: string; id: string }> }) {
+  const { locale, id } = use(params);
+  const router = useRouter();
+  const { data: product } = useAdminProduct(id);
+  const update = useUpdateProduct(id);
 
   const {
     register,
@@ -1128,7 +1012,7 @@ export default function EditProductPage({
     formState: { errors },
   } = useForm<AdminProductInput>({
     resolver: zodResolver(adminProductSchema),
-  })
+  });
 
   useEffect(() => {
     if (product) {
@@ -1140,22 +1024,17 @@ export default function EditProductPage({
         categoryId: product.category.id,
         isActive: product.isActive,
         description: '',
-      })
+      });
     }
-  }, [product, reset])
+  }, [product, reset]);
 
-  if (!product) return <div className="text-muted-foreground py-10 text-center">Đang tải...</div>
+  if (!product) return <div className="text-muted-foreground py-10 text-center">Đang tải...</div>;
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <h1 className="text-xl font-bold">Chỉnh sửa: {product.name}</h1>
 
-      <form
-        onSubmit={handleSubmit((d) =>
-          update.mutate(d, { onSuccess: () => router.push(`/${locale}/admin/products`) })
-        )}
-        className="space-y-4"
-      >
+      <form onSubmit={handleSubmit(d => update.mutate(d, { onSuccess: () => router.push(`/${locale}/admin/products`) }))} className="space-y-4">
         <div>
           <Label htmlFor="name">Tên sản phẩm</Label>
           <Input id="name" {...register('name')} />
@@ -1187,9 +1066,7 @@ export default function EditProductPage({
           <Controller
             control={control}
             name="isActive"
-            render={({ field }) => (
-              <Checkbox id="isActive" checked={field.value} onCheckedChange={field.onChange} />
-            )}
+            render={({ field }) => <Checkbox id="isActive" checked={field.value} onCheckedChange={field.onChange} />}
           />
           <Label htmlFor="isActive">Hiển thị sản phẩm</Label>
         </div>
@@ -1204,13 +1081,13 @@ export default function EditProductPage({
         </div>
       </form>
     </div>
-  )
+  );
 }
 ```
 
 ```tsx
 // src/app/[locale]/(admin)/products/[id]/loading.tsx
-import { Skeleton } from '@/shared/components/ui/skeleton'
+import { Skeleton } from '@/shared/components/ui/skeleton';
 
 export default function EditProductLoading() {
   return (
@@ -1220,7 +1097,7 @@ export default function EditProductLoading() {
         <Skeleton key={i} className="h-10 w-full" />
       ))}
     </div>
-  )
+  );
 }
 ```
 
@@ -1241,7 +1118,7 @@ git commit -m "feat(admin): add product management pages (list, create, edit)"
 
 ## Task 7: Order management
 
-**Files:**
+#### Files
 
 - Create: `src/app/[locale]/(admin)/orders/_lib/columns.tsx`
 - Create: `src/app/[locale]/(admin)/orders/page.tsx`
@@ -1253,17 +1130,17 @@ git commit -m "feat(admin): add product management pages (list, create, edit)"
 
 ```tsx
 // src/app/[locale]/(admin)/orders/_lib/columns.tsx
-'use client'
+'use client';
 
-import type { ColumnDef } from '@tanstack/react-table'
-import Link from 'next/link'
-import { Button } from '@/shared/components/ui/button'
-import { Eye } from 'lucide-react'
-import { OrderStatusBadge } from '@/app/[locale]/(shop)/_components/order-status-badge'
-import type { AdminOrder } from '../../_lib/types'
+import type { ColumnDef } from '@tanstack/react-table';
+import Link from 'next/link';
+import { Button } from '@/shared/components/ui/button';
+import { Eye } from 'lucide-react';
+import { OrderStatusBadge } from '@/app/[locale]/(shop)/_components/order-status-badge';
+import type { AdminOrder } from '../../_lib/types';
 
 function formatVND(n: number) {
-  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n)
+  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n);
 }
 
 export function buildOrderColumns(locale: string): ColumnDef<AdminOrder>[] {
@@ -1302,7 +1179,7 @@ export function buildOrderColumns(locale: string): ColumnDef<AdminOrder>[] {
         </Button>
       ),
     },
-  ]
+  ];
 }
 ```
 
@@ -1310,28 +1187,22 @@ export function buildOrderColumns(locale: string): ColumnDef<AdminOrder>[] {
 
 ```tsx
 // src/app/[locale]/(admin)/orders/page.tsx
-'use client'
+'use client';
 
-import { use, useState } from 'react'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/shared/components/ui/select'
-import { DataTable } from '../_components/data-table'
-import { useAdminOrders } from '../_lib/hooks'
-import { buildOrderColumns } from './_lib/columns'
+import { use, useState } from 'react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/components/ui/select';
+import { DataTable } from '../_components/data-table';
+import { useAdminOrders } from '../_lib/hooks';
+import { buildOrderColumns } from './_lib/columns';
 
 export default function AdminOrdersPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = use(params)
-  const [page, setPage] = useState(0)
-  const [status, setStatus] = useState<string | undefined>(undefined)
+  const { locale } = use(params);
+  const [page, setPage] = useState(0);
+  const [status, setStatus] = useState<string | undefined>(undefined);
 
-  const { data, isPending } = useAdminOrders(page + 1, status)
-  const pageCount = data ? Math.ceil(data.count / 20) : 1
-  const columns = buildOrderColumns(locale)
+  const { data, isPending } = useAdminOrders(page + 1, status);
+  const pageCount = data ? Math.ceil(data.count / 20) : 1;
+  const columns = buildOrderColumns(locale);
 
   return (
     <div className="space-y-4">
@@ -1339,9 +1210,9 @@ export default function AdminOrdersPage({ params }: { params: Promise<{ locale: 
 
       <Select
         value={status ?? 'all'}
-        onValueChange={(v) => {
-          setStatus(v === 'all' ? undefined : v)
-          setPage(0)
+        onValueChange={v => {
+          setStatus(v === 'all' ? undefined : v);
+          setPage(0);
         }}
       >
         <SelectTrigger className="w-44">
@@ -1363,12 +1234,12 @@ export default function AdminOrdersPage({ params }: { params: Promise<{ locale: 
         data={data?.results ?? []}
         pageIndex={page}
         pageCount={pageCount}
-        onPrev={() => setPage((p) => p - 1)}
-        onNext={() => setPage((p) => p + 1)}
+        onPrev={() => setPage(p => p - 1)}
+        onNext={() => setPage(p => p + 1)}
         isLoading={isPending}
       />
     </div>
-  )
+  );
 }
 ```
 
@@ -1376,7 +1247,7 @@ export default function AdminOrdersPage({ params }: { params: Promise<{ locale: 
 
 ```tsx
 // src/app/[locale]/(admin)/orders/loading.tsx
-import { Skeleton } from '@/shared/components/ui/skeleton'
+import { Skeleton } from '@/shared/components/ui/skeleton';
 
 export default function AdminOrdersLoading() {
   return (
@@ -1385,7 +1256,7 @@ export default function AdminOrdersLoading() {
       <Skeleton className="h-10 w-44" />
       <Skeleton className="h-64 w-full rounded-xl" />
     </div>
-  )
+  );
 }
 ```
 
@@ -1393,23 +1264,17 @@ export default function AdminOrdersLoading() {
 
 ```tsx
 // src/app/[locale]/(admin)/orders/[id]/page.tsx
-'use client'
+'use client';
 
-import { use } from 'react'
-import { OrderStatusBadge } from '@/app/[locale]/(shop)/_components/order-status-badge'
-import { Button } from '@/shared/components/ui/button'
-import { Separator } from '@/shared/components/ui/separator'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/shared/components/ui/select'
-import { useAdminOrder, useUpdateOrderStatus } from '../../_lib/hooks'
+import { use } from 'react';
+import { OrderStatusBadge } from '@/app/[locale]/(shop)/_components/order-status-badge';
+import { Button } from '@/shared/components/ui/button';
+import { Separator } from '@/shared/components/ui/separator';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/components/ui/select';
+import { useAdminOrder, useUpdateOrderStatus } from '../../_lib/hooks';
 
 function formatVND(n: number) {
-  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n)
+  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n);
 }
 
 const STATUS_OPTIONS = [
@@ -1419,27 +1284,21 @@ const STATUS_OPTIONS = [
   { value: 'shipped', label: 'Đang giao' },
   { value: 'delivered', label: 'Đã giao' },
   { value: 'cancelled', label: 'Đã huỷ' },
-]
+];
 
-export default function AdminOrderDetailPage({
-  params,
-}: {
-  params: Promise<{ locale: string; id: string }>
-}) {
-  const { id } = use(params)
-  const { data: order } = useAdminOrder(id)
-  const updateStatus = useUpdateOrderStatus(id)
+export default function AdminOrderDetailPage({ params }: { params: Promise<{ locale: string; id: string }> }) {
+  const { id } = use(params);
+  const { data: order } = useAdminOrder(id);
+  const updateStatus = useUpdateOrderStatus(id);
 
-  if (!order) return <div className="text-muted-foreground py-10 text-center">Đang tải...</div>
+  if (!order) return <div className="text-muted-foreground py-10 text-center">Đang tải...</div>;
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-xl font-bold">Đơn #{order.code}</h1>
-          <p className="text-muted-foreground text-sm">
-            {new Date(order.created_at).toLocaleString('vi-VN')}
-          </p>
+          <p className="text-muted-foreground text-sm">{new Date(order.created_at).toLocaleString('vi-VN')}</p>
         </div>
         <OrderStatusBadge status={order.status} />
       </div>
@@ -1453,21 +1312,19 @@ export default function AdminOrderDetailPage({
       <div className="rounded-xl border p-4">
         <h2 className="mb-3 font-semibold">Cập nhật trạng thái</h2>
         <div className="flex items-center gap-3">
-          <Select defaultValue={order.status} onValueChange={(v) => updateStatus.mutate(v)}>
+          <Select defaultValue={order.status} onValueChange={v => updateStatus.mutate(v)}>
             <SelectTrigger className="w-48">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              {STATUS_OPTIONS.map((o) => (
+              {STATUS_OPTIONS.map(o => (
                 <SelectItem key={o.value} value={o.value}>
                   {o.label}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
-          {updateStatus.isPending && (
-            <span className="text-muted-foreground text-sm">Đang cập nhật...</span>
-          )}
+          {updateStatus.isPending && <span className="text-muted-foreground text-sm">Đang cập nhật...</span>}
         </div>
       </div>
 
@@ -1486,13 +1343,13 @@ export default function AdminOrderDetailPage({
         </div>
       </div>
     </div>
-  )
+  );
 }
 ```
 
 ```tsx
 // src/app/[locale]/(admin)/orders/[id]/loading.tsx
-import { Skeleton } from '@/shared/components/ui/skeleton'
+import { Skeleton } from '@/shared/components/ui/skeleton';
 
 export default function AdminOrderDetailLoading() {
   return (
@@ -1502,7 +1359,7 @@ export default function AdminOrderDetailLoading() {
       <Skeleton className="h-20 w-full rounded-xl" />
       <Skeleton className="h-32 w-full rounded-xl" />
     </div>
-  )
+  );
 }
 ```
 
@@ -1517,7 +1374,7 @@ git commit -m "feat(admin): add order management pages"
 
 ## Task 8: Users and categories pages
 
-**Files:**
+#### Files
 
 - Create: `src/app/[locale]/(admin)/users/page.tsx`
 - Create: `src/app/[locale]/(admin)/users/[id]/page.tsx`
@@ -1528,22 +1385,22 @@ git commit -m "feat(admin): add order management pages"
 
 ```tsx
 // src/app/[locale]/(admin)/users/page.tsx
-'use client'
+'use client';
 
-import { Badge } from '@/shared/components/ui/badge'
-import { Button } from '@/shared/components/ui/button'
-import { useAdminUsers, useToggleUserActive } from '../_lib/hooks'
+import { Badge } from '@/shared/components/ui/badge';
+import { Button } from '@/shared/components/ui/button';
+import { useAdminUsers, useToggleUserActive } from '../_lib/hooks';
 
 export default function AdminUsersPage() {
-  const { data: users, isPending } = useAdminUsers()
+  const { data: users, isPending } = useAdminUsers();
 
-  if (isPending) return <div className="text-muted-foreground py-10 text-center">Đang tải...</div>
+  if (isPending) return <div className="text-muted-foreground py-10 text-center">Đang tải...</div>;
 
   return (
     <div className="space-y-4">
       <h1 className="text-xl font-bold">Người dùng ({users?.length ?? 0})</h1>
       <div className="divide-y rounded-xl border">
-        {users?.map((user) => (
+        {users?.map(user => (
           <div key={user.id} className="flex items-center justify-between px-4 py-3">
             <div>
               <p className="font-medium">
@@ -1553,30 +1410,23 @@ export default function AdminUsersPage() {
             </div>
             <div className="flex items-center gap-3">
               {user.is_staff && <Badge>Admin</Badge>}
-              <Badge variant={user.isActive ? 'default' : 'secondary'}>
-                {user.isActive ? 'Hoạt động' : 'Bị khoá'}
-              </Badge>
+              <Badge variant={user.isActive ? 'default' : 'secondary'}>{user.isActive ? 'Hoạt động' : 'Bị khoá'}</Badge>
               <ToggleButton userId={String(user.id)} isActive={user.isActive} />
             </div>
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 function ToggleButton({ userId, isActive }: { userId: string; isActive: boolean }) {
-  const toggle = useToggleUserActive(userId)
+  const toggle = useToggleUserActive(userId);
   return (
-    <Button
-      variant="outline"
-      size="sm"
-      onClick={() => toggle.mutate(!isActive)}
-      disabled={toggle.isPending}
-    >
+    <Button variant="outline" size="sm" onClick={() => toggle.mutate(!isActive)} disabled={toggle.isPending}>
       {isActive ? 'Khoá' : 'Mở khoá'}
     </Button>
-  )
+  );
 }
 ```
 
@@ -1584,21 +1434,17 @@ function ToggleButton({ userId, isActive }: { userId: string; isActive: boolean 
 
 ```tsx
 // src/app/[locale]/(admin)/users/[id]/page.tsx
-'use client'
+'use client';
 
-import { use } from 'react'
-import { Badge } from '@/shared/components/ui/badge'
-import { useAdminUser } from '../../_lib/hooks'
+import { use } from 'react';
+import { Badge } from '@/shared/components/ui/badge';
+import { useAdminUser } from '../../_lib/hooks';
 
-export default function AdminUserDetailPage({
-  params,
-}: {
-  params: Promise<{ locale: string; id: string }>
-}) {
-  const { id } = use(params)
-  const { data: user } = useAdminUser(id)
+export default function AdminUserDetailPage({ params }: { params: Promise<{ locale: string; id: string }> }) {
+  const { id } = use(params);
+  const { data: user } = useAdminUser(id);
 
-  if (!user) return <div className="text-muted-foreground py-10 text-center">Đang tải...</div>
+  if (!user) return <div className="text-muted-foreground py-10 text-center">Đang tải...</div>;
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">
@@ -1607,9 +1453,7 @@ export default function AdminUserDetailPage({
           {user.firstName} {user.lastName}
         </h1>
         {user.is_staff && <Badge>Admin</Badge>}
-        <Badge variant={user.isActive ? 'default' : 'secondary'}>
-          {user.isActive ? 'Hoạt động' : 'Bị khoá'}
-        </Badge>
+        <Badge variant={user.isActive ? 'default' : 'secondary'}>{user.isActive ? 'Hoạt động' : 'Bị khoá'}</Badge>
       </div>
 
       <div className="space-y-2 rounded-xl border p-4 text-sm">
@@ -1623,7 +1467,7 @@ export default function AdminUserDetailPage({
         </div>
       </div>
     </div>
-  )
+  );
 }
 ```
 
@@ -1631,23 +1475,23 @@ export default function AdminUserDetailPage({
 
 ```tsx
 // src/app/[locale]/(admin)/categories/page.tsx
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Trash2, Plus } from 'lucide-react'
-import { Button } from '@/shared/components/ui/button'
-import { Input } from '@/shared/components/ui/input'
-import { useAdminCategories, useCreateCategory, useDeleteCategory } from '../_lib/hooks'
+import { useState } from 'react';
+import { Trash2, Plus } from 'lucide-react';
+import { Button } from '@/shared/components/ui/button';
+import { Input } from '@/shared/components/ui/input';
+import { useAdminCategories, useCreateCategory, useDeleteCategory } from '../_lib/hooks';
 
 export default function AdminCategoriesPage() {
-  const [name, setName] = useState('')
-  const { data: categories } = useAdminCategories()
-  const createCategory = useCreateCategory()
-  const deleteCategory = useDeleteCategory()
+  const [name, setName] = useState('');
+  const { data: categories } = useAdminCategories();
+  const createCategory = useCreateCategory();
+  const deleteCategory = useDeleteCategory();
 
   function handleCreate() {
-    if (!name.trim()) return
-    createCategory.mutate(name.trim(), { onSuccess: () => setName('') })
+    if (!name.trim()) return;
+    createCategory.mutate(name.trim(), { onSuccess: () => setName('') });
   }
 
   return (
@@ -1658,8 +1502,8 @@ export default function AdminCategoriesPage() {
         <Input
           placeholder="Tên danh mục mới..."
           value={name}
-          onChange={(e) => setName(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleCreate()}
+          onChange={e => setName(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && handleCreate()}
         />
         <Button onClick={handleCreate} disabled={createCategory.isPending || !name.trim()}>
           <Plus className="mr-1 h-4 w-4" /> Thêm
@@ -1667,7 +1511,7 @@ export default function AdminCategoriesPage() {
       </div>
 
       <div className="divide-y rounded-xl border">
-        {categories?.map((cat) => (
+        {categories?.map(cat => (
           <div key={cat.id} className="flex items-center justify-between px-4 py-3">
             <div>
               <p className="font-medium">{cat.name}</p>
@@ -1678,7 +1522,7 @@ export default function AdminCategoriesPage() {
               size="icon"
               className="text-destructive hover:text-destructive"
               onClick={() => {
-                if (confirm(`Xoá danh mục "${cat.name}"?`)) deleteCategory.mutate(cat.id)
+                if (confirm(`Xoá danh mục "${cat.name}"?`)) deleteCategory.mutate(cat.id);
               }}
             >
               <Trash2 className="h-4 w-4" />
@@ -1687,13 +1531,13 @@ export default function AdminCategoriesPage() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 ```
 
 ```tsx
 // src/app/[locale]/(admin)/categories/loading.tsx
-import { Skeleton } from '@/shared/components/ui/skeleton'
+import { Skeleton } from '@/shared/components/ui/skeleton';
 
 export default function AdminCategoriesLoading() {
   return (
@@ -1709,7 +1553,7 @@ export default function AdminCategoriesLoading() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 ```
 

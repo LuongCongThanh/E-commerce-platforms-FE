@@ -30,7 +30,7 @@ UI state cục bộ                  → useState / useReducer
 
 ### 1.3 Khi nào dùng Server Component fetch thay vì TanStack Query
 
-**Dùng Server Component fetch khi:**
+#### Dùng Server Component fetch khi
 
 - Trang chỉ cần data 1 lần khi load (không refetch)
 - Data phục vụ SEO (generateMetadata, JSON-LD)
@@ -44,7 +44,7 @@ export default async function ProductDetailPage({ params }) {
 }
 ```
 
-**Dùng TanStack Query khi:**
+#### Dùng TanStack Query khi
 
 - Data cần cache (tránh refetch khi back/tab switch)
 - Cần invalidate sau mutation (thêm vào giỏ → update count)
@@ -68,19 +68,19 @@ export function useProducts(filters: ProductFilters) {
 
 Vấn đề: Nhiều request đồng thời nhận 401 → tất cả cùng gọi `refreshToken()` → race condition.
 
-**`shared/lib/http/interceptors/auth.interceptor.ts`:**
+Path tham chiếu: `shared/lib/http/interceptors/auth.interceptor.ts`
 
 ```typescript
 let refreshPromise: Promise<string> | null = null; // mutex
 
-httpClient.interceptors.request.use((config) => {
+httpClient.interceptors.request.use(config => {
   const token = useAuthStore.getState().accessToken;
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
 
 httpClient.interceptors.response.use(
-  (res) => res,
+  res => res,
   async (error: AxiosError) => {
     const original = error.config as AxiosRequestConfig & { _retry?: boolean };
 
@@ -101,13 +101,13 @@ httpClient.interceptors.response.use(
         return httpClient(original);
       } catch {
         useAuthStore.getState().clearAuth();
-        window.location.href = "/vi/login";
+        window.location.href = '/vi/login';
         return Promise.reject(error);
       }
     }
 
     return Promise.reject(error);
-  },
+  }
 );
 ```
 
@@ -160,20 +160,20 @@ e2e/
 
 ```typescript
 // vitest.config.ts
-import { defineConfig } from "vitest/config";
-import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   test: {
-    environment: "jsdom",
-    setupFiles: ["./src/__tests__/setup.ts"],
+    environment: 'jsdom',
+    setupFiles: ['./src/__tests__/setup.ts'],
     globals: true,
     coverage: {
-      provider: "v8",
-      reporter: ["text", "lcov"],
-      include: ["src/shared/lib/**", "src/shared/utils/**"],
+      provider: 'v8',
+      reporter: ['text', 'lcov'],
+      include: ['src/shared/lib/**', 'src/shared/utils/**'],
       thresholds: { lines: 70, functions: 70, branches: 70 },
     },
   },
@@ -184,8 +184,8 @@ export default defineConfig({
 
 ```tsx
 // src/__tests__/helpers/render.tsx
-import { render, RenderOptions } from "@testing-library/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { render, RenderOptions } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function createTestQueryClient() {
   return new QueryClient({
@@ -193,15 +193,9 @@ function createTestQueryClient() {
   });
 }
 
-export function renderWithProviders(
-  ui: React.ReactElement,
-  options?: RenderOptions,
-) {
+export function renderWithProviders(ui: React.ReactElement, options?: RenderOptions) {
   const queryClient = createTestQueryClient();
-  return render(
-    <QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>,
-    options,
-  );
+  return render(<QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>, options);
 }
 ```
 
@@ -209,12 +203,12 @@ export function renderWithProviders(
 
 ```typescript
 // (shop)/_lib/hooks.test.ts
-import { renderHook, waitFor } from "@testing-library/react";
-import { server } from "@/__tests__/helpers/mock-handlers";
-import { useProducts } from "./hooks";
+import { renderHook, waitFor } from '@testing-library/react';
+import { server } from '@/__tests__/helpers/mock-handlers';
+import { useProducts } from './hooks';
 
-describe("useProducts", () => {
-  it("trả về danh sách sản phẩm", async () => {
+describe('useProducts', () => {
+  it('trả về danh sách sản phẩm', async () => {
     const { result } = renderHook(() => useProducts({}), {
       wrapper: Providers,
     });
@@ -228,21 +222,21 @@ describe("useProducts", () => {
 
 ```typescript
 // e2e/checkout.spec.ts
-test("checkout COD thành công", async ({ page }) => {
-  await page.goto("/vi/login");
-  await page.fill("[name=email]", "test@example.com");
-  await page.fill("[name=password]", "password123");
-  await page.click("button[type=submit]");
+test('checkout COD thành công', async ({ page }) => {
+  await page.goto('/vi/login');
+  await page.fill('[name=email]', 'test@example.com');
+  await page.fill('[name=password]', 'password123');
+  await page.click('button[type=submit]');
 
-  await page.goto("/vi/products");
-  await page.click("text=Thêm vào giỏ");
+  await page.goto('/vi/products');
+  await page.click('text=Thêm vào giỏ');
 
-  await page.goto("/vi/checkout");
-  await page.click("text=Thanh toán khi nhận hàng");
-  await page.click("text=Đặt hàng");
+  await page.goto('/vi/checkout');
+  await page.click('text=Thanh toán khi nhận hàng');
+  await page.click('text=Đặt hàng');
 
   await expect(page).toHaveURL(/\/checkout\/success/);
-  await expect(page.locator("h1")).toContainText("Đặt hàng thành công");
+  await expect(page.locator('h1')).toContainText('Đặt hàng thành công');
 });
 ```
 
@@ -257,19 +251,16 @@ npm install @sentry/nextjs
 npx @sentry/wizard@latest -i nextjs
 ```
 
-**`shared/lib/monitoring/sentry.ts`:**
+Path tham chiếu: `shared/lib/monitoring/sentry.ts`
 
 ```typescript
-import * as Sentry from "@sentry/nextjs";
+import * as Sentry from '@sentry/nextjs';
 
-export function captureError(
-  error: unknown,
-  context?: Record<string, unknown>,
-) {
-  if (process.env.NODE_ENV === "production") {
+export function captureError(error: unknown, context?: Record<string, unknown>) {
+  if (process.env.NODE_ENV === 'production') {
     Sentry.captureException(error, { extra: context });
   } else {
-    console.error("[Dev Error]", error, context);
+    console.error('[Dev Error]', error, context);
   }
 }
 ```
@@ -278,7 +269,7 @@ export function captureError(
 
 ```tsx
 // app/[locale]/error.tsx
-import { captureError } from "@/shared/lib/monitoring/sentry";
+import { captureError } from '@/shared/lib/monitoring/sentry';
 
 export default function GlobalError({ error, reset }) {
   useEffect(() => {
@@ -288,15 +279,15 @@ export default function GlobalError({ error, reset }) {
 }
 
 // shared/lib/http/interceptors/error.interceptor.ts
-import { captureError } from "@/shared/lib/monitoring/sentry";
+import { captureError } from '@/shared/lib/monitoring/sentry';
 
 httpClient.interceptors.response.use(
-  (res) => res,
+  res => res,
   (error: AxiosError) => {
     const status = error.response?.status ?? 0;
     if (status >= 500) captureError(error, { url: error.config?.url });
     // ...
-  },
+  }
 );
 ```
 
@@ -316,67 +307,105 @@ httpClient.interceptors.response.use(
 
 ### 5.1 Files & Folders
 
-| Loại           | Convention                  | Ví dụ                                   |
-| -------------- | --------------------------- | --------------------------------------- |
-| Folder         | `kebab-case`                | `product-detail/`, `order-list/`        |
-| Component file | `kebab-case`                | `product-card.tsx`, `cart-drawer.tsx`   |
-| Hook file      | `use-` prefix               | `use-cart.ts`, `use-products.ts`        |
-| Store file     | `-store` suffix             | `cart-store.ts`, `auth-store.ts`        |
-| Schema file    | `-schema` hoặc `schemas.ts` | `checkout-schema.ts`                    |
-| Util file      | `.utils` suffix             | `date.utils.ts`, `currency.utils.ts`    |
-| Constant file  | `.config` hoặc `.enum`      | `app.config.ts`, `order-status.enum.ts` |
+| Loại           | Convention                                                          | Ví dụ                                                           |
+| -------------- | ------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Folder         | luôn dùng `kebab-case`                                              | `product-detail/`, `order-list/`                                |
+| Component file | luôn dùng `PascalCase`                                              | `ProductCard.tsx`, `CartDrawer.tsx`                             |
+| Hook file      | `kebab-case` và phải bắt đầu bằng `use-`                            | `use-cart.ts`, `use-products.ts`                                |
+| Store file     | `kebab-case` và kết thúc bằng `-store`                              | `cart-store.ts`, `auth-store.ts`                                |
+| Schema file    | `kebab-case` và kết thúc bằng `-schema`, hoặc file gom `schemas.ts` | `checkout-schema.ts`, `schemas.ts`                              |
+| Util file      | `kebab-case` và kết thúc bằng `-utils`, hoặc file gom `utils.ts`    | `date-utils.ts`, `currency-utils.ts`, `utils.ts`                |
+| Constant file  | `kebab-case` và kết thúc bằng `-config`, `-constants`, hoặc `-enum` | `app-config.ts`, `payment-constants.ts`, `order-status.enum.ts` |
+
+### 5.1.1 Naming cheat sheet
+
+- Folder name: `kebab-case`
+- Component file name: `PascalCase`
+- Other file names: `kebab-case`
+- Component name in code: `PascalCase`
+- Type / interface / enum: `PascalCase`
+- Variable / function / hook name: `camelCase`
+
+```tsx
+// File name: ProductCard.tsx
+export const ProductCard = () => null;
+
+// File name: use-products.ts
+export const useProducts = () => {};
+```
+
+```tsx
+// ✅ Đúng
+ProductCard.tsx;
+CartDrawer.tsx;
+OrderStatusBadge.tsx;
+
+export const ProductCard = () => {};
+export const CartDrawer = () => {};
+export const OrderStatusBadge = () => {};
+
+// ❌ Không dùng cho file component
+product - card.tsx;
+productCard.tsx;
+order_status_badge.tsx;
+```
 
 ### 5.2 Components
 
-Dùng **`function` declaration** cho tất cả components và hooks — không dùng arrow function ở cấp top-level.
+Dùng **arrow function** cho component mới và code TypeScript mới ở cấp top-level.
 
-> **Lưu ý:** React 19 không yêu cầu style này — cả hai đều hợp lệ về mặt kỹ thuật. Đây là **quy ước của project** để đảm bảo nhất quán.
+> Đây là **quy ước của project** để giữ code nhất quán, dễ scan, và đồng bộ với pattern callback/hook/store đang dùng trong codebase.
 
-**Lý do chọn `function` declaration:**
+#### Ưu tiên dùng arrow function cho
 
-- **Generic trong `.tsx`** — `<T>` trong arrow function bị parser nhầm thành JSX tag; `function` declaration không có vấn đề này (workaround arrow: dùng `<T,>` trailing comma nhưng dễ bị bỏ sót)
-- **Nhất quán với Next.js App Router** — `page.tsx`, `layout.tsx`, `generateMetadata` đều dùng `function` declaration theo convention cộng đồng
-- **Đồng nhất trong codebase** — chọn một style duy nhất tránh mix-and-match
+- Component trong file component thường
+- Hooks, utility functions, selectors, query key builders, config callbacks
+- Store actions, mapper functions, render helpers
 
 ```tsx
-// ✅ PascalCase — named export, function declaration
-export function ProductCard({ product }: ProductCardProps) {}
-export function CartDrawer() {}
+// ✅ Component file: PascalCase, export bằng arrow function
+export const ProductCard = ({ product }: ProductCardProps) => {};
+export const CartDrawer = () => {};
 
-// ✅ page.tsx / layout.tsx — default export (Next.js convention)
+// ✅ page.tsx / layout.tsx — giữ theo file convention đặc biệt của Next.js
 export default function ProductsPage() {}
 export default function AdminLayout({ children }) {}
 
-// ✅ Generic an toàn với function declaration trong .tsx
-function identity<T>(value: T): T { return value }
+// ✅ TypeScript mới nên ưu tiên arrow function
+export const formatCurrency = (amount: number): string => {};
+export const useProducts = (filters: ProductFilters) => {};
 
-// ❌ Không dùng — arrow function ở top-level component/hook
-export const ProductCard = ({ product }: ProductCardProps) => {}
-export const CartDrawer = () => {}
+// ✅ Generic arrow function trong .ts
+export const identity = <T,>(value: T): T => value;
 
-// ❌ Không dùng — generic trong arrow function .tsx dễ gây lỗi parse
-const identity = <T>(value: T) => value   // <T> bị nhầm thành JSX
-const identity = <T,>(value: T) => value  // workaround nhưng dễ bỏ sót
+// ✅ Generic trong .tsx: dùng function declaration nếu parser/generic syntax gây khó đọc
+export function identity<T>(value: T): T {
+  return value;
+}
 
 // ❌ Sai — tên
-export default function productCard() {}   // không phải PascalCase
-export function Product_Card() {}          // không dùng underscore
+export default function productCard() {} // không phải PascalCase
+export const Product_Card = () => {}; // không dùng underscore
 ```
 
-**Arrow function vẫn dùng trong các trường hợp:**
+#### Ngoại lệ hợp lý
 
 ```tsx
-// ✅ Inline callback trong JSX
+// ✅ Next.js special files
+export default function Page() {}
+export default function Layout({ children }: LayoutProps) {
+  return <>{children}</>;
+}
+
+// ✅ Generic trong file .tsx nếu arrow function làm syntax khó đọc
+export function createColumn<T>(value: T) {
+  return value;
+}
+
+// ✅ Inline callback, array methods, store actions
 <button onClick={() => handleClick(id)}>Xoá</button>;
-
-// ✅ Array methods
-items.map((item) => <Item key={item.id} />);
-
-// ✅ API endpoint constants
-DETAIL: (slug: string) => `/api/products/${slug}/`;
-
-// ✅ Zustand actions trong store definition
-addToCart: (item) => set((s) => ({ items: [...s.items, item] }));
+items.map(item => <Item key={item.id} />);
+addToCart: item => set(s => ({ items: [...s.items, item] }));
 ```
 
 ### 5.3 TypeScript Types
@@ -400,26 +429,26 @@ type TOrderStatus = ...       // không dùng prefix T
 ```ts
 // camelCase — biến và hàm
 const productList: Product[] = [];
-function formatCurrency(amount: number): string {}
-function fetchProducts(filters: ProductFilters) {}
+const formatCurrency = (amount: number): string => {};
+const fetchProducts = (filters: ProductFilters) => {};
 
 // SCREAMING_SNAKE_CASE — constants
 const ITEMS_PER_PAGE = 20;
 const MAX_CART_QUANTITY = 99;
 
 // Action — bắt đầu bằng động từ
-function addToCart(item: CartItem) {}
-function removeCartItem(variantId: string) {}
-function updateOrderStatus(id: string, status: OrderStatus) {}
+const addToCart = (item: CartItem) => {};
+const removeCartItem = (variantId: string) => {};
+const updateOrderStatus = (id: string, status: OrderStatus) => {};
 ```
 
 ### 5.5 Hooks
 
 ```ts
 // prefix "use" + camelCase
-function useProducts(filters: ProductFilters) {}
-function useCreateOrder() {}
-function useDebounce<T>(value: T, delay: number) {}
+const useProducts = (filters: ProductFilters) => {};
+const useCreateOrder = () => {};
+const useDebounce = <T>(value: T, delay: number) => {};
 
 // ❌ Sai
 function getProducts() {} // thiếu prefix use
@@ -443,31 +472,30 @@ interface CartActions {
 }
 
 // Selector — truy xuất từng field, không destructure
-const cartItems = useCartStore((s) => s.items);
-const cartTotal = useCartStore((s) => s.total);
-const isLoggedIn = useAuthStore((s) => !!s.accessToken);
+const cartItems = useCartStore(s => s.items);
+const cartTotal = useCartStore(s => s.total);
+const isLoggedIn = useAuthStore(s => !!s.accessToken);
 ```
 
 ### 5.7 Query Keys
 
 ```ts
 export const productKeys = {
-  all: ["products"] as const,
-  list: (filters: ProductFilters) =>
-    [...productKeys.all, "list", filters] as const,
-  detail: (slug: string) => [...productKeys.all, "detail", slug] as const,
+  all: ['products'] as const,
+  list: (filters: ProductFilters) => [...productKeys.all, 'list', filters] as const,
+  detail: (slug: string) => [...productKeys.all, 'detail', slug] as const,
 };
 
 export const orderKeys = {
-  all: ["orders"] as const,
-  list: () => [...orderKeys.all, "list"] as const,
-  detail: (id: string) => [...orderKeys.all, "detail", id] as const,
+  all: ['orders'] as const,
+  list: () => [...orderKeys.all, 'list'] as const,
+  detail: (id: string) => [...orderKeys.all, 'detail', id] as const,
 };
 
 // Admin keys — prefix "admin"
 export const adminProductKeys = {
-  all: ["admin", "products"] as const,
-  list: (page: number) => [...adminProductKeys.all, "list", page] as const,
+  all: ['admin', 'products'] as const,
+  list: (page: number) => [...adminProductKeys.all, 'list', page] as const,
 };
 ```
 
@@ -477,24 +505,24 @@ export const adminProductKeys = {
 // shared/constants/api-endpoints.ts
 export const API = {
   AUTH: {
-    LOGIN: "/api/auth/login/",
-    REGISTER: "/api/auth/register/",
-    REFRESH: "/api/auth/token/refresh/",
-    LOGOUT: "/api/auth/logout/",
+    LOGIN: '/api/auth/login/',
+    REGISTER: '/api/auth/register/',
+    REFRESH: '/api/auth/token/refresh/',
+    LOGOUT: '/api/auth/logout/',
   },
   PRODUCTS: {
-    LIST: "/api/products/",
+    LIST: '/api/products/',
     DETAIL: (slug: string) => `/api/products/${slug}/`,
   },
   ORDERS: {
-    LIST: "/api/orders/",
+    LIST: '/api/orders/',
     DETAIL: (id: string) => `/api/orders/${id}/`,
     CANCEL: (id: string) => `/api/orders/${id}/cancel/`,
   },
   ADMIN: {
-    PRODUCTS: "/api/admin/products/",
-    ORDERS: "/api/admin/orders/",
-    USERS: "/api/admin/users/",
+    PRODUCTS: '/api/admin/products/',
+    ORDERS: '/api/admin/orders/',
+    USERS: '/api/admin/users/',
   },
 } as const;
 ```
@@ -506,19 +534,7 @@ Layout → Flex/Grid → Sizing → Spacing → Typography → Color → Border 
 ```
 
 ```tsx
-<button
-  className="
-  flex items-center justify-center
-  w-full h-11
-  px-4 py-2 gap-2
-  text-sm font-semibold
-  text-white bg-primary-500
-  rounded-btn border border-transparent
-  shadow-sm
-  hover:bg-primary-600 disabled:opacity-50
-  transition-colors duration-150
-"
->
+<button className="bg-primary-500 rounded-btn hover:bg-primary-600 flex h-11 w-full items-center justify-center gap-2 border border-transparent px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors duration-150 disabled:opacity-50">
   Mua ngay
 </button>
 ```
