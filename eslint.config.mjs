@@ -394,6 +394,10 @@ export default [
   {
     files: ['**/*.{test,spec}.{ts,tsx,js,jsx}'],
     plugins: { jest: jestPlugin },
+    settings: {
+      // Khai báo version rõ ràng vì project dùng Vitest, không có gói jest cài đặt
+      jest: { version: 29 },
+    },
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
