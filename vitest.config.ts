@@ -1,18 +1,36 @@
 import react from '@vitejs/plugin-react';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
+  plugins: [react()],
+  resolve: {
+    tsconfigPaths: true,
+  },
   test: {
+    include: ['src/**/*.{test,spec}.{ts,tsx}'],
+    exclude: ['e2e/**', 'node_modules/**', '.next/**'],
     environment: 'jsdom',
     setupFiles: ['./src/__tests__/setup.ts'],
     globals: true,
+    css: true,
+    testTimeout: 10_000,
+    hookTimeout: 10_000,
+    clearMocks: true,
+    restoreMocks: true,
+    unstubEnvs: true,
+    unstubGlobals: true,
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
-      include: ['src/shared/lib/**', 'src/shared/hooks/**'],
-      thresholds: { lines: 70, functions: 70, branches: 70 },
+      reportsDirectory: './coverage/unit',
+      include: ['src/shared/lib/**/*.{ts,tsx}', 'src/shared/hooks/**/*.{ts,tsx}'],
+      exclude: ['src/**/*.d.ts', 'src/**/__tests__/**', 'src/**/*.test.*', 'src/**/*.spec.*'],
+      thresholds: {
+        lines: 70,
+        functions: 70,
+        branches: 70,
+        statements: 70,
+      },
     },
   },
 });

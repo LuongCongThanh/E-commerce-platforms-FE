@@ -1,8 +1,8 @@
-import { Skeleton } from '@/shared/components/ui/Skeleton';
+import { Skeleton } from '@/shared/components/base/Skeleton';
 
-export default function HomeLoading() {
-  const categorySkeletonIds = Array.from({ length: 6 }, (_, index) => `category-skeleton-${index + 1}`);
-  const productSkeletonIds = Array.from({ length: 8 }, (_, index) => `product-skeleton-${index + 1}`);
+export default function HomeLoading(): React.JSX.Element {
+  const categorySkeletonIds = Array.from({ length: 6 }, (_, index) => `category-skeleton-${String(index + 1)}`);
+  const productSkeletonIds = Array.from({ length: 8 }, (_, index) => `product-skeleton-${String(index + 1)}`);
 
   return (
     <>

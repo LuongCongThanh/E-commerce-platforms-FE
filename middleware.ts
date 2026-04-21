@@ -1,6 +1,6 @@
+import createMiddleware from 'next-intl/middleware';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import createMiddleware from 'next-intl/middleware';
 
 // Khởi tạo middleware của next-intl để tự động redirect theo locale
 // Ví dụ: /products → /vi/products (vì defaultLocale là 'vi')
@@ -9,14 +9,14 @@ const intlMiddleware = createMiddleware({
   defaultLocale: 'vi',
 });
 
-export function middleware(request: NextRequest) {
+export function middleware(request: NextRequest): ReturnType<typeof intlMiddleware> {
   const { pathname } = request.nextUrl;
 
   // Bảo vệ route admin: kiểm tra cookie access_token trước khi cho vào /(vi|en)/admin/*
   // Nếu chưa đăng nhập → redirect về trang login của locale mặc định
-  if (/^\/(vi|en)\/admin/.exec(pathname)) {
+  if (/^\/(vi|en)\/admin/.test(pathname)) {
     const token = request.cookies.get('access_token');
-    if (!token) {
+    if (token == null) {
       return NextResponse.redirect(new URL('/vi/login', request.url));
     }
   }

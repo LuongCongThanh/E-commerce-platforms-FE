@@ -7,14 +7,14 @@ interface CloudinaryOptions {
 }
 
 export function buildImageUrl(publicId: string, options: CloudinaryOptions = {}): string {
-  if (!publicId) return '/images/placeholder.jpg';
+  if (publicId.length === 0) return '/images/placeholder.jpg';
 
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ?? '';
   const { width, height, crop = 'fill', quality = 'auto', format = 'auto' } = options;
 
-  const transforms: string[] = [`f_${format}`, `q_${quality}`];
-  if (width) transforms.push(`w_${width}`);
-  if (height) transforms.push(`h_${height}`);
+  const transforms: string[] = [`f_${format}`, `q_${typeof quality === 'number' ? String(quality) : quality}`];
+  if (width != null) transforms.push(`w_${String(width)}`);
+  if (height != null) transforms.push(`h_${String(height)}`);
   transforms.push(`c_${crop}`);
 
   return `https://res.cloudinary.com/${cloudName}/image/upload/${transforms.join(',')}/${publicId}`;

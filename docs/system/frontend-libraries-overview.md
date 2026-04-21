@@ -325,7 +325,7 @@ src/
 
 ## 10. Quality Gates — Pre-deploy Checklist
 
-> Dựa trên `react-nextjs-development` skill. Không merge PR nếu chưa pass tất cả mục bên dưới.
+> Dựa trên `react-nextjs-development` skill. Không triển khai hoặc chốt thay đổi nếu chưa pass tất cả mục bên dưới.
 
 ### 10.1 Code Quality
 

@@ -1,3 +1,5 @@
+const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? '';
+
 export const PAYMENT_CONFIG = {
   VNPAY: {
     VERSION: '2.1.0',
@@ -5,19 +7,19 @@ export const PAYMENT_CONFIG = {
     CURRENCY: 'VND',
     LOCALE: 'vn',
     ORDER_TYPE: 'other',
-    RETURN_URL: `${process.env.NEXT_PUBLIC_APP_URL}/api/payment/vnpay/callback`,
+    RETURN_URL: `${appUrl}/api/payment/vnpay/callback`,
   },
   MOMO: {
     PARTNER_CODE: process.env.MOMO_PARTNER_CODE ?? '',
     REQUEST_TYPE: 'payWithMethod',
-    REDIRECT_URL: `${process.env.NEXT_PUBLIC_APP_URL}/payment/result`,
-    IPN_URL: `${process.env.NEXT_PUBLIC_APP_URL}/api/payment/momo/webhook`,
+    REDIRECT_URL: `${appUrl}/payment/result`,
+    IPN_URL: `${appUrl}/api/payment/momo/webhook`,
     LANG: 'vi',
   },
   ZALOPAY: {
     APP_ID: process.env.ZALOPAY_APP_ID ?? '',
     EMBED_DATA: '{}',
-    CALLBACK_URL: `${process.env.NEXT_PUBLIC_APP_URL}/api/payment/zalopay/webhook`,
+    CALLBACK_URL: `${appUrl}/api/payment/zalopay/webhook`,
   },
 } as const;
 

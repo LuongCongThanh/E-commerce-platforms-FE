@@ -13,7 +13,7 @@ export const ROUTES = {
   },
   ACCOUNT: {
     ORDERS: '/account/orders',
-    ORDER: (id: string | number) => `/account/orders/${id}`,
+    ORDER: (id: string | number) => `/account/orders/${String(id)}`,
     PROFILE: '/account/profile',
   },
 } as const;

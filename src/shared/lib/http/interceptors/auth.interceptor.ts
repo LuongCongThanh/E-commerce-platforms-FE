@@ -14,7 +14,7 @@ interface RetryableRequestConfig extends InternalAxiosRequestConfig {
 
 httpClient.interceptors.request.use(config => {
   const token = useAuthStore.getState().accessToken;
-  if (token) {
+  if (token != null && token.length > 0) {
     config.headers = AxiosHeaders.from(config.headers);
     config.headers.set('Authorization', `Bearer ${token}`);
   }
@@ -27,7 +27,7 @@ httpClient.interceptors.response.use(
   async (error: AxiosError) => {
     const original = error.config as RetryableRequestConfig | undefined;
 
-    if (error.response?.status === 401 && original && !original._retry) {
+    if (error.response?.status === 401 && original != null && original._retry !== true) {
       original._retry = true;
 
       refreshPromise ??= http.post<string>(API.AUTH.REFRESH).finally(() => {
@@ -39,7 +39,7 @@ httpClient.interceptors.response.use(
         useAuthStore.getState().setAccessToken(newToken);
         original.headers = AxiosHeaders.from(original.headers);
         original.headers.set('Authorization', `Bearer ${newToken}`);
-        return httpClient(original);
+        return await httpClient(original);
       } catch {
         useAuthStore.getState().clearAuth();
 

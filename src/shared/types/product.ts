@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import type { ProductFilter as SharedProductFilter } from './filter';
+
 export const ProductVariantSchema = z.object({
   id: z.number(),
   size: z.string().nullable(),
@@ -23,8 +25,8 @@ export const ProductSchema = z.object({
   rating: z.number().min(0).max(5),
   reviewCount: z.number().int(),
   isActive: z.boolean(),
-  createdAt: z.string().datetime(),
-  updatedAt: z.string().datetime(),
+  createdAt: z.iso.datetime(),
+  updatedAt: z.iso.datetime(),
 });
 
 export const ProductListSchema = z.object({
@@ -38,12 +40,4 @@ export type ProductVariant = z.infer<typeof ProductVariantSchema>;
 export type Product = z.infer<typeof ProductSchema>;
 export type ProductList = z.infer<typeof ProductListSchema>;
 
-export interface ProductFilters {
-  search?: string;
-  category?: string;
-  minPrice?: number;
-  maxPrice?: number;
-  ordering?: 'price' | '-price' | '-created_at' | 'rating';
-  page?: number;
-  pageSize?: number;
-}
+export type ProductFilters = SharedProductFilter;

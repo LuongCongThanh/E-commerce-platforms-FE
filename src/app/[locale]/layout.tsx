@@ -1,6 +1,6 @@
-import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
 import { Providers } from '@/app/providers';
 

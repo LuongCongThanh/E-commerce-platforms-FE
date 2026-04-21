@@ -1,11 +1,11 @@
-import { Skeleton } from '@/shared/components/ui/Skeleton';
+import { Skeleton } from '@/shared/components/base/Skeleton';
 
 interface OrderListSkeletonProps {
   readonly count?: number;
 }
 
-export function OrderListSkeleton({ count = 4 }: OrderListSkeletonProps) {
-  const skeletonIds = Array.from({ length: count }, (_, index) => `order-list-skeleton-${index + 1}`);
+export function OrderListSkeleton({ count = 4 }: OrderListSkeletonProps): React.JSX.Element {
+  const skeletonIds = Array.from({ length: count }, (_, index) => `order-list-skeleton-${String(index + 1)}`);
 
   return (
     <div className="space-y-4">

@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 const PLACEHOLDER_CATEGORIES = [
   { slug: 'ao', label: 'Áo', emoji: '👕' },

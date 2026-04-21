@@ -610,11 +610,11 @@
 ### Ngày 25 — GitHub Actions CI/CD
 
 - [ ] File `.github/workflows/backend.yml`:
-  - [ ] Trigger: push to `main`, pull request
+  - [ ] Trigger: push to `main`
   - [ ] Steps: checkout → setup Python → install deps → run pytest
   - [ ] Badge hiển thị trên README
 - [ ] File `.github/workflows/frontend.yml`:
-  - [ ] Trigger: push to `main`, pull request
+  - [ ] Trigger: push to `main`
   - [ ] Steps: checkout → setup Node → install deps → `tsc --noEmit` → build
 - [ ] File `.github/workflows/deploy.yml`:
   - [ ] Trigger: push to `main` (sau khi CI pass)

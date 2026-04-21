@@ -53,14 +53,14 @@ src/modules/home/
     HomeNewsletterForm.tsx
     HomeProductRail.tsx
   sections/
-    HeroSection.tsx
-    FeaturedCategoriesSection.tsx
-    BestSellersSection.tsx
-    FlashSaleSection.tsx
-    NewArrivalsSection.tsx
-    WhyChooseUsSection.tsx
-    TestimonialsSection.tsx
-    NewsletterSection.tsx
+    SectionHero.tsx
+    SectionFeaturedCategories.tsx
+    SectionBestSellers.tsx
+    SectionFlashSale.tsx
+    SectionNewArrivals.tsx
+    SectionWhyChooseUs.tsx
+    SectionTestimonials.tsx
+    SectionNewsletter.tsx
   data/
     home-hero.data.ts
     home-categories.data.ts
@@ -93,14 +93,14 @@ src/modules/home/
 
 `src/modules/home/components/HomePage.tsx` is the composition root and renders sections in this order:
 
-1. `HeroSection`
-2. `FeaturedCategoriesSection`
-3. `BestSellersSection`
-4. `FlashSaleSection`
-5. `NewArrivalsSection`
-6. `WhyChooseUsSection`
-7. `TestimonialsSection`
-8. `NewsletterSection`
+1. `SectionHero`
+2. `SectionFeaturedCategories`
+3. `SectionBestSellers`
+4. `SectionFlashSale`
+5. `SectionNewArrivals`
+6. `SectionWhyChooseUs`
+7. `SectionTestimonials`
+8. `SectionNewsletter`
 
 ### Section-level home components
 
@@ -187,7 +187,7 @@ Each homepage section should be implemented as a home-owned section wrapper that
 
 ### Hero section
 
-**File:** `src/modules/home/sections/HeroSection.tsx`
+**File:** `src/modules/home/sections/SectionHero.tsx`
 
 #### Responsibility
 
@@ -202,7 +202,7 @@ Each homepage section should be implemented as a home-owned section wrapper that
 
 ### Featured categories section
 
-**File:** `src/modules/home/sections/FeaturedCategoriesSection.tsx`
+**File:** `src/modules/home/sections/SectionFeaturedCategories.tsx`
 
 #### Responsibility
 
@@ -217,7 +217,7 @@ Each homepage section should be implemented as a home-owned section wrapper that
 
 ### Best sellers section
 
-**File:** `src/modules/home/sections/BestSellersSection.tsx`
+**File:** `src/modules/home/sections/SectionBestSellers.tsx`
 
 #### Responsibility
 
@@ -233,7 +233,7 @@ Each homepage section should be implemented as a home-owned section wrapper that
 
 ### Flash sale section
 
-**File:** `src/modules/home/sections/FlashSaleSection.tsx`
+**File:** `src/modules/home/sections/SectionFlashSale.tsx`
 
 #### Responsibility
 
@@ -249,7 +249,7 @@ Each homepage section should be implemented as a home-owned section wrapper that
 
 ### New arrivals section
 
-**File:** `src/modules/home/sections/NewArrivalsSection.tsx`
+**File:** `src/modules/home/sections/SectionNewArrivals.tsx`
 
 #### Responsibility
 
@@ -265,7 +265,7 @@ Each homepage section should be implemented as a home-owned section wrapper that
 
 ### Why choose us section
 
-**File:** `src/modules/home/sections/WhyChooseUsSection.tsx`
+**File:** `src/modules/home/sections/SectionWhyChooseUs.tsx`
 
 #### Responsibility
 
@@ -279,7 +279,7 @@ Each homepage section should be implemented as a home-owned section wrapper that
 
 ### Testimonials section
 
-**File:** `src/modules/home/sections/TestimonialsSection.tsx`
+**File:** `src/modules/home/sections/SectionTestimonials.tsx`
 
 #### Responsibility
 
@@ -293,7 +293,7 @@ Each homepage section should be implemented as a home-owned section wrapper that
 
 ### Newsletter section
 
-**File:** `src/modules/home/sections/NewsletterSection.tsx`
+**File:** `src/modules/home/sections/SectionNewsletter.tsx`
 
 #### Responsibility
 
@@ -312,14 +312,14 @@ Each homepage section should be implemented as a home-owned section wrapper that
 ### Home-only section components
 
 - `HomePage`: composes the complete homepage in scroll order
-- `HeroSection`: main hero, CTAs, image, trust line
-- `FeaturedCategoriesSection`: highlighted category discovery section
-- `BestSellersSection`: best seller merchandising section
-- `FlashSaleSection`: countdown plus product rail
-- `NewArrivalsSection`: latest products plus quick filters
-- `WhyChooseUsSection`: brand benefits and trust points
-- `TestimonialsSection`: social proof section
-- `NewsletterSection`: email capture section before footer
+- `SectionHero`: main hero, CTAs, image, trust line
+- `SectionFeaturedCategories`: highlighted category discovery section
+- `SectionBestSellers`: best seller merchandising section
+- `SectionFlashSale`: countdown plus product rail
+- `SectionNewArrivals`: latest products plus quick filters
+- `SectionWhyChooseUs`: brand benefits and trust points
+- `SectionTestimonials`: social proof section
+- `SectionNewsletter`: email capture section before footer
 
 ### Home-only supporting components
 

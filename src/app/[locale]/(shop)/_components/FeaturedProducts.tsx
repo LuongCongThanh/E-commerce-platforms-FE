@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 import { ProductGridSkeleton } from '@/shared/components/skeletons/ProductGridSkeleton';
 
@@ -7,9 +7,9 @@ interface FeaturedProductsProps {
   readonly isLoading?: boolean;
 }
 
-export function FeaturedProducts({ isLoading }: FeaturedProductsProps) {
+export function FeaturedProducts({ isLoading }: FeaturedProductsProps): React.JSX.Element {
   const t = useTranslations('home');
-  const placeholderCards = Array.from({ length: 8 }, (_, index) => `featured-product-placeholder-${index + 1}`);
+  const placeholderCards = Array.from({ length: 8 }, (_, index) => `featured-product-placeholder-${String(index + 1)}`);
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -20,7 +20,7 @@ export function FeaturedProducts({ isLoading }: FeaturedProductsProps) {
         </Link>
       </div>
 
-      {isLoading ? (
+      {isLoading === true ? (
         <ProductGridSkeleton count={8} />
       ) : (
         /* Placeholder grid — sẽ được thay bằng ProductGrid khi có API */

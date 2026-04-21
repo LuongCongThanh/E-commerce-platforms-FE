@@ -2,18 +2,18 @@ import { z } from 'zod';
 
 export const UserSchema = z.object({
   id: z.number(),
-  email: z.string().email(),
+  email: z.email(),
   firstName: z.string(),
   lastName: z.string(),
   phone: z.string().optional(),
   avatar: z.string().nullable(),
   role: z.enum(['customer', 'admin', 'staff']),
   isActive: z.boolean(),
-  createdAt: z.string().datetime(),
+  createdAt: z.iso.datetime(),
 });
 
 export const LoginSchema = z.object({
-  email: z.string().email('Email không hợp lệ'),
+  email: z.email('Email không hợp lệ'),
   password: z.string().min(8, 'Mật khẩu tối thiểu 8 ký tự'),
 });
 

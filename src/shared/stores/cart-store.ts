@@ -23,10 +23,10 @@ interface CartActions {
   clearCart: () => void;
 }
 
-function calcTotal(items: CartItem[]) {
+function calcTotal(items: CartItem[]): number {
   return items.reduce((s, i) => s + i.price * i.quantity, 0);
 }
-function calcItemCount(items: CartItem[]) {
+function calcItemCount(items: CartItem[]): number {
   return items.reduce((s, i) => s + i.quantity, 0);
 }
 
@@ -41,9 +41,10 @@ export const useCartStore = create<CartState & CartActions>()(
         addToCart: item => {
           const items = get().items;
           const existing = items.find(i => i.variantId === item.variantId);
-          const updated = existing
-            ? items.map(i => (i.variantId === item.variantId ? { ...i, quantity: i.quantity + item.quantity } : i))
-            : [...items, item];
+          const updated =
+            existing != null
+              ? items.map(i => (i.variantId === item.variantId ? { ...i, quantity: i.quantity + item.quantity } : i))
+              : [...items, item];
           set({ items: updated, total: calcTotal(updated), itemCount: calcItemCount(updated) });
         },
 

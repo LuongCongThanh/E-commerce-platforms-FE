@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 import { Menu, Search, ShoppingCart, User, X } from 'lucide-react';
 
-import { Button } from '@/shared/components/ui/Button';
+import { Button } from '@/shared/components/base/Button';
 
 export function Header() {
   const t = useTranslations('common');
@@ -54,27 +54,43 @@ export function Header() {
           </Button>
 
           {/* Mobile menu toggle */}
-          <Button variant="ghost" size="icon" className="md:hidden" aria-label="Menu" onClick={() => setMobileOpen(v => !v)}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            aria-label="Menu"
+            onClick={() => {
+              setMobileOpen(v => !v);
+            }}
+          >
             {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </Button>
         </div>
       </div>
 
       {/* Mobile nav */}
-      {mobileOpen && (
+      {mobileOpen ? (
         <nav className="border-border bg-background border-t px-4 py-3 md:hidden">
           <ul className="flex flex-col gap-3">
             <li>
               <Link
                 href="/products"
                 className="hover:text-primary-500 block text-sm font-medium text-neutral-700"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  setMobileOpen(false);
+                }}
               >
                 Sản phẩm
               </Link>
             </li>
             <li>
-              <Link href="/products?category=sale" className="text-secondary-500 block text-sm font-medium" onClick={() => setMobileOpen(false)}>
+              <Link
+                href="/products?category=sale"
+                className="text-secondary-500 block text-sm font-medium"
+                onClick={() => {
+                  setMobileOpen(false);
+                }}
+              >
                 Flash Sale
               </Link>
             </li>
@@ -82,14 +98,16 @@ export function Header() {
               <Link
                 href="/auth/login"
                 className="hover:text-primary-500 block text-sm font-medium text-neutral-700"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  setMobileOpen(false);
+                }}
               >
                 Đăng nhập
               </Link>
             </li>
           </ul>
         </nav>
-      )}
+      ) : null}
     </header>
   );
 }
