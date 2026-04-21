@@ -1,5 +1,14 @@
 import { z } from 'zod';
 
+export const ProductVariantSchema = z.object({
+  id: z.number(),
+  size: z.string().nullable(),
+  color: z.string().nullable(),
+  stock: z.number().int().nonnegative(),
+  price: z.number(),
+  sku: z.string().optional(),
+});
+
 export const ProductSchema = z.object({
   id: z.number(),
   name: z.string(),
@@ -10,6 +19,7 @@ export const ProductSchema = z.object({
   stock: z.number().int().nonnegative(),
   images: z.array(z.string()),
   category: z.object({ id: z.number(), name: z.string(), slug: z.string() }),
+  variants: z.array(ProductVariantSchema).optional(),
   rating: z.number().min(0).max(5),
   reviewCount: z.number().int(),
   isActive: z.boolean(),
@@ -24,6 +34,7 @@ export const ProductListSchema = z.object({
   previous: z.string().nullable(),
 });
 
+export type ProductVariant = z.infer<typeof ProductVariantSchema>;
 export type Product = z.infer<typeof ProductSchema>;
 export type ProductList = z.infer<typeof ProductListSchema>;
 
