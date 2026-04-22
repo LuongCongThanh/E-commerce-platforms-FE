@@ -20,6 +20,6 @@ export const newArrivalsData: HomeProductHighlight[] = Array.from({ length: 8 },
   salePrice: null,
   images: ['/images/products/placeholder.jpg'],
   rating: 4.2,
-  reviewCount: i * 2,
+  reviewCount: (i + 1) * 2,
   badges: ['new'],
 }));
