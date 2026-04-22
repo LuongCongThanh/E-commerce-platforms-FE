@@ -6,7 +6,7 @@ import { Search, X } from 'lucide-react';
 
 import { Button } from '@/shared/components/base/Button';
 import { Input } from '@/shared/components/base/Input';
-import { useDebounce } from '@/shared/hooks/use-debounce';
+import { useDebounce } from '@/shared/hooks/useDebounce';
 import { cn } from '@/shared/lib/utils';
 
 interface SearchInputProps {

@@ -7,7 +7,7 @@ export default defineConfig({
     tsconfigPaths: true,
   },
   test: {
-    include: ['src/**/*.{test,spec}.{ts,tsx}'],
+    include: ['src/**/__tests__/**/*.{test,spec}.{ts,tsx}'],
     exclude: ['e2e/**', 'node_modules/**', '.next/**'],
     environment: 'jsdom',
     setupFiles: ['./src/__tests__/setup.ts'],
@@ -26,10 +26,10 @@ export default defineConfig({
       include: ['src/shared/lib/**/*.{ts,tsx}', 'src/shared/hooks/**/*.{ts,tsx}'],
       exclude: ['src/**/*.d.ts', 'src/**/__tests__/**', 'src/**/*.test.*', 'src/**/*.spec.*'],
       thresholds: {
-        lines: 70,
-        functions: 70,
-        branches: 70,
-        statements: 70,
+        lines: 90,
+        functions: 90,
+        branches: 90,
+        statements: 90,
       },
     },
   },

@@ -1,11 +1,23 @@
 import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
 
-import withPWA from '@ducanh2912/next-pwa';
 import withBundleAnalyzer from '@next/bundle-analyzer';
+import withSerwistInit from '@serwist/next';
 
 const withAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
+
+const withSerwist = withSerwistInit({
+  swSrc: 'src/app/sw.ts',
+  swDest: 'public/sw.js',
+  disable: process.env.NODE_ENV === 'development',
+  register: true,
+  cacheOnNavigation: true,
+  reloadOnOnline: true,
+});
+
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   turbopack: {},
@@ -15,14 +27,17 @@ const nextConfig: NextConfig = {
       { protocol: 'http', hostname: 'localhost' },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: '/sw.js',
+        headers: [
+          { key: 'Content-Type', value: 'application/javascript; charset=utf-8' },
+          { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
+        ],
+      },
+    ];
+  },
 };
 
-export default withAnalyzer(
-  withPWA({
-    dest: 'public',
-    disable: process.env.NODE_ENV === 'development',
-    register: true,
-    cacheOnFrontEndNav: true,
-    reloadOnOnline: true,
-  })(nextConfig)
-);
+export default withNextIntl(withSerwist(withAnalyzer(nextConfig)));

@@ -7,7 +7,7 @@ export function HeroBanner() {
   const t = useTranslations('home');
 
   return (
-    <section className="from-primary-500 to-secondary-600 relative overflow-hidden bg-gradient-to-br">
+    <section className="from-primary-500 to-secondary-600 relative overflow-hidden bg-linear-to-br">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-20 text-center sm:px-6 lg:flex-row lg:py-28 lg:text-left">
         {/* Text */}
         <div className="flex-1 text-white">

@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+/public/sw*
+/public/swe-worker*
 
 # production
 /build
@@ -23,6 +25,8 @@
 # misc
 .DS_Store
 *.pem
+.skills/*
+.claude/skills/*
 
 # debug
 npm-debug.log*

@@ -1,10 +1,9 @@
 import { type AxiosError, AxiosHeaders, type InternalAxiosRequestConfig } from 'axios';
 
 import { API } from '@/shared/constants/api-endpoints';
+import { httpClient } from '@/shared/lib/http/client';
+import { http } from '@/shared/lib/http/methods';
 import { useAuthStore } from '@/shared/stores/auth-store';
-
-import { httpClient } from '../client';
-import { http } from '../methods';
 
 let refreshPromise: Promise<string> | null = null;
 

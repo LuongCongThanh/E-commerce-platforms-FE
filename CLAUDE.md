@@ -103,3 +103,19 @@ Variables validated with Zod in `shared/lib/env.ts`. Public vars use `NEXT_PUBLI
 | lint-staged | Defined in `package.json` — ESLint + Prettier on `*.{ts,tsx}`                              |
 
 ESLint enforces: `@/*` alias imports (no `../` relative parents), no cross-feature imports (shared cannot import from app features), import order via `simple-import-sort`.
+
+## Import Convention — ALWAYS use `@/*` alias
+
+**Never** use `../` or `../../` to go up directories. Every import must use the `@/*` alias (maps to `src/*`).
+
+```ts
+// ✗ WRONG — triggers no-restricted-imports ESLint error
+import { Foo } from '../_lib/types';
+import { bar } from '../client';
+
+// ✓ CORRECT
+import { Foo } from '@/app/[locale]/(shop)/_lib/types';
+import { bar } from '@/shared/lib/http/client';
+```
+
+Same-directory imports (`./foo`) are allowed. Only upward traversal (`../`) is banned.

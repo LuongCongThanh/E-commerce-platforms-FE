@@ -4,6 +4,8 @@
   "i18n-ally.pathMatcher": "{locale}/{namespace}.{ext}",
   "i18n-ally.defaultLocale": "vi",
   "cSpell.language": "en,vi",
+  "cSpell.ignorePaths": ["docs/**"],
+  "cSpell.words": ["giúp", "gom", "hàng", "kebab", "luôn", "Ngày", "trúc"],
   "json.schemas": [
     {
       "fileMatch": ["components.json"],

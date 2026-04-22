@@ -20,7 +20,7 @@ const eslintConfig = [
   ...typescript.configs['flat/stylistic-type-checked'],
 
   {
-    ignores: ['.next/**', 'node_modules/**', 'dist/**', 'build/**', 'coverage/**', '.husky/**', 'public/**'],
+    ignores: ['.next/**', 'node_modules/**', 'dist/**', 'build/**', 'coverage/**', '.husky/**', 'public/**', 'src/**/*.d.ts', '.skills/**'],
   },
 
   {
@@ -194,8 +194,8 @@ const eslintConfig = [
           ],
           patterns: [
             {
-              group: ['../../*', '../../../*', '../../../../*', '../../../../../*', '../../../../../../*'],
-              message: 'Imports going 2+ levels up must use @/* alias instead.',
+              group: ['../*'],
+              message: 'Relative imports going up are restricted. Use @/* alias instead.',
             },
           ],
         },

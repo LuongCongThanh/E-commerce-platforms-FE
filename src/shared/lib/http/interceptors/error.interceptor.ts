@@ -1,10 +1,9 @@
 import type { AxiosError } from 'axios';
 
 import { ApiError } from '@/shared/lib/errors/api-error';
+import { httpClient } from '@/shared/lib/http/client';
 import { captureError } from '@/shared/lib/monitoring/sentry';
 import type { DjangoErrorResponse } from '@/shared/types/api';
-
-import { httpClient } from '../client';
 
 httpClient.interceptors.response.use(
   res => res,

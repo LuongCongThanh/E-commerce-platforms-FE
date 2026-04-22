@@ -2,6 +2,10 @@ import { Loader2 } from 'lucide-react';
 
 import { cn } from '@/shared/lib/utils';
 
+/**
+ * Spinner nhỏ — dùng cho action cục bộ (button submit, section nhỏ).
+ * Dùng `PageLoader` nếu cần loading cả trang.
+ */
 interface LoadingSpinnerProps {
   readonly className?: string;
   readonly label?: string;
