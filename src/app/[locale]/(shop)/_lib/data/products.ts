@@ -8,10 +8,10 @@ const defaultVariants: ProductVariant[] = [
 ];
 
 const shoeVariants: ProductVariant[] = [
-  { id: 'size-s', label: '38', stock: 3 },
-  { id: 'size-m', label: '39', stock: 8 },
-  { id: 'size-l', label: '40', stock: 0 },
-  { id: 'size-xl', label: '41', stock: 5 },
+  { id: 'size-38', label: '38', stock: 3 },
+  { id: 'size-39', label: '39', stock: 8 },
+  { id: 'size-40', label: '40', stock: 0 },
+  { id: 'size-41', label: '41', stock: 5 },
 ];
 
 export const productsData: Product[] = [
@@ -129,10 +129,10 @@ export const productsData: Product[] = [
     categorySlug: 'giay',
     description: 'Giày chạy bộ siêu nhẹ, đệm khí EVA, chống sốc tốt.',
     variants: [
-      { id: 'size-s', label: '38', stock: 2 },
-      { id: 'size-m', label: '39', stock: 6 },
-      { id: 'size-l', label: '40', stock: 4 },
-      { id: 'size-xl', label: '41', stock: 0 },
+      { id: 'size-38', label: '38', stock: 2 },
+      { id: 'size-39', label: '39', stock: 6 },
+      { id: 'size-40', label: '40', stock: 4 },
+      { id: 'size-41', label: '41', stock: 0 },
     ],
   },
   {
@@ -148,10 +148,10 @@ export const productsData: Product[] = [
     categorySlug: 'giay',
     description: 'Giày lười da bò thật, lót da mềm, sang trọng và bền.',
     variants: [
-      { id: 'size-s', label: '38', stock: 1 },
-      { id: 'size-m', label: '39', stock: 4 },
-      { id: 'size-l', label: '40', stock: 2 },
-      { id: 'size-xl', label: '41', stock: 3 },
+      { id: 'size-38', label: '38', stock: 1 },
+      { id: 'size-39', label: '39', stock: 4 },
+      { id: 'size-40', label: '40', stock: 2 },
+      { id: 'size-41', label: '41', stock: 3 },
     ],
   },
   // Túi xách
