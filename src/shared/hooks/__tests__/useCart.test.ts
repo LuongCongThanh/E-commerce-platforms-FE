@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 
 import { useCartStore } from '@/shared/stores/cart-store';
 
-import { useCart } from '../useCart';
+import { useCart } from '@/shared/hooks/useCart';
 
 const item1 = { variantId: 'v1', productId: 'p1', name: 'Áo', image: '/img.jpg', price: 100000, quantity: 1 };
 const item2 = { variantId: 'v2', productId: 'p2', name: 'Quần', image: '/img2.jpg', price: 200000, quantity: 2 };

@@ -1,4 +1,4 @@
-import { LoadingSpinner } from './LoadingSpinner';
+import { LoadingSpinner } from '@/shared/components/common/LoadingSpinner';
 
 /**
  * Loading toàn trang — dùng khi chờ data cho cả một trang/route.

@@ -1,4 +1,4 @@
-import { httpClient } from './client';
+import { httpClient } from '@/shared/lib/http/client';
 
 export const http = {
   get: <T>(url: string, params?: object) => httpClient.get<T>(url, { params }).then(r => r.data),

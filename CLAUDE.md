@@ -119,3 +119,15 @@ import { bar } from '@/shared/lib/http/client';
 ```
 
 Same-directory imports (`./foo`) are allowed. Only upward traversal (`../`) is banned.
+
+## Code Conventions
+
+### React Best Practices
+
+- **Keys**: Never use array index in `key` props. Use unique, stable identifiers from data (e.g., `id`, `slug`, or the content itself if unique).
+
+### Tailwind CSS v4 Patterns
+
+- **Masking**: Use `mask-[...]` instead of `[mask-image:...]`.
+- **Background Size**: Use `bg-size-[...]` instead of `bg-[size:...]`.
+- **Naming**: Prefer standard Tailwind v4 utility-first naming over arbitrary value notation where possible.

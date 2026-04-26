@@ -9,7 +9,7 @@ import {
   parseSearchParams,
   truncateText,
   validateVietnamesePhone,
-} from '../utils';
+} from '@/shared/lib/utils';
 
 describe('buildQueryString', () => {
   it('omits empty values', () => {

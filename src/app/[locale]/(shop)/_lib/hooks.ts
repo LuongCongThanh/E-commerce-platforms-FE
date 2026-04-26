@@ -5,12 +5,11 @@ import { useRouter } from 'next/navigation';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
+import { orderActions, productActions, profileActions } from '@/app/[locale]/(shop)/_lib/actions';
+import { orderKeys, productKeys, profileKey } from '@/app/[locale]/(shop)/_lib/query-keys';
+import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas';
+import type { ProductFilters } from '@/app/[locale]/(shop)/_lib/types';
 import { useCartStore } from '@/shared/stores/cart-store';
-
-import { orderActions, productActions, profileActions } from './actions';
-import { orderKeys, productKeys, profileKey } from './query-keys';
-import type { CheckoutInput } from './schemas';
-import type { ProductFilters } from './types';
 
 export const useProducts = (filters: ProductFilters) =>
   useQuery({

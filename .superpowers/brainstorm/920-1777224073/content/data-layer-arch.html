@@ -1,0 +1,83 @@
+<h2>Cấu trúc tách Logic / UI</h2>
+<p class="subtitle">Chọn cách tổ chức data layer cho Task 2 — Storefront Core</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f1117;padding:16px;font-family:monospace;font-size:11px;color:#8b949e;line-height:1.7;border-radius:8px">
+      <div style="color:#58a6ff">_lib/</div>
+      <div style="padding-left:16px">
+        <div style="color:#7ee787">data/</div>
+        <div style="padding-left:16px;color:#e6edf3">home.ts <span style="color:#6e7681">← static arrays</span></div>
+        <div style="padding-left:16px;color:#e6edf3">products.ts</div>
+        <div style="padding-left:16px;color:#e6edf3">categories.ts</div>
+        <div style="color:#7ee787">hooks/</div>
+        <div style="padding-left:16px;color:#e6edf3">useHomeData.ts <span style="color:#6e7681">← filter + transform</span></div>
+        <div style="padding-left:16px;color:#e6edf3">useProducts.ts</div>
+        <div style="padding-left:16px;color:#e6edf3">useCategories.ts</div>
+        <div style="color:#7ee787">types/</div>
+        <div style="padding-left:16px;color:#e6edf3">home.ts</div>
+        <div style="padding-left:16px;color:#e6edf3">product.ts</div>
+      </div>
+      <div style="color:#58a6ff;margin-top:10px">_components/</div>
+      <div style="padding-left:16px;color:#e6edf3">SectionBestSellers.tsx <span style="color:#6e7681">← chỉ nhận props</span></div>
+      <div style="padding-left:16px;color:#e6edf3">SectionFlashSale.tsx</div>
+    </div>
+    <div class="card-body">
+      <h3>A — Hooks tách riêng</h3>
+      <p>Data tĩnh trong <code>data/</code>. Hooks trong <code>hooks/</code> lo filter/transform/sort. Components chỉ nhận props hoặc gọi hook — không bao giờ import data trực tiếp.</p>
+      <div class="pros-cons" style="margin-top:12px">
+        <div class="pros"><h4>Pros</h4><ul><li>Swap sang API thật chỉ thay body trong hook</li><li>Mỗi layer test độc lập</li><li>Component hoàn toàn presentational</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Nhiều file hơn một chút</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f1117;padding:16px;font-family:monospace;font-size:11px;color:#8b949e;line-height:1.7;border-radius:8px">
+      <div style="color:#58a6ff">_lib/</div>
+      <div style="padding-left:16px">
+        <div style="color:#e6edf3">home.ts <span style="color:#6e7681">← data + hooks cùng file</span></div>
+        <div style="color:#e6edf3">products.ts</div>
+        <div style="color:#e6edf3">categories.ts</div>
+      </div>
+      <div style="color:#58a6ff;margin-top:10px">_components/</div>
+      <div style="padding-left:16px;color:#e6edf3">SectionBestSellers.tsx <span style="color:#6e7681">← import hook từ _lib/</span></div>
+    </div>
+    <div class="card-body">
+      <h3>B — Colocated (data + hook cùng file)</h3>
+      <p>Mỗi domain (home, products) có 1 file trong <code>_lib/</code> chứa cả static data lẫn hook. Ít file hơn, dễ tìm hơn khi project còn nhỏ.</p>
+      <div class="pros-cons" style="margin-top:12px">
+        <div class="pros"><h4>Pros</h4><ul><li>Ít file hơn, đơn giản hơn</li><li>Dễ trace: 1 file = 1 domain</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>File phình to khi thêm logic</li><li>Khó tách test riêng data vs hook</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f1117;padding:16px;font-family:monospace;font-size:11px;color:#8b949e;line-height:1.7;border-radius:8px">
+      <div style="color:#58a6ff">home/page.tsx <span style="color:#6e7681">← Server Component</span></div>
+      <div style="padding-left:16px;color:#e6edf3">const data = getHomeData() <span style="color:#6e7681">← call ở server</span></div>
+      <div style="padding-left:16px;color:#e6edf3">&lt;SectionBestSellers products={data.bestSellers} /&gt;</div>
+      <br/>
+      <div style="color:#58a6ff">_lib/</div>
+      <div style="padding-left:16px">
+        <div style="color:#e6edf3">getHomeData.ts <span style="color:#6e7681">← pure function, no hooks</span></div>
+        <div style="color:#e6edf3">data/home.ts</div>
+      </div>
+      <div style="color:#58a6ff;margin-top:6px">_components/</div>
+      <div style="padding-left:16px;color:#e6edf3">SectionBestSellers.tsx <span style="color:#6e7681">← Server Component, chỉ render</span></div>
+    </div>
+    <div class="card-body">
+      <h3>C — Server-first (không hooks)</h3>
+      <p>Page server component gọi data functions, truyền props xuống các section. Không dùng hooks trừ khi cần interactivity (add-to-cart). Sạch nhất, ít JS nhất.</p>
+      <div class="pros-cons" style="margin-top:12px">
+        <div class="pros"><h4>Pros</h4><ul><li>Zero JS bundle cho sections tĩnh</li><li>Dễ hiểu: data flow từ trên xuống</li><li>RSC-native pattern</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Khi nối API thật cần refactor page</li><li>Sections không tự fetch được</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:20px">💡 Recommendation: <strong>A</strong> — hooks tách riêng là pattern chuẩn nhất để migrate sang real API sau này mà không đụng components.</p>

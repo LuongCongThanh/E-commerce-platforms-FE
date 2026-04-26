@@ -1,4 +1,4 @@
-import type { ProductFilters } from './types';
+import type { ProductFilters } from '@/app/[locale]/(shop)/_lib/types';
 
 export const productKeys = {
   all: ['products'] as const,

@@ -15,7 +15,7 @@ vi.mock('@/shared/lib/notification', () => ({
   notify: mockNotify,
 }));
 
-import { useToast } from '../useToast';
+import { useToast } from '@/shared/hooks/useToast';
 
 describe('useToast', () => {
   it('returns the shared notification helpers', () => {

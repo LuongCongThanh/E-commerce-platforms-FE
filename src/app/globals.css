@@ -77,9 +77,18 @@
   /* ── Border radius ──────────────────────────────────────────────────── */
   --radius-card: 0.75rem;
   --radius-btn: 0.5rem;
-}
 
-@theme inline {
+  /* ── Antigravity Spatial Tokens ──────────────────────────────────────── */
+  --color-spatial-blue-900: oklch(0.12 0.04 250);
+  --color-spatial-purple-900: oklch(0.12 0.04 280);
+
+  --shadow-spatial-sm: 0 2px 10px -2px rgba(0, 0, 0, 0.1), 0 1px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-spatial-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.3), 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  /* ── Shadcn/UI Theme Mapping ────────────────────────────────────────── */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -105,6 +114,16 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 /* ── Shadcn/UI CSS Variables ────────────────────────────────────────── */
 @layer base {
   :root {
@@ -126,8 +145,12 @@
     --radius: 0.5rem;
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.16 0.004 30);
-    --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.16 0.004 30);
+
+    /* Antigravity Glass & 3D */
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --perspective: 1200px;
   }
 
   .dark {
@@ -148,14 +171,44 @@
     --ring: oklch(0.7 0.19 25);
     --card: oklch(0.16 0.004 30);
     --card-foreground: oklch(0.96 0.006 30);
-    --popover: oklch(0.16 0.004 30);
     --popover-foreground: oklch(0.96 0.006 30);
+
+    /* Antigravity Glass & 3D (Dark) */
+    --glass-bg: rgba(15, 15, 25, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --perspective: 1200px;
   }
 
-  * {
-    @apply border-border;
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-border, currentColor);
   }
+
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    perspective: var(--perspective);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+}
+
+/* ── Utility Classes ────────────────────────────────────────────────── */
+@utility glass {
+  border-width: 1px;
+  border-color: var(--glass-border);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(24px); /* xl: 24px */
+}
+
+@utility spatial-bg {
+  background-image:
+    radial-gradient(circle at 50% -20%, var(--color-spatial-blue-900), transparent),
+    radial-gradient(circle at 0% 100%, var(--color-spatial-purple-900), transparent);
+}
+
+@utility spatial-depth {
+  transform-style: preserve-3d;
 }

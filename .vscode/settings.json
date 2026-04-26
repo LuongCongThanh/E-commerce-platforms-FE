@@ -1,15 +1,12 @@
 {
-  "i18n-ally.localesPaths": ["src/lang"],
-  "i18n-ally.namespace": true,
-  "i18n-ally.pathMatcher": "{locale}/{namespace}.{ext}",
-  "i18n-ally.defaultLocale": "vi",
-  "cSpell.language": "en,vi",
-  "cSpell.ignorePaths": ["docs/**"],
-  "cSpell.words": ["giúp", "gom", "hàng", "kebab", "luôn", "Ngày", "trúc"],
-  "json.schemas": [
-    {
-      "fileMatch": ["components.json"],
-      "url": "https://ui.shadcn.com/schema.json"
-    }
-  ]
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*)\"['`]"],
+    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*)\"['`]"]
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "i18n-ally.localesPaths": ["src/i18n", "src/lang"]
 }

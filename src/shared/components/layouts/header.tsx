@@ -1,24 +1,27 @@
 'use client';
 
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { useState } from 'react';
 
 import { Menu, Search, ShoppingCart, User, X } from 'lucide-react';
 
 import { Button } from '@/shared/components/base/Button';
+import { CartDrawer } from '@/shared/components/commerce/CartDrawer';
+import { useCartStore } from '@/shared/stores/cart-store';
 
 export function Header() {
   const t = useTranslations('common');
   const [mobileOpen, setMobileOpen] = useState(false);
+  const itemCount = useCartStore(state => state.itemCount);
 
   return (
-    <header className="border-border bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
+    <header className="glass sticky top-0 z-50 w-full transition-all duration-300">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-primary-500 text-xl font-extrabold tracking-tight">
-            SHOP<span className="text-neutral-900">.VN</span>
+        <Link href="/" className="group flex items-center gap-2">
+          <span className="from-primary-500 to-accent-500 bg-linear-to-r bg-clip-text text-xl font-black tracking-tighter text-transparent transition-transform group-hover:scale-105">
+            ANTIGRAVITY<span className="text-neutral-900 dark:text-white">.STORE</span>
           </span>
         </Link>
 
@@ -40,13 +43,16 @@ export function Header() {
           </Button>
 
           {/* Cart */}
-          <Button variant="ghost" size="icon" aria-label="Giỏ hàng" className="relative">
-            <ShoppingCart className="size-5" />
-            {/* Badge placeholder — sẽ nối với cartStore */}
-            <span className="bg-primary-500 absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full text-[10px] font-bold text-white">
-              0
-            </span>
-          </Button>
+          <CartDrawer>
+            <Button variant="ghost" size="icon" aria-label="Giỏ hàng" className="relative">
+              <ShoppingCart className="size-5" />
+              {itemCount > 0 && (
+                <span className="bg-primary-500 absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full text-[10px] font-bold text-white">
+                  {itemCount}
+                </span>
+              )}
+            </Button>
+          </CartDrawer>
 
           {/* User */}
           <Button variant="ghost" size="icon" aria-label="Tài khoản">

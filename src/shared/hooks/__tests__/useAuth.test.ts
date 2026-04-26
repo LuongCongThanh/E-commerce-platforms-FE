@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { useAuthStore } from '@/shared/stores/auth-store';
 
-import { useAuth } from '../useAuth';
+import { useAuth } from '@/shared/hooks/useAuth';
 
 const mockPush = vi.fn();
 

@@ -1,11 +1,14 @@
 'use client';
 
+import { useLocale } from 'next-intl';
+
 import { bestSellersData } from '@/app/[locale]/(shop)/_lib/data/home';
-import { useHomeFlashSaleCountdown } from '@/app/[locale]/(shop)/_lib/hooks/home';
+import { useHomeFlashSaleCountdown } from '@/app/[locale]/(shop)/_lib/hooks/useHomeFlashSaleCountdown';
 import { ProductCard } from '@/shared/components/commerce/ProductCard';
 import { CountdownTimer } from '@/shared/components/marketing/CountdownTimer';
 
 export const SectionFlashSale = (): React.JSX.Element => {
+  const locale = useLocale();
   const { targetDate } = useHomeFlashSaleCountdown();
   const flashProducts = bestSellersData.slice(0, 4);
 
@@ -35,7 +38,7 @@ export const SectionFlashSale = (): React.JSX.Element => {
               rating={product.rating}
               reviewCount={product.reviewCount}
               badges={product.badges}
-              locale="vi"
+              locale={locale}
             />
           ))}
         </div>

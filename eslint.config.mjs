@@ -8,6 +8,7 @@ import jestPlugin from 'eslint-plugin-jest';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import tailwindcss from 'eslint-plugin-tailwindcss';
 import unusedImports from 'eslint-plugin-unused-imports';
+import noRelativeImportPaths from 'eslint-plugin-no-relative-import-paths';
 import path from 'node:path';
 
 const tailwindEntryCss = path.join(import.meta.dirname, 'src/app/globals.css');
@@ -20,7 +21,19 @@ const eslintConfig = [
   ...typescript.configs['flat/stylistic-type-checked'],
 
   {
-    ignores: ['.next/**', 'node_modules/**', 'dist/**', 'build/**', 'coverage/**', '.husky/**', 'public/**', 'src/**/*.d.ts', '.skills/**'],
+    ignores: [
+      '.next/**',
+      'node_modules/**',
+      'dist/**',
+      'build/**',
+      'coverage/**',
+      '.husky/**',
+      'public/**',
+      'src/**/*.d.ts',
+      '.skills/**',
+      '.claude/**',
+      '.agent/**',
+    ],
   },
 
   {
@@ -65,6 +78,7 @@ const eslintConfig = [
       'simple-import-sort': simpleImportSort,
       tailwindcss,
       'unused-imports': unusedImports,
+      'no-relative-import-paths': noRelativeImportPaths,
     },
     rules: {
       // `no-undef` không đáng tin trên TypeScript; compiler xử lý chính xác hơn.
@@ -192,14 +206,10 @@ const eslintConfig = [
               message: 'Prefer the Metadata API in the App Router instead of next/head.',
             },
           ],
-          patterns: [
-            {
-              group: ['../*'],
-              message: 'Relative imports going up are restricted. Use @/* alias instead.',
-            },
-          ],
         },
       ],
+
+      'no-relative-import-paths/no-relative-import-paths': ['error', { allowSameFolder: false, rootDir: 'src', prefix: '@' }],
 
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',

@@ -54,7 +54,7 @@ export const homeTestimonialsData: HomeTestimonial[] = [
   {
     id: 1,
     name: 'Nguyễn Thị Lan',
-    avatar: '/images/avatars/1.jpg',
+    avatar: 'https://i.pravatar.cc/150?u=lan',
     rating: 5,
     quote: 'Sản phẩm chất lượng, giao hàng nhanh. Rất hài lòng!',
     meta: 'Mua áo thun nam',
@@ -62,7 +62,7 @@ export const homeTestimonialsData: HomeTestimonial[] = [
   {
     id: 2,
     name: 'Trần Văn Minh',
-    avatar: '/images/avatars/2.jpg',
+    avatar: 'https://i.pravatar.cc/150?u=minh',
     rating: 5,
     quote: 'Giá tốt, hàng đúng mô tả, sẽ mua lại lần sau.',
     meta: 'Mua giày sneaker',
@@ -70,7 +70,7 @@ export const homeTestimonialsData: HomeTestimonial[] = [
   {
     id: 3,
     name: 'Lê Thị Hoa',
-    avatar: '/images/avatars/3.jpg',
+    avatar: 'https://i.pravatar.cc/150?u=hoa',
     rating: 4,
     quote: 'Shop tư vấn nhiệt tình, đóng gói cẩn thận.',
     meta: 'Mua túi xách nữ',
@@ -78,7 +78,7 @@ export const homeTestimonialsData: HomeTestimonial[] = [
   {
     id: 4,
     name: 'Phạm Quốc Hùng',
-    avatar: '/images/avatars/4.jpg',
+    avatar: 'https://i.pravatar.cc/150?u=hung',
     rating: 5,
     quote: 'Đây là lần thứ 5 tôi mua, không bao giờ thất vọng.',
     meta: 'Khách hàng thân thiết',

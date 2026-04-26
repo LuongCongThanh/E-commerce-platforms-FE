@@ -120,6 +120,18 @@ Nice-to-have:
 - `analytics-tracking`
 - `ai-seo`
 
+#### Process & Tooling skills
+
+Must-have:
+
+- `concise-planning`
+- `lint-and-validate`
+- `git-pushing`
+
+Nice-to-have:
+
+- `kaizen`
+
 #### FE skills
 
 Must-have:
@@ -131,6 +143,8 @@ Must-have:
 - `zod-validation-expert`
 - `zustand-store-ts`
 - `ui-review`
+- `form-cro`
+- `seo-audit`
 
 Nice-to-have:
 
@@ -138,14 +152,34 @@ Nice-to-have:
 - `accessibility-compliance-accessibility-audit`
 - `fixing-motion-performance`
 - `systematic-debugging`
+- `frontend-design`
 
 ### Skill usage by phase
 
-| Phase                   | BA focus skills                           | FE focus skills                                                                   |
-| ----------------------- | ----------------------------------------- | --------------------------------------------------------------------------------- |
-| Planning and scope lock | acceptance-orchestrator, writing-plans    | nextjs-app-router-patterns, react-nextjs-development                              |
-| Core build              | api-documentation, architect-review       | tailwind-patterns, tanstack-query-expert, zod-validation-expert, zustand-store-ts |
-| Hardening and release   | technical-change-tracker, analyze-project | ui-review, web-performance-optimization, accessibility audit                      |
+| Phase                   | BA focus skills                           | FE focus skills                                                                             | Tooling skills                |
+| ----------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------- |
+| Planning and scope lock | acceptance-orchestrator, writing-plans    | nextjs-app-router-patterns, react-nextjs-development                                        | concise-planning, git-pushing |
+| Core build              | api-documentation, architect-review       | tailwind-patterns, tanstack-query-expert, zod-validation-expert, zustand-store-ts, form-cro | lint-and-validate             |
+| Hardening and release   | technical-change-tracker, analyze-project | ui-review, seo-audit, web-performance-optimization, accessibility audit, frontend-design    | kaizen, lint-and-validate     |
+
+### Antigravity Skill Bundles — Project Fit Assessment
+
+Mapping of Antigravity bundle skills to this e-commerce project. Each bundle is rated against current MVP scope.
+
+| Bundle               | Rating     | Skills to use                                                                                    | Skills to skip                                                    | Reason                                                                                     |
+| -------------------- | ---------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 🚀 Essentials        | ✅ Use all | `concise-planning`, `lint-and-validate`, `git-pushing`, `kaizen`                                 | —                                                                 | Baseline discipline for any solo/team project                                              |
+| 🌐 Web Wizard        | ✅ Use all | `frontend-design`, `tailwind-patterns`, `form-cro`, `seo-audit`                                  | —                                                                 | Direct fit: Tailwind v4 + SSR + checkout forms + product SEO                               |
+| 🐞 QA & Testing      | ✅ Use all | `test-driven-development`, `systematic-debugging`, `browser-automation`, `code-review-checklist` | `ab-test-setup`                                                   | Vitest + Playwright stack matches all skills except A/B (Phase 2)                          |
+| 🖌️ Web Designer      | ⚠️ Partial | `ui-ux-pro-max`, `frontend-design`                                                               | `3d-web-experience`, `canvas-design`                              | Design system needed; 3D and static image tools irrelevant for e-commerce                  |
+| 🌧️ DevOps & Cloud    | ⚠️ Partial | `docker-expert`, `environment-setup-guide`, `bash-linux`, `deployment-procedures`                | `aws-serverless`                                                  | Docker Compose + Vercel + Railway stack; no AWS Lambda needed at MVP                       |
+| 📊 Data & Analytics  | ⚠️ Partial | `analytics-tracking`                                                                             | `d3-viz`, `ab-test-setup`                                         | GA4 + GTM is MVP scope; charts and A/B belong in Phase 2                                   |
+| 🎨 Creative Director | ⚠️ Partial | `copy-editing`, `frontend-design`                                                                | `canvas-design`, `algorithmic-art`                                | Product copy quality matters; visual/generative art tools are irrelevant                   |
+| 🛡️ Security Engineer | ⚠️ Partial | `ethical-hacking-methodology`, `burp-suite-testing`                                              | `linux-privilege-escalation`, `cloud-penetration-testing`         | Use for defensive OWASP review of auth/checkout only; server-level pentesting out of scope |
+| 🦄 Startup Founder   | ⚠️ Partial | `landing-page-copy`                                                                              | `competitor-analysis`, `pitch-deck-creator`, `stripe-integration` | Product copy is useful; Stripe not used (COD + VNPAY); pitch deck not needed               |
+| 🐍 Python Pro        | ❌ Skip    | —                                                                                                | All                                                               | This is the Next.js FE repo; Python/Django skills apply to backend repo only               |
+| 🤖 Agent Architect   | ❌ Skip    | —                                                                                                | All                                                               | AI features are Phase 3+; no LLM/agent work in current MVP scope                           |
+| 🎮 Indie Game Dev    | ❌ Skip    | —                                                                                                | All                                                               | Not relevant to e-commerce                                                                 |
 
 ### Technical quality gates
 

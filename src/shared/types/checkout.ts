@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { ShippingAddressSchema } from './address';
+import { ShippingAddressSchema } from '@/shared/types/address';
 
 export const CheckoutFormSchema = z.object({
   shippingAddress: ShippingAddressSchema,

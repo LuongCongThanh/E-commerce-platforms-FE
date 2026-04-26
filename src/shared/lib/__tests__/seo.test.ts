@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { buildMetadata } from '../seo';
+import { buildMetadata } from '@/shared/lib/seo';
 
 beforeEach(() => {
   vi.stubEnv('NEXT_PUBLIC_APP_NAME', 'TestShop');

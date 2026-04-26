@@ -27,6 +27,7 @@
 *.pem
 .skills/*
 .claude/skills/*
+.agent/
 
 # debug
 npm-debug.log*

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import type { ProductFilter as SharedProductFilter } from './filter';
+import type { ProductFilter as SharedProductFilter } from '@/shared/types/filter';
 
 export const ProductVariantSchema = z.object({
   id: z.number(),

@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { buildImageUrl } from '../cloudinary';
+import { buildImageUrl } from '@/shared/lib/cloudinary';
 
 beforeEach(() => {
   vi.stubEnv('NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME', 'testcloud');
