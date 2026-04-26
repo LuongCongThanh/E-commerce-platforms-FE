@@ -9,5 +9,9 @@
   "edit": "Edit",
   "search": "Search",
   "back": "Back",
-  "viewAll": "View all"
+  "viewAll": "View all",
+  "errorTitle": "Something went wrong",
+  "errorDescription": "We couldn't load the data right now. Please try again later.",
+  "emptyTitle": "No data found",
+  "emptyDescription": "There are no items to display at the moment."
 }

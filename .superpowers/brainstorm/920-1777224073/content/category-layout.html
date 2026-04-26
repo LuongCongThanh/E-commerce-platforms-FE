@@ -1,0 +1,57 @@
+<h2>Layout trang /categories/[slug]</h2>
+<p class="subtitle">FilterSidebar nên đặt ở đâu trên desktop? Mobile đều dùng sheet/drawer.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f1117;padding:12px;border-radius:8px">
+      <div style="display:flex;gap:8px;min-height:160px">
+        <div style="width:28%;background:#161b22;border-radius:6px;padding:10px;font-size:10px;color:#8b949e">
+          <div style="color:#58a6ff;font-weight:bold;margin-bottom:8px;font-size:11px">Filter</div>
+          <div style="background:#21262d;border-radius:4px;padding:4px 6px;margin-bottom:4px;color:#e6edf3">Giá</div>
+          <div style="padding:3px 6px;color:#6e7681;font-size:10px">100k — 500k</div>
+          <div style="background:#21262d;border-radius:4px;padding:4px 6px;margin-bottom:4px;margin-top:6px;color:#e6edf3">Sắp xếp</div>
+          <div style="padding:3px 6px;color:#6e7681;font-size:10px">Mới nhất ▾</div>
+        </div>
+        <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:6px;align-content:start">
+          <div style="background:#161b22;border-radius:6px;height:70px"></div>
+          <div style="background:#161b22;border-radius:6px;height:70px"></div>
+          <div style="background:#161b22;border-radius:6px;height:70px"></div>
+          <div style="background:#161b22;border-radius:6px;height:70px"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Left Sidebar (truyền thống)</h3>
+      <p>Desktop: sidebar 240px bên trái, product grid bên phải. Mobile: ẩn sidebar, thay bằng nút "Lọc" mở Sheet từ dưới.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f1117;padding:12px;border-radius:8px">
+      <div style="min-height:160px">
+        <div style="display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap">
+          <div style="background:#21262d;border-radius:20px;padding:4px 10px;font-size:10px;color:#e6edf3">Giá ▾</div>
+          <div style="background:#21262d;border-radius:20px;padding:4px 10px;font-size:10px;color:#e6edf3">Sắp xếp ▾</div>
+          <div style="background:#21262d;border-radius:20px;padding:4px 10px;font-size:10px;color:#e6edf3">Danh mục ▾</div>
+          <div style="margin-left:auto;background:#1f6feb;border-radius:20px;padding:4px 10px;font-size:10px;color:#fff">Đang lọc: Giá</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+          <div style="background:#161b22;border-radius:6px;height:70px"></div>
+          <div style="background:#161b22;border-radius:6px;height:70px"></div>
+          <div style="background:#161b22;border-radius:6px;height:70px"></div>
+          <div style="background:#161b22;border-radius:6px;height:70px"></div>
+          <div style="background:#161b22;border-radius:6px;height:70px"></div>
+          <div style="background:#161b22;border-radius:6px;height:70px"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Top Filter Bar (pill chips)</h3>
+      <p>Filter nằm trên sản phẩm dưới dạng pill dropdown. Grid sản phẩm full-width (3 cột desktop, 2 cột mobile). Hiện đại hơn, không tốn không gian sidebar.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px">💡 Recommendation: <strong>B</strong> — Top filter bar phù hợp hơn cho fashion e-commerce mobile-first, và grid 3 cột tận dụng không gian tốt hơn.</p>
