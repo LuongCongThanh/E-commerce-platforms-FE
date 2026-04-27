@@ -5,7 +5,7 @@ import { SectionHeading } from '@/shared/components/marketing/SectionHeading';
 
 export const SectionWhyChooseUs = (): React.JSX.Element => {
   return (
-    <section className="bg-muted/40 py-12">
+    <section className="bg-primary-50/30 dark:bg-primary-950/10 py-12 md:py-16">
       <div className="container mx-auto px-4">
         <SectionHeading title="Tại sao chọn chúng tôi?" align="center" />
         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

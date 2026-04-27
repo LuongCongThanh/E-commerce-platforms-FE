@@ -2,10 +2,10 @@
 
 import { use } from 'react';
 
+import { OrderStatusBadge } from '@/app/[locale]/(shop)/_components/OrderStatusBadge';
 import { useCancelOrder, useOrder } from '@/app/[locale]/(shop)/_lib/hooks';
 import { Button } from '@/shared/components/base/Button';
 import { Separator } from '@/shared/components/base/Separator';
-import { OrderStatusBadge } from '@/shared/components/common/OrderStatusBadge';
 
 function formatVND(n: number) {
   return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n);

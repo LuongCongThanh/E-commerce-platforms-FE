@@ -2,6 +2,8 @@ import { z } from 'zod';
 
 import type { ProductFilter as SharedProductFilter } from '@/shared/types/filter';
 
+export type BadgeValue = 'best-seller' | 'new' | 'sale' | 'low-stock';
+
 export const ProductVariantSchema = z.object({
   id: z.number(),
   size: z.string().nullable(),

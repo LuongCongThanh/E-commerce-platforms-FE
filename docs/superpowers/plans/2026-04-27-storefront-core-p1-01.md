@@ -14,7 +14,7 @@
 
 ### Tạo mới
 
-```text
+```textê
 src/app/[locale]/(shop)/
   _lib/
     types/

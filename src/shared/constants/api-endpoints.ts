@@ -4,6 +4,8 @@ export const API = {
     REGISTER: '/api/auth/register/',
     REFRESH: '/api/auth/token/refresh/',
     LOGOUT: '/api/auth/logout/',
+    FORGOT_PASSWORD: '/api/auth/password/reset/',
+    RESET_PASSWORD: '/api/auth/password/reset/confirm/',
   },
   PRODUCTS: {
     LIST: '/api/products/',

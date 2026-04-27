@@ -16,6 +16,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: { default: 'E-Commerce Shop', template: '%s | E-Commerce Shop' },
   description: 'Mua sắm trực tuyến nhanh chóng, tiện lợi',
   manifest: '/manifest.json',
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { readonly children: React.ReactNode }) {
   return (
     <html lang="vi" suppressHydrationWarning className={inter.variable}>
-      <body className="selection:bg-primary-500/30 font-sans antialiased">
+      <body className="selection:bg-primary-500/30 font-sans antialiased" suppressHydrationWarning>
         <div className="bg-background spatial-bg fixed inset-0 -z-50 opacity-40 dark:opacity-100" />
         <Providers>
           <div className="spatial-depth relative flex min-h-screen flex-col">{children}</div>

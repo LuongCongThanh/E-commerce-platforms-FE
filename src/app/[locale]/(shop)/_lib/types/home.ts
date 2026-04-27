@@ -10,6 +10,7 @@ export interface HomeCategory {
   name: string;
   image: string;
   productCount: number;
+  description?: string;
 }
 
 export interface HomeHero {

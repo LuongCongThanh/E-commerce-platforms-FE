@@ -79,6 +79,12 @@ Always returns `response.data` directly. Errors are transformed to `ApiError` by
 
 Zod schemas in `shared/types/` validate API responses at runtime. TypeScript types are inferred via `z.infer<>`. `strict: true` in tsconfig. Import alias: `@/*` → `src/*`.
 
+Enforced ESLint rules for Type Safety:
+
+- **Strict Booleans**: Conditionals must use explicit boolean values (e.g., `if (val === true)` for `boolean | undefined` or `if (val !== null)` for nullable objects).
+- **Boolean Literals**: Avoid redundant `=== true` for strict `boolean` types (e.g., use `if (val)` instead of `if (val === true)`).
+- **Template Expressions**: Always convert non-string values to string in template literals (e.g., `${i.toString()}`).
+
 ### Styling
 
 - **Tailwind CSS v4** — no `tailwind.config.ts`
@@ -131,3 +137,7 @@ Same-directory imports (`./foo`) are allowed. Only upward traversal (`../`) is b
 - **Masking**: Use `mask-[...]` instead of `[mask-image:...]`.
 - **Background Size**: Use `bg-size-[...]` instead of `bg-[size:...]`.
 - **Naming**: Prefer standard Tailwind v4 utility-first naming over arbitrary value notation where possible.
+
+### Product & Commerce
+
+- **Badges**: Use the shared `BadgeValue` union type (`'best-seller' | 'new' | 'sale' | 'low-stock'`) for all product badges. Align feature-specific product types with shared `Product` schema where possible.

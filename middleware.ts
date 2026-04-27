@@ -2,30 +2,38 @@ import createMiddleware from 'next-intl/middleware';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
-// Khởi tạo middleware của next-intl để tự động redirect theo locale
-// Ví dụ: /products → /vi/products (vì defaultLocale là 'vi')
 const intlMiddleware = createMiddleware({
   locales: ['vi', 'en'],
   defaultLocale: 'vi',
 });
 
+const PROTECTED_PATTERNS = [/^\/(vi|en)\/admin/, /^\/(vi|en)\/checkout/, /^\/(vi|en)\/orders/, /^\/(vi|en)\/profile/];
+
+const AUTH_ONLY_PATTERNS = [/^\/(vi|en)\/login$/, /^\/(vi|en)\/register$/];
+
 export function middleware(request: NextRequest): ReturnType<typeof intlMiddleware> {
   const { pathname } = request.nextUrl;
+  const token = request.cookies.get('access_token');
+  const isLoggedIn = token != null && token.value.length > 0;
 
-  // Bảo vệ route admin: kiểm tra cookie access_token trước khi cho vào /(vi|en)/admin/*
-  // Nếu chưa đăng nhập → redirect về trang login của locale mặc định
-  if (/^\/(vi|en)\/admin/.test(pathname)) {
-    const token = request.cookies.get('access_token');
-    if (token == null) {
-      return NextResponse.redirect(new URL('/vi/login', request.url));
+  const locale = pathname.startsWith('/en/') ? 'en' : 'vi';
+
+  if (PROTECTED_PATTERNS.some(p => p.test(pathname))) {
+    if (!isLoggedIn) {
+      const returnUrl = encodeURIComponent(pathname + request.nextUrl.search);
+      return NextResponse.redirect(new URL(`/${locale}/login?returnUrl=${returnUrl}`, request.url));
     }
   }
 
-  // Chuyển tiếp request cho next-intl xử lý locale routing
+  if (AUTH_ONLY_PATTERNS.some(p => p.test(pathname))) {
+    if (isLoggedIn) {
+      return NextResponse.redirect(new URL(`/${locale}/home`, request.url));
+    }
+  }
+
   return intlMiddleware(request);
 }
 
 export const config = {
-  // Áp dụng middleware cho tất cả route, ngoại trừ: API routes, _next assets, và static files (có dấu chấm trong tên)
   matcher: [String.raw`/((?!api|_next|.*\..*).*)`],
 };

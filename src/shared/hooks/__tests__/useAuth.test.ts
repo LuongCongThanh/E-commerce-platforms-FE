@@ -11,8 +11,26 @@ vi.mock('next/navigation', () => ({
   useRouter: () => ({ push: mockPush }),
 }));
 
-const mockUser = { id: 1, email: 'user@test.com', name: 'User', is_staff: false };
-const mockAdmin = { id: 2, email: 'admin@test.com', name: 'Admin', is_staff: true };
+const mockUser = {
+  id: 1,
+  email: 'user@test.com',
+  firstName: 'User',
+  lastName: 'Test',
+  avatar: null,
+  role: 'customer' as const,
+  isActive: true,
+  createdAt: '2024-01-01T00:00:00Z',
+};
+const mockAdmin = {
+  id: 2,
+  email: 'admin@test.com',
+  firstName: 'Admin',
+  lastName: 'Test',
+  avatar: null,
+  role: 'admin' as const,
+  isActive: true,
+  createdAt: '2024-01-01T00:00:00Z',
+};
 
 describe('useAuth', () => {
   beforeEach(() => {

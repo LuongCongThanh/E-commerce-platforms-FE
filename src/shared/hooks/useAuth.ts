@@ -22,7 +22,7 @@ export function useAuth(): UseAuthResult {
   const { user, accessToken, setAccessToken, setUser, clearAuth } = useAuthStore();
 
   const isLoggedIn = accessToken != null && accessToken.length > 0;
-  const isAdmin = user?.is_staff ?? false;
+  const isAdmin = user?.role === 'admin' || user?.role === 'staff';
 
   function login(token: string, userData: AuthUser): void {
     setAccessToken(token);

@@ -1,21 +1,16 @@
 import { create } from 'zustand';
 import { persist, subscribeWithSelector } from 'zustand/middleware';
 
-interface AuthUser {
-  id: number;
-  email: string;
-  name: string;
-  is_staff: boolean;
-}
+import type { User } from '@/shared/types/user';
 
 interface AuthState {
   accessToken: string | null;
-  user: AuthUser | null;
+  user: User | null;
 }
 
 interface AuthActions {
   setAccessToken: (token: string) => void;
-  setUser: (user: AuthUser) => void;
+  setUser: (user: User) => void;
   clearAuth: () => void;
 }
 

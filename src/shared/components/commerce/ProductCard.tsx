@@ -8,8 +8,7 @@ import { ShoppingCart, Star } from 'lucide-react';
 import type { MouseEvent } from 'react';
 
 import { cn, formatCurrency } from '@/shared/lib/utils';
-
-type BadgeValue = 'best-seller' | 'new' | 'sale' | 'low-stock';
+import type { BadgeValue } from '@/shared/types/product';
 
 interface BadgeLabels {
   'best-seller': string;

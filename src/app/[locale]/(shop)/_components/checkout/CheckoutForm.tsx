@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -26,10 +26,9 @@ type CheckoutValues = z.infer<typeof checkoutSchema>;
 
 export function CheckoutForm() {
   const t = useTranslations('checkout');
+  const locale = useLocale();
   const router = useRouter();
   const { items, clearCart } = useCartStore();
-
-  const locale = t('title') === 'Checkout' ? 'en' : 'vi'; // Simple locale detection for redirect
 
   useEffect(() => {
     if (items.length === 0) {
@@ -50,10 +49,9 @@ export function CheckoutForm() {
   });
 
   const onSubmit = async (_data: CheckoutValues) => {
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000));
     clearCart();
-    router.push('/checkout/success');
+    router.push(`/${locale}/checkout/success`);
   };
 
   return (

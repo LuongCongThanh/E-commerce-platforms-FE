@@ -1,5 +1,6 @@
 'use client';
 
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,12 +17,13 @@ interface CartDrawerProps {
 }
 
 export function CartDrawer({ children }: CartDrawerProps) {
+  const locale = useLocale();
   const { items, total, itemCount, updateQuantity, removeCartItem } = useCartStore();
 
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
-      <SheetContent className="glass flex w-full flex-col border-l-white/10 p-0 sm:max-w-md">
+      <SheetContent aria-describedby={undefined} className="glass flex w-full flex-col border-l-white/10 p-0 sm:max-w-md">
         <SheetHeader className="border-b border-white/10 p-6">
           <SheetTitle className="flex items-center gap-2 text-xl font-bold">
             <ShoppingBag className="text-primary-500 size-5" />
@@ -59,7 +61,13 @@ export function CartDrawer({ children }: CartDrawerProps) {
                       className="group relative flex gap-4"
                     >
                       <div className="relative size-20 overflow-hidden rounded-xl border border-white/10 bg-neutral-100 dark:bg-neutral-800">
-                        <Image src={item.image} alt={item.name} fill className="object-cover transition-transform group-hover:scale-110" />
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          fill
+                          sizes="80px"
+                          className="object-cover transition-transform group-hover:scale-110"
+                        />
                       </div>
                       <div className="flex flex-1 flex-col justify-between">
                         <div>
@@ -120,13 +128,13 @@ export function CartDrawer({ children }: CartDrawerProps) {
             </div>
             <div className="grid grid-cols-2 gap-3">
               <SheetTrigger asChild>
-                <Link href="/cart">
+                <Link href={`/${locale}/cart`}>
                   <Button variant="outline" className="w-full">
                     Xem giỏ hàng
                   </Button>
                 </Link>
               </SheetTrigger>
-              <Link href="/checkout">
+              <Link href={`/${locale}/checkout`}>
                 <Button className="w-full">Thanh toán</Button>
               </Link>
             </div>

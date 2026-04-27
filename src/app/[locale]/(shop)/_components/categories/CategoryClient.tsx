@@ -1,0 +1,73 @@
+'use client';
+
+import { useRouter, useSearchParams } from 'next/navigation';
+
+import { Pagination } from '@/app/[locale]/(shop)/_components/products/Pagination';
+import { ProductGrid } from '@/app/[locale]/(shop)/_components/products/ProductGrid';
+import type { SortBy } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
+import { useProducts } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
+import { Skeleton } from '@/shared/components/base/Skeleton';
+
+interface CategoryClientProps {
+  readonly categorySlug: string;
+}
+
+export const CategoryClient = ({ categorySlug }: CategoryClientProps): React.JSX.Element => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const pageParam = searchParams.get('page');
+  const page = pageParam !== null ? Math.max(1, Number(pageParam)) : 1;
+
+  const sortByParam = searchParams.get('sortBy');
+  const sortBy = (sortByParam as SortBy | null) !== null ? (sortByParam as SortBy) : 'newest';
+
+  const minPriceParam = searchParams.get('minPrice');
+  const minPrice = minPriceParam !== null ? Number(minPriceParam) : undefined;
+
+  const maxPriceParam = searchParams.get('maxPrice');
+  const maxPrice = maxPriceParam !== null ? Number(maxPriceParam) : undefined;
+
+  const { products, totalPages, isLoading } = useProducts({
+    categorySlug,
+    page,
+    pageSize: 12,
+    sortBy,
+    minPrice,
+    maxPrice,
+  });
+
+  const handlePageChange = (p: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('page', p.toString());
+    router.push(`?${params.toString()}`);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="space-y-6">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <Skeleton key={`skeleton-${i.toString()}`} className="aspect-3/4 w-full rounded-xl" />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (products.length === 0) {
+    return (
+      <div className="flex min-h-100 flex-col items-center justify-center rounded-2xl border border-dashed text-center">
+        <h3 className="text-lg font-medium">Không tìm thấy sản phẩm nào</h3>
+        <p className="text-muted-foreground mt-1">Thử thay đổi bộ lọc để tìm thấy nhiều kết quả hơn.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-8">
+      <ProductGrid products={products} />
+      {totalPages > 1 && <Pagination currentPage={page} totalPages={totalPages} onPageChange={handlePageChange} />}
+    </div>
+  );
+};

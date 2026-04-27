@@ -1,3 +1,5 @@
+import type { BadgeValue } from '@/shared/types/product';
+
 export type ProductVariant = {
   id: string;
   label: string;
@@ -13,7 +15,7 @@ export type Product = {
   images: string[];
   rating: number;
   reviewCount: number;
-  badges: string[];
+  badges: BadgeValue[];
   categorySlug: string;
   description: string;
   variants: ProductVariant[];

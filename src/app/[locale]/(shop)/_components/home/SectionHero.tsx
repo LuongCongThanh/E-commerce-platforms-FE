@@ -21,32 +21,32 @@ export const SectionHero = (): React.JSX.Element => {
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
   return (
-    <section ref={containerRef} className="relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-32">
+    <section ref={containerRef} className="relative overflow-hidden pt-12 pb-16 md:pt-24 md:pb-32">
       {/* Dynamic Background Elements */}
       <motion.div
         aria-hidden="true"
         style={{ y: y1 }}
-        className="bg-primary-500/10 absolute top-0 right-0 -z-10 h-[500px] w-[500px] rounded-full blur-[120px]"
+        className="bg-primary-500/10 absolute top-0 right-0 -z-10 h-125 w-125 rounded-full blur-[120px]"
       />
       <motion.div
         aria-hidden="true"
         style={{ y: y2 }}
-        className="bg-accent-500/10 absolute bottom-0 left-0 -z-10 h-[400px] w-[400px] rounded-full blur-[100px]"
+        className="bg-accent-500/10 absolute bottom-0 left-0 -z-10 h-100 w-100 rounded-full blur-[100px]"
       />
 
-      <div className="container mx-auto flex flex-col items-center gap-12 px-4 md:flex-row lg:gap-20">
+      <div className="container mx-auto flex flex-col items-center gap-8 px-4 md:flex-row md:gap-12 lg:gap-20">
         {/* Left column: Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="relative z-10 flex flex-1 flex-col gap-8"
+          className="relative z-10 flex flex-1 flex-col gap-6 md:gap-8"
         >
           <div className="glass text-primary-600 dark:text-primary-400 w-fit rounded-full px-4 py-1.5 text-sm font-semibold tracking-wide">
             {homeHeroData.badge}
           </div>
 
-          <h1 className="bg-linear-to-b from-neutral-900 to-neutral-500 bg-clip-text text-5xl leading-[1.1] font-black tracking-tighter text-transparent md:text-6xl lg:text-7xl dark:from-white dark:to-neutral-500">
+          <h1 className="bg-linear-to-b from-neutral-900 to-neutral-500 bg-clip-text text-4xl leading-[1.1] font-black tracking-tighter text-transparent sm:text-5xl md:text-6xl lg:text-7xl dark:from-white dark:to-neutral-500">
             {titleLines.map(line => (
               <span key={line} className="block">
                 {line}
@@ -54,22 +54,27 @@ export const SectionHero = (): React.JSX.Element => {
             ))}
           </h1>
 
-          <p className="max-w-md text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">{homeHeroData.subtitle}</p>
+          <p className="max-w-md text-base leading-relaxed text-neutral-600 md:text-lg dark:text-neutral-400">{homeHeroData.subtitle}</p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3 md:gap-4">
             <Button
               asChild
               size="lg"
-              className="bg-primary-500 shadow-spatial-lg hover:bg-primary-600 h-14 px-8 text-lg font-bold text-white transition-all hover:scale-105 active:scale-95"
+              className="bg-primary-500 shadow-spatial-lg hover:bg-primary-600 h-12 px-6 text-base font-bold text-white transition-all hover:scale-105 active:scale-95 md:h-14 md:px-8 md:text-lg"
             >
               <Link href={`/${locale}/products`}>{homeHeroData.cta}</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="glass h-14 px-8 text-lg font-semibold transition-all hover:bg-white/20">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="glass h-12 px-6 text-base font-semibold transition-all hover:bg-white/20 md:h-14 md:px-8 md:text-lg"
+            >
               <Link href={`/${locale}/products?flash-sale=true`}>{homeHeroData.ctaSale}</Link>
             </Button>
           </div>
 
-          <div className="mt-4 opacity-70 transition-opacity hover:opacity-100">
+          <div className="opacity-70 transition-opacity hover:opacity-100">
             <TrustBadgeList items={homeHeroData.trustItems} />
           </div>
         </motion.div>
@@ -79,9 +84,9 @@ export const SectionHero = (): React.JSX.Element => {
           initial={{ opacity: 0, scale: 0.8, rotateY: 20 }}
           animate={{ opacity: 1, scale: 1, rotateY: 0 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-          className="spatial-depth relative flex flex-1 justify-center"
+          className="spatial-depth relative flex w-full flex-1 justify-center"
         >
-          <div className="relative aspect-square w-full max-w-lg">
+          <div className="relative mx-auto aspect-square w-full max-w-65 sm:max-w-xs md:max-w-lg">
             {/* Background Decorative Grid */}
             <div className="absolute inset-0 -z-10 mask-[radial-gradient(ellipse_at_center,black,transparent)] opacity-20 dark:opacity-40">
               <div className="h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[40px_40px]" />

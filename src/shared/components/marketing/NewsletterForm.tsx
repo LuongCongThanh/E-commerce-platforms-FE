@@ -34,7 +34,7 @@ export const NewsletterForm = ({ title, description, submitLabel = 'Đăng ký',
     <div className="flex flex-col gap-4">
       {title != null && title.length > 0 ? <h3 className="text-foreground text-lg font-bold">{title}</h3> : null}
       {description != null && description.length > 0 ? <p className="text-muted-foreground text-sm">{description}</p> : null}
-      <form onSubmit={handleSubmit} className="flex gap-2">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2 sm:flex-row">
         <input
           aria-label="Địa chỉ email"
           type="email"
