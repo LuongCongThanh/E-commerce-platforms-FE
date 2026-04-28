@@ -10,11 +10,15 @@ export function makeQueryClient() {
         staleTime: 60_000,
         refetchOnWindowFocus: false,
         retry: (failureCount, error) => {
-          if (error instanceof ApiError && error.status < 500) return false;
+          if (error instanceof ApiError) {
+            // No retry for client errors (400-499)
+            if (error.status >= 400 && error.status < 500) return false;
+          }
           return failureCount < 2;
         },
       },
       mutations: {
+        retry: false,
         onError: error => {
           const message = error instanceof ApiError ? error.message : 'Đã có lỗi xảy ra, vui lòng thử lại';
           toast.error(message);

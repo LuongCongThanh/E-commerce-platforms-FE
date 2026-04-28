@@ -59,14 +59,14 @@ Excluded:
 
 ### P1 - Core MVP build
 
-| ID    | Objective        | Output                              | Dependencies | Owner role | Acceptance checks                      | Skill mapping                                    |
-| ----- | ---------------- | ----------------------------------- | ------------ | ---------- | -------------------------------------- | ------------------------------------------------ |
-| P1-01 | Storefront core  | Home/PDP/search/filter at MVP level | P0-\*        | FE         | Browse journey is stable               | FE: tailwind-patterns, ui-review                 |
-| P1-02 | Auth core        | Register/login/forgot/reset         | P0-\*        | FE         | Auth flow works with basic guard       | FE: zod-validation-expert                        |
-| P1-03 | Cart core        | Add/update/remove + totals          | P1-01        | FE         | Cart behavior and totals are correct   | FE: zustand-store-ts                             |
-| P1-04 | COD checkout     | Checkout form + COD order placement | P1-02, P1-03 | FE + BE    | COD order succeeds, errors are handled | FE: tanstack-query-expert, BA: api-documentation |
-| P1-05 | Order visibility | Confirmation + history + detail     | P1-04        | FE         | Users see accurate order data          | FE: react-nextjs-development                     |
-| P1-06 | Admin core       | Minimum product/order management    | P1-04        | FE/BE      | Order status transitions work          | BA: architect-review                             |
+| ID    | Objective        | Output                              | Dependencies | Owner role | Acceptance checks                                      | Skill mapping                                    |
+| ----- | ---------------- | ----------------------------------- | ------------ | ---------- | ------------------------------------------------------ | ------------------------------------------------ |
+| P1-01 | Storefront core  | Home/PDP/search/filter at MVP level | P0-\*        | FE         | Browse journey is stable, Luxury Mega Menu implemented | FE: tailwind-patterns, ui-review                 |
+| P1-02 | Auth core        | Register/login/forgot/reset         | P0-\*        | FE         | Auth flow works with basic guard                       | FE: zod-validation-expert                        |
+| P1-03 | Cart core        | Add/update/remove + totals          | P1-01        | FE         | Cart behavior and totals are correct                   | FE: zustand-store-ts                             |
+| P1-04 | COD checkout     | Checkout form + COD order placement | P1-02, P1-03 | FE + BE    | COD order succeeds, errors are handled                 | FE: tanstack-query-expert, BA: api-documentation |
+| P1-05 | Order visibility | Confirmation + history + detail     | P1-04        | FE         | Users see accurate order data                          | FE: react-nextjs-development                     |
+| P1-06 | Admin core       | Minimum product/order management    | P1-04        | FE/BE      | Order status transitions work                          | BA: architect-review                             |
 
 ### P2 - Hardening before release
 
@@ -105,11 +105,11 @@ Excluded:
 
 - P0 done:
   - [ ] Scope locked
-  - [ ] Architecture locked
-  - [ ] Version baseline locked
+  - [x] Architecture locked
+  - [x] Version baseline locked
   - [ ] Tracking protocol active
 - P1 done:
-  - [ ] Core customer journeys run end-to-end
+  - [/] Core customer journeys run end-to-end (Mega Menu in progress)
   - [ ] Admin core can process live orders
 - P2 done:
   - [ ] Core regression passes

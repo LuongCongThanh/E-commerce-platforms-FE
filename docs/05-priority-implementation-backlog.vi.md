@@ -59,14 +59,14 @@ Không bao gồm:
 
 ### P1 - Core MVP build
 
-| ID    | Objective        | Output                             | Dependencies | Owner role | Acceptance checks                        | Skill mapping                                    |
-| ----- | ---------------- | ---------------------------------- | ------------ | ---------- | ---------------------------------------- | ------------------------------------------------ |
-| P1-01 | Storefront core  | Home/PDP/search/filter MVP         | P0-\*        | FE         | Journey browse ổn định                   | FE: tailwind-patterns, ui-review                 |
-| P1-02 | Auth core        | Register/login/forgot/reset        | P0-\*        | FE         | Auth flow hoạt động + guard cơ bản       | FE: zod-validation-expert                        |
-| P1-03 | Cart core        | Add/update/remove cart + totals    | P1-01        | FE         | Tính toán giỏ chính xác                  | FE: zustand-store-ts                             |
-| P1-04 | Checkout COD     | Checkout form + place order COD    | P1-02, P1-03 | FE + BE    | COD order tạo thành công, lỗi được xử lý | FE: tanstack-query-expert, BA: api-documentation |
-| P1-05 | Order visibility | Confirmation + history + detail    | P1-04        | FE         | User xem đúng order data                 | FE: react-nextjs-development                     |
-| P1-06 | Admin core       | Product/order management tối thiểu | P1-04        | FE/BE      | Cập nhật trạng thái đơn thành công       | BA: architect-review                             |
+| ID    | Objective        | Output                             | Dependencies | Owner role | Acceptance checks                                     | Skill mapping                                    |
+| ----- | ---------------- | ---------------------------------- | ------------ | ---------- | ----------------------------------------------------- | ------------------------------------------------ |
+| P1-01 | Storefront core  | Home/PDP/search/filter MVP         | P0-\*        | FE         | Journey browse ổn định, Luxury Mega Menu đã implement | FE: tailwind-patterns, ui-review                 |
+| P1-02 | Auth core        | Register/login/forgot/reset        | P0-\*        | FE         | Auth flow hoạt động + guard cơ bản                    | FE: zod-validation-expert                        |
+| P1-03 | Cart core        | Add/update/remove cart + totals    | P1-01        | FE         | Tính toán giỏ chính xác                               | FE: zustand-store-ts                             |
+| P1-04 | Checkout COD     | Checkout form + place order COD    | P1-02, P1-03 | FE + BE    | COD order tạo thành công, lỗi được xử lý              | FE: tanstack-query-expert, BA: api-documentation |
+| P1-05 | Order visibility | Confirmation + history + detail    | P1-04        | FE         | User xem đúng order data                              | FE: react-nextjs-development                     |
+| P1-06 | Admin core       | Product/order management tối thiểu | P1-04        | FE/BE      | Cập nhật trạng thái đơn thành công                    | BA: architect-review                             |
 
 ### P2 - Hardening before release
 
@@ -105,11 +105,11 @@ Không bao gồm:
 
 - P0 done:
   - [ ] Scope locked
-  - [ ] Architecture locked
-  - [ ] Version baseline locked
+  - [x] Architecture locked
+  - [x] Version baseline locked
   - [ ] Tracking protocol active
 - P1 done:
-  - [ ] Core customer journey end-to-end chạy ổn định
+  - [/] Core customer journey end-to-end chạy ổn định (Mega Menu đang hoàn thiện)
   - [ ] Admin core xử lý đơn vận hành được
 - P2 done:
   - [ ] Core regression pass

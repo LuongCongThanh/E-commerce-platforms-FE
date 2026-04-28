@@ -1,11 +1,14 @@
 export class ApiError extends Error {
-  constructor(
-    public readonly status: number,
-    message: string,
-    public readonly data?: unknown
-  ) {
-    super(message);
+  status: number;
+  code?: string;
+  details?: unknown;
+
+  constructor(params: { message: string; status: number; code?: string; details?: unknown }) {
+    super(params.message);
     this.name = 'ApiError';
+    this.status = params.status;
+    this.code = params.code;
+    this.details = params.details;
   }
 
   get isUnauthorized() {

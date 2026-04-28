@@ -53,21 +53,21 @@ Không bao gồm:
 
 ### Technical stack by layer
 
-| Layer                    | Technology                                         | Why this choice                                      |
-| ------------------------ | -------------------------------------------------- | ---------------------------------------------------- |
-| App framework            | Next.js 16.2.4                                     | App Router ổn định, phù hợp SSR/SEO và module-driven |
-| UI runtime               | React 19.2.4, React DOM 19.2.4                     | Hiệu năng tốt, ecosystem lớn                         |
-| Styling                  | Tailwind CSS 4, tailwind-merge 3.5.0               | Tốc độ phát triển UI cao, chuẩn utility-first        |
-| Data fetching            | @tanstack/react-query 5.99.1                       | Quản lý server state và cache nhất quán              |
-| Client state             | Zustand 5.0.12                                     | Gọn nhẹ cho auth/cart/UI state                       |
-| HTTP                     | Axios 1.15.0                                       | Interceptor, error handling tập trung                |
-| Forms                    | React Hook Form 7.72.1 + @hookform/resolvers 5.2.2 | Form performance tốt, tích hợp validation rõ         |
-| Validation               | Zod 4.3.6                                          | Type-safe schema cho FE contracts                    |
-| i18n                     | next-intl 4.9.1                                    | Chuẩn hóa localization                               |
-| Monitoring               | @sentry/nextjs 10.49.0                             | Theo dõi lỗi production                              |
-| Testing unit/integration | Vitest 4.1.4 + Testing Library                     | Nhanh, phù hợp FE workflows                          |
-| E2E testing              | Playwright 1.59.1                                  | Kiểm thử luồng nghiệp vụ đầu-cuối                    |
-| Quality tooling          | ESLint 9.39.4 + Prettier 3.8.3 + Husky 9.1.7       | Cưỡng chế chất lượng trước merge                     |
+| Layer                    | Technology                                         | Why this choice                                                       |
+| ------------------------ | -------------------------------------------------- | --------------------------------------------------------------------- |
+| App framework            | Next.js 16.2.4                                     | App Router ổn định, phù hợp SSR/SEO và module-driven                  |
+| UI runtime               | React 19.2.4, React DOM 19.2.4                     | Hiệu năng tốt, ecosystem lớn                                          |
+| Styling                  | Tailwind CSS 4, tailwind-merge 3.5.0               | Tốc độ phát triển UI cao, chuẩn utility-first                         |
+| Data fetching            | @tanstack/react-query 5.99.1                       | Quản lý server state và cache nhất quán                               |
+| Client state             | Zustand 5.0.12                                     | Gọn nhẹ cho auth/cart/UI state                                        |
+| HTTP                     | Axios 1.15.0                                       | Interceptor, error handling tập trung                                 |
+| Forms                    | React Hook Form 7.72.1 + @hookform/resolvers 5.2.2 | Form performance tốt, tích hợp validation rõ                          |
+| Validation               | Zod 4.3.6                                          | Type-safe schema cho FE contracts                                     |
+| i18n                     | next-intl 4.9.1                                    | Chuẩn hóa localization                                                |
+| Monitoring               | @sentry/nextjs 10.49.0                             | Theo dõi lỗi production                                               |
+| Testing unit/integration | Vitest 4.1.4 + Testing Library                     | Nhanh, phù hợp FE workflows                                           |
+| E2E testing              | Playwright 1.59.1                                  | Kiểm thử luồng nghiệp vụ đầu-cuối                                     |
+| Công cụ chất lượng       | ESLint 9.39.4 + Prettier 3.8.3 + Husky 9.1.7       | Bắt buộc qua `npm run format` (Prettier trước ESLint) trước khi merge |
 
 ### Selected version matrix
 
@@ -91,15 +91,17 @@ Không bao gồm:
 
 #### Dev dependencies (core)
 
-| Package          | Version |
-| ---------------- | ------- |
-| typescript       | ^5      |
-| vitest           | ^4.1.4  |
-| @playwright/test | ^1.59.1 |
-| eslint           | ^9.39.4 |
-| prettier         | ^3.8.3  |
-| husky            | ^9.1.7  |
-| lint-staged      | ^16.4.0 |
+| Package            | Version |
+| ------------------ | ------- |
+| typescript         | ^5      |
+| vitest             | ^4.1.4  |
+| @playwright/test   | ^1.59.1 |
+| eslint             | ^9.39.4 |
+| prettier           | ^3.8.3  |
+| husky              | ^9.1.7  |
+| lint-staged        | ^16.4.0 |
+| openapi-typescript | ^7.6.0  |
+| orval              | ^7.4.1  |
 
 ### Skill matrix focused on BA and FE
 
@@ -138,23 +140,37 @@ Nice-to-have:
 - `accessibility-compliance-accessibility-audit`
 - `fixing-motion-performance`
 - `systematic-debugging`
+- `frontend-design`
+
+#### Kỹ năng Quy trình & Công cụ (Process & Tooling)
+
+Bắt buộc:
+
+- `concise-planning`
+- `lint-and-validate`
+- `git-pushing`
+
+Nên có:
+
+- `kaizen`
 
 ### Skill usage by phase
 
-| Phase                   | BA focus skills                           | FE focus skills                                                                   |
-| ----------------------- | ----------------------------------------- | --------------------------------------------------------------------------------- |
-| Planning and scope lock | acceptance-orchestrator, writing-plans    | nextjs-app-router-patterns, react-nextjs-development                              |
-| Core build              | api-documentation, architect-review       | tailwind-patterns, tanstack-query-expert, zod-validation-expert, zustand-store-ts |
-| Hardening and release   | technical-change-tracker, analyze-project | ui-review, web-performance-optimization, accessibility audit                      |
+| Phase                   | BA focus skills                           | FE focus skills                                                                             | Tooling skills                |
+| ----------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------- |
+| Planning and scope lock | acceptance-orchestrator, writing-plans    | nextjs-app-router-patterns, react-nextjs-development                                        | concise-planning, git-pushing |
+| Core build              | api-documentation, architect-review       | tailwind-patterns, tanstack-query-expert, zod-validation-expert, zustand-store-ts, form-cro | lint-and-validate             |
+| Hardening and release   | technical-change-tracker, analyze-project | ui-review, seo-audit, web-performance-optimization, accessibility audit, frontend-design    | kaizen, lint-and-validate     |
 
 ### Technical quality gates
 
 Gate rules before merge:
 
-- `npm run lint` must pass.
-- `npm run test` must pass.
-- `npm run build` must pass.
-- Tính năng ảnh hưởng flow chính phải có e2e tương ứng (`npm run test:e2e`).
+- `npm run format` phải pass (chạy Prettier rồi đến ESLint).
+- `npm run lint` phải pass.
+- `npm run test` phải pass.
+- `npm run build` phải pass.
+- Các tính năng chạm vào core journey phải có e2e coverage tương ứng (`npm run test:e2e`).
 
 Gate rules before release:
 
@@ -177,6 +193,33 @@ Deferred to phase later:
 - Advanced promo engine.
 - Full analytics/BI stack.
 - Marketplace capabilities.
+
+### Đánh giá sự phù hợp của Antigravity Skill Bundles
+
+Bản đồ hóa các skill bundle của Antigravity với dự án e-commerce này.
+
+| Bundle              | Đánh giá    | Skill nên dùng                                                                                   | Skill nên bỏ qua                                                  | Lý do                                                                           |
+| ------------------- | ----------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| 🚀 Essentials       | ✅ Dùng hết | `concise-planning`, `lint-and-validate`, `git-pushing`, `kaizen`                                 | —                                                                 | Kỷ luật cơ bản cho mọi dự án                                                    |
+| 🌐 Web Wizard       | ✅ Dùng hết | `frontend-design`, `tailwind-patterns`, `form-cro`, `seo-audit`                                  | —                                                                 | Phù hợp trực tiếp: Tailwind v4 + SSR + checkout forms + product SEO             |
+| 🐞 QA & Testing     | ✅ Dùng hết | `test-driven-development`, `systematic-debugging`, `browser-automation`, `code-review-checklist` | `ab-test-setup`                                                   | Stack Vitest + Playwright phù hợp; A/B testing để sau (Phase 2)                 |
+| 🖌️ Web Designer     | ⚠️ Một phần | `ui-ux-pro-max`, `frontend-design`                                                               | `3d-web-experience`, `canvas-design`                              | Cần thiết kế hệ thống; 3D và canvas không ưu tiên cho e-commerce                |
+| 📊 Data & Analytics | ⚠️ Một phần | `analytics-tracking`                                                                             | `d3-viz`, `ab-test-setup`                                         | GA4 + GTM là đủ cho MVP; biểu đồ nâng cao để sau                                |
+| 🦄 Startup Founder  | ⚠️ Một phần | `landing-page-copy`                                                                              | `competitor-analysis`, `pitch-deck-creator`, `stripe-integration` | Copywriting cho sản phẩm rất quan trọng; Stripe chưa dùng (ưu tiên COD + VNPAY) |
+| 🐍 Python Pro       | ❌ Bỏ qua   | —                                                                                                | Tất cả                                                            | Đây là repo Front-end Next.js; Python chỉ dùng ở repo backend                   |
+| 🤖 Agent Architect  | ❌ Bỏ qua   | —                                                                                                | Tất cả                                                            | Tính năng AI để sau (Phase 3+); hiện tại chưa cần                               |
+
+### Kiến trúc API Client
+
+| Lớp                   | Trách nhiệm                                  | Công cụ                        |
+| :-------------------- | :------------------------------------------- | :----------------------------- |
+| **Domain API**        | Định nghĩa endpoint và schema cụ thể         | `zod`, `api-client.ts`         |
+| **Shared API Client** | Trình xử lý request chung với Zod validation | `api-client.ts`                |
+| **Transport**         | Request HTTP cấp thấp và interceptors        | `axios`, `client.ts`           |
+| **Auth Bridge**       | Quản lý token và luồng refresh               | `api-auth.ts`, `auth-store.ts` |
+| **Validation**        | Kiểm chứng cấu trúc dữ liệu lúc runtime      | `zod`, `zod-helpers.ts`        |
+
+**Luồng đi**: Component → React Query Hook → Domain API → Shared API Client → Axios Instance → Backend → Zod Validation → Typed Data.
 
 ### Glossary (VI-EN sync)
 

@@ -53,21 +53,21 @@ Excluded:
 
 ### Technical stack by layer
 
-| Layer                  | Technology                                         | Why this choice                                                    |
-| ---------------------- | -------------------------------------------------- | ------------------------------------------------------------------ |
-| App framework          | Next.js 16.2.4                                     | Stable App Router, strong fit for SSR/SEO and module-driven design |
-| UI runtime             | React 19.2.4, React DOM 19.2.4                     | Performance and ecosystem maturity                                 |
-| Styling                | Tailwind CSS 4, tailwind-merge 3.5.0               | High UI delivery speed with utility-first consistency              |
-| Data fetching          | @tanstack/react-query 5.99.1                       | Consistent server-state and caching strategy                       |
-| Client state           | Zustand 5.0.12                                     | Lightweight state for auth/cart/UI concerns                        |
-| HTTP                   | Axios 1.15.0                                       | Centralized interceptors and error handling                        |
-| Forms                  | React Hook Form 7.72.1 + @hookform/resolvers 5.2.2 | Strong form performance and clear validation integration           |
-| Validation             | Zod 4.3.6                                          | Type-safe schemas for FE contracts                                 |
-| i18n                   | next-intl 4.9.1                                    | Structured localization support                                    |
-| Monitoring             | @sentry/nextjs 10.49.0                             | Production error visibility                                        |
-| Unit/integration tests | Vitest 4.1.4 + Testing Library                     | Fast and aligned with FE workflows                                 |
-| E2E tests              | Playwright 1.59.1                                  | Reliable end-to-end flow verification                              |
-| Quality tooling        | ESLint 9.39.4 + Prettier 3.8.3 + Husky 9.1.7       | Enforced quality before merge                                      |
+| Layer                  | Technology                                         | Why this choice                                                           |
+| ---------------------- | -------------------------------------------------- | ------------------------------------------------------------------------- |
+| App framework          | Next.js 16.2.4                                     | Stable App Router, strong fit for SSR/SEO and module-driven design        |
+| UI runtime             | React 19.2.4, React DOM 19.2.4                     | Performance and ecosystem maturity                                        |
+| Styling                | Tailwind CSS 4, tailwind-merge 3.5.0               | High UI delivery speed with utility-first consistency                     |
+| Data fetching          | @tanstack/react-query 5.99.1                       | Consistent server-state and caching strategy                              |
+| Client state           | Zustand 5.0.12                                     | Lightweight state for auth/cart/UI concerns                               |
+| HTTP                   | Axios 1.15.0                                       | Centralized interceptors and error handling                               |
+| Forms                  | React Hook Form 7.72.1 + @hookform/resolvers 5.2.2 | Strong form performance and clear validation integration                  |
+| Validation             | Zod 4.3.6                                          | Type-safe schemas for FE contracts                                        |
+| i18n                   | next-intl 4.9.1                                    | Structured localization support                                           |
+| Monitoring             | @sentry/nextjs 10.49.0                             | Production error visibility                                               |
+| Unit/integration tests | Vitest 4.1.4 + Testing Library                     | Fast and aligned with FE workflows                                        |
+| E2E tests              | Playwright 1.59.1                                  | Reliable end-to-end flow verification                                     |
+| Quality tooling        | ESLint 9.39.4 + Prettier 3.8.3 + Husky 9.1.7       | Enforced quality via `npm run format` (Prettier then ESLint) before merge |
 
 ### Selected version matrix
 
@@ -91,15 +91,17 @@ Excluded:
 
 #### Core dev dependencies
 
-| Package          | Version |
-| ---------------- | ------- |
-| typescript       | ^5      |
-| vitest           | ^4.1.4  |
-| @playwright/test | ^1.59.1 |
-| eslint           | ^9.39.4 |
-| prettier         | ^3.8.3  |
-| husky            | ^9.1.7  |
-| lint-staged      | ^16.4.0 |
+| Package            | Version |
+| ------------------ | ------- |
+| typescript         | ^5      |
+| vitest             | ^4.1.4  |
+| @playwright/test   | ^1.59.1 |
+| eslint             | ^9.39.4 |
+| prettier           | ^3.8.3  |
+| husky              | ^9.1.7  |
+| lint-staged        | ^16.4.0 |
+| openapi-typescript | ^7.6.0  |
+| orval              | ^7.4.1  |
 
 ### Skill matrix focused on BA and FE
 
@@ -185,6 +187,7 @@ Mapping of Antigravity bundle skills to this e-commerce project. Each bundle is 
 
 Merge gate requirements:
 
+- `npm run format` must pass (enforces Prettier then ESLint).
 - `npm run lint` must pass.
 - `npm run test` must pass.
 - `npm run build` must pass.
@@ -211,6 +214,18 @@ Deferred to later phases:
 - Advanced promotion engine.
 - Full analytics/BI stack.
 - Marketplace capabilities.
+
+### API Client Architecture
+
+| Layer                 | Responsibility                              | Tool                           |
+| :-------------------- | :------------------------------------------ | :----------------------------- |
+| **Domain API**        | Define specific endpoints and schemas       | `zod`, `api-client.ts`         |
+| **Shared API Client** | Generic request handler with Zod validation | `api-client.ts`                |
+| **Transport**         | Low-level HTTP requests and interceptors    | `axios`, `client.ts`           |
+| **Auth Bridge**       | Manage tokens and refresh flow              | `api-auth.ts`, `auth-store.ts` |
+| **Validation**        | Runtime response shape verification         | `zod`, `zod-helpers.ts`        |
+
+**Flow**: Component → React Query Hook → Domain API → Shared API Client → Axios Instance → Backend → Zod Validation → Typed Data.
 
 ### Glossary (EN-VI sync)
 

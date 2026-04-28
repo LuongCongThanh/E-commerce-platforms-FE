@@ -104,14 +104,21 @@ src/
   - Hook: `use-*.ts`.
   - Constants: `UPPER_SNAKE_CASE` cho static constants.
 - Imports:
-  - Ưu tiên alias theo layer.
+  - Ưu tiên alias theo layer (ví dụ: `@/shared`, `@/modules`).
   - Tránh deep relative path phức tạp.
+  - **Auto-sorting**: Sử dụng `simple-import-sort` (ESLint) đồng bộ với setting VS Code để đảm bảo thứ tự import nhất quán.
 - Typing:
   - Không dùng `any` nếu không có lý do bắt buộc.
   - Ưu tiên schema-first với Zod cho data ở boundary.
-- Error handling:
-  - HTTP errors normalize về shape chung.
-  - UI chỉ render thông báo thân thiện, không lộ stack nội bộ.
+  - **Strict Guards**: Bắt buộc tuân thủ rule `no-unnecessary-condition`, `no-floating-promises`, và `strict-boolean-expressions`.
+- Xử lý lỗi (Error handling):
+  - Chuẩn hóa HTTP error thông qua class `ApiError` (`src/shared/lib/errors/api-error.ts`).
+  - Hiển thị thông báo qua Toast (cho Mutations) hoặc Error Boundary (cho Queries).
+  - Phân loại lỗi bằng `ErrorCode` để xử lý logic FE (ví dụ: `AUTH_INVALID_CREDENTIALS`).
+- Sử dụng API Client:
+  - Sử dụng `apiClient` từ `src/shared/lib/http/api-client.ts`.
+  - Luôn cung cấp Zod `schema` để validate dữ liệu trả về tại boundary.
+  - Tự động xử lý authentication qua centralized interceptors.
 - State boundaries:
   - Server state: TanStack Query.
   - Client state: Zustand.
@@ -129,6 +136,7 @@ src/
 - Component rules:
   - Tách primitive và feature component.
   - Mọi component public phải có props contract rõ.
+  - **Premium UI**: Sử dụng pattern Luxury Minimalist (ví dụ: Mega Menu với Framer Motion, adaptive mobile navigation).
 - Responsive rules:
   - Mobile-first.
   - Breakpoint strategy thống nhất qua toàn hệ.

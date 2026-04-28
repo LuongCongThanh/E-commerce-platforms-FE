@@ -104,14 +104,21 @@ src/
   - Hook file: `use-*.ts`.
   - Static constants: `UPPER_SNAKE_CASE`.
 - Imports:
-  - Prefer layer aliases.
+  - Prefer layer aliases (e.g., `@/shared`, `@/modules`).
   - Avoid complex deep relative paths.
+  - **Auto-sorting**: Use `simple-import-sort` (ESLint) synced with VS Code settings for deterministic import order.
 - Typing:
   - Avoid `any` unless explicitly justified.
   - Prefer schema-first boundaries with Zod.
+  - **Strict Guards**: Mandatory `no-unnecessary-condition`, `no-floating-promises`, and `strict-boolean-expressions` rules.
 - Error handling:
-  - Normalize HTTP error shape.
-  - Render user-friendly messages without internal stack details.
+  - Normalize HTTP error shape using `ApiError` class (`src/shared/lib/errors/api-error.ts`).
+  - Render user-friendly messages via Toasts (for Mutations) or Error Boundaries (for Queries).
+  - Categorize errors using `ErrorCode` for specific frontend logic (e.g., `AUTH_INVALID_CREDENTIALS`).
+- API Client usage:
+  - Use `apiClient` from `src/shared/lib/http/api-client.ts`.
+  - Always provide a Zod `schema` for response validation at the boundary.
+  - Handle authentication automatically via centralized interceptors.
 - State boundaries:
   - Server state: TanStack Query.
   - Client shared state: Zustand.
@@ -129,6 +136,7 @@ src/
 - Component rules:
   - Separate primitives from feature components.
   - Public components require explicit props contracts.
+  - **Premium UI**: Use Luxury Minimalist patterns (e.g., Mega Menu with Framer Motion, adaptive mobile navigation).
 - Responsive rules:
   - Mobile-first implementation.
   - Shared breakpoint strategy across the app.
