@@ -1,5 +1,5 @@
-import { Footer } from '@/shared/components/layouts/Footer';
-import { Header } from '@/shared/components/layouts/Header';
+import { Footer } from '@/shared/components/layouts/footer';
+import { Header } from '@/shared/components/layouts/header';
 
 interface ShopLayoutProps {
   readonly children: React.ReactNode;
