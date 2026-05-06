@@ -18,6 +18,7 @@
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:debug": "playwright test --debug",
     "analyze": "ANALYZE=true next build",
+    "typecheck": "tsc --noEmit",
     "prepare": "husky"
   },
   "dependencies": {
