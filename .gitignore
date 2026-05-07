@@ -42,3 +42,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .idea/
+.skills/
+.tools/
+.vendor/
+.agents/skills/superpowers/
