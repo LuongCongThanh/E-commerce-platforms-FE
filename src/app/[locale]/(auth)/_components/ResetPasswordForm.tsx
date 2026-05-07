@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -15,7 +14,7 @@ import { ResetPasswordFormSchema } from '@/app/[locale]/(auth)/_lib/schemas';
 import { Button } from '@/shared/components/base/Button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/base/Form';
 import { Input } from '@/shared/components/base/Input';
-import { ApiError } from '@/shared/lib/errors/api-error';
+import { useFormAction } from '@/shared/hooks/useFormAction';
 
 interface ResetPasswordFormProps {
   readonly token: string;
@@ -25,28 +24,21 @@ interface ResetPasswordFormProps {
 export function ResetPasswordForm({ token, uid }: ResetPasswordFormProps) {
   const router = useRouter();
   const locale = useLocale();
-  const [apiError, setApiError] = useState<string | null>(null);
 
   const form = useForm<ResetPasswordFormInput>({
     resolver: zodResolver(ResetPasswordFormSchema),
     defaultValues: { password: '', confirmPassword: '' },
   });
 
-  const { isSubmitting } = form.formState;
-
-  const onSubmit = async (values: ResetPasswordFormInput) => {
-    setApiError(null);
-    try {
-      await resetPasswordAction({ token, uid, password: values.password });
-      router.push(`/${locale}/login`);
-    } catch (err) {
-      if (err instanceof ApiError) {
-        setApiError(err.message);
-      } else {
-        setApiError('Đặt lại mật khẩu thất bại. Link có thể đã hết hạn.');
-      }
+  const { apiError, isSubmitting, onSubmit } = useFormAction(
+    (values: ResetPasswordFormInput) => resetPasswordAction({ token, uid, password: values.password }),
+    {
+      onSuccess: () => {
+        router.push(`/${locale}/login`);
+      },
+      fallbackMessage: 'Đặt lại mật khẩu thất bại. Link có thể đã hết hạn.',
     }
-  };
+  );
 
   return (
     <Form {...form}>

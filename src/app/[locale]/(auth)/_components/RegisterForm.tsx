@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -15,38 +14,27 @@ import { RegisterFormSchema } from '@/app/[locale]/(auth)/_lib/schemas';
 import { Button } from '@/shared/components/base/Button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/base/Form';
 import { Input } from '@/shared/components/base/Input';
-import { ApiError } from '@/shared/lib/errors/api-error';
+import { useFormAction } from '@/shared/hooks/useFormAction';
 
 export function RegisterForm() {
   const router = useRouter();
   const locale = useLocale();
-  const [apiError, setApiError] = useState<string | null>(null);
 
   const form = useForm<RegisterFormInput>({
     resolver: zodResolver(RegisterFormSchema),
     defaultValues: { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' },
   });
 
-  const { isSubmitting } = form.formState;
-
-  const onSubmit = async (values: RegisterFormInput) => {
-    setApiError(null);
-    try {
-      await registerAction({
-        email: values.email,
-        password: values.password,
-        firstName: values.firstName,
-        lastName: values.lastName,
-      });
-      router.push(`/${locale}/home`);
-    } catch (err) {
-      if (err instanceof ApiError) {
-        setApiError(err.message);
-      } else {
-        setApiError('Đăng ký thất bại. Vui lòng thử lại.');
-      }
+  const { apiError, isSubmitting, onSubmit } = useFormAction(
+    (values: RegisterFormInput) =>
+      registerAction({ email: values.email, password: values.password, firstName: values.firstName, lastName: values.lastName }),
+    {
+      onSuccess: () => {
+        router.push(`/${locale}/home`);
+      },
+      fallbackMessage: 'Đăng ký thất bại. Vui lòng thử lại.',
     }
-  };
+  );
 
   return (
     <Form {...form}>

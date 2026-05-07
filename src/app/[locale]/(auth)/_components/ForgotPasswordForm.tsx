@@ -14,11 +14,10 @@ import { ForgotPasswordFormSchema } from '@/app/[locale]/(auth)/_lib/schemas';
 import { Button } from '@/shared/components/base/Button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/base/Form';
 import { Input } from '@/shared/components/base/Input';
-import { ApiError } from '@/shared/lib/errors/api-error';
+import { useFormAction } from '@/shared/hooks/useFormAction';
 
 export function ForgotPasswordForm() {
   const locale = useLocale();
-  const [apiError, setApiError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
   const form = useForm<ForgotPasswordFormInput>({
@@ -26,21 +25,12 @@ export function ForgotPasswordForm() {
     defaultValues: { email: '' },
   });
 
-  const { isSubmitting } = form.formState;
-
-  const onSubmit = async (values: ForgotPasswordFormInput) => {
-    setApiError(null);
-    try {
-      await forgotPasswordAction(values.email);
+  const { apiError, isSubmitting, onSubmit } = useFormAction((values: ForgotPasswordFormInput) => forgotPasswordAction(values.email), {
+    onSuccess: () => {
       setSubmitted(true);
-    } catch (err) {
-      if (err instanceof ApiError) {
-        setApiError(err.message);
-      } else {
-        setApiError('Đã có lỗi xảy ra. Vui lòng thử lại.');
-      }
-    }
-  };
+    },
+    fallbackMessage: 'Đã có lỗi xảy ra. Vui lòng thử lại.',
+  });
 
   if (submitted) {
     return (
