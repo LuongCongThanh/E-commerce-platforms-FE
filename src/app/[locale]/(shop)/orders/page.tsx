@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { OrderStatusBadge } from '@/app/[locale]/(shop)/_components/OrderStatusBadge';
 import type { Order } from '@/app/[locale]/(shop)/_lib/types';
 import { API } from '@/shared/constants/api-endpoints';
-import { http, withErrorBoundary } from '@/shared/lib/http/request';
+import { http, withErrorBoundary } from '@/shared/lib/http';
 
 function formatVND(n: number) {
   return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n);

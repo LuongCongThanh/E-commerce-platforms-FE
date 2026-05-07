@@ -1,7 +1,7 @@
 import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas';
 import type { Order, Product, ProductList, User } from '@/app/[locale]/(shop)/_lib/types';
 import { API } from '@/shared/constants/api-endpoints';
-import { http } from '@/shared/lib/http/request';
+import { http } from '@/shared/lib/http';
 
 export const productActions = {
   list: (filters: object) => http.get<ProductList>(API.PRODUCTS.LIST, filters),
