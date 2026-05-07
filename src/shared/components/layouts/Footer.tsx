@@ -40,12 +40,12 @@ export function Footer() {
             <h3 className="mb-3 text-sm font-semibold text-neutral-900">Tài khoản</h3>
             <ul className="space-y-2 text-sm text-neutral-500">
               <li>
-                <Link href={`/${locale}/auth/login`} className="hover:text-primary-500">
+                <Link href={`/${locale}/login`} className="hover:text-primary-500">
                   Đăng nhập
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/auth/register`} className="hover:text-primary-500">
+                <Link href={`/${locale}/register`} className="hover:text-primary-500">
                   Đăng ký
                 </Link>
               </li>
