@@ -29,7 +29,9 @@ export async function withErrorBoundary<T>(fn: () => Promise<T>, fallback: T): P
     return await fn();
   } catch (error) {
     if (error instanceof ApiError) {
-      console.error('[ApiError]', { status: error.status, code: error.code, message: error.message });
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('[ApiError]', { status: error.status, code: error.code, message: error.message });
+      }
       return fallback;
     }
     throw error;

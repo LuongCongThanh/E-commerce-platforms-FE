@@ -38,12 +38,22 @@ describe('withErrorBoundary', () => {
     await expect(withErrorBoundary(fn, 0)).rejects.toThrow('something broke');
   });
 
-  it('log error khi catch ApiError', async () => {
+  it('log error khi catch ApiError (non-production)', async () => {
     const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
     const fn = () => Promise.reject(new ApiError({ message: 'fail', status: 500, code: 'SERVER_ERROR' }));
     await withErrorBoundary(fn, null);
     expect(consoleSpy).toHaveBeenCalledWith('[ApiError]', { status: 500, code: 'SERVER_ERROR', message: 'fail' });
     consoleSpy.mockRestore();
+  });
+
+  it('không log trong production', async () => {
+    vi.stubEnv('NODE_ENV', 'production');
+    const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+    const fn = () => Promise.reject(new ApiError({ message: 'fail', status: 500 }));
+    await withErrorBoundary(fn, null);
+    expect(consoleSpy).not.toHaveBeenCalled();
+    consoleSpy.mockRestore();
+    vi.unstubAllEnvs();
   });
 
   it('fallback có thể là object', async () => {
