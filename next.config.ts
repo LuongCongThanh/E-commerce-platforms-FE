@@ -21,6 +21,16 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   turbopack: {},
+  serverExternalPackages: ['@prisma/instrumentation', '@opentelemetry/instrumentation', '@fastify/otel'],
+  webpack(config) {
+    config.ignoreWarnings = [
+      ...(config.ignoreWarnings ?? []),
+      // Sentry pulls in OpenTelemetry instrumentation packages (Prisma, Fastify, etc.)
+      // that use dynamic require() — benign at runtime, unsuppressable via serverExternalPackages alone.
+      { module: /node_modules\/@opentelemetry\/instrumentation/, message: /Critical dependency/ },
+    ];
+    return config;
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: '**.amazonaws.com' },
