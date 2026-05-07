@@ -24,13 +24,13 @@ export function CartTable() {
       <AnimatePresence initial={false}>
         {items.map(item => (
           <CartRow
-            key={item.variantId}
+            key={item.lineId}
             item={item}
             onUpdateQty={(qty: number) => {
-              updateQuantity(item.variantId, qty);
+              updateQuantity(item.lineId, qty);
             }}
             onRemove={() => {
-              removeCartItem(item.variantId);
+              removeCartItem(item.lineId);
             }}
           />
         ))}

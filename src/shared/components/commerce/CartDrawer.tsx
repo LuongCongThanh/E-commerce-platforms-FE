@@ -52,7 +52,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                 <AnimatePresence initial={false}>
                   {items.map((item, index) => (
                     <motion.div
-                      key={item.variantId}
+                      key={item.lineId}
                       layout
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -80,7 +80,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                           <div className="flex items-center rounded-lg border border-white/10 bg-white/5 p-1">
                             <button
                               onClick={() => {
-                                updateQuantity(item.variantId, Math.max(1, item.quantity - 1));
+                                updateQuantity(item.lineId, Math.max(1, item.quantity - 1));
                               }}
                               className="flex size-6 items-center justify-center rounded-md transition-colors hover:bg-white/10"
                             >
@@ -89,7 +89,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                             <span className="w-8 text-center text-xs font-medium">{item.quantity}</span>
                             <button
                               onClick={() => {
-                                updateQuantity(item.variantId, item.quantity + 1);
+                                updateQuantity(item.lineId, item.quantity + 1);
                               }}
                               className="flex size-6 items-center justify-center rounded-md transition-colors hover:bg-white/10"
                             >
@@ -98,7 +98,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                           </div>
                           <button
                             onClick={() => {
-                              removeCartItem(item.variantId);
+                              removeCartItem(item.lineId);
                             }}
                             className="hover:text-destructive-500 text-neutral-400 transition-colors"
                           >

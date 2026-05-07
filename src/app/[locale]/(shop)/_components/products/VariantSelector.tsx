@@ -11,6 +11,7 @@ interface VariantSelectorProps {
 
 export const VariantSelector = ({ variants, selectedVariant, onSelect }: VariantSelectorProps): React.JSX.Element | null => {
   if (variants.length === 0) return null;
+  const hasOutOfStockVariants = variants.some(variant => variant.stock === 0);
 
   return (
     <div className="space-y-3">
@@ -56,6 +57,9 @@ export const VariantSelector = ({ variants, selectedVariant, onSelect }: Variant
           Chỉ còn {selectedVariant.stock.toString()} sản phẩm!
         </p>
       )}
+      {hasOutOfStockVariants && selectedVariant === null ? (
+        <p className="text-xs text-neutral-500">Các phân loại hết hàng sẽ được làm mờ và không thể chọn.</p>
+      ) : null}
     </div>
   );
 };

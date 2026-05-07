@@ -16,7 +16,7 @@ export default async function ShopLayout({ children, params }: ShopLayoutProps) 
     url: `https://antigravity.store/${locale}`,
     potentialAction: {
       '@type': 'SearchAction',
-      target: `https://antigravity.store/${locale}/products?q={search_term_string}`,
+      target: `https://antigravity.store/${locale}/search?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
   };

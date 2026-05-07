@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
@@ -20,6 +20,7 @@ interface AddToCartSectionProps {
 export function AddToCartSection({ product }: AddToCartSectionProps) {
   const router = useRouter();
   const locale = useLocale();
+  const addToCartButtonRef = useRef<HTMLButtonElement | null>(null);
   const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
@@ -32,6 +33,7 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
     }
 
     addToCart({
+      lineId: `${product.id.toString()}:${selectedVariant?.id ?? 'default'}`,
       productId: product.id.toString(),
       variantId: selectedVariant?.id ?? `v-${product.id.toString()}`,
       name: product.name,
@@ -40,6 +42,23 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
       quantity: quantity,
       variantName: selectedVariant?.label,
     });
+
+    const startRect = addToCartButtonRef.current?.getBoundingClientRect();
+    if (startRect !== undefined) {
+      window.dispatchEvent(
+        new CustomEvent('cart-fly', {
+          detail: {
+            image: product.images[0],
+            startRect: {
+              left: startRect.left,
+              top: startRect.top,
+              width: startRect.width,
+              height: startRect.height,
+            },
+          },
+        })
+      );
+    }
 
     setIsAdded(true);
     toast.success(`Đã thêm ${quantity.toString()} sản phẩm vào giỏ hàng`, {
@@ -114,7 +133,7 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
           ) : maxStock > 0 ? (
             <span className="text-muted-foreground text-sm">{maxStock.toString()} sản phẩm có sẵn</span>
           ) : (
-            <span className="text-sm font-medium text-red-500">Hết hàng</span>
+            <span className="text-sm font-medium text-red-500">Phân loại này đã hết hàng</span>
           )}
         </div>
       </div>
@@ -122,6 +141,7 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
       {/* Action Buttons */}
       <div className="flex flex-col gap-4 sm:flex-row">
         <Button
+          ref={addToCartButtonRef}
           variant="outline"
           size="lg"
           className="relative h-14 flex-1 overflow-hidden transition-all active:scale-95"

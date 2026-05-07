@@ -5,8 +5,8 @@ import { useCartStore } from '@/shared/stores/cart-store';
 
 import { useCart } from '@/shared/hooks/useCart';
 
-const item1 = { variantId: 'v1', productId: 'p1', name: 'Áo', image: '/img.jpg', price: 100000, quantity: 1 };
-const item2 = { variantId: 'v2', productId: 'p2', name: 'Quần', image: '/img2.jpg', price: 200000, quantity: 2 };
+const item1 = { lineId: 'line-1', variantId: 'v1', productId: 'p1', name: 'Áo', image: '/img.jpg', price: 100000, quantity: 1 };
+const item2 = { lineId: 'line-2', variantId: 'v2', productId: 'p2', name: 'Quần', image: '/img2.jpg', price: 200000, quantity: 2 };
 
 describe('useCart', () => {
   beforeEach(() => {
@@ -30,11 +30,11 @@ describe('useCart', () => {
     expect(result.current.itemCount).toBe(3);
   });
 
-  it('removes an item by variant id', () => {
+  it('removes an item by line id', () => {
     const { result } = renderHook(() => useCart());
 
     act(() => result.current.addItem(item1));
-    act(() => result.current.removeItem('v1'));
+    act(() => result.current.removeItem('line-1'));
 
     expect(result.current.items).toHaveLength(0);
   });
@@ -43,7 +43,7 @@ describe('useCart', () => {
     const { result } = renderHook(() => useCart());
 
     act(() => result.current.addItem(item1));
-    act(() => result.current.updateQuantity('v1', 5));
+    act(() => result.current.updateQuantity('line-1', 5));
 
     expect(result.current.items[0]?.quantity).toBe(5);
   });

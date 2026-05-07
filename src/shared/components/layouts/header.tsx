@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+import { AnimatePresence, motion } from 'framer-motion';
 import { Search, ShoppingCart, X } from 'lucide-react';
 
 import { Button } from '@/shared/components/base/Button';
@@ -13,14 +14,63 @@ import { DesktopMegaMenu } from '@/shared/components/layouts/DesktopMegaMenu';
 import { MobileNav } from '@/shared/components/layouts/MobileNav';
 import { useCartStore } from '@/shared/stores/cart-store';
 
+interface FlyCartDetail {
+  readonly image: string;
+  readonly startRect: {
+    readonly left: number;
+    readonly top: number;
+    readonly width: number;
+    readonly height: number;
+  };
+}
+
+interface FlyCartState extends FlyCartDetail {
+  readonly id: number;
+  readonly targetRect: {
+    readonly left: number;
+    readonly top: number;
+    readonly width: number;
+    readonly height: number;
+  };
+}
+
 export function Header() {
   const t = useTranslations('common');
   const locale = useLocale();
   const router = useRouter();
+  const cartButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [flyCartState, setFlyCartState] = useState<FlyCartState | null>(null);
   const itemCount = useCartStore(state => state.itemCount);
+
+  useEffect(() => {
+    const handleCartFly = (event: Event) => {
+      const cartButtonRect = cartButtonRef.current?.getBoundingClientRect();
+      const detail = (event as CustomEvent<FlyCartDetail>).detail;
+
+      if (cartButtonRect === undefined) {
+        return;
+      }
+
+      setFlyCartState({
+        ...detail,
+        id: Date.now(),
+        targetRect: {
+          left: cartButtonRect.left,
+          top: cartButtonRect.top,
+          width: cartButtonRect.width,
+          height: cartButtonRect.height,
+        },
+      });
+    };
+
+    window.addEventListener('cart-fly', handleCartFly);
+    return () => {
+      window.removeEventListener('cart-fly', handleCartFly);
+    };
+  }, []);
 
   const handleSearch = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -103,7 +153,7 @@ export function Header() {
           )}
 
           <CartDrawer>
-            <Button variant="ghost" size="icon" aria-label="Giỏ hàng" className="relative">
+            <Button ref={cartButtonRef} variant="ghost" size="icon" aria-label="Giỏ hàng" className="relative">
               <ShoppingCart className="size-5" />
               {itemCount > 0 && (
                 <span className="bg-primary-500 absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full text-[10px] font-bold text-white">
@@ -116,6 +166,39 @@ export function Header() {
           <MobileNav locale={locale} />
         </div>
       </div>
+      <AnimatePresence>
+        {flyCartState !== null && (
+          <motion.img
+            key={flyCartState.id}
+            src={flyCartState.image}
+            alt=""
+            initial={{
+              opacity: 0.95,
+              x: flyCartState.startRect.left,
+              y: flyCartState.startRect.top,
+              width: flyCartState.startRect.width,
+              height: flyCartState.startRect.height,
+              scale: 0.65,
+              rotate: -6,
+            }}
+            animate={{
+              opacity: 0,
+              x: flyCartState.targetRect.left + flyCartState.targetRect.width / 2 - 14,
+              y: flyCartState.targetRect.top + flyCartState.targetRect.height / 2 - 14,
+              width: 28,
+              height: 28,
+              scale: 1,
+              rotate: 0,
+            }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.65, ease: 'easeInOut' }}
+            onAnimationComplete={() => {
+              setFlyCartState(current => (current?.id === flyCartState.id ? null : current));
+            }}
+            className="pointer-events-none fixed top-0 left-0 z-[70] rounded-xl border border-white/20 object-cover shadow-2xl"
+          />
+        )}
+      </AnimatePresence>
     </header>
   );
 }

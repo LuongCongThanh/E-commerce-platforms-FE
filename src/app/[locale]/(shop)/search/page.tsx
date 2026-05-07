@@ -1,10 +1,29 @@
 import { Suspense } from 'react';
+import type { Metadata } from 'next';
 
 import { SearchResults } from '@/app/[locale]/(shop)/search/_components/SearchResults';
 import { Skeleton } from '@/shared/components/base/Skeleton';
 
 interface SearchPageProps {
   readonly searchParams: Promise<{ q?: string }>;
+}
+
+export async function generateMetadata({ searchParams }: SearchPageProps): Promise<Metadata> {
+  const { q: query } = await searchParams;
+
+  if (query !== undefined && query !== '') {
+    return {
+      title: `Tìm kiếm: ${query} | ANTIGRAVITY.STORE`,
+      description: `Kết quả tìm kiếm sản phẩm cho từ khóa "${query}" tại ANTIGRAVITY.STORE.`,
+      robots: { index: false, follow: true },
+    };
+  }
+
+  return {
+    title: 'Tìm kiếm sản phẩm | ANTIGRAVITY.STORE',
+    description: 'Tìm nhanh sản phẩm theo tên hoặc mô tả trong storefront.',
+    robots: { index: false, follow: true },
+  };
 }
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {

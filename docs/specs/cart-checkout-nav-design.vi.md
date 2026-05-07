@@ -5,10 +5,21 @@ audience: human
 language: vi
 language_role: source-of-truth
 owner: FE Lead
-last_updated: 2026-04-28
+last_updated: 2026-05-08
 ---
 
 # Cart, Checkout, Orders & Navigation — Design Spec
+
+## Implementation Audit — 2026-05-08
+
+| Area                              | Status  | Notes                                                                                            |
+| --------------------------------- | ------- | ------------------------------------------------------------------------------------------------ |
+| Cart page                         | Done    | `/[locale]/cart` and `CartClient/Table/Summary` now exist and are wired to Zustand store.        |
+| Mega menu and mobile category nav | Done    | Desktop and mobile nav are implemented and the subcategory routing path has been hardened.       |
+| Products page fix                 | Done    | `products/page.tsx` uses `Suspense` and `ProductsClient`; previous hook mismatch is gone.        |
+| Orders detail import fix          | Done    | `orders/[id]/page.tsx` imports the app-local `OrderStatusBadge`.                                 |
+| Checkout locale redirect fixes    | Done    | `CheckoutForm` uses `useLocale()` for cart redirect and success redirect.                        |
+| Business-order realism            | Partial | Checkout now calls the real `useCreateOrder()` hook and redirects with `orderId`, but end-to-end success still depends on a live backend/API rather than static mock data. |
 
 **Scope:** P1-03 Cart Core (cart page) · P1-04 Checkout fixes · P1-05 Orders fixes · Navigation mega menu · Products page fix
 
@@ -16,16 +27,16 @@ last_updated: 2026-04-28
 
 ## 1. Context & Current State
 
-| Area                                 | State                                                         |
-| ------------------------------------ | ------------------------------------------------------------- |
-| `CartDrawer` (slide-in)              | ✅ Done — Sheet, item list, qty stepper, total                |
-| `Header` cart icon + badge           | ✅ Done                                                       |
-| `checkout/page.tsx` + `CheckoutForm` | ✅ Done scaffold — has bugs (locale, redirect)                |
-| `orders/page.tsx`                    | ✅ Done — calls real API                                      |
-| `orders/[id]/page.tsx`               | ✅ Done — has wrong import path                               |
-| `/cart` page                         | ❌ Missing                                                    |
-| Mega menu / categories nav           | 🔄 In progress — desktop/mobile nav đã có, cần harden journey |
-| `products/page.tsx`                  | 🔶 TypeScript error (`isLoading` field doesn't exist in hook) |
+| Area                                 | State                                                  |
+| ------------------------------------ | ------------------------------------------------------ |
+| `CartDrawer` (slide-in)              | ✅ Done — Sheet, item list, qty stepper, total         |
+| `Header` cart icon + badge           | ✅ Done                                                |
+| `checkout/page.tsx` + `CheckoutForm` | ✅ Done — locale-aware form now submits through `useCreateOrder()` |
+| `orders/page.tsx`                    | ✅ Done — calls real API                               |
+| `orders/[id]/page.tsx`               | ✅ Done — import path fixed                            |
+| `/cart` page                         | ✅ Done                                                |
+| Mega menu / categories nav           | ✅ Done — desktop/mobile nav shipped, routing hardened |
+| `products/page.tsx`                  | ✅ Done — Suspense + `ProductsClient` pattern          |
 
 ---
 
@@ -43,7 +54,7 @@ Two-column layout on desktop (lg+), stacked on mobile:
 
 - Client component, reads from `useCartStore`
 - Each row: `next/image` 80×80, product name, variant label (from `variantName`), unit price, qty stepper (Minus/Plus buttons clamped 1–99), Trash icon to remove
-- Stepper calls `updateQuantity(variantId, qty)`; trash calls `removeCartItem(variantId)`
+- Stepper calls `updateQuantity(lineId, qty)`; trash calls `removeCartItem(lineId)`
 - No max-stock enforcement here (store only, no product data on cart page)
 
 ### CartSummary
@@ -120,10 +131,11 @@ Use existing `homeCategoriesData` from `_lib/data/home.ts`. Each entry has `slug
 
 ### `CheckoutForm.tsx`
 
-- Remove hacky locale detection (`t('title') === 'Checkout'`)
-- Use `useLocale()` from `next-intl` for proper locale-aware redirects
-- Fix success redirect: `/checkout/success` → `/${locale}/checkout/success`
-- Fix empty cart redirect: `/${locale}/cart`
+- Done: uses `useLocale()` from `next-intl`
+- Done: success redirect is `/${locale}/checkout/success?orderId=...`
+- Done: empty-cart redirect is `/${locale}/cart`
+- Done: submit flow now uses `useCreateOrder()` and shared order action contract
+- Remaining gap: success path still needs browser/e2e verification against a live backend to mark the full checkout lifecycle absolutely closed
 
 ---
 
@@ -158,18 +170,30 @@ Use existing `homeCategoriesData` from `_lib/data/home.ts`. Each entry has `slug
 
 ---
 
-## 7. Acceptance Criteria
+## 7. Acceptance Checklist
 
-- [ ] `/vi/cart` loads; empty state shown when no items
-- [ ] Add product to cart → navigate to `/vi/cart` → item visible with correct name/price
-- [ ] Stepper +/- updates quantity and subtotal in real time
-- [ ] Trash removes item; if last item removed → empty state
-- [ ] "Tiến hành thanh toán" → `/vi/checkout`
-- [ ] Header "Danh mục" click → mega menu panel opens with 6 categories
-- [ ] Click category in mega menu → `/vi/categories/[slug]`, panel closes
-- [ ] Click outside mega menu → panel closes
-- [ ] Mobile: "Danh mục" accordion shows all categories
-- [ ] `/vi/products` loads without TypeScript/console errors
-- [ ] `/vi/orders/[id]` loads without import errors
-- [ ] CartDrawer links use correct locale prefix
-- [ ] CheckoutForm redirect after submit uses correct locale
+| Acceptance                                                                          | Status  | Notes                                                                                                |
+| ----------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| `/vi/cart` loads; empty state shown when no items                                   | Done    | Implemented in `CartClient`.                                                                         |
+| Add product to cart → navigate to `/vi/cart` → item visible with correct name/price | Done    | Cart page reads directly from persisted Zustand store.                                               |
+| Stepper +/- updates quantity and subtotal in real time                              | Done    | `CartTable` and `CartSummary` update from shared store state.                                        |
+| Trash removes item; if last item removed → empty state                              | Done    | Implemented in `CartTable` + `CartClient`.                                                           |
+| "Tiến hành thanh toán" → `/vi/checkout`                                             | Done    | Locale-aware link in `CartSummary`.                                                                  |
+| Header "Danh mục" click → mega menu panel opens with 6 categories                   | Done    | Desktop mega menu exists in `Header` / `DesktopMegaMenu`.                                            |
+| Click category in mega menu → `/vi/categories/[slug]`, panel closes                 | Done    | Category links are locale-aware and panel closes on navigation.                                      |
+| Click outside mega menu → panel closes                                              | Done    | Outside-click handling exists in `DesktopMegaMenu`.                                                  |
+| Mobile: "Danh mục" accordion shows all categories                                   | Done    | Implemented in `MobileNav`.                                                                          |
+| `/vi/products` loads without TypeScript/console errors                              | Partial | Typecheck/build pass and page pattern is fixed; browser console was not re-audited in this doc pass. |
+| `/vi/orders/[id]` loads without import errors                                       | Done    | Import path is corrected.                                                                            |
+| CartDrawer links use correct locale prefix                                          | Done    | `CartDrawer` now uses `useLocale()`.                                                                 |
+| CheckoutForm redirect after submit uses correct locale                              | Done    | `CheckoutForm` redirects with locale prefix.                                                         |
+| CheckoutForm submits through real order-create hook instead of mock delay           | Done    | Form now maps UI fields into `CheckoutInput` and calls `useCreateOrder(locale)`.                     |
+
+## Follow-up Tasks To Close Remaining Partial Items
+
+1. Checkout business realism:
+   Phần frontend đã dùng flow tạo order thật; bước còn lại là verify thành công end-to-end với backend đang chạy để xác nhận payload `variantId/items/address` khớp contract thực tế.
+2. Products page verification depth:
+   Nếu muốn đổi `/vi/products` từ `Partial` sang `Done` tuyệt đối, cần thêm một lượt kiểm tra browser console/e2e thay vì chỉ dựa trên typecheck/build pass.
+3. Spec drift cleanup:
+   Tách phần `Navigation mega menu` đã xong khỏi nhóm `in progress` trong backlog/plan liên quan để docs cấp cao không tiếp tục nói chậm hơn code thật.

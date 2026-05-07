@@ -1,7 +1,13 @@
 import { Suspense } from 'react';
+import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import ProductsClient from '@/app/[locale]/(shop)/_components/products/ProductsClient';
+
+export const metadata: Metadata = {
+  title: 'Tất cả sản phẩm | ANTIGRAVITY.STORE',
+  description: 'Duyệt toàn bộ danh mục sản phẩm của ANTIGRAVITY.STORE với bộ lọc, sắp xếp và phân trang.',
+};
 
 interface ProductsPageProps {
   readonly params: Promise<{ locale: string }>;
