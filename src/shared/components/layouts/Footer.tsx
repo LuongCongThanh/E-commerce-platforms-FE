@@ -1,6 +1,11 @@
+'use client';
+
+import { useLocale } from 'next-intl';
 import Link from 'next/link';
 
 export function Footer() {
+  const locale = useLocale();
+
   return (
     <footer className="border-border border-t bg-neutral-50">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -18,12 +23,12 @@ export function Footer() {
             <h3 className="mb-3 text-sm font-semibold text-neutral-900">Mua sắm</h3>
             <ul className="space-y-2 text-sm text-neutral-500">
               <li>
-                <Link href="/products" className="hover:text-primary-500">
+                <Link href={`/${locale}/products`} className="hover:text-primary-500">
                   Tất cả sản phẩm
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=sale" className="hover:text-primary-500">
+                <Link href={`/${locale}/categories/sale`} className="hover:text-primary-500">
                   Flash Sale
                 </Link>
               </li>
@@ -35,17 +40,17 @@ export function Footer() {
             <h3 className="mb-3 text-sm font-semibold text-neutral-900">Tài khoản</h3>
             <ul className="space-y-2 text-sm text-neutral-500">
               <li>
-                <Link href="/auth/login" className="hover:text-primary-500">
+                <Link href={`/${locale}/auth/login`} className="hover:text-primary-500">
                   Đăng nhập
                 </Link>
               </li>
               <li>
-                <Link href="/auth/register" className="hover:text-primary-500">
+                <Link href={`/${locale}/auth/register`} className="hover:text-primary-500">
                   Đăng ký
                 </Link>
               </li>
               <li>
-                <Link href="/orders" className="hover:text-primary-500">
+                <Link href={`/${locale}/orders`} className="hover:text-primary-500">
                   Đơn hàng của tôi
                 </Link>
               </li>

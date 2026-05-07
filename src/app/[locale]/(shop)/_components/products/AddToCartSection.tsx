@@ -20,7 +20,7 @@ interface AddToCartSectionProps {
 export function AddToCartSection({ product }: AddToCartSectionProps) {
   const router = useRouter();
   const locale = useLocale();
-  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(product.variants[0] ?? null);
+  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
   const addToCart = useCartStore(state => state.addToCart);
@@ -66,7 +66,9 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
     router.push(`/${locale}/checkout`);
   };
 
-  const maxStock = selectedVariant?.stock ?? 99;
+  const hasVariants = product.variants.length > 0;
+  const maxStock = selectedVariant?.stock ?? 0;
+  const requiresVariantSelection = hasVariants && selectedVariant === null;
 
   return (
     <div className="space-y-8">
@@ -77,7 +79,7 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
           selectedVariant={selectedVariant}
           onSelect={v => {
             setSelectedVariant(v);
-            setQuantity(1); // Reset quantity when variant changes
+            setQuantity(1);
           }}
         />
       )}
@@ -92,7 +94,7 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
                 setQuantity(prev => Math.max(1, prev - 1));
               }}
               className="hover:bg-muted flex size-10 items-center justify-center rounded-lg transition-colors"
-              disabled={quantity <= 1}
+              disabled={requiresVariantSelection || quantity <= 1}
             >
               <Minus className="size-4" />
             </button>
@@ -102,12 +104,18 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
                 setQuantity(prev => Math.min(maxStock, prev + 1));
               }}
               className="hover:bg-muted flex size-10 items-center justify-center rounded-lg transition-colors"
-              disabled={quantity >= maxStock}
+              disabled={requiresVariantSelection || quantity >= maxStock}
             >
               <Plus className="size-4" />
             </button>
           </div>
-          {maxStock > 0 && <span className="text-muted-foreground text-sm">{maxStock.toString()} sản phẩm có sẵn</span>}
+          {requiresVariantSelection ? (
+            <span className="text-muted-foreground text-sm">Chọn phân loại để xem tồn kho.</span>
+          ) : maxStock > 0 ? (
+            <span className="text-muted-foreground text-sm">{maxStock.toString()} sản phẩm có sẵn</span>
+          ) : (
+            <span className="text-sm font-medium text-red-500">Hết hàng</span>
+          )}
         </div>
       </div>
 
@@ -118,7 +126,7 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
           size="lg"
           className="relative h-14 flex-1 overflow-hidden transition-all active:scale-95"
           onClick={handleAddToCart}
-          disabled={isAdded || maxStock === 0}
+          disabled={isAdded || requiresVariantSelection || maxStock === 0}
         >
           <AnimatePresence mode="wait">
             {isAdded ? (
@@ -152,7 +160,7 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
           size="lg"
           className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 flex-1"
           onClick={handleBuyNow}
-          disabled={maxStock === 0}
+          disabled={requiresVariantSelection || maxStock === 0}
         >
           <div className="flex items-center gap-2 font-bold tracking-wide uppercase">
             <Zap className="size-5 fill-current" />

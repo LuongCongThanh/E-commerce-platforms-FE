@@ -13,13 +13,23 @@ export const FilterSidebar = (): React.JSX.Element => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const sortByParam = searchParams.get('sortBy');
+  const sortByParam = searchParams.get('sort') ?? searchParams.get('sortBy');
   const currentSort = (sortByParam as SortBy | null) !== null ? (sortByParam as SortBy) : 'newest';
-  const currentMinPrice = searchParams.get('minPrice') ?? '';
-  const currentMaxPrice = searchParams.get('maxPrice') ?? '';
+  const currentMinPrice = searchParams.get('min_price') ?? searchParams.get('minPrice') ?? '';
+  const currentMaxPrice = searchParams.get('max_price') ?? searchParams.get('maxPrice') ?? '';
 
   const updateFilters = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
+    const legacyKeys: Record<string, string[]> = {
+      sort: ['sortBy'],
+      min_price: ['minPrice'],
+      max_price: ['maxPrice'],
+    };
+
+    for (const legacyKey of legacyKeys[key] ?? []) {
+      params.delete(legacyKey);
+    }
+
     if (value !== '') {
       params.set(key, value);
     } else {
@@ -33,8 +43,29 @@ export const FilterSidebar = (): React.JSX.Element => {
   const handlePriceSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    updateFilters('minPrice', formData.get('minPrice') as string);
-    updateFilters('maxPrice', formData.get('maxPrice') as string);
+    const params = new URLSearchParams(searchParams.toString());
+    const minPriceValue = formData.get('minPrice');
+    const maxPriceValue = formData.get('maxPrice');
+    const minPrice = typeof minPriceValue === 'string' ? minPriceValue : '';
+    const maxPrice = typeof maxPriceValue === 'string' ? maxPriceValue : '';
+
+    params.delete('minPrice');
+    params.delete('maxPrice');
+
+    if (minPrice !== '') {
+      params.set('min_price', minPrice);
+    } else {
+      params.delete('min_price');
+    }
+
+    if (maxPrice !== '') {
+      params.set('max_price', maxPrice);
+    } else {
+      params.delete('max_price');
+    }
+
+    params.set('page', '1');
+    router.push(`?${params.toString()}`);
   };
 
   return (
@@ -45,7 +76,7 @@ export const FilterSidebar = (): React.JSX.Element => {
         <Select
           value={currentSort}
           onValueChange={val => {
-            updateFilters('sortBy', val);
+            updateFilters('sort', val);
           }}
         >
           <SelectTrigger className="w-full">
@@ -80,7 +111,16 @@ export const FilterSidebar = (): React.JSX.Element => {
         size="sm"
         className="text-muted-foreground hover:text-foreground w-full"
         onClick={() => {
-          router.push(window.location.pathname);
+          const params = new URLSearchParams(searchParams.toString());
+          params.delete('sort');
+          params.delete('sortBy');
+          params.delete('min_price');
+          params.delete('minPrice');
+          params.delete('max_price');
+          params.delete('maxPrice');
+          params.delete('page');
+          params.delete('subcategory');
+          router.push(params.size > 0 ? `?${params.toString()}` : window.location.pathname);
         }}
       >
         Xóa tất cả bộ lọc

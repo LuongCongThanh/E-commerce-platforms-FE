@@ -21,7 +21,7 @@ export const SectionFeaturedCategories = (): React.JSX.Element => {
               name={cat.name}
               image={cat.image}
               productCount={cat.productCount}
-              href={`/${locale}/products?category=${cat.slug}`}
+              href={`/${locale}/categories/${cat.slug}`}
             />
           ))}
         </div>

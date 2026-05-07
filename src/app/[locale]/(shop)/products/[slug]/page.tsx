@@ -122,7 +122,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 <span className="text-sm font-semibold">{product.rating.toFixed(1)}</span>
                 <span className="text-sm text-neutral-500">({product.reviewCount.toString()} đánh giá)</span>
                 <span className="text-neutral-600">·</span>
-                <span className="text-sm text-green-400">Còn hàng</span>
+                <span className="text-sm text-neutral-500">Chọn phân loại để xem tồn kho</span>
               </div>
             </div>
 

@@ -14,7 +14,7 @@ export const SearchResults = (): React.JSX.Element => {
   const pageParam = searchParams.get('page');
   const page = pageParam !== null ? Math.max(1, Number(pageParam)) : 1;
 
-  const { products, totalPages, isLoading } = useSearch({ query, page, pageSize: 12 });
+  const { products, total, totalPages, isLoading } = useSearch({ query, page, pageSize: 12 });
 
   const handlePageChange = (p: number) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -46,7 +46,7 @@ export const SearchResults = (): React.JSX.Element => {
     <div className="space-y-8">
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground text-sm">
-          Tìm thấy <span className="text-foreground font-medium">{products.length}</span> sản phẩm phù hợp
+          Tìm thấy <span className="text-foreground font-medium">{total}</span> sản phẩm phù hợp
         </p>
       </div>
 

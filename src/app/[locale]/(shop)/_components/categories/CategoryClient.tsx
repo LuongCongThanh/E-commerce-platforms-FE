@@ -20,13 +20,13 @@ export const CategoryClient = ({ categorySlug }: CategoryClientProps): React.JSX
   const pageParam = searchParams.get('page');
   const page = pageParam !== null ? Math.max(1, Number(pageParam)) : 1;
 
-  const sortByParam = searchParams.get('sortBy');
+  const sortByParam = searchParams.get('sort') ?? searchParams.get('sortBy');
   const sortBy = (sortByParam as SortBy | null) !== null ? (sortByParam as SortBy) : 'newest';
 
-  const minPriceParam = searchParams.get('minPrice');
+  const minPriceParam = searchParams.get('min_price') ?? searchParams.get('minPrice');
   const minPrice = minPriceParam !== null ? Number(minPriceParam) : undefined;
 
-  const maxPriceParam = searchParams.get('maxPrice');
+  const maxPriceParam = searchParams.get('max_price') ?? searchParams.get('maxPrice');
   const maxPrice = maxPriceParam !== null ? Number(maxPriceParam) : undefined;
 
   const { products, totalPages, isLoading } = useProducts({
@@ -61,6 +61,23 @@ export const CategoryClient = ({ categorySlug }: CategoryClientProps): React.JSX
       <div className="flex min-h-100 flex-col items-center justify-center rounded-2xl border border-dashed text-center">
         <h3 className="text-lg font-medium">Không tìm thấy sản phẩm nào</h3>
         <p className="text-muted-foreground mt-1">Thử thay đổi bộ lọc để tìm thấy nhiều kết quả hơn.</p>
+        <button
+          type="button"
+          onClick={() => {
+            const params = new URLSearchParams(searchParams.toString());
+            params.delete('sort');
+            params.delete('sortBy');
+            params.delete('min_price');
+            params.delete('minPrice');
+            params.delete('max_price');
+            params.delete('maxPrice');
+            params.delete('page');
+            router.push(params.size > 0 ? `?${params.toString()}` : window.location.pathname);
+          }}
+          className="mt-4 text-sm font-medium text-neutral-800 underline underline-offset-4 transition-colors hover:text-neutral-600 dark:text-neutral-100 dark:hover:text-neutral-300"
+        >
+          Xóa bộ lọc và xem lại toàn bộ danh mục
+        </button>
       </div>
     );
   }
