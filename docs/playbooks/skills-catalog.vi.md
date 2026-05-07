@@ -1,9 +1,20 @@
-# Agent Skills Guide
+---
+title: Skills Catalog
+status: active
+audience: human
+language: vi
+language_role: source-of-truth
+owner: FE Lead
+last_updated: 2026-05-07
+---
+
+# Agent Skills Catalog
 
 Danh sách **tất cả** các skill có thể dùng trong dự án. Gọi bằng cách gõ `/tên-skill` trong chat với Claude Code.
 
-- **Local skills** (`📁`): định nghĩa trong `.claude/skills/` của dự án này.
+- **Local skills** (`📁`): định nghĩa trong `.agents/skills/` của dự án này.
 - **Global skills** (`🌐`): built-in từ hệ thống Claude Code, dùng được ở mọi dự án.
+- **Project-local Codex workflow**: `gsd` được cài trong `.codex/`, còn `rtk` nằm ở `.tools/rtk/rtk.exe`.
 
 ---
 
@@ -12,6 +23,12 @@ Danh sách **tất cả** các skill có thể dùng trong dự án. Gọi bằn
 | #   | Skill        | Lệnh       | Nguồn | Mô tả                                                                                                    | Dùng khi nào                                           |
 | --- | ------------ | ---------- | ----- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
 | 1   | Caveman Mode | `/caveman` | 📁    | Chế độ trả lời siêu ngắn gọn, cắt ~75% token, vẫn giữ đầy đủ nội dung kỹ thuật. Tắt bằng "stop caveman". | Muốn Claude trả lời nhanh và ngắn hơn, tiết kiệm token |
+
+### Tool bổ trợ trong nhóm này
+
+| Tool | Cách gọi | Dùng để làm gì | Dùng khi nào |
+| ---- | -------- | -------------- | ------------ |
+| `rtk` | `npm run rtk:build`, `npm run rtk:test`, `npm run rtk:lint`, `npm run rtk:gain` | Rút gọn output terminal để agent đỡ tốn token | Gần như mọi lúc khi chạy build/test/lint/git có output dài |
 
 ---
 
@@ -33,6 +50,12 @@ Danh sách **tất cả** các skill có thể dùng trong dự án. Gọi bằn
 | 6   | Grill with Docs       | `/grill-with-docs`       | 📁    | Giống `grill-me` nhưng kiểm tra plan dựa trên domain model hiện có, đồng thời cập nhật CONTEXT.md và ADRs | Muốn đảm bảo plan mới nhất quán với các quyết định đã ghi lại         |
 | 7   | Request Refactor Plan | `/request-refactor-plan` | 📁    | Phỏng vấn chi tiết về refactor, chia nhỏ thành các commit nhỏ, rồi tạo GitHub Issue                       | Muốn lập kế hoạch refactor bài bản với các bước an toàn               |
 | 8   | To PRD                | `/to-prd`                | 📁    | Chuyển context cuộc trò chuyện hiện tại thành một PRD và đăng lên issue tracker                           | Đã thảo luận xong một feature và muốn tạo tài liệu yêu cầu chính thức |
+
+### Workflow lớn theo phase
+
+| Tool | Cách gọi | Dùng để làm gì | Dùng khi nào |
+| ---- | -------- | -------------- | ------------ |
+| `get-shit-done` (`gsd`) | Trong Codex: `$gsd-new-project`, `$gsd-discuss-phase`, `$gsd-plan-phase`, `$gsd-next` | Workflow đầy đủ từ idea -> requirements -> roadmap -> execute -> verify | Feature lớn, refactor nhiều phase, milestone mới |
 
 ---
 
@@ -151,3 +174,12 @@ Danh sách **tất cả** các skill có thể dùng trong dự án. Gọi bằn
 | Build UI component đẹp          | `/frontend-design`       |
 | Audit bảo mật                   | `/security-review`       |
 | Sau khi code xong, muốn tối ưu  | `/simplify`              |
+
+### Heuristic chọn tool nhanh
+
+| Loại việc | Chọn gì |
+| --------- | ------- |
+| Bug nhỏ / task hẹp | `skill` phù hợp + `rtk` |
+| Feature vừa, đã rõ scope | `superpowers` skill + `rtk` |
+| Feature lớn / milestone / refactor dài | `gsd` + `rtk` |
+| Muốn giao tiếp siêu ngắn | thêm `/caveman` |

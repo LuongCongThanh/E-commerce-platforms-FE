@@ -5,7 +5,7 @@ audience: human
 language: vi
 language_role: source-of-truth
 owner: FE Lead
-last_updated: 2026-05-06
+last_updated: 2026-05-07
 ---
 
 # Documentation Map
@@ -21,8 +21,10 @@ last_updated: 2026-05-06
 | 1    | [FE Constraints & Conventions](architecture/fe-constraints.vi.md)                                    | Rules bắt buộc — import alias, TypeScript strict, Tailwind v4, HTTP client | ~15 phút                   |
 | 2    | [FE Module Map](architecture/fe-module-map.vi.md)                                                    | Codebase layout — module nào làm gì, file nào ở đâu                        | ~10 phút                   |
 | 3    | [Priority Backlog](plans/priority-backlog.vi.md)                                                     | Feature nào đã xong, đang làm, chưa làm — tránh làm lại                    | ~5 phút                    |
-| 4    | [Storefront Core Design Spec](superpowers/specs/2026-04-27-storefront-core-design.md)                | Behaviour spec cho home/PDP/search                                         | Khi implement P1-01        |
-| 5    | [Cart, Checkout, Orders & Nav Spec](superpowers/specs/2026-04-28-cart-checkout-orders-nav-design.md) | Behaviour spec cho cart/checkout/orders/mega menu                          | Khi implement P1-03..P1-05 |
+| 4    | [Agent Tooling Guide](playbooks/agent-tooling-guide.vi.md)                                           | Khi nào dùng superpowers, GSD, RTK, caveman                                | ~10 phút                   |
+| 5    | [Skills Catalog](playbooks/skills-catalog.vi.md)                                                     | Catalog skill/tool có sẵn và cách gọi nhanh                                | ~10 phút                   |
+| 6    | [Storefront Core Design Spec](specs/storefront-core-design.vi.md)                                    | Behaviour spec cho home/PDP/search                                         | Khi implement P1-01        |
+| 7    | [Cart, Checkout, Orders & Nav Spec](specs/cart-checkout-nav-design.vi.md)                            | Behaviour spec cho cart/checkout/orders/mega menu                          | Khi implement P1-03..P1-05 |
 
 **Domain language:** Xem [CONTEXT.md](../CONTEXT.md) ở root — định nghĩa tất cả thuật ngữ domain (Customer vs User, Cart vs Order, v.v.)
 
@@ -41,7 +43,6 @@ docs/
 ├── specs/                     ← Feature specs (stable filenames)
 │   ├── storefront-core-design.vi.md
 │   └── cart-checkout-nav-design.vi.md
-│   (hiện tạm trú ở superpowers/specs/ — sẽ move sau migration sprint)
 ├── product/                   ← Product overview docs (eng + vi)
 ├── playbooks/                 ← Operational guides cho skills/workflows
 ├── agents/                    ← Agent configuration
@@ -53,8 +54,9 @@ docs/
 │   └── 0001-documentation-information-architecture.md
 ├── archive/                   ← Frozen historical docs
 │   └── 2026-mvp-planning/     ← Legacy planning docs (tháng 4/2026)
-└── _stubs/                    ← Temporary redirect stubs
 ```
+
+**Compatibility note:** `docs/_stubs/` chỉ là lớp tương thích tạm thời cho đường dẫn cũ. Sunset ngày `2026-08-06`. Không đọc hoặc sửa tài liệu tại đó.
 
 ---
 
