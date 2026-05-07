@@ -24,7 +24,7 @@ last_updated: 2026-04-28
 | `orders/page.tsx`                    | ✅ Done — calls real API                                      |
 | `orders/[id]/page.tsx`               | ✅ Done — has wrong import path                               |
 | `/cart` page                         | ❌ Missing                                                    |
-| Mega menu / categories nav           | ❌ Missing                                                    |
+| Mega menu / categories nav           | 🔄 In progress — desktop/mobile nav đã có, cần harden journey |
 | `products/page.tsx`                  | 🔶 TypeScript error (`isLoading` field doesn't exist in hook) |
 
 ---
@@ -91,6 +91,13 @@ Inside the existing mobile accordion, "Danh mục" section expands to show all 6
 ### Categories data mapping
 
 Use existing `homeCategoriesData` from `_lib/data/home.ts`. Each entry has `slug`, `name`, `image`, `productCount`.
+
+### Sub-category routing rule
+
+- Category chính điều hướng tới `/${locale}/categories/${slug}`
+- Sub-category hiện tại **không** mở rộng router thành multi-segment route
+- Thay vào đó, sub-category sẽ điều hướng an toàn về category page của danh mục cha với query `?subcategory=<slug-con>`
+- Mục tiêu của giai đoạn này là bảo toàn browse journey và tránh dead link; taxonomy router sâu hơn là scope riêng
 
 ---
 

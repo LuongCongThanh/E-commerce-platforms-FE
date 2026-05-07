@@ -8,7 +8,7 @@ import { Menu } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/shared/components/base/accordion';
 import { Button } from '@/shared/components/base/Button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/shared/components/base/Sheet';
-import { NAV_CATEGORIES } from '@/shared/constants/nav-categories';
+import { buildCategoryHref, NAV_CATEGORIES } from '@/shared/constants/nav-categories';
 
 interface MobileNavProps {
   readonly locale: string;
@@ -56,7 +56,7 @@ export function MobileNav({ locale }: MobileNavProps) {
                 <AccordionContent className="pr-2 pb-3 pl-11">
                   <div className="flex flex-col gap-1">
                     <Link
-                      href={`/${locale}/categories/${cat.slug}`}
+                      href={buildCategoryHref(locale, cat.slug)}
                       onClick={() => {
                         setOpen(false);
                       }}
@@ -67,7 +67,7 @@ export function MobileNav({ locale }: MobileNavProps) {
                     {cat.sub.map(sub => (
                       <Link
                         key={sub.slug}
-                        href={`/${locale}/categories/${sub.slug}`}
+                        href={buildCategoryHref(locale, sub.slug)}
                         onClick={() => {
                           setOpen(false);
                         }}
@@ -84,7 +84,7 @@ export function MobileNav({ locale }: MobileNavProps) {
 
           <div className="mt-6 border-t border-neutral-100 pt-4 dark:border-neutral-800">
             <Link
-              href={`/${locale}/categories/sale`}
+              href={buildCategoryHref(locale, 'sale')}
               onClick={() => {
                 setOpen(false);
               }}

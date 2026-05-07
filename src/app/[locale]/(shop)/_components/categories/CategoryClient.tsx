@@ -15,6 +15,7 @@ interface CategoryClientProps {
 export const CategoryClient = ({ categorySlug }: CategoryClientProps): React.JSX.Element => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const selectedSubcategory = searchParams.get('subcategory');
 
   const pageParam = searchParams.get('page');
   const page = pageParam !== null ? Math.max(1, Number(pageParam)) : 1;
@@ -66,6 +67,14 @@ export const CategoryClient = ({ categorySlug }: CategoryClientProps): React.JSX
 
   return (
     <div className="space-y-8">
+      {selectedSubcategory !== null && selectedSubcategory !== '' && (
+        <div className="rounded-2xl border border-dashed border-neutral-300/70 bg-neutral-50/80 p-4 text-sm dark:border-neutral-700 dark:bg-neutral-900/40">
+          <p className="font-medium text-neutral-800 dark:text-neutral-100">Đang xem trong danh mục con: {selectedSubcategory}</p>
+          <p className="text-muted-foreground mt-1">
+            Hiện tại trang danh mục hiển thị toàn bộ sản phẩm của danh mục cha. Bộ lọc sâu theo danh mục con sẽ được bổ sung sau.
+          </p>
+        </div>
+      )}
       <ProductGrid products={products} />
       {totalPages > 1 && <Pagination currentPage={page} totalPages={totalPages} onPageChange={handlePageChange} />}
     </div>

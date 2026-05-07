@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 
 import type { NavCategory } from '@/shared/constants/nav-categories';
-import { NAV_CATEGORIES } from '@/shared/constants/nav-categories';
+import { buildCategoryHref, NAV_CATEGORIES } from '@/shared/constants/nav-categories';
 
 interface DesktopMegaMenuProps {
   readonly locale: string;
@@ -109,7 +109,7 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
                         {activeCategory.name}
                       </h3>
                       <Link
-                        href={`/${locale}/categories/${activeCategory.slug}`}
+                        href={buildCategoryHref(locale, activeCategory.slug)}
                         onClick={() => {
                           setIsOpen(false);
                         }}
@@ -131,7 +131,7 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
                           transition={{ delay: i * 0.03 + 0.1, duration: 0.2 }}
                         >
                           <Link
-                            href={`/${locale}/categories/${sub.slug}`}
+                            href={buildCategoryHref(locale, sub.slug)}
                             onClick={() => {
                               setIsOpen(false);
                             }}
@@ -159,7 +159,7 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
                           <p className="text-sm font-bold tracking-wider text-white/90 uppercase">Flash Sale</p>
                           <p className="mt-1 text-lg leading-tight font-black">Giảm đến 70%</p>
                           <Link
-                            href={`/${locale}/categories/sale/flash-sale`}
+                            href={buildCategoryHref(locale, 'sale/flash-sale')}
                             onClick={() => {
                               setIsOpen(false);
                             }}

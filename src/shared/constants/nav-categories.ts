@@ -11,6 +11,20 @@ export interface NavCategory {
   sub: NavSubCategory[];
 }
 
+export function buildCategoryHref(locale: string, slug: string): string {
+  const segments = slug.split('/');
+  const categorySlug = segments[0];
+  const baseHref = `/${locale}/categories/${categorySlug}`;
+
+  if (segments.length === 1) {
+    return baseHref;
+  }
+
+  const subcategorySlug = segments.slice(1).join('/');
+  const params = new URLSearchParams({ subcategory: subcategorySlug });
+  return `${baseHref}?${params.toString()}`;
+}
+
 export const NAV_CATEGORIES: NavCategory[] = [
   {
     slug: 'ao',
