@@ -69,6 +69,11 @@ Lệnh thường dùng:
 - `$gsd-next`
 - `$gsd-debug`
 
+Lưu ý setup:
+- `gsd` trong repo này được cài theo kiểu **local-only**
+- thư mục `.codex/` không phải canonical repo artifact
+- xem thêm [GSD Local Setup](gsd-setup.vi.md)
+
 Nên dùng khi:
 - Task lớn, nhiều bước
 - Cần tài liệu planning có cấu trúc
@@ -198,6 +203,6 @@ Mặc định tốt nhất:
 ## Vị trí cài trong repo này
 
 - `superpowers`: `.agents/skills/superpowers/`
-- `gsd`: `.codex/`
+- `gsd`: `.codex/` (local-only, không commit)
 - `rtk`: `.tools/rtk/rtk.exe`
 - `caveman`: `.agents/skills/caveman/`
