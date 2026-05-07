@@ -1,5 +1,5 @@
 import { API } from '@/shared/constants/api-endpoints';
-import { http } from '@/shared/lib/http/methods';
+import { http } from '@/shared/lib/http/request';
 import { useAuthStore } from '@/shared/stores/auth-store';
 import type { AuthToken, User } from '@/shared/types/user';
 
