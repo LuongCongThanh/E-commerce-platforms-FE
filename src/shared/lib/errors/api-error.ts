@@ -20,8 +20,14 @@ export class ApiError extends Error {
   get isNotFound() {
     return this.status === 404;
   }
+  get isBadRequest() {
+    return this.status === 400;
+  }
   get isValidation() {
-    return this.status === 400 || this.status === 422;
+    return this.status === 422;
+  }
+  get isConflict() {
+    return this.status === 409;
   }
   get isServerError() {
     return this.status >= 500;
