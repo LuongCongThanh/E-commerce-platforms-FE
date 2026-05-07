@@ -1,4 +1,7 @@
+import axios from 'axios';
+
 import { API } from '@/shared/constants/api-endpoints';
+import type { ApiResponse } from '@/shared/lib/http/types';
 import { useAuthStore } from '@/shared/stores/auth-store';
 
 export function getAccessToken(): string | null {
@@ -13,24 +16,16 @@ export function setAccessToken(token: string | null): void {
   }
 }
 
+// Dùng axios riêng (không qua httpClient) để tránh circular dependency
+// và tránh trigger response interceptor (gây infinite loop khi 401).
+// Error sẽ là AxiosError — interceptor trong client.ts normalize khi catch.
 export async function refreshAccessToken(): Promise<string> {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL ?? '';
-  const res = await fetch(`${baseUrl}${API.AUTH.REFRESH}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    // Assuming refresh token is in a cookie, or we need to send something else
-    // In this project, it seems to be in a cookie (withCredentials)
+  const response = await axios.post<ApiResponse<string>>(`${baseUrl}${API.AUTH.REFRESH}`, undefined, {
+    withCredentials: true,
   });
 
-  if (!res.ok) {
-    throw new Error('Unable to refresh token');
-  }
-
-  const result = (await res.json()) as { data: string }; // Adjust based on your API response
-  const newToken = result.data;
-
+  const newToken = response.data.data;
   setAccessToken(newToken);
 
   return newToken;
