@@ -5,7 +5,7 @@ audience: human
 language: vi
 language_role: source-of-truth
 owner: FE Lead
-last_updated: 2026-05-08
+last_updated: 2026-05-09
 ---
 
 # Cart, Checkout, Orders & Navigation — Design Spec
@@ -18,8 +18,8 @@ last_updated: 2026-05-08
 | Mega menu and mobile category nav | Done    | Desktop and mobile nav are implemented and the subcategory routing path has been hardened.       |
 | Products page fix                 | Done    | `products/page.tsx` uses `Suspense` and `ProductsClient`; previous hook mismatch is gone.        |
 | Orders detail import fix          | Done    | `orders/[id]/page.tsx` imports the app-local `OrderStatusBadge`.                                 |
-| Checkout locale redirect fixes    | Done    | `CheckoutForm` uses `useLocale()` for cart redirect and success redirect.                        |
-| Business-order realism            | Partial | Checkout now calls the real `useCreateOrder()` hook and redirects with `orderId`, but end-to-end success still depends on a live backend/API rather than static mock data. |
+| Checkout locale redirect fixes    | Done    | `CheckoutForm` uses `useLocale()` for cart redirect/success redirect, and `src/proxy.ts` now protects checkout/orders/profile routes optimistically. |
+| Business-order realism            | Partial | Checkout is locked back to COD-only, calls the real `useCreateOrder()` hook, has success/failed routes, and still needs live backend/API verification for full closure. |
 
 **Scope:** P1-03 Cart Core (cart page) · P1-04 Checkout fixes · P1-05 Orders fixes · Navigation mega menu · Products page fix
 
@@ -31,7 +31,7 @@ last_updated: 2026-05-08
 | ------------------------------------ | ------------------------------------------------------ |
 | `CartDrawer` (slide-in)              | ✅ Done — Sheet, item list, qty stepper, total         |
 | `Header` cart icon + badge           | ✅ Done                                                |
-| `checkout/page.tsx` + `CheckoutForm` | ✅ Done — locale-aware form now submits through `useCreateOrder()` |
+| `checkout/page.tsx` + `CheckoutForm` | ✅ Done — locale-aware form now submits through `useCreateOrder()` with COD-only scope |
 | `orders/page.tsx`                    | ✅ Done — calls real API                               |
 | `orders/[id]/page.tsx`               | ✅ Done — import path fixed                            |
 | `/cart` page                         | ✅ Done                                                |
@@ -135,7 +135,11 @@ Use existing `homeCategoriesData` from `_lib/data/home.ts`. Each entry has `slug
 - Done: success redirect is `/${locale}/checkout/success?orderId=...`
 - Done: empty-cart redirect is `/${locale}/cart`
 - Done: submit flow now uses `useCreateOrder()` and shared order action contract
-- Remaining gap: success path still needs browser/e2e verification against a live backend to mark the full checkout lifecycle absolutely closed
+- Done: optimistic auth protection now lives in `src/proxy.ts`
+- Done: checkout scope is locked back to COD-only in the UI/schema layer
+- Done: failed checkout route exists for server/network failure cases
+- Done: success page now resolves `orderId` into a real order summary instead of showing only a bare confirmation
+- Remaining gap: final confidence still needs browser/e2e verification against a live backend to mark the full checkout lifecycle absolutely closed
 
 ---
 
@@ -188,6 +192,10 @@ Use existing `homeCategoriesData` from `_lib/data/home.ts`. Each entry has `slug
 | CartDrawer links use correct locale prefix                                          | Done    | `CartDrawer` now uses `useLocale()`.                                                                 |
 | CheckoutForm redirect after submit uses correct locale                              | Done    | `CheckoutForm` redirects with locale prefix.                                                         |
 | CheckoutForm submits through real order-create hook instead of mock delay           | Done    | Form now maps UI fields into `CheckoutInput` and calls `useCreateOrder(locale)`.                     |
+| Checkout route redirects unauthenticated users to login                            | Done    | `src/proxy.ts` now redirects `/[locale]/checkout`, `/orders`, `/profile` when `access_token` cookie is absent. |
+| Checkout supports COD only at MVP scope                                            | Done    | VNPay option was removed from checkout UI/schema to match locked MVP scope.                          |
+| Success page renders order summary after placement                                 | Done    | Success page now resolves `orderId` into real order data on the client.                              |
+| Failed page exists for recoverable checkout failures                               | Done    | `/[locale]/checkout/failed` now gives retry and cart-return options.                                 |
 
 ## Follow-up Tasks To Close Remaining Partial Items
 

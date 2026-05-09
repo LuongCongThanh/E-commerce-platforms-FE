@@ -5,7 +5,7 @@ audience: mixed
 language: vi
 language_role: source-of-truth
 owner: FE Lead
-last_updated: 2026-04-27
+last_updated: 2026-05-09
 ---
 
 # MVP Implementation Plan
@@ -41,9 +41,8 @@ last_updated: 2026-04-27
 | `(auth)/forgot-password/page.tsx`  | ❌         | Thư mục có, page chưa có             |
 | `(auth)/reset-password/[token]/`   | ❌         | Chưa có                              |
 | `(shop)/checkout/failed/`          | ❌         | Chưa có                              |
-| `(admin)/products/`                | 🔶         | Thư mục + `_lib/` có, page cần xây   |
-| `(admin)/orders/`                  | 🔶         | Thư mục + `_lib/` có, page cần xây   |
-| `(admin)/dashboard/`               | 🔶         | Thư mục có, page cần xây             |
+| `(admin)/orders/`                  | 🔶         | Page quản trị đơn cần xây            |
+| `(admin)/dashboard/`               | 🔶         | Dashboard stats cần xây              |
 | `shared/stores/auth-store.ts`      | ✅         | Hoàn chỉnh                           |
 | `shared/stores/cart-store.ts`      | ✅         | Hoàn chỉnh                           |
 | `shared/lib/http/`                 | ✅         | Hoàn chỉnh                           |
@@ -305,44 +304,49 @@ Auth phải xong trước Checkout. Cart xong trước Checkout.
 
 ### Task 6: Admin Core (P1-06)
 
+**Scope đã chốt:** Frontend MVP chỉ làm `Order management + dashboard stats`. Product CRUD không nằm trong frontend MVP; vận hành sản phẩm dùng Django admin hoặc backend tooling ở giai đoạn này.
+
 **Files:**
 
-- Modify: `src/app/[locale]/(admin)/dashboard/page.tsx`
-- Modify: `src/app/[locale]/(admin)/products/page.tsx`
-- Create: `src/app/[locale]/(admin)/products/new/page.tsx`
-- Create: `src/app/[locale]/(admin)/products/[id]/page.tsx`
-- Modify: `src/app/[locale]/(admin)/orders/page.tsx`
-- Create: `src/app/[locale]/(admin)/orders/[id]/page.tsx`
-- Create: `src/app/[locale]/(admin)/_components/AdminDataTable.tsx`
-- Create: `src/app/[locale]/(admin)/_components/OrderStatusSelect.tsx`
+- Create: `src/app/[locale]/(admin)/admin/layout.tsx`
+- Create: `src/app/[locale]/(admin)/admin/page.tsx`
+- Create: `src/app/[locale]/(admin)/admin/dashboard/page.tsx`
+- Create: `src/app/[locale]/(admin)/admin/orders/page.tsx`
+- Create: `src/app/[locale]/(admin)/admin/orders/[id]/page.tsx`
+- Create: `src/app/[locale]/(admin)/_components/AdminShell.tsx`
+- Create: `src/app/[locale]/(admin)/_components/AdminDashboardClient.tsx`
+- Create: `src/app/[locale]/(admin)/_components/AdminOrdersTable.tsx`
+- Create: `src/app/[locale]/(admin)/_components/AdminOrderDetailClient.tsx`
+- Create: `src/app/[locale]/(admin)/_components/AdminOrderStatusSelect.tsx`
 - Create: `src/app/[locale]/(admin)/_lib/actions.ts`
+- Create: `src/app/[locale]/(admin)/_lib/hooks.ts`
+- Create: `src/app/[locale]/(admin)/_lib/query-keys.ts`
+- Create: `src/app/[locale]/(admin)/_lib/types.ts`
+- Create: `src/app/[locale]/(admin)/_lib/utils.ts`
+- Modify: `src/proxy.ts`
+- Modify: `src/app/[locale]/(auth)/_lib/actions.ts`
 
 **Checklist:**
 
-| Trang                  | Task                                                                               | Done? |
-| ---------------------- | ---------------------------------------------------------------------------------- | ----- |
-| `/admin/dashboard`     | Số đơn hôm nay (từ API)                                                            | - [ ] |
-| `/admin/dashboard`     | Doanh thu hôm nay (từ API)                                                         | - [ ] |
-| `/admin/dashboard`     | Sản phẩm sắp hết hàng (< 5 units)                                                  | - [ ] |
-| `/admin/products`      | Bảng danh sách sản phẩm (tên, giá, tồn kho, danh mục, status)                      | - [ ] |
-| `/admin/products`      | Search theo tên, filter theo danh mục                                              | - [ ] |
-| `/admin/products`      | Link "Thêm sản phẩm" → `/admin/products/new`                                       | - [ ] |
-| `/admin/products/new`  | Form tạo sản phẩm: tên, slug, mô tả, giá, danh mục, ảnh                            | - [ ] |
-| `/admin/products/new`  | Quản lý variants (size/color/stock) — thêm/xóa row                                 | - [ ] |
-| `/admin/products/[id]` | Form sửa sản phẩm (tương tự new, prefill data)                                     | - [ ] |
-| `/admin/products/[id]` | Toggle active/inactive sản phẩm                                                    | - [ ] |
-| `/admin/orders`        | Bảng danh sách đơn (mã đơn, khách hàng, tổng tiền, status, ngày)                   | - [ ] |
-| `/admin/orders`        | Filter theo status, ngày                                                           | - [ ] |
-| `/admin/orders/[id]`   | Xem chi tiết đơn đầy đủ                                                            | - [ ] |
-| `/admin/orders/[id]`   | OrderStatusSelect: đổi status theo workflow (PENDING→CONFIRMED→SHIPPING→COMPLETED) | - [ ] |
-| `/admin/orders/[id]`   | Chặn đổi ngược status (không cho COMPLETED → PENDING)                              | - [ ] |
-| Admin guard            | Middleware chặn non-admin truy cập `/admin/*`                                      | - [ ] |
+| Trang                | Task                                                                               | Done? |
+| -------------------- | ---------------------------------------------------------------------------------- | ----- |
+| `/admin/dashboard`   | Tổng đơn hàng                                                                      | - [x] |
+| `/admin/dashboard`   | Doanh thu hôm nay                                                                  | - [x] |
+| `/admin/dashboard`   | Đơn chờ xử lý                                                                      | - [x] |
+| `/admin/dashboard`   | Tổng sản phẩm (metric đọc-only)                                                    | - [x] |
+| `/admin/orders`      | Bảng danh sách đơn (mã đơn, khách hàng, tổng tiền, status, ngày)                   | - [x] |
+| `/admin/orders`      | Filter theo status, ngày                                                           | - [x] |
+| `/admin/orders/[id]` | Xem chi tiết đơn đầy đủ                                                            | - [x] |
+| `/admin/orders/[id]` | OrderStatusSelect: đổi status theo workflow (PENDING→CONFIRMED→SHIPPED→DELIVERED) | - [x] |
+| `/admin/orders/[id]` | Chặn đổi ngược status (không cho DELIVERED → PENDING)                              | - [x] |
+| `/admin/orders/[id]` | Cho phép admin cancel thay user khi policy cho phép                                | - [x] |
+| Admin guard          | Proxy/middleware chặn non-admin truy cập `/admin/*`                                | - [x] |
 
 **Acceptance Criteria:**
 
-- [ ] Admin tạo sản phẩm mới → xuất hiện trong storefront
 - [ ] Admin đổi status đơn → customer thấy status mới ngay
-- [ ] Non-admin vào `/admin/*` → redirect hoặc 403
+- [ ] Dashboard hiển thị đúng 4 metric vận hành đã chốt
+- [x] Non-admin vào `/admin/*` → redirect hoặc 403
 
 ---
 

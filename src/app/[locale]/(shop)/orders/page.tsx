@@ -15,7 +15,7 @@ async function getOrders(): Promise<Order[]> {
 
 export default async function OrdersPage({ params }: { readonly params: Promise<{ locale: string }> }): Promise<React.JSX.Element> {
   const { locale } = await params;
-  const orders = await getOrders();
+  const orders = (await getOrders()).sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">

@@ -16,16 +16,16 @@ last_updated: 2026-05-08
 
 ## Đọc theo thứ tự (Senior FE Developer — onboarding)
 
-| Bước | Tài liệu                                                                                             | Mục đích                                                                   | Thời gian đọc              |
-| ---- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------- |
-| 1    | [FE Constraints & Conventions](architecture/fe-constraints.vi.md)                                    | Rules bắt buộc — import alias, TypeScript strict, Tailwind v4, HTTP client | ~15 phút                   |
-| 2    | [FE Module Map](architecture/fe-module-map.vi.md)                                                    | Codebase layout — module nào làm gì, file nào ở đâu                        | ~10 phút                   |
-| 3    | [Priority Backlog](plans/priority-backlog.vi.md)                                                     | Feature nào đã xong, đang làm, chưa làm — tránh làm lại                    | ~5 phút                    |
-| 4    | [Agent Tooling Guide](playbooks/agent-tooling-guide.vi.md)                                           | Khi nào dùng superpowers, GSD, RTK, caveman                                | ~10 phút                   |
-| 5    | [Agent Tooling Usage Guide](playbooks/agent-tooling-usage-guide.vi.md)                               | Cách dùng thực tế từng công cụ: lệnh, prompt mẫu, troubleshooting          | ~15 phút                   |
-| 6    | [Skills Catalog](playbooks/skills-catalog.vi.md)                                                     | Catalog skill/tool có sẵn và cách gọi nhanh                                | ~10 phút                   |
-| 7    | [Storefront Core Design Spec](specs/storefront-core-design.vi.md)                                    | Behaviour spec cho home/PDP/search                                         | Khi implement P1-01        |
-| 8    | [Cart, Checkout, Orders & Nav Spec](specs/cart-checkout-nav-design.vi.md)                            | Behaviour spec cho cart/checkout/orders/mega menu                          | Khi implement P1-03..P1-05 |
+| Bước | Tài liệu                                                                  | Mục đích                                                                   | Thời gian đọc              |
+| ---- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------- |
+| 1    | [FE Constraints & Conventions](architecture/fe-constraints.vi.md)         | Rules bắt buộc — import alias, TypeScript strict, Tailwind v4, HTTP client | ~15 phút                   |
+| 2    | [FE Module Map](architecture/fe-module-map.vi.md)                         | Codebase layout — module nào làm gì, file nào ở đâu                        | ~10 phút                   |
+| 3    | [Priority Backlog](plans/priority-backlog.vi.md)                          | Feature nào đã xong, đang làm, chưa làm — tránh làm lại                    | ~5 phút                    |
+| 4    | [Agent Tooling Guide](playbooks/agent-tooling-guide.vi.md)                | Khi nào dùng superpowers, GSD, RTK, caveman                                | ~10 phút                   |
+| 5    | [Agent Tooling Usage Guide](playbooks/agent-tooling-usage-guide.vi.md)    | Cách dùng thực tế từng công cụ: lệnh, prompt mẫu, troubleshooting          | ~15 phút                   |
+| 6    | [Skills Catalog](playbooks/skills-catalog.vi.md)                          | Catalog skill/tool có sẵn và cách gọi nhanh                                | ~10 phút                   |
+| 7    | [Storefront Core Design Spec](specs/storefront-core-design.vi.md)         | Behaviour spec cho home/PDP/search                                         | Khi implement P1-01        |
+| 8    | [Cart, Checkout, Orders & Nav Spec](specs/cart-checkout-nav-design.vi.md) | Behaviour spec cho cart/checkout/orders/mega menu                          | Khi implement P1-03..P1-05 |
 
 **Domain language:** Xem [CONTEXT.md](../CONTEXT.md) ở root — định nghĩa tất cả thuật ngữ domain (Customer vs User, Cart vs Order, v.v.)
 

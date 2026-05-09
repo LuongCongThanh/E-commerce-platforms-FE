@@ -6,6 +6,12 @@ export const ROUTES = {
   CHECKOUT: '/checkout',
   CHECKOUT_SUCCESS: '/checkout/success',
   CHECKOUT_FAILED: '/checkout/failed',
+  ADMIN: {
+    ROOT: '/admin',
+    DASHBOARD: '/admin/dashboard',
+    ORDERS: '/admin/orders',
+    ORDER: (id: string | number) => `/admin/orders/${String(id)}`,
+  },
   AUTH: {
     LOGIN: '/login',
     REGISTER: '/register',

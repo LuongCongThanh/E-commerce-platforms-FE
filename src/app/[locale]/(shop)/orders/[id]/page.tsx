@@ -3,9 +3,12 @@
 import { use } from 'react';
 
 import { OrderStatusBadge } from '@/app/[locale]/(shop)/_components/OrderStatusBadge';
+import { OrderTimeline } from '@/app/[locale]/(shop)/_components/OrderTimeline';
 import { useCancelOrder, useOrder } from '@/app/[locale]/(shop)/_lib/hooks';
 import { Button } from '@/shared/components/base/Button';
 import { Separator } from '@/shared/components/base/Separator';
+import { PAYMENT_METHOD_LABEL } from '@/shared/constants/app-config';
+import { formatDateTime } from '@/shared/lib/utils';
 
 function formatVND(n: number) {
   return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(n);
@@ -29,7 +32,7 @@ export default function OrderDetailPage({ params }: { readonly params: Promise<{
       <div className="mb-6 flex items-center justify-between">
         <div>
           <h1 className="text-xl font-bold">Đơn #{order.code}</h1>
-          <p className="text-muted-foreground text-sm">{new Date(order.created_at).toLocaleString('vi-VN')}</p>
+          <p className="text-muted-foreground text-sm">{formatDateTime(order.created_at)}</p>
         </div>
         <OrderStatusBadge status={order.status} />
       </div>
@@ -55,13 +58,17 @@ export default function OrderDetailPage({ params }: { readonly params: Promise<{
           <span className="font-medium">Địa chỉ:</span> {order.address}
         </p>
         <p>
-          <span className="font-medium">Thanh toán:</span> {order.payment_method.toUpperCase()}
+          <span className="font-medium">Thanh toán:</span> {PAYMENT_METHOD_LABEL[order.payment_method] ?? order.payment_method.toUpperCase()}
         </p>
         {order.note.length > 0 ? (
           <p>
             <span className="font-medium">Ghi chú:</span> {order.note}
           </p>
         ) : null}
+      </div>
+
+      <div className="mt-4">
+        <OrderTimeline status={order.status} />
       </div>
 
       {order.status === 'pending' && (

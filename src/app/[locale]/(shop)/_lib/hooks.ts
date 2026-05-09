@@ -42,6 +42,7 @@ export const useOrder = (id: string) =>
   useQuery({
     queryKey: orderKeys.detail(id),
     queryFn: () => orderActions.detail(id),
+    enabled: id.length > 0,
   });
 
 export const useCreateOrder = (locale: string) => {

@@ -47,3 +47,4 @@ next-env.d.ts
 .vendor/
 .codex/
 .agents/skills/superpowers/
+/.agent/skills/

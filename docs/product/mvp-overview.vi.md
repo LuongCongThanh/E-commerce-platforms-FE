@@ -5,7 +5,7 @@ audience: mixed
 language: vi
 language_role: source-of-truth
 owner: FE Lead
-last_updated: 2026-04-24
+last_updated: 2026-05-09
 ---
 
 # MVP Overview
@@ -18,7 +18,7 @@ audience: mixed
 language: vi
 language_role: source-of-truth
 owner: FE Lead
-last_updated: 2026-04-24
+last_updated: 2026-05-09
 
 ---
 
@@ -38,7 +38,7 @@ last_updated: 2026-04-24
 | Item        | Definition                                                 |
 | ----------- | ---------------------------------------------------------- |
 | Product     | Nền tảng e-commerce frontend-first cho thị trường Việt Nam |
-| MVP target  | Bán hàng thực tế với COD, quản trị đơn/sản phẩm cơ bản     |
+| MVP target  | Bán hàng thực tế với COD, quản trị đơn và dashboard vận hành cơ bản |
 | Core users  | Khách mua hàng, vận hành cửa hàng, admin hệ thống          |
 | Primary KPI | Conversion, checkout success, order processing SLA         |
 
@@ -54,7 +54,7 @@ In-scope cho MVP:
 - Auth: register, login, forgot/reset password (email flow mức cơ bản).
 - Cart and checkout: giỏ hàng, checkout COD, xác nhận đơn.
 - Order lifecycle (khách): xem lịch sử đơn, chi tiết đơn.
-- Admin core: quản trị sản phẩm, đơn hàng, trạng thái đơn.
+- Admin core: điều phối đơn hàng và dashboard vận hành mức MVP.
 - NFR nền tảng: responsive, SEO cơ bản, performance baseline, error tracking.
 
 Out-of-scope cho MVP (defer):
@@ -80,7 +80,7 @@ Out-of-scope cho MVP (defer):
   - Mục tiêu: tìm nhanh sản phẩm phù hợp, mua dễ trên mobile.
   - Pain points: quá nhiều bước checkout, thiếu minh bạch trạng thái đơn.
 - Persona 2 - Store operator:
-  - Mục tiêu: cập nhật sản phẩm, xử lý đơn nhanh, giảm sai sót trạng thái.
+  - Mục tiêu: xử lý đơn nhanh, giảm sai sót trạng thái, theo dõi hàng đợi vận hành.
   - Pain points: thao tác thủ công rời rạc, khó theo dõi backlog đơn.
 - Persona 3 - Admin owner:
   - Mục tiêu: kiểm soát vận hành, đảm bảo chất lượng và khả năng mở rộng.
@@ -88,7 +88,7 @@ Out-of-scope cho MVP (defer):
 ### Goals and success outcomes
 
 - Goal 1: End-to-end purchase flow hoạt động ổn định trên web mobile/desktop.
-- Goal 2: Team vận hành quản lý đơn và sản phẩm hằng ngày không phụ thuộc dev.
+- Goal 2: Team vận hành quản lý đơn hằng ngày không phụ thuộc dev.
 - Goal 3: Tài liệu và tiêu chí nghiệm thu đủ rõ để BA/FE/QA thực thi nhất quán.
 
 ### Core user journeys
@@ -116,8 +116,8 @@ Out-of-scope cho MVP (defer):
 - Order module:
   - Create order COD, order confirmation, customer order history/detail.
 - Admin module:
-  - CRUD sản phẩm mức vận hành MVP.
   - Danh sách đơn, đổi trạng thái đơn theo policy.
+  - Dashboard stats cho vận hành hằng ngày.
 - System module:
   - Error boundaries, loading states, metadata SEO, monitoring hooks.
 

@@ -11,6 +11,7 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 import { useCreateOrder } from '@/app/[locale]/(shop)/_lib/hooks';
+import { ApiError } from '@/shared/lib/errors/api-error';
 import { useCartStore } from '@/shared/stores/cart-store';
 
 const checkoutSchema = z.object({
@@ -21,7 +22,7 @@ const checkoutSchema = z.object({
   district: z.string().min(1, 'required'),
   ward: z.string().min(1, 'required'),
   shippingMethod: z.enum(['standard', 'express']),
-  paymentMethod: z.enum(['cod', 'vnpay']),
+  paymentMethod: z.literal('cod'),
   note: z.string().optional(),
 });
 
@@ -66,8 +67,27 @@ export function CheckoutForm() {
             ? `Shipping: ${data.shippingMethod}\n${data.note.trim()}`
             : `Shipping: ${data.shippingMethod}`,
       });
-    } catch {
-      toast.error('Không thể tạo đơn hàng lúc này. Vui lòng thử lại sau.');
+    } catch (error) {
+      if (error instanceof ApiError) {
+        if (error.isUnauthorized) {
+          toast.error('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại để tiếp tục.');
+          router.push(`/${locale}/login?returnUrl=/${locale}/checkout`);
+          return;
+        }
+
+        if (error.isConflict || error.isBadRequest || error.isValidation) {
+          toast.error(error.message);
+          return;
+        }
+
+        const failedUrl = new URL(`/${locale}/checkout/failed`, window.location.origin);
+        failedUrl.searchParams.set('reason', error.isServerError ? 'server' : 'unknown');
+        failedUrl.searchParams.set('message', error.message);
+        router.push(failedUrl.pathname + failedUrl.search);
+        return;
+      }
+
+      router.push(`/${locale}/checkout/failed?reason=unknown`);
     }
   };
 
@@ -175,13 +195,12 @@ export function CheckoutForm() {
         >
           <h2 className="mb-6 text-xl font-bold">{t('paymentMethod')}</h2>
           <div className="space-y-4">
-            <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:bg-white/10">
+            <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4">
               <input type="radio" value="cod" {...register('paymentMethod')} className="accent-primary h-4 w-4" />
-              <p className="font-medium">{t('cod')}</p>
-            </label>
-            <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:bg-white/10">
-              <input type="radio" value="vnpay" {...register('paymentMethod')} className="accent-primary h-4 w-4" />
-              <p className="font-medium">{t('vnpay')}</p>
+              <div>
+                <p className="font-medium">{t('cod')}</p>
+                <p className="text-muted-foreground text-xs">MVP hiện hỗ trợ duy nhất hình thức thanh toán khi nhận hàng.</p>
+              </div>
             </label>
           </div>
         </motion.div>

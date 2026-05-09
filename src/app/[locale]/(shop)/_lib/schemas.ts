@@ -8,7 +8,7 @@ export const addressSchema = z.object({
 });
 
 export const checkoutSchema = addressSchema.extend({
-  paymentMethod: z.enum(['cod', 'vnpay', 'momo', 'zalopay']),
+  paymentMethod: z.literal('cod'),
   note: z.string().optional(),
   voucherCode: z.string().optional(),
 });

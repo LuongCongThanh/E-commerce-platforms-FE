@@ -5,7 +5,7 @@ audience: human
 language: vi
 language_role: source-of-truth
 owner: FE Lead
-last_updated: 2026-05-06
+last_updated: 2026-05-09
 ---
 
 # Priority Implementation Backlog
@@ -43,9 +43,9 @@ last_updated: 2026-05-06
 | P1-01 | Storefront core  | Home/PDP/search/filter + Mega Menu | 🔄 In progress | P0-\*        | Browse journey ổn định, Mega Menu hoàn thiện |
 | P1-02 | Auth core        | Register/login/forgot/reset        | ✅ Done        | P0-\*        | Auth flow hoạt động + guard                  |
 | P1-03 | Cart core        | Add/update/remove + totals         | ✅ Done        | P1-01        | Tính toán chính xác, persist                 |
-| P1-04 | Checkout COD     | Checkout form + place order        | ⏳ Pending     | P1-02, P1-03 | COD order tạo thành công, lỗi được xử lý     |
-| P1-05 | Order visibility | Confirmation + history + detail    | ⏳ Pending     | P1-04        | Customer xem đúng order data của mình        |
-| P1-06 | Admin core       | Product/order management           | ⏳ Pending     | P1-04        | Cập nhật trạng thái đơn thành công           |
+| P1-04 | Checkout COD     | Checkout form + place order        | 🔄 In progress | P1-02, P1-03 | COD order tạo thành công, lỗi được xử lý     |
+| P1-05 | Order visibility | Confirmation + history + detail    | 🔄 In progress | P1-04        | Customer xem đúng order data của mình        |
+| P1-06 | Admin core       | Order management + dashboard stats | 🔄 In progress | P1-04        | Cập nhật trạng thái đơn và xem số liệu vận hành thành công |
 
 **Critical path hiện tại:** P1-01 (Mega Menu) → P1-04 → P1-05 → P1-06
 
@@ -97,8 +97,8 @@ Những thứ này **không** vào sprint hiện tại, bất kể áp lực:
 
 ### P1 Gate 🔄
 
-- [ ] Core customer journey end-to-end ổn định (Mega Menu xong)
-- [ ] Admin core xử lý đơn vận hành được
+- [ ] Core customer journey end-to-end ổn định (cần live backend verification cho checkout/order)
+- [ ] Admin core xử lý đơn vận hành được (cần verify với backend sống)
 
 ### P2 Gate ⏳
 
