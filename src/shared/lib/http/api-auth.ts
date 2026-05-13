@@ -1,4 +1,3 @@
-import { API } from '@/shared/constants/api-endpoints';
 import { useAuthStore } from '@/shared/stores/auth-store';
 
 export function getAccessToken(): string | null {
@@ -6,32 +5,24 @@ export function getAccessToken(): string | null {
 }
 
 export function setAccessToken(token: string | null): void {
-  if (token !== null) {
-    useAuthStore.getState().setAccessToken(token);
-  } else {
+  if (token === null) {
     useAuthStore.getState().clearAuth();
+  } else {
+    useAuthStore.getState().setAccessToken(token);
   }
 }
 
 export async function refreshAccessToken(): Promise<string> {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL ?? '';
-  const res = await fetch(`${baseUrl}${API.AUTH.REFRESH}`, {
+  const res = await fetch('/api/auth/refresh', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    // Assuming refresh token is in a cookie, or we need to send something else
-    // In this project, it seems to be in a cookie (withCredentials)
+    credentials: 'include',
   });
 
   if (!res.ok) {
     throw new Error('Unable to refresh token');
   }
 
-  const result = (await res.json()) as { data: string }; // Adjust based on your API response
-  const newToken = result.data;
-
-  setAccessToken(newToken);
-
-  return newToken;
+  const data = (await res.json()) as { access: string };
+  setAccessToken(data.access);
+  return data.access;
 }

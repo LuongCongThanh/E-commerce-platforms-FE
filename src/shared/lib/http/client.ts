@@ -15,11 +15,18 @@ export const httpClient = axios.create({
 });
 
 let isRefreshing = false;
-let refreshQueue: Array<(token: string) => void> = [];
+let refreshQueue: Array<{ resolve: (token: string) => void; reject: (err: unknown) => void }> = [];
 
 function resolveRefreshQueue(token: string): void {
-  refreshQueue.forEach(resolve => {
+  refreshQueue.forEach(({ resolve }) => {
     resolve(token);
+  });
+  refreshQueue = [];
+}
+
+function rejectRefreshQueue(err: unknown): void {
+  refreshQueue.forEach(({ reject }) => {
+    reject(err);
   });
   refreshQueue = [];
 }
@@ -72,8 +79,8 @@ httpClient.interceptors.response.use(
       originalRequest._retry = true;
 
       if (isRefreshing) {
-        const token = await new Promise<string>(resolve => {
-          refreshQueue.push(resolve);
+        const token = await new Promise<string>((resolve, reject) => {
+          refreshQueue.push({ resolve, reject });
         });
 
         if (originalRequest.headers !== undefined) {
@@ -95,6 +102,7 @@ httpClient.interceptors.response.use(
 
         return await httpClient(originalRequest);
       } catch (refreshError) {
+        rejectRefreshQueue(refreshError);
         return await Promise.reject(normalizeError(refreshError));
       } finally {
         isRefreshing = false;

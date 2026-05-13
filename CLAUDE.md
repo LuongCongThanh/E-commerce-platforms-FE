@@ -141,3 +141,17 @@ Same-directory imports (`./foo`) are allowed. Only upward traversal (`../`) is b
 ### Product & Commerce
 
 - **Badges**: Use the shared `BadgeValue` union type (`'best-seller' | 'new' | 'sale' | 'low-stock'`) for all product badges. Align feature-specific product types with shared `Product` schema where possible.
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues (`LuongCongThanh/E-commerce-platforms-FE`). See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default canonical label strings (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context layout — `CONTEXT.md` at root + `docs/adr/`. See `docs/agents/domain.md`.

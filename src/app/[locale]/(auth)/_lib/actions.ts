@@ -1,4 +1,5 @@
 import { API } from '@/shared/constants/api-endpoints';
+import { ApiError } from '@/shared/lib/errors/api-error';
 import { http } from '@/shared/lib/http/methods';
 import { useAuthStore } from '@/shared/stores/auth-store';
 import type { AuthToken, User } from '@/shared/types/user';
@@ -15,36 +16,34 @@ interface RegisterPayload {
   lastName: string;
 }
 
-interface AuthResponse {
-  user: User;
-  access: string;
-  refresh: string;
-}
+async function callAuthRoute<T>(url: string, body: unknown): Promise<T> {
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
 
-function setSessionCookie(token: string): void {
-  if (typeof document === 'undefined') return;
-  const maxAge = 60 * 60 * 24 * 7;
-  document.cookie = `access_token=${token}; path=/; max-age=${maxAge.toString()}; SameSite=Lax`;
-}
+  const json = (await res.json()) as Record<string, unknown>;
 
-export function clearSessionCookie(): void {
-  if (typeof document === 'undefined') return;
-  document.cookie = 'access_token=; path=/; max-age=0; SameSite=Lax';
+  if (!res.ok) {
+    const message = typeof json.message === 'string' ? json.message : 'Đã có lỗi xảy ra';
+    throw new ApiError({ message, status: res.status });
+  }
+
+  return json as T;
 }
 
 export async function loginAction(payload: LoginPayload): Promise<User> {
-  const data = await http.post<AuthResponse>(API.AUTH.LOGIN, payload);
+  const data = await callAuthRoute<{ user: User; access: string }>('/api/auth/login', payload);
   useAuthStore.getState().setAccessToken(data.access);
   useAuthStore.getState().setUser(data.user);
-  setSessionCookie(data.access);
   return data.user;
 }
 
 export async function registerAction(payload: RegisterPayload): Promise<User> {
-  const data = await http.post<AuthResponse>(API.AUTH.REGISTER, payload);
+  const data = await callAuthRoute<{ user: User; access: string }>('/api/auth/register', payload);
   useAuthStore.getState().setAccessToken(data.access);
   useAuthStore.getState().setUser(data.user);
-  setSessionCookie(data.access);
   return data.user;
 }
 
@@ -61,7 +60,7 @@ export async function resetPasswordAction(payload: { token: string; uid: string;
   });
 }
 
-export function logoutAction(): void {
+export async function logoutAction(): Promise<void> {
   useAuthStore.getState().clearAuth();
-  clearSessionCookie();
+  await fetch('/api/auth/logout', { method: 'POST' }).catch(() => undefined);
 }
