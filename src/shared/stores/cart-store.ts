@@ -13,8 +13,6 @@ export interface CartItem {
 
 interface CartState {
   items: CartItem[];
-  total: number;
-  itemCount: number;
 }
 
 interface CartActions {
@@ -24,42 +22,35 @@ interface CartActions {
   clearCart: () => void;
 }
 
-function calcTotal(items: CartItem[]): number {
-  return items.reduce((s, i) => s + i.price * i.quantity, 0);
-}
-function calcItemCount(items: CartItem[]): number {
-  return items.reduce((s, i) => s + i.quantity, 0);
-}
+export const selectCartTotal = (state: CartState & CartActions): number => state.items.reduce((s, i) => s + i.price * i.quantity, 0);
+
+export const selectCartItemCount = (state: CartState & CartActions): number => state.items.reduce((s, i) => s + i.quantity, 0);
 
 export const useCartStore = create<CartState & CartActions>()(
   subscribeWithSelector(
     persist(
       (set, get) => ({
         items: [],
-        total: 0,
-        itemCount: 0,
 
         addToCart: item => {
           const items = get().items;
           const existing = items.find(i => i.variantId === item.variantId);
           const updated =
-            existing != null
-              ? items.map(i => (i.variantId === item.variantId ? { ...i, quantity: i.quantity + item.quantity } : i))
-              : [...items, item];
-          set({ items: updated, total: calcTotal(updated), itemCount: calcItemCount(updated) });
+            existing == null
+              ? [...items, item]
+              : items.map(i => (i.variantId === item.variantId ? { ...i, quantity: i.quantity + item.quantity } : i));
+          set({ items: updated });
         },
 
         removeCartItem: variantId => {
-          const updated = get().items.filter(i => i.variantId !== variantId);
-          set({ items: updated, total: calcTotal(updated), itemCount: calcItemCount(updated) });
+          set({ items: get().items.filter(i => i.variantId !== variantId) });
         },
 
         updateQuantity: (variantId, quantity) => {
-          const updated = get().items.map(i => (i.variantId === variantId ? { ...i, quantity } : i));
-          set({ items: updated, total: calcTotal(updated), itemCount: calcItemCount(updated) });
+          set({ items: get().items.map(i => (i.variantId === variantId ? { ...i, quantity } : i)) });
         },
 
-        clearCart: () => set({ items: [], total: 0, itemCount: 0 }),
+        clearCart: () => set({ items: [] }),
       }),
       { name: 'cart-storage' }
     )

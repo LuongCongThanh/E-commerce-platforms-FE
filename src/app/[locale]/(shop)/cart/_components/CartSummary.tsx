@@ -7,14 +7,15 @@ import { ArrowRight, Truck } from 'lucide-react';
 import { Button } from '@/shared/components/base/Button';
 import { Separator } from '@/shared/components/base/Separator';
 import { formatCurrency } from '@/shared/lib/utils';
-import { useCartStore } from '@/shared/stores/cart-store';
+import { selectCartTotal, useCartStore } from '@/shared/stores/cart-store';
 
 interface CartSummaryProps {
   readonly locale: string;
 }
 
 export function CartSummary({ locale }: CartSummaryProps) {
-  const { items, total } = useCartStore();
+  const items = useCartStore(state => state.items);
+  const total = useCartStore(selectCartTotal);
   const isEmpty = items.length === 0;
   const totalQty = items.reduce((s, i) => s + i.quantity, 0);
 

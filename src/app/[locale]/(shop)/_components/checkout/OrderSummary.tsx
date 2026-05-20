@@ -5,11 +5,12 @@ import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 
-import { useCartStore } from '@/shared/stores/cart-store';
+import { selectCartTotal, useCartStore } from '@/shared/stores/cart-store';
 
 export function OrderSummary() {
   const t = useTranslations('checkout');
-  const { items, total: subtotal } = useCartStore();
+  const items = useCartStore(state => state.items);
+  const subtotal = useCartStore(selectCartTotal);
 
   const shippingFee = 30000; // Hardcoded for demo
   const total = subtotal + shippingFee;
