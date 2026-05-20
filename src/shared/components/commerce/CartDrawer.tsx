@@ -10,7 +10,7 @@ import { Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
 import { Button } from '@/shared/components/base/Button';
 import { ScrollArea } from '@/shared/components/base/ScrollArea';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/shared/components/base/Sheet';
-import { useCartStore } from '@/shared/stores/cart-store';
+import { selectCartItemCount, selectCartTotal, useCartStore } from '@/shared/stores/cart-store';
 
 interface CartDrawerProps {
   readonly children: React.ReactNode;
@@ -18,7 +18,9 @@ interface CartDrawerProps {
 
 export function CartDrawer({ children }: CartDrawerProps) {
   const locale = useLocale();
-  const { items, total, itemCount, updateQuantity, removeCartItem } = useCartStore();
+  const { items, updateQuantity, removeCartItem } = useCartStore();
+  const total = useCartStore(selectCartTotal);
+  const itemCount = useCartStore(selectCartItemCount);
 
   return (
     <Sheet>
