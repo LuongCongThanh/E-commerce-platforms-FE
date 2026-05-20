@@ -34,14 +34,14 @@ async function callAuthRoute<T>(url: string, body: unknown): Promise<T> {
 }
 
 export async function loginAction(payload: LoginPayload): Promise<User> {
-  const data = await callAuthRoute<{ user: User; access: string }>('/api/auth/login', payload);
+  const data = await callAuthRoute<{ user: User; access: string }>(API.AUTH.LOGIN, payload);
   useAuthStore.getState().setAccessToken(data.access);
   useAuthStore.getState().setUser(data.user);
   return data.user;
 }
 
 export async function registerAction(payload: RegisterPayload): Promise<User> {
-  const data = await callAuthRoute<{ user: User; access: string }>('/api/auth/register', payload);
+  const data = await callAuthRoute<{ user: User; access: string }>(API.AUTH.REGISTER, payload);
   useAuthStore.getState().setAccessToken(data.access);
   useAuthStore.getState().setUser(data.user);
   return data.user;
@@ -62,5 +62,5 @@ export async function resetPasswordAction(payload: { token: string; uid: string;
 
 export async function logoutAction(): Promise<void> {
   useAuthStore.getState().clearAuth();
-  await fetch('/api/auth/logout', { method: 'POST' }).catch(() => undefined);
+  await fetch(API.AUTH.LOGOUT, { method: 'POST' }).catch(() => undefined);
 }

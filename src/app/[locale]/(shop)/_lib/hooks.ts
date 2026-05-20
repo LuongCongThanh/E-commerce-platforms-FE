@@ -6,10 +6,24 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
 import { orderActions, productActions, profileActions } from '@/app/[locale]/(shop)/_lib/actions';
-import { orderKeys, productKeys, profileKey } from '@/app/[locale]/(shop)/_lib/query-keys';
 import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas';
 import type { ProductFilters } from '@/app/[locale]/(shop)/_lib/types';
 import { useCartStore } from '@/shared/stores/cart-store';
+
+const productKeys = {
+  all: ['products'] as const,
+  list: (filters: ProductFilters) => [...productKeys.all, 'list', filters] as const,
+  detail: (slug: string) => [...productKeys.all, 'detail', slug] as const,
+  categories: () => [...productKeys.all, 'categories'] as const,
+};
+
+const orderKeys = {
+  all: ['orders'] as const,
+  list: () => [...orderKeys.all, 'list'] as const,
+  detail: (id: string) => [...orderKeys.all, 'detail', id] as const,
+};
+
+const profileKey = ['profile'] as const;
 
 export const useProducts = (filters: ProductFilters) =>
   useQuery({

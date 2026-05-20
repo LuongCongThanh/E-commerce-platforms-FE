@@ -16,10 +16,7 @@ interface UseProductsParams {
   pageSize?: number;
 }
 
-/**
- * Hook to filter, sort and paginate products from the static dataset
- */
-export function useProducts({
+export function useStaticProducts({
   categorySlug,
   sortBy = 'newest',
   minPrice = 0,

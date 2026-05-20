@@ -1,8 +1,10 @@
 import { z } from 'zod';
 
+import { VIETNAM_PHONE_REGEX } from '@/shared/types/address';
+
 export const addressSchema = z.object({
   fullName: z.string().min(1, 'Vui lòng nhập họ tên'),
-  phone: z.string().regex(/^0\d{9}$/, 'Số điện thoại không hợp lệ'),
+  phone: z.string().regex(VIETNAM_PHONE_REGEX, 'Số điện thoại không hợp lệ (VD: 0912345678 hoặc +84912345678)'),
   address: z.string().min(5, 'Vui lòng nhập địa chỉ'),
   city: z.string().min(1, 'Vui lòng chọn tỉnh/thành'),
 });

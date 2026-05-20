@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const VIETNAM_PHONE_REGEX = /^(0|\+84)(3[2-9]|5[6-9]|7[06-9]|8[1-9]|9[0-9])\d{7}$/;
+export const VIETNAM_PHONE_REGEX = /^(0|\+84)(3[2-9]|5[6-9]|7[06-9]|8[1-9]|9\d)\d{7}$/;
 
 export const ShippingAddressSchema = z.object({
   fullName: z.string().min(2, 'Họ tên phải có ít nhất 2 ký tự'),
