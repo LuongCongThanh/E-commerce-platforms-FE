@@ -25,6 +25,21 @@ describe('notify', () => {
     expect(toastMock.success).toHaveBeenCalledWith('Saved', { description: 'Description' });
   });
 
+  it('delegates error notifications to sonner', () => {
+    notify.error('Failed', 'Something went wrong');
+    expect(toastMock.error).toHaveBeenCalledWith('Failed', { description: 'Something went wrong' });
+  });
+
+  it('delegates info notifications to sonner', () => {
+    notify.info('Note');
+    expect(toastMock).toHaveBeenCalledWith('Note', { description: undefined });
+  });
+
+  it('delegates warning notifications to sonner', () => {
+    notify.warning('Caution', 'Please review');
+    expect(toastMock.warning).toHaveBeenCalledWith('Caution', { description: 'Please review' });
+  });
+
   it('delegates dismiss calls to sonner', () => {
     notify.dismiss('toast-id');
     expect(toastMock.dismiss).toHaveBeenCalledWith('toast-id');
