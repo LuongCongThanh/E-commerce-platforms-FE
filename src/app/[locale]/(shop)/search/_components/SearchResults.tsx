@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 import { Pagination } from '@/app/[locale]/(shop)/_components/products/Pagination';
 import { ProductGrid } from '@/app/[locale]/(shop)/_components/products/ProductGrid';
-import { useSearch } from '@/app/[locale]/(shop)/_lib/hooks/useSearch';
+import { useProducts } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
 import { Skeleton } from '@/shared/components/base/Skeleton';
 
 export const SearchResults = (): React.JSX.Element => {
@@ -14,7 +14,7 @@ export const SearchResults = (): React.JSX.Element => {
   const pageParam = searchParams.get('page');
   const page = pageParam !== null ? Math.max(1, Number(pageParam)) : 1;
 
-  const { products, totalPages, isLoading } = useSearch({ query, page, pageSize: 12 });
+  const { products, totalPages, isLoading } = useProducts({ search: query, page, pageSize: 12 });
 
   const handlePageChange = (p: number) => {
     const params = new URLSearchParams(searchParams.toString());

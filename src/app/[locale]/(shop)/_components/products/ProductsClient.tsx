@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Pagination } from '@/app/[locale]/(shop)/_components/products/Pagination';
 import { ProductGrid } from '@/app/[locale]/(shop)/_components/products/ProductGrid';
 import type { SortBy } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
-import { useStaticProducts } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
+import { useProducts } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
 import { SectionHeading } from '@/shared/components/marketing/SectionHeading';
 
 interface ProductsClientProps {
@@ -21,7 +21,7 @@ export default function ProductsClient({ category, sortBy: sortByProp, page: pag
   const sortBy = (sortByProp as SortBy | undefined) ?? 'newest';
   const page = pageProp !== undefined ? Math.max(1, parseInt(pageProp)) : 1;
 
-  const { products, totalPages } = useStaticProducts({
+  const { products, totalPages } = useProducts({
     categorySlug: category,
     sortBy,
     pageSize: 12,

@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Pagination } from '@/app/[locale]/(shop)/_components/products/Pagination';
 import { ProductGrid } from '@/app/[locale]/(shop)/_components/products/ProductGrid';
 import type { SortBy } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
-import { useStaticProducts } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
+import { useProducts } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
 import { Skeleton } from '@/shared/components/base/Skeleton';
 
 interface CategoryClientProps {
@@ -28,7 +28,7 @@ export const CategoryClient = ({ categorySlug }: CategoryClientProps): React.JSX
   const maxPriceParam = searchParams.get('maxPrice');
   const maxPrice = maxPriceParam !== null ? Number(maxPriceParam) : undefined;
 
-  const { products, totalPages, isLoading } = useStaticProducts({
+  const { products, totalPages, isLoading } = useProducts({
     categorySlug,
     page,
     pageSize: 12,
