@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { useCartStore } from '@/shared/stores/cart-store';
+import { useCart } from '@/shared/hooks/useCart';
 
 const checkoutSchema = z.object({
   fullName: z.string().min(1, 'required'),
@@ -28,7 +28,7 @@ export function CheckoutForm() {
   const t = useTranslations('checkout');
   const locale = useLocale();
   const router = useRouter();
-  const { items, clearCart } = useCartStore();
+  const { items, clearCart } = useCart();
 
   useEffect(() => {
     if (items.length === 0) {

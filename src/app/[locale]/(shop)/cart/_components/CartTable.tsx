@@ -5,12 +5,12 @@ import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Minus, Plus, Trash2 } from 'lucide-react';
 
+import type { CartItem } from '@/shared/hooks/useCart';
+import { useCart } from '@/shared/hooks/useCart';
 import { formatCurrency } from '@/shared/lib/utils';
-import type { CartItem } from '@/shared/stores/cart-store';
-import { useCartStore } from '@/shared/stores/cart-store';
 
 export function CartTable() {
-  const { items, updateQuantity, removeCartItem } = useCartStore();
+  const { items, updateQuantity, removeCartItem } = useCart();
 
   return (
     <div className="space-y-4">

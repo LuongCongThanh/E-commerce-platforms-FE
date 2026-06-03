@@ -11,7 +11,6 @@ export function makeQueryClient() {
         refetchOnWindowFocus: false,
         retry: (failureCount, error) => {
           if (error instanceof ApiError) {
-            // No retry for client errors (400-499)
             if (error.status >= 400 && error.status < 500) return false;
           }
           return failureCount < 2;

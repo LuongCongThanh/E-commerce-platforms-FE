@@ -1,37 +1,32 @@
 'use client';
 
+import { useSyncExternalStore } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { ROUTES } from '@/shared/constants/routes';
-import { useAuthStore } from '@/shared/stores/auth-store';
+import { clearAuth, getAuthSnapshot, setAccessToken, setUser, subscribeAuth } from '@/shared/lib/http/api-auth';
+import type { User } from '@/shared/types/user';
 
-type AuthStoreState = ReturnType<typeof useAuthStore.getState>;
-type AuthUser = NonNullable<AuthStoreState['user']>;
+export function login(token: string, userData: User): void {
+  setAccessToken(token);
+  setUser(userData);
+}
 
-interface UseAuthResult {
-  user: AuthStoreState['user'];
-  accessToken: AuthStoreState['accessToken'];
-  isLoggedIn: boolean;
-  isAdmin: boolean;
-  login: (token: string, userData: AuthUser) => void;
-  logout: () => void;
+function useAuthSnapshot() {
+  return useSyncExternalStore(subscribeAuth, getAuthSnapshot, getAuthSnapshot);
 }
 
 export function useIsLoggedIn(): boolean {
-  return useAuthStore(s => s.accessToken != null && s.accessToken.length > 0);
+  const { token } = useAuthSnapshot();
+  return token != null && token.length > 0;
 }
 
-export function useAuth(): UseAuthResult {
+export function useAuth() {
   const router = useRouter();
-  const { user, accessToken, setAccessToken, setUser, clearAuth } = useAuthStore();
+  const { token, user } = useAuthSnapshot();
 
-  const isLoggedIn = accessToken != null && accessToken.length > 0;
+  const isLoggedIn = token != null && token.length > 0;
   const isAdmin = user?.role === 'admin' || user?.role === 'staff';
-
-  function login(token: string, userData: AuthUser): void {
-    setAccessToken(token);
-    setUser(userData);
-  }
 
   function logout(): void {
     clearAuth();
@@ -40,7 +35,7 @@ export function useAuth(): UseAuthResult {
 
   return {
     user,
-    accessToken,
+    accessToken: token,
     isLoggedIn,
     isAdmin,
     login,

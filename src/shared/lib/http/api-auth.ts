@@ -1,24 +1,47 @@
-import { useAuthStore } from '@/shared/stores/auth-store';
 import type { User } from '@/shared/types/user';
 
+type Listener = () => void;
+
+export interface AuthSnapshot {
+  token: string | null;
+  user: User | null;
+}
+
+let _snapshot: AuthSnapshot = { token: null, user: null };
+const _listeners = new Set<Listener>();
+
+function notify(): void {
+  _listeners.forEach(l => { l(); });
+}
+
+export function subscribeAuth(listener: Listener): () => void {
+  _listeners.add(listener);
+  return () => {
+    _listeners.delete(listener);
+  };
+}
+
+export function getAuthSnapshot(): AuthSnapshot {
+  return _snapshot;
+}
+
 export function getAccessToken(): string | null {
-  return useAuthStore.getState().accessToken;
+  return _snapshot.token;
 }
 
 export function setAccessToken(token: string | null): void {
-  if (token === null) {
-    useAuthStore.getState().clearAuth();
-  } else {
-    useAuthStore.getState().setAccessToken(token);
-  }
+  _snapshot = { ..._snapshot, token };
+  notify();
 }
 
 export function setUser(user: User): void {
-  useAuthStore.getState().setUser(user);
+  _snapshot = { ..._snapshot, user };
+  notify();
 }
 
 export function clearAuth(): void {
-  useAuthStore.getState().clearAuth();
+  _snapshot = { token: null, user: null };
+  notify();
 }
 
 export async function refreshAccessToken(): Promise<string> {

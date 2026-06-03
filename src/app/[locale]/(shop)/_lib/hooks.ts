@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 import { orderActions, productActions, profileActions } from '@/app/[locale]/(shop)/_lib/actions';
 import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas';
 import type { ProductFilters } from '@/app/[locale]/(shop)/_lib/types';
-import { useCartStore } from '@/shared/stores/cart-store';
+import { clearCart, useCart } from '@/shared/hooks/useCart';
 
 const productKeys = {
   all: ['products'] as const,
@@ -61,8 +61,7 @@ export const useOrder = (id: string) =>
 export const useCreateOrder = (locale: string) => {
   const qc = useQueryClient();
   const router = useRouter();
-  const clearCart = useCartStore(s => s.clearCart);
-  const items = useCartStore(s => s.items);
+  const { items } = useCart();
 
   return useMutation({
     mutationFn: (data: CheckoutInput) =>

@@ -7,14 +7,14 @@ import { ShoppingBag } from 'lucide-react';
 import { CartSummary } from '@/app/[locale]/(shop)/cart/_components/CartSummary';
 import { CartTable } from '@/app/[locale]/(shop)/cart/_components/CartTable';
 import { Button } from '@/shared/components/base/Button';
-import { useCartStore } from '@/shared/stores/cart-store';
+import { useCart } from '@/shared/hooks/useCart';
 
 interface CartClientProps {
   readonly locale: string;
 }
 
 export function CartClient({ locale }: CartClientProps) {
-  const { items } = useCartStore();
+  const { items } = useCart();
 
   if (items.length === 0) {
     return (

@@ -11,7 +11,7 @@ import { Button } from '@/shared/components/base/Button';
 import { CartDrawer } from '@/shared/components/commerce/CartDrawer';
 import { DesktopMegaMenu } from '@/shared/components/navigation/DesktopMegaMenu';
 import { MobileNav } from '@/shared/components/navigation/MobileNav';
-import { selectCartItemCount, useCartStore } from '@/shared/stores/cart-store';
+import { useCart } from '@/shared/hooks/useCart';
 
 export function Header() {
   const t = useTranslations('common');
@@ -20,7 +20,7 @@ export function Header() {
 
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const itemCount = useCartStore(selectCartItemCount);
+  const { itemCount } = useCart();
 
   const handleSearch = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();

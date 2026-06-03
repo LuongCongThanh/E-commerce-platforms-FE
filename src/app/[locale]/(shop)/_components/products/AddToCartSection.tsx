@@ -11,7 +11,7 @@ import { toast } from 'sonner';
 import { VariantSelector } from '@/app/[locale]/(shop)/_components/products/VariantSelector';
 import type { Product, VariantOption } from '@/app/[locale]/(shop)/_lib/types/product';
 import { Button } from '@/shared/components/base/Button';
-import { useCartStore } from '@/shared/stores/cart-store';
+import { useCart } from '@/shared/hooks/useCart';
 
 interface AddToCartSectionProps {
   readonly product: Product;
@@ -23,7 +23,7 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
   const [selectedVariant, setSelectedVariant] = useState<VariantOption | null>(product.variants[0] ?? null);
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
-  const addToCart = useCartStore(state => state.addToCart);
+  const { addToCart } = useCart();
 
   const handleAddToCart = () => {
     if (product.variants.length > 0 && selectedVariant === null) {
