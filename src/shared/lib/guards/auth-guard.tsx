@@ -2,11 +2,11 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { useAuthStore } from '@/shared/stores/auth-store';
+import { useIsLoggedIn } from '@/shared/hooks/useAuth';
 
 export function AuthGuard({ children }: { readonly children: React.ReactNode }): React.JSX.Element | null {
   const router = useRouter();
-  const isAuthenticated = useAuthStore(s => typeof s.accessToken === 'string' && s.accessToken.length > 0);
+  const isAuthenticated = useIsLoggedIn();
 
   useEffect(() => {
     if (!isAuthenticated) {

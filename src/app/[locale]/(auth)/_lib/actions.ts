@@ -1,7 +1,7 @@
 import { API } from '@/shared/constants/api-endpoints';
 import { ApiError } from '@/shared/lib/errors/api-error';
+import { clearAuth, setAccessToken, setUser } from '@/shared/lib/http/api-auth';
 import { http } from '@/shared/lib/http/client';
-import { useAuthStore } from '@/shared/stores/auth-store';
 import type { AuthToken, User } from '@/shared/types/user';
 
 interface LoginPayload {
@@ -35,15 +35,15 @@ async function callAuthRoute<T>(url: string, body: unknown): Promise<T> {
 
 export async function loginAction(payload: LoginPayload): Promise<User> {
   const data = await callAuthRoute<{ user: User; access: string }>(API.AUTH.LOGIN, payload);
-  useAuthStore.getState().setAccessToken(data.access);
-  useAuthStore.getState().setUser(data.user);
+  setAccessToken(data.access);
+  setUser(data.user);
   return data.user;
 }
 
 export async function registerAction(payload: RegisterPayload): Promise<User> {
   const data = await callAuthRoute<{ user: User; access: string }>(API.AUTH.REGISTER, payload);
-  useAuthStore.getState().setAccessToken(data.access);
-  useAuthStore.getState().setUser(data.user);
+  setAccessToken(data.access);
+  setUser(data.user);
   return data.user;
 }
 
@@ -61,6 +61,6 @@ export async function resetPasswordAction(payload: { token: string; uid: string;
 }
 
 export async function logoutAction(): Promise<void> {
-  useAuthStore.getState().clearAuth();
+  clearAuth();
   await fetch(API.AUTH.LOGOUT, { method: 'POST' }).catch(() => undefined);
 }

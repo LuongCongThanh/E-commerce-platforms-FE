@@ -17,6 +17,10 @@ interface UseAuthResult {
   logout: () => void;
 }
 
+export function useIsLoggedIn(): boolean {
+  return useAuthStore(s => s.accessToken != null && s.accessToken.length > 0);
+}
+
 export function useAuth(): UseAuthResult {
   const router = useRouter();
   const { user, accessToken, setAccessToken, setUser, clearAuth } = useAuthStore();
