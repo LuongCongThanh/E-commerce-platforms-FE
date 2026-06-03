@@ -3,9 +3,11 @@ import axios from 'axios';
 
 import { ApiError } from '@/shared/lib/errors/api-error';
 import { getAccessToken, refreshAccessToken } from '@/shared/lib/http/api-auth';
+import type { ApiRequestConfig, ApiResponse } from '@/shared/lib/http/api-types';
+import { validateResponse } from '@/shared/lib/http/zod-helpers';
 import { captureError } from '@/shared/lib/monitoring/sentry';
 
-export const httpClient = axios.create({
+const httpClient = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000',
   timeout: 15000,
   headers: {
@@ -112,3 +114,22 @@ httpClient.interceptors.response.use(
     return await Promise.reject(normalizeError(error));
   }
 );
+
+async function request<TSchema>(config: ApiRequestConfig<TSchema>): Promise<TSchema> {
+  const response = await httpClient.request<ApiResponse<TSchema>>(config);
+  const payload = response.data.data;
+
+  if (config.schema !== undefined) {
+    return validateResponse(config.schema, payload);
+  }
+
+  return payload;
+}
+
+export const http = {
+  get: <T>(url: string, params?: object) => request<T>({ url, method: 'GET', params }),
+  post: <T>(url: string, body?: unknown) => request<T>({ url, method: 'POST', data: body }),
+  put: <T>(url: string, body?: unknown) => request<T>({ url, method: 'PUT', data: body }),
+  patch: <T>(url: string, body?: unknown) => request<T>({ url, method: 'PATCH', data: body }),
+  delete: <T>(url: string) => request<T>({ url, method: 'DELETE' }),
+};

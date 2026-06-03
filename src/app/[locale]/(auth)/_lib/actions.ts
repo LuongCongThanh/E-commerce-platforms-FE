@@ -1,6 +1,6 @@
 import { API } from '@/shared/constants/api-endpoints';
 import { ApiError } from '@/shared/lib/errors/api-error';
-import { http } from '@/shared/lib/http/api-client';
+import { http } from '@/shared/lib/http/client';
 import { useAuthStore } from '@/shared/stores/auth-store';
 import type { AuthToken, User } from '@/shared/types/user';
 
