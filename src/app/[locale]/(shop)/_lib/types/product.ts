@@ -1,22 +1,17 @@
-import type { BadgeValue } from '@/shared/types/product';
+import type { BadgeValue, Product as SharedProduct } from '@/shared/types/product';
 
-export type ProductVariant = {
+export type { BadgeValue };
+
+// UI display variant (size selector) — distinct from API ProductVariant
+export type VariantOption = {
   id: string;
   label: string;
   stock: number;
 };
 
-export type Product = {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  salePrice: number | null;
-  images: string[];
-  rating: number;
-  reviewCount: number;
-  badges: BadgeValue[];
+// Shop UI product — extends shared API shape, overrides fields that differ in the UI layer
+export type Product = Omit<SharedProduct, 'category' | 'variants' | 'stock' | 'isActive' | 'createdAt' | 'updatedAt'> & {
   categorySlug: string;
-  description: string;
-  variants: ProductVariant[];
+  badges: BadgeValue[];
+  variants: VariantOption[];
 };

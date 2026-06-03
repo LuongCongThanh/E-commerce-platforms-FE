@@ -9,7 +9,7 @@ import { Check, Minus, Plus, ShoppingCart, Zap } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { VariantSelector } from '@/app/[locale]/(shop)/_components/products/VariantSelector';
-import type { Product, ProductVariant } from '@/app/[locale]/(shop)/_lib/types/product';
+import type { Product, VariantOption } from '@/app/[locale]/(shop)/_lib/types/product';
 import { Button } from '@/shared/components/base/Button';
 import { useCartStore } from '@/shared/stores/cart-store';
 
@@ -20,7 +20,7 @@ interface AddToCartSectionProps {
 export function AddToCartSection({ product }: AddToCartSectionProps) {
   const router = useRouter();
   const locale = useLocale();
-  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(product.variants[0] ?? null);
+  const [selectedVariant, setSelectedVariant] = useState<VariantOption | null>(product.variants[0] ?? null);
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
   const addToCart = useCartStore(state => state.addToCart);
