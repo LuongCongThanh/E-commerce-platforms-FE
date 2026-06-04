@@ -116,9 +116,9 @@ src/
   - Hiển thị thông báo qua Toast (cho Mutations) hoặc Error Boundary (cho Queries).
   - Phân loại lỗi bằng `ErrorCode` để xử lý logic FE (ví dụ: `AUTH_INVALID_CREDENTIALS`).
 - Sử dụng API Client:
-  - Sử dụng `apiClient` từ `src/shared/lib/http/api-client.ts`.
-  - Luôn cung cấp Zod `schema` để validate dữ liệu trả về tại boundary.
-  - Tự động xử lý authentication qua centralized interceptors.
+  - Sử dụng `http` từ `@/shared/lib/http/client` (`http.get`, `http.post`, `http.put`, `http.patch`, `http.delete`).
+  - Không bao giờ gọi axios trực tiếp — luôn đi qua `http` object.
+  - Authentication được xử lý tự động qua interceptors trong `client.ts`.
 - State boundaries:
   - Server state: TanStack Query.
   - Client state: Zustand.

@@ -209,15 +209,24 @@ Bản đồ hóa các skill bundle của Antigravity với dự án e-commerce n
 
 ### Kiến trúc API Client
 
-| Lớp                   | Trách nhiệm                                  | Công cụ                        |
-| :-------------------- | :------------------------------------------- | :----------------------------- |
-| **Domain API**        | Định nghĩa endpoint và schema cụ thể         | `zod`, `api-client.ts`         |
-| **Shared API Client** | Trình xử lý request chung với Zod validation | `api-client.ts`                |
-| **Transport**         | Request HTTP cấp thấp và interceptors        | `axios`, `client.ts`           |
-| **Auth Bridge**       | Quản lý token và luồng refresh               | `api-auth.ts`, `auth-store.ts` |
-| **Validation**        | Kiểm chứng cấu trúc dữ liệu lúc runtime      | `zod`, `zod-helpers.ts`        |
+| Lớp              | Trách nhiệm                                    | Công cụ / File               |
+| :--------------- | :--------------------------------------------- | :--------------------------- |
+| **HTTP Object**  | Phương thức `get/post/put/patch/delete`        | `http` export từ `client.ts` |
+| **Transport**    | Axios instance, interceptors auth + error      | `axios`, `client.ts`         |
+| **Auth Bridge**  | Lưu token, hàm refresh, subscribe state        | `api-auth.ts`                |
+| **Validation**   | Parse và kiểm chứng cấu trúc dữ liệu runtime   | `zod`, `zod-helpers.ts`      |
+| **Schema types** | Zod schema + TypeScript type cho API contracts | `shared/types/*.ts`          |
 
-**Luồng đi**: Component → React Query Hook → Domain API → Shared API Client → Axios Instance → Backend → Zod Validation → Typed Data.
+**Cách dùng trong code:**
+
+```ts
+import { http } from '@/shared/lib/http/client';
+
+const data = await http.get<Product>('/api/products/slug');
+const order = await http.post<Order>('/api/orders/', payload);
+```
+
+**Luồng đi**: Component → TanStack Query Hook → `http.*()` → Axios + Interceptors → Backend → Zod Validation → Typed Data.
 
 ### Glossary (VI-EN sync)
 
