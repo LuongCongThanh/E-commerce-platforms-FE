@@ -441,20 +441,21 @@ Step 4  /lint-and-validate
    → Edge case: thêm item với qty 0, update lên quantity > stock, xóa item không tồn tại
 
 2. /unit-testing-test-generate
-   → File: src/shared/stores/cart-store.test.ts
+   → File: src/shared/hooks/__tests__/useCart.test.ts
+   → Cart dùng useSyncExternalStore + module-level state, không phải Zustand.
+     Reset state giữa các test bằng resetCartState() được export từ useCart.ts.
    → Cấu trúc test:
      describe('useCart', () => {
-       beforeEach(() => useCartStore.setState({ items: [] }))
+       beforeEach(() => resetCartState())
 
        it('adds a new item to empty cart')
-       it('increases quantity when same variant_id added')
-       it('removes item by variant_id')
-       it('clamps quantity to 1 minimum')
-       it('calculates totalPrice across all items')
+       it('increases quantity when same variantId added')
+       it('removes item by variantId')
+       it('calculates total across all items')
        it('clearCart resets to empty array')
      })
 
-3. npx vitest run src/shared/stores/cart-store.test.ts
+3. npx vitest run src/shared/hooks/__tests__/useCart.test.ts
 
 4. /lint-and-validate
 ```

@@ -149,8 +149,8 @@ src/
   - Authentication được xử lý tự động qua interceptors trong `client.ts`.
 - State boundaries:
   - Server state: TanStack Query.
-  - Client state: Zustand.
-  - Local UI state: component-level state.
+  - Client state: `useSyncExternalStore` + module-level store (auth trong `api-auth.ts`, cart trong `useCart.ts`).
+  - Local UI state: component-level `useState`/`useReducer`.
 
 ### Design system standards
 

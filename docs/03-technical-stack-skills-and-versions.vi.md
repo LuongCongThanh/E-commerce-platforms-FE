@@ -55,7 +55,7 @@ Không bao gồm:
 
 | Layer                    | Technology                                         | Why this choice                                                       |
 | ------------------------ | -------------------------------------------------- | --------------------------------------------------------------------- |
-| App framework            | Next.js 16.2.4                                     | App Router ổn định, phù hợp SSR/SEO và module-driven                  |
+| App framework            | Next.js 16.2.6                                     | App Router ổn định, phù hợp SSR/SEO và module-driven                  |
 | UI runtime               | React 19.2.4, React DOM 19.2.4                     | Hiệu năng tốt, ecosystem lớn                                          |
 | Styling                  | Tailwind CSS 4, tailwind-merge 3.5.0               | Tốc độ phát triển UI cao, chuẩn utility-first                         |
 | Data fetching            | @tanstack/react-query 5.99.1                       | Quản lý server state và cache nhất quán                               |
@@ -75,7 +75,7 @@ Không bao gồm:
 
 | Package               | Version  |
 | --------------------- | -------- |
-| next                  | 16.2.4   |
+| next                  | 16.2.6   |
 | react                 | 19.2.4   |
 | react-dom             | 19.2.4   |
 | @tanstack/react-query | ^5.99.1  |
@@ -181,8 +181,8 @@ Gate rules before release:
 Chosen now:
 
 - COD-first checkout.
-- Module-driven FE architecture.
-- Query + store separation (TanStack Query vs Zustand).
+- App Router route group pattern với `_components/_lib` co-location.
+- Server state: TanStack Query. Client state: `useSyncExternalStore` (built-in, không cần thư viện ngoài).
 - CI quality gates tối thiểu.
 
 Deferred to phase later:
