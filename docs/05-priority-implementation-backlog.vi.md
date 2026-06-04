@@ -79,12 +79,13 @@ Không bao gồm:
 
 ### P3 - Post-MVP expansion
 
-| ID    | Objective             | Output                                  | Dependencies | Owner role | Acceptance checks                  | Skill mapping                |
-| ----- | --------------------- | --------------------------------------- | ------------ | ---------- | ---------------------------------- | ---------------------------- |
-| P3-01 | Account enhancement   | Address book, profile settings nâng cao | P2-\*        | FE         | Luồng account mở rộng ổn định      | FE: react-nextjs-development |
-| P3-02 | Discovery enhancement | Category hub/plp nâng cao               | P2-\*        | FE         | Search and discovery KPI cải thiện | FE: tanstack-query-expert    |
-| P3-03 | Retention features    | Wishlist cơ bản                         | P2-\*        | FE         | Wishlist journey hoạt động         | FE: zustand-store-ts         |
-| P3-04 | Growth pages          | Campaign/content pages                  | P2-\*        | FE/BA      | Nội dung marketing vận hành được   | BA: wiki-page-writer         |
+| ID    | Objective                 | Output                                                  | Dependencies | Owner role | Acceptance checks                             | Skill mapping                |
+| ----- | ------------------------- | ------------------------------------------------------- | ------------ | ---------- | --------------------------------------------- | ---------------------------- |
+| P3-01 | Account enhancement       | Address book, profile settings nâng cao                 | P2-\*        | FE         | Luồng account mở rộng ổn định                 | FE: react-nextjs-development |
+| P3-02 | Discovery enhancement     | Category hub/plp nâng cao                               | P2-\*        | FE         | Search and discovery KPI cải thiện            | FE: tanstack-query-expert    |
+| P3-03 | Retention features        | Wishlist cơ bản                                         | P2-\*        | FE         | Wishlist journey hoạt động                    | FE: tanstack-query-expert    |
+| P3-04 | Growth pages              | Campaign/content pages                                  | P2-\*        | FE/BA      | Nội dung marketing vận hành được              | BA: wiki-page-writer         |
+| P3-05 | Payment gateway UI wiring | Wire VNPay/Momo/ZaloPay UI vào checkout (lib đã có sẵn) | P2-\*        | FE/BE      | Ít nhất 1 gateway thanh toán online hoạt động | FE: payment-integration      |
 
 ### Sequencing rules
 
@@ -95,7 +96,6 @@ Không bao gồm:
 
 ### Not now list (anti scope creep)
 
-- Online payment gateways (VNPay/Momo/ZaloPay).
 - Voucher engine phức tạp.
 - Flash-sale engine thời gian thực.
 - Multi-vendor marketplace.

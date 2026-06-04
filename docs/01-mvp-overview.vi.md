@@ -39,10 +39,11 @@ In-scope cho MVP:
 
 Out-of-scope cho MVP (defer):
 
-- Online payment gateway (VNPay/Momo/ZaloPay).
 - Loyalty, voucher engine phức tạp, flash-sale engine đầy đủ.
 - Marketplace/multi-vendor.
 - Advanced BI dashboards.
+
+> **Note:** Payment gateway (VNPay/Momo/ZaloPay) — lib layer (`src/shared/lib/payment/`) đã được chuẩn bị. UI integration là P3, chưa active trong MVP.
 
 ## Decisions
 
