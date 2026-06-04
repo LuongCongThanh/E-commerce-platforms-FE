@@ -1,6 +1,6 @@
 # 03. Technical Stack, Skills And Versions (VI)
 
-Last updated: 2026-04-24  
+Last updated: 2026-06-04  
 Source of truth: `package.json`, `skills-mapping.md` (legacy), engineering conventions in this doc set  
 Owner: FE Lead + BA Lead + Tech Lead
 
@@ -15,13 +15,13 @@ Owner: FE Lead + BA Lead + Tech Lead
 
 ## Summary Table
 
-| Item                | Value                              |
-| ------------------- | ---------------------------------- |
-| Framework core      | Next.js 16.2.4 + React 19.2.4      |
-| State and data      | TanStack Query 5, Zustand 5, Axios |
-| Form and validation | React Hook Form 7 + Zod 4          |
-| Testing             | Vitest 4 + Playwright 1.59         |
-| Monitoring          | Sentry Next.js 10.49               |
+| Item                | Value                         |
+| ------------------- | ----------------------------- |
+| Framework core      | Next.js 16.2.6 + React 19.2.4 |
+| State and data      | TanStack Query 5, Axios       |
+| Form and validation | React Hook Form 7 + Zod 4     |
+| Testing             | Vitest 4 + Playwright 1.59    |
+| Monitoring          | Sentry Next.js 10.49          |
 
 ## Purpose
 
@@ -59,7 +59,7 @@ Không bao gồm:
 | UI runtime               | React 19.2.4, React DOM 19.2.4                     | Hiệu năng tốt, ecosystem lớn                                          |
 | Styling                  | Tailwind CSS 4, tailwind-merge 3.5.0               | Tốc độ phát triển UI cao, chuẩn utility-first                         |
 | Data fetching            | @tanstack/react-query 5.99.1                       | Quản lý server state và cache nhất quán                               |
-| Client state             | Zustand 5.0.12                                     | Gọn nhẹ cho auth/cart/UI state                                        |
+| Client state             | React `useSyncExternalStore` (built-in)            | Auth và cart state dùng module-level store, không cần thư viện ngoài  |
 | HTTP                     | Axios 1.15.0                                       | Interceptor, error handling tập trung                                 |
 | Forms                    | React Hook Form 7.72.1 + @hookform/resolvers 5.2.2 | Form performance tốt, tích hợp validation rõ                          |
 | Validation               | Zod 4.3.6                                          | Type-safe schema cho FE contracts                                     |
@@ -83,7 +83,6 @@ Không bao gồm:
 | axios                 | ^1.15.0  |
 | react-hook-form       | ^7.72.1  |
 | zod                   | ^4.3.6   |
-| zustand               | ^5.0.12  |
 | tailwindcss           | ^4       |
 | next-intl             | ^4.9.1   |
 | @sentry/nextjs        | ^10.49.0 |
@@ -131,7 +130,6 @@ Must-have:
 - `tailwind-patterns`
 - `tanstack-query-expert`
 - `zod-validation-expert`
-- `zustand-store-ts`
 - `ui-review`
 
 Nice-to-have:
@@ -156,11 +154,11 @@ Nên có:
 
 ### Skill usage by phase
 
-| Phase                   | BA focus skills                           | FE focus skills                                                                             | Tooling skills                |
-| ----------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------- |
-| Planning and scope lock | acceptance-orchestrator, writing-plans    | nextjs-app-router-patterns, react-nextjs-development                                        | concise-planning, git-pushing |
-| Core build              | api-documentation, architect-review       | tailwind-patterns, tanstack-query-expert, zod-validation-expert, zustand-store-ts, form-cro | lint-and-validate             |
-| Hardening and release   | technical-change-tracker, analyze-project | ui-review, seo-audit, web-performance-optimization, accessibility audit, frontend-design    | kaizen, lint-and-validate     |
+| Phase                   | BA focus skills                           | FE focus skills                                                                          | Tooling skills                |
+| ----------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------- |
+| Planning and scope lock | acceptance-orchestrator, writing-plans    | nextjs-app-router-patterns, react-nextjs-development                                     | concise-planning, git-pushing |
+| Core build              | api-documentation, architect-review       | tailwind-patterns, tanstack-query-expert, zod-validation-expert, form-cro                | lint-and-validate             |
+| Hardening and release   | technical-change-tracker, analyze-project | ui-review, seo-audit, web-performance-optimization, accessibility audit, frontend-design | kaizen, lint-and-validate     |
 
 ### Technical quality gates
 
@@ -201,7 +199,7 @@ Bản đồ hóa các skill bundle của Antigravity với dự án e-commerce n
 | Bundle              | Đánh giá    | Skill nên dùng                                                                                   | Skill nên bỏ qua                                                  | Lý do                                                                           |
 | ------------------- | ----------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | 🚀 Essentials       | ✅ Dùng hết | `concise-planning`, `lint-and-validate`, `git-pushing`, `kaizen`                                 | —                                                                 | Kỷ luật cơ bản cho mọi dự án                                                    |
-| 🌐 Web Wizard       | ✅ Dùng hết | `frontend-design`, `tailwind-patterns`, `form-cro`, `seo-audit`                                  | —                                                                 | Phù hợp trực tiếp: Tailwind v4 + SSR + checkout forms + product SEO             |
+| 🌐 Web Wizard       | ✅ Dùng hết | `frontend-design`, `tailwind-patterns`, `tanstack-query-expert`, `form-cro`, `seo-audit`         | —                                                                 | Phù hợp trực tiếp: Tailwind v4 + SSR + checkout forms + product SEO             |
 | 🐞 QA & Testing     | ✅ Dùng hết | `test-driven-development`, `systematic-debugging`, `browser-automation`, `code-review-checklist` | `ab-test-setup`                                                   | Stack Vitest + Playwright phù hợp; A/B testing để sau (Phase 2)                 |
 | 🖌️ Web Designer     | ⚠️ Một phần | `ui-ux-pro-max`, `frontend-design`                                                               | `3d-web-experience`, `canvas-design`                              | Cần thiết kế hệ thống; 3D và canvas không ưu tiên cho e-commerce                |
 | 📊 Data & Analytics | ⚠️ Một phần | `analytics-tracking`                                                                             | `d3-viz`, `ab-test-setup`                                         | GA4 + GTM là đủ cho MVP; biểu đồ nâng cao để sau                                |
