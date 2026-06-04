@@ -7,12 +7,10 @@ import { toast } from 'sonner';
 
 import { orderActions, productActions, profileActions } from '@/app/[locale]/(shop)/_lib/actions';
 import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas';
-import type { ProductFilters } from '@/app/[locale]/(shop)/_lib/types';
 import { clearCart, useCart } from '@/shared/hooks/useCart';
 
 const productKeys = {
   all: ['products'] as const,
-  list: (filters: ProductFilters) => [...productKeys.all, 'list', filters] as const,
   detail: (slug: string) => [...productKeys.all, 'detail', slug] as const,
   categories: () => [...productKeys.all, 'categories'] as const,
 };
@@ -24,13 +22,6 @@ const orderKeys = {
 };
 
 const profileKey = ['profile'] as const;
-
-export const useProducts = (filters: ProductFilters) =>
-  useQuery({
-    queryKey: productKeys.list(filters),
-    queryFn: () => productActions.list(filters),
-    staleTime: 60_000,
-  });
 
 export const useProduct = (slug: string) =>
   useQuery({

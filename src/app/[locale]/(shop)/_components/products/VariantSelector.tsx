@@ -1,12 +1,12 @@
 'use client';
 
-import type { VariantOption } from '@/app/[locale]/(shop)/_lib/types/product';
+import type { SizeOption } from '@/app/[locale]/(shop)/_lib/types/product';
 import { cn } from '@/shared/lib/utils';
 
 interface VariantSelectorProps {
-  readonly variants: VariantOption[];
-  readonly selectedVariant: VariantOption | null;
-  readonly onSelect: (variant: VariantOption) => void;
+  readonly variants: SizeOption[];
+  readonly selectedVariant: SizeOption | null;
+  readonly onSelect: (variant: SizeOption) => void;
 }
 
 export const VariantSelector = ({ variants, selectedVariant, onSelect }: VariantSelectorProps): React.JSX.Element | null => {

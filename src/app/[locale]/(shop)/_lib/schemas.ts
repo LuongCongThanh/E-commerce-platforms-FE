@@ -4,16 +4,25 @@ import { VIETNAM_PHONE_REGEX } from '@/shared/types/address';
 
 export const addressSchema = z.object({
   fullName: z.string().min(1, 'Vui lòng nhập họ tên'),
-  phone: z.string().regex(VIETNAM_PHONE_REGEX, 'Số điện thoại không hợp lệ (VD: 0912345678 hoặc +84912345678)'),
+  phoneNumber: z.string().regex(VIETNAM_PHONE_REGEX, 'Số điện thoại không hợp lệ (VD: 0912345678 hoặc +84912345678)'),
   address: z.string().min(5, 'Vui lòng nhập địa chỉ'),
   city: z.string().min(1, 'Vui lòng chọn tỉnh/thành'),
+  district: z.string().min(1, 'Vui lòng nhập quận/huyện'),
+  ward: z.string().min(1, 'Vui lòng nhập phường/xã'),
 });
 
+export const shippingMethodSchema = z.enum(['standard', 'express']);
+export const paymentMethodSchema = z.enum(['cod', 'bankTransfer', 'vnpay', 'momo', 'zalopay']);
+
 export const checkoutSchema = addressSchema.extend({
-  paymentMethod: z.enum(['cod', 'vnpay', 'momo', 'zalopay']),
+  shippingMethod: shippingMethodSchema,
+  paymentMethod: paymentMethodSchema,
   note: z.string().optional(),
   voucherCode: z.string().optional(),
 });
+
+export type ShippingMethod = z.infer<typeof shippingMethodSchema>;
+export type PaymentMethod = z.infer<typeof paymentMethodSchema>;
 
 export const filterSchema = z.object({
   search: z.string().optional(),

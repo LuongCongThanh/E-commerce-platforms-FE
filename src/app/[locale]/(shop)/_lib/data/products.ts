@@ -1,13 +1,13 @@
-import type { Product, VariantOption } from '@/app/[locale]/(shop)/_lib/types/product';
+import type { ProductDisplay, SizeOption } from '@/app/[locale]/(shop)/_lib/types/product';
 
-const defaultVariants: VariantOption[] = [
+const defaultVariants: SizeOption[] = [
   { id: 'size-s', label: 'S', stock: 5 },
   { id: 'size-m', label: 'M', stock: 10 },
   { id: 'size-l', label: 'L', stock: 0 },
   { id: 'size-xl', label: 'XL', stock: 3 },
 ];
 
-const shoeVariants: VariantOption[] = [
+const shoeVariants: SizeOption[] = [
   { id: 'size-38', label: '38', stock: 3 },
   { id: 'size-39', label: '39', stock: 8 },
   { id: 'size-40', label: '40', stock: 0 },
@@ -112,7 +112,7 @@ const IMGS = {
   ],
 };
 
-export const productsData: Product[] = [
+export const productsData: ProductDisplay[] = [
   // Áo
   {
     id: 1,

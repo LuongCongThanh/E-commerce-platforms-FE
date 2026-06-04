@@ -2,11 +2,11 @@
 
 import { useLocale } from 'next-intl';
 
-import type { Product } from '@/app/[locale]/(shop)/_lib/types/product';
+import type { ProductDisplay } from '@/app/[locale]/(shop)/_lib/types/product';
 import { ProductCard } from '@/shared/components/commerce/ProductCard';
 
 interface ProductGridProps {
-  readonly products: Product[];
+  readonly products: ProductDisplay[];
   readonly isLoading?: boolean;
 }
 
