@@ -1,6 +1,6 @@
 # 05. Priority Implementation Backlog (VI)
 
-Last updated: 2026-04-24  
+Last updated: 2026-06-04  
 Source of truth: `01-04` docs in this set, `package.json`, BA/FE skill mapping  
 Owner: PM + BA Lead + FE Lead
 
@@ -63,7 +63,7 @@ Không bao gồm:
 | ----- | ---------------- | ---------------------------------- | ------------ | ---------- | ----------------------------------------------------- | ------------------------------------------------ |
 | P1-01 | Storefront core  | Home/PDP/search/filter MVP         | P0-\*        | FE         | Journey browse ổn định, Luxury Mega Menu đã implement | FE: tailwind-patterns, ui-review                 |
 | P1-02 | Auth core        | Register/login/forgot/reset        | P0-\*        | FE         | Auth flow hoạt động + guard cơ bản                    | FE: zod-validation-expert                        |
-| P1-03 | Cart core        | Add/update/remove cart + totals    | P1-01        | FE         | Tính toán giỏ chính xác                               | FE: zustand-store-ts                             |
+| P1-03 | Cart core        | Add/update/remove cart + totals    | P1-01        | FE         | Tính toán giỏ chính xác                               | FE: tanstack-query-expert                        |
 | P1-04 | Checkout COD     | Checkout form + place order COD    | P1-02, P1-03 | FE + BE    | COD order tạo thành công, lỗi được xử lý              | FE: tanstack-query-expert, BA: api-documentation |
 | P1-05 | Order visibility | Confirmation + history + detail    | P1-04        | FE         | User xem đúng order data                              | FE: react-nextjs-development                     |
 | P1-06 | Admin core       | Product/order management tối thiểu | P1-04        | FE/BE      | Cập nhật trạng thái đơn thành công                    | BA: architect-review                             |
@@ -79,12 +79,13 @@ Không bao gồm:
 
 ### P3 - Post-MVP expansion
 
-| ID    | Objective             | Output                                  | Dependencies | Owner role | Acceptance checks                  | Skill mapping                |
-| ----- | --------------------- | --------------------------------------- | ------------ | ---------- | ---------------------------------- | ---------------------------- |
-| P3-01 | Account enhancement   | Address book, profile settings nâng cao | P2-\*        | FE         | Luồng account mở rộng ổn định      | FE: react-nextjs-development |
-| P3-02 | Discovery enhancement | Category hub/plp nâng cao               | P2-\*        | FE         | Search and discovery KPI cải thiện | FE: tanstack-query-expert    |
-| P3-03 | Retention features    | Wishlist cơ bản                         | P2-\*        | FE         | Wishlist journey hoạt động         | FE: zustand-store-ts         |
-| P3-04 | Growth pages          | Campaign/content pages                  | P2-\*        | FE/BA      | Nội dung marketing vận hành được   | BA: wiki-page-writer         |
+| ID    | Objective                 | Output                                                  | Dependencies | Owner role | Acceptance checks                             | Skill mapping                |
+| ----- | ------------------------- | ------------------------------------------------------- | ------------ | ---------- | --------------------------------------------- | ---------------------------- |
+| P3-01 | Account enhancement       | Address book, profile settings nâng cao                 | P2-\*        | FE         | Luồng account mở rộng ổn định                 | FE: react-nextjs-development |
+| P3-02 | Discovery enhancement     | Category hub/plp nâng cao                               | P2-\*        | FE         | Search and discovery KPI cải thiện            | FE: tanstack-query-expert    |
+| P3-03 | Retention features        | Wishlist cơ bản                                         | P2-\*        | FE         | Wishlist journey hoạt động                    | FE: tanstack-query-expert    |
+| P3-04 | Growth pages              | Campaign/content pages                                  | P2-\*        | FE/BA      | Nội dung marketing vận hành được              | BA: wiki-page-writer         |
+| P3-05 | Payment gateway UI wiring | Wire VNPay/Momo/ZaloPay UI vào checkout (lib đã có sẵn) | P2-\*        | FE/BE      | Ít nhất 1 gateway thanh toán online hoạt động | FE: payment-integration      |
 
 ### Sequencing rules
 
@@ -95,7 +96,6 @@ Không bao gồm:
 
 ### Not now list (anti scope creep)
 
-- Online payment gateways (VNPay/Momo/ZaloPay).
 - Voucher engine phức tạp.
 - Flash-sale engine thời gian thực.
 - Multi-vendor marketplace.
@@ -104,12 +104,16 @@ Không bao gồm:
 ### Delivery readiness checklist (per priority)
 
 - P0 done:
-  - [ ] Scope locked
-  - [x] Architecture locked
-  - [x] Version baseline locked
+  - [x] Scope locked
+  - [x] Architecture locked (App Router route groups + `_lib/_components`)
+  - [x] Version baseline locked (Next.js 16.2.6, React 19.2.4)
   - [ ] Tracking protocol active
 - P1 done:
-  - [/] Core customer journey end-to-end chạy ổn định (Mega Menu đang hoàn thiện)
+  - [x] Storefront core: home, PDP, categories, search hoạt động
+  - [x] Auth core: register/login/forgot/reset flow hoàn chỉnh
+  - [x] Cart core: add/remove/update với useSyncExternalStore + localStorage persist
+  - [x] Checkout COD: form, place order, success page
+  - [x] Order visibility: history + detail page
   - [ ] Admin core xử lý đơn vận hành được
 - P2 done:
   - [ ] Core regression pass

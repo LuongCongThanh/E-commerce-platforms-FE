@@ -1,6 +1,6 @@
 # 04. Project Structure, Guidelines, Design System, Conventions (VI)
 
-Last updated: 2026-04-24  
+Last updated: 2026-06-04  
 Source of truth: current `src/` structure, architecture decisions in this doc set, FE standards  
 Owner: FE Lead + Architect Reviewer
 
@@ -58,43 +58,71 @@ src/
   app/
     [locale]/
       (shop)/
+        _components/        # UI components cho shop feature
+        _lib/
+          actions.ts        # Server actions
+          data/             # Data-fetching functions (server-side)
+          hooks/            # React Query hooks + feature hooks
+          schemas.ts        # Zod form schemas
+          types/            # Feature-local types
+        page.tsx
+        layout.tsx
+        categories/[slug]/page.tsx
+        products/[slug]/page.tsx
+        cart/page.tsx
+        checkout/page.tsx
+        orders/[id]/page.tsx
       (auth)/
-      (account)/
-      (admin)/
+        _components/        # UI components cho auth feature
+        _lib/
+          actions.ts
+          schemas.ts
+        layout.tsx
+        login/page.tsx
+        register/page.tsx
+        forgot-password/page.tsx
+      (admin)/              # Protected admin panel
+      layout.tsx
+      loading.tsx
+      error.tsx
     api/
-    layout.tsx
-    providers.tsx
-  modules/
-    shop/
-    auth/
-    checkout/
-    orders/
-    admin/
+      auth/                 # Next.js Route Handlers (login/logout/refresh/register)
+    page.tsx                # Root redirect
   shared/
     components/
-    hooks/
+      base/                 # Radix primitive wrappers (Button, Input, Dialog…)
+      common/               # Cross-feature components (PaginationNav, EmptyState…)
+      commerce/             # Commerce-specific (ProductCard, CategoryCard…)
+      marketing/            # Marketing sections (SectionHeading, CountdownTimer…)
+      skeletons/            # Loading skeleton components
+    hooks/                  # Cross-feature hooks (useAuth, useCart, useDebounce…)
     lib/
-    constants/
-    types/
-    stores/
+      http/                 # client.ts (http object), api-auth.ts, api-types.ts
+      errors/               # ApiError class, error-codes
+      monitoring/           # Sentry integration
+      payment/              # VNPay / Momo / ZaloPay lib
+    constants/              # api-endpoints.ts, routes.ts, query-keys.ts…
+    types/                  # Zod schemas + z.infer<> types
   i18n/
-  tests/
+    request.ts
+  messages/                 # vi.json, en.json
+  __tests__/                # Global test setup và helpers
 ```
 
 ### Architecture rules
 
 - App Router responsibilities:
-  - Page/layout ở `app/*` chỉ compose module containers.
-  - Route-level metadata/loading/error ở mức phân đoạn.
-- Module ownership:
-  - `modules/shop`: listing, PDP, search, filter.
-  - `modules/auth`: login/register/forgot.
-  - `modules/checkout`: cart + checkout.
-  - `modules/orders`: order history/detail/confirmation.
-  - `modules/admin`: quản trị sản phẩm và đơn.
+  - Page/layout ở `app/[locale]/(feature)/` chỉ orchestrate — không chứa business logic nặng.
+  - Logic feature nằm trong `_lib/` (data-fetching, hooks, actions) và `_components/` (UI) của route group đó.
+  - Route-level metadata/loading/error được đặt tại mức segment tương ứng.
+- Feature ownership (route group pattern):
+  - `(shop)/_lib/`: listing, PDP, search, filter, cart, checkout, orders.
+  - `(auth)/_lib/`: login, register, forgot/reset password.
+  - `(admin)/`: quản trị sản phẩm và đơn (protected by middleware).
 - Shared boundary:
-  - Được dùng chung từ 2 module trở lên mới đưa vào `shared`.
-  - Cấm import ngược từ shared vào module-specific private internals.
+  - Chỉ đưa vào `shared/` khi được dùng từ 2 route group trở lên.
+  - `shared/` không được import từ bất kỳ `(feature)/` route group nào.
+  - `_components/` và `_lib/` của một route group là private — route group khác không import chéo.
 
 ### Coding guidelines
 
@@ -116,13 +144,13 @@ src/
   - Hiển thị thông báo qua Toast (cho Mutations) hoặc Error Boundary (cho Queries).
   - Phân loại lỗi bằng `ErrorCode` để xử lý logic FE (ví dụ: `AUTH_INVALID_CREDENTIALS`).
 - Sử dụng API Client:
-  - Sử dụng `apiClient` từ `src/shared/lib/http/api-client.ts`.
-  - Luôn cung cấp Zod `schema` để validate dữ liệu trả về tại boundary.
-  - Tự động xử lý authentication qua centralized interceptors.
+  - Sử dụng `http` từ `@/shared/lib/http/client` (`http.get`, `http.post`, `http.put`, `http.patch`, `http.delete`).
+  - Không bao giờ gọi axios trực tiếp — luôn đi qua `http` object.
+  - Authentication được xử lý tự động qua interceptors trong `client.ts`.
 - State boundaries:
   - Server state: TanStack Query.
-  - Client state: Zustand.
-  - Local UI state: component-level state.
+  - Client state: `useSyncExternalStore` + module-level store (auth trong `api-auth.ts`, cart trong `useCart.ts`).
+  - Local UI state: component-level `useState`/`useReducer`.
 
 ### Design system standards
 

@@ -1,6 +1,6 @@
 # 01. MVP Overview (VI)
 
-Last updated: 2026-04-24  
+Last updated: 2026-06-04  
 Source of truth: `package.json`, current repository structure, `docs/docs-mvp/skills-mapping.md` (legacy reference), this document set (`01-05`)  
 Owner: Product Owner + BA Lead + FE Lead
 
@@ -39,10 +39,11 @@ In-scope cho MVP:
 
 Out-of-scope cho MVP (defer):
 
-- Online payment gateway (VNPay/Momo/ZaloPay).
 - Loyalty, voucher engine phức tạp, flash-sale engine đầy đủ.
 - Marketplace/multi-vendor.
 - Advanced BI dashboards.
+
+> **Note:** Payment gateway (VNPay/Momo/ZaloPay) — lib layer (`src/shared/lib/payment/`) đã được chuẩn bị. UI integration là P3, chưa active trong MVP.
 
 ## Decisions
 
