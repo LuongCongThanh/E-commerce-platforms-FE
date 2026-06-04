@@ -3,7 +3,7 @@
 import { useMemo } from 'react';
 
 import { productsData } from '@/app/[locale]/(shop)/_lib/data/products';
-import type { Product } from '@/app/[locale]/(shop)/_lib/types/product';
+import type { ProductDisplay } from '@/app/[locale]/(shop)/_lib/types/product';
 
 export type SortBy = 'newest' | 'price_asc' | 'price_desc';
 
@@ -32,7 +32,7 @@ export function useProducts({
       return { products: [], total: 0, totalPages: 1, currentPage: 1, isLoading: false };
     }
 
-    let filtered: Product[] = productsData;
+    let filtered: ProductDisplay[] = productsData;
 
     if (search !== undefined) {
       const q = search.trim().toLowerCase();

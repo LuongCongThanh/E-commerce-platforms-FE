@@ -2,13 +2,13 @@
 
 import { useLocale } from 'next-intl';
 
-import { useHomeData } from '@/app/[locale]/(shop)/_lib/hooks/useHomeData';
+import { newArrivalsData } from '@/app/[locale]/(shop)/_lib/data/home';
 import { ProductCard } from '@/shared/components/commerce/ProductCard';
 import { SectionHeading } from '@/shared/components/marketing/SectionHeading';
 
 export const SectionNewArrivals = (): React.JSX.Element => {
   const locale = useLocale();
-  const { newArrivals } = useHomeData();
+  const newArrivals = newArrivalsData;
 
   return (
     <section className="bg-neutral-50/70 dark:bg-neutral-900/20">

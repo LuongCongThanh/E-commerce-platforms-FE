@@ -7,22 +7,12 @@ import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
 
+import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas';
+import { checkoutSchema } from '@/app/[locale]/(shop)/_lib/schemas';
 import { useCart } from '@/shared/hooks/useCart';
 
-const checkoutSchema = z.object({
-  fullName: z.string().min(1, 'required'),
-  phoneNumber: z.string().min(10, 'invalidPhone'),
-  address: z.string().min(1, 'required'),
-  city: z.string().min(1, 'required'),
-  district: z.string().min(1, 'required'),
-  ward: z.string().min(1, 'required'),
-  shippingMethod: z.enum(['standard', 'express']),
-  paymentMethod: z.enum(['cod', 'bankTransfer']),
-});
-
-type CheckoutValues = z.infer<typeof checkoutSchema>;
+type CheckoutValues = CheckoutInput;
 
 export function CheckoutForm() {
   const t = useTranslations('checkout');

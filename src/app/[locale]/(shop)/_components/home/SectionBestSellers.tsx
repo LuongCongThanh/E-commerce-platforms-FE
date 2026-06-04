@@ -2,13 +2,13 @@
 
 import { useLocale } from 'next-intl';
 
-import { useHomeData } from '@/app/[locale]/(shop)/_lib/hooks/useHomeData';
+import { bestSellersData } from '@/app/[locale]/(shop)/_lib/data/home';
 import { ProductCard } from '@/shared/components/commerce/ProductCard';
 import { SectionHeading } from '@/shared/components/marketing/SectionHeading';
 
 export const SectionBestSellers = (): React.JSX.Element => {
   const locale = useLocale();
-  const { bestSellers } = useHomeData();
+  const bestSellers = bestSellersData;
 
   return (
     <section className="container mx-auto px-4 py-12">

@@ -2,7 +2,7 @@
 
 import { useLocale } from 'next-intl';
 
-import { useHomeData } from '@/app/[locale]/(shop)/_lib/hooks/useHomeData';
+import { bestSellersData } from '@/app/[locale]/(shop)/_lib/data/home';
 import { useHomeFlashSaleCountdown } from '@/app/[locale]/(shop)/_lib/hooks/useHomeFlashSaleCountdown';
 import { ProductCard } from '@/shared/components/commerce/ProductCard';
 import { CountdownTimer } from '@/shared/components/marketing/CountdownTimer';
@@ -10,7 +10,7 @@ import { CountdownTimer } from '@/shared/components/marketing/CountdownTimer';
 export const SectionFlashSale = (): React.JSX.Element => {
   const locale = useLocale();
   const { targetDate } = useHomeFlashSaleCountdown();
-  const { flashSale } = useHomeData();
+  const flashSale = bestSellersData.slice(0, 4);
 
   return (
     <section className="bg-destructive/90">
