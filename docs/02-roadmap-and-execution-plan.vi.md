@@ -1,6 +1,6 @@
 # 02. Roadmap And Execution Plan (VI)
 
-Last updated: 2026-04-24  
+Last updated: 2026-06-04  
 Source of truth: `01-mvp-overview.vi.md`, current repo status, skill mapping priorities  
 Owner: PM/BA Lead + Engineering Lead
 

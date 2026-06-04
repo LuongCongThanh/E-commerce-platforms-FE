@@ -1,6 +1,6 @@
 # 04. Project Structure, Guidelines, Design System, Conventions (VI)
 
-Last updated: 2026-04-24  
+Last updated: 2026-06-04  
 Source of truth: current `src/` structure, architecture decisions in this doc set, FE standards  
 Owner: FE Lead + Architect Reviewer
 

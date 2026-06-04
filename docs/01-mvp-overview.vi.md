@@ -1,6 +1,6 @@
 # 01. MVP Overview (VI)
 
-Last updated: 2026-04-24  
+Last updated: 2026-06-04  
 Source of truth: `package.json`, current repository structure, `docs/docs-mvp/skills-mapping.md` (legacy reference), this document set (`01-05`)  
 Owner: Product Owner + BA Lead + FE Lead
 

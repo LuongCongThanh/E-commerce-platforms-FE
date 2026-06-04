@@ -1,6 +1,6 @@
 # 06. Hướng dẫn Skill Workflow
 
-Cập nhật lần cuối: 2026-04-26
+Cập nhật lần cuối: 2026-06-04
 Chủ sở hữu: FE Lead
 Mục đích: Các luồng skill chuẩn hóa cho các tác vụ phát triển phổ biến. Áp dụng những luồng này mỗi khi có yêu cầu thuộc loại tác vụ tương ứng.
 
