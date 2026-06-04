@@ -58,43 +58,71 @@ src/
   app/
     [locale]/
       (shop)/
+        _components/        # UI components cho shop feature
+        _lib/
+          actions.ts        # Server actions
+          data/             # Data-fetching functions (server-side)
+          hooks/            # React Query hooks + feature hooks
+          schemas.ts        # Zod form schemas
+          types/            # Feature-local types
+        page.tsx
+        layout.tsx
+        categories/[slug]/page.tsx
+        products/[slug]/page.tsx
+        cart/page.tsx
+        checkout/page.tsx
+        orders/[id]/page.tsx
       (auth)/
-      (account)/
-      (admin)/
+        _components/        # UI components cho auth feature
+        _lib/
+          actions.ts
+          schemas.ts
+        layout.tsx
+        login/page.tsx
+        register/page.tsx
+        forgot-password/page.tsx
+      (admin)/              # Protected admin panel
+      layout.tsx
+      loading.tsx
+      error.tsx
     api/
-    layout.tsx
-    providers.tsx
-  modules/
-    shop/
-    auth/
-    checkout/
-    orders/
-    admin/
+      auth/                 # Next.js Route Handlers (login/logout/refresh/register)
+    page.tsx                # Root redirect
   shared/
     components/
-    hooks/
+      base/                 # Radix primitive wrappers (Button, Input, Dialog…)
+      common/               # Cross-feature components (PaginationNav, EmptyState…)
+      commerce/             # Commerce-specific (ProductCard, CategoryCard…)
+      marketing/            # Marketing sections (SectionHeading, CountdownTimer…)
+      skeletons/            # Loading skeleton components
+    hooks/                  # Cross-feature hooks (useAuth, useCart, useDebounce…)
     lib/
-    constants/
-    types/
-    stores/
+      http/                 # client.ts (http object), api-auth.ts, api-types.ts
+      errors/               # ApiError class, error-codes
+      monitoring/           # Sentry integration
+      payment/              # VNPay / Momo / ZaloPay lib
+    constants/              # api-endpoints.ts, routes.ts, query-keys.ts…
+    types/                  # Zod schemas + z.infer<> types
   i18n/
-  tests/
+    request.ts
+  messages/                 # vi.json, en.json
+  __tests__/                # Global test setup và helpers
 ```
 
 ### Architecture rules
 
 - App Router responsibilities:
-  - Page/layout ở `app/*` chỉ compose module containers.
-  - Route-level metadata/loading/error ở mức phân đoạn.
-- Module ownership:
-  - `modules/shop`: listing, PDP, search, filter.
-  - `modules/auth`: login/register/forgot.
-  - `modules/checkout`: cart + checkout.
-  - `modules/orders`: order history/detail/confirmation.
-  - `modules/admin`: quản trị sản phẩm và đơn.
+  - Page/layout ở `app/[locale]/(feature)/` chỉ orchestrate — không chứa business logic nặng.
+  - Logic feature nằm trong `_lib/` (data-fetching, hooks, actions) và `_components/` (UI) của route group đó.
+  - Route-level metadata/loading/error được đặt tại mức segment tương ứng.
+- Feature ownership (route group pattern):
+  - `(shop)/_lib/`: listing, PDP, search, filter, cart, checkout, orders.
+  - `(auth)/_lib/`: login, register, forgot/reset password.
+  - `(admin)/`: quản trị sản phẩm và đơn (protected by middleware).
 - Shared boundary:
-  - Được dùng chung từ 2 module trở lên mới đưa vào `shared`.
-  - Cấm import ngược từ shared vào module-specific private internals.
+  - Chỉ đưa vào `shared/` khi được dùng từ 2 route group trở lên.
+  - `shared/` không được import từ bất kỳ `(feature)/` route group nào.
+  - `_components/` và `_lib/` của một route group là private — route group khác không import chéo.
 
 ### Coding guidelines
 
