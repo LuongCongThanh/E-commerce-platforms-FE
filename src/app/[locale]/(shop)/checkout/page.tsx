@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 import { ChevronLeft } from 'lucide-react';
 
-import { CheckoutForm } from '@/app/[locale]/(shop)/_components/checkout/CheckoutForm';
-import { OrderSummary } from '@/app/[locale]/(shop)/_components/checkout/OrderSummary';
+import { CheckoutForm } from '@/app/[locale]/(shop)/_lib/components/checkout/CheckoutForm';
+import { OrderSummary } from '@/app/[locale]/(shop)/_lib/components/checkout/OrderSummary';
 
 export default function CheckoutPage({ params }: { readonly params: Promise<{ locale: string }> }) {
   const { locale } = use(params);

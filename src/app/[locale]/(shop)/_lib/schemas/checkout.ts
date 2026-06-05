@@ -23,16 +23,5 @@ export const checkoutSchema = addressSchema.extend({
 
 export type ShippingMethod = z.infer<typeof shippingMethodSchema>;
 export type PaymentMethod = z.infer<typeof paymentMethodSchema>;
-
-export const filterSchema = z.object({
-  search: z.string().optional(),
-  category: z.string().optional(),
-  minPrice: z.coerce.number().optional(),
-  maxPrice: z.coerce.number().optional(),
-  ordering: z.enum(['price', '-price', '-created_at', 'rating']).optional(),
-  page: z.coerce.number().default(1),
-});
-
 export type AddressInput = z.infer<typeof addressSchema>;
 export type CheckoutInput = z.infer<typeof checkoutSchema>;
-export type FilterInput = z.infer<typeof filterSchema>;

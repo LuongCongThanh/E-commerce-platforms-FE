@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 
-import { CategoryClient } from '@/app/[locale]/(shop)/_components/categories/CategoryClient';
-import { FilterSidebar } from '@/app/[locale]/(shop)/_components/categories/FilterSidebar';
-import { getCategoryBySlug } from '@/app/[locale]/(shop)/_lib/queries';
+import { CategoryClient } from '@/app/[locale]/(shop)/_lib/components/categories/CategoryClient';
+import { FilterSidebar } from '@/app/[locale]/(shop)/_lib/components/categories/FilterSidebar';
+import { getCategoryBySlug } from '@/app/[locale]/(shop)/_lib/queries/category';
 import { Skeleton } from '@/shared/components/base/Skeleton';
 
 interface CategoryPageProps {

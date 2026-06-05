@@ -4,11 +4,11 @@ import { notFound } from 'next/navigation';
 
 import { ArrowLeft, ChevronRight, RotateCcw, ShieldCheck, Star, Truck } from 'lucide-react';
 
-import { AddToCartSection } from '@/app/[locale]/(shop)/_components/products/AddToCartSection';
-import { ProductDetailTabs } from '@/app/[locale]/(shop)/_components/products/ProductDetailTabs';
-import { ProductGallery } from '@/app/[locale]/(shop)/_components/products/ProductGallery';
-import { ProductGrid } from '@/app/[locale]/(shop)/_components/products/ProductGrid';
-import { getProductBySlug } from '@/app/[locale]/(shop)/_lib/queries';
+import { AddToCartSection } from '@/app/[locale]/(shop)/_lib/components/products/AddToCartSection';
+import { ProductDetailTabs } from '@/app/[locale]/(shop)/_lib/components/products/ProductDetailTabs';
+import { ProductGallery } from '@/app/[locale]/(shop)/_lib/components/products/ProductGallery';
+import { ProductGrid } from '@/app/[locale]/(shop)/_lib/components/products/ProductGrid';
+import { getProductBySlug } from '@/app/[locale]/(shop)/_lib/queries/product';
 import { Badge } from '@/shared/components/base/Badge';
 import { cn, formatCurrency } from '@/shared/lib/utils';
 

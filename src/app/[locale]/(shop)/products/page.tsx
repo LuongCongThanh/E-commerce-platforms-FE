@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { setRequestLocale } from 'next-intl/server';
 
-import ProductsClient from '@/app/[locale]/(shop)/_components/products/ProductsClient';
+import ProductsClient from '@/app/[locale]/(shop)/_lib/components/products/ProductsClient';
 
 interface ProductsPageProps {
   readonly params: Promise<{ locale: string }>;

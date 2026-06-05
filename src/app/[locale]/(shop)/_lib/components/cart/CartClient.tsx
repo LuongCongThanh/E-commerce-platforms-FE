@@ -4,10 +4,11 @@ import Link from 'next/link';
 
 import { ShoppingBag } from 'lucide-react';
 
-import { CartSummary } from '@/app/[locale]/(shop)/cart/_components/CartSummary';
-import { CartTable } from '@/app/[locale]/(shop)/cart/_components/CartTable';
 import { Button } from '@/shared/components/base/Button';
 import { useCart } from '@/shared/hooks/useCart';
+
+import { CartSummary } from './CartSummary';
+import { CartTable } from './CartTable';
 
 interface CartClientProps {
   readonly locale: string;

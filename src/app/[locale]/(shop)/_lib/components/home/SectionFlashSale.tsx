@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl';
 
 import { bestSellersData } from '@/app/[locale]/(shop)/_lib/data/home';
-import { useHomeFlashSaleCountdown } from '@/app/[locale]/(shop)/_lib/hooks/useHomeFlashSaleCountdown';
+import { useHomeFlashSaleCountdown } from '@/app/[locale]/(shop)/_lib/hooks/home/useHomeFlashSaleCountdown';
 import { ProductCard } from '@/shared/components/commerce/ProductCard';
 import { CountdownTimer } from '@/shared/components/marketing/CountdownTimer';
 

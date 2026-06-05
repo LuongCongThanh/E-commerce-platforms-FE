@@ -1,6 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 
-import { CartClient } from '@/app/[locale]/(shop)/cart/_components/CartClient';
+import { CartClient } from '@/app/[locale]/(shop)/_lib/components/cart/CartClient';
 
 interface CartPageProps {
   readonly params: Promise<{ locale: string }>;

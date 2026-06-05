@@ -6,7 +6,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { useProfile, useUpdateProfile } from '@/app/[locale]/(shop)/_lib/hooks';
+import { useProfile } from '@/app/[locale]/(shop)/_lib/hooks/profile/useProfile';
+import { useUpdateProfile } from '@/app/[locale]/(shop)/_lib/hooks/profile/useUpdateProfile';
 import { Button } from '@/shared/components/base/Button';
 import { Input } from '@/shared/components/base/Input';
 import { Label } from '@/shared/components/base/Label';

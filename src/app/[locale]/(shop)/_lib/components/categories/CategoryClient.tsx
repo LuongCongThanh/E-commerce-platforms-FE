@@ -2,11 +2,12 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import { Pagination } from '@/app/[locale]/(shop)/_components/products/Pagination';
-import { ProductGrid } from '@/app/[locale]/(shop)/_components/products/ProductGrid';
-import type { SortBy } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
-import { useProducts } from '@/app/[locale]/(shop)/_lib/hooks/useProducts';
+import type { SortBy } from '@/app/[locale]/(shop)/_lib/hooks/products/useProducts';
+import { useProducts } from '@/app/[locale]/(shop)/_lib/hooks/products/useProducts';
 import { Skeleton } from '@/shared/components/base/Skeleton';
+
+import { Pagination } from '../products/Pagination';
+import { ProductGrid } from '../products/ProductGrid';
 
 interface CategoryClientProps {
   readonly categorySlug: string;

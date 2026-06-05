@@ -2,8 +2,9 @@
 
 import { use } from 'react';
 
-import { OrderStatusBadge } from '@/app/[locale]/(shop)/_components/OrderStatusBadge';
-import { useCancelOrder, useOrder } from '@/app/[locale]/(shop)/_lib/hooks';
+import { OrderStatusBadge } from '@/app/[locale]/(shop)/_lib/components/_shared/OrderStatusBadge';
+import { useCancelOrder } from '@/app/[locale]/(shop)/_lib/hooks/orders/useCancelOrder';
+import { useOrder } from '@/app/[locale]/(shop)/_lib/hooks/orders/useOrder';
 import { Button } from '@/shared/components/base/Button';
 import { Separator } from '@/shared/components/base/Separator';
 

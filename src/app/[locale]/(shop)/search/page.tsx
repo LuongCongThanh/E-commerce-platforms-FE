@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import { SearchResults } from '@/app/[locale]/(shop)/search/_components/SearchResults';
+import { SearchResults } from '@/app/[locale]/(shop)/_lib/components/search/SearchResults';
 import { Skeleton } from '@/shared/components/base/Skeleton';
 
 interface SearchPageProps {

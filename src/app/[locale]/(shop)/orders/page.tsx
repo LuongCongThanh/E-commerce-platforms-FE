@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { OrderStatusBadge } from '@/app/[locale]/(shop)/_components/OrderStatusBadge';
-import type { Order } from '@/app/[locale]/(shop)/_lib/types';
+import { OrderStatusBadge } from '@/app/[locale]/(shop)/_lib/components/_shared/OrderStatusBadge';
+import type { Order } from '@/shared/types/order';
 import { API } from '@/shared/constants/api-endpoints';
 import { http } from '@/shared/lib/http/client';
 

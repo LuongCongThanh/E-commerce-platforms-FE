@@ -3,10 +3,11 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Check, Minus, Plus, ShoppingCart, Zap } from 'lucide-react';
 
-import { VariantSelector } from '@/app/[locale]/(shop)/_components/products/VariantSelector';
-import { useAddToCart } from '@/app/[locale]/(shop)/_lib/hooks/useAddToCart';
+import { useAddToCart } from '@/app/[locale]/(shop)/_lib/hooks/products/useAddToCart';
 import type { ProductDisplay } from '@/app/[locale]/(shop)/_lib/types/product';
 import { Button } from '@/shared/components/base/Button';
+
+import { VariantSelector } from './VariantSelector';
 
 interface AddToCartSectionProps {
   readonly product: ProductDisplay;

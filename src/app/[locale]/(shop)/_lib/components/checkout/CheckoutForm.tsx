@@ -8,8 +8,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 
-import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas';
-import { checkoutSchema } from '@/app/[locale]/(shop)/_lib/schemas';
+import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
+import { checkoutSchema } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
 import { useCart } from '@/shared/hooks/useCart';
 
 type CheckoutValues = CheckoutInput;

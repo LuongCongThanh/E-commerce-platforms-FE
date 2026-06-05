@@ -1,4 +1,4 @@
-import type { OrderStatus } from '@/app/[locale]/(shop)/_lib/types';
+import type { OrderStatus } from '@/shared/types/order';
 import { Badge } from '@/shared/components/base/Badge';
 
 const STATUS_MAP: Record<OrderStatus, { label: string; variant: 'default' | 'secondary' | 'destructive' | 'outline' }> = {
