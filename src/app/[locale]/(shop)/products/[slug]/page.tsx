@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { ArrowLeft, ChevronRight, RotateCcw, ShieldCheck, Star, Truck } from 'lucide-react';
+import type { Metadata } from 'next';
 
+import { ProductGrid } from '@/app/[locale]/(shop)/_lib/components/common/ProductGrid';
 import { AddToCartSection } from '@/app/[locale]/(shop)/_lib/components/products/AddToCartSection';
 import { ProductDetailTabs } from '@/app/[locale]/(shop)/_lib/components/products/ProductDetailTabs';
 import { ProductGallery } from '@/app/[locale]/(shop)/_lib/components/products/ProductGallery';
-import { ProductGrid } from '@/app/[locale]/(shop)/_lib/components/products/ProductGrid';
 import { getProductBySlug } from '@/app/[locale]/(shop)/_lib/queries/product';
 import { Badge } from '@/shared/components/base/Badge';
 import { cn, formatCurrency } from '@/shared/lib/utils';
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     openGraph: {
       title: product.name,
       description: product.description,
-      images: [product.images[0]],
+      images: product.images.slice(0, 1),
     },
   };
 }
@@ -100,7 +100,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             <div>
               {product.badges.length > 0 && (
                 <div className="mb-3 flex flex-wrap gap-2">
-                  {product.badges.map(badge => (
+                  {product.badges.map((badge) => (
                     <Badge key={badge} variant="secondary" className="capitalize">
                       {badge}
                     </Badge>
@@ -155,7 +155,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 { icon: Truck, title: 'Giao hàng nhanh', sub: '2-4 ngày làm việc' },
                 { icon: RotateCcw, title: 'Đổi trả 30 ngày', sub: 'Miễn phí đổi trả' },
                 { icon: ShieldCheck, title: 'Bảo hành 1 năm', sub: 'Chính hãng 100%' },
-              ].map(item => (
+              ].map((item) => (
                 <div key={item.title} className="flex flex-col items-center gap-2 rounded-xl border border-white/10 p-3 text-center">
                   <div className="bg-primary-500/10 text-primary-400 flex size-9 items-center justify-center rounded-full">
                     <item.icon className="size-4" />
