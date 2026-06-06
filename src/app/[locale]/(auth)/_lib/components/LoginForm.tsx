@@ -1,49 +1,46 @@
 'use client';
 
 import { useState } from 'react';
-import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2 } from 'lucide-react';
+import { useLocale } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
-import { resetPasswordAction } from '@/app/[locale]/(auth)/_lib/actions';
-import type { ResetPasswordFormInput } from '@/app/[locale]/(auth)/_lib/schemas';
-import { ResetPasswordFormSchema } from '@/app/[locale]/(auth)/_lib/schemas';
+import { loginAction } from '@/app/[locale]/(auth)/_lib/actions/auth';
+import type { LoginFormInput } from '@/app/[locale]/(auth)/_lib/schemas/auth';
+import { LoginFormSchema } from '@/app/[locale]/(auth)/_lib/schemas/auth';
 import { Button } from '@/shared/components/base/Button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/base/Form';
 import { Input } from '@/shared/components/base/Input';
 import { ApiError } from '@/shared/lib/errors/api-error';
 
-interface ResetPasswordFormProps {
-  readonly token: string;
-  readonly uid: string;
-}
-
-export function ResetPasswordForm({ token, uid }: ResetPasswordFormProps) {
+export function LoginForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const locale = useLocale();
   const [apiError, setApiError] = useState<string | null>(null);
 
-  const form = useForm<ResetPasswordFormInput>({
-    resolver: zodResolver(ResetPasswordFormSchema),
-    defaultValues: { password: '', confirmPassword: '' },
+  const form = useForm<LoginFormInput>({
+    resolver: zodResolver(LoginFormSchema),
+    defaultValues: { email: '', password: '' },
   });
 
   const { isSubmitting } = form.formState;
 
-  const onSubmit = async (values: ResetPasswordFormInput) => {
+  const onSubmit = async (values: LoginFormInput) => {
     setApiError(null);
     try {
-      await resetPasswordAction({ token, uid, password: values.password });
-      router.push(`/${locale}/login`);
+      await loginAction({ email: values.email, password: values.password });
+      const returnUrl = searchParams.get('returnUrl');
+      router.push(returnUrl !== null && returnUrl.length > 0 ? returnUrl : `/${locale}/home`);
     } catch (err) {
       if (err instanceof ApiError) {
         setApiError(err.message);
       } else {
-        setApiError('Đặt lại mật khẩu thất bại. Link có thể đã hết hạn.');
+        setApiError('Đăng nhập thất bại. Vui lòng thử lại.');
       }
     }
   };
@@ -55,12 +52,12 @@ export function ResetPasswordForm({ token, uid }: ResetPasswordFormProps) {
 
         <FormField
           control={form.control}
-          name="password"
+          name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Mật khẩu mới</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input type="password" placeholder="Tối thiểu 8 ký tự" autoComplete="new-password" {...field} />
+                <Input type="email" placeholder="you@example.com" autoComplete="email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -69,12 +66,17 @@ export function ResetPasswordForm({ token, uid }: ResetPasswordFormProps) {
 
         <FormField
           control={form.control}
-          name="confirmPassword"
+          name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Xác nhận mật khẩu mới</FormLabel>
+              <div className="flex items-center justify-between">
+                <FormLabel>Mật khẩu</FormLabel>
+                <Link href={`/${locale}/forgot-password`} className="text-primary-400 text-xs hover:underline">
+                  Quên mật khẩu?
+                </Link>
+              </div>
               <FormControl>
-                <Input type="password" placeholder="Nhập lại mật khẩu mới" autoComplete="new-password" {...field} />
+                <Input type="password" placeholder="••••••••" autoComplete="current-password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -83,12 +85,13 @@ export function ResetPasswordForm({ token, uid }: ResetPasswordFormProps) {
 
         <Button type="submit" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? <Loader2 className="mr-2 size-4 animate-spin" /> : null}
-          {isSubmitting ? 'Đang đặt lại...' : 'Đặt lại mật khẩu'}
+          {isSubmitting ? 'Đang đăng nhập...' : 'Đăng nhập'}
         </Button>
 
         <p className="text-center text-sm text-neutral-500">
-          <Link href={`/${locale}/login`} className="text-primary-400 font-medium hover:underline">
-            Quay lại đăng nhập
+          Chưa có tài khoản?{' '}
+          <Link href={`/${locale}/register`} className="text-primary-400 font-medium hover:underline">
+            Đăng ký ngay
           </Link>
         </p>
       </form>

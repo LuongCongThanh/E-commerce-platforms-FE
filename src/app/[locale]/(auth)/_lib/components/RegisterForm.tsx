@@ -1,17 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2 } from 'lucide-react';
+import { useLocale } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
-import { registerAction } from '@/app/[locale]/(auth)/_lib/actions';
-import type { RegisterFormInput } from '@/app/[locale]/(auth)/_lib/schemas';
-import { RegisterFormSchema } from '@/app/[locale]/(auth)/_lib/schemas';
+import { registerAction } from '@/app/[locale]/(auth)/_lib/actions/auth';
+import type { RegisterFormInput } from '@/app/[locale]/(auth)/_lib/schemas/auth';
+import { RegisterFormSchema } from '@/app/[locale]/(auth)/_lib/schemas/auth';
 import { Button } from '@/shared/components/base/Button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/base/Form';
 import { Input } from '@/shared/components/base/Input';

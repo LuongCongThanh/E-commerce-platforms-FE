@@ -1,6 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 
-import { ForgotPasswordForm } from '@/app/[locale]/(auth)/_components/ForgotPasswordForm';
+import { ForgotPasswordForm } from '@/app/[locale]/(auth)/_lib/components/ForgotPasswordForm';
 
 interface ForgotPasswordPageProps {
   readonly params: Promise<{ locale: string }>;

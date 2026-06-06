@@ -1,16 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import { useLocale } from 'next-intl';
 import Link from 'next/link';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2 } from 'lucide-react';
+import { useLocale } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
-import { forgotPasswordAction } from '@/app/[locale]/(auth)/_lib/actions';
-import type { ForgotPasswordFormInput } from '@/app/[locale]/(auth)/_lib/schemas';
-import { ForgotPasswordFormSchema } from '@/app/[locale]/(auth)/_lib/schemas';
+import { forgotPasswordAction } from '@/app/[locale]/(auth)/_lib/actions/auth';
+import type { ForgotPasswordFormInput } from '@/app/[locale]/(auth)/_lib/schemas/auth';
+import { ForgotPasswordFormSchema } from '@/app/[locale]/(auth)/_lib/schemas/auth';
 import { Button } from '@/shared/components/base/Button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/base/Form';
 import { Input } from '@/shared/components/base/Input';
