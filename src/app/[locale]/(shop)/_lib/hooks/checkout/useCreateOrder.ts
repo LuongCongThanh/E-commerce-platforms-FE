@@ -20,12 +20,12 @@ export const useCreateOrder = (locale: string) => {
   const { items } = useCart();
 
   return useMutation({
-    mutationFn: (data: CheckoutInput) =>
+    mutationFn: async (data: CheckoutInput) =>
       orderActions.create({
         ...data,
-        items: items.map(i => ({ variantId: i.variantId, quantity: i.quantity })),
+        items: items.map((i) => ({ variantId: i.variantId, quantity: i.quantity })),
       }),
-    onSuccess: async order => {
+    onSuccess: async (order) => {
       clearCart();
       await qc.invalidateQueries({ queryKey: orderKeys.list() });
       toast.success('Đặt hàng thành công!');

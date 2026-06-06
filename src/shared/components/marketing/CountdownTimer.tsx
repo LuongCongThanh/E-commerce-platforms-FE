@@ -45,7 +45,7 @@ function pad(n: number): string {
   return String(n).padStart(2, '0');
 }
 
-export const CountdownTimer = ({ targetDate, variant = 'default', labels }: CountdownTimerProps): React.JSX.Element => {
+export function CountdownTimer({ targetDate, variant = 'default', labels }: CountdownTimerProps): React.JSX.Element {
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export const CountdownTimer = ({ targetDate, variant = 'default', labels }: Coun
   if (timeLeft === null) {
     return (
       <div className="flex animate-pulse gap-2">
-        {(['days', 'hours', 'minutes', 'seconds'] as const).map(unit => (
+        {(['days', 'hours', 'minutes', 'seconds'] as const).map((unit) => (
           <div key={unit} className="bg-muted h-12 w-12 rounded" />
         ))}
       </div>
@@ -108,4 +108,4 @@ export const CountdownTimer = ({ targetDate, variant = 'default', labels }: Coun
       ))}
     </div>
   );
-};
+}

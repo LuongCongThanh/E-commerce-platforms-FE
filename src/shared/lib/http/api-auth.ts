@@ -11,7 +11,9 @@ let _snapshot: AuthSnapshot = { token: null, user: null };
 const _listeners = new Set<Listener>();
 
 function notify(): void {
-  _listeners.forEach(l => { l(); });
+  _listeners.forEach((l) => {
+    l();
+  });
 }
 
 export function subscribeAuth(listener: Listener): () => void {

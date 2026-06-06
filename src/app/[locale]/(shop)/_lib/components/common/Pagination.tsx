@@ -10,7 +10,7 @@ interface PaginationProps {
   readonly onPageChange: (page: number) => void;
 }
 
-export const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps): React.JSX.Element | null => {
+export function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps): React.JSX.Element | null {
   if (totalPages <= 1) return null;
 
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
@@ -28,12 +28,12 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
         <ChevronLeft className="h-4 w-4" />
       </Button>
 
-      {pages.map(page => (
+      {pages.map((page) => (
         <Button
           key={page}
           variant={currentPage === page ? 'default' : 'outline'}
           size="sm"
-          className="min-w-[40px]"
+          className="min-w-10"
           onClick={() => {
             onPageChange(page);
           }}
@@ -54,4 +54,4 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
       </Button>
     </div>
   );
-};
+}

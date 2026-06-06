@@ -36,14 +36,14 @@ export function useProducts({
 
     if (search !== undefined) {
       const q = search.trim().toLowerCase();
-      filtered = filtered.filter(p => p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
+      filtered = filtered.filter((p) => p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
     }
 
     if (categorySlug !== undefined && categorySlug !== '' && categorySlug !== 'all') {
-      filtered = filtered.filter(p => p.categorySlug === categorySlug);
+      filtered = filtered.filter((p) => p.categorySlug === categorySlug);
     }
 
-    filtered = filtered.filter(p => {
+    filtered = filtered.filter((p) => {
       const effectivePrice = p.salePrice ?? p.price;
       return effectivePrice >= minPrice && effectivePrice <= maxPrice;
     });

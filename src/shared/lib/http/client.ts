@@ -58,7 +58,7 @@ function normalizeError(error: unknown): ApiError {
   });
 }
 
-httpClient.interceptors.request.use(config => {
+httpClient.interceptors.request.use((config) => {
   const token = getAccessToken();
 
   if (token !== null && config.headers.Authorization === undefined) {
@@ -69,8 +69,8 @@ httpClient.interceptors.request.use(config => {
 });
 
 httpClient.interceptors.response.use(
-  response => response,
-  async error => {
+  (response) => response,
+  async (error) => {
     const axiosError = error as AxiosError;
     const originalRequest = axiosError.config as AxiosRequestConfig & {
       _retry?: boolean;
@@ -112,7 +112,7 @@ httpClient.interceptors.response.use(
     }
 
     return await Promise.reject(normalizeError(error));
-  }
+  },
 );
 
 async function request<TSchema>(config: ApiRequestConfig<TSchema>): Promise<TSchema> {
@@ -127,9 +127,9 @@ async function request<TSchema>(config: ApiRequestConfig<TSchema>): Promise<TSch
 }
 
 export const http = {
-  get: <T>(url: string, params?: object) => request<T>({ url, method: 'GET', params }),
-  post: <T>(url: string, body?: unknown) => request<T>({ url, method: 'POST', data: body }),
-  put: <T>(url: string, body?: unknown) => request<T>({ url, method: 'PUT', data: body }),
-  patch: <T>(url: string, body?: unknown) => request<T>({ url, method: 'PATCH', data: body }),
-  delete: <T>(url: string) => request<T>({ url, method: 'DELETE' }),
+  get: async <T>(url: string, params?: object) => request<T>({ url, method: 'GET', params }),
+  post: async <T>(url: string, body?: unknown) => request<T>({ url, method: 'POST', data: body }),
+  put: async <T>(url: string, body?: unknown) => request<T>({ url, method: 'PUT', data: body }),
+  patch: async <T>(url: string, body?: unknown) => request<T>({ url, method: 'PATCH', data: body }),
+  delete: async <T>(url: string) => request<T>({ url, method: 'DELETE' }),
 };

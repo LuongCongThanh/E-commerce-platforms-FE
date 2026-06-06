@@ -11,7 +11,7 @@ export interface NavCategory {
   sub: NavSubCategory[];
 }
 
-export const NAV_CATEGORIES: NavCategory[] = [
+export const NAV_CATEGORIES: [NavCategory, ...NavCategory[]] = [
   {
     slug: 'ao',
     name: 'Áo',

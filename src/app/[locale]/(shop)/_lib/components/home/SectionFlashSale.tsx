@@ -7,7 +7,7 @@ import { useHomeFlashSaleCountdown } from '@/app/[locale]/(shop)/_lib/hooks/home
 import { ProductCard } from '@/shared/components/commerce/ProductCard';
 import { CountdownTimer } from '@/shared/components/marketing/CountdownTimer';
 
-export const SectionFlashSale = (): React.JSX.Element => {
+export function SectionFlashSale(): React.JSX.Element {
   const locale = useLocale();
   const { targetDate } = useHomeFlashSaleCountdown();
   const flashSale = bestSellersData.slice(0, 4);
@@ -26,7 +26,7 @@ export const SectionFlashSale = (): React.JSX.Element => {
 
         {/* Products */}
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {flashSale.map(product => (
+          {flashSale.map((product) => (
             <ProductCard
               key={product.id}
               id={product.id}
@@ -45,4 +45,4 @@ export const SectionFlashSale = (): React.JSX.Element => {
       </div>
     </section>
   );
-};
+}

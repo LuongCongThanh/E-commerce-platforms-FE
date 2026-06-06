@@ -1,17 +1,17 @@
 'use client';
 
 import { useRef } from 'react';
-import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useLocale } from 'next-intl';
 
 import { homeHeroData } from '@/app/[locale]/(shop)/_lib/data/home';
 import { Button } from '@/shared/components/base/Button';
 import { TrustBadgeList } from '@/shared/components/marketing/TrustBadgeList';
 
-export const SectionHero = (): React.JSX.Element => {
+export function SectionHero(): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
   const locale = useLocale();
   const titleLines = homeHeroData.title.split('\n');
@@ -47,7 +47,7 @@ export const SectionHero = (): React.JSX.Element => {
           </div>
 
           <h1 className="bg-linear-to-b from-neutral-900 to-neutral-500 bg-clip-text text-4xl leading-[1.1] font-black tracking-tighter text-transparent sm:text-5xl md:text-6xl lg:text-7xl dark:from-white dark:to-neutral-500">
-            {titleLines.map(line => (
+            {titleLines.map((line) => (
               <span key={line} className="block">
                 {line}
               </span>
@@ -138,4 +138,4 @@ export const SectionHero = (): React.JSX.Element => {
       </div>
     </section>
   );
-};
+}

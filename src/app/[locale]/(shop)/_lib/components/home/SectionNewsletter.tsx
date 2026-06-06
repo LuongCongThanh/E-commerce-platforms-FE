@@ -1,6 +1,6 @@
 import { NewsletterForm } from '@/shared/components/marketing/NewsletterForm';
 
-export const SectionNewsletter = (): React.JSX.Element => {
+export function SectionNewsletter(): React.JSX.Element {
   return (
     <section className="bg-neutral-900 text-white">
       <div className="container mx-auto flex flex-col items-center gap-6 px-4 py-14 text-center md:py-20">
@@ -14,4 +14,4 @@ export const SectionNewsletter = (): React.JSX.Element => {
       </div>
     </section>
   );
-};
+}

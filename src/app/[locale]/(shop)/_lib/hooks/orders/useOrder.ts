@@ -12,5 +12,5 @@ const orderKeys = {
 export const useOrder = (id: string) =>
   useQuery({
     queryKey: orderKeys.detail(id),
-    queryFn: () => orderActions.detail(id),
+    queryFn: async () => orderActions.detail(id),
   });

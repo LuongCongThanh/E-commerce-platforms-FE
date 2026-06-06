@@ -1,5 +1,6 @@
-import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+
+import { useTranslations } from 'next-intl';
 
 import { ProductGridSkeleton } from '@/shared/components/skeletons/ProductGridSkeleton';
 
@@ -25,7 +26,7 @@ export function FeaturedProducts({ isLoading }: FeaturedProductsProps): React.JS
       ) : (
         /* Placeholder grid — sẽ được thay bằng ProductGrid khi có API */
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {placeholderCards.map(placeholderId => (
+          {placeholderCards.map((placeholderId) => (
             <div key={placeholderId} className="border-border rounded-card border bg-white p-3">
               <div className="mb-3 aspect-square w-full rounded-lg bg-neutral-100" />
               <div className="h-4 w-3/4 rounded bg-neutral-200" />

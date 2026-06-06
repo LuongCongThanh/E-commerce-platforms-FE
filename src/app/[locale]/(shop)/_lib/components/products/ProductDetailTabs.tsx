@@ -27,8 +27,20 @@ const MOCK_REVIEWS: Review[] = [
     date: '15/04/2025',
     comment: 'Sản phẩm chất lượng rất tốt, đúng mô tả, giao hàng nhanh. Mình rất hài lòng!',
   },
-  { id: 2, author: 'Trần Thị B', rating: 4, date: '10/04/2025', comment: 'Hàng đẹp, chất vải tốt. Sẽ mua lại lần sau.' },
-  { id: 3, author: 'Lê Minh C', rating: 5, date: '02/04/2025', comment: 'Mua cho cả nhà, ai cũng thích. Shop đóng gói cẩn thận.' },
+  {
+    id: 2,
+    author: 'Trần Thị B',
+    rating: 4,
+    date: '10/04/2025',
+    comment: 'Hàng đẹp, chất vải tốt. Sẽ mua lại lần sau.',
+  },
+  {
+    id: 3,
+    author: 'Lê Minh C',
+    rating: 5,
+    date: '02/04/2025',
+    comment: 'Mua cho cả nhà, ai cũng thích. Shop đóng gói cẩn thận.',
+  },
 ];
 
 const FEATURES = [
@@ -76,7 +88,7 @@ export function ProductDetailTabs({ description, rating, reviewCount }: ProductD
 
       <TabsContent value="specs" className="mt-6">
         <div className="divide-y divide-white/10 rounded-xl border border-white/10">
-          {FEATURES.map(f => (
+          {FEATURES.map((f) => (
             <div key={f.label} className="flex px-5 py-3.5 text-sm">
               <span className="w-36 shrink-0 font-semibold text-neutral-500">{f.label}</span>
               <span className="text-neutral-700 dark:text-neutral-300">{f.value}</span>
@@ -100,7 +112,7 @@ export function ProductDetailTabs({ description, rating, reviewCount }: ProductD
             <p className="mt-1 text-xs text-neutral-500">{reviewCount} đánh giá</p>
           </div>
           <div className="flex-1 space-y-1">
-            {[5, 4, 3, 2, 1].map(star => (
+            {[5, 4, 3, 2, 1].map((star) => (
               <div key={star} className="flex items-center gap-2 text-xs">
                 <span className="w-3 text-neutral-500">{star}</span>
                 <Star className="size-3 fill-yellow-400 text-yellow-400" />
@@ -113,7 +125,7 @@ export function ProductDetailTabs({ description, rating, reviewCount }: ProductD
         </div>
 
         <div className="space-y-4">
-          {MOCK_REVIEWS.map(review => (
+          {MOCK_REVIEWS.map((review) => (
             <div key={review.id} className="glass rounded-xl p-4">
               <div className="flex items-start justify-between gap-2">
                 <div>

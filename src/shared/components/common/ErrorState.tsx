@@ -1,7 +1,6 @@
-import { useTranslations } from 'next-intl';
-
 import type { LucideIcon } from 'lucide-react';
 import { AlertCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@/shared/components/base/Button';
 import { cn } from '@/shared/lib/utils';

@@ -13,7 +13,7 @@ export function useProductFilters(initial?: Partial<ProductFilter>) {
   const [filters, setFilters] = useState<ProductFilter>({ ...DEFAULT_FILTERS, ...initial });
 
   function setFilter<K extends keyof ProductFilter>(key: K, value: ProductFilter[K]) {
-    setFilters(previous => ({
+    setFilters((previous) => ({
       ...previous,
       [key]: value,
       ...(key !== 'page' ? { page: 1 } : {}),

@@ -22,7 +22,7 @@ export function CartTable() {
       </div>
 
       <AnimatePresence initial={false}>
-        {items.map(item => (
+        {items.map((item) => (
           <CartRow
             key={item.variantId}
             item={item}

@@ -23,7 +23,7 @@ export function PasswordInput({ className, ...props }: PasswordInputProps) {
         size="icon"
         className="absolute top-1/2 right-1 size-8 -translate-y-1/2"
         onClick={() => {
-          setVisible(current => !current);
+          setVisible((current) => !current);
         }}
         aria-label={visible ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
       >

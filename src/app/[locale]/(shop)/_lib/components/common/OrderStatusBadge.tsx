@@ -1,5 +1,5 @@
-import type { OrderStatus } from '@/shared/types/order';
 import { Badge } from '@/shared/components/base/Badge';
+import type { OrderStatus } from '@/shared/types/order';
 
 const STATUS_MAP: Record<OrderStatus, { label: string; variant: 'default' | 'secondary' | 'destructive' | 'outline' }> = {
   pending: { label: 'Chờ xác nhận', variant: 'secondary' },
@@ -10,7 +10,7 @@ const STATUS_MAP: Record<OrderStatus, { label: string; variant: 'default' | 'sec
   cancelled: { label: 'Đã huỷ', variant: 'destructive' },
 };
 
-export const OrderStatusBadge = ({ status }: { readonly status: OrderStatus }) => {
+export function OrderStatusBadge({ status }: { readonly status: OrderStatus }) {
   const { label, variant } = STATUS_MAP[status];
   return <Badge variant={variant}>{label}</Badge>;
-};
+}

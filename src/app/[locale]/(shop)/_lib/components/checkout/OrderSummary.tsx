@@ -1,9 +1,9 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 import { useCart } from '@/shared/hooks/useCart';
 
@@ -19,7 +19,7 @@ export function OrderSummary() {
       <h2 className="mb-6 text-xl font-bold">{t('cart.summary')}</h2>
 
       <div className="mb-6 space-y-4">
-        {items.map(item => (
+        {items.map((item) => (
           <div key={item.variantId} className="flex gap-4">
             <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-white/10">
               <Image src={item.image !== '' ? item.image : '/images/placeholder.jpg'} alt={item.name} fill sizes="64px" className="object-cover" />

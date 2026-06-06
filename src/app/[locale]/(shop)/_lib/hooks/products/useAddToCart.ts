@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
+import { useLocale } from 'next-intl';
 import { toast } from 'sonner';
 
 import type { ProductDisplay, SizeOption } from '@/app/[locale]/(shop)/_lib/types/product';
@@ -35,7 +35,7 @@ export function useAddToCart(product: ProductDisplay) {
       productId: product.id.toString(),
       variantId: selectedVariant?.id ?? `v-${product.id.toString()}`,
       name: product.name,
-      image: product.images[0],
+      image: product.images.at(0) ?? '',
       price: product.salePrice ?? product.price,
       quantity,
       variantName: selectedVariant?.label,

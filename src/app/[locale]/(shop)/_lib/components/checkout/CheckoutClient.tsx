@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
+import { useLocale, useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
 import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
@@ -14,7 +14,7 @@ import { useCart } from '@/shared/hooks/useCart';
 
 type CheckoutValues = CheckoutInput;
 
-export function CheckoutForm() {
+export function CheckoutClient() {
   const t = useTranslations('checkout');
   const locale = useLocale();
   const router = useRouter();
@@ -39,7 +39,7 @@ export function CheckoutForm() {
   });
 
   const onSubmit = async (_data: CheckoutValues) => {
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     clearCart();
     router.push(`/${locale}/checkout/success`);
   };

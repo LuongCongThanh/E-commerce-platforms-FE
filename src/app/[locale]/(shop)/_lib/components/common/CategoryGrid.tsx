@@ -1,5 +1,6 @@
-import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+
+import { useTranslations } from 'next-intl';
 
 const PLACEHOLDER_CATEGORIES = [
   { slug: 'ao', label: 'Áo', emoji: '👕' },
@@ -17,7 +18,7 @@ export function CategoryGrid() {
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <h2 className="mb-6 text-2xl font-bold text-neutral-900">{t('categories.title')}</h2>
       <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
-        {PLACEHOLDER_CATEGORIES.map(cat => (
+        {PLACEHOLDER_CATEGORIES.map((cat) => (
           <Link
             key={cat.slug}
             href={`/products?category=${cat.slug}`}

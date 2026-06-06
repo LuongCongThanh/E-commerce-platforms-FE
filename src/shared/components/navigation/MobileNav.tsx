@@ -45,7 +45,7 @@ export function MobileNav({ locale }: MobileNavProps) {
           </div>
 
           <Accordion type="single" collapsible className="w-full">
-            {NAV_CATEGORIES.map(cat => (
+            {NAV_CATEGORIES.map((cat) => (
               <AccordionItem value={cat.slug} key={cat.slug} className="border-b border-neutral-100 dark:border-neutral-800">
                 <AccordionTrigger className="px-2 py-3 text-sm font-medium hover:no-underline">
                   <div className="flex items-center gap-3">
@@ -64,7 +64,7 @@ export function MobileNav({ locale }: MobileNavProps) {
                     >
                       TẤT CẢ {cat.name.toUpperCase()} ({cat.productCount})
                     </Link>
-                    {cat.sub.map(sub => (
+                    {cat.sub.map((sub) => (
                       <Link
                         key={sub.slug}
                         href={`/${locale}/categories/${sub.slug}`}

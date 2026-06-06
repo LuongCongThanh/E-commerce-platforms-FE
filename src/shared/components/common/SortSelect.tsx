@@ -11,12 +11,12 @@ interface SortSelectProps {
 
 export function SortSelect({ value, onValueChange, placeholder = 'Sắp xếp' }: SortSelectProps) {
   return (
-    <Select value={value} onValueChange={nextValue => onValueChange?.(nextValue as SortOption)}>
+    <Select value={value} onValueChange={(nextValue) => onValueChange?.(nextValue as SortOption)}>
       <SelectTrigger className="w-[220px]">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>
-        {SORT_OPTIONS.map(option => (
+        {SORT_OPTIONS.map((option) => (
           <SelectItem key={option.value} value={option.value}>
             {option.label}
           </SelectItem>

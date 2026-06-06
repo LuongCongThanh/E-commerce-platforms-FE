@@ -1,5 +1,6 @@
-import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@/shared/components/base/Button';
 

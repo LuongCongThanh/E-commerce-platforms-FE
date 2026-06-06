@@ -9,7 +9,7 @@ import { Button } from '@/shared/components/base/Button';
 import { Input } from '@/shared/components/base/Input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/components/base/Select';
 
-export const FilterSidebar = (): React.JSX.Element => {
+export function FilterSidebar(): React.JSX.Element {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -44,7 +44,7 @@ export const FilterSidebar = (): React.JSX.Element => {
         <h3 className="text-sm font-bold tracking-wider text-neutral-500 uppercase">Sắp xếp theo</h3>
         <Select
           value={currentSort}
-          onValueChange={val => {
+          onValueChange={(val) => {
             updateFilters('sortBy', val);
           }}
         >
@@ -87,4 +87,4 @@ export const FilterSidebar = (): React.JSX.Element => {
       </Button>
     </aside>
   );
-};
+}

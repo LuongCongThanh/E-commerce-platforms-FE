@@ -12,6 +12,6 @@ const productKeys = {
 export const useProduct = (slug: string) =>
   useQuery({
     queryKey: productKeys.detail(slug),
-    queryFn: () => productActions.detail(slug),
+    queryFn: async () => productActions.detail(slug),
     staleTime: 5 * 60_000,
   });

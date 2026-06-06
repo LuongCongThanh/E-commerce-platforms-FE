@@ -11,7 +11,7 @@ interface NewsletterFormProps {
   readonly onSubmit?: (email: string) => void;
 }
 
-export const NewsletterForm = ({ title, description, submitLabel = 'Đăng ký', onSubmit }: NewsletterFormProps): React.JSX.Element => {
+export function NewsletterForm({ title, description, submitLabel = 'Đăng ký', onSubmit }: NewsletterFormProps): React.JSX.Element {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -40,7 +40,7 @@ export const NewsletterForm = ({ title, description, submitLabel = 'Đăng ký',
           type="email"
           required
           value={email}
-          onChange={e => {
+          onChange={(e) => {
             setEmail(e.target.value);
           }}
           placeholder="Nhập email của bạn"
@@ -50,4 +50,4 @@ export const NewsletterForm = ({ title, description, submitLabel = 'Đăng ký',
       </form>
     </div>
   );
-};
+}

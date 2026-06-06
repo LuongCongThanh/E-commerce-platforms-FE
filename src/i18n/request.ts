@@ -1,5 +1,4 @@
 import { getRequestConfig } from 'next-intl/server';
-
 import type { AbstractIntlMessages } from 'use-intl';
 
 // Danh sách các module dịch — mỗi module tương ứng một file JSON trong src/lang/{locale}/
@@ -15,12 +14,12 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   // Load song song tất cả module JSON cho locale hiện tại
   const moduleMessages = await Promise.all(
-    modules.map(async mod => {
+    modules.map(async (mod) => {
       // Dynamic import theo path src/lang/{locale}/{module}.json
       const messagesModule = (await import(`../lang/${locale}/${mod}.json`)) as { default: AbstractIntlMessages };
       const messages = messagesModule.default;
       return [mod, messages] as const;
-    })
+    }),
   );
 
   // Ghép thành object { common: {...}, auth: {...}, ... } để truyền cho next-intl

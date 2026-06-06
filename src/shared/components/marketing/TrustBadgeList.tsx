@@ -4,7 +4,7 @@ interface TrustBadgeListProps {
   readonly items: string[];
 }
 
-export const TrustBadgeList = ({ items }: TrustBadgeListProps): React.JSX.Element => {
+export function TrustBadgeList({ items }: TrustBadgeListProps): React.JSX.Element {
   return (
     <ul className="flex flex-wrap gap-x-6 gap-y-2">
       {items.map((item, index) => (
@@ -15,4 +15,4 @@ export const TrustBadgeList = ({ items }: TrustBadgeListProps): React.JSX.Elemen
       ))}
     </ul>
   );
-};
+}

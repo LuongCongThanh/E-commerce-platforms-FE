@@ -2,18 +2,17 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
+import { Pagination } from '@/app/[locale]/(shop)/_lib/components/common/Pagination';
+import { ProductGrid } from '@/app/[locale]/(shop)/_lib/components/common/ProductGrid';
 import type { SortBy } from '@/app/[locale]/(shop)/_lib/hooks/products/useProducts';
 import { useProducts } from '@/app/[locale]/(shop)/_lib/hooks/products/useProducts';
 import { Skeleton } from '@/shared/components/base/Skeleton';
-
-import { Pagination } from '../products/Pagination';
-import { ProductGrid } from '../products/ProductGrid';
 
 interface CategoryClientProps {
   readonly categorySlug: string;
 }
 
-export const CategoryClient = ({ categorySlug }: CategoryClientProps): React.JSX.Element => {
+export function CategoryClient({ categorySlug }: CategoryClientProps): React.JSX.Element {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -71,4 +70,4 @@ export const CategoryClient = ({ categorySlug }: CategoryClientProps): React.JSX
       {totalPages > 1 && <Pagination currentPage={page} totalPages={totalPages} onPageChange={handlePageChange} />}
     </div>
   );
-};
+}

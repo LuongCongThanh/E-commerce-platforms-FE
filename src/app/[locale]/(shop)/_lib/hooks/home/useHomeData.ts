@@ -12,6 +12,6 @@ export function useHomeData() {
       flashSale: bestSellersData.slice(0, 4),
       categories: homeCategoriesData,
     }),
-    []
+    [],
   );
 }

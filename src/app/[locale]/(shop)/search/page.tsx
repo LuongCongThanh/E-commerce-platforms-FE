@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import { SearchResults } from '@/app/[locale]/(shop)/_lib/components/search/SearchResults';
+import { SearchClient } from '@/app/[locale]/(shop)/_lib/components/search/SearchClient';
 import { Skeleton } from '@/shared/components/base/Skeleton';
 
 interface SearchPageProps {
@@ -20,7 +20,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
       {query !== undefined && query !== '' ? (
         <Suspense fallback={<SearchLoadingSkeleton />}>
-          <SearchResults />
+          <SearchClient />
         </Suspense>
       ) : (
         <div className="flex min-h-[300px] flex-col items-center justify-center rounded-2xl border border-dashed text-center">

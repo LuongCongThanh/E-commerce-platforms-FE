@@ -17,11 +17,14 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
   const [selected, setSelected] = useState(0);
 
   const prev = () => {
-    setSelected(i => (i - 1 + images.length) % images.length);
+    setSelected((i) => (i - 1 + images.length) % images.length);
   };
   const next = () => {
-    setSelected(i => (i + 1) % images.length);
+    setSelected((i) => (i + 1) % images.length);
   };
+
+  const currentImage = images.at(selected);
+  if (currentImage === undefined) return null;
 
   return (
     <div className="flex flex-col gap-4">
@@ -37,7 +40,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
             className="absolute inset-0"
           >
             <Image
-              src={images[selected]}
+              src={currentImage}
               alt={`${name} – ảnh ${(selected + 1).toString()}`}
               fill
               priority
@@ -79,7 +82,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
                   aria-label={`Ảnh ${(i + 1).toString()}`}
                   className={cn(
                     'h-1.5 rounded-full transition-all duration-200',
-                    i === selected ? 'w-5 bg-white' : 'w-1.5 bg-white/50 hover:bg-white/80'
+                    i === selected ? 'w-5 bg-white' : 'w-1.5 bg-white/50 hover:bg-white/80',
                   )}
                 />
               ))}
@@ -110,7 +113,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
                 'relative size-20 shrink-0 overflow-hidden rounded-xl border-2 transition-all duration-200',
                 selected === index
                   ? 'border-primary-500 shadow-primary-500/20 scale-105 shadow-lg'
-                  : 'border-white/10 opacity-60 hover:border-white/30 hover:opacity-100'
+                  : 'border-white/10 opacity-60 hover:border-white/30 hover:opacity-100',
               )}
             >
               <Image src={image} alt={`${name} thumbnail ${(index + 1).toString()}`} fill sizes="80px" className="object-cover" />

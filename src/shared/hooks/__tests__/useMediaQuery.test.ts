@@ -50,7 +50,7 @@ describe('useMediaQuery', () => {
     expect(result.current).toBe(false);
 
     act(() => {
-      mql._listeners.forEach(fn => fn({ matches: true } as unknown as MediaQueryListEvent));
+      mql._listeners.forEach((fn) => fn({ matches: true } as unknown as MediaQueryListEvent));
     });
 
     expect(result.current).toBe(true);

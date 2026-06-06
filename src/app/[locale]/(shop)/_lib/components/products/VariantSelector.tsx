@@ -9,7 +9,7 @@ interface VariantSelectorProps {
   readonly onSelect: (variant: SizeOption) => void;
 }
 
-export const VariantSelector = ({ variants, selectedVariant, onSelect }: VariantSelectorProps): React.JSX.Element | null => {
+export function VariantSelector({ variants, selectedVariant, onSelect }: VariantSelectorProps): React.JSX.Element | null {
   if (variants.length === 0) return null;
 
   return (
@@ -19,7 +19,7 @@ export const VariantSelector = ({ variants, selectedVariant, onSelect }: Variant
         {selectedVariant !== null && <span className="text-sm font-semibold">{selectedVariant.label}</span>}
       </div>
       <div className="flex flex-wrap gap-2">
-        {variants.map(variant => {
+        {variants.map((variant) => {
           const isOutOfStock = variant.stock === 0;
           const isSelected = selectedVariant?.id === variant.id;
 
@@ -40,7 +40,7 @@ export const VariantSelector = ({ variants, selectedVariant, onSelect }: Variant
                   ? 'border-primary-500 bg-primary-500/10 text-primary-600 dark:text-primary-400 scale-105 shadow-md'
                   : !isOutOfStock
                     ? 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
-                    : 'cursor-not-allowed border-white/5 bg-white/5 line-through opacity-40'
+                    : 'cursor-not-allowed border-white/5 bg-white/5 line-through opacity-40',
               )}
             >
               {variant.label}
@@ -58,4 +58,4 @@ export const VariantSelector = ({ variants, selectedVariant, onSelect }: Variant
       )}
     </div>
   );
-};
+}

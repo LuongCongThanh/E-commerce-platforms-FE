@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import { Search, ShoppingCart, X } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { Button } from '@/shared/components/base/Button';
 import { CartDrawer } from '@/shared/components/commerce/CartDrawer';
@@ -70,7 +70,7 @@ export function Header() {
                 autoFocus
                 type="text"
                 value={searchQuery}
-                onChange={e => {
+                onChange={(e) => {
                   setSearchQuery(e.target.value);
                 }}
                 placeholder="Tìm kiếm sản phẩm..."

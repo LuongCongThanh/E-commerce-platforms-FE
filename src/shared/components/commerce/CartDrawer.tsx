@@ -1,11 +1,11 @@
 'use client';
 
-import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
+import { useLocale } from 'next-intl';
 
 import { Button } from '@/shared/components/base/Button';
 import { ScrollArea } from '@/shared/components/base/ScrollArea';
@@ -79,6 +79,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center rounded-lg border border-white/10 bg-white/5 p-1">
                             <button
+                              type="button"
                               onClick={() => {
                                 updateQuantity(item.variantId, Math.max(1, item.quantity - 1));
                               }}
@@ -88,6 +89,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                             </button>
                             <span className="w-8 text-center text-xs font-medium">{item.quantity}</span>
                             <button
+                              type="button"
                               onClick={() => {
                                 updateQuantity(item.variantId, item.quantity + 1);
                               }}
@@ -97,6 +99,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                             </button>
                           </div>
                           <button
+                            type="button"
                             onClick={() => {
                               removeCartItem(item.variantId);
                             }}

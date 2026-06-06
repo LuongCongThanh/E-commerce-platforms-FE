@@ -32,7 +32,7 @@ export function PaginationNav({ page, totalPages, onPageChange, className }: Pag
         <ChevronLeft className="size-4" />
       </Button>
       <div className="flex items-center gap-2">
-        {pages.map(pageNumber => (
+        {pages.map((pageNumber) => (
           <Button
             key={pageNumber}
             type="button"

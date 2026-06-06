@@ -10,7 +10,7 @@ interface ProductGridProps {
   readonly isLoading?: boolean;
 }
 
-export const ProductGrid = ({ products, isLoading }: ProductGridProps): React.JSX.Element => {
+export function ProductGrid({ products, isLoading }: ProductGridProps): React.JSX.Element {
   const locale = useLocale();
 
   if (isLoading === true) {
@@ -33,7 +33,7 @@ export const ProductGrid = ({ products, isLoading }: ProductGridProps): React.JS
 
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-      {products.map(product => (
+      {products.map((product) => (
         <ProductCard
           key={product.id}
           id={product.id}
@@ -50,4 +50,4 @@ export const ProductGrid = ({ products, isLoading }: ProductGridProps): React.JS
       ))}
     </div>
   );
-};
+}

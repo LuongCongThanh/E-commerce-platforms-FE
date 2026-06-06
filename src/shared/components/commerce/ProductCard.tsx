@@ -45,7 +45,7 @@ const DEFAULT_BADGE_LABELS: BadgeLabels = {
   'low-stock': 'Sắp hết',
 };
 
-export const ProductCard = ({
+export function ProductCard({
   id,
   name,
   slug,
@@ -57,7 +57,7 @@ export const ProductCard = ({
   badges,
   locale,
   badgeLabels,
-}: ProductCardProps): React.JSX.Element => {
+}: ProductCardProps): React.JSX.Element {
   const hasDiscount = typeof salePrice === 'number' && salePrice > 0 && salePrice < price;
   const displayPrice = hasDiscount ? salePrice : price;
   const coverImage = images[0] ?? '/placeholder-product.png';
@@ -118,7 +118,7 @@ export const ProductCard = ({
           />
           {badges != null && badges.length > 0 ? (
             <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-              {badges.map(badge => (
+              {badges.map((badge) => (
                 <span
                   key={badge}
                   className={cn('rounded-full border px-2.5 py-0.5 text-[10px] font-bold tracking-wider uppercase', BADGE_STYLES[badge])}
@@ -162,4 +162,4 @@ export const ProductCard = ({
       </motion.div>
     </Link>
   );
-};
+}

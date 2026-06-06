@@ -3,11 +3,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Check, Minus, Plus, ShoppingCart, Zap } from 'lucide-react';
 
+import { VariantSelector } from '@/app/[locale]/(shop)/_lib/components/products/VariantSelector';
 import { useAddToCart } from '@/app/[locale]/(shop)/_lib/hooks/products/useAddToCart';
 import type { ProductDisplay } from '@/app/[locale]/(shop)/_lib/types/product';
 import { Button } from '@/shared/components/base/Button';
-
-import { VariantSelector } from './VariantSelector';
 
 interface AddToCartSectionProps {
   readonly product: ProductDisplay;
@@ -25,8 +24,9 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
         <div className="flex items-center gap-4">
           <div className="border-muted-foreground/20 bg-muted/50 flex items-center rounded-xl border p-1">
             <button
+              type="button"
               onClick={() => {
-                setQuantity(prev => Math.max(1, prev - 1));
+                setQuantity((prev) => Math.max(1, prev - 1));
               }}
               className="hover:bg-muted flex size-10 items-center justify-center rounded-lg transition-colors"
               disabled={quantity <= 1}
@@ -35,8 +35,9 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
             </button>
             <span className="w-12 text-center font-bold">{quantity}</span>
             <button
+              type="button"
               onClick={() => {
-                setQuantity(prev => Math.min(maxStock, prev + 1));
+                setQuantity((prev) => Math.min(maxStock, prev + 1));
               }}
               className="hover:bg-muted flex size-10 items-center justify-center rounded-lg transition-colors"
               disabled={quantity >= maxStock}

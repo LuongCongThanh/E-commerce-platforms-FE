@@ -11,7 +11,7 @@ const profileKey = ['profile'] as const;
 export const useUpdateProfile = () => {
   const qc = useQueryClient();
   return useMutation({
-    mutationFn: (data: Partial<User>) => profileActions.update(data),
+    mutationFn: async (data: Partial<User>) => profileActions.update(data),
     onSuccess: async () => {
       await qc.invalidateQueries({ queryKey: profileKey });
       toast.success('Cập nhật thông tin thành công');
