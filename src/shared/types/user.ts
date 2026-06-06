@@ -21,7 +21,7 @@ export const RegisterSchema = LoginSchema.extend({
   firstName: z.string().min(1, 'Vui lòng nhập tên'),
   lastName: z.string().min(1, 'Vui lòng nhập họ'),
   confirmPassword: z.string(),
-}).refine(d => d.password === d.confirmPassword, {
+}).refine((d) => d.password === d.confirmPassword, {
   message: 'Mật khẩu không khớp',
   path: ['confirmPassword'],
 });

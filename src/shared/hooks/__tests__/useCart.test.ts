@@ -78,8 +78,8 @@ describe('useCart', () => {
     act(() => result.current.addToCart(itemA));
     act(() => result.current.addToCart(itemB));
     act(() => result.current.addToCart({ ...itemA, quantity: 2 }));
-    expect(result.current.items.find(i => i.variantId === 'v1')?.quantity).toBe(3);
-    expect(result.current.items.find(i => i.variantId === 'v2')?.quantity).toBe(2);
+    expect(result.current.items.find((i) => i.variantId === 'v1')?.quantity).toBe(3);
+    expect(result.current.items.find((i) => i.variantId === 'v2')?.quantity).toBe(2);
   });
 
   it('updates only the matched variant quantity when cart has multiple items', () => {
@@ -87,8 +87,8 @@ describe('useCart', () => {
     act(() => result.current.addToCart(itemA));
     act(() => result.current.addToCart(itemB));
     act(() => result.current.updateQuantity('v1', 10));
-    expect(result.current.items.find(i => i.variantId === 'v1')?.quantity).toBe(10);
-    expect(result.current.items.find(i => i.variantId === 'v2')?.quantity).toBe(2);
+    expect(result.current.items.find((i) => i.variantId === 'v1')?.quantity).toBe(10);
+    expect(result.current.items.find((i) => i.variantId === 'v2')?.quantity).toBe(2);
   });
 
   it('persists cart to localStorage on mutation', () => {

@@ -18,7 +18,7 @@ export function makeQueryClient() {
       },
       mutations: {
         retry: false,
-        onError: error => {
+        onError: (error) => {
           const message = error instanceof ApiError ? error.message : 'Đã có lỗi xảy ra, vui lòng thử lại';
           toast.error(message);
         },

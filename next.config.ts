@@ -1,8 +1,7 @@
-import type { NextConfig } from 'next';
-import createNextIntlPlugin from 'next-intl/plugin';
-
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import withSerwistInit from '@serwist/next';
+import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
 
 const withAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
@@ -13,7 +12,7 @@ const withSerwist = withSerwistInit({
   swDest: 'public/sw.js',
   disable: process.env.NODE_ENV === 'development',
   register: true,
-  cacheOnNavigation: true,
+  cacheOnNavigation: false,
   reloadOnOnline: true,
 });
 

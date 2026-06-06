@@ -65,6 +65,8 @@ Không bao gồm:
 | Validation               | Zod 4.3.6                                          | Type-safe schema cho FE contracts                                     |
 | i18n                     | next-intl 4.9.1                                    | Chuẩn hóa localization                                                |
 | Monitoring               | @sentry/nextjs 10.49.0                             | Theo dõi lỗi production                                               |
+| Toast notifications      | sonner 2.0.7                                       | Thông báo UI nhẹ, tích hợp qua `shared/lib/notification.ts`           |
+| Image CDN                | Cloudinary (qua `buildImageUrl()`)                 | Transform ảnh on-the-fly, fallback placeholder                        |
 | Testing unit/integration | Vitest 4.1.4 + Testing Library                     | Nhanh, phù hợp FE workflows                                           |
 | E2E testing              | Playwright 1.59.1                                  | Kiểm thử luồng nghiệp vụ đầu-cuối                                     |
 | Công cụ chất lượng       | ESLint 9.39.4 + Prettier 3.8.3 + Husky 9.1.7       | Bắt buộc qua `npm run format` (Prettier trước ESLint) trước khi merge |
@@ -87,6 +89,7 @@ Không bao gồm:
 | next-intl             | ^4.9.1   |
 | @sentry/nextjs        | ^10.49.0 |
 | @serwist/next         | ^9.5.7   |
+| sonner                | ^2.0.7   |
 
 #### Dev dependencies (core)
 
@@ -181,7 +184,7 @@ Gate rules before release:
 Chosen now:
 
 - COD-first checkout.
-- App Router route group pattern với `_components/_lib` co-location.
+- App Router route group pattern với `_lib/` co-location (components, hooks, actions, schemas, types đều nằm trong `_lib/`).
 - Server state: TanStack Query. Client state: `useSyncExternalStore` (built-in, không cần thư viện ngoài).
 - CI quality gates tối thiểu.
 

@@ -32,7 +32,7 @@ function AvatarImage({ src, name }: { readonly src: string; readonly name: strin
   );
 }
 
-export const TestimonialCard = ({ name, avatar, rating, quote, meta }: TestimonialCardProps): React.JSX.Element => {
+export function TestimonialCard({ name, avatar, rating, quote, meta }: TestimonialCardProps): React.JSX.Element {
   return (
     <div className="bg-card text-card-foreground flex flex-col gap-3 rounded-xl border p-5 shadow-sm">
       <StarRating rating={rating} />
@@ -46,4 +46,4 @@ export const TestimonialCard = ({ name, avatar, rating, quote, meta }: Testimoni
       </div>
     </div>
   );
-};
+}

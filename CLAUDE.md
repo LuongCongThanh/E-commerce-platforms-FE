@@ -20,7 +20,7 @@ npm run format:check    # Prettier (check only)
 # Testing
 npm run test            # Vitest (run once)
 npm run test:watch      # Vitest (watch mode)
-npm run test:coverage   # Coverage — 70% threshold on shared/lib/** and shared/hooks/**
+npm run test:coverage   # Coverage — 99% threshold on shared/lib/**, shared/hooks/**, shared/components/**
 npm run test:e2e        # Playwright end-to-end
 
 # Utilities
@@ -45,20 +45,41 @@ App Router under `src/app/[locale]/` with three route groups:
 
 All cross-feature utilities live here:
 
-| Path                         | Purpose                                                                                  |
-| ---------------------------- | ---------------------------------------------------------------------------------------- |
-| `components/ui/`             | Shadcn-style Radix primitive wrappers                                                    |
-| `lib/http/`                  | Axios client + interceptors (auth token injection, `ApiError` transform, Sentry for 5xx) |
-| `lib/errors/`                | `ApiError` class with helpers: `isUnauthorized()`, `isForbidden()`, `isValidation()`     |
-| `lib/guards/`                | `AuthGuard` client component for route protection                                        |
-| `lib/query-client.ts`        | React Query config — skip retry <500, retry 2× for server errors                         |
-| `stores/`                    | Zustand stores (`auth-store`, `cart-store`) persisted to localStorage                    |
-| `types/`                     | Zod schemas + `z.infer<>` TypeScript types for API contracts                             |
-| `constants/api-endpoints.ts` | API path constants — functions for parameterized routes                                  |
+| Path                          | Purpose                                                                          |
+| ----------------------------- | -------------------------------------------------------------------------------- |
+| `components/base/`            | Shadcn-style Radix primitive wrappers (Button, Input, Dialog, etc.)              |
+| `components/commerce/`        | Domain components: `ProductCard`, `CategoryCard`, `CartDrawer`                   |
+| `components/common/`          | Utility UI: `PaginationNav`, `PriceDisplay`, `PasswordInput`, `EmptyState`, etc. |
+| `components/layouts/`         | `Header`, `Footer`                                                               |
+| `components/marketing/`       | `CountdownTimer`, `NewsletterForm`, `SectionHeading`, `TrustBadgeList`           |
+| `components/navigation/`      | `DesktopMegaMenu`, `MobileNav`                                                   |
+| `components/skeletons/`       | `ProductCardSkeleton`, `ProductGridSkeleton`                                     |
+| `hooks/`                      | Client state: `useAuth`, `useCart`; `useDebounce`, `usePagination`, and more     |
+| `lib/http/client.ts`          | Axios instance + interceptors (token injection, `ApiError` transform, Sentry)    |
+| `lib/http/api-auth.ts`        | Auth store: `setAccessToken`, `setUser`, `clearAuth`, `subscribeAuth`            |
+| `lib/http/api-types.ts`       | Shared HTTP response envelope types                                              |
+| `lib/http/zod-helpers.ts`     | Zod parse helpers for API responses                                              |
+| `lib/errors/`                 | `ApiError` with helpers: `isUnauthorized()`, `isForbidden()`, `isValidation()`   |
+| `lib/guards/`                 | `AuthGuard` client component for route protection                                |
+| `lib/monitoring/`             | Sentry SDK initialization                                                        |
+| `lib/payment/`                | Payment integrations: `momo`, `vnpay`, `zalopay`                                 |
+| `lib/cloudinary.ts`           | `buildImageUrl()` — Cloudinary URL builder with transform options                |
+| `lib/seo.ts`                  | `buildMetadata()` — Next.js `Metadata` factory for all pages                     |
+| `lib/notification.ts`         | `notify` — Sonner toast wrapper (`success`, `error`, `info`, `warning`)          |
+| `lib/query-client.ts`         | React Query config — skip retry <500, retry 2× for server errors                 |
+| `lib/env.ts`                  | Zod-validated environment variables                                              |
+| `lib/utils.ts`                | `formatCurrency`, `formatDate`, `slugify`                                        |
+| `types/`                      | Zod schemas + `z.infer<>` TypeScript types for API contracts                     |
+| `constants/api-endpoints.ts`  | API path constants — functions for parameterized routes                          |
+| `constants/query-keys.ts`     | React Query key factory                                                          |
+| `constants/routes.ts`         | App route path constants                                                         |
+| `constants/app-config.ts`     | `APP_CONFIG`, order/payment status labels, color maps, `SORT_OPTIONS`            |
+| `constants/nav-categories.ts` | `NAV_CATEGORIES` — mega-menu category tree                                       |
+| `constants/payment-config.ts` | `PAYMENT_CONFIG` (VNPay, Momo, ZaloPay), `PAYMENT_LABELS`                        |
 
 ### State Management
 
-- **Zustand** (`subscribeWithSelector` + `persist`) for client state (auth tokens, cart)
+- **`useSyncExternalStore`** (React built-in) for client state — module-level stores in `shared/lib/http/api-auth.ts` (auth tokens) and `shared/hooks/useCart.ts` (cart); accessed via `shared/hooks/useAuth` and `shared/hooks/useCart`
 - **React Query** for all server state; configured in `shared/lib/query-client.ts`
 
 ### HTTP Client
@@ -93,7 +114,7 @@ Enforced ESLint rules for Type Safety:
 
 ### Localization
 
-**next-intl** with messages in `src/messages/` (`vi` default, `en` secondary). `formatCurrency`, `formatDate`, `slugify` in `shared/lib/utils.ts`. Dates use `date-fns` with Vietnamese locale; currency as VND.
+**next-intl** with messages in `src/lang/` (`vi` default, `en` secondary). `formatCurrency`, `formatDate`, `slugify` in `shared/lib/utils.ts`. Dates use `date-fns` with Vietnamese locale; currency as VND.
 
 ### Environment
 
@@ -124,7 +145,7 @@ import { Foo } from '@/app/[locale]/(shop)/_lib/types';
 import { bar } from '@/shared/lib/http/client';
 ```
 
-Same-directory imports (`./foo`) are allowed. Only upward traversal (`../`) is banned.
+All imports must use the `@/*` alias — including same-directory imports. No relative imports of any kind (`./foo`, `../`) are allowed.
 
 ## Code Conventions
 

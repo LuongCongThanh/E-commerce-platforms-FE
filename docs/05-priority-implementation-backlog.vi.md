@@ -105,7 +105,7 @@ Không bao gồm:
 
 - P0 done:
   - [x] Scope locked
-  - [x] Architecture locked (App Router route groups + `_lib/_components`)
+  - [x] Architecture locked (App Router route groups + `_lib/` co-location)
   - [x] Version baseline locked (Next.js 16.2.6, React 19.2.4)
   - [ ] Tracking protocol active
 - P1 done:

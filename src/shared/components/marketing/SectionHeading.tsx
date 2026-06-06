@@ -10,7 +10,7 @@ interface SectionHeadingProps {
   readonly align?: 'left' | 'center';
 }
 
-export const SectionHeading = ({ title, subtitle, ctaLabel, ctaHref, align = 'left' }: SectionHeadingProps): React.JSX.Element => {
+export function SectionHeading({ title, subtitle, ctaLabel, ctaHref, align = 'left' }: SectionHeadingProps): React.JSX.Element {
   const isCenter = align === 'center';
 
   return (
@@ -26,4 +26,4 @@ export const SectionHeading = ({ title, subtitle, ctaLabel, ctaHref, align = 'le
       ) : null}
     </div>
   );
-};
+}

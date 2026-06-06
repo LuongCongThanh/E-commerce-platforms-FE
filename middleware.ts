@@ -1,6 +1,7 @@
-import createMiddleware from 'next-intl/middleware';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
+
+import createMiddleware from 'next-intl/middleware';
 
 const intlMiddleware = createMiddleware({
   locales: ['vi', 'en'],
@@ -18,14 +19,14 @@ export function middleware(request: NextRequest): ReturnType<typeof intlMiddlewa
 
   const locale = pathname.startsWith('/en/') ? 'en' : 'vi';
 
-  if (PROTECTED_PATTERNS.some(p => p.test(pathname))) {
+  if (PROTECTED_PATTERNS.some((p) => p.test(pathname))) {
     if (!isLoggedIn) {
       const returnUrl = encodeURIComponent(pathname + request.nextUrl.search);
       return NextResponse.redirect(new URL(`/${locale}/login?returnUrl=${returnUrl}`, request.url));
     }
   }
 
-  if (AUTH_ONLY_PATTERNS.some(p => p.test(pathname))) {
+  if (AUTH_ONLY_PATTERNS.some((p) => p.test(pathname))) {
     if (isLoggedIn) {
       return NextResponse.redirect(new URL(`/${locale}/home`, request.url));
     }

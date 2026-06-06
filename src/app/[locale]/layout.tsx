@@ -1,13 +1,14 @@
+import { notFound } from 'next/navigation';
+
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
-import { notFound } from 'next/navigation';
 
 import { Providers } from '@/app/providers';
 
 const locales = ['vi', 'en'];
 
 export function generateStaticParams() {
-  return locales.map(locale => ({ locale }));
+  return locales.map((locale) => ({ locale }));
 }
 
 export default async function LocaleLayout({

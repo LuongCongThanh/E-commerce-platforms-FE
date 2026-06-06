@@ -9,7 +9,7 @@ interface CategoryCardProps {
   readonly countLabel?: string;
 }
 
-export const CategoryCard = ({ name, image, productCount, href, countLabel }: CategoryCardProps): React.JSX.Element => {
+export function CategoryCard({ name, image, productCount, href, countLabel }: CategoryCardProps): React.JSX.Element {
   return (
     <Link href={href} className="group block">
       <div className="flex flex-col gap-2">
@@ -33,4 +33,4 @@ export const CategoryCard = ({ name, image, productCount, href, countLabel }: Ca
       </div>
     </Link>
   );
-};
+}

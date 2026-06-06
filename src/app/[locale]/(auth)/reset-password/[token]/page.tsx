@@ -1,7 +1,8 @@
-import { setRequestLocale } from 'next-intl/server';
 import { redirect } from 'next/navigation';
 
-import { ResetPasswordForm } from '@/app/[locale]/(auth)/_components/ResetPasswordForm';
+import { setRequestLocale } from 'next-intl/server';
+
+import { ResetPasswordForm } from '@/app/[locale]/(auth)/_lib/components/ResetPasswordForm';
 
 interface ResetPasswordPageProps {
   readonly params: Promise<{ locale: string; token: string }>;

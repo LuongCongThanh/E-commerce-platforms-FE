@@ -2,18 +2,18 @@ import { z } from 'zod';
 
 import { APP_CONFIG } from '@/shared/constants/app-config';
 
-const optionalString = z.union([z.string(), z.undefined()]).transform(value => {
+const optionalString = z.union([z.string(), z.undefined()]).transform((value) => {
   if (value == null) return undefined;
   const trimmed = value.trim();
   return trimmed.length > 0 ? trimmed : undefined;
 });
 
-const optionalNumber = z.preprocess(value => {
+const optionalNumber = z.preprocess((value) => {
   if (value == null || value === '') return undefined;
   return value;
 }, z.coerce.number());
 
-const optionalBooleanFromSearchParam = z.preprocess(value => {
+const optionalBooleanFromSearchParam = z.preprocess((value) => {
   if (value == null || value === '') return undefined;
   if (value === true || value === 'true') return true;
   if (value === false || value === 'false') return false;

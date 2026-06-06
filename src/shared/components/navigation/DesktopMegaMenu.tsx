@@ -32,7 +32,7 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
   };
 
   return (
-    <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <nav className="relative" aria-label="Danh mục sản phẩm" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
         type="button"
         aria-expanded={isOpen}
@@ -57,7 +57,7 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
               {/* Left Column: Categories */}
               <div className="w-[200px] shrink-0 border-r border-neutral-200/50 bg-neutral-50/50 py-3 dark:border-white/10 dark:bg-neutral-950/50">
                 <ul className="relative flex flex-col px-2">
-                  {NAV_CATEGORIES.map(cat => {
+                  {NAV_CATEGORIES.map((cat) => {
                     const isActive = activeCategory.slug === cat.slug;
                     return (
                       <li key={cat.slug} className="relative">
@@ -115,7 +115,7 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
                         }}
                         className="group text-primary-600 hover:text-primary-500 dark:text-primary-400 flex items-center gap-1 text-xs font-semibold tracking-wide transition-colors"
                       >
-                        Xem tất cả
+                        <span>Xem tất cả</span>
                         <span className="bg-primary-100 group-hover:bg-primary-200 dark:bg-primary-900/50 rounded-full px-1.5 py-0.5 text-[10px]">
                           {activeCategory.productCount}
                         </span>
@@ -179,6 +179,6 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </div>
+    </nav>
   );
 }

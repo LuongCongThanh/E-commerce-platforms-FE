@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { AppProgressBar } from 'next-nprogress-bar';
-import { ThemeProvider } from 'next-themes';
 
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { AppProgressBar } from 'next-nprogress-bar';
+import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'sonner';
 
 import { makeQueryClient } from '@/shared/lib/query-client';
@@ -17,6 +17,7 @@ interface ProvidersProps {
 }
 
 export function Providers({ children }: ProvidersProps) {
+  // eslint-disable-next-line react/hook-use-state
   const [queryClient] = useState(() => makeQueryClient());
 
   return (

@@ -1,11 +1,11 @@
 import { use } from 'react';
-import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import { ChevronLeft } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
-import { CheckoutForm } from '@/app/[locale]/(shop)/_components/checkout/CheckoutForm';
-import { OrderSummary } from '@/app/[locale]/(shop)/_components/checkout/OrderSummary';
+import { CheckoutClient } from '@/app/[locale]/(shop)/_lib/components/checkout/CheckoutClient';
+import { OrderSummary } from '@/app/[locale]/(shop)/_lib/components/checkout/OrderSummary';
 
 export default function CheckoutPage({ params }: { readonly params: Promise<{ locale: string }> }) {
   const { locale } = use(params);
@@ -25,7 +25,7 @@ export default function CheckoutPage({ params }: { readonly params: Promise<{ lo
         <div className="grid gap-12 lg:grid-cols-[1fr_400px]">
           <div>
             <h1 className="mb-8 text-4xl font-bold tracking-tight">{t('title')}</h1>
-            <CheckoutForm />
+            <CheckoutClient />
           </div>
 
           <div className="relative">

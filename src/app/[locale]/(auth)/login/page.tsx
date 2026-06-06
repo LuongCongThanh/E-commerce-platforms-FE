@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
+
 import { setRequestLocale } from 'next-intl/server';
 
-import { LoginForm } from '@/app/[locale]/(auth)/_components/LoginForm';
+import { LoginForm } from '@/app/[locale]/(auth)/_lib/components/LoginForm';
 
 interface LoginPageProps {
   readonly params: Promise<{ locale: string }>;
