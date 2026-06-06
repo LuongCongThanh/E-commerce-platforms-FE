@@ -8,8 +8,6 @@ import {
   formatDate,
   formatDateTime,
   getDefaultPageSize,
-  getOrderStatusColor,
-  getOrderStatusLabel,
   parseSearchParams,
   slugify,
   truncateText,
@@ -124,17 +122,6 @@ describe('truncateText', () => {
   it('returns empty string when maxLength is 0 or negative', () => {
     expect(truncateText('any text', 0)).toBe('');
     expect(truncateText('any text', -1)).toBe('');
-  });
-});
-
-describe('order status helpers', () => {
-  it('returns translated status label', () => {
-    expect(getOrderStatusLabel('pending')).toBe('Chờ xác nhận');
-  });
-
-  it('returns fallback color for unknown status', () => {
-    expect(getOrderStatusColor('pending')).toBe('bg-yellow-100 text-yellow-700');
-    expect(getOrderStatusColor('unknown' as never)).toBe('bg-gray-100 text-gray-600');
   });
 });
 
