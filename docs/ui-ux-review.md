@@ -124,7 +124,7 @@ Hoặc dùng CSS:
 <QuantitySelector
   value={item.quantity}
   max={item.stock ?? 99} // cap tại stock
-  onChange={qty => updateQuantity(item.variantId, qty)}
+  onChange={(qty) => updateQuantity(item.variantId, qty)}
 />
 ```
 
@@ -134,7 +134,7 @@ Hoặc dùng CSS:
 
 **Vấn đề:** `will-change: transform` set globally trên nhiều elements → tốn GPU memory, đặc biệt trên mobile.
 
-**File:** `src/app/[locale]/(shop)/_components/home/SectionHero.tsx`
+**File:** `src/app/[locale]/(shop)/_lib/components/home/SectionHero.tsx`
 
 **Fix:** Chỉ apply `will-change` trong `onMouseEnter`, remove trong `onMouseLeave`:
 

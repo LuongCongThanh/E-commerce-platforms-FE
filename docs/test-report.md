@@ -230,8 +230,8 @@
 | `shared/lib/seo.ts`                 |   100% | **85.71%** ⚠️ |   100% |   100% | Title, canonical, OG, noIndex           |
 | `shared/lib/utils.ts`               |   100% | **89.65%** ⚠️ |   100% |   100% | Tất cả exported functions               |
 | `shared/lib/http/zod-helpers.ts`    |   100% |          100% |   100% |   100% | Parse, strip, error contract            |
-| `shared/stores/auth-store.ts`       |   100% |          100% |   100% |   100% | Tất cả actions                          |
-| `shared/stores/cart-store.ts`       |   100% |          100% |   100% |   100% | Tất cả actions + derived state          |
+| `shared/hooks/useAuth.ts`           |   100% |          100% |   100% |   100% | Tất cả actions                          |
+| `shared/hooks/useCart.ts`           |   100% |          100% |   100% |   100% | Tất cả actions + derived state          |
 
 ### Chưa có unit test (ngoài phạm vi shared lib)
 

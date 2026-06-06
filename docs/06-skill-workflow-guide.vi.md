@@ -118,7 +118,7 @@ Step 2  /frontend-design
 Step 3  Implement component
         → TypeScript props với kiểu dữ liệu tường minh. Không dùng `any`.
         → CVA cho variant nếu có hơn 2 trạng thái visual.
-        → Export từ shared/components/ui/ nếu tái sử dụng được qua các feature.
+        → Export từ shared/components/base/ (primitives) hoặc shared/components/common/ (domain-agnostic) nếu tái sử dụng được qua các feature.
 
 Step 4  /tailwind-patterns
         → Review thứ tự class, responsive behavior, dark mode nếu áp dụng.
@@ -672,7 +672,7 @@ Step 1  Đọc backlog doc
 
 Step 2  /concise-planning
   → Checklist:
-    [ ] Zustand cart store với persist middleware (shared/stores/cart-store.ts)
+    [ ] Zustand cart store với persist middleware (shared/hooks/useCart.ts)
     [ ] Actions addItem / removeItem / updateQuantity / clearCart
     [ ] Component CartDrawer (mở/đóng qua icon ở header)
     [ ] Component CartItemRow (ảnh, tên, quantity stepper, nút xóa)

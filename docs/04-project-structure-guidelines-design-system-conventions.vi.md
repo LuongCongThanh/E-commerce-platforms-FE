@@ -58,13 +58,23 @@ src/
   app/
     [locale]/
       (shop)/
-        _components/        # UI components cho shop feature
         _lib/
-          actions.ts        # Server actions
-          data/             # Data-fetching functions (server-side)
-          hooks/            # React Query hooks + feature hooks
-          schemas.ts        # Zod form schemas
-          types/            # Feature-local types
+          actions/          # Server actions (order.ts, product.ts, profile.ts)
+          components/       # UI components — private to shop
+            common/         # Shared across ≥2 shop features (ProductGrid, Pagination…)
+            home/           # Home page sections
+            products/       # Product listing & detail
+            categories/     # Category + filter
+            cart/           # Cart view
+            checkout/       # Checkout flow
+            orders/         # Order history & detail
+            profile/        # Profile page
+            search/         # Search results
+          data/             # Mock data thuần (thay thế bằng API khi backend sẵn sàng)
+          queries/          # Query helpers trên mock data (getProductBySlug, getCategoryBySlug)
+          hooks/            # Feature-specific hooks (useProducts, useCreateOrder…)
+          schemas/          # Zod form schemas (checkout.ts, filter.ts, profile.ts)
+          types/            # Feature-local types (ProductDisplay, HomeSection…)
         page.tsx
         layout.tsx
         categories/[slug]/page.tsx
@@ -73,10 +83,10 @@ src/
         checkout/page.tsx
         orders/[id]/page.tsx
       (auth)/
-        _components/        # UI components cho auth feature
         _lib/
-          actions.ts
-          schemas.ts
+          actions/          # Auth server actions (auth.ts)
+          components/       # Auth form components (LoginForm, RegisterForm…)
+          schemas/          # Zod form schemas (auth.ts)
         layout.tsx
         login/page.tsx
         register/page.tsx
@@ -95,17 +105,21 @@ src/
       commerce/             # Commerce-specific (ProductCard, CategoryCard…)
       marketing/            # Marketing sections (SectionHeading, CountdownTimer…)
       skeletons/            # Loading skeleton components
-    hooks/                  # Cross-feature hooks (useAuth, useCart, useDebounce…)
+    hooks/                  # Cross-feature hooks (useAuth, useCart, useDebounce, useLocalStorage…)
     lib/
-      http/                 # client.ts (http object), api-auth.ts, api-types.ts
+      http/                 # client.ts, api-auth.ts, api-types.ts, zod-helpers.ts
       errors/               # ApiError class, error-codes
+      guards/               # AuthGuard client component
       monitoring/           # Sentry integration
       payment/              # VNPay / Momo / ZaloPay lib
-    constants/              # api-endpoints.ts, routes.ts, query-keys.ts…
+      cloudinary.ts         # buildImageUrl() — Cloudinary URL builder
+      seo.ts                # buildMetadata() — Next.js Metadata factory
+      notification.ts       # notify object wrapping Sonner toast
+    constants/              # api-endpoints.ts, routes.ts, query-keys.ts, app-config.ts, nav-categories.ts, payment-config.ts
     types/                  # Zod schemas + z.infer<> types
   i18n/
     request.ts
-  messages/                 # vi.json, en.json
+  lang/                     # Translation files: lang/vi/, lang/en/ (mỗi namespace 1 file JSON)
   __tests__/                # Global test setup và helpers
 ```
 
@@ -113,7 +127,7 @@ src/
 
 - App Router responsibilities:
   - Page/layout ở `app/[locale]/(feature)/` chỉ orchestrate — không chứa business logic nặng.
-  - Logic feature nằm trong `_lib/` (data-fetching, hooks, actions) và `_components/` (UI) của route group đó.
+  - Logic feature nằm trong `_lib/` — bao gồm `actions/`, `components/`, `hooks/`, `schemas/`, `types/`, `data/`.
   - Route-level metadata/loading/error được đặt tại mức segment tương ứng.
 - Feature ownership (route group pattern):
   - `(shop)/_lib/`: listing, PDP, search, filter, cart, checkout, orders.
@@ -122,7 +136,7 @@ src/
 - Shared boundary:
   - Chỉ đưa vào `shared/` khi được dùng từ 2 route group trở lên.
   - `shared/` không được import từ bất kỳ `(feature)/` route group nào.
-  - `_components/` và `_lib/` của một route group là private — route group khác không import chéo.
+  - `_lib/` của một route group là private — route group khác không import chéo.
 
 ### Coding guidelines
 
@@ -149,7 +163,7 @@ src/
   - Authentication được xử lý tự động qua interceptors trong `client.ts`.
 - State boundaries:
   - Server state: TanStack Query.
-  - Client state: `useSyncExternalStore` + module-level store (auth trong `api-auth.ts`, cart trong `useCart.ts`).
+  - Client state: `useSyncExternalStore` (React built-in) + module-level stores — auth trong `shared/lib/http/api-auth.ts`, cart trong `shared/hooks/useCart.ts`. Không dùng Zustand hay thư viện state ngoài.
   - Local UI state: component-level `useState`/`useReducer`.
 
 ### Design system standards
