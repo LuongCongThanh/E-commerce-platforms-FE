@@ -23,7 +23,12 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'lcov', 'json-summary'],
       reportsDirectory: './coverage/unit',
-      include: ['src/shared/lib/**/*.{ts,tsx}', 'src/shared/hooks/**/*.{ts,tsx}', 'src/shared/stores/**/*.{ts,tsx}'],
+      include: [
+        'src/shared/lib/**/*.{ts,tsx}',
+        'src/shared/hooks/**/*.{ts,tsx}',
+        'src/shared/stores/**/*.{ts,tsx}',
+        'src/shared/components/**/*.{ts,tsx}',
+      ],
       exclude: [
         'src/**/*.d.ts',
         'src/**/__tests__/**',
@@ -41,10 +46,10 @@ export default defineConfig({
         'src/shared/lib/errors/error-codes.ts',
       ],
       thresholds: {
-        lines: 70,
-        functions: 70,
-        branches: 70,
-        statements: 70,
+        lines: 99,
+        functions: 99,
+        branches: 99,
+        statements: 99,
       },
     },
   },
