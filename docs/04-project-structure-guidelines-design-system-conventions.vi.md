@@ -141,9 +141,10 @@ src/
 ### Coding guidelines
 
 - Naming:
-  - File component: `kebab-case.tsx`.
+  - File component: ưu tiên giữ theo naming đã dùng ổn định trong repo; với shared UI primitives hiện tại có thể là `PascalCase.tsx` hoặc tên gốc từ thư viện wrapper, nhưng phải nhất quán trong cùng một nhóm.
   - Component export: `PascalCase`.
-  - Hook: `use-*.ts`.
+  - Hook file: `useCamelCase.ts`.
+  - Utility / constants / types file: `camelCase.ts` theo từng nhóm.
   - Constants: `UPPER_SNAKE_CASE` cho static constants.
 - Imports:
   - Ưu tiên alias theo layer (ví dụ: `@/shared`, `@/modules`).

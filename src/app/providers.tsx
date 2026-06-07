@@ -8,6 +8,7 @@ import { AppProgressBar } from 'next-nprogress-bar';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'sonner';
 
+import { AuthRuntimeProvider } from '@/app/[locale]/(auth)/_lib/components/AuthRuntimeProvider';
 import { makeQueryClient } from '@/shared/lib/query-client';
 
 const progressBarOptions = { showSpinner: false };
@@ -21,22 +22,24 @@ export function Providers({ children }: ProvidersProps) {
   const [queryClient] = useState(() => makeQueryClient());
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-        {children}
-        <Toaster
-          richColors
-          position="top-right"
-          toastOptions={{
-            className: 'glass !shadow-spatial-lg !border-glass-border',
-            style: {
-              backdropFilter: 'blur(16px)',
-            },
-          }}
-        />
-        <AppProgressBar color="#e85d04" height="2px" options={progressBarOptions} />
-        {process.env.NODE_ENV === 'development' && <ReactQueryDevtools initialIsOpen={false} />}
-      </ThemeProvider>
-    </QueryClientProvider>
+    <AuthRuntimeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          {children}
+          <Toaster
+            richColors
+            position="top-right"
+            toastOptions={{
+              className: 'glass !shadow-spatial-lg !border-glass-border',
+              style: {
+                backdropFilter: 'blur(16px)',
+              },
+            }}
+          />
+          <AppProgressBar color="#e85d04" height="2px" options={progressBarOptions} />
+          {process.env.NODE_ENV === 'development' && <ReactQueryDevtools initialIsOpen={false} />}
+        </ThemeProvider>
+      </QueryClientProvider>
+    </AuthRuntimeProvider>
   );
 }

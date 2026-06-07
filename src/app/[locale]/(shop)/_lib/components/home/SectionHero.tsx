@@ -7,9 +7,9 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLocale } from 'next-intl';
 
+import { TrustBadgeList } from '@/app/[locale]/(shop)/_lib/components/home/TrustBadgeList';
 import { homeHeroData } from '@/app/[locale]/(shop)/_lib/data/home';
 import { Button } from '@/shared/components/base/Button';
-import { TrustBadgeList } from '@/shared/components/marketing/TrustBadgeList';
 
 export function SectionHero(): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);

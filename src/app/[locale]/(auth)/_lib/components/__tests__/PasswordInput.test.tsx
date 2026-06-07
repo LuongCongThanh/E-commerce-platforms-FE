@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import { PasswordInput } from '@/shared/components/common/PasswordInput';
+import { PasswordInput } from '@/app/[locale]/(auth)/_lib/components/PasswordInput';
 
 describe('PasswordInput', () => {
   it('renders input with type password by default', () => {

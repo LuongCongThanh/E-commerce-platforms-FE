@@ -2,9 +2,9 @@
 
 import { useLocale } from 'next-intl';
 
+import { CategoryCard } from '@/app/[locale]/(shop)/_lib/components/common/CategoryCard';
+import { SectionHeading } from '@/app/[locale]/(shop)/_lib/components/common/SectionHeading';
 import { homeCategoriesData } from '@/app/[locale]/(shop)/_lib/data/home';
-import { CategoryCard } from '@/shared/components/commerce/CategoryCard';
-import { SectionHeading } from '@/shared/components/marketing/SectionHeading';
 
 export function SectionFeaturedCategories(): React.JSX.Element {
   const locale = useLocale();

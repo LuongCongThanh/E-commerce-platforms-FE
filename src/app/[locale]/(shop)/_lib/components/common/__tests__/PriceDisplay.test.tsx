@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { PriceDisplay } from '@/shared/components/common/PriceDisplay';
+import { PriceDisplay } from '@/app/[locale]/(shop)/_lib/components/common/PriceDisplay';
 
 describe('PriceDisplay', () => {
   it('shows only the main price span when no sale price', () => {

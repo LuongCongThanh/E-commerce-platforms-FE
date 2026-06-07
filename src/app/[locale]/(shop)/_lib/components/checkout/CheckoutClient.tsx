@@ -8,9 +8,9 @@ import { motion } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
+import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
 import { checkoutSchema } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
-import { useCart } from '@/shared/hooks/useCart';
 
 type CheckoutValues = CheckoutInput;
 

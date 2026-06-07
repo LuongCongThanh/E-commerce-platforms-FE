@@ -1,8 +1,8 @@
 import { act, renderHook } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { clearAuth, setAccessToken } from '@/shared/lib/http/api-auth';
-import { login, useAuth, useIsLoggedIn } from '@/shared/hooks/useAuth';
+import { clearAuth, setAccessToken } from '@/app/[locale]/(auth)/_lib/store/auth-store';
+import { login, useAuth, useIsLoggedIn } from '@/app/[locale]/(auth)/_lib/hooks/useAuth';
 
 const mockPush = vi.fn();
 vi.mock('next/navigation', () => ({ useRouter: () => ({ push: mockPush }) }));

@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 
-import type { NavCategory } from '@/shared/constants/nav-categories';
-import { NAV_CATEGORIES } from '@/shared/constants/nav-categories';
+import type { NavCategory } from '@/app/[locale]/(shop)/_lib/data/nav-categories';
+import { NAV_CATEGORIES } from '@/app/[locale]/(shop)/_lib/data/nav-categories';
 
 interface DesktopMegaMenuProps {
   readonly locale: string;

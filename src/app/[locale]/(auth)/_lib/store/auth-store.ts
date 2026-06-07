@@ -7,42 +7,42 @@ export interface AuthSnapshot {
   user: User | null;
 }
 
-let _snapshot: AuthSnapshot = { token: null, user: null };
-const _listeners = new Set<Listener>();
+let snapshot: AuthSnapshot = { token: null, user: null };
+const listeners = new Set<Listener>();
 
 function notify(): void {
-  _listeners.forEach((l) => {
-    l();
+  listeners.forEach((listener) => {
+    listener();
   });
 }
 
 export function subscribeAuth(listener: Listener): () => void {
-  _listeners.add(listener);
+  listeners.add(listener);
   return () => {
-    _listeners.delete(listener);
+    listeners.delete(listener);
   };
 }
 
 export function getAuthSnapshot(): AuthSnapshot {
-  return _snapshot;
+  return snapshot;
 }
 
 export function getAccessToken(): string | null {
-  return _snapshot.token;
+  return snapshot.token;
 }
 
 export function setAccessToken(token: string | null): void {
-  _snapshot = { ..._snapshot, token };
+  snapshot = { ...snapshot, token };
   notify();
 }
 
 export function setUser(user: User): void {
-  _snapshot = { ..._snapshot, user };
+  snapshot = { ...snapshot, user };
   notify();
 }
 
 export function clearAuth(): void {
-  _snapshot = { token: null, user: null };
+  snapshot = { token: null, user: null };
   notify();
 }
 

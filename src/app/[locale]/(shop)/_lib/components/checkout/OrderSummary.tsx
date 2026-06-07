@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
-import { useCart } from '@/shared/hooks/useCart';
+import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 
 export function OrderSummary() {
   const t = useTranslations('checkout');

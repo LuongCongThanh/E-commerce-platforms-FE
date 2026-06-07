@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { useProductFilters } from '@/shared/hooks/useProductFilters';
+import { useProductFilters } from '@/app/[locale]/(shop)/_lib/hooks/products/useProductFilters';
 
 describe('useProductFilters', () => {
   it('starts with default pagination filters', () => {

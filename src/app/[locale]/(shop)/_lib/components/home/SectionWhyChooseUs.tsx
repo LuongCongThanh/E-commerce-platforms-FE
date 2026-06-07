@@ -1,7 +1,7 @@
 import * as Icons from 'lucide-react';
 
+import { SectionHeading } from '@/app/[locale]/(shop)/_lib/components/common/SectionHeading';
 import { homeBenefitsData } from '@/app/[locale]/(shop)/_lib/data/home';
-import { SectionHeading } from '@/shared/components/marketing/SectionHeading';
 
 export function SectionWhyChooseUs(): React.JSX.Element {
   return (

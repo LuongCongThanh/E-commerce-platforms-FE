@@ -1,4 +1,4 @@
-import { ProductCardSkeleton } from '@/shared/components/skeletons/ProductCardSkeleton';
+import { ProductCardSkeleton } from '@/app/[locale]/(shop)/_lib/components/common/ProductCardSkeleton';
 
 interface ProductGridSkeletonProps {
   readonly count?: number;

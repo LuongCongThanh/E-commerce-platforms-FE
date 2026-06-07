@@ -7,11 +7,11 @@ import { useRouter } from 'next/navigation';
 import { Search, ShoppingCart, X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
+import { CartDrawer } from '@/app/[locale]/(shop)/_lib/components/cart/CartDrawer';
+import { DesktopMegaMenu } from '@/app/[locale]/(shop)/_lib/components/navigation/DesktopMegaMenu';
+import { MobileNav } from '@/app/[locale]/(shop)/_lib/components/navigation/MobileNav';
+import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import { Button } from '@/shared/components/base/Button';
-import { CartDrawer } from '@/shared/components/commerce/CartDrawer';
-import { DesktopMegaMenu } from '@/shared/components/navigation/DesktopMegaMenu';
-import { MobileNav } from '@/shared/components/navigation/MobileNav';
-import { useCart } from '@/shared/hooks/useCart';
 
 export function Header() {
   const t = useTranslations('common');

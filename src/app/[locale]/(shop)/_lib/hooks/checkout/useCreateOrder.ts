@@ -6,8 +6,8 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
 import { orderActions } from '@/app/[locale]/(shop)/_lib/actions/order';
+import { clearCart, useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
-import { clearCart, useCart } from '@/shared/hooks/useCart';
 
 const orderKeys = {
   all: ['orders'] as const,

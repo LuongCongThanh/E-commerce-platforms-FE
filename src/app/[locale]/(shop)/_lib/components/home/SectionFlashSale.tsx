@@ -2,10 +2,10 @@
 
 import { useLocale } from 'next-intl';
 
+import { ProductCard } from '@/app/[locale]/(shop)/_lib/components/common/ProductCard';
+import { CountdownTimer } from '@/app/[locale]/(shop)/_lib/components/home/CountdownTimer';
 import { bestSellersData } from '@/app/[locale]/(shop)/_lib/data/home';
 import { useHomeFlashSaleCountdown } from '@/app/[locale]/(shop)/_lib/hooks/home/useHomeFlashSaleCountdown';
-import { ProductCard } from '@/shared/components/commerce/ProductCard';
-import { CountdownTimer } from '@/shared/components/marketing/CountdownTimer';
 
 export function SectionFlashSale(): React.JSX.Element {
   const locale = useLocale();
