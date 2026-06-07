@@ -14,18 +14,18 @@
   --color-primary-900: oklch(0.26 0.1 25);
   --color-primary-950: oklch(0.16 0.06 25);
 
-  /* ── Secondary: Đỏ đậm (hue ~15°) ─────────────────────────────────── */
-  --color-secondary-50: oklch(0.97 0.02 15);
-  --color-secondary-100: oklch(0.93 0.04 15);
-  --color-secondary-200: oklch(0.86 0.08 15);
-  --color-secondary-300: oklch(0.77 0.13 15);
-  --color-secondary-400: oklch(0.67 0.18 15);
-  --color-secondary-500: oklch(0.57 0.22 15);
-  --color-secondary-600: oklch(0.49 0.21 15);
-  --color-secondary-700: oklch(0.41 0.18 15);
-  --color-secondary-800: oklch(0.32 0.14 15);
-  --color-secondary-900: oklch(0.24 0.09 15);
-  --color-secondary-950: oklch(0.15 0.05 15);
+  /* ── Secondary: Xanh dương tin cậy (hue ~220°) — tương phản với Primary ── */
+  --color-secondary-50: oklch(0.97 0.02 220);
+  --color-secondary-100: oklch(0.93 0.04 220);
+  --color-secondary-200: oklch(0.87 0.08 220);
+  --color-secondary-300: oklch(0.78 0.13 220);
+  --color-secondary-400: oklch(0.68 0.17 220);
+  --color-secondary-500: oklch(0.57 0.2 220);
+  --color-secondary-600: oklch(0.48 0.18 220);
+  --color-secondary-700: oklch(0.39 0.15 220);
+  --color-secondary-800: oklch(0.3 0.11 220);
+  --color-secondary-900: oklch(0.22 0.07 220);
+  --color-secondary-950: oklch(0.14 0.04 220);
 
   /* ── Accent: Vàng-cam (hue ~55°) ───────────────────────────────────── */
   --color-accent-50: oklch(0.98 0.02 55);
@@ -58,9 +58,10 @@
   --color-success-500: oklch(0.6 0.18 145);
   --color-success-700: oklch(0.42 0.14 145);
 
+  /* warning-500 chỉ dùng cho backgrounds/icons — dùng warning-700 cho text (WCAG AA) */
   --color-warning-50: oklch(0.98 0.03 80);
   --color-warning-500: oklch(0.78 0.18 80);
-  --color-warning-700: oklch(0.55 0.15 80);
+  --color-warning-700: oklch(0.52 0.16 80);
 
   --color-error-50: oklch(0.97 0.02 10);
   --color-error-500: oklch(0.58 0.24 10);
@@ -77,6 +78,13 @@
   /* ── Border radius ──────────────────────────────────────────────────── */
   --radius-card: 0.75rem;
   --radius-btn: 0.5rem;
+
+  /* ── Transition tokens ──────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-slow: 350ms;
 
   /* ── Antigravity Spatial Tokens ──────────────────────────────────────── */
   --color-spatial-blue-900: oklch(0.12 0.04 250);
@@ -132,11 +140,12 @@
     --primary: oklch(0.62 0.23 25);
     --primary-foreground: oklch(1 0 0);
     --secondary: oklch(0.96 0.006 30);
-    --secondary-foreground: oklch(0.26 0.1 25);
+    --secondary-foreground: oklch(0.3 0.11 220);
     --muted: oklch(0.96 0.006 30);
     --muted-foreground: oklch(0.58 0.01 30);
-    --accent: oklch(0.96 0.006 30);
-    --accent-foreground: oklch(0.16 0.004 30);
+    /* accent = vàng-cam nhạt — dùng cho hover highlights, badges */
+    --accent: oklch(0.95 0.06 55);
+    --accent-foreground: oklch(0.38 0.15 55);
     --destructive: oklch(0.58 0.24 10);
     --destructive-foreground: oklch(1 0 0);
     --border: oklch(0.92 0.008 30);
@@ -159,17 +168,18 @@
     --primary: oklch(0.7 0.19 25);
     --primary-foreground: oklch(0.16 0.004 30);
     --secondary: oklch(0.22 0.006 30);
-    --secondary-foreground: oklch(0.96 0.006 30);
+    --secondary-foreground: oklch(0.8 0.1 220);
     --muted: oklch(0.22 0.006 30);
     --muted-foreground: oklch(0.65 0.01 30);
-    --accent: oklch(0.22 0.006 30);
-    --accent-foreground: oklch(0.96 0.006 30);
+    /* accent dark mode = vàng-cam tối */
+    --accent: oklch(0.26 0.07 55);
+    --accent-foreground: oklch(0.88 0.08 55);
     --destructive: oklch(0.65 0.22 10);
     --destructive-foreground: oklch(0.96 0.006 30);
     --border: oklch(0.25 0.008 30);
     --input: oklch(0.25 0.008 30);
     --ring: oklch(0.7 0.19 25);
-    --card: oklch(0.16 0.004 30);
+    --card: oklch(0.2 0.005 30);
     --card-foreground: oklch(0.96 0.006 30);
     --popover-foreground: oklch(0.96 0.006 30);
 
