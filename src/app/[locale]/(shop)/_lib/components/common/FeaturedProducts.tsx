@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { useTranslations } from 'next-intl';
 
-import { ProductGridSkeleton } from '@/shared/components/skeletons/ProductGridSkeleton';
+import { ProductGridSkeleton } from '@/app/[locale]/(shop)/_lib/components/common/ProductGridSkeleton';
 
 interface FeaturedProductsProps {
   readonly isLoading?: boolean;

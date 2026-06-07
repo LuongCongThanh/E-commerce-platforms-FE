@@ -1,6 +1,6 @@
+import { SectionHeading } from '@/app/[locale]/(shop)/_lib/components/common/SectionHeading';
+import { TestimonialCard } from '@/app/[locale]/(shop)/_lib/components/home/TestimonialCard';
 import { homeTestimonialsData } from '@/app/[locale]/(shop)/_lib/data/home';
-import { SectionHeading } from '@/shared/components/marketing/SectionHeading';
-import { TestimonialCard } from '@/shared/components/marketing/TestimonialCard';
 
 export function SectionTestimonials(): React.JSX.Element {
   return (

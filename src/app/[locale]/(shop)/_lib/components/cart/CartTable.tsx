@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Minus, Plus, Trash2 } from 'lucide-react';
 
-import type { CartItem } from '@/shared/hooks/useCart';
-import { useCart } from '@/shared/hooks/useCart';
+import type { CartItem } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
+import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import { formatCurrency } from '@/shared/lib/utils';
 
 export function CartTable() {

@@ -6,8 +6,8 @@ import { useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { toast } from 'sonner';
 
+import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import type { ProductDisplay, SizeOption } from '@/app/[locale]/(shop)/_lib/types/product';
-import { useCart } from '@/shared/hooks/useCart';
 
 export function useAddToCart(product: ProductDisplay) {
   const locale = useLocale();

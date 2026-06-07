@@ -7,10 +7,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
 import { useLocale } from 'next-intl';
 
+import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import { Button } from '@/shared/components/base/Button';
 import { ScrollArea } from '@/shared/components/base/ScrollArea';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/shared/components/base/Sheet';
-import { useCart } from '@/shared/hooks/useCart';
 
 interface CartDrawerProps {
   readonly children: React.ReactNode;

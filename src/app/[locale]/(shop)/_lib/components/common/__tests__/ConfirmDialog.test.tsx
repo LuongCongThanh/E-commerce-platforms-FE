@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import { ConfirmDialog } from '@/shared/components/common/ConfirmDialog';
+import { ConfirmDialog } from '@/app/[locale]/(shop)/_lib/components/common/ConfirmDialog';
 import { Button } from '@/shared/components/base/Button';
 
 const defaultProps = {

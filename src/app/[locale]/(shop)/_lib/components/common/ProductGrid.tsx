@@ -2,8 +2,8 @@
 
 import { useLocale } from 'next-intl';
 
+import { ProductCard } from '@/app/[locale]/(shop)/_lib/components/common/ProductCard';
 import type { ProductDisplay } from '@/app/[locale]/(shop)/_lib/types/product';
-import { ProductCard } from '@/shared/components/commerce/ProductCard';
 
 interface ProductGridProps {
   readonly products: ProductDisplay[];

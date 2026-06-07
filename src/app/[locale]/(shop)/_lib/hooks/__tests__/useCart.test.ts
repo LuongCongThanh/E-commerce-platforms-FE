@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { initCartFromStorage, resetCartState, useCart } from '@/shared/hooks/useCart';
+import { initCartFromStorage, resetCartState, useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 
 const itemA = { variantId: 'v1', productId: 'p1', name: 'Áo thun', image: '/a.jpg', price: 100_000, quantity: 1 };
 const itemB = { variantId: 'v2', productId: 'p2', name: 'Quần jean', image: '/b.jpg', price: 200_000, quantity: 2 };

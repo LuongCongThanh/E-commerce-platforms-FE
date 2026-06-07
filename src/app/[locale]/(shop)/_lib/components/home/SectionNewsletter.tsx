@@ -1,4 +1,4 @@
-import { NewsletterForm } from '@/shared/components/marketing/NewsletterForm';
+import { NewsletterForm } from '@/app/[locale]/(shop)/_lib/components/home/NewsletterForm';
 
 export function SectionNewsletter(): React.JSX.Element {
   return (

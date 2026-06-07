@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import { QuantitySelector } from '@/shared/components/common/QuantitySelector';
+import { QuantitySelector } from '@/app/[locale]/(shop)/_lib/components/common/QuantitySelector';
 
 describe('QuantitySelector', () => {
   it('renders the current value', () => {
