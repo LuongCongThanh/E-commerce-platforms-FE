@@ -3,8 +3,8 @@
 import { useSyncExternalStore } from 'react';
 import { useRouter } from 'next/navigation';
 
+import { clearAuth, getAuthSnapshot, setAccessToken, setUser, subscribeAuth } from '@/app/[locale]/(auth)/_lib/store/auth-store';
 import { ROUTES } from '@/shared/constants/routes';
-import { clearAuth, getAuthSnapshot, setAccessToken, setUser, subscribeAuth } from '@/shared/lib/http/api-auth';
 import type { User } from '@/shared/types/user';
 
 export function login(token: string, userData: User): void {

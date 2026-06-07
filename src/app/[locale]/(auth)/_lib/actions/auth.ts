@@ -1,6 +1,6 @@
+import { clearAuth, setAccessToken, setUser } from '@/app/[locale]/(auth)/_lib/store/auth-store';
 import { API } from '@/shared/constants/api-endpoints';
 import { ApiError } from '@/shared/lib/errors/api-error';
-import { clearAuth, setAccessToken, setUser } from '@/shared/lib/http/api-auth';
 import { http } from '@/shared/lib/http/client';
 import type { AuthToken, User } from '@/shared/types/user';
 

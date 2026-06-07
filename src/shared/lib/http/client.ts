@@ -2,8 +2,8 @@ import type { AxiosError, AxiosRequestConfig } from 'axios';
 import axios from 'axios';
 
 import { ApiError } from '@/shared/lib/errors/api-error';
-import { getAccessToken, refreshAccessToken } from '@/shared/lib/http/api-auth';
 import type { ApiRequestConfig, ApiResponse } from '@/shared/lib/http/api-types';
+import { getHttpRuntimeAdapter } from '@/shared/lib/http/runtime';
 import { validateResponse } from '@/shared/lib/http/zod-helpers';
 import { captureError } from '@/shared/lib/monitoring/sentry';
 
@@ -59,7 +59,7 @@ function normalizeError(error: unknown): ApiError {
 }
 
 httpClient.interceptors.request.use((config) => {
-  const token = getAccessToken();
+  const token = getHttpRuntimeAdapter()?.getAccessToken() ?? null;
 
   if (token !== null && config.headers.Authorization === undefined) {
     config.headers.Authorization = `Bearer ${token}`;
@@ -95,7 +95,13 @@ httpClient.interceptors.response.use(
       isRefreshing = true;
 
       try {
-        const newToken = await refreshAccessToken();
+        const runtimeAdapter = getHttpRuntimeAdapter();
+
+        if (runtimeAdapter === null) {
+          throw new Error('No HTTP runtime adapter registered');
+        }
+
+        const newToken = await runtimeAdapter.refreshAccessToken();
         resolveRefreshQueue(newToken);
 
         if (originalRequest.headers !== undefined) {
@@ -104,6 +110,7 @@ httpClient.interceptors.response.use(
 
         return await httpClient(originalRequest);
       } catch (refreshError) {
+        getHttpRuntimeAdapter()?.onRefreshFailure?.(refreshError);
         rejectRefreshQueue(refreshError);
         return await Promise.reject(normalizeError(refreshError));
       } finally {
