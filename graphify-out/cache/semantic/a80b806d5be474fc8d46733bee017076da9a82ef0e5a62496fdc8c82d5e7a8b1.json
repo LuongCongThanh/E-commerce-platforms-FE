@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "id": "shared_constants_appconfig_SORT_OPTIONS",
+      "label": "SORT_OPTIONS Constant",
+      "file_type": "code",
+      "source_file": "src/shared/constants/app-config.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shared_constants_appconfig_SortOption",
+      "label": "SortOption Type",
+      "file_type": "code",
+      "source_file": "src/shared/constants/app-config.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app-config_APP_CONFIG",
+      "label": "App Configuration Constants",
+      "file_type": "code",
+      "source_file": "src/shared/constants/app-config.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app-config_ORDER_STATUS_LABEL",
+      "label": "Order Status Label Map",
+      "file_type": "code",
+      "source_file": "src/shared/constants/app-config.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app-config_PAYMENT_METHOD_LABEL",
+      "label": "Payment Method Label Map",
+      "file_type": "code",
+      "source_file": "src/shared/constants/app-config.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app-config_ORDER_STATUS_COLOR_MAP",
+      "label": "Order Status Color Map",
+      "file_type": "code",
+      "source_file": "src/shared/constants/app-config.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app-config_SORT_OPTIONS",
+      "label": "Sort Options",
+      "file_type": "code",
+      "source_file": "src/shared/constants/app-config.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app-config_SortOption",
+      "label": "SortOption Type",
+      "file_type": "code",
+      "source_file": "src/shared/constants/app-config.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "app-config_SortOption",
+      "target": "app-config_SORT_OPTIONS",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/constants/app-config.ts",
+      "source_location": "line 40",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

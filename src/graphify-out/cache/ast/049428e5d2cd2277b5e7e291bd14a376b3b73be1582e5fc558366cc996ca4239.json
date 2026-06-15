@@ -1,0 +1,98 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_i18n_request_ts",
+      "label": "request.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "i18n_request_modules",
+      "label": "modules",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "i18n_request_messagemodule",
+      "label": "MessageModule",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "i18n_request_messagesmodule",
+      "label": "messagesModule",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "i18n_request_messages",
+      "label": "messages",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L26"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_i18n_request_ts",
+      "target": "server",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_i18n_request_ts",
+      "target": "use_intl",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_i18n_request_ts",
+      "target": "i18n_request_modules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_i18n_request_ts",
+      "target": "i18n_request_messagemodule",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_i18n_request_ts",
+      "target": "i18n_request_messagesmodule",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_i18n_request_ts",
+      "target": "i18n_request_messages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

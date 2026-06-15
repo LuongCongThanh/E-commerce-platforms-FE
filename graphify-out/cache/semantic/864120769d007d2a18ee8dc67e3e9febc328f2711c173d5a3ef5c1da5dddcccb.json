@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "zodhelpers_validateResponse",
+      "label": "validateResponse (Zod API Validator)",
+      "file_type": "code",
+      "source_file": "src/shared/lib/http/zod-helpers.ts",
+      "source_location": "line 5",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "zodhelpers_validateResponse",
+      "target": "apierror_ApiError",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/lib/http/zod-helpers.ts",
+      "source_location": "line 9",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

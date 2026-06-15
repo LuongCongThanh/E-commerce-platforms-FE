@@ -1,0 +1,108 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_authruntimeprovider_tsx",
+      "label": "AuthRuntimeProvider.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_authruntimeprovider_authruntimeprovider",
+      "label": "AuthRuntimeProvider()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L8"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_authruntimeprovider_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_authruntimeprovider_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_store_auth_store_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_authruntimeprovider_tsx",
+      "target": "store_auth_store_clearauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_authruntimeprovider_tsx",
+      "target": "store_auth_store_getaccesstoken",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_authruntimeprovider_tsx",
+      "target": "store_auth_store_refreshaccesstoken",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_authruntimeprovider_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_lib_http_runtime_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_authruntimeprovider_tsx",
+      "target": "http_runtime_registerhttpruntimeadapter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_authruntimeprovider_tsx",
+      "target": "components_authruntimeprovider_authruntimeprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "components_authruntimeprovider_authruntimeprovider",
+      "callee": "useEffect",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx",
+      "source_location": "L9"
+    }
+  ]
+}

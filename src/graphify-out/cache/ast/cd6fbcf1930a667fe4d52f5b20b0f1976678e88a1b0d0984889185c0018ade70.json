@@ -1,0 +1,191 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "slug_page_categorypageprops",
+      "label": "CategoryPageProps",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "slug_page_categorypage",
+      "label": "CategoryPage()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "slug_page_categoryloadingskeleton",
+      "label": "CategoryLoadingSkeleton()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L61"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "navigation",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_categories_categoryclient_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "categories_categoryclient_categoryclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_categories_filtersidebar_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "categories_filtersidebar_filtersidebar",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_queries_category_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "queries_category_getcategorybyslug",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_skeleton_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "base_skeleton_skeleton",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "slug_page_categorypageprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "slug_page_categorypage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_categories_slug_page_tsx",
+      "target": "slug_page_categoryloadingskeleton",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L61",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "slug_page_categorypage",
+      "callee": "getCategoryBySlug",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "slug_page_categorypage",
+      "callee": "notFound",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "slug_page_categoryloadingskeleton",
+      "callee": "map",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "slug_page_categoryloadingskeleton",
+      "callee": "from",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx",
+      "source_location": "L65"
+    }
+  ]
+}

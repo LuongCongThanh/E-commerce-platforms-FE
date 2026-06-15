@@ -1,0 +1,216 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "label": "DropdownMenu.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "base_dropdownmenu_dropdownmenusubtrigger",
+      "label": "DropdownMenuSubTrigger",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L22"
+    },
+    {
+      "id": "base_dropdownmenu_dropdownmenusubcontent",
+      "label": "DropdownMenuSubContent",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L43"
+    },
+    {
+      "id": "base_dropdownmenu_dropdownmenucontent",
+      "label": "DropdownMenuContent",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L58"
+    },
+    {
+      "id": "base_dropdownmenu_dropdownmenuitem",
+      "label": "DropdownMenuItem",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L76"
+    },
+    {
+      "id": "base_dropdownmenu_dropdownmenucheckboxitem",
+      "label": "DropdownMenuCheckboxItem",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L94"
+    },
+    {
+      "id": "base_dropdownmenu_dropdownmenuradioitem",
+      "label": "DropdownMenuRadioItem",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L117"
+    },
+    {
+      "id": "base_dropdownmenu_dropdownmenulabel",
+      "label": "DropdownMenuLabel",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L139"
+    },
+    {
+      "id": "base_dropdownmenu_dropdownmenuseparator",
+      "label": "DropdownMenuSeparator",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L153"
+    },
+    {
+      "id": "base_dropdownmenu_dropdownmenushortcut",
+      "label": "DropdownMenuShortcut()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L159"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "react_dropdown_menu",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_lib_utils_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "base_dropdownmenu_dropdownmenusubtrigger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "base_dropdownmenu_dropdownmenusubcontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "base_dropdownmenu_dropdownmenucontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "base_dropdownmenu_dropdownmenuitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "base_dropdownmenu_dropdownmenucheckboxitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "base_dropdownmenu_dropdownmenuradioitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "base_dropdownmenu_dropdownmenulabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "base_dropdownmenu_dropdownmenuseparator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_dropdownmenu_tsx",
+      "target": "base_dropdownmenu_dropdownmenushortcut",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L159",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "base_dropdownmenu_dropdownmenushortcut",
+      "callee": "cn",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx",
+      "source_location": "L160"
+    }
+  ]
+}

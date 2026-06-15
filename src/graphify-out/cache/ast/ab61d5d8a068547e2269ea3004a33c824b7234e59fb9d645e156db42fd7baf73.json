@@ -1,0 +1,176 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "label": "Select.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "base_select_selecttrigger",
+      "label": "SelectTrigger",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "base_select_selectscrollupbutton",
+      "label": "SelectScrollUpButton",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L36"
+    },
+    {
+      "id": "base_select_selectscrolldownbutton",
+      "label": "SelectScrollDownButton",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L46"
+    },
+    {
+      "id": "base_select_selectcontent",
+      "label": "SelectContent",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L56"
+    },
+    {
+      "id": "base_select_selectlabel",
+      "label": "SelectLabel",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L84"
+    },
+    {
+      "id": "base_select_selectitem",
+      "label": "SelectItem",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L91"
+    },
+    {
+      "id": "base_select_selectseparator",
+      "label": "SelectSeparator",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L113"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "react_select",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_lib_utils_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "base_select_selecttrigger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "base_select_selectscrollupbutton",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "base_select_selectscrolldownbutton",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "base_select_selectcontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "base_select_selectlabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "base_select_selectitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_select_tsx",
+      "target": "base_select_selectseparator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx",
+      "source_location": "L113",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

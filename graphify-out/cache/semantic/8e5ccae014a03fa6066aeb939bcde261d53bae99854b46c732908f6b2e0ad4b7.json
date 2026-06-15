@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "shop_ProductGallery",
+      "label": "ProductGallery Component",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/components/products/ProductGallery.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ProductGallery_ProductGallery",
+      "label": "ProductGallery",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/components/products/ProductGallery.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "ProductGallery_ProductGallery",
+      "target": "shared_utils",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/products/ProductGallery.tsx",
+      "source_location": "line 9",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

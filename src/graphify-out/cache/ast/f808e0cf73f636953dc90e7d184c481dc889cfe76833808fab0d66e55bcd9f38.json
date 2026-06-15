@@ -1,0 +1,371 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "label": "auth.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "actions_auth_loginpayload",
+      "label": "LoginPayload",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "actions_auth_registerpayload",
+      "label": "RegisterPayload",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "actions_auth_callauthroute",
+      "label": "callAuthRoute()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "actions_auth_loginaction",
+      "label": "loginAction()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "actions_auth_registeraction",
+      "label": "registerAction()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L43"
+    },
+    {
+      "id": "actions_auth_forgotpasswordaction",
+      "label": "forgotPasswordAction()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L50"
+    },
+    {
+      "id": "actions_auth_resetpasswordaction",
+      "label": "resetPasswordAction()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "actions_auth_logoutaction",
+      "label": "logoutAction()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L63"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_store_auth_store_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "store_auth_store_clearauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "store_auth_store_setaccesstoken",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "store_auth_store_setuser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_constants_api_endpoints_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "constants_api_endpoints_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_lib_errors_api_error_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "errors_api_error_apierror",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_lib_http_client_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "http_client_http",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_types_user_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "types_user_authtoken",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "types_user_user",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "actions_auth_loginpayload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "actions_auth_registerpayload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "actions_auth_callauthroute",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "actions_auth_loginaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "actions_auth_registeraction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "actions_auth_forgotpasswordaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "actions_auth_resetpasswordaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "target": "actions_auth_logoutaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L63",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "actions_auth_callauthroute",
+      "callee": "fetch",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "actions_auth_callauthroute",
+      "callee": "stringify",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "actions_auth_callauthroute",
+      "callee": "json",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "actions_auth_loginaction",
+      "callee": "await callAuthRoute",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "actions_auth_loginaction",
+      "callee": "setAccessToken",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "actions_auth_loginaction",
+      "callee": "setUser",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "actions_auth_registeraction",
+      "callee": "await callAuthRoute",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "actions_auth_registeraction",
+      "callee": "setAccessToken",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "actions_auth_registeraction",
+      "callee": "setUser",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "actions_auth_forgotpasswordaction",
+      "callee": "await http.post",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "actions_auth_resetpasswordaction",
+      "callee": "await http.post",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "actions_auth_logoutaction",
+      "callee": "clearAuth",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "actions_auth_logoutaction",
+      "callee": "catch",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "actions_auth_logoutaction",
+      "callee": "fetch",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts",
+      "source_location": "L65"
+    }
+  ]
+}

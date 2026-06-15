@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "render_renderWithProviders",
+      "label": "renderWithProviders Test Helper",
+      "file_type": "code",
+      "source_file": "src/__tests__/helpers/render.tsx",
+      "source_location": "line 18",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "render_Providers",
+      "label": "Test Providers Wrapper (QueryClientProvider)",
+      "file_type": "code",
+      "source_file": "src/__tests__/helpers/render.tsx",
+      "source_location": "line 13",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "render_renderWithProviders",
+      "target": "render_Providers",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/__tests__/helpers/render.tsx",
+      "source_location": "line 19",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

@@ -1,0 +1,415 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "label": "useCart.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "hooks_usecart_cartitem",
+      "label": "CartItem",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "hooks_usecart_listener",
+      "label": "Listener",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "hooks_usecart_readpersistedcart",
+      "label": "readPersistedCart()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "hooks_usecart_items",
+      "label": "_items",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "hooks_usecart_listeners",
+      "label": "_listeners",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "hooks_usecart_getsnapshot",
+      "label": "getSnapshot()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "hooks_usecart_getserversnapshot",
+      "label": "getServerSnapshot()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "hooks_usecart_subscribecart",
+      "label": "subscribeCart()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "hooks_usecart_setitems",
+      "label": "setItems()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L47"
+    },
+    {
+      "id": "hooks_usecart_resetcartstate",
+      "label": "resetCartState()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L55"
+    },
+    {
+      "id": "hooks_usecart_initcartfromstorage",
+      "label": "initCartFromStorage()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L62"
+    },
+    {
+      "id": "hooks_usecart_addtocart",
+      "label": "addToCart()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L69"
+    },
+    {
+      "id": "hooks_usecart_removecartitem",
+      "label": "removeCartItem()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L78"
+    },
+    {
+      "id": "hooks_usecart_updatequantity",
+      "label": "updateQuantity()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L82"
+    },
+    {
+      "id": "hooks_usecart_clearcart",
+      "label": "clearCart()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L86"
+    },
+    {
+      "id": "hooks_usecart_usecart",
+      "label": "useCart()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L90"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_cartitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_listener",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_readpersistedcart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_items",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_listeners",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_getsnapshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_getserversnapshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_subscribecart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_setitems",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_resetcartstate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_initcartfromstorage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_addtocart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_removecartitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_updatequantity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_clearcart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "target": "hooks_usecart_usecart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_usecart_initcartfromstorage",
+      "target": "hooks_usecart_readpersistedcart",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_usecart_addtocart",
+      "target": "hooks_usecart_setitems",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_usecart_removecartitem",
+      "target": "hooks_usecart_setitems",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_usecart_updatequantity",
+      "target": "hooks_usecart_setitems",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_usecart_clearcart",
+      "target": "hooks_usecart_setitems",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L87",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "hooks_usecart_readpersistedcart",
+      "callee": "getItem",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "hooks_usecart_readpersistedcart",
+      "callee": "parse",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "hooks_usecart_subscribecart",
+      "callee": "add",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "hooks_usecart_setitems",
+      "callee": "updater",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "hooks_usecart_setitems",
+      "callee": "setItem",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "hooks_usecart_setitems",
+      "callee": "stringify",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "hooks_usecart_setitems",
+      "callee": "forEach",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "hooks_usecart_resetcartstate",
+      "callee": "forEach",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "hooks_usecart_initcartfromstorage",
+      "callee": "forEach",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "hooks_usecart_usecart",
+      "callee": "useSyncExternalStore",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "hooks_usecart_usecart",
+      "callee": "reduce",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "hooks_usecart_usecart",
+      "callee": "reduce",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts",
+      "source_location": "L94"
+    }
+  ]
+}

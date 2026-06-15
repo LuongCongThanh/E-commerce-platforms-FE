@@ -1,0 +1,46 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_types_api_ts",
+      "label": "api.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\api.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "types_api_paginatedresponse",
+      "label": "PaginatedResponse",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\api.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "types_api_djangoerrorresponse",
+      "label": "DjangoErrorResponse",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\api.ts",
+      "source_location": "L8"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_api_ts",
+      "target": "types_api_paginatedresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\api.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_api_ts",
+      "target": "types_api_djangoerrorresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\api.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

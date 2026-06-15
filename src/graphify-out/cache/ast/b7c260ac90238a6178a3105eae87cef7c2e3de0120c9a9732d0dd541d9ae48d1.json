@@ -1,0 +1,191 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "label": "breadcrumb.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "base_breadcrumb_breadcrumb",
+      "label": "Breadcrumb",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "base_breadcrumb_breadcrumblist",
+      "label": "BreadcrumbList",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "base_breadcrumb_breadcrumbitem",
+      "label": "BreadcrumbItem",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "base_breadcrumb_breadcrumblink",
+      "label": "BreadcrumbLink",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L26"
+    },
+    {
+      "id": "base_breadcrumb_breadcrumbpage",
+      "label": "BreadcrumbPage",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L38"
+    },
+    {
+      "id": "base_breadcrumb_breadcrumbseparator",
+      "label": "BreadcrumbSeparator()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L43"
+    },
+    {
+      "id": "base_breadcrumb_breadcrumbellipsis",
+      "label": "BreadcrumbEllipsis()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L50"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "react_slot",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_lib_utils_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "base_breadcrumb_breadcrumb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "base_breadcrumb_breadcrumblist",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "base_breadcrumb_breadcrumbitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "base_breadcrumb_breadcrumblink",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "base_breadcrumb_breadcrumbpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "base_breadcrumb_breadcrumbseparator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_breadcrumb_tsx",
+      "target": "base_breadcrumb_breadcrumbellipsis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L50",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "base_breadcrumb_breadcrumbseparator",
+      "callee": "cn",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "base_breadcrumb_breadcrumbellipsis",
+      "callee": "cn",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx",
+      "source_location": "L51"
+    }
+  ]
+}

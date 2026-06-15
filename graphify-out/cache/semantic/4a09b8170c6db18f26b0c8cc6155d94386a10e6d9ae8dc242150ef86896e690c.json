@@ -1,0 +1,88 @@
+{
+  "nodes": [
+    {
+      "id": "OrderDetailClient_OrderDetailClient",
+      "label": "OrderDetailClient",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrderDetailClient.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "OrderDetailClient_OrderDetailClient",
+      "target": "common_OrderStatusBadge",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrderDetailClient.tsx",
+      "source_location": "line 3",
+      "weight": 1.0
+    },
+    {
+      "source": "OrderDetailClient_OrderDetailClient",
+      "target": "orders_useCancelOrder",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrderDetailClient.tsx",
+      "source_location": "line 4",
+      "weight": 1.0
+    },
+    {
+      "source": "OrderDetailClient_OrderDetailClient",
+      "target": "orders_useOrder",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrderDetailClient.tsx",
+      "source_location": "line 5",
+      "weight": 1.0
+    },
+    {
+      "source": "OrderDetailClient_OrderDetailClient",
+      "target": "shared_Button",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrderDetailClient.tsx",
+      "source_location": "line 6",
+      "weight": 1.0
+    },
+    {
+      "source": "OrderDetailClient_OrderDetailClient",
+      "target": "shared_Separator",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrderDetailClient.tsx",
+      "source_location": "line 7",
+      "weight": 1.0
+    },
+    {
+      "source": "OrderDetailClient_OrderDetailClient",
+      "target": "shared_utils",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrderDetailClient.tsx",
+      "source_location": "line 8",
+      "weight": 1.0
+    },
+    {
+      "source": "OrderDetailClient_OrderDetailClient",
+      "target": "OrdersClient_OrdersClient",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrderDetailClient.tsx",
+      "source_location": null,
+      "weight": 0.75
+    }
+  ],
+  "hyperedges": []
+}

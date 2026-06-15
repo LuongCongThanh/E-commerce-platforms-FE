@@ -1,0 +1,139 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_checkout_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "checkout_page_checkoutpage",
+      "label": "CheckoutPage()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_checkout_page_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_checkout_page_tsx",
+      "target": "link",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_checkout_page_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_checkout_page_tsx",
+      "target": "next_intl",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_checkout_page_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_checkout_checkoutclient_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_checkout_page_tsx",
+      "target": "checkout_checkoutclient_checkoutclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_checkout_page_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_checkout_ordersummary_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_checkout_page_tsx",
+      "target": "checkout_ordersummary_ordersummary",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_checkout_page_tsx",
+      "target": "checkout_page_checkoutpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "checkout_page_checkoutpage",
+      "callee": "use",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "checkout_page_checkoutpage",
+      "callee": "useTranslations",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "checkout_page_checkoutpage",
+      "callee": "t",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "checkout_page_checkoutpage",
+      "callee": "t",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx",
+      "source_location": "L27"
+    }
+  ]
+}

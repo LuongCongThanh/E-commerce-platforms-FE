@@ -1,0 +1,123 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "label": "QuantitySelector.test.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_quantityselector_test_onchange",
+      "label": "onChange",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L34"
+    },
+    {
+      "id": "tests_quantityselector_test_btns",
+      "label": "btns",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L53"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "target": "user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "target": "vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_quantityselector_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "target": "common_quantityselector_quantityselector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "target": "tests_quantityselector_test_onchange",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "target": "tests_quantityselector_test_onchange",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "target": "tests_quantityselector_test_onchange",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "target": "tests_quantityselector_test_btns",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_tests_quantityselector_test_tsx",
+      "target": "tests_quantityselector_test_onchange",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx",
+      "source_location": "L58",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

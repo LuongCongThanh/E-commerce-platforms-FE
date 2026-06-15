@@ -1,0 +1,112 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_accordion_tsx",
+      "label": "accordion.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "base_accordion_accordionitem",
+      "label": "AccordionItem",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "base_accordion_accordiontrigger",
+      "label": "AccordionTrigger",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "base_accordion_accordioncontent",
+      "label": "AccordionContent",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L38"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_accordion_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_accordion_tsx",
+      "target": "react_accordion",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_accordion_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_accordion_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_lib_utils_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_accordion_tsx",
+      "target": "lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_accordion_tsx",
+      "target": "base_accordion_accordionitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_accordion_tsx",
+      "target": "base_accordion_accordiontrigger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_accordion_tsx",
+      "target": "base_accordion_accordioncontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx",
+      "source_location": "L38",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

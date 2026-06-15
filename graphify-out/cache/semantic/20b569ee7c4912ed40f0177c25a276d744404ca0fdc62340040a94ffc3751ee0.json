@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "shared_Separator",
+      "label": "Separator Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Separator.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shared_Separator",
+      "label": "Separator (shared base)",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Separator.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Separator_Separator",
+      "label": "Separator Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Separator.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ext_radix_separator",
+      "label": "@radix-ui/react-separator",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Separator.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "Separator_Separator",
+      "target": "ext_radix_separator",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Separator.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Separator_Separator",
+      "target": "shared_utils_cn",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Separator.tsx",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

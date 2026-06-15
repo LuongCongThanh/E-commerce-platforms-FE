@@ -1,0 +1,228 @@
+{
+  "nodes": [
+    {
+      "id": "shared_Sheet",
+      "label": "Sheet Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shared_Sheet",
+      "label": "Sheet (shared base)",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Sheet_Sheet",
+      "label": "Sheet Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Sheet_SheetContent",
+      "label": "SheetContent Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Sheet_SheetOverlay",
+      "label": "SheetOverlay Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Sheet_SheetHeader",
+      "label": "SheetHeader Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Sheet_SheetFooter",
+      "label": "SheetFooter Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Sheet_SheetTitle",
+      "label": "SheetTitle Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Sheet_SheetDescription",
+      "label": "SheetDescription Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Sheet_sheetVariants",
+      "label": "Sheet CVA Variants",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ext_radix_dialog",
+      "label": "@radix-ui/react-dialog",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "Sheet_Sheet",
+      "target": "ext_radix_dialog",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Sheet_SheetContent",
+      "target": "ext_radix_dialog",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Sheet_SheetOverlay",
+      "target": "ext_radix_dialog",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Sheet_SheetTitle",
+      "target": "ext_radix_dialog",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Sheet_SheetDescription",
+      "target": "ext_radix_dialog",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Sheet_sheetVariants",
+      "target": "ext_cva",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Sheet_SheetContent",
+      "target": "Sheet_sheetVariants",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Sheet_SheetContent",
+      "target": "Sheet_SheetOverlay",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Sheet_SheetContent",
+      "target": "shared_utils_cn",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Sheet_Sheet",
+      "target": "Popover_Popover",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.55,
+      "source_file": "src/shared/components/base/Sheet.tsx",
+      "source_location": null,
+      "weight": 0.55
+    }
+  ],
+  "hyperedges": []
+}

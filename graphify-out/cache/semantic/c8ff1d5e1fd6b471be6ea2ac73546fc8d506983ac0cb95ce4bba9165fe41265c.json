@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "SectionBestSellers_SectionBestSellers",
+      "label": "SectionBestSellers Component",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/components/home/SectionBestSellers.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "SectionBestSellers_SectionBestSellers",
+      "target": "ProductCard_ProductCard",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/home/SectionBestSellers.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "SectionBestSellers_SectionBestSellers",
+      "target": "SectionHeading_SectionHeading",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/home/SectionBestSellers.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "SectionBestSellers_SectionBestSellers",
+      "target": "shop_data_home_bestSellersData",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/home/SectionBestSellers.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "SectionBestSellers_SectionBestSellers",
+      "target": "SectionFlashSale_SectionFlashSale",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/home/SectionBestSellers.tsx",
+      "source_location": null,
+      "weight": 0.85
+    }
+  ],
+  "hyperedges": []
+}

@@ -1,0 +1,81 @@
+{
+  "nodes": [
+    {
+      "id": "useMediaQuery_useMediaQuery",
+      "label": "useMediaQuery Hook",
+      "file_type": "code",
+      "source_file": "src/shared/hooks/useMediaQuery.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useMediaQuery_useIsMobile",
+      "label": "useIsMobile Hook",
+      "file_type": "code",
+      "source_file": "src/shared/hooks/useMediaQuery.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useMediaQuery_useIsTablet",
+      "label": "useIsTablet Hook",
+      "file_type": "code",
+      "source_file": "src/shared/hooks/useMediaQuery.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useMediaQuery_useIsDesktop",
+      "label": "useIsDesktop Hook",
+      "file_type": "code",
+      "source_file": "src/shared/hooks/useMediaQuery.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "useMediaQuery_useIsMobile",
+      "target": "useMediaQuery_useMediaQuery",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/hooks/useMediaQuery.ts",
+      "source_location": "line 26",
+      "weight": 1.0
+    },
+    {
+      "source": "useMediaQuery_useIsTablet",
+      "target": "useMediaQuery_useMediaQuery",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/hooks/useMediaQuery.ts",
+      "source_location": "line 27",
+      "weight": 1.0
+    },
+    {
+      "source": "useMediaQuery_useIsDesktop",
+      "target": "useMediaQuery_useMediaQuery",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/hooks/useMediaQuery.ts",
+      "source_location": "line 28",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

@@ -1,0 +1,152 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_types_payment_ts",
+      "label": "payment.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "types_payment_paymentmethodschema",
+      "label": "PaymentMethodSchema",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "types_payment_paymentstatusschema",
+      "label": "PaymentStatusSchema",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "types_payment_paymentresultschema",
+      "label": "PaymentResultSchema",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "types_payment_checkoutpayloadschema",
+      "label": "CheckoutPayloadSchema",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "types_payment_paymentmethod",
+      "label": "PaymentMethod",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "types_payment_paymentstatus",
+      "label": "PaymentStatus",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "types_payment_paymentresult",
+      "label": "PaymentResult",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "types_payment_checkoutpayload",
+      "label": "CheckoutPayload",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L31"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_payment_ts",
+      "target": "zod",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_payment_ts",
+      "target": "types_payment_paymentmethodschema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_payment_ts",
+      "target": "types_payment_paymentstatusschema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_payment_ts",
+      "target": "types_payment_paymentresultschema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_payment_ts",
+      "target": "types_payment_checkoutpayloadschema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_payment_ts",
+      "target": "types_payment_paymentmethod",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_payment_ts",
+      "target": "types_payment_paymentstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_payment_ts",
+      "target": "types_payment_paymentresult",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_payment_ts",
+      "target": "types_payment_checkoutpayload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts",
+      "source_location": "L31",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

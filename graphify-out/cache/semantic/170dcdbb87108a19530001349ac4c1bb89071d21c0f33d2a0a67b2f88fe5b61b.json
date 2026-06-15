@@ -1,0 +1,68 @@
+{
+  "nodes": [
+    {
+      "id": "actions_orderActions",
+      "label": "Order Actions",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/actions/order.ts",
+      "source_location": "line 6",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "actions_orderActions",
+      "target": "shared_httpClient",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/actions/order.ts",
+      "source_location": "line 3",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_orderActions",
+      "target": "shared_apiEndpoints",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/actions/order.ts",
+      "source_location": "line 2",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_orderActions",
+      "target": "shared_OrderType",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/actions/order.ts",
+      "source_location": "line 4",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_orderActions",
+      "target": "shop_checkoutSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/actions/order.ts",
+      "source_location": "line 1",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_orderActions",
+      "target": "shop_checkoutSchema",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/[locale]/(shop)/_lib/actions/order.ts",
+      "source_location": "line 1",
+      "weight": 0.85
+    }
+  ],
+  "hyperedges": []
+}

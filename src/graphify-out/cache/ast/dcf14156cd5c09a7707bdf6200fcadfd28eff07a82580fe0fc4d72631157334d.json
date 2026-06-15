@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_lang_en_order_json",
+      "label": "order.json",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "en_order_title",
+      "label": "title",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "en_order_myorders",
+      "label": "myOrders",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "en_order_ordercode",
+      "label": "orderCode",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "en_order_status",
+      "label": "status",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "en_order_total",
+      "label": "total",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "en_order_cancel",
+      "label": "cancel",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "en_order_success",
+      "label": "success",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "en_order_detail",
+      "label": "detail",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L9"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_order_json",
+      "target": "en_order_title",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_order_json",
+      "target": "en_order_myorders",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_order_json",
+      "target": "en_order_ordercode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_order_json",
+      "target": "en_order_status",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_order_json",
+      "target": "en_order_total",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_order_json",
+      "target": "en_order_cancel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_order_json",
+      "target": "en_order_success",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_order_json",
+      "target": "en_order_detail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json",
+      "source_location": "L9",
+      "weight": 1.0
+    }
+  ]
+}

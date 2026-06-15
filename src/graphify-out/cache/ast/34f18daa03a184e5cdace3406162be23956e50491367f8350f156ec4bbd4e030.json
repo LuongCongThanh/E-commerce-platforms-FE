@@ -1,0 +1,107 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_components_common_loadingspinner_tsx",
+      "label": "LoadingSpinner.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "common_loadingspinner_loadingspinnerprops",
+      "label": "LoadingSpinnerProps",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "common_loadingspinner_spinnersizemap",
+      "label": "spinnerSizeMap",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "common_loadingspinner_loadingspinner",
+      "label": "LoadingSpinner()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L21"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_common_loadingspinner_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_common_loadingspinner_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_lib_utils_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_common_loadingspinner_tsx",
+      "target": "lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_common_loadingspinner_tsx",
+      "target": "common_loadingspinner_loadingspinnerprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_common_loadingspinner_tsx",
+      "target": "common_loadingspinner_spinnersizemap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_components_common_loadingspinner_tsx",
+      "target": "common_loadingspinner_loadingspinner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L21",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "common_loadingspinner_loadingspinner",
+      "callee": "cn",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "common_loadingspinner_loadingspinner",
+      "callee": "cn",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx",
+      "source_location": "L24"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "DesktopMegaMenu_DesktopMegaMenu",
+      "label": "DesktopMegaMenu",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/components/navigation/DesktopMegaMenu.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "DesktopMegaMenu_DesktopMegaMenu",
+      "target": "navCategories_NAV_CATEGORIES",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/navigation/DesktopMegaMenu.tsx",
+      "source_location": "line 10",
+      "weight": 1.0
+    },
+    {
+      "source": "DesktopMegaMenu_DesktopMegaMenu",
+      "target": "MobileNav_MobileNav",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/navigation/DesktopMegaMenu.tsx",
+      "source_location": null,
+      "weight": 0.75
+    }
+  ],
+  "hyperedges": []
+}

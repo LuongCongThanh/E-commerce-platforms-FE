@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_lib_monitoring_sentry_ts",
+      "label": "sentry.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\monitoring\\sentry.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "monitoring_sentry_captureerror",
+      "label": "captureError()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\monitoring\\sentry.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "monitoring_sentry_capturemessage",
+      "label": "captureMessage()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\monitoring\\sentry.ts",
+      "source_location": "L11"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_lib_monitoring_sentry_ts",
+      "target": "nextjs",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\monitoring\\sentry.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_lib_monitoring_sentry_ts",
+      "target": "monitoring_sentry_captureerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\monitoring\\sentry.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_lib_monitoring_sentry_ts",
+      "target": "monitoring_sentry_capturemessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\monitoring\\sentry.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "monitoring_sentry_captureerror",
+      "callee": "captureException",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\monitoring\\sentry.ts",
+      "source_location": "L5"
+    },
+    {
+      "caller_nid": "monitoring_sentry_captureerror",
+      "callee": "error",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\monitoring\\sentry.ts",
+      "source_location": "L7"
+    }
+  ]
+}

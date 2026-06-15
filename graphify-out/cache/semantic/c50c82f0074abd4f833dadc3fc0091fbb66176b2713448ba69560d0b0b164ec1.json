@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "useToast_useToast",
+      "label": "useToast Hook",
+      "file_type": "code",
+      "source_file": "src/shared/hooks/useToast.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "useToast_useToast",
+      "target": "useToast_useToast",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/hooks/useToast.ts",
+      "source_location": "line 1",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

@@ -1,0 +1,161 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "label": "AddToCartSection.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "products_addtocartsection_addtocartsectionprops",
+      "label": "AddToCartSectionProps",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "products_addtocartsection_addtocartsection",
+      "label": "AddToCartSection()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L15"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_variantselector_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "products_variantselector_variantselector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_products_useaddtocart_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "products_useaddtocart_useaddtocart",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_types_product_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "types_product_productdisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_button_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "base_button_button",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "products_addtocartsection_addtocartsectionprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_addtocartsection_tsx",
+      "target": "products_addtocartsection_addtocartsection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "products_addtocartsection_addtocartsection",
+      "callee": "useAddToCart",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "products_addtocartsection_addtocartsection",
+      "callee": "toString",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx",
+      "source_location": "L48"
+    }
+  ]
+}

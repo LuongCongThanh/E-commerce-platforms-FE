@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_lib_http_runtime_ts",
+      "label": "runtime.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\runtime.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "http_runtime_httpruntimeadapter",
+      "label": "HttpRuntimeAdapter",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\runtime.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "http_runtime_registerhttpruntimeadapter",
+      "label": "registerHttpRuntimeAdapter()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\runtime.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "http_runtime_gethttpruntimeadapter",
+      "label": "getHttpRuntimeAdapter()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\runtime.ts",
+      "source_location": "L19"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_lib_http_runtime_ts",
+      "target": "http_runtime_httpruntimeadapter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\runtime.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_lib_http_runtime_ts",
+      "target": "http_runtime_registerhttpruntimeadapter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\runtime.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_lib_http_runtime_ts",
+      "target": "http_runtime_gethttpruntimeadapter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\runtime.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

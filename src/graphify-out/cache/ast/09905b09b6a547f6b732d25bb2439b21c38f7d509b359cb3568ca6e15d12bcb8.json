@@ -1,0 +1,172 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "label": "auth.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "schemas_auth_loginformschema",
+      "label": "LoginFormSchema",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "schemas_auth_registerformschema",
+      "label": "RegisterFormSchema",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "schemas_auth_forgotpasswordformschema",
+      "label": "ForgotPasswordFormSchema",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "schemas_auth_resetpasswordformschema",
+      "label": "ResetPasswordFormSchema",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "schemas_auth_loginforminput",
+      "label": "LoginFormInput",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "schemas_auth_registerforminput",
+      "label": "RegisterFormInput",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "schemas_auth_forgotpasswordforminput",
+      "label": "ForgotPasswordFormInput",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "schemas_auth_resetpasswordforminput",
+      "label": "ResetPasswordFormInput",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L37"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "zod",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_types_user_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "types_user_loginschema",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "schemas_auth_loginformschema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "schemas_auth_registerformschema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "schemas_auth_forgotpasswordformschema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "schemas_auth_resetpasswordformschema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "schemas_auth_loginforminput",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "schemas_auth_registerforminput",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "schemas_auth_forgotpasswordforminput",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "target": "schemas_auth_resetpasswordforminput",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts",
+      "source_location": "L37",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

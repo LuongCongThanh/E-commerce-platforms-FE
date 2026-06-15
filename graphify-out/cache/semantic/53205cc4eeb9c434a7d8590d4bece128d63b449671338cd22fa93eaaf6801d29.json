@@ -1,0 +1,165 @@
+{
+  "nodes": [
+    {
+      "id": "Table_Table",
+      "label": "Table Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Table_TableHeader",
+      "label": "TableHeader Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Table_TableBody",
+      "label": "TableBody Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Table_TableFooter",
+      "label": "TableFooter Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Table_TableRow",
+      "label": "TableRow Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Table_TableHead",
+      "label": "TableHead Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Table_TableCell",
+      "label": "TableCell Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Table_TableCaption",
+      "label": "TableCaption Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "Table_Table",
+      "target": "shared_utils_cn",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Table_TableHeader",
+      "target": "shared_utils_cn",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Table_TableBody",
+      "target": "shared_utils_cn",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Table_TableRow",
+      "target": "shared_utils_cn",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Table_TableHead",
+      "target": "shared_utils_cn",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Table_TableCell",
+      "target": "shared_utils_cn",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Table_TableCaption",
+      "target": "shared_utils_cn",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Table.tsx",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

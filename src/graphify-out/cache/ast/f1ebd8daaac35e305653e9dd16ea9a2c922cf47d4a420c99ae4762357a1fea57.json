@@ -1,0 +1,269 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_lang_en_home_json",
+      "label": "home.json",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "en_home_hero",
+      "label": "hero",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "en_home_hero_badge",
+      "label": "badge",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "en_home_hero_title",
+      "label": "title",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "en_home_hero_subtitle",
+      "label": "subtitle",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "en_home_hero_cta",
+      "label": "cta",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "en_home_hero_ctasale",
+      "label": "ctaSale",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "en_home_categories",
+      "label": "categories",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "en_home_categories_title",
+      "label": "title",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "en_home_flashsale",
+      "label": "flashSale",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "en_home_flashsale_badge",
+      "label": "badge",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "en_home_flashsale_title",
+      "label": "title",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "en_home_flashsale_subtitle",
+      "label": "subtitle",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "en_home_flashsale_cta",
+      "label": "cta",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "en_home_featured",
+      "label": "featured",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "en_home_featured_title",
+      "label": "title",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "en_home_featured_viewall",
+      "label": "viewAll",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L20"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_home_json",
+      "target": "en_home_hero",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_hero",
+      "target": "en_home_hero_badge",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_hero",
+      "target": "en_home_hero_title",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_hero",
+      "target": "en_home_hero_subtitle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_hero",
+      "target": "en_home_hero_cta",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_hero",
+      "target": "en_home_hero_ctasale",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_home_json",
+      "target": "en_home_categories",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_categories",
+      "target": "en_home_categories_title",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_home_json",
+      "target": "en_home_flashsale",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_flashsale",
+      "target": "en_home_flashsale_badge",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_flashsale",
+      "target": "en_home_flashsale_title",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_flashsale",
+      "target": "en_home_flashsale_subtitle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_flashsale",
+      "target": "en_home_flashsale_cta",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_home_json",
+      "target": "en_home_featured",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_featured",
+      "target": "en_home_featured_title",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "en_home_featured",
+      "target": "en_home_featured_viewall",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json",
+      "source_location": "L20",
+      "weight": 1.0
+    }
+  ]
+}

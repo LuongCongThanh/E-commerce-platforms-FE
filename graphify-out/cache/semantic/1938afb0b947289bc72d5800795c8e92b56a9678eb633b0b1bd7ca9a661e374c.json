@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "useDebounce_test_useDebounceTest",
+      "label": "useDebounce Tests",
+      "file_type": "code",
+      "source_file": "src/shared/hooks/__tests__/useDebounce.test.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "useDebounce_test_useDebounceTest",
+      "target": "useDebounce_useDebounce",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/hooks/__tests__/useDebounce.test.ts",
+      "source_location": "line 4",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

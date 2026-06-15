@@ -1,0 +1,17 @@
+{
+  "nodes": [
+    {
+      "id": "useOrders_useOrders",
+      "label": "useOrders Hook",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/orders/useOrders.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

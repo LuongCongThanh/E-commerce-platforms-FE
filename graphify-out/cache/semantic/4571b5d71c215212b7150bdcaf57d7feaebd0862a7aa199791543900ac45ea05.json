@@ -1,0 +1,17 @@
+{
+  "nodes": [
+    {
+      "id": "refresh_route_POST",
+      "label": "API Route: POST /api/auth/refresh",
+      "file_type": "code",
+      "source_file": "src/app/api/auth/refresh/route.ts",
+      "source_location": "line 13",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

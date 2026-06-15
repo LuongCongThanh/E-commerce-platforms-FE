@@ -1,0 +1,133 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_hooks_usemediaquery_ts",
+      "label": "useMediaQuery.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "hooks_usemediaquery_usemediaquery",
+      "label": "useMediaQuery()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "hooks_usemediaquery_useismobile",
+      "label": "useIsMobile()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "hooks_usemediaquery_useistablet",
+      "label": "useIsTablet()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "hooks_usemediaquery_useisdesktop",
+      "label": "useIsDesktop()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L28"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_hooks_usemediaquery_ts",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_hooks_usemediaquery_ts",
+      "target": "hooks_usemediaquery_usemediaquery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_hooks_usemediaquery_ts",
+      "target": "hooks_usemediaquery_useismobile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_hooks_usemediaquery_ts",
+      "target": "hooks_usemediaquery_useistablet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_hooks_usemediaquery_ts",
+      "target": "hooks_usemediaquery_useisdesktop",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_usemediaquery_useismobile",
+      "target": "hooks_usemediaquery_usemediaquery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_usemediaquery_useistablet",
+      "target": "hooks_usemediaquery_usemediaquery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_usemediaquery_useisdesktop",
+      "target": "hooks_usemediaquery_usemediaquery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L28",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "hooks_usemediaquery_usemediaquery",
+      "callee": "useState",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L6"
+    },
+    {
+      "caller_nid": "hooks_usemediaquery_usemediaquery",
+      "callee": "useEffect",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts",
+      "source_location": "L11"
+    }
+  ]
+}

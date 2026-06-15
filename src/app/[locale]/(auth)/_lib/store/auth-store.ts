@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import type { User } from '@/shared/types/user';
 
 type Listener = () => void;
@@ -47,16 +49,10 @@ export function clearAuth(): void {
 }
 
 export async function refreshAccessToken(): Promise<string> {
-  const res = await fetch('/api/auth/refresh', {
-    method: 'POST',
-    credentials: 'include',
+  const { data } = await axios.post<{ access: string }>('/api/auth/refresh', undefined, {
+    withCredentials: true,
   });
 
-  if (!res.ok) {
-    throw new Error('Unable to refresh token');
-  }
-
-  const data = (await res.json()) as { access: string };
   setAccessToken(data.access);
   return data.access;
 }

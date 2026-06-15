@@ -1,0 +1,192 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "label": "ProductsClient.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "products_productsclient_productsclientprops",
+      "label": "ProductsClientProps",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "products_productsclient_productsclient",
+      "label": "ProductsClient()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L17"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "navigation",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_pagination_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "common_pagination_pagination",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_productgrid_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "common_productgrid_productgrid",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_sectionheading_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "common_sectionheading_sectionheading",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_products_useproducts_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "products_useproducts_sortby",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_products_useproducts_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "products_useproducts_useproducts",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "products_productsclient_productsclientprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_products_productsclient_tsx",
+      "target": "products_productsclient_productsclient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "products_productsclient_productsclient",
+      "callee": "useRouter",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "products_productsclient_productsclient",
+      "callee": "useSearchParams",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "products_productsclient_productsclient",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "products_productsclient_productsclient",
+      "callee": "parseInt",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "products_productsclient_productsclient",
+      "callee": "useProducts",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx",
+      "source_location": "L24"
+    }
+  ]
+}

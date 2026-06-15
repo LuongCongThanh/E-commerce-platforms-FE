@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "shared_monitoring_sentry",
+      "label": "Sentry Monitoring (captureError)",
+      "file_type": "code",
+      "source_file": "src/shared/lib/monitoring/sentry.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sentry_captureError",
+      "label": "captureError (Sentry)",
+      "file_type": "code",
+      "source_file": "src/shared/lib/monitoring/sentry.ts",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sentry_captureMessage",
+      "label": "captureMessage (Sentry)",
+      "file_type": "code",
+      "source_file": "src/shared/lib/monitoring/sentry.ts",
+      "source_location": "line 11",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

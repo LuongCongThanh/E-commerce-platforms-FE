@@ -1,0 +1,155 @@
+{
+  "nodes": [
+    {
+      "id": "shared_ProductType",
+      "label": "Product Type",
+      "file_type": "code",
+      "source_file": "src/shared/types/product.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shared_types_product_BadgeValue",
+      "label": "BadgeValue Type",
+      "file_type": "code",
+      "source_file": "src/shared/types/product.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "product_ProductSchema",
+      "label": "ProductSchema (Zod)",
+      "file_type": "code",
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 16",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "product_ProductVariantSchema",
+      "label": "ProductVariantSchema (Zod)",
+      "file_type": "code",
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 7",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "product_ProductListSchema",
+      "label": "ProductListSchema (Zod)",
+      "file_type": "code",
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 34",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "product_BadgeValue",
+      "label": "BadgeValue Union Type",
+      "file_type": "code",
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 5",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "product_Product",
+      "label": "Product Type",
+      "file_type": "code",
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 42",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "product_ProductFilters",
+      "label": "ProductFilters Type Alias",
+      "file_type": "code",
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 45",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "product_ProductSchema",
+      "target": "product_ProductVariantSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 28",
+      "weight": 1.0
+    },
+    {
+      "source": "product_ProductSchema",
+      "target": "category_CategorySchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 25",
+      "weight": 0.95
+    },
+    {
+      "source": "product_Product",
+      "target": "product_ProductSchema",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 42",
+      "weight": 1.0
+    },
+    {
+      "source": "product_ProductFilters",
+      "target": "filter_ProductFilter",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 45",
+      "weight": 1.0
+    },
+    {
+      "source": "product_ProductListSchema",
+      "target": "product_ProductSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 35",
+      "weight": 1.0
+    },
+    {
+      "source": "filter_ProductFilterSchema",
+      "target": "product_ProductFilters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/types/product.ts",
+      "source_location": "line 3 import",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

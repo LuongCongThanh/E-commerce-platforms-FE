@@ -1,0 +1,149 @@
+{
+  "nodes": [
+    {
+      "id": "shop_data_home_bestSellersData",
+      "label": "bestSellersData Static Data",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shop_data_home_homeCategoriesData",
+      "label": "homeCategoriesData Static Data",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shop_data_home_homeHeroData",
+      "label": "homeHeroData Static Data",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "home_newArrivalsData",
+      "label": "newArrivalsData (home data)",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "home_homeTestimonialsData",
+      "label": "homeTestimonialsData (home data)",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "home_homeBenefitsData",
+      "label": "homeBenefitsData (home data)",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "home_homeBenefitsData",
+      "label": "homeBenefitsData Static Data",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "home_homeCategoriesData",
+      "label": "homeCategoriesData Static Data",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "home_homeHeroData",
+      "label": "homeHeroData Static Data",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "home_bestSellersData",
+      "label": "bestSellersData Static Data",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "home_newArrivalsData",
+      "label": "newArrivalsData Static Data",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "home_homeTestimonialsData",
+      "label": "homeTestimonialsData Static Data",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "home_homeCategoriesData",
+      "target": "nav-categories_NAV_CATEGORIES",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/_lib/data/home.ts",
+      "source_location": null,
+      "weight": 0.75
+    }
+  ],
+  "hyperedges": []
+}

@@ -1,0 +1,236 @@
+{
+  "nodes": [
+    {
+      "id": "2026-06-07-auth-store-boot_AuthStoreBootPlan",
+      "label": "Auth Store Boot \u2014 Session Hydration Plan",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-06-07",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "2026-06-07-auth-store-boot_BootFunction",
+      "label": "boot() Function",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "2026-06-07-auth-store-boot_SessionRoute",
+      "label": "/api/auth/session Route Handler",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "2026-06-07-auth-store-boot_AuthStore",
+      "label": "auth-store.ts",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "2026-06-07-auth-store-boot_AuthRuntimeProvider",
+      "label": "AuthRuntimeProvider Component",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "2026-06-07-auth-store-boot_FlashOfLoggedOut",
+      "label": "Flash-of-Logged-Out State Problem",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "2026-06-07-auth-store-boot_SessionHydrationRationale",
+      "label": "Rationale: Hydrate Session on Mount Before HTTP Adapter",
+      "file_type": "rationale",
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "2026-06-07-auth-store-boot_AuthStoreTestFile",
+      "label": "auth-store.test.ts Test File",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "2026-06-07-auth-store-boot_RefreshTokenLogic",
+      "label": "Token Refresh Logic in Session Route",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "2026-06-07-auth-store-boot_AuthStoreBootPlan",
+      "target": "2026-06-07-auth-store-boot_BootFunction",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_AuthStoreBootPlan",
+      "target": "2026-06-07-auth-store-boot_SessionRoute",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_AuthStoreBootPlan",
+      "target": "2026-06-07-auth-store-boot_AuthStore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_AuthStoreBootPlan",
+      "target": "2026-06-07-auth-store-boot_AuthRuntimeProvider",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_AuthStoreBootPlan",
+      "target": "2026-06-07-auth-store-boot_FlashOfLoggedOut",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_AuthStoreBootPlan",
+      "target": "2026-06-07-auth-store-boot_AuthStoreTestFile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_AuthStoreBootPlan",
+      "target": "2026-06-07-auth-store-boot_RefreshTokenLogic",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_SessionHydrationRationale",
+      "target": "2026-06-07-auth-store-boot_FlashOfLoggedOut",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_SessionHydrationRationale",
+      "target": "2026-06-07-auth-store-boot_BootFunction",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_BootFunction",
+      "target": "2026-06-07-auth-store-boot_SessionRoute",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_BootFunction",
+      "target": "2026-06-07-auth-store-boot_AuthStore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_AuthRuntimeProvider",
+      "target": "2026-06-07-auth-store-boot_BootFunction",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "2026-06-07-auth-store-boot_SessionRoute",
+      "target": "2026-06-07-auth-store-boot_RefreshTokenLogic",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-06-07-auth-store-boot.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

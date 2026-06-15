@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_home_sectionnewsletter_tsx",
+      "label": "SectionNewsletter.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionNewsletter.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "home_sectionnewsletter_sectionnewsletter",
+      "label": "SectionNewsletter()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionNewsletter.tsx",
+      "source_location": "L3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_home_sectionnewsletter_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_home_newsletterform_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionNewsletter.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_home_sectionnewsletter_tsx",
+      "target": "home_newsletterform_newsletterform",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionNewsletter.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_home_sectionnewsletter_tsx",
+      "target": "home_sectionnewsletter_sectionnewsletter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionNewsletter.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,112 @@
+{
+  "nodes": [
+    {
+      "id": "Tooltip_Tooltip",
+      "label": "Tooltip Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Tooltip.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Tooltip_TooltipProvider",
+      "label": "TooltipProvider Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Tooltip.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Tooltip_TooltipTrigger",
+      "label": "TooltipTrigger Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Tooltip.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "Tooltip_TooltipContent",
+      "label": "TooltipContent Component",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Tooltip.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ext_radix_tooltip",
+      "label": "@radix-ui/react-tooltip",
+      "file_type": "code",
+      "source_file": "src/shared/components/base/Tooltip.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "Tooltip_Tooltip",
+      "target": "ext_radix_tooltip",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Tooltip.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Tooltip_TooltipProvider",
+      "target": "ext_radix_tooltip",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Tooltip.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Tooltip_TooltipTrigger",
+      "target": "ext_radix_tooltip",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Tooltip.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Tooltip_TooltipContent",
+      "target": "ext_radix_tooltip",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Tooltip.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "Tooltip_TooltipContent",
+      "target": "shared_utils_cn",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/base/Tooltip.tsx",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

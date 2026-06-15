@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "shared_routes",
+      "label": "Routes Constants",
+      "file_type": "code",
+      "source_file": "src/shared/constants/routes.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "routes_ROUTES",
+      "label": "App Route Constants",
+      "file_type": "code",
+      "source_file": "src/shared/constants/routes.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "routes_ROUTES",
+      "target": "api-endpoints_API",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "src/shared/constants/routes.ts",
+      "source_location": null,
+      "weight": 0.65
+    }
+  ],
+  "hyperedges": []
+}

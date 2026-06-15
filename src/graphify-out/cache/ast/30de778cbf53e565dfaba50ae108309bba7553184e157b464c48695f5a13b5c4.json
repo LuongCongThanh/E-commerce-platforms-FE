@@ -1,0 +1,213 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "label": "useAuth.test.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_useauth_test_mockpush",
+      "label": "mockPush",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "tests_useauth_test_mockuser",
+      "label": "mockUser",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "tests_useauth_test_mockadmin",
+      "label": "mockAdmin",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "tests_useauth_test_result",
+      "label": "{ result }",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L29"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_store_auth_store_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "store_auth_store_clearauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "store_auth_store_setaccesstoken",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_useauth_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "hooks_useauth_login",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "hooks_useauth_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "hooks_useauth_useisloggedin",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "tests_useauth_test_mockpush",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "tests_useauth_test_mockuser",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "tests_useauth_test_mockadmin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "tests_useauth_test_result",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "tests_useauth_test_result",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "tests_useauth_test_result",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "tests_useauth_test_result",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "tests_useauth_test_result",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_hooks_tests_useauth_test_ts",
+      "target": "tests_useauth_test_result",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts",
+      "source_location": "L75",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

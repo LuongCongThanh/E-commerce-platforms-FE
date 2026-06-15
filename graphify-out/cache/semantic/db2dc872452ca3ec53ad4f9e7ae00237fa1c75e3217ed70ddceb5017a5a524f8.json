@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "cart_page_CartPage",
+      "label": "CartPage",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/cart/page.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "cart_page_CartPage",
+      "target": "shop_layout_ShopLayout",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/cart/page.tsx",
+      "source_location": null,
+      "weight": 0.75
+    }
+  ],
+  "hyperedges": []
+}

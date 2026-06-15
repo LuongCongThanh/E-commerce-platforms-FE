@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "PaginationNav_test_PaginationNavTest",
+      "label": "PaginationNav Tests",
+      "file_type": "code",
+      "source_file": "src/shared/components/common/__tests__/PaginationNav.test.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "PaginationNav_test_PaginationNavTest",
+      "target": "PaginationNav_PaginationNav",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/components/common/__tests__/PaginationNav.test.tsx",
+      "source_location": "line 5",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

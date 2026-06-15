@@ -1,0 +1,81 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_productgridskeleton_tsx",
+      "label": "ProductGridSkeleton.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGridSkeleton.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "common_productgridskeleton_productgridskeletonprops",
+      "label": "ProductGridSkeletonProps",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGridSkeleton.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "common_productgridskeleton_productgridskeleton",
+      "label": "ProductGridSkeleton()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGridSkeleton.tsx",
+      "source_location": "L7"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_productgridskeleton_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_productcardskeleton_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGridSkeleton.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_productgridskeleton_tsx",
+      "target": "common_productcardskeleton_productcardskeleton",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGridSkeleton.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_productgridskeleton_tsx",
+      "target": "common_productgridskeleton_productgridskeletonprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGridSkeleton.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_common_productgridskeleton_tsx",
+      "target": "common_productgridskeleton_productgridskeleton",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGridSkeleton.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "common_productgridskeleton_productgridskeleton",
+      "callee": "from",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGridSkeleton.tsx",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "common_productgridskeleton_productgridskeleton",
+      "callee": "map",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGridSkeleton.tsx",
+      "source_location": "L12"
+    }
+  ]
+}

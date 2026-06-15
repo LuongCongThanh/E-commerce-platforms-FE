@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "SectionWhyChooseUs_SectionWhyChooseUs",
+      "label": "SectionWhyChooseUs",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/components/home/SectionWhyChooseUs.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "SectionWhyChooseUs_SectionWhyChooseUs",
+      "target": "common_SectionHeading",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/home/SectionWhyChooseUs.tsx",
+      "source_location": "line 3",
+      "weight": 1.0
+    },
+    {
+      "source": "SectionWhyChooseUs_SectionWhyChooseUs",
+      "target": "home_homeBenefitsData",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/home/SectionWhyChooseUs.tsx",
+      "source_location": "line 4",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

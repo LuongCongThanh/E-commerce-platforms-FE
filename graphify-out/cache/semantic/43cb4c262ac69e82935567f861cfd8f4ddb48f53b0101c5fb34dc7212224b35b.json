@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "useCartTest_useCartTest",
+      "label": "useCart Test Suite",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/__tests__/useCart.test.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useCartTest_CartItem",
+      "label": "Cart Item Test Fixture",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/__tests__/useCart.test.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "useCartTest_useCartTest",
+      "target": "useCartTest_CartItem",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/__tests__/useCart.test.ts",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

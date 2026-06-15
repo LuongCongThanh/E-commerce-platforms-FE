@@ -1,0 +1,114 @@
+{
+  "nodes": [
+    {
+      "id": "payment_PaymentMethodSchema",
+      "label": "PaymentMethodSchema (Zod)",
+      "file_type": "code",
+      "source_file": "src/shared/types/payment.ts",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "payment_PaymentStatusSchema",
+      "label": "PaymentStatusSchema (Zod)",
+      "file_type": "code",
+      "source_file": "src/shared/types/payment.ts",
+      "source_location": "line 4",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "payment_PaymentResultSchema",
+      "label": "PaymentResultSchema (Zod)",
+      "file_type": "code",
+      "source_file": "src/shared/types/payment.ts",
+      "source_location": "line 6",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "payment_CheckoutPayloadSchema",
+      "label": "CheckoutPayloadSchema (Zod)",
+      "file_type": "code",
+      "source_file": "src/shared/types/payment.ts",
+      "source_location": "line 16",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "payment_PaymentMethod",
+      "label": "PaymentMethod Type",
+      "file_type": "code",
+      "source_file": "src/shared/types/payment.ts",
+      "source_location": "line 28",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "payment_PaymentResult",
+      "label": "PaymentResult Type",
+      "file_type": "code",
+      "source_file": "src/shared/types/payment.ts",
+      "source_location": "line 30",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "payment_CheckoutPayload",
+      "label": "CheckoutPayload Type",
+      "file_type": "code",
+      "source_file": "src/shared/types/payment.ts",
+      "source_location": "line 31",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "payment_CheckoutPayloadSchema",
+      "target": "payment_PaymentMethodSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/types/payment.ts",
+      "source_location": "line 23",
+      "weight": 1.0
+    },
+    {
+      "source": "payment_PaymentResultSchema",
+      "target": "payment_PaymentMethodSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/types/payment.ts",
+      "source_location": "line 10",
+      "weight": 1.0
+    },
+    {
+      "source": "payment_CheckoutPayload",
+      "target": "payment_CheckoutPayloadSchema",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/types/payment.ts",
+      "source_location": "line 31",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

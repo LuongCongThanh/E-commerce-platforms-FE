@@ -1,0 +1,330 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "label": "ForgotPasswordForm.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_forgotpasswordform_forgotpasswordform",
+      "label": "ForgotPasswordForm()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L19"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "link",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "zod",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "next_intl",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "react_hook_form",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_actions_auth_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "actions_auth_forgotpasswordaction",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "schemas_auth_forgotpasswordforminput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_schemas_auth_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "schemas_auth_forgotpasswordformschema",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_button_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "base_button_button",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_form_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "base_form_form",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "base_form_formcontrol",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "base_form_formfield",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "base_form_formitem",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "base_form_formlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "base_form_formmessage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_components_base_input_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "base_input_input",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_shared_lib_errors_api_error_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "errors_api_error_apierror",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_auth_lib_components_forgotpasswordform_tsx",
+      "target": "components_forgotpasswordform_forgotpasswordform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "components_forgotpasswordform_forgotpasswordform",
+      "callee": "useLocale",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "components_forgotpasswordform_forgotpasswordform",
+      "callee": "useState",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "components_forgotpasswordform_forgotpasswordform",
+      "callee": "useState",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "components_forgotpasswordform_forgotpasswordform",
+      "callee": "useForm",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "components_forgotpasswordform_forgotpasswordform",
+      "callee": "zodResolver",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "components_forgotpasswordform_forgotpasswordform",
+      "callee": "getValues",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "components_forgotpasswordform_forgotpasswordform",
+      "callee": "handleSubmit",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx",
+      "source_location": "L66"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "profile_useProfile",
+      "label": "useProfile hook",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/profile/useProfile.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useProfile_useProfile",
+      "label": "useProfile Hook",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/profile/useProfile.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "useProfile_useProfile",
+      "target": "useUpdateProfile_profileKey",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/profile/useProfile.ts",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

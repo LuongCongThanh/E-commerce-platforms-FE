@@ -1,0 +1,17 @@
+{
+  "nodes": [
+    {
+      "id": "orderJson_orderTranslations",
+      "label": "Order Translations (en)",
+      "file_type": "document",
+      "source_file": "src/lang/en/order.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

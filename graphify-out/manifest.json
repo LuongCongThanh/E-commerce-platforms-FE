@@ -1,0 +1,1227 @@
+{
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\layout.tsx": {
+    "mtime": 1780770523.7271001,
+    "ast_hash": "a87c96706a1b713ce81ea8264f195ed0",
+    "semantic_hash": "a87c96706a1b713ce81ea8264f195ed0"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\page.tsx": {
+    "mtime": 1776695062.7622533,
+    "ast_hash": "1273e89a32a0d72e323c72660137a641",
+    "semantic_hash": "1273e89a32a0d72e323c72660137a641"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\providers.tsx": {
+    "mtime": 1780821592.3412416,
+    "ast_hash": "66aeaee10ec9ba69574e771150ae1574",
+    "semantic_hash": "66aeaee10ec9ba69574e771150ae1574"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\sw.ts": {
+    "mtime": 1776884707.4701912,
+    "ast_hash": "0c02ae87f6ab825cc9e9164f68a6edb4",
+    "semantic_hash": "0c02ae87f6ab825cc9e9164f68a6edb4"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\api\\auth\\login\\route.ts": {
+    "mtime": 1779296511.0188446,
+    "ast_hash": "e70b86f9f9fdf2b6d0d3479bb2d92749",
+    "semantic_hash": "e70b86f9f9fdf2b6d0d3479bb2d92749"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\api\\auth\\logout\\route.ts": {
+    "mtime": 1779296511.020844,
+    "ast_hash": "cee66cf78f4f99079925c8825aecaf36",
+    "semantic_hash": "cee66cf78f4f99079925c8825aecaf36"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\api\\auth\\refresh\\route.ts": {
+    "mtime": 1780770523.7261002,
+    "ast_hash": "15f5aa8de90b2b4e1c95dc57e748b38c",
+    "semantic_hash": "15f5aa8de90b2b4e1c95dc57e748b38c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\api\\auth\\register\\route.ts": {
+    "mtime": 1779296511.0218434,
+    "ast_hash": "8481a0dc61fc223c43bd0a4afa1872f2",
+    "semantic_hash": "8481a0dc61fc223c43bd0a4afa1872f2"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\error.tsx": {
+    "mtime": 1777224408.0064633,
+    "ast_hash": "187fbca603b130f9bf263c71273ac94e",
+    "semantic_hash": "187fbca603b130f9bf263c71273ac94e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\layout.tsx": {
+    "mtime": 1780770523.7261002,
+    "ast_hash": "05c68f17af8a04ed34f3fb93335d22e7",
+    "semantic_hash": "05c68f17af8a04ed34f3fb93335d22e7"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\loading.tsx": {
+    "mtime": 1776884707.4701912,
+    "ast_hash": "6f7ec83266d6d051013b1d475e68f941",
+    "semantic_hash": "6f7ec83266d6d051013b1d475e68f941"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\layout.tsx": {
+    "mtime": 1777332075.3815036,
+    "ast_hash": "11f39054a7041cda14cf108ecdf4ccde",
+    "semantic_hash": "11f39054a7041cda14cf108ecdf4ccde"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\forgot-password\\page.tsx": {
+    "mtime": 1780770523.709098,
+    "ast_hash": "c600c37d09e1979a67093c394aefb1ce",
+    "semantic_hash": "c600c37d09e1979a67093c394aefb1ce"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\login\\page.tsx": {
+    "mtime": 1780770523.709098,
+    "ast_hash": "2fdf249afac716c202a1a0d20ce2cf45",
+    "semantic_hash": "2fdf249afac716c202a1a0d20ce2cf45"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\register\\page.tsx": {
+    "mtime": 1780770523.709098,
+    "ast_hash": "a58de8ed39ff800d52ef2bc265fd874c",
+    "semantic_hash": "a58de8ed39ff800d52ef2bc265fd874c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\reset-password\\[token]\\page.tsx": {
+    "mtime": 1780770523.7100983,
+    "ast_hash": "136965aaca559abae3822277047d370d",
+    "semantic_hash": "136965aaca559abae3822277047d370d"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\actions\\auth.ts": {
+    "mtime": 1780821592.3247304,
+    "ast_hash": "d97e55106ee835209b894031d70130bd",
+    "semantic_hash": "d97e55106ee835209b894031d70130bd"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthGuard.tsx": {
+    "mtime": 1780821592.3247304,
+    "ast_hash": "745a9f1c210dec0ebb1942e0d5041849",
+    "semantic_hash": "745a9f1c210dec0ebb1942e0d5041849"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\AuthRuntimeProvider.tsx": {
+    "mtime": 1780821592.3247304,
+    "ast_hash": "abf3e22df391bca9e390f830a2b9014a",
+    "semantic_hash": "abf3e22df391bca9e390f830a2b9014a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ForgotPasswordForm.tsx": {
+    "mtime": 1780770523.7070985,
+    "ast_hash": "e0912a4ce77c731d430ba84923c76352",
+    "semantic_hash": "e0912a4ce77c731d430ba84923c76352"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\LoginForm.tsx": {
+    "mtime": 1780770523.7080982,
+    "ast_hash": "ac26fe422d17a7e0552749db5bcf5643",
+    "semantic_hash": "ac26fe422d17a7e0552749db5bcf5643"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\PasswordInput.tsx": {
+    "mtime": 1780821592.3257318,
+    "ast_hash": "79c82f2f6fb17a6e63a5327ab9b52059",
+    "semantic_hash": "79c82f2f6fb17a6e63a5327ab9b52059"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\RegisterForm.tsx": {
+    "mtime": 1780770523.7080982,
+    "ast_hash": "97613aa758776168153deabc7d65f555",
+    "semantic_hash": "97613aa758776168153deabc7d65f555"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\ResetPasswordForm.tsx": {
+    "mtime": 1780770523.7080982,
+    "ast_hash": "402ce9f52966546664f90835253834eb",
+    "semantic_hash": "402ce9f52966546664f90835253834eb"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\components\\__tests__\\PasswordInput.test.tsx": {
+    "mtime": 1780821592.3257318,
+    "ast_hash": "51f7928dcc726c579344f4f07fc0829f",
+    "semantic_hash": "51f7928dcc726c579344f4f07fc0829f"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\useAuth.ts": {
+    "mtime": 1780821592.3267305,
+    "ast_hash": "853b650502c5fef73a54569e4bdbdaac",
+    "semantic_hash": "853b650502c5fef73a54569e4bdbdaac"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\hooks\\__tests__\\useAuth.test.ts": {
+    "mtime": 1780821592.3257318,
+    "ast_hash": "fa484bd8bcaa68e789fbbab4c210dea1",
+    "semantic_hash": "fa484bd8bcaa68e789fbbab4c210dea1"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\schemas\\auth.ts": {
+    "mtime": 1780770523.7080982,
+    "ast_hash": "19da04166fe29782ab8d8c9e01a8521c",
+    "semantic_hash": "19da04166fe29782ab8d8c9e01a8521c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(auth)\\_lib\\store\\auth-store.ts": {
+    "mtime": 1780821592.3267305,
+    "ast_hash": "e83394b9886a780ceb29db5e3a32ff25",
+    "semantic_hash": "e83394b9886a780ceb29db5e3a32ff25"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\layout.tsx": {
+    "mtime": 1780821592.3412416,
+    "ast_hash": "9c1dd17f630a3cd606871e121c51f7d6",
+    "semantic_hash": "9c1dd17f630a3cd606871e121c51f7d6"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\loading.tsx": {
+    "mtime": 1780770523.7241004,
+    "ast_hash": "6f3d8bc3f132a21219e9a9189cae9362",
+    "semantic_hash": "6f3d8bc3f132a21219e9a9189cae9362"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\page.tsx": {
+    "mtime": 1776955163.9515917,
+    "ast_hash": "b162555035472550f2d3e9866b29c61b",
+    "semantic_hash": "b162555035472550f2d3e9866b29c61b"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\cart\\page.tsx": {
+    "mtime": 1780770523.7231007,
+    "ast_hash": "075bbc7a44bc3cfc69b7a70f5b3fdbd8",
+    "semantic_hash": "075bbc7a44bc3cfc69b7a70f5b3fdbd8"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\categories\\[slug]\\page.tsx": {
+    "mtime": 1780770523.7231007,
+    "ast_hash": "aab5409a2b4d5c148a66d0fdbd7e3e3b",
+    "semantic_hash": "aab5409a2b4d5c148a66d0fdbd7e3e3b"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\page.tsx": {
+    "mtime": 1780770523.7231007,
+    "ast_hash": "bd89c1cad12e1c7d2083607cb71148fd",
+    "semantic_hash": "bd89c1cad12e1c7d2083607cb71148fd"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\checkout\\success\\page.tsx": {
+    "mtime": 1780748735.9008708,
+    "ast_hash": "24703901a0282429ff607e0cc4026cc6",
+    "semantic_hash": "24703901a0282429ff607e0cc4026cc6"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\home\\page.tsx": {
+    "mtime": 1780770523.7241004,
+    "ast_hash": "b3ed199a634b3e47a10ab4de1f8110ba",
+    "semantic_hash": "b3ed199a634b3e47a10ab4de1f8110ba"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\orders\\page.tsx": {
+    "mtime": 1780770523.7251005,
+    "ast_hash": "64962fb691f9573402e43e3f1fe533d7",
+    "semantic_hash": "64962fb691f9573402e43e3f1fe533d7"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\orders\\[id]\\page.tsx": {
+    "mtime": 1780770523.7241004,
+    "ast_hash": "a0793b4cffea5802850c056ebd05f531",
+    "semantic_hash": "a0793b4cffea5802850c056ebd05f531"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\products\\page.tsx": {
+    "mtime": 1780770523.7251005,
+    "ast_hash": "89520113d7d5d09cf068ff4f660a42a9",
+    "semantic_hash": "89520113d7d5d09cf068ff4f660a42a9"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\products\\[slug]\\page.tsx": {
+    "mtime": 1780770523.7251005,
+    "ast_hash": "4e7a551c02b3ed6ca477df3f48c25c08",
+    "semantic_hash": "4e7a551c02b3ed6ca477df3f48c25c08"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\profile\\page.tsx": {
+    "mtime": 1780770523.7261002,
+    "ast_hash": "29866811fee9eb3bf1fa3748502f09bb",
+    "semantic_hash": "29866811fee9eb3bf1fa3748502f09bb"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\search\\page.tsx": {
+    "mtime": 1780770523.7261002,
+    "ast_hash": "4dbe3c1e00c1a7057e38a59154cf6cc5",
+    "semantic_hash": "4dbe3c1e00c1a7057e38a59154cf6cc5"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\actions\\order.ts": {
+    "mtime": 1780770523.7100983,
+    "ast_hash": "f14218f09f011c9fa7cda1974189945e",
+    "semantic_hash": "f14218f09f011c9fa7cda1974189945e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\actions\\product.ts": {
+    "mtime": 1780770523.7100983,
+    "ast_hash": "e0bbbfc271f76613a44a7057e20a4105",
+    "semantic_hash": "e0bbbfc271f76613a44a7057e20a4105"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\actions\\profile.ts": {
+    "mtime": 1780770523.7100983,
+    "ast_hash": "5269e0452778e84562e55b1068abe1fd",
+    "semantic_hash": "5269e0452778e84562e55b1068abe1fd"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\cart\\CartClient.tsx": {
+    "mtime": 1780821592.3267305,
+    "ast_hash": "ac8cad61ab7a4ab521d34316c0155f8c",
+    "semantic_hash": "ac8cad61ab7a4ab521d34316c0155f8c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\cart\\CartDrawer.tsx": {
+    "mtime": 1780821592.32773,
+    "ast_hash": "7fd341ed624e3aba8bb3ed496a2a9830",
+    "semantic_hash": "7fd341ed624e3aba8bb3ed496a2a9830"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\cart\\CartSummary.tsx": {
+    "mtime": 1780821592.32773,
+    "ast_hash": "9796912a4866d82a427e5dc55adee8b5",
+    "semantic_hash": "9796912a4866d82a427e5dc55adee8b5"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\cart\\CartTable.tsx": {
+    "mtime": 1780821592.32773,
+    "ast_hash": "5d37513cf65e573aadf18cb4243b4139",
+    "semantic_hash": "5d37513cf65e573aadf18cb4243b4139"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\categories\\CategoryClient.tsx": {
+    "mtime": 1780770523.7121005,
+    "ast_hash": "0cba424e04f9a46971dcaa9d03c5513a",
+    "semantic_hash": "0cba424e04f9a46971dcaa9d03c5513a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\categories\\FilterSidebar.tsx": {
+    "mtime": 1780770523.7121005,
+    "ast_hash": "1c4662f81d0545311d78379d6c73d357",
+    "semantic_hash": "1c4662f81d0545311d78379d6c73d357"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\CheckoutClient.tsx": {
+    "mtime": 1780821592.3287318,
+    "ast_hash": "98a14ad01486595eee6959ae9e6fb734",
+    "semantic_hash": "98a14ad01486595eee6959ae9e6fb734"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx": {
+    "mtime": 1780821592.3287318,
+    "ast_hash": "e8e37f93e22a97822856a41598d69d23",
+    "semantic_hash": "e8e37f93e22a97822856a41598d69d23"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\CategoryCard.tsx": {
+    "mtime": 1780821592.3297305,
+    "ast_hash": "178dd2a0230d6440eb12a7ba2e210311",
+    "semantic_hash": "178dd2a0230d6440eb12a7ba2e210311"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\CategoryGrid.tsx": {
+    "mtime": 1780770523.7130973,
+    "ast_hash": "54395505b23e741e432f65a7385c4df4",
+    "semantic_hash": "54395505b23e741e432f65a7385c4df4"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ConfirmDialog.tsx": {
+    "mtime": 1780821592.3297305,
+    "ast_hash": "d2a5211646b2936bc4a90a2f077a6c0c",
+    "semantic_hash": "d2a5211646b2936bc4a90a2f077a6c0c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\FeaturedProducts.tsx": {
+    "mtime": 1780821592.3297305,
+    "ast_hash": "636059ddce78c9ec3ffbbe1e3a7a44cf",
+    "semantic_hash": "636059ddce78c9ec3ffbbe1e3a7a44cf"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\FlashSaleBanner.tsx": {
+    "mtime": 1780770523.7130973,
+    "ast_hash": "788cba4cb7664868aeaa8ced1395aed4",
+    "semantic_hash": "788cba4cb7664868aeaa8ced1395aed4"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\HeroBanner.tsx": {
+    "mtime": 1780770523.7130973,
+    "ast_hash": "909573784b9879a5306ca4b4b7b11d5d",
+    "semantic_hash": "909573784b9879a5306ca4b4b7b11d5d"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\OrderStatusBadge.tsx": {
+    "mtime": 1780770523.7140996,
+    "ast_hash": "34b2a76494366b0e28f578b24f9b9ee1",
+    "semantic_hash": "34b2a76494366b0e28f578b24f9b9ee1"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\Pagination.tsx": {
+    "mtime": 1780770523.7140996,
+    "ast_hash": "b9e734693cd5b9447b49c3f264099678",
+    "semantic_hash": "b9e734693cd5b9447b49c3f264099678"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\PriceDisplay.tsx": {
+    "mtime": 1780821592.33073,
+    "ast_hash": "54dfacf8d9212abd342b7a192c8997ee",
+    "semantic_hash": "54dfacf8d9212abd342b7a192c8997ee"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductCard.tsx": {
+    "mtime": 1780821592.33073,
+    "ast_hash": "812d2df82a1963339b03e432cfe7992e",
+    "semantic_hash": "812d2df82a1963339b03e432cfe7992e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductCardSkeleton.tsx": {
+    "mtime": 1780821592.33073,
+    "ast_hash": "78b8daae09e6ef0884397358c511f318",
+    "semantic_hash": "78b8daae09e6ef0884397358c511f318"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGrid.tsx": {
+    "mtime": 1780821592.3317304,
+    "ast_hash": "d4f929cfdd6a0278a3409c7ec950c914",
+    "semantic_hash": "d4f929cfdd6a0278a3409c7ec950c914"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ProductGridSkeleton.tsx": {
+    "mtime": 1780821592.3317304,
+    "ast_hash": "c17019514a37d2438b5000a351dc222b",
+    "semantic_hash": "c17019514a37d2438b5000a351dc222b"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\QuantitySelector.tsx": {
+    "mtime": 1780821592.3317304,
+    "ast_hash": "4112b28bf72b75927f6ed23cda34696e",
+    "semantic_hash": "4112b28bf72b75927f6ed23cda34696e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\SectionHeading.tsx": {
+    "mtime": 1780821592.3317304,
+    "ast_hash": "b0f13575bebb0beac84769e72868f82e",
+    "semantic_hash": "b0f13575bebb0beac84769e72868f82e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\ShopLoadingShell.tsx": {
+    "mtime": 1780770523.7140996,
+    "ast_hash": "9c4181a8f621d0b58491ed82a01b9487",
+    "semantic_hash": "9c4181a8f621d0b58491ed82a01b9487"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\SortSelect.tsx": {
+    "mtime": 1780821592.3317304,
+    "ast_hash": "6c5286aa74ba8d54d602608d83bd198e",
+    "semantic_hash": "6c5286aa74ba8d54d602608d83bd198e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\ConfirmDialog.test.tsx": {
+    "mtime": 1780821592.332731,
+    "ast_hash": "50870d23045cb7bf1658008053674aec",
+    "semantic_hash": "50870d23045cb7bf1658008053674aec"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\PriceDisplay.test.tsx": {
+    "mtime": 1780821592.332731,
+    "ast_hash": "1dc798d25b09ee3bb2682c94e54646a8",
+    "semantic_hash": "1dc798d25b09ee3bb2682c94e54646a8"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\common\\__tests__\\QuantitySelector.test.tsx": {
+    "mtime": 1780821592.3332374,
+    "ast_hash": "1226f74d9e46080bd391c32356cc2a59",
+    "semantic_hash": "1226f74d9e46080bd391c32356cc2a59"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\CountdownTimer.tsx": {
+    "mtime": 1780821592.3332374,
+    "ast_hash": "32ab407570350eb4c8e1bf3c6c37319b",
+    "semantic_hash": "32ab407570350eb4c8e1bf3c6c37319b"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\NewsletterForm.tsx": {
+    "mtime": 1780821592.3332374,
+    "ast_hash": "1cb69f8adf1ff35ba6e449af4c566bb4",
+    "semantic_hash": "1cb69f8adf1ff35ba6e449af4c566bb4"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionBestSellers.tsx": {
+    "mtime": 1780821592.3332374,
+    "ast_hash": "5e194b12b4ec56543452021333a2308c",
+    "semantic_hash": "5e194b12b4ec56543452021333a2308c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionFeaturedCategories.tsx": {
+    "mtime": 1780821592.3342452,
+    "ast_hash": "111e15f343a9c97ef85d188c4d663a78",
+    "semantic_hash": "111e15f343a9c97ef85d188c4d663a78"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionFlashSale.tsx": {
+    "mtime": 1780821592.3342452,
+    "ast_hash": "6b23076bcb5f03305edd05bd2faefb60",
+    "semantic_hash": "6b23076bcb5f03305edd05bd2faefb60"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionHero.tsx": {
+    "mtime": 1780821592.3342452,
+    "ast_hash": "9d17ce7781e95a1a331818f635cfb929",
+    "semantic_hash": "9d17ce7781e95a1a331818f635cfb929"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionNewArrivals.tsx": {
+    "mtime": 1780821592.3342452,
+    "ast_hash": "8493beee342aac26d1372c8057615342",
+    "semantic_hash": "8493beee342aac26d1372c8057615342"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionNewsletter.tsx": {
+    "mtime": 1780821592.3352416,
+    "ast_hash": "496ce1d36502d1c8da191e490fae2ac4",
+    "semantic_hash": "496ce1d36502d1c8da191e490fae2ac4"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionTestimonials.tsx": {
+    "mtime": 1780821592.3352416,
+    "ast_hash": "b2bfcd48c71a69463aeea4c80582b13f",
+    "semantic_hash": "b2bfcd48c71a69463aeea4c80582b13f"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\SectionWhyChooseUs.tsx": {
+    "mtime": 1780821592.3362412,
+    "ast_hash": "e6781c55c47d693fa5c598be0a9c3567",
+    "semantic_hash": "e6781c55c47d693fa5c598be0a9c3567"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\TestimonialCard.tsx": {
+    "mtime": 1780821592.3362412,
+    "ast_hash": "3afcda85e4429acf5115e02022059484",
+    "semantic_hash": "3afcda85e4429acf5115e02022059484"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\TrustBadgeList.tsx": {
+    "mtime": 1780821592.3362412,
+    "ast_hash": "f9e7958f1baf1bad2fcb001005759c03",
+    "semantic_hash": "f9e7958f1baf1bad2fcb001005759c03"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\__tests__\\CountdownTimer.test.tsx": {
+    "mtime": 1780821592.3372414,
+    "ast_hash": "ebdfa402d7783bcae144748cca9a687e",
+    "semantic_hash": "ebdfa402d7783bcae144748cca9a687e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\home\\__tests__\\NewsletterForm.test.tsx": {
+    "mtime": 1780821592.3372414,
+    "ast_hash": "ea841c89b00116fe34bec66ee5dba509",
+    "semantic_hash": "ea841c89b00116fe34bec66ee5dba509"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\layout\\Footer.tsx": {
+    "mtime": 1780821592.3372414,
+    "ast_hash": "b15c718d53d7ee5f3ad1aed57c65b6f6",
+    "semantic_hash": "b15c718d53d7ee5f3ad1aed57c65b6f6"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\layout\\Header.tsx": {
+    "mtime": 1780821592.3372414,
+    "ast_hash": "b4359ed41b37ed06219be1e872962628",
+    "semantic_hash": "b4359ed41b37ed06219be1e872962628"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\navigation\\DesktopMegaMenu.tsx": {
+    "mtime": 1780821592.3382413,
+    "ast_hash": "6cb7692e36fbaa53dc9efe1bbde2acb2",
+    "semantic_hash": "6cb7692e36fbaa53dc9efe1bbde2acb2"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\navigation\\MobileNav.tsx": {
+    "mtime": 1780821592.3382413,
+    "ast_hash": "528afa7e44b68f456fbf89b64c65420c",
+    "semantic_hash": "528afa7e44b68f456fbf89b64c65420c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\orders\\OrderDetailClient.tsx": {
+    "mtime": 1780770523.7160995,
+    "ast_hash": "ded7a75ea79a1d8d48f7bdc982e440a5",
+    "semantic_hash": "ded7a75ea79a1d8d48f7bdc982e440a5"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\orders\\OrdersClient.tsx": {
+    "mtime": 1780770523.7170968,
+    "ast_hash": "8d135eae6fb3822a68a5e3331366153a",
+    "semantic_hash": "8d135eae6fb3822a68a5e3331366153a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\AddToCartSection.tsx": {
+    "mtime": 1780770523.7170968,
+    "ast_hash": "bb5d3be3989c176e932a7b1db35aa63f",
+    "semantic_hash": "bb5d3be3989c176e932a7b1db35aa63f"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductDetailTabs.tsx": {
+    "mtime": 1780770523.7170968,
+    "ast_hash": "f0c53b82fa2786ffe15cfb9fde1eab28",
+    "semantic_hash": "f0c53b82fa2786ffe15cfb9fde1eab28"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductGallery.tsx": {
+    "mtime": 1780770523.7170968,
+    "ast_hash": "79f1557f68ebd8012b1ff1bb73c2d84c",
+    "semantic_hash": "79f1557f68ebd8012b1ff1bb73c2d84c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\ProductsClient.tsx": {
+    "mtime": 1780821592.3382413,
+    "ast_hash": "40a0355511f3e5e071e0f785634242f7",
+    "semantic_hash": "40a0355511f3e5e071e0f785634242f7"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\products\\VariantSelector.tsx": {
+    "mtime": 1780770523.7181008,
+    "ast_hash": "c5d6cf49420d9e9a1d557dc15e4d6249",
+    "semantic_hash": "c5d6cf49420d9e9a1d557dc15e4d6249"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\profile\\ProfileClient.tsx": {
+    "mtime": 1780770523.7181008,
+    "ast_hash": "8689b89d69baba19b51f914ca094f3df",
+    "semantic_hash": "8689b89d69baba19b51f914ca094f3df"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\search\\SearchClient.tsx": {
+    "mtime": 1780770523.7181008,
+    "ast_hash": "3de7ea1f9babc76cdec91f83846388bc",
+    "semantic_hash": "3de7ea1f9babc76cdec91f83846388bc"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\constants\\payment-config.ts": {
+    "mtime": 1780821592.339242,
+    "ast_hash": "43d13633d0191e35fe4d7db61ce3c61a",
+    "semantic_hash": "43d13633d0191e35fe4d7db61ce3c61a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\data\\categories.ts": {
+    "mtime": 1777226820.7985766,
+    "ast_hash": "33518ff22a81ea72ac2f75551b46e8fe",
+    "semantic_hash": "33518ff22a81ea72ac2f75551b46e8fe"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\data\\home.ts": {
+    "mtime": 1780770523.7181008,
+    "ast_hash": "1db5b140d99d5f2017a8d58485758ac4",
+    "semantic_hash": "1db5b140d99d5f2017a8d58485758ac4"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\data\\nav-categories.ts": {
+    "mtime": 1780821592.339242,
+    "ast_hash": "34dacf2b1f97fd2ce35e6b5c2546c796",
+    "semantic_hash": "34dacf2b1f97fd2ce35e6b5c2546c796"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\data\\products.ts": {
+    "mtime": 1780768116.4308324,
+    "ast_hash": "941ab0f3769c827a5d0df3b483db07bb",
+    "semantic_hash": "941ab0f3769c827a5d0df3b483db07bb"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\useCart.ts": {
+    "mtime": 1780821592.3412416,
+    "ast_hash": "985ad9cbe5c6f33a50353768f217feda",
+    "semantic_hash": "985ad9cbe5c6f33a50353768f217feda"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\categories\\useCategories.ts": {
+    "mtime": 1780770523.7191021,
+    "ast_hash": "e609f7f34c4aff1d8e4be5a6a0b91f71",
+    "semantic_hash": "e609f7f34c4aff1d8e4be5a6a0b91f71"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\categories\\useCategoriesData.ts": {
+    "mtime": 1780770523.7191021,
+    "ast_hash": "8a55482fa959d5e85b15a0a0bbeac321",
+    "semantic_hash": "8a55482fa959d5e85b15a0a0bbeac321"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\checkout\\useCreateOrder.ts": {
+    "mtime": 1780821592.3402429,
+    "ast_hash": "57b9049660e471c8f6fb8961d448c31d",
+    "semantic_hash": "57b9049660e471c8f6fb8961d448c31d"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\home\\useHomeData.ts": {
+    "mtime": 1780770523.7191021,
+    "ast_hash": "38da7cb63d1a18e388ca3c3dcf63b427",
+    "semantic_hash": "38da7cb63d1a18e388ca3c3dcf63b427"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\home\\useHomeFlashSaleCountdown.ts": {
+    "mtime": 1780770523.7201016,
+    "ast_hash": "428861060b549b344bd85509eecd878f",
+    "semantic_hash": "428861060b549b344bd85509eecd878f"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useCancelOrder.ts": {
+    "mtime": 1780770523.7201016,
+    "ast_hash": "abaebcbba4057db43f2b96102d20d41a",
+    "semantic_hash": "abaebcbba4057db43f2b96102d20d41a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrder.ts": {
+    "mtime": 1780770523.7201016,
+    "ast_hash": "2039c14189347ea916746d41efbb5f62",
+    "semantic_hash": "2039c14189347ea916746d41efbb5f62"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts": {
+    "mtime": 1780770523.7201016,
+    "ast_hash": "1cbb8a2b55ea1cc6b443dd3c23f51a98",
+    "semantic_hash": "1cbb8a2b55ea1cc6b443dd3c23f51a98"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\products\\useAddToCart.ts": {
+    "mtime": 1780821592.3402429,
+    "ast_hash": "e37e44bdc0d61793c72b8e27a9f11ec8",
+    "semantic_hash": "e37e44bdc0d61793c72b8e27a9f11ec8"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\products\\useProduct.ts": {
+    "mtime": 1780770523.7211015,
+    "ast_hash": "25cedbc084b34bc0d5ea751634a6f714",
+    "semantic_hash": "25cedbc084b34bc0d5ea751634a6f714"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\products\\useProductFilters.ts": {
+    "mtime": 1780821592.3402429,
+    "ast_hash": "ebbfaa36e16a54b6eb0dc2b9dae19b2b",
+    "semantic_hash": "ebbfaa36e16a54b6eb0dc2b9dae19b2b"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\products\\useProducts.ts": {
+    "mtime": 1780770523.7211015,
+    "ast_hash": "e0da8e341756897f5e48380044507a03",
+    "semantic_hash": "e0da8e341756897f5e48380044507a03"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\products\\__tests__\\useProductFilters.test.ts": {
+    "mtime": 1780821592.3402429,
+    "ast_hash": "0e6066016cb05208a36d0317ab2109fc",
+    "semantic_hash": "0e6066016cb05208a36d0317ab2109fc"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\profile\\useProfile.ts": {
+    "mtime": 1780770523.7211015,
+    "ast_hash": "ca48693056a96495945d49f9c39fb59e",
+    "semantic_hash": "ca48693056a96495945d49f9c39fb59e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\profile\\useUpdateProfile.ts": {
+    "mtime": 1780770523.7211015,
+    "ast_hash": "945f8ccfa0b49c24905cca3744af184e",
+    "semantic_hash": "945f8ccfa0b49c24905cca3744af184e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\__tests__\\useCart.test.ts": {
+    "mtime": 1780821592.339242,
+    "ast_hash": "ae4d3244e1c9474f8a917d8e31b550d7",
+    "semantic_hash": "ae4d3244e1c9474f8a917d8e31b550d7"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\queries\\category.ts": {
+    "mtime": 1780770523.722101,
+    "ast_hash": "fd9969725a43da93257d9d88246b8da1",
+    "semantic_hash": "fd9969725a43da93257d9d88246b8da1"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\queries\\product.ts": {
+    "mtime": 1780770523.722101,
+    "ast_hash": "13642c5d912535a8b5a41985e24a4ec4",
+    "semantic_hash": "13642c5d912535a8b5a41985e24a4ec4"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\schemas\\checkout.ts": {
+    "mtime": 1780770523.722101,
+    "ast_hash": "addc3d9642f395ecc2d64010c2256445",
+    "semantic_hash": "addc3d9642f395ecc2d64010c2256445"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\schemas\\filter.ts": {
+    "mtime": 1780770523.722101,
+    "ast_hash": "c8386414cbd3ab10bf21152a37f1b6f9",
+    "semantic_hash": "c8386414cbd3ab10bf21152a37f1b6f9"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\schemas\\profile.ts": {
+    "mtime": 1780770523.7231007,
+    "ast_hash": "f38e894ea4d0f886269015fb60d8eb0e",
+    "semantic_hash": "f38e894ea4d0f886269015fb60d8eb0e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\types\\category.ts": {
+    "mtime": 1777226800.1131577,
+    "ast_hash": "f8704da92423c599311ab5cfa6c2b2e4",
+    "semantic_hash": "f8704da92423c599311ab5cfa6c2b2e4"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\types\\home.ts": {
+    "mtime": 1777273980.104535,
+    "ast_hash": "15c309bbdfcf513db6391ddebbb60c16",
+    "semantic_hash": "15c309bbdfcf513db6391ddebbb60c16"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\types\\product.ts": {
+    "mtime": 1780748735.8576694,
+    "ast_hash": "7633ee0254b77c6583410b5d877ba61f",
+    "semantic_hash": "7633ee0254b77c6583410b5d877ba61f"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\~offline\\page.tsx": {
+    "mtime": 1780748736.0022635,
+    "ast_hash": "8fae32823a941c10eaa0d1189adf50f3",
+    "semantic_hash": "8fae32823a941c10eaa0d1189adf50f3"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\i18n\\request.ts": {
+    "mtime": 1780770523.7271001,
+    "ast_hash": "01aba69a7801ce761d02332d6d7cedc3",
+    "semantic_hash": "01aba69a7801ce761d02332d6d7cedc3"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json": {
+    "mtime": 1776695319.5965407,
+    "ast_hash": "ec494744fe96e7157b60bb3bf8387d29",
+    "semantic_hash": "ec494744fe96e7157b60bb3bf8387d29"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\cart.json": {
+    "mtime": 1776695331.8472972,
+    "ast_hash": "f2cac5044a7b7ec05e5dad80967aeb34",
+    "semantic_hash": "f2cac5044a7b7ec05e5dad80967aeb34"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\checkout.json": {
+    "mtime": 1779296546.7770689,
+    "ast_hash": "0973890581a06a87e3a63723eac461b3",
+    "semantic_hash": "0973890581a06a87e3a63723eac461b3"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\common.json": {
+    "mtime": 1777224364.5888872,
+    "ast_hash": "97e4ad214b1d6d7d1c276ca81e61b5f2",
+    "semantic_hash": "97e4ad214b1d6d7d1c276ca81e61b5f2"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\home.json": {
+    "mtime": 1776696002.5163403,
+    "ast_hash": "660018aff53eaa1e0623c314f9017f6b",
+    "semantic_hash": "660018aff53eaa1e0623c314f9017f6b"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\order.json": {
+    "mtime": 1776695337.534616,
+    "ast_hash": "0c659f5a2ff8253c0b4831d9b0792adf",
+    "semantic_hash": "0c659f5a2ff8253c0b4831d9b0792adf"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\payment.json": {
+    "mtime": 1776695347.8821304,
+    "ast_hash": "7a055597f49020c2eb84fa50d4010e6d",
+    "semantic_hash": "7a055597f49020c2eb84fa50d4010e6d"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\product.json": {
+    "mtime": 1776695326.3637886,
+    "ast_hash": "c545cc2c9826a94f5e73d13e06f8a7d9",
+    "semantic_hash": "c545cc2c9826a94f5e73d13e06f8a7d9"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\auth.json": {
+    "mtime": 1776695318.5783632,
+    "ast_hash": "1cc7b578302cfc2238db277f2a310715",
+    "semantic_hash": "1cc7b578302cfc2238db277f2a310715"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\cart.json": {
+    "mtime": 1776695330.8233354,
+    "ast_hash": "1293a92dce5866582c1aafc529ec88e6",
+    "semantic_hash": "1293a92dce5866582c1aafc529ec88e6"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\checkout.json": {
+    "mtime": 1779296546.7770689,
+    "ast_hash": "ad7733730d10751f8b82a820c581acb1",
+    "semantic_hash": "ad7733730d10751f8b82a820c581acb1"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\common.json": {
+    "mtime": 1777224355.6695535,
+    "ast_hash": "2f7f15232139468090634ea51baf79a6",
+    "semantic_hash": "2f7f15232139468090634ea51baf79a6"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\home.json": {
+    "mtime": 1776696000.5117562,
+    "ast_hash": "cc24e13d886fe0324f2d6cb6b62a29a2",
+    "semantic_hash": "cc24e13d886fe0324f2d6cb6b62a29a2"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\order.json": {
+    "mtime": 1776695336.5189822,
+    "ast_hash": "54c6ca706432552ec4fc77e7f0a1e6c9",
+    "semantic_hash": "54c6ca706432552ec4fc77e7f0a1e6c9"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\payment.json": {
+    "mtime": 1776695346.8590503,
+    "ast_hash": "7c756cf71555b9a69e9c29ee5f53c295",
+    "semantic_hash": "7c756cf71555b9a69e9c29ee5f53c295"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json": {
+    "mtime": 1776695325.2715352,
+    "ast_hash": "9605dc76191dc94ec3dc3519642023c5",
+    "semantic_hash": "9605dc76191dc94ec3dc3519642023c5"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\accordion.tsx": {
+    "mtime": 1780770523.7336116,
+    "ast_hash": "ebac9a85afb9c0fcb630a309baae39e3",
+    "semantic_hash": "ebac9a85afb9c0fcb630a309baae39e3"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Alert.tsx": {
+    "mtime": 1780770523.7280996,
+    "ast_hash": "72c3c5417a7b293111bd9d6f91ad21e3",
+    "semantic_hash": "72c3c5417a7b293111bd9d6f91ad21e3"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Avatar.tsx": {
+    "mtime": 1780770523.7280996,
+    "ast_hash": "e420959a677734f3c03480b8e02113d3",
+    "semantic_hash": "e420959a677734f3c03480b8e02113d3"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Badge.tsx": {
+    "mtime": 1780770523.729099,
+    "ast_hash": "ffde6fc5b501a3e95e068a1e2d5c56bf",
+    "semantic_hash": "ffde6fc5b501a3e95e068a1e2d5c56bf"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\breadcrumb.tsx": {
+    "mtime": 1780748736.1017537,
+    "ast_hash": "7e1cc5baa72db934b63b1c8be6c10a49",
+    "semantic_hash": "7e1cc5baa72db934b63b1c8be6c10a49"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Button.tsx": {
+    "mtime": 1780770523.729099,
+    "ast_hash": "6e79350722ec7da42c350f3e3c828393",
+    "semantic_hash": "6e79350722ec7da42c350f3e3c828393"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Card.tsx": {
+    "mtime": 1780748736.1178424,
+    "ast_hash": "a637e39b39fdbc05a110fd5d17d062ea",
+    "semantic_hash": "a637e39b39fdbc05a110fd5d17d062ea"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Checkbox.tsx": {
+    "mtime": 1780770523.729099,
+    "ast_hash": "7ecee71576dfa4a8b40c0f70eeb6ae88",
+    "semantic_hash": "7ecee71576dfa4a8b40c0f70eeb6ae88"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Command.tsx": {
+    "mtime": 1780770523.7300992,
+    "ast_hash": "379fc7c8297b1ef3a506200ca4a493df",
+    "semantic_hash": "379fc7c8297b1ef3a506200ca4a493df"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Dialog.tsx": {
+    "mtime": 1780770523.7300992,
+    "ast_hash": "f1f468f8a485bd4f53d3363b9808d53a",
+    "semantic_hash": "f1f468f8a485bd4f53d3363b9808d53a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\DropdownMenu.tsx": {
+    "mtime": 1780770523.7300992,
+    "ast_hash": "746ace7301b853e8efd636d7208d69aa",
+    "semantic_hash": "746ace7301b853e8efd636d7208d69aa"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Form.tsx": {
+    "mtime": 1780770523.7310998,
+    "ast_hash": "0c30135669a6154d89745cd5e3ba6d36",
+    "semantic_hash": "0c30135669a6154d89745cd5e3ba6d36"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Input.tsx": {
+    "mtime": 1780770523.7310998,
+    "ast_hash": "1a881c77b970e77597a4707604fd6f15",
+    "semantic_hash": "1a881c77b970e77597a4707604fd6f15"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Label.tsx": {
+    "mtime": 1780748736.1848252,
+    "ast_hash": "c8cea563817908fa0fefe581feb29520",
+    "semantic_hash": "c8cea563817908fa0fefe581feb29520"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Popover.tsx": {
+    "mtime": 1780770523.7310998,
+    "ast_hash": "c772e51ecb8e50be7a924a361756b1f5",
+    "semantic_hash": "c772e51ecb8e50be7a924a361756b1f5"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\progress.tsx": {
+    "mtime": 1780770523.7336116,
+    "ast_hash": "1da62fc5cb96805ebcffb5cac2565bfb",
+    "semantic_hash": "1da62fc5cb96805ebcffb5cac2565bfb"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\radio-group.tsx": {
+    "mtime": 1780770523.7336116,
+    "ast_hash": "8caba2844970ec8487da72955f45c4de",
+    "semantic_hash": "8caba2844970ec8487da72955f45c4de"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\ScrollArea.tsx": {
+    "mtime": 1780770523.7310998,
+    "ast_hash": "f366901fba9ec0d71b37143c120623ce",
+    "semantic_hash": "f366901fba9ec0d71b37143c120623ce"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Select.tsx": {
+    "mtime": 1780770523.7310998,
+    "ast_hash": "78640df8ec27ad040f47577fcd827d50",
+    "semantic_hash": "78640df8ec27ad040f47577fcd827d50"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Separator.tsx": {
+    "mtime": 1776795173.9048185,
+    "ast_hash": "c0d224e03e2fdc3f160789bab9628749",
+    "semantic_hash": "c0d224e03e2fdc3f160789bab9628749"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Sheet.tsx": {
+    "mtime": 1780770523.7326062,
+    "ast_hash": "18233d67842a68a67213430eca6301c3",
+    "semantic_hash": "18233d67842a68a67213430eca6301c3"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Skeleton.tsx": {
+    "mtime": 1776702402.9530413,
+    "ast_hash": "a56b068d84763a677bac61fa64fa55b5",
+    "semantic_hash": "a56b068d84763a677bac61fa64fa55b5"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\slider.tsx": {
+    "mtime": 1780770523.7336116,
+    "ast_hash": "e58684454dc8018182a7287d87ef9177",
+    "semantic_hash": "e58684454dc8018182a7287d87ef9177"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\switch.tsx": {
+    "mtime": 1780770523.7346117,
+    "ast_hash": "e5ac1e13f88bfaef922bf4c37253c2bb",
+    "semantic_hash": "e5ac1e13f88bfaef922bf4c37253c2bb"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Table.tsx": {
+    "mtime": 1780748736.2583227,
+    "ast_hash": "3754d881685f1fa8d2ce7f515b1b155a",
+    "semantic_hash": "3754d881685f1fa8d2ce7f515b1b155a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\tabs.tsx": {
+    "mtime": 1780770523.7346117,
+    "ast_hash": "00e499f180c20961a7b3e63a2f62479d",
+    "semantic_hash": "00e499f180c20961a7b3e63a2f62479d"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Textarea.tsx": {
+    "mtime": 1780770523.7326062,
+    "ast_hash": "69b9214470bbed385258963abf3fc716",
+    "semantic_hash": "69b9214470bbed385258963abf3fc716"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\base\\Tooltip.tsx": {
+    "mtime": 1780770523.7326062,
+    "ast_hash": "a465a096bf191a705dd917d606b03a60",
+    "semantic_hash": "a465a096bf191a705dd917d606b03a60"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\EmptyState.tsx": {
+    "mtime": 1780748736.3668697,
+    "ast_hash": "a14e9b9a0884ec6e0a004ca0e5b9a83c",
+    "semantic_hash": "a14e9b9a0884ec6e0a004ca0e5b9a83c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\ErrorState.tsx": {
+    "mtime": 1780770523.735612,
+    "ast_hash": "3916637a4e7d026e3b3a81220207bcdc",
+    "semantic_hash": "3916637a4e7d026e3b3a81220207bcdc"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\LoadingSpinner.tsx": {
+    "mtime": 1776884707.4752245,
+    "ast_hash": "af3cc157f409e62808b0e7a27629ca4d",
+    "semantic_hash": "af3cc157f409e62808b0e7a27629ca4d"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\PageLoader.tsx": {
+    "mtime": 1777192896.5603187,
+    "ast_hash": "5b8a452ae61522e5316f82e6a47917ca",
+    "semantic_hash": "5b8a452ae61522e5316f82e6a47917ca"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\PaginationNav.tsx": {
+    "mtime": 1780770523.7366116,
+    "ast_hash": "dc37b8c2e9852a5b036694c8f6cd64a2",
+    "semantic_hash": "dc37b8c2e9852a5b036694c8f6cd64a2"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\SearchInput.tsx": {
+    "mtime": 1780770523.7376137,
+    "ast_hash": "b259951618849746a638a906d9f6952b",
+    "semantic_hash": "b259951618849746a638a906d9f6952b"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\__tests__\\PaginationNav.test.tsx": {
+    "mtime": 1779296546.7780676,
+    "ast_hash": "a50c0747c2b330722a26c29f764aafb9",
+    "semantic_hash": "a50c0747c2b330722a26c29f764aafb9"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\components\\common\\__tests__\\SearchInput.test.tsx": {
+    "mtime": 1779296546.7790663,
+    "ast_hash": "f46d3c7263e76ffd29b3612d81f29f1d",
+    "semantic_hash": "f46d3c7263e76ffd29b3612d81f29f1d"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\constants\\api-endpoints.ts": {
+    "mtime": 1777331995.0083354,
+    "ast_hash": "8b05f897942f7797beda8d70c77055f9",
+    "semantic_hash": "8b05f897942f7797beda8d70c77055f9"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\constants\\app-config.ts": {
+    "mtime": 1776780834.5464468,
+    "ast_hash": "f09477aa319450fc46ed5c67e2c1f43c",
+    "semantic_hash": "f09477aa319450fc46ed5c67e2c1f43c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\constants\\query-keys.ts": {
+    "mtime": 1776780827.5134065,
+    "ast_hash": "88cd5796b261bced7173b69e48042f47",
+    "semantic_hash": "88cd5796b261bced7173b69e48042f47"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\constants\\routes.ts": {
+    "mtime": 1779296546.7820654,
+    "ast_hash": "a7057137dc04a168b543c34de7d2c064",
+    "semantic_hash": "a7057137dc04a168b543c34de7d2c064"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useDebounce.ts": {
+    "mtime": 1776884707.4787283,
+    "ast_hash": "088892c93bc07765c3ce9de0dd65a12b",
+    "semantic_hash": "088892c93bc07765c3ce9de0dd65a12b"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useLocalStorage.ts": {
+    "mtime": 1776884707.4787283,
+    "ast_hash": "ba32a62b0f04aadd638d7f519f6a0429",
+    "semantic_hash": "ba32a62b0f04aadd638d7f519f6a0429"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useMediaQuery.ts": {
+    "mtime": 1779296546.7840672,
+    "ast_hash": "ff01c3b515a6b71671dacea1db5700e3",
+    "semantic_hash": "ff01c3b515a6b71671dacea1db5700e3"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\usePagination.ts": {
+    "mtime": 1780770523.7416124,
+    "ast_hash": "eab7424afcb7dea21bb6ae302cb6b558",
+    "semantic_hash": "eab7424afcb7dea21bb6ae302cb6b558"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\useToast.ts": {
+    "mtime": 1776884707.4817595,
+    "ast_hash": "390d7d09d2d4e7db73392ebb9b0d89ee",
+    "semantic_hash": "390d7d09d2d4e7db73392ebb9b0d89ee"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\__tests__\\useDebounce.test.ts": {
+    "mtime": 1779296546.783068,
+    "ast_hash": "1366f55ded6913deccab4bb6ae499941",
+    "semantic_hash": "1366f55ded6913deccab4bb6ae499941"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\__tests__\\useLocalStorage.test.ts": {
+    "mtime": 1779296546.783068,
+    "ast_hash": "166778f15c293ab7acb97e6ea361b024",
+    "semantic_hash": "166778f15c293ab7acb97e6ea361b024"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\__tests__\\useMediaQuery.test.ts": {
+    "mtime": 1780770523.7416124,
+    "ast_hash": "ac6686b252e305180d630d0abdc31a19",
+    "semantic_hash": "ac6686b252e305180d630d0abdc31a19"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\__tests__\\usePagination.test.ts": {
+    "mtime": 1777192896.5603187,
+    "ast_hash": "6d8c0c57ee11e842a6cfe21d394741d6",
+    "semantic_hash": "6d8c0c57ee11e842a6cfe21d394741d6"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\hooks\\__tests__\\useToast.test.ts": {
+    "mtime": 1777192896.5603187,
+    "ast_hash": "ce4eae49fab81be31814ea81012c4b17",
+    "semantic_hash": "ce4eae49fab81be31814ea81012c4b17"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\cloudinary.ts": {
+    "mtime": 1776793218.2807963,
+    "ast_hash": "ad70e691a238146fe68f2b88338d2921",
+    "semantic_hash": "ad70e691a238146fe68f2b88338d2921"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\env.ts": {
+    "mtime": 1776792734.101411,
+    "ast_hash": "a8292d460cea46bcc2708e407f6d6d38",
+    "semantic_hash": "a8292d460cea46bcc2708e407f6d6d38"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\notification.ts": {
+    "mtime": 1776781306.7853525,
+    "ast_hash": "63057c9a173963b26186b2f2b9bf0aad",
+    "semantic_hash": "63057c9a173963b26186b2f2b9bf0aad"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\query-client.ts": {
+    "mtime": 1780770523.7436125,
+    "ast_hash": "02f67dbd92d2e6d4c7eba66c140e1c40",
+    "semantic_hash": "02f67dbd92d2e6d4c7eba66c140e1c40"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\seo.ts": {
+    "mtime": 1776792890.3471844,
+    "ast_hash": "63f0119f576c335d4d8b369ce220cfc7",
+    "semantic_hash": "63f0119f576c335d4d8b369ce220cfc7"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\utils.ts": {
+    "mtime": 1780770523.7436125,
+    "ast_hash": "335dbdf141eb1d287b492d5e70b9349a",
+    "semantic_hash": "335dbdf141eb1d287b492d5e70b9349a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\errors\\api-error.ts": {
+    "mtime": 1779296546.7855773,
+    "ast_hash": "93dcae0511e187d7448100ec254cdcc8",
+    "semantic_hash": "93dcae0511e187d7448100ec254cdcc8"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\errors\\error-codes.ts": {
+    "mtime": 1776702403.0722709,
+    "ast_hash": "10c69632a09ffd42b45bf4ca8acb9363",
+    "semantic_hash": "10c69632a09ffd42b45bf4ca8acb9363"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\api-types.ts": {
+    "mtime": 1779296546.786578,
+    "ast_hash": "497a58ef8f12bd99efac5b2c5e343ca6",
+    "semantic_hash": "497a58ef8f12bd99efac5b2c5e343ca6"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\client.ts": {
+    "mtime": 1780821592.3412416,
+    "ast_hash": "22355798756ac82b9e383e949756e272",
+    "semantic_hash": "22355798756ac82b9e383e949756e272"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\runtime.ts": {
+    "mtime": 1780821592.3427455,
+    "ast_hash": "c970400f7cc8a4e651ea288f71287530",
+    "semantic_hash": "c970400f7cc8a4e651ea288f71287530"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\http\\zod-helpers.ts": {
+    "mtime": 1779296546.786578,
+    "ast_hash": "84aee5f04887c356d76aa72919b73ebf",
+    "semantic_hash": "84aee5f04887c356d76aa72919b73ebf"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\monitoring\\sentry.ts": {
+    "mtime": 1776702403.1252573,
+    "ast_hash": "6eb5daf09e0f2638238dcf2d73eea438",
+    "semantic_hash": "6eb5daf09e0f2638238dcf2d73eea438"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\__tests__\\api-error.test.ts": {
+    "mtime": 1779296546.7845707,
+    "ast_hash": "c94600666b4853d301392d9eb08a4806",
+    "semantic_hash": "c94600666b4853d301392d9eb08a4806"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\__tests__\\cloudinary.test.ts": {
+    "mtime": 1777192896.5613184,
+    "ast_hash": "5d13f77f277ddb604e8abdcee756934e",
+    "semantic_hash": "5d13f77f277ddb604e8abdcee756934e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\__tests__\\notification.test.ts": {
+    "mtime": 1779296546.7845707,
+    "ast_hash": "069420c538a4bfd2cd5a1359d8c35a93",
+    "semantic_hash": "069420c538a4bfd2cd5a1359d8c35a93"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\__tests__\\seo.test.ts": {
+    "mtime": 1777192896.5613184,
+    "ast_hash": "408e7976a1cdd84b833f13cf971d5b3e",
+    "semantic_hash": "408e7976a1cdd84b833f13cf971d5b3e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\__tests__\\utils.test.ts": {
+    "mtime": 1780770523.742612,
+    "ast_hash": "0ba4c48c6af416e3782ac618d11840ff",
+    "semantic_hash": "0ba4c48c6af416e3782ac618d11840ff"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\lib\\__tests__\\zod-helpers.test.ts": {
+    "mtime": 1779296546.7845707,
+    "ast_hash": "62bc1ddbdc4afcda09f52b5fb8dca587",
+    "semantic_hash": "62bc1ddbdc4afcda09f52b5fb8dca587"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\address.ts": {
+    "mtime": 1779298630.0900462,
+    "ast_hash": "0fe417b5aaf30919df838aabac40a64b",
+    "semantic_hash": "0fe417b5aaf30919df838aabac40a64b"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\api.ts": {
+    "mtime": 1776702403.1812685,
+    "ast_hash": "512cff0a6d0b80662e05b38252976466",
+    "semantic_hash": "512cff0a6d0b80662e05b38252976466"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\category.ts": {
+    "mtime": 1776780940.5489554,
+    "ast_hash": "fb74b5eb2141afe8dd009ea7f9900d88",
+    "semantic_hash": "fb74b5eb2141afe8dd009ea7f9900d88"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\checkout.ts": {
+    "mtime": 1777192896.5613184,
+    "ast_hash": "d1b96bcf27c53cb43c626bb8a30c78ae",
+    "semantic_hash": "d1b96bcf27c53cb43c626bb8a30c78ae"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\filter.ts": {
+    "mtime": 1780770523.7446108,
+    "ast_hash": "f4f11ca1b02383f779661e22786c1641",
+    "semantic_hash": "f4f11ca1b02383f779661e22786c1641"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\order.ts": {
+    "mtime": 1779298715.3885849,
+    "ast_hash": "a4b740623522aa8bacf13510e7f94b5b",
+    "semantic_hash": "a4b740623522aa8bacf13510e7f94b5b"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\payment.ts": {
+    "mtime": 1779298708.7865393,
+    "ast_hash": "7cb2b4cc08ef53cd37526f402da03d3c",
+    "semantic_hash": "7cb2b4cc08ef53cd37526f402da03d3c"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\product.ts": {
+    "mtime": 1777330614.3582008,
+    "ast_hash": "099dd57a6915008296a0e432eaca5283",
+    "semantic_hash": "099dd57a6915008296a0e432eaca5283"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\user.ts": {
+    "mtime": 1780770523.7446108,
+    "ast_hash": "6eece0b4f0a923fb4c0e75bf500ad6f7",
+    "semantic_hash": "6eece0b4f0a923fb4c0e75bf500ad6f7"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\__tests__\\setup.ts": {
+    "mtime": 1776795141.598595,
+    "ast_hash": "02504c62acec8f2c847c7ab407780d8e",
+    "semantic_hash": "02504c62acec8f2c847c7ab407780d8e"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\__tests__\\helpers\\mock-handlers.ts": {
+    "mtime": 1776702426.7235608,
+    "ast_hash": "2e95cf5f0d832a20463a17b8cc6d12d8",
+    "semantic_hash": "2e95cf5f0d832a20463a17b8cc6d12d8"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\src\\__tests__\\helpers\\render.tsx": {
+    "mtime": 1776702426.7235608,
+    "ast_hash": "8d8e628081781d5b16cc018a54b9bfbb",
+    "semantic_hash": "8d8e628081781d5b16cc018a54b9bfbb"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\01-mvp-overview.vi.md": {
+    "mtime": 1780591846.2418,
+    "ast_hash": "c67ac42851d98e98d07d060e098b6762",
+    "semantic_hash": "c67ac42851d98e98d07d060e098b6762"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\02-roadmap-and-execution-plan.vi.md": {
+    "mtime": 1780591846.2426229,
+    "ast_hash": "055c588f8c05ef2816a10647dd32d7de",
+    "semantic_hash": "055c588f8c05ef2816a10647dd32d7de"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\03-technical-stack-skills-and-versions.vi.md": {
+    "mtime": 1780770523.7010977,
+    "ast_hash": "df9119ab86edf15280f0aaf5f4cebf0a",
+    "semantic_hash": "df9119ab86edf15280f0aaf5f4cebf0a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\04-project-structure-guidelines-design-system-conventions.vi.md": {
+    "mtime": 1780821592.3240921,
+    "ast_hash": "634ddacfcac3f0fd369695d47235e026",
+    "semantic_hash": "634ddacfcac3f0fd369695d47235e026"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\05-priority-implementation-backlog.vi.md": {
+    "mtime": 1780770523.7020972,
+    "ast_hash": "cd044791470466e6118597b83eec8857",
+    "semantic_hash": "cd044791470466e6118597b83eec8857"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\06-skill-workflow-guide.vi.md": {
+    "mtime": 1780770523.7020972,
+    "ast_hash": "cd06caa02c2f73a8b058a733f17d0db7",
+    "semantic_hash": "cd06caa02c2f73a8b058a733f17d0db7"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\shared-structure.md": {
+    "mtime": 1780821592.3240921,
+    "ast_hash": "905dc35c1ce4c4929bcdd2e0a6c4fc7a",
+    "semantic_hash": "905dc35c1ce4c4929bcdd2e0a6c4fc7a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\shop-module-structure.md": {
+    "mtime": 1780770523.7020972,
+    "ast_hash": "14d53393d966b9de91f0f36f7fbd9e29",
+    "semantic_hash": "14d53393d966b9de91f0f36f7fbd9e29"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\test-report.md": {
+    "mtime": 1780770523.7030995,
+    "ast_hash": "02c106be12c648f8978d37ea7af1bfcb",
+    "semantic_hash": "02c106be12c648f8978d37ea7af1bfcb"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\ui-ux-review.md": {
+    "mtime": 1780844338.2858407,
+    "ast_hash": "97d3defa0c26fc3ad22f852c27716da6",
+    "semantic_hash": "97d3defa0c26fc3ad22f852c27716da6"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\agents\\domain.md": {
+    "mtime": 1779296546.7565377,
+    "ast_hash": "6f13d333047fd4e6cb94c015cce2e362",
+    "semantic_hash": "6f13d333047fd4e6cb94c015cce2e362"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\agents\\issue-tracker.md": {
+    "mtime": 1778699858.019743,
+    "ast_hash": "b3268117bb0bb6b731632d35d6a1369a",
+    "semantic_hash": "b3268117bb0bb6b731632d35d6a1369a"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\agents\\triage-labels.md": {
+    "mtime": 1778699858.019743,
+    "ast_hash": "22add54cb98451c55b20e6b7992d4a85",
+    "semantic_hash": "22add54cb98451c55b20e6b7992d4a85"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\superpowers\\plans\\2026-06-07-auth-fix-actions.md": {
+    "mtime": 1780823846.710298,
+    "ast_hash": "3364e045a0ee5e7cd4bed2a1736e8e48",
+    "semantic_hash": "3364e045a0ee5e7cd4bed2a1736e8e48"
+  },
+  "E:\\my-pj\\Front-end\\ecommerce-next\\docs\\superpowers\\plans\\2026-06-07-auth-store-boot.md": {
+    "mtime": 1780844338.2082794,
+    "ast_hash": "e5e83dced79c28f7c9bf53829733d1b3",
+    "semantic_hash": "e5e83dced79c28f7c9bf53829733d1b3"
+  }
+}

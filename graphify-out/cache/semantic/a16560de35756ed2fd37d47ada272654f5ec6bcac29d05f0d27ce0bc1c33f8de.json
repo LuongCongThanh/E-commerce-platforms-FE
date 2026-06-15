@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "locale_layout_LocaleLayout",
+      "label": "Locale Layout",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/layout.tsx",
+      "source_location": "line 14",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "locale_layout_LocaleLayout",
+      "target": "providers_Providers",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/layout.tsx",
+      "source_location": "line 29",
+      "weight": 1.0
+    },
+    {
+      "source": "locale_layout_LocaleLayout",
+      "target": "layout_RootLayout",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/[locale]/layout.tsx",
+      "source_location": null,
+      "weight": 0.85
+    }
+  ],
+  "hyperedges": []
+}

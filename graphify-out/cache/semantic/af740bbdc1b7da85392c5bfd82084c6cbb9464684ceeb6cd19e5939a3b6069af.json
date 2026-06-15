@@ -1,0 +1,68 @@
+{
+  "nodes": [
+    {
+      "id": "CartClient_CartClient",
+      "label": "CartClient Component",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartClient.tsx",
+      "source_location": "line 16",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "CartClient_CartClient",
+      "target": "shop_useCart",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartClient.tsx",
+      "source_location": "line 9",
+      "weight": 1.0
+    },
+    {
+      "source": "CartClient_CartClient",
+      "target": "CartTable_CartTable",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartClient.tsx",
+      "source_location": "line 8",
+      "weight": 1.0
+    },
+    {
+      "source": "CartClient_CartClient",
+      "target": "CartSummary_CartSummary",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartClient.tsx",
+      "source_location": "line 7",
+      "weight": 1.0
+    },
+    {
+      "source": "CartClient_CartClient",
+      "target": "shared_Button",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartClient.tsx",
+      "source_location": "line 10",
+      "weight": 1.0
+    },
+    {
+      "source": "CartClient_CartClient",
+      "target": "shared_useCart",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartClient.tsx",
+      "source_location": null,
+      "weight": 0.75
+    }
+  ],
+  "hyperedges": []
+}

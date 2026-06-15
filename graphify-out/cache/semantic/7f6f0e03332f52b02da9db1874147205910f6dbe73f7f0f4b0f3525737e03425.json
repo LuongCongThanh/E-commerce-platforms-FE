@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "CartSummary_CartSummary",
+      "label": "CartSummary Component",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartSummary.tsx",
+      "source_location": "line 16",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "CartSummary_CartSummary",
+      "target": "shop_useCart",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartSummary.tsx",
+      "source_location": "line 7",
+      "weight": 1.0
+    },
+    {
+      "source": "CartSummary_CartSummary",
+      "target": "shared_Button",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartSummary.tsx",
+      "source_location": "line 8",
+      "weight": 1.0
+    },
+    {
+      "source": "CartSummary_CartSummary",
+      "target": "shared_Separator",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartSummary.tsx",
+      "source_location": "line 9",
+      "weight": 1.0
+    },
+    {
+      "source": "CartSummary_CartSummary",
+      "target": "shared_utils",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/cart/CartSummary.tsx",
+      "source_location": "line 10",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

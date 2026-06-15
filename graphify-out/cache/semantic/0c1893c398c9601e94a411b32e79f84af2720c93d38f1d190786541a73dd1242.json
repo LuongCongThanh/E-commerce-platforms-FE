@@ -1,0 +1,134 @@
+{
+  "nodes": [
+    {
+      "id": "shop_checkoutSchema",
+      "label": "Checkout Schema",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "checkoutSchema_addressSchema",
+      "label": "Address Zod Schema",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "checkoutSchema_shippingMethodSchema",
+      "label": "ShippingMethod Zod Schema",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "checkoutSchema_paymentMethodSchema",
+      "label": "PaymentMethod Zod Schema",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "checkoutSchema_checkoutSchema",
+      "label": "Checkout Zod Schema",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "checkoutSchema_CheckoutInput",
+      "label": "CheckoutInput Type",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "checkoutSchema_AddressInput",
+      "label": "AddressInput Type",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "checkoutSchema_checkoutSchema",
+      "target": "checkoutSchema_addressSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "checkoutSchema_checkoutSchema",
+      "target": "checkoutSchema_shippingMethodSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "checkoutSchema_checkoutSchema",
+      "target": "checkoutSchema_paymentMethodSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "checkoutSchema_CheckoutInput",
+      "target": "checkoutSchema_checkoutSchema",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "checkoutSchema_AddressInput",
+      "target": "checkoutSchema_addressSchema",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/schemas/checkout.ts",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

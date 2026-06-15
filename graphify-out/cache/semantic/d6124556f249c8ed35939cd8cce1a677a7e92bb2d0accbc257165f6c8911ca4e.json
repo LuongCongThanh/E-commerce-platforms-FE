@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "shared_http_runtime",
+      "label": "HTTP Runtime Adapter (shared/lib/http/runtime)",
+      "file_type": "code",
+      "source_file": "src/shared/lib/http/runtime.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "runtime_HttpRuntimeAdapter",
+      "label": "HttpRuntimeAdapter Interface",
+      "file_type": "code",
+      "source_file": "src/shared/lib/http/runtime.ts",
+      "source_location": "line 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "runtime_registerHttpRuntimeAdapter",
+      "label": "registerHttpRuntimeAdapter",
+      "file_type": "code",
+      "source_file": "src/shared/lib/http/runtime.ts",
+      "source_location": "line 9",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "runtime_getHttpRuntimeAdapter",
+      "label": "getHttpRuntimeAdapter",
+      "file_type": "code",
+      "source_file": "src/shared/lib/http/runtime.ts",
+      "source_location": "line 19",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "runtime_getHttpRuntimeAdapter",
+      "target": "runtime_HttpRuntimeAdapter",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/lib/http/runtime.ts",
+      "source_location": "line 19",
+      "weight": 1.0
+    },
+    {
+      "source": "runtime_registerHttpRuntimeAdapter",
+      "target": "runtime_HttpRuntimeAdapter",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/lib/http/runtime.ts",
+      "source_location": "line 9",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

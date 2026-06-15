@@ -1,0 +1,68 @@
+{
+  "nodes": [
+    {
+      "id": "useAuth_test_useAuthTest",
+      "label": "useAuth Test Suite",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "useAuth_test_useAuthTest",
+      "target": "useAuth_useAuth",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": "line 5",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_test_useAuthTest",
+      "target": "useAuth_useIsLoggedIn",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": "line 5",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_test_useAuthTest",
+      "target": "useAuth_login",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": "line 5",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_test_useAuthTest",
+      "target": "auth_store_clearAuth",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": "line 4",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_test_useAuthTest",
+      "target": "auth_store_setAccessToken",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": "line 4",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

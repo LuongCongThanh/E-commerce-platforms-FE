@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_home_usehomeflashsalecountdown_ts",
+      "label": "useHomeFlashSaleCountdown.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\home\\useHomeFlashSaleCountdown.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "home_usehomeflashsalecountdown_usehomeflashsalecountdown",
+      "label": "useHomeFlashSaleCountdown()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\home\\useHomeFlashSaleCountdown.ts",
+      "source_location": "L5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_home_usehomeflashsalecountdown_ts",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\home\\useHomeFlashSaleCountdown.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_home_usehomeflashsalecountdown_ts",
+      "target": "home_usehomeflashsalecountdown_usehomeflashsalecountdown",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\home\\useHomeFlashSaleCountdown.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "home_usehomeflashsalecountdown_usehomeflashsalecountdown",
+      "callee": "useMemo",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\home\\useHomeFlashSaleCountdown.ts",
+      "source_location": "L6"
+    }
+  ]
+}

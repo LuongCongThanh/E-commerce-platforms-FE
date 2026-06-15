@@ -1,0 +1,91 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_orders_useorders_ts",
+      "label": "useOrders.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "orders_useorders_orderkeys",
+      "label": "orderKeys",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "orders_useorders_useorders",
+      "label": "useOrders()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts",
+      "source_location": "L12"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_orders_useorders_ts",
+      "target": "react_query",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_orders_useorders_ts",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_actions_order_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_orders_useorders_ts",
+      "target": "actions_order_orderactions",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_orders_useorders_ts",
+      "target": "orders_useorders_orderkeys",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_orders_useorders_ts",
+      "target": "orders_useorders_useorders",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "orders_useorders_useorders",
+      "callee": "useQuery",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts",
+      "source_location": "L13"
+    },
+    {
+      "caller_nid": "orders_useorders_useorders",
+      "callee": "list",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\hooks\\orders\\useOrders.ts",
+      "source_location": "L14"
+    }
+  ]
+}

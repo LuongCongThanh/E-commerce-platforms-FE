@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_types_address_ts",
+      "label": "address.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\address.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "types_address_shippingaddressschema",
+      "label": "ShippingAddressSchema",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\address.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "types_address_shippingaddress",
+      "label": "ShippingAddress",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\address.ts",
+      "source_location": "L14"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_address_ts",
+      "target": "zod",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\address.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_address_ts",
+      "target": "types_address_shippingaddressschema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\address.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_types_address_ts",
+      "target": "types_address_shippingaddress",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\types\\address.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

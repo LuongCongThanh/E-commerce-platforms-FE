@@ -1,0 +1,720 @@
+{
+  "nodes": [
+    {
+      "id": "LoginForm_LoginForm",
+      "label": "LoginForm Component",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/components/LoginForm.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "RegisterForm_RegisterForm",
+      "label": "RegisterForm Component",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/components/RegisterForm.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ResetPasswordForm_ResetPasswordForm",
+      "label": "ResetPasswordForm Component",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/components/ResetPasswordForm.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "PasswordInput_PasswordInput",
+      "label": "PasswordInput Component",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/components/PasswordInput.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "PasswordInput_test_PasswordInputTest",
+      "label": "PasswordInput Test Suite",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/components/__tests__/PasswordInput.test.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useAuth_useAuth",
+      "label": "useAuth Hook",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useAuth_useIsLoggedIn",
+      "label": "useIsLoggedIn Hook",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useAuth_login",
+      "label": "login Function",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useAuth_test_useAuthTest",
+      "label": "useAuth Test Suite",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_schemas_LoginFormSchema",
+      "label": "LoginFormSchema",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/schemas/auth.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_schemas_RegisterFormSchema",
+      "label": "RegisterFormSchema",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/schemas/auth.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_schemas_ResetPasswordFormSchema",
+      "label": "ResetPasswordFormSchema",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/schemas/auth.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_schemas_ForgotPasswordFormSchema",
+      "label": "ForgotPasswordFormSchema",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/schemas/auth.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_store_AuthSnapshot",
+      "label": "AuthSnapshot Store",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_store_subscribeAuth",
+      "label": "subscribeAuth",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_store_getAuthSnapshot",
+      "label": "getAuthSnapshot",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_store_setAccessToken",
+      "label": "setAccessToken",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_store_setUser",
+      "label": "setUser",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_store_clearAuth",
+      "label": "clearAuth",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_store_refreshAccessToken",
+      "label": "refreshAccessToken",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shop_layout_ShopLayout",
+      "label": "ShopLayout",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/layout.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shop_loading_GlobalShopLoading",
+      "label": "GlobalShopLoading",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/loading.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shop_page_RootPage",
+      "label": "RootPage (redirect to /home)",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/page.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "cart_page_CartPage",
+      "label": "CartPage",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/cart/page.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "categories_slug_page_CategoryPage",
+      "label": "CategoryPage",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/categories/[slug]/page.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "checkout_page_CheckoutPage",
+      "label": "CheckoutPage",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/checkout/page.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "checkout_success_page_CheckoutSuccessPage",
+      "label": "CheckoutSuccessPage",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/checkout/success/page.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "home_page_HomePage",
+      "label": "HomePage",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/home/page.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "orders_page_OrdersPage",
+      "label": "OrdersPage",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/orders/page.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "orders_id_page_OrderDetailPage",
+      "label": "OrderDetailPage",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/orders/[id]/page.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "products_page_ProductsPage",
+      "label": "ProductsPage",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/products/page.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "LoginForm_LoginForm",
+      "target": "auth_schemas_LoginFormSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/components/LoginForm.tsx",
+      "source_location": "line 14",
+      "weight": 1.0
+    },
+    {
+      "source": "RegisterForm_RegisterForm",
+      "target": "auth_schemas_RegisterFormSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/components/RegisterForm.tsx",
+      "source_location": "line 14",
+      "weight": 1.0
+    },
+    {
+      "source": "ResetPasswordForm_ResetPasswordForm",
+      "target": "auth_schemas_ResetPasswordFormSchema",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/components/ResetPasswordForm.tsx",
+      "source_location": "line 14",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_useAuth",
+      "target": "auth_store_subscribeAuth",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": "line 6",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_useAuth",
+      "target": "auth_store_getAuthSnapshot",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": "line 6",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_useAuth",
+      "target": "auth_store_clearAuth",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": "line 6",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_login",
+      "target": "auth_store_setAccessToken",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": "line 11",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_login",
+      "target": "auth_store_setUser",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": "line 12",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_useIsLoggedIn",
+      "target": "auth_store_subscribeAuth",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": "line 16",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_useIsLoggedIn",
+      "target": "auth_store_getAuthSnapshot",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": "line 16",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_schemas_LoginFormSchema",
+      "target": "auth_schemas_RegisterFormSchema",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/[locale]/(auth)/_lib/schemas/auth.ts",
+      "source_location": "line 11",
+      "weight": 0.85
+    },
+    {
+      "source": "auth_store_AuthSnapshot",
+      "target": "auth_store_subscribeAuth",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": "line 10",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_store_AuthSnapshot",
+      "target": "auth_store_getAuthSnapshot",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": "line 10",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_store_setAccessToken",
+      "target": "auth_store_AuthSnapshot",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": "line 34",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_store_setUser",
+      "target": "auth_store_AuthSnapshot",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": "line 39",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_store_clearAuth",
+      "target": "auth_store_AuthSnapshot",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": "line 44",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_store_refreshAccessToken",
+      "target": "auth_store_setAccessToken",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/store/auth-store.ts",
+      "source_location": "line 60",
+      "weight": 1.0
+    },
+    {
+      "source": "PasswordInput_test_PasswordInputTest",
+      "target": "PasswordInput_PasswordInput",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/components/__tests__/PasswordInput.test.tsx",
+      "source_location": "line 5",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_test_useAuthTest",
+      "target": "useAuth_useAuth",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": "line 5",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_test_useAuthTest",
+      "target": "useAuth_useIsLoggedIn",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": "line 5",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_test_useAuthTest",
+      "target": "useAuth_login",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": "line 5",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_test_useAuthTest",
+      "target": "auth_store_clearAuth",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": "line 4",
+      "weight": 1.0
+    },
+    {
+      "source": "useAuth_test_useAuthTest",
+      "target": "auth_store_setAccessToken",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/__tests__/useAuth.test.ts",
+      "source_location": "line 4",
+      "weight": 1.0
+    },
+    {
+      "source": "shop_layout_ShopLayout",
+      "target": "shop_page_RootPage",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/layout.tsx",
+      "source_location": null,
+      "weight": 0.75
+    },
+    {
+      "source": "shop_loading_GlobalShopLoading",
+      "target": "shop_layout_ShopLayout",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/loading.tsx",
+      "source_location": null,
+      "weight": 0.75
+    },
+    {
+      "source": "shop_page_RootPage",
+      "target": "home_page_HomePage",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/[locale]/(shop)/page.tsx",
+      "source_location": "line 5",
+      "weight": 0.85
+    },
+    {
+      "source": "cart_page_CartPage",
+      "target": "shop_layout_ShopLayout",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/cart/page.tsx",
+      "source_location": null,
+      "weight": 0.75
+    },
+    {
+      "source": "checkout_page_CheckoutPage",
+      "target": "cart_page_CartPage",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/checkout/page.tsx",
+      "source_location": "line 19",
+      "weight": 0.75
+    },
+    {
+      "source": "checkout_success_page_CheckoutSuccessPage",
+      "target": "orders_page_OrdersPage",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/checkout/success/page.tsx",
+      "source_location": "line 27",
+      "weight": 0.75
+    },
+    {
+      "source": "checkout_success_page_CheckoutSuccessPage",
+      "target": "products_page_ProductsPage",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/checkout/success/page.tsx",
+      "source_location": "line 31",
+      "weight": 0.75
+    },
+    {
+      "source": "orders_page_OrdersPage",
+      "target": "orders_id_page_OrderDetailPage",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "src/app/[locale]/(shop)/orders/page.tsx",
+      "source_location": null,
+      "weight": 0.65
+    },
+    {
+      "source": "LoginForm_LoginForm",
+      "target": "RegisterForm_RegisterForm",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/[locale]/(auth)/_lib/components/LoginForm.tsx",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "LoginForm_LoginForm",
+      "target": "ResetPasswordForm_ResetPasswordForm",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(auth)/_lib/components/LoginForm.tsx",
+      "source_location": null,
+      "weight": 0.75
+    },
+    {
+      "source": "auth_store_AuthSnapshot",
+      "target": "useAuth_useAuth",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/app/[locale]/(auth)/_lib/hooks/useAuth.ts",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "home_page_HomePage",
+      "target": "shop_layout_ShopLayout",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/home/page.tsx",
+      "source_location": null,
+      "weight": 0.75
+    },
+    {
+      "source": "categories_slug_page_CategoryPage",
+      "target": "shop_layout_ShopLayout",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/categories/[slug]/page.tsx",
+      "source_location": null,
+      "weight": 0.75
+    },
+    {
+      "source": "products_page_ProductsPage",
+      "target": "shop_layout_ShopLayout",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/[locale]/(shop)/products/page.tsx",
+      "source_location": null,
+      "weight": 0.75
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 6500,
+  "output_tokens": 2800
+}

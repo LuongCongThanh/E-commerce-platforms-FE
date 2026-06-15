@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "id": "05-backlog_P0Foundation",
+      "label": "P0 Foundation Tasks",
+      "file_type": "document",
+      "source_file": "docs/05-priority-implementation-backlog.vi.md",
+      "source_location": "P0 section",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "05-backlog_P1CoreMVP",
+      "label": "P1 Core MVP Build Tasks",
+      "file_type": "document",
+      "source_file": "docs/05-priority-implementation-backlog.vi.md",
+      "source_location": "P1 section",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "05-backlog_P2Hardening",
+      "label": "P2 Hardening Before Release Tasks",
+      "file_type": "document",
+      "source_file": "docs/05-priority-implementation-backlog.vi.md",
+      "source_location": "P2 section",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "05-backlog_P3PostMVP",
+      "label": "P3 Post-MVP Expansion Tasks",
+      "file_type": "document",
+      "source_file": "docs/05-priority-implementation-backlog.vi.md",
+      "source_location": "P3 section",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "05-backlog_NotNowList",
+      "label": "Anti Scope Creep Not-Now List",
+      "file_type": "document",
+      "source_file": "docs/05-priority-implementation-backlog.vi.md",
+      "source_location": "Not now list section",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "05-backlog_P0Foundation",
+      "target": "01-mvp-overview_MVPScope",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/05-priority-implementation-backlog.vi.md",
+      "source_location": "Source of truth header",
+      "weight": 1.0
+    },
+    {
+      "source": "05-backlog_P1CoreMVP",
+      "target": "05-backlog_P0Foundation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/05-priority-implementation-backlog.vi.md",
+      "source_location": "P1 dependencies column",
+      "weight": 1.0
+    },
+    {
+      "source": "05-backlog_P2Hardening",
+      "target": "05-backlog_P1CoreMVP",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/05-priority-implementation-backlog.vi.md",
+      "source_location": "P2 dependencies column",
+      "weight": 1.0
+    },
+    {
+      "source": "05-backlog_P3PostMVP",
+      "target": "05-backlog_P2Hardening",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/05-priority-implementation-backlog.vi.md",
+      "source_location": "P3 dependencies column",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

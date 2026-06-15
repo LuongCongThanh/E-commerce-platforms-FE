@@ -1,0 +1,144 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_checkout_ordersummary_tsx",
+      "label": "OrderSummary.tsx",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "checkout_ordersummary_ordersummary",
+      "label": "OrderSummary()",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_checkout_ordersummary_tsx",
+      "target": "image",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_checkout_ordersummary_tsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_checkout_ordersummary_tsx",
+      "target": "next_intl",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_checkout_ordersummary_tsx",
+      "target": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_hooks_usecart_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_checkout_ordersummary_tsx",
+      "target": "hooks_usecart_usecart",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_app_locale_shop_lib_components_checkout_ordersummary_tsx",
+      "target": "checkout_ordersummary_ordersummary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "checkout_ordersummary_ordersummary",
+      "callee": "useTranslations",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "checkout_ordersummary_ordersummary",
+      "callee": "useCart",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "checkout_ordersummary_ordersummary",
+      "callee": "t",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "checkout_ordersummary_ordersummary",
+      "callee": "map",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "checkout_ordersummary_ordersummary",
+      "callee": "t",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "checkout_ordersummary_ordersummary",
+      "callee": "toLocaleString",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "checkout_ordersummary_ordersummary",
+      "callee": "toLocaleString",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "checkout_ordersummary_ordersummary",
+      "callee": "t",
+      "is_member_call": false,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "checkout_ordersummary_ordersummary",
+      "callee": "toLocaleString",
+      "is_member_call": true,
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\app\\[locale]\\(shop)\\_lib\\components\\checkout\\OrderSummary.tsx",
+      "source_location": "L49"
+    }
+  ]
+}

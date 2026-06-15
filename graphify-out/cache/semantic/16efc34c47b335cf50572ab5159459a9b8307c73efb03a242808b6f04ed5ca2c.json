@@ -1,0 +1,133 @@
+{
+  "nodes": [
+    {
+      "id": "triage-labels_TriageLabels",
+      "label": "Triage Labels",
+      "file_type": "document",
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "triage-labels_NeedsTriage",
+      "label": "needs-triage Label",
+      "file_type": "document",
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "triage-labels_NeedsInfo",
+      "label": "needs-info Label",
+      "file_type": "document",
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "triage-labels_ReadyForAgent",
+      "label": "ready-for-agent Label",
+      "file_type": "document",
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "triage-labels_ReadyForHuman",
+      "label": "ready-for-human Label",
+      "file_type": "document",
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "triage-labels_Wontfix",
+      "label": "wontfix Label",
+      "file_type": "document",
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "triage-labels_TriageLabels",
+      "target": "triage-labels_NeedsTriage",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "triage-labels_TriageLabels",
+      "target": "triage-labels_NeedsInfo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "triage-labels_TriageLabels",
+      "target": "triage-labels_ReadyForAgent",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "triage-labels_TriageLabels",
+      "target": "triage-labels_ReadyForHuman",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "triage-labels_TriageLabels",
+      "target": "triage-labels_Wontfix",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "triage-labels_TriageLabels",
+      "target": "issue-tracker_IssueTracker",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents/triage-labels.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

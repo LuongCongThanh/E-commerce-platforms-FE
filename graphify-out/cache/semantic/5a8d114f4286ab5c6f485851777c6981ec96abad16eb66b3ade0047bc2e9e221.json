@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "OrdersClient_OrdersClient",
+      "label": "OrdersClient",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrdersClient.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "OrdersClient_OrdersClient",
+      "target": "common_OrderStatusBadge",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrdersClient.tsx",
+      "source_location": "line 7",
+      "weight": 1.0
+    },
+    {
+      "source": "OrdersClient_OrdersClient",
+      "target": "shared_utils",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrdersClient.tsx",
+      "source_location": "line 8",
+      "weight": 1.0
+    },
+    {
+      "source": "OrdersClient_OrdersClient",
+      "target": "shared_orderType",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/components/orders/OrdersClient.tsx",
+      "source_location": "line 9",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

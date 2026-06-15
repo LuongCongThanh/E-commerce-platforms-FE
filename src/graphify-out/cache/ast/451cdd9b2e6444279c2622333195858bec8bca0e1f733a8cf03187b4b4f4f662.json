@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_lang_vi_product_json",
+      "label": "product.json",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "vi_product_addtocart",
+      "label": "addToCart",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "vi_product_buynow",
+      "label": "buyNow",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vi_product_outofstock",
+      "label": "outOfStock",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "vi_product_instock",
+      "label": "inStock",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "vi_product_lowstock",
+      "label": "lowStock",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "vi_product_price",
+      "label": "price",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "vi_product_category",
+      "label": "category",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "vi_product_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L9"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_vi_product_json",
+      "target": "vi_product_addtocart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_vi_product_json",
+      "target": "vi_product_buynow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_vi_product_json",
+      "target": "vi_product_outofstock",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_vi_product_json",
+      "target": "vi_product_instock",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_vi_product_json",
+      "target": "vi_product_lowstock",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_vi_product_json",
+      "target": "vi_product_price",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_vi_product_json",
+      "target": "vi_product_category",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_vi_product_json",
+      "target": "vi_product_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\vi\\product.json",
+      "source_location": "L9",
+      "weight": 1.0
+    }
+  ]
+}

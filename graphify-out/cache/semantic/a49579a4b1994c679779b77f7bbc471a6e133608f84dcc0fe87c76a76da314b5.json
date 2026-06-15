@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "page_SearchPage",
+      "label": "Search Page",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/search/page.tsx",
+      "source_location": "line 10",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "page_SearchPage",
+      "target": "shop_SearchClient",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/search/page.tsx",
+      "source_location": "line 3",
+      "weight": 1.0
+    },
+    {
+      "source": "page_SearchPage",
+      "target": "shared_Skeleton",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/search/page.tsx",
+      "source_location": "line 4",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

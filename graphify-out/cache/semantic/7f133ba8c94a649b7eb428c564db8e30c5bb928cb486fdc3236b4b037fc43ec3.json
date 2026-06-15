@@ -1,0 +1,115 @@
+{
+  "nodes": [
+    {
+      "id": "shop_useCart",
+      "label": "useCart Hook (shop)",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/useCart.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "hooks_useCart",
+      "label": "useCart (shop hook)",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/useCart.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useCart_useCart",
+      "label": "useCart Hook",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/useCart.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useCart_CartItem",
+      "label": "CartItem Interface",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/useCart.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useCart_addToCart",
+      "label": "addToCart Function",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/useCart.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useCart_clearCart",
+      "label": "clearCart Function",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/useCart.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useCart_removeCartItem",
+      "label": "removeCartItem Function",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/useCart.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "useCart_updateQuantity",
+      "label": "updateQuantity Function",
+      "file_type": "code",
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/useCart.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "shop_useCart",
+      "target": "shared_useCart",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/useCart.ts",
+      "source_location": null,
+      "weight": 0.65
+    },
+    {
+      "source": "useCart_useCart",
+      "target": "useCart_CartItem",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/[locale]/(shop)/_lib/hooks/useCart.ts",
+      "source_location": "line 90",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

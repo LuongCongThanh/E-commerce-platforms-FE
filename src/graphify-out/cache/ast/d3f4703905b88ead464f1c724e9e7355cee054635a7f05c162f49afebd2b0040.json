@@ -1,0 +1,30 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_shared_constants_query_keys_ts",
+      "label": "query-keys.ts",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\constants\\query-keys.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "constants_query_keys_query_keys",
+      "label": "QUERY_KEYS",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\constants\\query-keys.ts",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_shared_constants_query_keys_ts",
+      "target": "constants_query_keys_query_keys",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\shared\\constants\\query-keys.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

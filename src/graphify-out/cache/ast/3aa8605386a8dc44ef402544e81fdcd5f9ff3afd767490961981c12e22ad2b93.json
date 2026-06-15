@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "e_my_pj_front_end_ecommerce_next_src_lang_en_auth_json",
+      "label": "auth.json",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "en_auth_login",
+      "label": "login",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "en_auth_register",
+      "label": "register",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "en_auth_logout",
+      "label": "logout",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "en_auth_email",
+      "label": "email",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "en_auth_password",
+      "label": "password",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "en_auth_forgotpassword",
+      "label": "forgotPassword",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "en_auth_noaccount",
+      "label": "noAccount",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "en_auth_hasaccount",
+      "label": "hasAccount",
+      "file_type": "code",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L9"
+    }
+  ],
+  "edges": [
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_auth_json",
+      "target": "en_auth_login",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_auth_json",
+      "target": "en_auth_register",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_auth_json",
+      "target": "en_auth_logout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_auth_json",
+      "target": "en_auth_email",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_auth_json",
+      "target": "en_auth_password",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_auth_json",
+      "target": "en_auth_forgotpassword",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_auth_json",
+      "target": "en_auth_noaccount",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "e_my_pj_front_end_ecommerce_next_src_lang_en_auth_json",
+      "target": "en_auth_hasaccount",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "E:\\my-pj\\Front-end\\ecommerce-next\\src\\lang\\en\\auth.json",
+      "source_location": "L9",
+      "weight": 1.0
+    }
+  ]
+}
