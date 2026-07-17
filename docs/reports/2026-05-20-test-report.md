@@ -1,5 +1,7 @@
 # Unit Test Report — `src/shared/`
 
+> 📌 **Snapshot 20/05/2026** — báo cáo tại thời điểm; số liệu không còn đúng (coverage đo ngày 17/07/2026 chỉ ~32% — xem issue #10).
+
 **Date:** 2026-05-20 &nbsp;·&nbsp; **Runner:** Vitest 4.1.4 &nbsp;·&nbsp; **Scope:** `src/shared/` — hooks · lib · stores
 
 > **Result: ✅ 86 passed / 86 total — 16 test files**

@@ -1,7 +1,7 @@
 # Shared Structure
 
 Last updated: 2026-06-07  
-Source of truth: current `src/shared/` structure + module boundary rules in `docs/04-project-structure-guidelines-design-system-conventions.vi.md`  
+Source of truth: current `src/shared/` structure + module boundary rules in [conventions.md](./conventions.md)  
 Owner: FE team
 
 ## Purpose

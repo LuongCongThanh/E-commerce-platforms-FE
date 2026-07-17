@@ -1,5 +1,7 @@
 # Đánh giá UI/UX — Hệ thống màu & Design Tokens (`globals.css`)
 
+> 📌 **Snapshot 07/06/2026** — đánh giá tại thời điểm; hệ màu đã được điều chỉnh sau đó.
+
 > **Phạm vi:** `src/app/globals.css`
 > **Ngày đánh giá:** 2026-06-07
 

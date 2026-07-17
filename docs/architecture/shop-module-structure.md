@@ -183,6 +183,9 @@ src/app/[locale]/(shop)/
     │   ├── product.ts                  # getProductBySlug()
     │   └── category.ts                 # getCategoryBySlug()
     │
+    ├── constants/                      # Constants riêng của shop
+    │   └── payment-config.ts           # PAYMENT_CONFIG (VNPay, Momo, ZaloPay), PAYMENT_LABELS
+    │
     ├── schemas/                        # Zod validation schemas (form input)
     │   ├── checkout.ts                 # checkoutSchema, addressSchema
     │   ├── filter.ts                   # filterSchema (price range, sort)

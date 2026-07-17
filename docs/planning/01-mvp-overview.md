@@ -1,5 +1,7 @@
 # 01. MVP Overview (VI)
 
+> 📌 **Snapshot lịch sử (06/2026)** — tài liệu planning, không còn được cập nhật. Hiện trạng: xem [docs/README.md](../README.md) và [docs/architecture/](../architecture/).
+
 Last updated: 2026-06-04  
 Source of truth: `package.json`, current repository structure, `docs/docs-mvp/skills-mapping.md` (legacy reference), this document set (`01-05`)  
 Owner: Product Owner + BA Lead + FE Lead
