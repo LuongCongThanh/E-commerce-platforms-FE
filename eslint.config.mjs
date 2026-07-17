@@ -35,6 +35,7 @@ const eslintConfig = [
       '.skills/**',
       '.claude/**',
       '.agent/**',
+      '.agents/**',
     ],
   },
 
