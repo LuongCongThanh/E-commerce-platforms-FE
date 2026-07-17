@@ -1,5 +1,7 @@
 # 04. Project Structure, Guidelines, Design System, Conventions (VI)
 
+> 📌 **Snapshot lịch sử (06/2026)** — tài liệu planning, không còn được cập nhật. Hiện trạng: xem [docs/README.md](../README.md) và [docs/architecture/](../architecture/).
+
 Last updated: 2026-06-04  
 Source of truth: current `src/` structure, architecture decisions in this doc set, FE standards  
 Owner: FE Lead + Architect Reviewer

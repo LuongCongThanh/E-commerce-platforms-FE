@@ -1,5 +1,7 @@
 # 03. Technical Stack, Skills And Versions (VI)
 
+> 📌 **Snapshot lịch sử (06/2026)** — tài liệu planning, không còn được cập nhật. Hiện trạng: xem [docs/README.md](../README.md) và [docs/architecture/](../architecture/).
+
 Last updated: 2026-06-04  
 Source of truth: `package.json`, `skills-mapping.md` (legacy), engineering conventions in this doc set  
 Owner: FE Lead + BA Lead + Tech Lead
