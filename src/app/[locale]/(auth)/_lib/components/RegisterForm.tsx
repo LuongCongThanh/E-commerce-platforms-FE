@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -10,17 +9,18 @@ import { useLocale } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
 import { registerAction } from '@/app/[locale]/(auth)/_lib/actions/auth';
+import { ApiErrorAlert } from '@/app/[locale]/(auth)/_lib/components/ApiErrorAlert';
+import { useApiErrorMessage } from '@/app/[locale]/(auth)/_lib/hooks/useApiErrorMessage';
 import type { RegisterFormInput } from '@/app/[locale]/(auth)/_lib/schemas/auth';
 import { RegisterFormSchema } from '@/app/[locale]/(auth)/_lib/schemas/auth';
 import { Button } from '@/shared/components/base/Button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/base/Form';
 import { Input } from '@/shared/components/base/Input';
-import { ApiError } from '@/shared/lib/errors/api-error';
 
 export function RegisterForm() {
   const router = useRouter();
   const locale = useLocale();
-  const [apiError, setApiError] = useState<string | null>(null);
+  const { apiError, setApiError, handleApiError } = useApiErrorMessage();
 
   const form = useForm<RegisterFormInput>({
     resolver: zodResolver(RegisterFormSchema),
@@ -40,18 +40,14 @@ export function RegisterForm() {
       });
       router.push(`/${locale}/home`);
     } catch (err) {
-      if (err instanceof ApiError) {
-        setApiError(err.message);
-      } else {
-        setApiError('Đăng ký thất bại. Vui lòng thử lại.');
-      }
+      handleApiError(err, 'Đăng ký thất bại. Vui lòng thử lại.');
     }
   };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        {apiError !== null && <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">{apiError}</div>}
+        <ApiErrorAlert message={apiError} />
 
         <div className="grid grid-cols-2 gap-4">
           <FormField
