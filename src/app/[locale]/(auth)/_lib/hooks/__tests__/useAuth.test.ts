@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { clearAuth, setAccessToken } from '@/app/[locale]/(auth)/_lib/store/auth-store';
+import { clearAuth, setAccessToken } from '@/core/session/auth-store';
 import { login, useAuth, useIsLoggedIn } from '@/app/[locale]/(auth)/_lib/hooks/useAuth';
 
 const mockPush = vi.fn();

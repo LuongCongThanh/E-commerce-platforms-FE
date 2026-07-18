@@ -186,9 +186,12 @@ src/shared/
 
 ### Move to `(auth)/_lib/`
 
-- auth store
 - auth hooks
 - auth guard
+
+### Move to `src/core/session/` (cross-cutting — dùng bởi `src/app/providers.tsx` cho toàn app, không riêng `(auth)`)
+
+- auth store
 - auth runtime bootstrap
 
 ### Move to `(shop)/_lib/`
