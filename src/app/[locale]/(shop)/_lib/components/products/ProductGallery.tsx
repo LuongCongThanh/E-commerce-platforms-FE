@@ -27,9 +27,9 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
   if (currentImage === undefined) return null;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 lg:flex-row">
       {/* Main image */}
-      <div className="group relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10 bg-neutral-100 dark:bg-neutral-800">
+      <div className="group relative aspect-square w-full overflow-hidden rounded-xl bg-neutral-50 lg:flex-1">
         <AnimatePresence mode="wait">
           <motion.div
             key={selected}
@@ -100,7 +100,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
 
       {/* Thumbnails */}
       {images.length > 1 && (
-        <div className="flex gap-3 overflow-x-auto pb-1">
+        <div className="flex gap-3 overflow-x-auto pb-1 lg:order-first lg:flex-col lg:overflow-x-visible lg:pb-0">
           {images.map((image, index) => (
             <button
               key={image}
@@ -110,10 +110,8 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
               }}
               aria-label={`Xem ảnh ${(index + 1).toString()}`}
               className={cn(
-                'relative size-20 shrink-0 overflow-hidden rounded-xl border-2 transition-all duration-200',
-                selected === index
-                  ? 'border-primary-500 shadow-primary-500/20 scale-105 shadow-lg'
-                  : 'border-white/10 opacity-60 hover:border-white/30 hover:opacity-100',
+                'relative size-20 shrink-0 overflow-hidden rounded-lg border-2 bg-neutral-50 transition-all duration-200',
+                selected === index ? 'border-foreground' : 'border-transparent opacity-60 hover:opacity-100',
               )}
             >
               <Image src={image} alt={`${name} thumbnail ${(index + 1).toString()}`} fill sizes="80px" className="object-cover" />

@@ -20,7 +20,7 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
       {product.variants.length > 0 && <VariantSelector variants={product.variants} selectedVariant={selectedVariant} onSelect={selectVariant} />}
 
       <div>
-        <h3 className="mb-4 text-sm font-bold tracking-wider text-neutral-500 uppercase">Số lượng</h3>
+        <h3 className="text-muted-foreground mb-4 text-sm font-bold tracking-wider uppercase">Số lượng</h3>
         <div className="flex items-center gap-4">
           <div className="border-muted-foreground/20 bg-muted/50 flex items-center rounded-xl border p-1">
             <button
@@ -49,11 +49,18 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 sm:flex-row">
+      <div className="flex flex-col gap-3">
+        <Button variant="default" size="lg" className="h-12 w-full text-base" onClick={buyNow} disabled={maxStock === 0}>
+          <div className="flex items-center gap-2 font-semibold">
+            <Zap className="size-5 fill-current" />
+            Mua ngay
+          </div>
+        </Button>
+
         <Button
           variant="outline"
           size="lg"
-          className="relative h-14 flex-1 overflow-hidden transition-all active:scale-95"
+          className="relative h-12 w-full overflow-hidden text-base"
           onClick={add}
           disabled={isAdded || maxStock === 0}
         >
@@ -82,19 +89,6 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
               </motion.div>
             )}
           </AnimatePresence>
-        </Button>
-
-        <Button
-          variant="default"
-          size="lg"
-          className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 flex-1"
-          onClick={buyNow}
-          disabled={maxStock === 0}
-        >
-          <div className="flex items-center gap-2 font-bold tracking-wide uppercase">
-            <Zap className="size-5 fill-current" />
-            Mua ngay
-          </div>
         </Button>
       </div>
     </div>

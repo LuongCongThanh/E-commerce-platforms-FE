@@ -1,18 +1,18 @@
 @import 'tailwindcss';
 
 @theme {
-  /* ── Primary: Cam-đỏ năng động (hue ~25°) ──────────────────────────── */
-  --color-primary-50: oklch(0.97 0.02 25);
-  --color-primary-100: oklch(0.93 0.05 25);
-  --color-primary-200: oklch(0.87 0.09 25);
-  --color-primary-300: oklch(0.79 0.14 25);
-  --color-primary-400: oklch(0.7 0.19 25);
-  --color-primary-500: oklch(0.62 0.23 25);
-  --color-primary-600: oklch(0.54 0.22 25);
-  --color-primary-700: oklch(0.45 0.19 25);
-  --color-primary-800: oklch(0.35 0.15 25);
-  --color-primary-900: oklch(0.26 0.1 25);
-  --color-primary-950: oklch(0.16 0.06 25);
+  /* ── Brand: Cam-đỏ — chỉ dùng cho giá, sale, badge khuyến mãi ──────── */
+  --color-brand-50: oklch(0.97 0.02 25);
+  --color-brand-100: oklch(0.93 0.05 25);
+  --color-brand-200: oklch(0.87 0.09 25);
+  --color-brand-300: oklch(0.79 0.14 25);
+  --color-brand-400: oklch(0.7 0.19 25);
+  --color-brand-500: oklch(0.62 0.23 25);
+  --color-brand-600: oklch(0.54 0.22 25);
+  --color-brand-700: oklch(0.45 0.19 25);
+  --color-brand-800: oklch(0.35 0.15 25);
+  --color-brand-900: oklch(0.26 0.1 25);
+  --color-brand-950: oklch(0.16 0.06 25);
 
   /* ── Secondary: Xanh dương tin cậy (hue ~220°) — tương phản với Primary ── */
   --color-secondary-50: oklch(0.97 0.02 220);
@@ -75,26 +75,12 @@
   --font-sans: var(--font-inter), 'Inter Variable', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* ── Border radius ──────────────────────────────────────────────────── */
-  --radius-card: 0.75rem;
-  --radius-btn: 0.5rem;
-
   /* ── Transition tokens ──────────────────────────────────────────────── */
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --duration-fast: 120ms;
   --duration-normal: 200ms;
   --duration-slow: 350ms;
-
-  /* ── Antigravity Spatial Tokens ──────────────────────────────────────── */
-  --color-spatial-blue-900: oklch(0.12 0.04 250);
-  --color-spatial-purple-900: oklch(0.12 0.04 280);
-
-  --shadow-spatial-sm: 0 2px 10px -2px rgba(0, 0, 0, 0.1), 0 1px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-spatial-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.3), 0 10px 20px -10px rgba(0, 0, 0, 0.2);
-
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
   /* ── Shadcn/UI Theme Mapping ────────────────────────────────────────── */
   --color-background: var(--background);
@@ -122,23 +108,13 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
 /* ── Shadcn/UI CSS Variables ────────────────────────────────────────── */
 @layer base {
   :root {
     --background: oklch(1 0 0);
     --foreground: oklch(0.16 0.004 30);
-    --primary: oklch(0.62 0.23 25);
-    --primary-foreground: oklch(1 0 0);
+    --primary: oklch(0.16 0.004 30);
+    --primary-foreground: oklch(0.98 0.004 30);
     --secondary: oklch(0.96 0.006 30);
     --secondary-foreground: oklch(0.3 0.11 220);
     --muted: oklch(0.96 0.006 30);
@@ -150,22 +126,18 @@
     --destructive-foreground: oklch(1 0 0);
     --border: oklch(0.92 0.008 30);
     --input: oklch(0.92 0.008 30);
-    --ring: oklch(0.62 0.23 25);
+    --ring: oklch(0.16 0.004 30);
     --radius: 0.5rem;
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.16 0.004 30);
+    --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.16 0.004 30);
-
-    /* Antigravity Glass & 3D */
-    --glass-bg: rgba(255, 255, 255, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.4);
-    --perspective: 1200px;
   }
 
   .dark {
     --background: oklch(0.13 0.004 30);
     --foreground: oklch(0.96 0.006 30);
-    --primary: oklch(0.7 0.19 25);
+    --primary: oklch(0.96 0.006 30);
     --primary-foreground: oklch(0.16 0.004 30);
     --secondary: oklch(0.22 0.006 30);
     --secondary-foreground: oklch(0.8 0.1 220);
@@ -178,15 +150,11 @@
     --destructive-foreground: oklch(0.96 0.006 30);
     --border: oklch(0.25 0.008 30);
     --input: oklch(0.25 0.008 30);
-    --ring: oklch(0.7 0.19 25);
+    --ring: oklch(0.96 0.006 30);
     --card: oklch(0.2 0.005 30);
     --card-foreground: oklch(0.96 0.006 30);
+    --popover: oklch(0.2 0.005 30);
     --popover-foreground: oklch(0.96 0.006 30);
-
-    /* Antigravity Glass & 3D (Dark) */
-    --glass-bg: rgba(15, 15, 25, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --perspective: 1200px;
   }
 
   *,
@@ -198,27 +166,8 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    perspective: var(--perspective);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-}
-
-/* ── Utility Classes ────────────────────────────────────────────────── */
-@utility glass {
-  border-width: 1px;
-  border-color: var(--glass-border);
-  background-color: var(--glass-bg);
-  backdrop-filter: blur(24px); /* xl: 24px */
-}
-
-@utility spatial-bg {
-  background-image:
-    radial-gradient(circle at 50% -20%, var(--color-spatial-blue-900), transparent),
-    radial-gradient(circle at 0% 100%, var(--color-spatial-purple-900), transparent);
-}
-
-@utility spatial-depth {
-  transform-style: preserve-3d;
 }

@@ -5,7 +5,7 @@ import { homeBenefitsData } from '@/app/[locale]/(shop)/_lib/data/home';
 
 export function SectionWhyChooseUs(): React.JSX.Element {
   return (
-    <section className="bg-primary-50/30 dark:bg-primary-950/10 py-12 md:py-16">
+    <section className="bg-neutral-50 py-12 md:py-16">
       <div className="container mx-auto px-4">
         <SectionHeading title="Tại sao chọn chúng tôi?" align="center" />
         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

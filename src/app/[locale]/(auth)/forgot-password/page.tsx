@@ -11,10 +11,10 @@ export default async function ForgotPasswordPage({ params }: ForgotPasswordPageP
   setRequestLocale(locale);
 
   return (
-    <div className="glass rounded-2xl p-8">
+    <div className="bg-card rounded-xl border p-8 shadow-sm">
       <div className="mb-8 text-center">
         <h1 className="text-2xl font-bold tracking-tight">Quên mật khẩu</h1>
-        <p className="mt-2 text-sm text-neutral-500">Đặt lại mật khẩu của bạn</p>
+        <p className="text-muted-foreground mt-2 text-sm">Đặt lại mật khẩu của bạn</p>
       </div>
       <ForgotPasswordForm />
     </div>

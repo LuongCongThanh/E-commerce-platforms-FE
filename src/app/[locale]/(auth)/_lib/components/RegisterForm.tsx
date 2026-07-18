@@ -127,7 +127,7 @@ export function RegisterForm() {
 
         <p className="text-center text-sm text-neutral-500">
           Đã có tài khoản?{' '}
-          <Link href={`/${locale}/login`} className="text-primary-400 font-medium hover:underline">
+          <Link href={`/${locale}/login`} className="text-foreground font-medium underline hover:underline">
             Đăng nhập
           </Link>
         </p>

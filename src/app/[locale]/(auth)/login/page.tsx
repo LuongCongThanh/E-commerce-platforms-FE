@@ -13,10 +13,10 @@ export default async function LoginPage({ params }: LoginPageProps) {
   setRequestLocale(locale);
 
   return (
-    <div className="glass rounded-2xl p-8">
+    <div className="bg-card rounded-xl border p-8 shadow-sm">
       <div className="mb-8 text-center">
         <h1 className="text-2xl font-bold tracking-tight">Đăng nhập</h1>
-        <p className="mt-2 text-sm text-neutral-500">Chào mừng trở lại!</p>
+        <p className="text-muted-foreground mt-2 text-sm">Chào mừng trở lại!</p>
       </div>
       <Suspense>
         <LoginForm />

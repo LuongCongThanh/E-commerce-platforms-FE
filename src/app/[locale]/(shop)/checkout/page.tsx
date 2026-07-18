@@ -12,11 +12,11 @@ export default function CheckoutPage({ params }: { readonly params: Promise<{ lo
   const t = useTranslations('checkout');
 
   return (
-    <div className="relative min-h-screen pt-24 pb-20">
+    <div className="relative min-h-screen pt-8 pb-20">
       <div className="mx-auto max-w-7xl px-4">
         <Link
           href={`/${locale}/cart`}
-          className="group text-muted-foreground mb-8 inline-flex items-center gap-2 text-sm transition-colors hover:text-white"
+          className="group text-muted-foreground hover:text-foreground mb-8 inline-flex items-center gap-2 text-sm transition-colors"
         >
           <ChevronLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
           {t('backToCart')}

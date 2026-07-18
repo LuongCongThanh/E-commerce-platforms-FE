@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { cleanup } from '@testing-library/react';
-import { afterEach, vi } from 'vitest';
+import { afterEach, beforeEach, vi } from 'vitest';
 
 afterEach(() => {
   cleanup();
@@ -39,7 +39,11 @@ if (typeof window !== 'undefined') {
     unobserve = vi.fn();
   }
 
-  vi.stubGlobal('ResizeObserver', ResizeObserverMock);
-  vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
-  vi.stubGlobal('scrollTo', vi.fn());
+  // `unstubGlobals: true` trong vitest.config gỡ stub quanh MỖI test, nên phải stub lại trong beforeEach
+  // thay vì một lần ở top-level (top-level stub bị gỡ trước khi test đầu tiên chạy).
+  beforeEach(() => {
+    vi.stubGlobal('ResizeObserver', ResizeObserverMock);
+    vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
+    vi.stubGlobal('scrollTo', vi.fn());
+  });
 }

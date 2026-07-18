@@ -23,12 +23,12 @@ export function CartDrawer({ children }: CartDrawerProps) {
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
-      <SheetContent aria-describedby={undefined} className="glass flex w-full flex-col border-l-white/10 p-0 sm:max-w-md">
-        <SheetHeader className="border-b border-white/10 p-6">
+      <SheetContent aria-describedby={undefined} className="bg-background flex w-full flex-col p-0 sm:max-w-md">
+        <SheetHeader className="border-b p-6">
           <SheetTitle className="flex items-center gap-2 text-xl font-bold">
-            <ShoppingBag className="text-primary-500 size-5" />
+            <ShoppingBag className="size-5" />
             Giỏ hàng của bạn
-            <span className="bg-primary-500/10 text-primary-500 ml-2 rounded-full px-2 py-0.5 text-xs font-medium">{itemCount}</span>
+            <span className="bg-muted text-foreground ml-2 rounded-full px-2 py-0.5 text-xs font-medium">{itemCount}</span>
           </SheetTitle>
         </SheetHeader>
 
@@ -36,11 +36,11 @@ export function CartDrawer({ children }: CartDrawerProps) {
           <div className="py-6">
             {items.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-20 text-center">
-                <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-800">
-                  <ShoppingBag className="size-8 text-neutral-400" />
+                <div className="bg-muted mb-4 flex size-16 items-center justify-center rounded-full">
+                  <ShoppingBag className="text-muted-foreground size-8" />
                 </div>
                 <h3 className="text-lg font-medium">Giỏ hàng trống</h3>
-                <p className="mt-1 text-sm text-neutral-500">Hãy bắt đầu mua sắm để lấp đầy giỏ hàng của bạn!</p>
+                <p className="text-muted-foreground mt-1 text-sm">Hãy bắt đầu mua sắm để lấp đầy giỏ hàng của bạn!</p>
                 <SheetTrigger asChild>
                   <Button variant="outline" className="mt-6">
                     Tiếp tục mua sắm
@@ -60,7 +60,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                       transition={{ delay: index * 0.05 }}
                       className="group relative flex gap-4"
                     >
-                      <div className="relative size-20 overflow-hidden rounded-xl border border-white/10 bg-neutral-100 dark:bg-neutral-800">
+                      <div className="relative size-20 overflow-hidden rounded-lg bg-neutral-50">
                         <Image
                           src={item.image}
                           alt={item.name}
@@ -72,18 +72,18 @@ export function CartDrawer({ children }: CartDrawerProps) {
                       <div className="flex flex-1 flex-col justify-between">
                         <div>
                           <h4 className="line-clamp-1 text-sm font-semibold">{item.name}</h4>
-                          <p className="text-primary-500 mt-1 text-sm font-bold">
+                          <p className="text-brand-600 mt-1 text-sm font-bold">
                             {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(item.price)}
                           </p>
                         </div>
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center rounded-lg border border-white/10 bg-white/5 p-1">
+                          <div className="flex items-center rounded-lg border p-1">
                             <button
                               type="button"
                               onClick={() => {
                                 updateQuantity(item.variantId, Math.max(1, item.quantity - 1));
                               }}
-                              className="flex size-6 items-center justify-center rounded-md transition-colors hover:bg-white/10"
+                              className="hover:bg-muted flex size-6 items-center justify-center rounded-md transition-colors"
                             >
                               <Minus className="size-3" />
                             </button>
@@ -93,7 +93,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                               onClick={() => {
                                 updateQuantity(item.variantId, item.quantity + 1);
                               }}
-                              className="flex size-6 items-center justify-center rounded-md transition-colors hover:bg-white/10"
+                              className="hover:bg-muted flex size-6 items-center justify-center rounded-md transition-colors"
                             >
                               <Plus className="size-3" />
                             </button>
@@ -103,7 +103,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                             onClick={() => {
                               removeCartItem(item.variantId);
                             }}
-                            className="hover:text-destructive-500 text-neutral-400 transition-colors"
+                            className="hover:text-destructive text-muted-foreground transition-colors"
                           >
                             <Trash2 className="size-4" />
                           </button>
@@ -118,15 +118,15 @@ export function CartDrawer({ children }: CartDrawerProps) {
         </ScrollArea>
 
         {items.length > 0 && (
-          <div className="border-t border-white/10 bg-white/5 p-6 backdrop-blur-md">
+          <div className="border-t p-6">
             <div className="mb-4 space-y-1.5">
               <div className="flex justify-between text-sm">
-                <span className="text-neutral-500">Tạm tính</span>
+                <span className="text-muted-foreground">Tạm tính</span>
                 <span className="font-medium">{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total)}</span>
               </div>
               <div className="flex justify-between text-base font-bold">
                 <span>Tổng cộng</span>
-                <span className="text-primary-500">{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total)}</span>
+                <span className="text-brand-600">{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total)}</span>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">

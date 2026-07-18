@@ -83,7 +83,7 @@ export function ResetPasswordForm({ token, uid }: ResetPasswordFormProps) {
         </Button>
 
         <p className="text-center text-sm text-neutral-500">
-          <Link href={`/${locale}/login`} className="text-primary-400 font-medium hover:underline">
+          <Link href={`/${locale}/login`} className="text-foreground font-medium underline hover:underline">
             Quay lại đăng nhập
           </Link>
         </p>

@@ -51,7 +51,7 @@ export function ForgotPasswordForm() {
             Chúng tôi đã gửi link đặt lại mật khẩu đến <strong>{form.getValues('email')}</strong>
           </p>
         </div>
-        <Link href={`/${locale}/login`} className="text-primary-400 block text-sm hover:underline">
+        <Link href={`/${locale}/login`} className="text-foreground block text-sm underline hover:underline">
           Quay lại đăng nhập
         </Link>
       </div>
@@ -86,7 +86,7 @@ export function ForgotPasswordForm() {
 
         <p className="text-center text-sm text-neutral-500">
           Nhớ mật khẩu rồi?{' '}
-          <Link href={`/${locale}/login`} className="text-primary-400 font-medium hover:underline">
+          <Link href={`/${locale}/login`} className="text-foreground font-medium underline hover:underline">
             Đăng nhập
           </Link>
         </p>

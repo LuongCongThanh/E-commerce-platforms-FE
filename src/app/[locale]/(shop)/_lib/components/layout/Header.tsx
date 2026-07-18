@@ -32,13 +32,13 @@ export function Header() {
   };
 
   return (
-    <header className="glass sticky top-0 z-50 w-full transition-all duration-300">
+    <header className="bg-background/95 sticky top-0 z-50 w-full border-b backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center gap-4 md:gap-8">
           <Link href={`/${locale}/home`} className="group flex items-center gap-2">
-            <span className="from-primary-500 to-accent-500 bg-linear-to-r bg-clip-text text-xl font-black tracking-tighter text-transparent transition-transform group-hover:scale-105">
-              ANTIGRAVITY<span className="text-neutral-900 dark:text-white">.STORE</span>
+            <span className="text-xl font-black tracking-tighter">
+              ANTIGRAVITY<span className="text-muted-foreground">.STORE</span>
             </span>
           </Link>
 
@@ -46,7 +46,7 @@ export function Header() {
           <nav className="hidden items-center gap-1 md:flex">
             <Link
               href={`/${locale}/products`}
-              className="group hover:text-primary-600 dark:hover:text-primary-400 relative rounded-lg px-3 py-2 text-sm font-medium text-neutral-600 transition-colors dark:text-neutral-300"
+              className="text-muted-foreground hover:text-foreground relative rounded-lg px-3 py-2 text-sm font-medium transition-colors"
             >
               Tất cả sản phẩm
             </Link>
@@ -55,7 +55,7 @@ export function Header() {
 
             <Link
               href={`/${locale}/categories/sale`}
-              className="rounded-lg px-3 py-2 text-sm font-bold text-orange-500 transition-colors hover:text-orange-400"
+              className="text-brand-600 hover:text-brand-500 rounded-lg px-3 py-2 text-sm font-bold transition-colors"
             >
               🔥 Flash Sale
             </Link>
@@ -74,7 +74,7 @@ export function Header() {
                   setSearchQuery(e.target.value);
                 }}
                 placeholder="Tìm kiếm sản phẩm..."
-                className="h-9 w-48 rounded-lg border border-white/20 bg-white/10 px-3 text-sm backdrop-blur-sm outline-none focus:border-white/40 sm:w-64"
+                className="bg-background focus-visible:ring-ring h-9 w-48 rounded-lg border px-3 text-sm outline-none focus-visible:ring-2 sm:w-64"
               />
               <Button
                 type="button"
@@ -106,7 +106,7 @@ export function Header() {
             <Button variant="ghost" size="icon" aria-label="Giỏ hàng" className="relative">
               <ShoppingCart className="size-5" />
               {itemCount > 0 && (
-                <span className="bg-primary-500 absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full text-[10px] font-bold text-white">
+                <span className="bg-brand-500 absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full text-[10px] font-bold text-white">
                   {itemCount > 99 ? '99+' : itemCount}
                 </span>
               )}

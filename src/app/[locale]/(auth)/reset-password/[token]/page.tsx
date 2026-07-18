@@ -20,10 +20,10 @@ export default async function ResetPasswordPage({ params, searchParams }: ResetP
   }
 
   return (
-    <div className="glass rounded-2xl p-8">
+    <div className="bg-card rounded-xl border p-8 shadow-sm">
       <div className="mb-8 text-center">
         <h1 className="text-2xl font-bold tracking-tight">Đặt lại mật khẩu</h1>
-        <p className="mt-2 text-sm text-neutral-500">Tạo mật khẩu mới cho tài khoản của bạn</p>
+        <p className="text-muted-foreground mt-2 text-sm">Tạo mật khẩu mới cho tài khoản của bạn</p>
       </div>
       <ResetPasswordForm token={token} uid={uid} />
     </div>

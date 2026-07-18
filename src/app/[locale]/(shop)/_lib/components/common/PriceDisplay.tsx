@@ -14,10 +14,10 @@ export function PriceDisplay({ price, salePrice, className, showDiscountBadge = 
 
   return (
     <div className={cn('flex flex-wrap items-center gap-2', className)}>
-      <span className="text-foreground text-base font-semibold">{formatCurrency(finalPrice)}</span>
+      <span className="text-brand-600 text-base font-bold">{formatCurrency(finalPrice)}</span>
       {hasDiscount ? <span className="text-muted-foreground text-sm line-through">{formatCurrency(price)}</span> : null}
       {hasDiscount && showDiscountBadge && discountPercent > 0 ? (
-        <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-700">-{discountPercent}%</span>
+        <span className="bg-brand-50 text-brand-700 rounded-full px-2 py-0.5 text-xs font-medium">-{discountPercent}%</span>
       ) : null}
     </div>
   );

@@ -67,7 +67,7 @@ export function LoginForm() {
             <FormItem>
               <div className="flex items-center justify-between">
                 <FormLabel>Mật khẩu</FormLabel>
-                <Link href={`/${locale}/forgot-password`} className="text-primary-400 text-xs hover:underline">
+                <Link href={`/${locale}/forgot-password`} className="text-foreground text-xs underline hover:underline">
                   Quên mật khẩu?
                 </Link>
               </div>
@@ -86,7 +86,7 @@ export function LoginForm() {
 
         <p className="text-center text-sm text-neutral-500">
           Chưa có tài khoản?{' '}
-          <Link href={`/${locale}/register`} className="text-primary-400 font-medium hover:underline">
+          <Link href={`/${locale}/register`} className="text-foreground font-medium underline hover:underline">
             Đăng ký ngay
           </Link>
         </p>
