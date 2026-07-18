@@ -2,7 +2,7 @@ export const API = {
   AUTH: {
     LOGIN: '/api/auth/login/',
     REGISTER: '/api/auth/register/',
-    REFRESH: '/api/auth/token/refresh/',
+    REFRESH: '/api/auth/refresh/',
     LOGOUT: '/api/auth/logout/',
     FORGOT_PASSWORD: '/api/auth/password/reset/',
     RESET_PASSWORD: '/api/auth/password/reset/confirm/',

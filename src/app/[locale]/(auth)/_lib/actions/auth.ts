@@ -1,6 +1,6 @@
+import { callAuthRoute } from '@/app/[locale]/(auth)/_lib/http/auth-route-client';
 import { clearAuth, setAccessToken, setUser } from '@/app/[locale]/(auth)/_lib/store/auth-store';
 import { API } from '@/shared/constants/api-endpoints';
-import { ApiError } from '@/shared/lib/errors/api-error';
 import { http } from '@/shared/lib/http/client';
 import type { AuthToken, User } from '@/shared/types/user';
 
@@ -14,23 +14,6 @@ interface RegisterPayload {
   password: string;
   firstName: string;
   lastName: string;
-}
-
-async function callAuthRoute<T>(url: string, body: unknown): Promise<T> {
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-
-  const json = (await res.json()) as Record<string, unknown>;
-
-  if (!res.ok) {
-    const message = typeof json.message === 'string' ? json.message : 'Đã có lỗi xảy ra';
-    throw new ApiError({ message, status: res.status });
-  }
-
-  return json as T;
 }
 
 export async function loginAction(payload: LoginPayload): Promise<User> {

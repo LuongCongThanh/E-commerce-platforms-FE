@@ -1,5 +1,5 @@
-import axios from 'axios';
-
+import { callAuthRoute } from '@/app/[locale]/(auth)/_lib/http/auth-route-client';
+import { API } from '@/shared/constants/api-endpoints';
 import type { User } from '@/shared/types/user';
 
 type Listener = () => void;
@@ -49,9 +49,7 @@ export function clearAuth(): void {
 }
 
 export async function refreshAccessToken(): Promise<string> {
-  const { data } = await axios.post<{ access: string }>('/api/auth/refresh', undefined, {
-    withCredentials: true,
-  });
+  const data = await callAuthRoute<{ access: string }>(API.AUTH.REFRESH);
 
   setAccessToken(data.access);
   return data.access;
