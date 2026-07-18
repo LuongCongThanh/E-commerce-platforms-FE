@@ -13,13 +13,23 @@ export interface CartItem {
 }
 
 const CART_STORAGE_KEY = 'cart-storage';
+const CART_STORAGE_VERSION = 1;
+
+interface PersistedCartV1 {
+  version: 1;
+  items: CartItem[];
+}
 
 type Listener = () => void;
 
 function readPersistedCart(): CartItem[] {
   try {
     const raw = localStorage.getItem(CART_STORAGE_KEY);
-    return raw === null ? [] : (JSON.parse(raw) as CartItem[]);
+    if (raw === null) return [];
+
+    const parsed = JSON.parse(raw) as CartItem[] | PersistedCartV1;
+    // Backward compat: trước khi có versioning, cart-storage lưu trực tiếp CartItem[]
+    return Array.isArray(parsed) ? parsed : parsed.items;
   } catch {
     return [];
   }
@@ -33,8 +43,10 @@ function getSnapshot(): CartItem[] {
   return _items;
 }
 
+const EMPTY_CART: CartItem[] = [];
+
 function getServerSnapshot(): CartItem[] {
-  return [];
+  return EMPTY_CART;
 }
 
 function subscribeCart(listener: Listener): () => void {
@@ -46,7 +58,8 @@ function subscribeCart(listener: Listener): () => void {
 
 function setItems(updater: (prev: CartItem[]) => CartItem[]): void {
   _items = updater(_items);
-  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(_items));
+  const persisted: PersistedCartV1 = { version: CART_STORAGE_VERSION, items: _items };
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(persisted));
   _listeners.forEach((l) => {
     l();
   });
