@@ -14,6 +14,19 @@
   --color-primary-900: oklch(0.26 0.1 25);
   --color-primary-950: oklch(0.16 0.06 25);
 
+  /* ── Brand: Cam-đỏ — chỉ dùng cho giá, sale, badge khuyến mãi ──────── */
+  --color-brand-50: oklch(0.97 0.02 25);
+  --color-brand-100: oklch(0.93 0.05 25);
+  --color-brand-200: oklch(0.87 0.09 25);
+  --color-brand-300: oklch(0.79 0.14 25);
+  --color-brand-400: oklch(0.7 0.19 25);
+  --color-brand-500: oklch(0.62 0.23 25);
+  --color-brand-600: oklch(0.54 0.22 25);
+  --color-brand-700: oklch(0.45 0.19 25);
+  --color-brand-800: oklch(0.35 0.15 25);
+  --color-brand-900: oklch(0.26 0.1 25);
+  --color-brand-950: oklch(0.16 0.06 25);
+
   /* ── Secondary: Xanh dương tin cậy (hue ~220°) — tương phản với Primary ── */
   --color-secondary-50: oklch(0.97 0.02 220);
   --color-secondary-100: oklch(0.93 0.04 220);
@@ -75,10 +88,6 @@
   --font-sans: var(--font-inter), 'Inter Variable', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* ── Border radius ──────────────────────────────────────────────────── */
-  --radius-card: 0.75rem;
-  --radius-btn: 0.5rem;
-
   /* ── Transition tokens ──────────────────────────────────────────────── */
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -137,8 +146,8 @@
   :root {
     --background: oklch(1 0 0);
     --foreground: oklch(0.16 0.004 30);
-    --primary: oklch(0.62 0.23 25);
-    --primary-foreground: oklch(1 0 0);
+    --primary: oklch(0.16 0.004 30);
+    --primary-foreground: oklch(0.98 0.004 30);
     --secondary: oklch(0.96 0.006 30);
     --secondary-foreground: oklch(0.3 0.11 220);
     --muted: oklch(0.96 0.006 30);
@@ -150,10 +159,11 @@
     --destructive-foreground: oklch(1 0 0);
     --border: oklch(0.92 0.008 30);
     --input: oklch(0.92 0.008 30);
-    --ring: oklch(0.62 0.23 25);
+    --ring: oklch(0.16 0.004 30);
     --radius: 0.5rem;
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.16 0.004 30);
+    --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.16 0.004 30);
 
     /* Antigravity Glass & 3D */
@@ -165,7 +175,7 @@
   .dark {
     --background: oklch(0.13 0.004 30);
     --foreground: oklch(0.96 0.006 30);
-    --primary: oklch(0.7 0.19 25);
+    --primary: oklch(0.96 0.006 30);
     --primary-foreground: oklch(0.16 0.004 30);
     --secondary: oklch(0.22 0.006 30);
     --secondary-foreground: oklch(0.8 0.1 220);
@@ -178,9 +188,10 @@
     --destructive-foreground: oklch(0.96 0.006 30);
     --border: oklch(0.25 0.008 30);
     --input: oklch(0.25 0.008 30);
-    --ring: oklch(0.7 0.19 25);
+    --ring: oklch(0.96 0.006 30);
     --card: oklch(0.2 0.005 30);
     --card-foreground: oklch(0.96 0.006 30);
+    --popover: oklch(0.2 0.005 30);
     --popover-foreground: oklch(0.96 0.006 30);
 
     /* Antigravity Glass & 3D (Dark) */
