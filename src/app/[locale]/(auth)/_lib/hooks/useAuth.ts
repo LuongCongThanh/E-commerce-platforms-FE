@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { clearAuth, getAuthSnapshot, setAccessToken, setUser, subscribeAuth } from '@/app/[locale]/(auth)/_lib/store/auth-store';
+import { clearAuth, getAuthSnapshot, setAccessToken, setUser, subscribeAuth } from '@/core/session/auth-store';
 import { ROUTES } from '@/shared/constants/routes';
 import type { User } from '@/shared/types/user';
 

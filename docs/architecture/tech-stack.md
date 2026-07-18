@@ -43,7 +43,7 @@ Không bao giờ gọi axios trực tiếp — luôn đi qua `http` object.
 ## Ranh giới state
 
 - **Server state:** TanStack Query.
-- **Client state:** `useSyncExternalStore` + module-level store — auth tại `(auth)/_lib/store/auth-store.ts`, cart tại `(shop)/_lib/hooks/useCart.ts`. Không dùng Zustand hay thư viện state ngoài (`zustand` còn trong `package.json` là dependency thừa — xem ghi chú cuối).
+- **Client state:** `useSyncExternalStore` + module-level store — auth tại `src/core/session/auth-store.ts` (cross-cutting, dùng toàn app qua `src/app/providers.tsx` nên không đặt trong `(auth)/_lib`), cart tại `(shop)/_lib/hooks/useCart.ts`. Không dùng Zustand hay thư viện state ngoài (`zustand` còn trong `package.json` là dependency thừa — xem ghi chú cuối).
 - **Local UI state:** `useState`/`useReducer` trong component.
 
 ## Quality gates

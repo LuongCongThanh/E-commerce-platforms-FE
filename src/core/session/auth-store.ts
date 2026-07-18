@@ -1,4 +1,4 @@
-import { callAuthRoute } from '@/app/[locale]/(auth)/_lib/http/auth-route-client';
+import { callAuthRoute } from '@/core/session/auth-route-client';
 import { API } from '@/shared/constants/api-endpoints';
 import type { User } from '@/shared/types/user';
 

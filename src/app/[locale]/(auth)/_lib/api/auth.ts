@@ -1,5 +1,5 @@
-import { callAuthRoute } from '@/app/[locale]/(auth)/_lib/http/auth-route-client';
-import { clearAuth, setAccessToken, setUser } from '@/app/[locale]/(auth)/_lib/store/auth-store';
+import { callAuthRoute } from '@/core/session/auth-route-client';
+import { clearAuth, setAccessToken, setUser } from '@/core/session/auth-store';
 import { API } from '@/shared/constants/api-endpoints';
 import { http } from '@/shared/lib/http/client';
 import type { AuthToken, User } from '@/shared/types/user';
