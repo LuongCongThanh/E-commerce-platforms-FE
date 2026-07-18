@@ -1,10 +1,17 @@
 import { act, renderHook } from '@testing-library/react';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { hydrateRoot } from 'react-dom/client';
+import { renderToString } from 'react-dom/server';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { initCartFromStorage, resetCartState, useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 
 const itemA = { variantId: 'v1', productId: 'p1', name: 'Áo thun', image: '/a.jpg', price: 100_000, quantity: 1 };
 const itemB = { variantId: 'v2', productId: 'p2', name: 'Quần jean', image: '/b.jpg', price: 200_000, quantity: 2 };
+
+function CartConsumer() {
+  const { itemCount } = useCart();
+  return <div>{itemCount}</div>;
+}
 
 describe('useCart', () => {
   beforeEach(() => {
@@ -91,20 +98,47 @@ describe('useCart', () => {
     expect(result.current.items.find((i) => i.variantId === 'v2')?.quantity).toBe(2);
   });
 
-  it('persists cart to localStorage on mutation', () => {
+  it('persists cart to localStorage as a versioned payload on mutation', () => {
     const { result } = renderHook(() => useCart());
     act(() => result.current.addToCart(itemA));
     const stored = localStorage.getItem('cart-storage');
     expect(stored).not.toBeNull();
-    const parsed = JSON.parse(stored ?? '') as unknown[];
-    expect(parsed).toHaveLength(1);
+    const parsed = JSON.parse(stored ?? '') as { version: number; items: unknown[] };
+    expect(parsed.version).toBe(1);
+    expect(parsed.items).toHaveLength(1);
   });
 
-  it('restores cart from localStorage', () => {
+  it('restores cart from the versioned localStorage payload', () => {
+    localStorage.setItem('cart-storage', JSON.stringify({ version: 1, items: [itemA] }));
+    act(() => initCartFromStorage());
+    const { result } = renderHook(() => useCart());
+    expect(result.current.items).toHaveLength(1);
+    expect(result.current.items[0]?.variantId).toBe('v1');
+  });
+
+  it('restores cart from the legacy bare-array localStorage payload (pre-versioning)', () => {
     localStorage.setItem('cart-storage', JSON.stringify([itemA]));
     act(() => initCartFromStorage());
     const { result } = renderHook(() => useCart());
     expect(result.current.items).toHaveLength(1);
     expect(result.current.items[0]?.variantId).toBe('v1');
+  });
+
+  it('does not warn "getServerSnapshot should be cached" during hydration', () => {
+    const html = renderToString(<CartConsumer />);
+    const container = document.createElement('div');
+    container.innerHTML = html;
+    document.body.appendChild(container);
+
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+
+    act(() => {
+      hydrateRoot(container, <CartConsumer />);
+    });
+
+    const badCall = errorSpy.mock.calls.find((args) => String(args[0]).includes('getServerSnapshot should be cached'));
+    expect(badCall).toBeUndefined();
+
+    container.remove();
   });
 });
