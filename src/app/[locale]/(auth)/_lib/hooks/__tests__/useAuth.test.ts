@@ -39,6 +39,8 @@ describe('useAuth', () => {
 
     expect(result.current.isLoggedIn).toBe(true);
     expect(result.current.user?.email).toBe('user@test.com');
+    expect(result.current.authStatus).toBe('authenticated');
+    expect(result.current.isInitializing).toBe(false);
   });
 
   it('returns admin flag from the current user', () => {
@@ -57,6 +59,7 @@ describe('useAuth', () => {
 
     expect(result.current.isLoggedIn).toBe(false);
     expect(result.current.user).toBeNull();
+    expect(result.current.authStatus).toBe('anonymous');
     expect(mockPush).toHaveBeenCalledWith('/login');
   });
 });
