@@ -43,6 +43,7 @@ CI (`.github/workflows/ci.yml`) chạy lint + format:check + typecheck + unit te
 | Shared boundary — cái gì được vào `src/shared/` | `docs/architecture/shared-structure.md`      |
 | Cấu trúc module shop                            | `docs/architecture/shop-module-structure.md` |
 | Quyết định kiến trúc                            | `docs/adr/`                                  |
+| Git flow: branching, commit, PR, merge strategy | `CONTRIBUTING.md`                            |
 
 ## Architecture (tóm tắt)
 
@@ -104,3 +105,4 @@ Env vars validate bằng Zod trong `shared/lib/env.ts` (bắt buộc: `NEXT_PUBL
 - **Issue tracker:** GitHub Issues (`LuongCongThanh/E-commerce-platforms-FE`). Xem `docs/agents/issue-tracker.md`.
 - **Triage labels:** `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. Xem `docs/agents/triage-labels.md`.
 - **Domain docs:** single-context — `CONTEXT.md` ở root + `docs/adr/`. Xem `docs/agents/domain.md`.
+- **Skills overview:** mục đích và thời điểm dùng của từng skill trong `.claude/skills/`. Xem `docs/agents/skills-overview.md`.
