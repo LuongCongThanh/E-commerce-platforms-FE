@@ -73,20 +73,20 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
       <div className="container mx-auto px-4">
         {/* Breadcrumb */}
-        <nav className="mb-8 flex items-center gap-1.5 text-sm text-neutral-500">
-          <Link href={`/${locale}/home`} className="transition-colors hover:text-neutral-300">
+        <nav className="text-muted-foreground mb-8 flex items-center gap-1.5 text-sm">
+          <Link href={`/${locale}/home`} className="hover:text-foreground transition-colors">
             Trang chủ
           </Link>
           <ChevronRight className="size-3.5" />
-          <Link href={`/${locale}/products`} className="transition-colors hover:text-neutral-300">
+          <Link href={`/${locale}/products`} className="hover:text-foreground transition-colors">
             Sản phẩm
           </Link>
           <ChevronRight className="size-3.5" />
-          <Link href={`/${locale}/categories/${product.categorySlug}`} className="capitalize transition-colors hover:text-neutral-300">
+          <Link href={`/${locale}/categories/${product.categorySlug}`} className="hover:text-foreground capitalize transition-colors">
             {product.categorySlug}
           </Link>
           <ChevronRight className="size-3.5" />
-          <span className="line-clamp-1 text-neutral-300">{product.name}</span>
+          <span className="text-foreground line-clamp-1">{product.name}</span>
         </nav>
 
         {/* Main 2-col layout */}
@@ -115,34 +115,34 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={`star-${i.toString()}`}
-                      className={cn('size-4', i < Math.floor(product.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-neutral-300')}
+                      className={cn('size-4', i < Math.floor(product.rating) ? 'fill-amber-400 text-amber-400' : 'text-neutral-300')}
                     />
                   ))}
                 </div>
                 <span className="text-sm font-semibold">{product.rating.toFixed(1)}</span>
-                <span className="text-sm text-neutral-500">({product.reviewCount.toString()} đánh giá)</span>
-                <span className="text-neutral-600">·</span>
-                <span className="text-sm text-green-400">Còn hàng</span>
+                <span className="text-muted-foreground text-sm">({product.reviewCount.toString()} đánh giá)</span>
+                <span className="text-muted-foreground">·</span>
+                <span className="text-success-700 text-sm">Còn hàng</span>
               </div>
             </div>
 
             {/* Price */}
-            <div className="glass rounded-2xl p-5">
+            <div>
               <div className="flex items-baseline gap-4">
                 {product.salePrice !== null ? (
                   <>
-                    <span className="text-primary-400 text-3xl font-black">{formatCurrency(product.salePrice)}</span>
-                    <span className="text-lg text-neutral-500 line-through">{formatCurrency(product.price)}</span>
+                    <span className="text-brand-600 text-3xl font-bold">{formatCurrency(product.salePrice)}</span>
+                    <span className="text-muted-foreground text-lg line-through">{formatCurrency(product.price)}</span>
                     {discount !== null && (
-                      <span className="rounded-full bg-red-500/20 px-2.5 py-0.5 text-sm font-bold text-red-400">-{discount.toString()}%</span>
+                      <span className="bg-brand-50 text-brand-700 rounded-full px-2.5 py-0.5 text-sm font-bold">-{discount.toString()}%</span>
                     )}
                   </>
                 ) : (
-                  <span className="text-3xl font-black">{formatCurrency(product.price)}</span>
+                  <span className="text-brand-600 text-3xl font-bold">{formatCurrency(product.price)}</span>
                 )}
               </div>
               {product.salePrice !== null && (
-                <p className="mt-1.5 text-xs text-neutral-500">Tiết kiệm {formatCurrency(product.price - product.salePrice)}</p>
+                <p className="text-muted-foreground mt-1.5 text-xs">Tiết kiệm {formatCurrency(product.price - product.salePrice)}</p>
               )}
             </div>
 
@@ -150,19 +150,19 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             <AddToCartSection product={product} />
 
             {/* Trust badges */}
-            <div className="grid grid-cols-3 gap-3 border-t border-white/10 pt-6">
+            <div className="grid grid-cols-3 gap-3 border-t pt-6">
               {[
                 { icon: Truck, title: 'Giao hàng nhanh', sub: '2-4 ngày làm việc' },
                 { icon: RotateCcw, title: 'Đổi trả 30 ngày', sub: 'Miễn phí đổi trả' },
                 { icon: ShieldCheck, title: 'Bảo hành 1 năm', sub: 'Chính hãng 100%' },
               ].map((item) => (
-                <div key={item.title} className="flex flex-col items-center gap-2 rounded-xl border border-white/10 p-3 text-center">
-                  <div className="bg-primary-500/10 text-primary-400 flex size-9 items-center justify-center rounded-full">
+                <div key={item.title} className="flex flex-col items-center gap-2 rounded-xl border p-3 text-center">
+                  <div className="bg-muted text-foreground flex size-9 items-center justify-center rounded-full">
                     <item.icon className="size-4" />
                   </div>
                   <div className="text-xs">
                     <p className="font-bold">{item.title}</p>
-                    <p className="text-neutral-500">{item.sub}</p>
+                    <p className="text-muted-foreground">{item.sub}</p>
                   </div>
                 </div>
               ))}
@@ -171,7 +171,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             {/* Back link */}
             <Link
               href={`/${locale}/products`}
-              className="text-muted-foreground mt-2 flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-neutral-300"
+              className="text-muted-foreground hover:text-foreground mt-2 flex items-center gap-1.5 text-sm font-medium transition-colors"
             >
               <ArrowLeft className="size-4" />
               Quay lại danh sách sản phẩm
@@ -191,7 +191,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               <h2 className="text-2xl font-bold">Sản phẩm liên quan</h2>
               <Link
                 href={`/${locale}/categories/${product.categorySlug}`}
-                className="text-primary-400 flex items-center gap-1 text-sm font-medium hover:underline"
+                className="text-muted-foreground hover:text-foreground flex items-center gap-1 text-sm font-medium hover:underline"
               >
                 Xem tất cả <ChevronRight className="size-4" />
               </Link>
