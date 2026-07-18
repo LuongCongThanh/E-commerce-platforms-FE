@@ -68,6 +68,5 @@ Last verified: 2026-07-18
 
 ## Commit & PR
 
-- Conventional commits (`feat:`, `fix:`, `ci:`, `docs:`...).
 - Pre-commit: lint-staged (ESLint + Prettier) + typecheck + unit tests. Pre-push: production build.
-- PR cần scope rõ và test evidence; CI phải xanh mới merge.
+- Quy ước đầy đủ về branching, commit message (Conventional Commits, enforced bằng commitlint), PR process và merge strategy: xem [`CONTRIBUTING.md`](../../CONTRIBUTING.md).

@@ -12,6 +12,7 @@ Tài liệu chia 2 tầng: **tầng sống** (phải luôn đúng với code —
 | Quy tắc shared boundary — cái gì được/không được vào `shared/`     | [`architecture/shared-structure.md`](./architecture/shared-structure.md)           |
 | Cấu trúc chi tiết module shop                                      | [`architecture/shop-module-structure.md`](./architecture/shop-module-structure.md) |
 | Quyết định kiến trúc (ADR)                                         | [`adr/`](./adr/)                                                                   |
+| Git flow: branching, commit, PR, merge strategy                    | [`CONTRIBUTING.md`](../CONTRIBUTING.md) (root)                                     |
 | Hướng dẫn cho AI agent (issue tracker, triage labels, domain docs) | [`agents/`](./agents/)                                                             |
 
 ## Tầng lịch sử
