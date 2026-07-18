@@ -19,18 +19,18 @@ export function CartSummary({ locale }: CartSummaryProps) {
   const totalQty = items.reduce((s, i) => s + i.quantity, 0);
 
   return (
-    <div className="glass rounded-2xl p-6">
+    <div className="bg-card rounded-xl border p-6 shadow-sm">
       <h2 className="mb-5 text-lg font-bold">Tóm tắt đơn hàng</h2>
 
       <div className="space-y-3 text-sm">
         <div className="flex justify-between">
-          <span className="text-neutral-500">Tạm tính ({totalQty} sản phẩm)</span>
+          <span className="text-muted-foreground">Tạm tính ({totalQty} sản phẩm)</span>
           <span className="font-medium">{formatCurrency(total)}</span>
         </div>
 
         <div className="flex items-center justify-between">
-          <span className="text-neutral-500">Phí vận chuyển</span>
-          <span className="flex items-center gap-1.5 font-medium text-green-500">
+          <span className="text-muted-foreground">Phí vận chuyển</span>
+          <span className="text-success-700 flex items-center gap-1.5 font-medium">
             <Truck className="size-3.5" />
             Miễn phí
           </span>
@@ -40,7 +40,7 @@ export function CartSummary({ locale }: CartSummaryProps) {
 
         <div className="flex justify-between text-base font-bold">
           <span>Tổng cộng</span>
-          <span className="text-primary-500">{formatCurrency(total)}</span>
+          <span className="text-brand-600">{formatCurrency(total)}</span>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export function CartSummary({ locale }: CartSummaryProps) {
         </Link>
       </Button>
 
-      <Link href={`/${locale}/home`} className="mt-3 block text-center text-sm text-neutral-500 transition-colors hover:text-neutral-300">
+      <Link href={`/${locale}/home`} className="text-muted-foreground hover:text-foreground mt-3 block text-center text-sm transition-colors">
         Tiếp tục mua sắm
       </Link>
     </div>

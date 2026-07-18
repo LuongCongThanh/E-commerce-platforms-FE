@@ -14,7 +14,7 @@ export function CartTable() {
 
   return (
     <div className="space-y-4">
-      <div className="hidden grid-cols-[2fr_1fr_1fr_auto] gap-4 border-b border-white/10 pb-3 text-xs font-semibold tracking-wider text-neutral-500 uppercase sm:grid">
+      <div className="text-muted-foreground hidden grid-cols-[2fr_1fr_1fr_auto] gap-4 border-b pb-3 text-xs font-semibold tracking-wider uppercase sm:grid">
         <span>Sản phẩm</span>
         <span className="text-center">Đơn giá</span>
         <span className="text-center">Số lượng</span>
@@ -52,10 +52,10 @@ function CartRow({ item, onUpdateQty, onRemove }: CartRowProps) {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      className="glass rounded-xl p-4"
+      className="bg-card rounded-xl border p-4 shadow-sm"
     >
       <div className="flex gap-4">
-        <div className="relative size-20 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-neutral-100 dark:bg-neutral-800">
+        <div className="relative size-20 shrink-0 overflow-hidden rounded-lg bg-neutral-50">
           <Image src={item.image} alt={item.name} fill sizes="80px" className="object-cover" />
         </div>
 
@@ -63,16 +63,23 @@ function CartRow({ item, onUpdateQty, onRemove }: CartRowProps) {
           <div className="flex items-start justify-between gap-2">
             <div>
               <p className="line-clamp-1 font-semibold">{item.name}</p>
-              {item.variantName !== undefined && item.variantName.length > 0 && <p className="mt-0.5 text-xs text-neutral-500">{item.variantName}</p>}
-              <p className="text-primary-500 mt-1 text-sm font-bold sm:hidden">{formatCurrency(item.price)}</p>
+              {item.variantName !== undefined && item.variantName.length > 0 && (
+                <p className="text-muted-foreground mt-0.5 text-xs">{item.variantName}</p>
+              )}
+              <p className="text-brand-600 mt-1 text-sm font-bold sm:hidden">{formatCurrency(item.price)}</p>
             </div>
-            <button type="button" onClick={onRemove} aria-label="Xóa sản phẩm" className="text-neutral-400 transition-colors hover:text-red-500">
+            <button
+              type="button"
+              onClick={onRemove}
+              aria-label="Xóa sản phẩm"
+              className="text-muted-foreground hover:text-destructive transition-colors"
+            >
               <Trash2 className="size-4" />
             </button>
           </div>
 
           <div className="flex items-center justify-between">
-            <div className="flex items-center rounded-lg border border-white/10 bg-white/5 p-1">
+            <div className="flex items-center rounded-lg border p-1">
               <button
                 type="button"
                 onClick={() => {
@@ -80,7 +87,7 @@ function CartRow({ item, onUpdateQty, onRemove }: CartRowProps) {
                 }}
                 disabled={item.quantity <= 1}
                 aria-label="Giảm"
-                className="flex size-7 items-center justify-center rounded-md transition-colors hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40"
+                className="hover:bg-muted flex size-7 items-center justify-center rounded-md transition-colors disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <Minus className="size-3" />
               </button>
@@ -92,14 +99,14 @@ function CartRow({ item, onUpdateQty, onRemove }: CartRowProps) {
                 }}
                 disabled={item.quantity >= 99}
                 aria-label="Tăng"
-                className="flex size-7 items-center justify-center rounded-md transition-colors hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40"
+                className="hover:bg-muted flex size-7 items-center justify-center rounded-md transition-colors disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <Plus className="size-3" />
               </button>
             </div>
 
             <div className="text-right">
-              <p className="hidden text-xs text-neutral-500 sm:block">
+              <p className="text-muted-foreground hidden text-xs sm:block">
                 {formatCurrency(item.price)} × {item.quantity}
               </p>
               <p className="font-bold">{formatCurrency(item.price * item.quantity)}</p>
