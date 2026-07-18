@@ -4,6 +4,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
 import { orderActions } from '@/app/[locale]/(shop)/_lib/actions/order';
+import { ApiError } from '@/shared/lib/errors/api-error';
 
 const orderKeys = {
   all: ['orders'] as const,
@@ -19,6 +20,9 @@ export const useCancelOrder = (id: string) => {
       await qc.invalidateQueries({ queryKey: orderKeys.detail(id) });
       await qc.invalidateQueries({ queryKey: orderKeys.list() });
       toast.success('Đã huỷ đơn hàng');
+    },
+    onError: (error) => {
+      toast.error(error instanceof ApiError ? error.message : 'Huỷ đơn hàng thất bại. Vui lòng thử lại.');
     },
   });
 };

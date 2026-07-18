@@ -5,6 +5,7 @@ import { useCancelOrder } from '@/app/[locale]/(shop)/_lib/hooks/orders/useCance
 import { useOrder } from '@/app/[locale]/(shop)/_lib/hooks/orders/useOrder';
 import { Button } from '@/shared/components/base/Button';
 import { Separator } from '@/shared/components/base/Separator';
+import { ApiError } from '@/shared/lib/errors/api-error';
 import { formatCurrency } from '@/shared/lib/utils';
 
 interface OrderDetailClientProps {
@@ -12,7 +13,7 @@ interface OrderDetailClientProps {
 }
 
 export function OrderDetailClient({ id }: OrderDetailClientProps): React.JSX.Element {
-  const { data: order, isPending } = useOrder(id);
+  const { data: order, isPending, error } = useOrder(id);
   const cancelOrder = useCancelOrder(id);
 
   if (isPending) {
@@ -20,7 +21,9 @@ export function OrderDetailClient({ id }: OrderDetailClientProps): React.JSX.Ele
   }
 
   if (order == null) {
-    return <div className="mx-auto max-w-3xl px-4 py-8 text-center">Không tìm thấy đơn hàng.</div>;
+    const message =
+      error instanceof ApiError && error.isNotFound ? 'Không tìm thấy đơn hàng.' : 'Đã có lỗi xảy ra khi tải đơn hàng. Vui lòng thử lại.';
+    return <div className="mx-auto max-w-3xl px-4 py-8 text-center">{message}</div>;
   }
 
   return (
