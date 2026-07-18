@@ -8,7 +8,7 @@ export function HeroBanner() {
   const t = useTranslations('home');
 
   return (
-    <section className="from-primary-500 to-secondary-600 relative overflow-hidden bg-linear-to-br">
+    <section className="relative overflow-hidden bg-neutral-950">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-20 text-center sm:px-6 lg:flex-row lg:py-28 lg:text-left">
         {/* Text */}
         <div className="flex-1 text-white">
@@ -16,7 +16,7 @@ export function HeroBanner() {
           <h1 className="text-4xl leading-tight font-extrabold tracking-tight lg:text-5xl">{t('hero.title')}</h1>
           <p className="mt-4 max-w-lg text-lg opacity-90">{t('hero.subtitle')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
-            <Button asChild size="lg" className="text-primary-600 bg-white hover:bg-neutral-100">
+            <Button asChild size="lg" className="rounded-full bg-white text-neutral-950 hover:bg-white/90">
               <Link href="/products">{t('hero.cta')}</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
