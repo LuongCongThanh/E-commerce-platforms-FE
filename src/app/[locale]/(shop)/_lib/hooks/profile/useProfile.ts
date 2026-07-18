@@ -2,7 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 
-import { profileActions } from '@/app/[locale]/(shop)/_lib/actions/profile';
+import { profileActions } from '@/app/[locale]/(shop)/_lib/api/profile';
 
 const profileKey = ['profile'] as const;
 

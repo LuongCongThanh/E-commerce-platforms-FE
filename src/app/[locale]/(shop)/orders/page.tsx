@@ -1,4 +1,4 @@
-import { orderActions } from '@/app/[locale]/(shop)/_lib/actions/order';
+import { orderActions } from '@/app/[locale]/(shop)/_lib/api/order';
 import { OrdersClient } from '@/app/[locale]/(shop)/_lib/components/orders/OrdersClient';
 import type { Order } from '@/shared/types/order';
 

@@ -6,7 +6,7 @@ Last verified: 2026-07-18
 
 ## Kiến trúc
 
-- **Thin routes:** page/layout trong `app/[locale]/(group)/` chỉ orchestrate — không chứa business logic. Logic nằm trong `_lib/` của route group (`actions/`, `components/`, `hooks/`, `schemas/`, `types/`, `data/`, `queries/`, `store/`).
+- **Thin routes:** page/layout trong `app/[locale]/(group)/` chỉ orchestrate — không chứa business logic. Logic nằm trong `_lib/` của route group (`api/`, `components/`, `hooks/`, `schemas/`, `types/`, `data/`, `queries/`, `store/`). Đặt tên `api/` (không phải `actions/`) — tránh nhầm với Next.js Server Actions vì các file này không có `'use server'`.
 - **Route group ownership:** `(shop)` storefront, `(auth)` đăng nhập/đăng ký, `(admin)` quản trị (middleware guard qua cookie `access_token`). `_lib/` của một group là private — group khác không import chéo.
 - **Shared boundary:** một file chỉ vào `src/shared/` khi (1) không mang business rule của một module và (2) được dùng thực tế bởi ≥2 route group / flow độc lập. `shared/` không được import từ bất kỳ route group nào (enforce bằng `eslint-plugin-boundaries`). Quy tắc đầy đủ: [shared-structure.md](./shared-structure.md).
 

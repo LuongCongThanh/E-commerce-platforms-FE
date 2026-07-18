@@ -3,7 +3,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
-import { orderActions } from '@/app/[locale]/(shop)/_lib/actions/order';
+import { orderActions } from '@/app/[locale]/(shop)/_lib/api/order';
 import { ApiError } from '@/shared/lib/errors/api-error';
 
 const orderKeys = {

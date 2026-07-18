@@ -60,7 +60,7 @@ src/app/[locale]/(shop)/
 │
 └── _lib/
     │
-    ├── actions/                        # Server-side API calls (http client wrapper)
+    ├── api/                            # Client-side API calls (http client wrapper, KHÔNG phải Server Actions)
     │   ├── order.ts                    # orderActions: list, detail, cancel, create
     │   ├── product.ts                  # productActions: list, detail, categories
     │   └── profile.ts                  # profileActions: get, update
@@ -213,7 +213,7 @@ src/app/[locale]/(shop)/
 | **Pages mỏng** — chỉ orchestrate, không chứa logic                      | `page.tsx` chỉ gọi components và truyền props     |
 | **Không `'use client'` trên page.tsx** — luôn là Server Component       | Client logic delegate vào `*Client.tsx`           |
 | **Logic vào hooks** — mọi state/business logic                          | `useProducts()`, `useCreateOrder()`               |
-| **API qua actions** — không gọi `http` trực tiếp trong component        | `orderActions.list()`                             |
+| **API qua `_lib/api/`** — không gọi `http` trực tiếp trong component    | `orderActions.list()`                             |
 | **`*Client` suffix** — chỉ container top-level của một page             | `OrdersClient`, `CheckoutClient`, `ProfileClient` |
 | **`common/`** — component dùng ở ≥2 feature folder                      | `Pagination`, `ProductGrid`, `OrderStatusBadge`   |
 | **Types cục bộ ở `_lib/types/`** — không lan ra ngoài shop              | `ProductDisplay` chỉ dùng trong `(shop)`          |
@@ -229,7 +229,7 @@ src/app/[locale]/(shop)/
 Page (Server Component)
   └─► Client Component (*Client.tsx — 'use client')
         └─► Hook (useXxx)
-              └─► actions/xxx.ts  →  http client  →  Django REST API
+              └─► api/xxx.ts  →  http client  →  Django REST API
                                                          ↑
                                      (mock: data/xxx.ts khi chưa có API)
 ```
@@ -238,20 +238,20 @@ Page (Server Component)
 
 ## Trạng thái feature
 
-| Feature                           | Trạng thái      | Ghi chú                             |
-| --------------------------------- | --------------- | ----------------------------------- |
-| Trang chủ (8 sections)            | ✅ Done         |                                     |
-| Danh sách sản phẩm                | ✅ Done         |                                     |
-| Chi tiết sản phẩm                 | ✅ Done         | SEO + JSON-LD                       |
-| Danh mục + filter sidebar         | ✅ Done         |                                     |
-| Tìm kiếm                          | ✅ Done         |                                     |
-| Giỏ hàng                          | ✅ Done         | Zustand persist                     |
-| Checkout (COD)                    | ✅ Done         | Zod validation                      |
-| Lịch sử & chi tiết đơn hàng       | ✅ Done         |                                     |
-| Trang cá nhân                     | ✅ Done (shell) | API chưa nối                        |
-| Flash sale countdown              | 🔧 Partial      | Hook có, UI chưa wire vào live data |
-| Đánh giá sản phẩm (submit)        | 📋 Planned      |                                     |
-| Wishlist / Yêu thích              | 📋 Planned      |                                     |
-| Mã voucher                        | 📋 Planned      | Schemas ready                       |
-| Thanh toán VNPay/Momo/ZaloPay     | 📋 Planned      | Schemas ready                       |
-| Advanced filter (rating, tồn kho) | 📋 Planned      |                                     |
+| Feature                           | Trạng thái      | Ghi chú                               |
+| --------------------------------- | --------------- | ------------------------------------- |
+| Trang chủ (8 sections)            | ✅ Done         |                                       |
+| Danh sách sản phẩm                | ✅ Done         |                                       |
+| Chi tiết sản phẩm                 | ✅ Done         | SEO + JSON-LD                         |
+| Danh mục + filter sidebar         | ✅ Done         |                                       |
+| Tìm kiếm                          | ✅ Done         |                                       |
+| Giỏ hàng                          | ✅ Done         | `useSyncExternalStore` + localStorage |
+| Checkout (COD)                    | ✅ Done         | Zod validation                        |
+| Lịch sử & chi tiết đơn hàng       | ✅ Done         |                                       |
+| Trang cá nhân                     | ✅ Done (shell) | API chưa nối                          |
+| Flash sale countdown              | 🔧 Partial      | Hook có, UI chưa wire vào live data   |
+| Đánh giá sản phẩm (submit)        | 📋 Planned      |                                       |
+| Wishlist / Yêu thích              | 📋 Planned      |                                       |
+| Mã voucher                        | 📋 Planned      | Schemas ready                         |
+| Thanh toán VNPay/Momo/ZaloPay     | 📋 Planned      | Schemas ready                         |
+| Advanced filter (rating, tồn kho) | 📋 Planned      |                                       |

@@ -2,7 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 
-import { orderActions } from '@/app/[locale]/(shop)/_lib/actions/order';
+import { orderActions } from '@/app/[locale]/(shop)/_lib/api/order';
 
 const orderKeys = {
   all: ['orders'] as const,

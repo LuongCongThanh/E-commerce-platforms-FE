@@ -8,7 +8,7 @@ import { Loader2 } from 'lucide-react';
 import { useLocale } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
-import { resetPasswordAction } from '@/app/[locale]/(auth)/_lib/actions/auth';
+import { resetPasswordAction } from '@/app/[locale]/(auth)/_lib/api/auth';
 import { ApiErrorAlert } from '@/app/[locale]/(auth)/_lib/components/ApiErrorAlert';
 import { useApiErrorMessage } from '@/app/[locale]/(auth)/_lib/hooks/useApiErrorMessage';
 import type { ResetPasswordFormInput } from '@/app/[locale]/(auth)/_lib/schemas/auth';
