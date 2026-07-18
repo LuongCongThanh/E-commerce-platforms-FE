@@ -7,21 +7,10 @@ import type { ProductDisplay } from '@/app/[locale]/(shop)/_lib/types/product';
 
 interface ProductGridProps {
   readonly products: ProductDisplay[];
-  readonly isLoading?: boolean;
 }
 
-export function ProductGrid({ products, isLoading }: ProductGridProps): React.JSX.Element {
+export function ProductGrid({ products }: ProductGridProps): React.JSX.Element {
   const locale = useLocale();
-
-  if (isLoading === true) {
-    return (
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={`skeleton-${i.toString()}`} className="bg-muted aspect-3/4 animate-pulse rounded-lg" />
-        ))}
-      </div>
-    );
-  }
 
   if (products.length === 0) {
     return (

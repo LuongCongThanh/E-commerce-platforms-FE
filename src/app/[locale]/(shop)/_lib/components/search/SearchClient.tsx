@@ -5,7 +5,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Pagination } from '@/app/[locale]/(shop)/_lib/components/common/Pagination';
 import { ProductGrid } from '@/app/[locale]/(shop)/_lib/components/common/ProductGrid';
 import { useProducts } from '@/app/[locale]/(shop)/_lib/hooks/products/useProducts';
-import { Skeleton } from '@/shared/components/base/Skeleton';
 
 export function SearchClient(): React.JSX.Element {
   const router = useRouter();
@@ -14,23 +13,13 @@ export function SearchClient(): React.JSX.Element {
   const pageParam = searchParams.get('page');
   const page = pageParam !== null ? Math.max(1, Number(pageParam)) : 1;
 
-  const { products, totalPages, isLoading } = useProducts({ search: query, page, pageSize: 12 });
+  const { products, totalPages } = useProducts({ search: query, page, pageSize: 12 });
 
   const handlePageChange = (p: number) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set('page', p.toString());
     router.push(`?${params.toString()}`);
   };
-
-  if (isLoading) {
-    return (
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <Skeleton key={`skeleton-${i.toString()}`} className="aspect-[3/4] w-full rounded-xl" />
-        ))}
-      </div>
-    );
-  }
 
   if (products.length === 0) {
     return (

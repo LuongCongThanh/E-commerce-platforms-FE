@@ -1,10 +1,8 @@
-import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 
 import { CategoryClient } from '@/app/[locale]/(shop)/_lib/components/categories/CategoryClient';
 import { FilterSidebar } from '@/app/[locale]/(shop)/_lib/components/categories/FilterSidebar';
 import { getCategoryBySlug } from '@/app/[locale]/(shop)/_lib/queries/category';
-import { Skeleton } from '@/shared/components/base/Skeleton';
 
 interface CategoryPageProps {
   readonly params: Promise<{
@@ -49,23 +47,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
         {/* Content */}
         <div className="flex-1">
-          <Suspense fallback={<CategoryLoadingSkeleton />}>
-            <CategoryClient categorySlug={slug} />
-          </Suspense>
+          <CategoryClient categorySlug={slug} />
         </div>
       </div>
     </main>
-  );
-}
-
-function CategoryLoadingSkeleton() {
-  return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <Skeleton key={`skeleton-${i.toString()}`} className="aspect-[3/4] w-full rounded-xl" />
-        ))}
-      </div>
-    </div>
   );
 }

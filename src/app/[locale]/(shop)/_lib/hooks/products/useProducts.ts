@@ -29,7 +29,7 @@ export function useProducts({
   return useMemo(() => {
     // Empty string search → no results (search page with no query)
     if (search === '') {
-      return { products: [], total: 0, totalPages: 1, currentPage: 1, isLoading: false };
+      return { products: [], total: 0, totalPages: 1, currentPage: 1 };
     }
 
     let filtered: ProductDisplay[] = productsData;
@@ -62,6 +62,6 @@ export function useProducts({
     const start = (currentPage - 1) * pageSize;
     const products = sorted.slice(start, start + pageSize);
 
-    return { products, total, totalPages, currentPage, isLoading: false };
+    return { products, total, totalPages, currentPage };
   }, [search, categorySlug, sortBy, minPrice, maxPrice, page, pageSize]);
 }
