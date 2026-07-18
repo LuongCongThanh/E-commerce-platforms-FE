@@ -55,11 +55,11 @@ App Router dưới `src/app/[locale]/` với ba route group:
 - `(auth)` — login / register
 - `(admin)` — admin panel được bảo vệ
 
-`middleware.ts` lo hai việc: locale routing qua **next-intl** (mặc định `vi`) và guard admin phía server (cookie `access_token`).
+`middleware.ts` lo hai việc: locale routing qua **next-intl** (mặc định `vi`) và guard phía server bằng cookie `access_token` cho `admin/`, `checkout/`, `orders/`, `profile/`.
 
 ### Ownership — quy tắc quan trọng nhất
 
-- Logic của mỗi route group nằm trong `_lib/` của nó (`actions/`, `components/`, `hooks/`, `schemas/`, `store/`...). `_lib/` là private — không import chéo giữa các group.
+- Logic của mỗi route group nằm trong `_lib/` của nó (`api/`, `components/`, `hooks/`, `schemas/`, `store/`...). `_lib/` là private — không import chéo giữa các group.
 - `src/shared/` chỉ chứa code dùng bởi ≥2 route group, không mang business rule riêng: `components/base/` (Radix wrappers), `components/common/`, `hooks/` (generic), `lib/` (http, errors, monitoring, seo, cloudinary, notification, utils, env, query-client), `constants/`, `types/`.
 - **Auth store ở `(auth)/_lib/store/auth-store.ts`; cart ở `(shop)/_lib/hooks/useCart.ts`** — KHÔNG ở shared (đã refactor tại PR #7, đừng tin tài liệu cũ nói ngược lại).
 - ESLint (`eslint-plugin-boundaries`) enforce: shared không import từ route groups.

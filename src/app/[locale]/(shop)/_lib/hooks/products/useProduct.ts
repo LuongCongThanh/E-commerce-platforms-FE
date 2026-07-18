@@ -2,7 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 
-import { productActions } from '@/app/[locale]/(shop)/_lib/actions/product';
+import { productActions } from '@/app/[locale]/(shop)/_lib/api/product';
 
 const productKeys = {
   all: ['products'] as const,

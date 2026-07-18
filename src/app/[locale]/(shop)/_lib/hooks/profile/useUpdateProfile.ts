@@ -3,7 +3,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
-import { profileActions } from '@/app/[locale]/(shop)/_lib/actions/profile';
+import { profileActions } from '@/app/[locale]/(shop)/_lib/api/profile';
 import { ApiError } from '@/shared/lib/errors/api-error';
 import type { User } from '@/shared/types/user';
 
