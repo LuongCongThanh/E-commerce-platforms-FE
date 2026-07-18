@@ -23,7 +23,7 @@ export function useIsLoggedIn(): boolean {
 
 export function useAuth() {
   const router = useRouter();
-  const { token, user } = useAuthSnapshot();
+  const { token, user, status } = useAuthSnapshot();
 
   const isLoggedIn = token != null && token.length > 0;
   const isAdmin = user?.role === 'admin' || user?.role === 'staff';
@@ -38,6 +38,8 @@ export function useAuth() {
     accessToken: token,
     isLoggedIn,
     isAdmin,
+    authStatus: status,
+    isInitializing: status === 'initializing',
     login,
     logout,
   };
