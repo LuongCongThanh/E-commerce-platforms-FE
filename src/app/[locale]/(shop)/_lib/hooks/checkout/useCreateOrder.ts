@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 import { orderActions } from '@/app/[locale]/(shop)/_lib/actions/order';
 import { clearCart, useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
+import { ApiError } from '@/shared/lib/errors/api-error';
 
 const orderKeys = {
   all: ['orders'] as const,
@@ -30,6 +31,9 @@ export const useCreateOrder = (locale: string) => {
       await qc.invalidateQueries({ queryKey: orderKeys.list() });
       toast.success('Đặt hàng thành công!');
       router.push(`/${locale}/checkout/success?orderId=${String(order.id)}`);
+    },
+    onError: (error) => {
+      toast.error(error instanceof ApiError ? error.message : 'Đặt hàng thất bại. Vui lòng thử lại.');
     },
   });
 };

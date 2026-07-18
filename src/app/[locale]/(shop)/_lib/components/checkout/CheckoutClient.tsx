@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
+import { useCreateOrder } from '@/app/[locale]/(shop)/_lib/hooks/checkout/useCreateOrder';
 import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
 import { checkoutSchema } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
@@ -18,7 +19,8 @@ export function CheckoutClient() {
   const t = useTranslations('checkout');
   const locale = useLocale();
   const router = useRouter();
-  const { items, clearCart } = useCart();
+  const { items } = useCart();
+  const createOrder = useCreateOrder(locale);
 
   useEffect(() => {
     if (items.length === 0) {
@@ -29,7 +31,7 @@ export function CheckoutClient() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<CheckoutValues>({
     resolver: zodResolver(checkoutSchema),
     defaultValues: {
@@ -38,10 +40,8 @@ export function CheckoutClient() {
     },
   });
 
-  const onSubmit = async (_data: CheckoutValues) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    clearCart();
-    router.push(`/${locale}/checkout/success`);
+  const onSubmit = (data: CheckoutValues) => {
+    createOrder.mutate(data);
   };
 
   return (
@@ -87,6 +87,10 @@ export function CheckoutClient() {
               {...register('district')}
               className="focus:border-primary/50 w-full rounded-lg border border-white/10 bg-white/5 p-3 outline-none"
             />
+          </div>
+          <div className="space-y-2">
+            <label className="text-sm font-medium">{t('ward')}</label>
+            <input {...register('ward')} className="focus:border-primary/50 w-full rounded-lg border border-white/10 bg-white/5 p-3 outline-none" />
           </div>
         </div>
       </motion.div>
@@ -147,10 +151,10 @@ export function CheckoutClient() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="flex flex-col items-center gap-4 pt-4">
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={createOrder.isPending}
           className="bg-primary w-full rounded-full px-8 py-4 font-bold text-white shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 md:w-auto"
         >
-          {isSubmitting ? '...' : t('placeOrder')}
+          {createOrder.isPending ? '...' : t('placeOrder')}
         </button>
         <p className="text-muted-foreground text-center text-xs">{t('placeOrderDesc')}</p>
       </motion.div>
