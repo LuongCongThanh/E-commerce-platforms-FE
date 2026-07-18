@@ -19,11 +19,13 @@ Glossary thuật ngữ của project. Chỉ chứa định nghĩa — không ch�
 
 ## Quy trình & kiến trúc
 
-| Thuật ngữ           | Định nghĩa                                                                                                    |
-| ------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Route group**     | Một trong ba khu vực của app: `(shop)`, `(auth)`, `(admin)` — mỗi khu sở hữu logic riêng trong `_lib/`.       |
-| **Thin route**      | Page/layout chỉ làm wiring, không chứa business logic.                                                        |
-| **Shared boundary** | Quy tắc: code chỉ vào `shared/` khi dùng bởi ≥2 route group và không mang business rule riêng của một module. |
-| **Quality gate**    | Điều kiện bắt buộc trước merge/release (lint, typecheck, test... — chạy trong CI).                            |
-| **Seam**            | Điểm cắm kiểm thử. Project dùng CI pipeline làm seam duy nhất, Playwright cho E2E/a11y/visual (ADR 0001).     |
-| **Snapshot doc**    | Tài liệu chụp tại một thời điểm (`docs/planning/`, `docs/reports/`) — được phép cũ, không cần cập nhật.       |
+| Thuật ngữ           | Định nghĩa                                                                                                                                          |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Route group**     | Một trong ba khu vực của app: `(shop)`, `(auth)`, `(admin)` — mỗi khu sở hữu logic riêng trong `_lib/`.                                             |
+| **Thin route**      | Page/layout chỉ làm wiring, không chứa business logic.                                                                                              |
+| **Shared boundary** | Quy tắc: code chỉ vào `shared/` khi dùng bởi ≥2 route group và không mang business rule riêng của một module.                                       |
+| **Quality gate**    | Điều kiện bắt buộc trước merge/release (lint, typecheck, test... — chạy trong CI).                                                                  |
+| **Seam**            | Điểm cắm kiểm thử. Project dùng CI pipeline làm seam duy nhất, Playwright cho E2E/a11y/visual (ADR 0001).                                           |
+| **Snapshot doc**    | Tài liệu chụp tại một thời điểm (`docs/planning/`, `docs/reports/`) — được phép cũ, không cần cập nhật.                                             |
+| **Semantic token**  | Token đặt tên theo vai trò (`primary`, `muted`, `destructive`… theo chuẩn shadcn) — ngôn ngữ chính thức khi viết component, tự đổi theo light/dark. |
+| **Palette scale**   | Dải màu thô 50→950 (primary/secondary/accent/neutral) — nguyên liệu để định nghĩa semantic token, không phải ngôn ngữ mặc định của component.       |

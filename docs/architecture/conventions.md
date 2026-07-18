@@ -48,6 +48,11 @@ Last verified: 2026-07-18
 ## Design system
 
 - Token-first: color scale + semantic tokens định nghĩa trong `@theme` tại `src/app/globals.css`; không hardcode màu/radius lẻ tẻ.
+- **Semantic token (chuẩn shadcn) là ngôn ngữ chính thức khi viết component**: `bg-primary`, `text-muted-foreground`, `bg-popover`… Palette scale (`primary-500`, `neutral-200`…) chỉ dùng để định nghĩa semantic vars trong `:root`/`.dark` và cho bề mặt decorative (hero, gradient, badge) cần sắc độ cụ thể.
+- Scale usage cũ trong `(shop)` là nợ convention — migrate sang semantic dần khi chạm vào file, không cần chiến dịch riêng.
+- Radius: dùng bộ shadcn (`rounded-sm/md/lg/xl` từ `--radius`); không tạo radius token riêng lẻ.
+- Theme: **light-only** — `.dark` vars giữ sẵn trong `globals.css` nhưng chưa bật toggle (`defaultTheme="light"`, `enableSystem={false}`).
+- Utilities `glass` / `spatial-*` / `shadow-spatial` là visual identity (glassmorphism) — giữ, không thay bằng token shadcn.
 - Tách primitive (`shared/components/base/`) khỏi feature component (`(group)/_lib/components/`).
 - Mobile-first, breakpoint thống nhất.
 
