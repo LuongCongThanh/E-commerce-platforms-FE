@@ -1,6 +1,7 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
+import { USER_ROLE_COOKIE } from '@/shared/constants/auth-cookies';
 import type { User } from '@/shared/types/user';
 
 interface DjangoAuthData {
@@ -51,6 +52,15 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     sameSite: 'strict',
     path: '/',
     maxAge: 60 * 60 * 24 * 30,
+  });
+
+  // Optimistic UX hint cho middleware guard /admin — xem ghi chú ở login/route.ts.
+  response.cookies.set(USER_ROLE_COOKIE, user.role === 'admin' || user.role === 'staff' ? 'true' : 'false', {
+    httpOnly: true,
+    secure: SECURE,
+    sameSite: 'strict',
+    path: '/',
+    maxAge: 60 * 60 * 24 * 7,
   });
 
   return response;
