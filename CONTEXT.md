@@ -28,4 +28,4 @@ Glossary thuật ngữ của project. Chỉ chứa định nghĩa — không ch�
 | **Seam**            | Điểm cắm kiểm thử. Project dùng CI pipeline làm seam duy nhất, Playwright cho E2E/a11y/visual (ADR 0001).                                           |
 | **Snapshot doc**    | Tài liệu chụp tại một thời điểm (`docs/planning/`, `docs/reports/`) — được phép cũ, không cần cập nhật.                                             |
 | **Semantic token**  | Token đặt tên theo vai trò (`primary`, `muted`, `destructive`… theo chuẩn shadcn) — ngôn ngữ chính thức khi viết component, tự đổi theo light/dark. |
-| **Palette scale**   | Dải màu thô 50→950 (primary/secondary/accent/neutral) — nguyên liệu để định nghĩa semantic token, không phải ngôn ngữ mặc định của component.       |
+| **Palette scale**   | Dải màu thô 50→950 (brand/secondary/accent/neutral) — nguyên liệu để định nghĩa semantic token, không phải ngôn ngữ mặc định của component.         |
