@@ -18,6 +18,9 @@ const envSchema = z.object({
   ZALOPAY_KEY1: z.string().optional(),
   ZALOPAY_KEY2: z.string().optional(),
 
+  NEXT_PUBLIC_CLOUDINARY_API_KEY: z.string().optional(),
+  CLOUDINARY_API_SECRET: z.string().optional(),
+
   NEXT_PUBLIC_SENTRY_DSN: z.string().optional(),
 });
 
