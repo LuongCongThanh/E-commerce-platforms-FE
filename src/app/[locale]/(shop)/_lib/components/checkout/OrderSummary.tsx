@@ -15,15 +15,15 @@ export function OrderSummary() {
   const total = subtotal + shippingFee;
 
   return (
-    <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="spatial-depth glass-morphism sticky top-24 rounded-2xl p-6">
-      <h2 className="mb-6 text-xl font-bold">{t('cart.summary')}</h2>
+    <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="bg-card sticky top-24 rounded-xl border p-6 shadow-sm">
+      <h2 className="mb-4 text-lg font-semibold">{t('cart.summary')}</h2>
 
       <div className="mb-6 space-y-4">
         {items.map((item) => (
           <div key={item.variantId} className="flex gap-4">
-            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-white/10">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-neutral-50">
               <Image src={item.image !== '' ? item.image : '/images/placeholder.jpg'} alt={item.name} fill sizes="64px" className="object-cover" />
-              <span className="bg-primary absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold text-white shadow-lg">
+              <span className="bg-primary text-primary-foreground absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold">
                 {item.quantity}
               </span>
             </div>
@@ -35,7 +35,7 @@ export function OrderSummary() {
         ))}
       </div>
 
-      <div className="space-y-3 border-t border-white/10 pt-4">
+      <div className="space-y-3 border-t pt-4">
         <div className="flex justify-between text-sm">
           <span className="text-muted-foreground">{t('cart.subtotal')}</span>
           <span>{subtotal.toLocaleString()}₫</span>
@@ -44,9 +44,9 @@ export function OrderSummary() {
           <span className="text-muted-foreground">Phí vận chuyển</span>
           <span>{shippingFee.toLocaleString()}₫</span>
         </div>
-        <div className="flex justify-between border-t border-white/10 pt-3 text-lg font-bold">
+        <div className="flex justify-between border-t pt-3 text-lg font-bold">
           <span>{t('cart.total')}</span>
-          <span className="text-primary">{total.toLocaleString()}₫</span>
+          <span className="text-brand-600">{total.toLocaleString()}₫</span>
         </div>
       </div>
     </motion.div>
