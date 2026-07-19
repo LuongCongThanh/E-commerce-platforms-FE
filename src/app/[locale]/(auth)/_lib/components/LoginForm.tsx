@@ -13,9 +13,9 @@ import { ApiErrorAlert } from '@/app/[locale]/(auth)/_lib/components/ApiErrorAle
 import { useApiErrorMessage } from '@/app/[locale]/(auth)/_lib/hooks/useApiErrorMessage';
 import type { LoginFormInput } from '@/app/[locale]/(auth)/_lib/schemas/auth';
 import { LoginFormSchema } from '@/app/[locale]/(auth)/_lib/schemas/auth';
-import { Button } from '@/shared/components/base/Button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/base/Form';
-import { Input } from '@/shared/components/base/Input';
+import { Button } from '@/shared/components/base/button';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/base/form';
+import { Input } from '@/shared/components/base/input';
 
 export function LoginForm() {
   const router = useRouter();

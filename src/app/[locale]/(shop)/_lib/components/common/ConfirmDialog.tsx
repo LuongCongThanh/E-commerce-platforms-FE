@@ -2,7 +2,7 @@
 
 import type { ReactNode } from 'react';
 
-import { Button } from '@/shared/components/base/Button';
+import { Button } from '@/shared/components/base/button';
 import {
   Dialog,
   DialogClose,
@@ -12,7 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/shared/components/base/Dialog';
+} from '@/shared/components/base/dialog';
 import { LoadingSpinner } from '@/shared/components/common/LoadingSpinner';
 
 interface ConfirmDialogProps {

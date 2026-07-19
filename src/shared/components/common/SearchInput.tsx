@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 import { Search, X } from 'lucide-react';
 
-import { Button } from '@/shared/components/base/Button';
-import { Input } from '@/shared/components/base/Input';
+import { Button } from '@/shared/components/base/button';
+import { Input } from '@/shared/components/base/input';
 import { useDebounce } from '@/shared/hooks/useDebounce';
 import { cn } from '@/shared/lib/utils';
 

@@ -1,7 +1,7 @@
 import type { LucideIcon } from 'lucide-react';
 import { PackageOpen } from 'lucide-react';
 
-import { Button } from '@/shared/components/base/Button';
+import { Button } from '@/shared/components/base/button';
 import { cn } from '@/shared/lib/utils';
 
 interface EmptyStateProps {

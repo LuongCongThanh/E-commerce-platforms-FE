@@ -7,7 +7,7 @@ import { ShoppingBag } from 'lucide-react';
 import { CartSummary } from '@/app/[locale]/(shop)/_lib/components/cart/CartSummary';
 import { CartTable } from '@/app/[locale]/(shop)/_lib/components/cart/CartTable';
 import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
-import { Button } from '@/shared/components/base/Button';
+import { Button } from '@/shared/components/base/button';
 
 interface CartClientProps {
   readonly locale: string;

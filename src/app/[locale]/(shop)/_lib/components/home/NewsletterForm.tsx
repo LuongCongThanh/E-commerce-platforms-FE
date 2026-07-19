@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { Button } from '@/shared/components/base/Button';
+import { Button } from '@/shared/components/base/button';
 
 interface NewsletterFormProps {
   readonly title?: string;

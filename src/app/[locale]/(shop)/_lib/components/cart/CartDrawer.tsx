@@ -8,9 +8,9 @@ import { Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
 import { useLocale } from 'next-intl';
 
 import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
-import { Button } from '@/shared/components/base/Button';
-import { ScrollArea } from '@/shared/components/base/ScrollArea';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/shared/components/base/Sheet';
+import { Button } from '@/shared/components/base/button';
+import { ScrollArea } from '@/shared/components/base/scroll-area';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/shared/components/base/sheet';
 
 interface CartDrawerProps {
   readonly children: React.ReactNode;

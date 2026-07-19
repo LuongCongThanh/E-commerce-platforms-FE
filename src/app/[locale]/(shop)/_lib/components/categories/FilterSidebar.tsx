@@ -5,9 +5,9 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import type { SyntheticEvent } from 'react';
 
 import type { SortBy } from '@/app/[locale]/(shop)/_lib/hooks/products/useProducts';
-import { Button } from '@/shared/components/base/Button';
-import { Input } from '@/shared/components/base/Input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/components/base/Select';
+import { Button } from '@/shared/components/base/button';
+import { Input } from '@/shared/components/base/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/components/base/select';
 
 export function FilterSidebar(): React.JSX.Element {
   const router = useRouter();
