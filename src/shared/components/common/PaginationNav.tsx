@@ -2,7 +2,7 @@
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import { Button } from '@/shared/components/base/Button';
+import { Button } from '@/shared/components/base/button';
 import { cn } from '@/shared/lib/utils';
 
 interface PaginationNavProps {

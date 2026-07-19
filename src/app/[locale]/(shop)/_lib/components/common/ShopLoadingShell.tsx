@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-import { Skeleton } from '@/shared/components/base/Skeleton';
+import { Skeleton } from '@/shared/components/base/skeleton';
 
 export function ShopLoadingShell() {
   return (

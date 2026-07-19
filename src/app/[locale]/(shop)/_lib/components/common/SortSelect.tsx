@@ -1,6 +1,6 @@
 'use client';
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/components/base/Select';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/components/base/select';
 import { SORT_OPTIONS, type SortOption } from '@/shared/constants/app-config';
 
 interface SortSelectProps {

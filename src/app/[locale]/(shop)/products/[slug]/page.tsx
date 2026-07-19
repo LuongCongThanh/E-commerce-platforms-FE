@@ -9,7 +9,7 @@ import { AddToCartSection } from '@/app/[locale]/(shop)/_lib/components/products
 import { ProductDetailTabs } from '@/app/[locale]/(shop)/_lib/components/products/ProductDetailTabs';
 import { ProductGallery } from '@/app/[locale]/(shop)/_lib/components/products/ProductGallery';
 import { getProductBySlug } from '@/app/[locale]/(shop)/_lib/queries/product';
-import { Badge } from '@/shared/components/base/Badge';
+import { Badge } from '@/shared/components/base/badge';
 import { cn, formatCurrency } from '@/shared/lib/utils';
 
 interface ProductPageProps {
