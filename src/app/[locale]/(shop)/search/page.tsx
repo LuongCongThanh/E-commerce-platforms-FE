@@ -18,7 +18,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       {query !== undefined && query !== '' ? (
         <SearchClient />
       ) : (
-        <div className="flex min-h-[300px] flex-col items-center justify-center rounded-2xl border border-dashed text-center">
+        <div className="flex min-h-75 flex-col items-center justify-center rounded-2xl border border-dashed text-center">
           <p className="text-muted-foreground">Nhập từ khóa vào ô tìm kiếm để bắt đầu.</p>
         </div>
       )}

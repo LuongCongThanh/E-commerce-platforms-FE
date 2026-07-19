@@ -54,7 +54,7 @@ function normalizeError(error: unknown): ApiError {
     message,
     status,
     code: data?.code,
-    details: (data?.details ?? data) as unknown,
+    details: data?.details ?? data,
   });
 }
 

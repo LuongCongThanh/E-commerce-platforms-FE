@@ -108,7 +108,7 @@ export function CheckoutClient() {
           <div className="space-y-4">
             <label className="has-checked:border-foreground has-checked:bg-muted hover:bg-muted/50 flex cursor-pointer items-center justify-between rounded-lg border p-4 transition-colors">
               <div className="flex items-center gap-3">
-                <input type="radio" value="standard" {...register('shippingMethod')} className="accent-primary h-4 w-4" />
+                <input type="radio" value="standard" {...register('shippingMethod')} className="accent-primary size-4" />
                 <div>
                   <p className="font-medium">{t('standard')}</p>
                   <p className="text-muted-foreground text-xs">3-5 ngày làm việc</p>
@@ -118,7 +118,7 @@ export function CheckoutClient() {
             </label>
             <label className="has-checked:border-foreground has-checked:bg-muted hover:bg-muted/50 flex cursor-pointer items-center justify-between rounded-lg border p-4 transition-colors">
               <div className="flex items-center gap-3">
-                <input type="radio" value="express" {...register('shippingMethod')} className="accent-primary h-4 w-4" />
+                <input type="radio" value="express" {...register('shippingMethod')} className="accent-primary size-4" />
                 <div>
                   <p className="font-medium">{t('express')}</p>
                   <p className="text-muted-foreground text-xs">Trong vòng 24h</p>
@@ -133,11 +133,11 @@ export function CheckoutClient() {
           <h2 className="mb-4 text-lg font-semibold">{t('paymentMethod')}</h2>
           <div className="space-y-4">
             <label className="has-checked:border-foreground has-checked:bg-muted hover:bg-muted/50 flex cursor-pointer items-center gap-3 rounded-lg border p-4 transition-colors">
-              <input type="radio" value="cod" {...register('paymentMethod')} className="accent-primary h-4 w-4" />
+              <input type="radio" value="cod" {...register('paymentMethod')} className="accent-primary size-4" />
               <p className="font-medium">{t('cod')}</p>
             </label>
             <label className="has-checked:border-foreground has-checked:bg-muted hover:bg-muted/50 flex cursor-pointer items-center gap-3 rounded-lg border p-4 transition-colors">
-              <input type="radio" value="bankTransfer" {...register('paymentMethod')} className="accent-primary h-4 w-4" />
+              <input type="radio" value="bankTransfer" {...register('paymentMethod')} className="accent-primary size-4" />
               <p className="font-medium">{t('bankTransfer')}</p>
             </label>
           </div>

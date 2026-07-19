@@ -18,7 +18,7 @@ export default function CheckoutPage({ params }: { readonly params: Promise<{ lo
           href={`/${locale}/cart`}
           className="group text-muted-foreground hover:text-foreground mb-8 inline-flex items-center gap-2 text-sm transition-colors"
         >
-          <ChevronLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+          <ChevronLeft className="size-4 transition-transform group-hover:-translate-x-1" />
           {t('backToCart')}
         </Link>
 

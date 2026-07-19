@@ -23,7 +23,7 @@ export function SearchClient(): React.JSX.Element {
 
   if (products.length === 0) {
     return (
-      <div className="flex min-h-[400px] flex-col items-center justify-center rounded-2xl border border-dashed text-center">
+      <div className="flex min-h-100 flex-col items-center justify-center rounded-2xl border border-dashed text-center">
         <div className="mb-4 text-4xl">🔍</div>
         <h3 className="text-lg font-medium">Không tìm thấy kết quả nào cho "{query}"</h3>
         <p className="text-muted-foreground mt-1">Vui lòng kiểm tra lại chính tả hoặc thử với từ khóa khác.</p>

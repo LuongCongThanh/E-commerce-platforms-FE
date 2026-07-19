@@ -320,12 +320,12 @@ const eslintConfig = [
         'error',
         {
           default: 'disallow',
-          rules: [
-            { from: { type: 'shared' }, allow: { to: { type: 'shared' } } },
+          policies: [
+            { from: { element: { type: 'shared' } }, allow: { to: { element: { type: 'shared' } } } },
             {
-              from: { type: 'app-feature' },
+              from: { element: { type: 'app-feature' } },
               allow: {
-                to: [{ type: 'shared' }, { type: 'app-feature', captured: { group: '{{from.group}}' } }],
+                to: [{ element: { type: 'shared' } }, { element: { type: 'app-feature', captured: { group: '{{from.captured.group}}' } } }],
               },
             },
           ],
@@ -356,12 +356,8 @@ const eslintConfig = [
       'import/extensions': ['.js', '.jsx', '.ts', '.tsx', '.mts', '.cts'],
       'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx', '.mts', '.cts'] },
       tailwindcss: {
-        callees: ['cn', 'clsx', 'cva'],
-        classRegex: '^class(Name)?$',
-        config: tailwindEntryCss,
-        cssFiles: ['src/**/*.css'],
-        cssFilesRefreshRate: 0,
-        skipClassAttribute: false,
+        // eslint-plugin-tailwindcss v4 stable: cssConfigPath thay `config`; `cn`/`clsx`/`cva` đã nằm trong defaults của `functions`
+        cssConfigPath: tailwindEntryCss,
       },
     },
   },
