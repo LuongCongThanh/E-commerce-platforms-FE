@@ -25,7 +25,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         }}
         disabled={currentPage === 1}
       >
-        <ChevronLeft className="h-4 w-4" />
+        <ChevronLeft className="size-4" />
       </Button>
 
       {pages.map((page) => (
@@ -50,7 +50,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         }}
         disabled={currentPage === totalPages}
       >
-        <ChevronRight className="h-4 w-4" />
+        <ChevronRight className="size-4" />
       </Button>
     </div>
   );

@@ -12,7 +12,7 @@ interface SortSelectProps {
 export function SortSelect({ value, onValueChange, placeholder = 'Sắp xếp' }: SortSelectProps) {
   return (
     <Select value={value} onValueChange={(nextValue) => onValueChange?.(nextValue as SortOption)}>
-      <SelectTrigger className="w-[220px]">
+      <SelectTrigger className="w-55">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>
