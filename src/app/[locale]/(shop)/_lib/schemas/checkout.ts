@@ -25,3 +25,8 @@ export type ShippingMethod = z.infer<typeof shippingMethodSchema>;
 export type PaymentMethod = z.infer<typeof paymentMethodSchema>;
 export type AddressInput = z.infer<typeof addressSchema>;
 export type CheckoutInput = z.infer<typeof checkoutSchema>;
+
+export const SHIPPING_FEE_BY_METHOD: Record<ShippingMethod, number> = {
+  standard: 30000,
+  express: 60000,
+};

@@ -11,7 +11,7 @@ export function SectionFeaturedCategories(): React.JSX.Element {
   const categories = homeCategoriesData;
 
   return (
-    <section className="bg-neutral-50/70 dark:bg-neutral-900/20">
+    <section className="bg-muted/50">
       <div className="container mx-auto px-4 py-10 md:py-14">
         <SectionHeading title="Danh mục nổi bật" />
         <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">

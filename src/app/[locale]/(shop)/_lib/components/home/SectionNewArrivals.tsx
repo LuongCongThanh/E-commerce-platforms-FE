@@ -11,7 +11,7 @@ export function SectionNewArrivals(): React.JSX.Element {
   const newArrivals = newArrivalsData;
 
   return (
-    <section className="bg-neutral-50/70 dark:bg-neutral-900/20">
+    <section className="bg-muted/50">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <SectionHeading title="Hàng mới về" ctaLabel="Xem thêm" ctaHref={`/${locale}/products`} />
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">

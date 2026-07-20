@@ -37,7 +37,7 @@ export function Header() {
         {/* Logo */}
         <div className="flex items-center gap-4 md:gap-8">
           <Link href={`/${locale}/home`} className="group flex items-center gap-2">
-            <span className="text-xl font-black tracking-tighter">
+            <span className="font-display text-xl font-black tracking-tighter">
               ANTIGRAVITY<span className="text-muted-foreground">.STORE</span>
             </span>
           </Link>
@@ -80,6 +80,7 @@ export function Header() {
                 type="button"
                 variant="ghost"
                 size="icon"
+                aria-label={t('closeSearch')}
                 onClick={() => {
                   setSearchOpen(false);
                   setSearchQuery('');

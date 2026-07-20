@@ -4,13 +4,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
+import { ShoppingBag, Trash2 } from 'lucide-react';
 import { useLocale } from 'next-intl';
 
+import { QuantitySelector } from '@/app/[locale]/(shop)/_lib/components/common/QuantitySelector';
 import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import { Button } from '@/shared/components/base/button';
 import { ScrollArea } from '@/shared/components/base/scroll-area';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/shared/components/base/sheet';
+import { formatCurrency } from '@/shared/lib/utils';
 
 interface CartDrawerProps {
   readonly children: React.ReactNode;
@@ -72,41 +74,28 @@ export function CartDrawer({ children }: CartDrawerProps) {
                       <div className="flex flex-1 flex-col justify-between">
                         <div>
                           <h4 className="line-clamp-1 text-sm font-semibold">{item.name}</h4>
-                          <p className="text-brand-600 mt-1 text-sm font-bold">
-                            {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(item.price)}
-                          </p>
+                          <p className="text-brand-600 mt-1 text-sm font-bold">{formatCurrency(item.price)}</p>
                         </div>
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center rounded-lg border p-1">
-                            <button
-                              type="button"
-                              onClick={() => {
-                                updateQuantity(item.variantId, Math.max(1, item.quantity - 1));
-                              }}
-                              className="hover:bg-muted flex size-6 items-center justify-center rounded-md transition-colors"
-                            >
-                              <Minus className="size-3" />
-                            </button>
-                            <span className="w-8 text-center text-xs font-medium">{item.quantity}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                updateQuantity(item.variantId, item.quantity + 1);
-                              }}
-                              className="hover:bg-muted flex size-6 items-center justify-center rounded-md transition-colors"
-                            >
-                              <Plus className="size-3" />
-                            </button>
-                          </div>
-                          <button
+                          <QuantitySelector
+                            value={item.quantity}
+                            min={1}
+                            onChange={(quantity) => {
+                              updateQuantity(item.variantId, quantity);
+                            }}
+                          />
+                          <Button
                             type="button"
+                            variant="ghost"
+                            size="icon"
+                            aria-label="Xóa sản phẩm"
                             onClick={() => {
                               removeCartItem(item.variantId);
                             }}
-                            className="hover:text-destructive text-muted-foreground transition-colors"
+                            className="hover:text-destructive text-muted-foreground"
                           >
                             <Trash2 className="size-4" />
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     </motion.div>
@@ -122,11 +111,11 @@ export function CartDrawer({ children }: CartDrawerProps) {
             <div className="mb-4 space-y-1.5">
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Tạm tính</span>
-                <span className="font-medium">{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total)}</span>
+                <span className="font-medium">{formatCurrency(total)}</span>
               </div>
               <div className="flex justify-between text-base font-bold">
                 <span>Tổng cộng</span>
-                <span className="text-brand-600">{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total)}</span>
+                <span className="text-brand-600">{formatCurrency(total)}</span>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">

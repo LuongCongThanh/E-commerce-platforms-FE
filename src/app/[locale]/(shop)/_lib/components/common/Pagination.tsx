@@ -20,6 +20,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
       <Button
         variant="outline"
         size="icon"
+        aria-label="Trang trước"
         onClick={() => {
           onPageChange(currentPage - 1);
         }}
@@ -45,6 +46,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
       <Button
         variant="outline"
         size="icon"
+        aria-label="Trang sau"
         onClick={() => {
           onPageChange(currentPage + 1);
         }}

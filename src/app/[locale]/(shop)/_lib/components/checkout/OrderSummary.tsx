@@ -4,14 +4,20 @@ import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { useFormContext, useWatch } from 'react-hook-form';
 
 import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
+import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
+import { SHIPPING_FEE_BY_METHOD } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
+import { formatCurrency } from '@/shared/lib/utils';
 
 export function OrderSummary() {
   const t = useTranslations('checkout');
   const { items, total: subtotal } = useCart();
+  const { control } = useFormContext<CheckoutInput>();
 
-  const shippingFee = 30000; // Hardcoded for demo
+  const shippingMethod = useWatch({ control, name: 'shippingMethod' });
+  const shippingFee = SHIPPING_FEE_BY_METHOD[shippingMethod];
   const total = subtotal + shippingFee;
 
   return (
@@ -29,7 +35,7 @@ export function OrderSummary() {
             </div>
             <div className="flex flex-1 flex-col justify-center">
               <h3 className="line-clamp-1 text-sm font-medium">{item.name}</h3>
-              <p className="text-muted-foreground text-xs">{(item.price * item.quantity).toLocaleString()}₫</p>
+              <p className="text-muted-foreground text-xs">{formatCurrency(item.price * item.quantity)}</p>
             </div>
           </div>
         ))}
@@ -38,15 +44,15 @@ export function OrderSummary() {
       <div className="space-y-3 border-t pt-4">
         <div className="flex justify-between text-sm">
           <span className="text-muted-foreground">{t('cart.subtotal')}</span>
-          <span>{subtotal.toLocaleString()}₫</span>
+          <span>{formatCurrency(subtotal)}</span>
         </div>
         <div className="flex justify-between text-sm">
           <span className="text-muted-foreground">Phí vận chuyển</span>
-          <span>{shippingFee.toLocaleString()}₫</span>
+          <span>{formatCurrency(shippingFee)}</span>
         </div>
         <div className="flex justify-between border-t pt-3 text-lg font-bold">
           <span>{t('cart.total')}</span>
-          <span className="text-brand-600">{total.toLocaleString()}₫</span>
+          <span className="text-brand-600">{formatCurrency(total)}</span>
         </div>
       </div>
     </motion.div>
