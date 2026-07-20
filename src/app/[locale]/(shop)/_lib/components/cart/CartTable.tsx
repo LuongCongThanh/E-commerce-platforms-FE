@@ -3,10 +3,12 @@
 import Image from 'next/image';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { Minus, Plus, Trash2 } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 
+import { QuantitySelector } from '@/app/[locale]/(shop)/_lib/components/common/QuantitySelector';
 import type { CartItem } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import { useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
+import { Button } from '@/shared/components/base/button';
 import { formatCurrency } from '@/shared/lib/utils';
 
 export function CartTable() {
@@ -68,42 +70,20 @@ function CartRow({ item, onUpdateQty, onRemove }: CartRowProps) {
               )}
               <p className="text-brand-600 mt-1 text-sm font-bold sm:hidden">{formatCurrency(item.price)}</p>
             </div>
-            <button
+            <Button
               type="button"
+              variant="ghost"
+              size="icon"
               onClick={onRemove}
               aria-label="Xóa sản phẩm"
-              className="text-muted-foreground hover:text-destructive transition-colors"
+              className="text-muted-foreground hover:text-destructive"
             >
               <Trash2 className="size-4" />
-            </button>
+            </Button>
           </div>
 
           <div className="flex items-center justify-between">
-            <div className="flex items-center rounded-lg border p-1">
-              <button
-                type="button"
-                onClick={() => {
-                  onUpdateQty(Math.max(1, item.quantity - 1));
-                }}
-                disabled={item.quantity <= 1}
-                aria-label="Giảm"
-                className="hover:bg-muted flex size-7 items-center justify-center rounded-md transition-colors disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                <Minus className="size-3" />
-              </button>
-              <span className="w-8 text-center text-sm font-medium">{item.quantity}</span>
-              <button
-                type="button"
-                onClick={() => {
-                  onUpdateQty(Math.min(99, item.quantity + 1));
-                }}
-                disabled={item.quantity >= 99}
-                aria-label="Tăng"
-                className="hover:bg-muted flex size-7 items-center justify-center rounded-md transition-colors disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                <Plus className="size-3" />
-              </button>
-            </div>
+            <QuantitySelector value={item.quantity} min={1} max={99} onChange={onUpdateQty} />
 
             <div className="text-right">
               <p className="text-muted-foreground hidden text-xs sm:block">

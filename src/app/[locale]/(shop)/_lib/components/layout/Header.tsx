@@ -80,6 +80,7 @@ export function Header() {
                 type="button"
                 variant="ghost"
                 size="icon"
+                aria-label={t('closeSearch')}
                 onClick={() => {
                   setSearchOpen(false);
                   setSearchQuery('');
