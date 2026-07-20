@@ -20,12 +20,13 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
       <Button
         variant="outline"
         size="icon"
+        aria-label="Trang trước"
         onClick={() => {
           onPageChange(currentPage - 1);
         }}
         disabled={currentPage === 1}
       >
-        <ChevronLeft className="h-4 w-4" />
+        <ChevronLeft className="size-4" />
       </Button>
 
       {pages.map((page) => (
@@ -45,12 +46,13 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
       <Button
         variant="outline"
         size="icon"
+        aria-label="Trang sau"
         onClick={() => {
           onPageChange(currentPage + 1);
         }}
         disabled={currentPage === totalPages}
       >
-        <ChevronRight className="h-4 w-4" />
+        <ChevronRight className="size-4" />
       </Button>
     </div>
   );

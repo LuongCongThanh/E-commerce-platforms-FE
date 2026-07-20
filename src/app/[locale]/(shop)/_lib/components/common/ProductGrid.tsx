@@ -14,7 +14,7 @@ export function ProductGrid({ products }: ProductGridProps): React.JSX.Element {
 
   if (products.length === 0) {
     return (
-      <div className="flex min-h-[400px] flex-col items-center justify-center rounded-lg border border-dashed py-12">
+      <div className="flex min-h-100 flex-col items-center justify-center rounded-lg border border-dashed py-12">
         <p className="text-muted-foreground text-lg">Không tìm thấy sản phẩm nào</p>
       </div>
     );

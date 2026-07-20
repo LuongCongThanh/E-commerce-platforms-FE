@@ -16,7 +16,7 @@ export default async function CheckoutSuccessPage({
 
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center gap-6 text-center">
-      <CheckCircle className="h-20 w-20 text-green-500" />
+      <CheckCircle className="size-20 text-green-500" />
       <div>
         <h1 className="text-2xl font-bold">Đặt hàng thành công!</h1>
         {orderId != null && orderId.length > 0 ? <p className="text-muted-foreground mt-1">Mã đơn hàng: #{orderId}</p> : null}

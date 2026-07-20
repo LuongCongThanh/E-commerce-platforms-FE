@@ -65,7 +65,7 @@ export function CountdownTimer({ targetDate, variant = 'default', labels }: Coun
     return (
       <div className="flex animate-pulse gap-2">
         {(['days', 'hours', 'minutes', 'seconds'] as const).map((unit) => (
-          <div key={unit} className="bg-muted h-12 w-12 rounded" />
+          <div key={unit} className="bg-muted size-12 rounded" />
         ))}
       </div>
     );

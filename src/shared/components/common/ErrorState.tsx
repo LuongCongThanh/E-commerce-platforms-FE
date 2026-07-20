@@ -24,7 +24,7 @@ export function ErrorState({ title, description, icon: Icon = AlertCircle, onRet
       <h3 className="text-foreground text-lg font-semibold">{title ?? t('errorTitle')}</h3>
       <p className="text-muted-foreground mt-2 max-w-md text-sm">{description ?? t('errorDescription')}</p>
       {onRetry != null ? (
-        <Button className="mt-6 min-w-[120px]" onClick={onRetry}>
+        <Button className="mt-6 min-w-30" onClick={onRetry}>
           {t('retry')}
         </Button>
       ) : null}
