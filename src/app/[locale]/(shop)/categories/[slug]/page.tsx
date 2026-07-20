@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 
 import { CategoryClient } from '@/app/[locale]/(shop)/_lib/components/categories/CategoryClient';
 import { FilterSidebar } from '@/app/[locale]/(shop)/_lib/components/categories/FilterSidebar';
+import { PageShell } from '@/app/[locale]/(shop)/_lib/components/layout/PageShell';
 import { getCategoryBySlug } from '@/app/[locale]/(shop)/_lib/queries/category';
 
 interface CategoryPageProps {
@@ -20,7 +21,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <PageShell.Browse>
       {/* Breadcrumbs placeholder */}
       <nav className="text-muted-foreground mb-8 text-sm">
         <ol className="flex items-center space-x-2">
@@ -50,6 +51,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <CategoryClient categorySlug={slug} />
         </div>
       </div>
-    </main>
+    </PageShell.Browse>
   );
 }
