@@ -17,17 +17,17 @@ export function OrderDetailClient({ id }: OrderDetailClientProps): React.JSX.Ele
   const cancelOrder = useCancelOrder(id);
 
   if (isPending) {
-    return <div className="mx-auto max-w-3xl px-4 py-8 text-center">Đang tải...</div>;
+    return <p className="text-center">Đang tải...</p>;
   }
 
   if (order == null) {
     const message =
       error instanceof ApiError && error.isNotFound ? 'Không tìm thấy đơn hàng.' : 'Đã có lỗi xảy ra khi tải đơn hàng. Vui lòng thử lại.';
-    return <div className="mx-auto max-w-3xl px-4 py-8 text-center">{message}</div>;
+    return <p className="text-center">{message}</p>;
   }
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8">
+    <>
       <div className="mb-6 flex items-center justify-between">
         <div>
           <h1 className="text-xl font-bold">Đơn #{order.code}</h1>
@@ -78,6 +78,6 @@ export function OrderDetailClient({ id }: OrderDetailClientProps): React.JSX.Ele
           {cancelOrder.isPending ? 'Đang huỷ...' : 'Huỷ đơn hàng'}
         </Button>
       )}
-    </main>
+    </>
   );
 }

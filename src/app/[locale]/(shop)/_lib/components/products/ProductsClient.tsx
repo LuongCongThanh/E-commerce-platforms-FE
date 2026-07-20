@@ -35,15 +35,13 @@ export default function ProductsClient({ category, sortBy: sortByProp, page: pag
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="flex flex-col gap-8">
-        <SectionHeading
-          title={category !== undefined ? `Sản phẩm: ${category}` : 'Tất cả sản phẩm'}
-          subtitle={category !== undefined ? `Khám phá các sản phẩm trong danh mục ${category}` : 'Duyệt qua toàn bộ bộ sưu tập của chúng tôi'}
-        />
-        <ProductGrid products={products} />
-        {totalPages > 1 && <Pagination currentPage={page} totalPages={totalPages} onPageChange={handlePageChange} />}
-      </div>
-    </main>
+    <div className="flex flex-col gap-8">
+      <SectionHeading
+        title={category !== undefined ? `Sản phẩm: ${category}` : 'Tất cả sản phẩm'}
+        subtitle={category !== undefined ? `Khám phá các sản phẩm trong danh mục ${category}` : 'Duyệt qua toàn bộ bộ sưu tập của chúng tôi'}
+      />
+      <ProductGrid products={products} />
+      {totalPages > 1 && <Pagination currentPage={page} totalPages={totalPages} onPageChange={handlePageChange} />}
+    </div>
   );
 }
