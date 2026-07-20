@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { clearAuth, setAccessToken } from '@/core/session/auth-store';
-import { login, useAuth, useIsLoggedIn } from '@/app/[locale]/(auth)/_lib/hooks/useAuth';
+import { login, useAuth, useIsLoggedIn } from '@/core/session/useAuth';
 
 const mockPush = vi.fn();
 vi.mock('next/navigation', () => ({ useRouter: () => ({ push: mockPush }) }));
