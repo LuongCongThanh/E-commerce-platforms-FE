@@ -21,7 +21,7 @@ export function SectionHero(): React.JSX.Element {
           <span className="rounded-full border border-white/20 px-4 py-1.5 text-sm font-semibold tracking-wide text-white/80">
             {homeHeroData.badge}
           </span>
-          <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl">
+          <h1 className="font-display text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl">
             {titleLines.map((line) => (
               <span key={line} className="block">
                 {line}

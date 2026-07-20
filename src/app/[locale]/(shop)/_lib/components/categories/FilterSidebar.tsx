@@ -41,7 +41,7 @@ export function FilterSidebar(): React.JSX.Element {
     <aside className="space-y-8">
       {/* Sorting */}
       <div className="space-y-3">
-        <h3 className="text-sm font-bold tracking-wider text-neutral-500 uppercase">Sắp xếp theo</h3>
+        <h3 className="text-muted-foreground text-sm font-bold tracking-wider uppercase">Sắp xếp theo</h3>
         <Select
           value={currentSort}
           onValueChange={(val) => {
@@ -61,7 +61,7 @@ export function FilterSidebar(): React.JSX.Element {
 
       {/* Price Filter */}
       <div className="space-y-3">
-        <h3 className="text-sm font-bold tracking-wider text-neutral-500 uppercase">Khoảng giá (VNĐ)</h3>
+        <h3 className="text-muted-foreground text-sm font-bold tracking-wider uppercase">Khoảng giá (VNĐ)</h3>
         <form onSubmit={handlePriceSubmit} className="space-y-3">
           <div className="flex items-center gap-2">
             <Input name="minPrice" type="number" placeholder="Từ" defaultValue={currentMinPrice} className="h-9" />
