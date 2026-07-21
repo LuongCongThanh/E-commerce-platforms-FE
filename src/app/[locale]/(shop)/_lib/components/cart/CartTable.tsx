@@ -57,7 +57,7 @@ function CartRow({ item, onUpdateQty, onRemove }: CartRowProps) {
       className="bg-card rounded-xl border p-4 shadow-sm"
     >
       <div className="flex gap-4">
-        <div className="relative size-20 shrink-0 overflow-hidden rounded-lg bg-neutral-50">
+        <div className="bg-muted relative size-20 shrink-0 overflow-hidden rounded-lg">
           <Image src={item.image} alt={item.name} fill sizes="80px" className="object-cover" />
         </div>
 

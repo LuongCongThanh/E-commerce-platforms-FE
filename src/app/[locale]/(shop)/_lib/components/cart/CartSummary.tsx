@@ -44,12 +44,19 @@ export function CartSummary({ locale }: CartSummaryProps) {
         </div>
       </div>
 
-      <Button asChild className="mt-6 h-12 w-full text-base font-semibold" disabled={isEmpty}>
-        <Link href={`/${locale}/checkout`} aria-disabled={isEmpty}>
+      {isEmpty ? (
+        <Button className="mt-6 h-12 w-full text-base font-semibold" disabled>
           Tiến hành thanh toán
           <ArrowRight className="ml-2 size-4" />
-        </Link>
-      </Button>
+        </Button>
+      ) : (
+        <Button asChild className="mt-6 h-12 w-full text-base font-semibold">
+          <Link href={`/${locale}/checkout`}>
+            Tiến hành thanh toán
+            <ArrowRight className="ml-2 size-4" />
+          </Link>
+        </Button>
+      )}
 
       <Link href={`/${locale}/home`} className="text-muted-foreground hover:text-foreground mt-3 block text-center text-sm transition-colors">
         Tiếp tục mua sắm

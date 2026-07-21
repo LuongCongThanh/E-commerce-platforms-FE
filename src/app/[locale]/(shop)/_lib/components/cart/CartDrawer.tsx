@@ -62,7 +62,7 @@ export function CartDrawer({ children }: CartDrawerProps) {
                       transition={{ delay: index * 0.05 }}
                       className="group relative flex gap-4"
                     >
-                      <div className="relative size-20 overflow-hidden rounded-lg bg-neutral-50">
+                      <div className="bg-muted relative size-20 overflow-hidden rounded-lg">
                         <Image
                           src={item.image}
                           alt={item.name}

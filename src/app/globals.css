@@ -1,5 +1,28 @@
 @import 'tailwindcss';
 
+/* Cap `container` at 1280px (2xl) to match the max-w-7xl used by Header/Footer/checkout — Tailwind's
+   default container grows to 1536px at 2xl, which misaligned page content against them on very wide screens. */
+@utility container {
+  margin-inline: auto;
+  max-width: 100%;
+
+  @variant sm {
+    max-width: 640px;
+  }
+  @variant md {
+    max-width: 768px;
+  }
+  @variant lg {
+    max-width: 1024px;
+  }
+  @variant xl {
+    max-width: 1280px;
+  }
+  @variant 2xl {
+    max-width: 1280px;
+  }
+}
+
 @theme {
   /* ── Brand: Cam-đỏ — chỉ dùng cho giá, sale, badge khuyến mãi ──────── */
   --color-brand-50: oklch(0.97 0.02 25);
@@ -83,6 +106,10 @@
   --duration-normal: 200ms;
   --duration-slow: 350ms;
 
+  /* ── Z-index scale (shop feature code only — shadcn base components own z-50) ── */
+  --z-header: 30;
+  --z-dropdown: 40;
+
   /* ── Shadcn/UI Theme Mapping ────────────────────────────────────────── */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -119,7 +146,7 @@
     --secondary: oklch(0.96 0.006 30);
     --secondary-foreground: oklch(0.3 0.11 220);
     --muted: oklch(0.96 0.006 30);
-    --muted-foreground: oklch(0.58 0.01 30);
+    --muted-foreground: oklch(0.55 0.01 30); /* WCAG AA 4.5:1 on white — was 0.58 (~4.3:1) */
     /* accent = vàng-cam nhạt — dùng cho hover highlights, badges */
     --accent: oklch(0.95 0.06 55);
     --accent-foreground: oklch(0.38 0.15 55);
@@ -170,5 +197,16 @@
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }

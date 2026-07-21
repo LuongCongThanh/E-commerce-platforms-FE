@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-import { Search, ShoppingCart, X } from 'lucide-react';
+import { Flame, Search, ShoppingCart, X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { CartDrawer } from '@/app/[locale]/(shop)/_lib/components/cart/CartDrawer';
@@ -32,7 +32,7 @@ export function Header() {
   };
 
   return (
-    <header className="bg-background/95 sticky top-0 z-50 w-full border-b backdrop-blur-sm">
+    <header className="bg-background/95 sticky top-0 z-(--z-header) w-full border-b backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center gap-4 md:gap-8">
@@ -55,9 +55,10 @@ export function Header() {
 
             <Link
               href={`/${locale}/categories/sale`}
-              className="text-brand-600 hover:text-brand-500 rounded-lg px-3 py-2 text-sm font-bold transition-colors"
+              className="text-brand-600 hover:text-brand-500 flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-bold transition-colors"
             >
-              🔥 Flash Sale
+              <Flame className="size-4" />
+              Flash Sale
             </Link>
           </nav>
         </div>
@@ -107,7 +108,7 @@ export function Header() {
             <Button variant="ghost" size="icon" aria-label="Giỏ hàng" className="relative">
               <ShoppingCart className="size-5" />
               {itemCount > 0 && (
-                <span className="bg-brand-500 absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full text-[10px] font-bold text-white">
+                <span className="bg-brand-600 absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full text-[10px] font-bold text-white">
                   {itemCount > 99 ? '99+' : itemCount}
                 </span>
               )}
