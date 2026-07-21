@@ -1,4 +1,5 @@
-import { calculateDiscountPercent, cn, formatCurrency } from '@/shared/lib/utils';
+import { calculateDiscountPercent } from '@/app/[locale]/(shop)/_lib/utils/discount';
+import { cn, formatCurrency } from '@/shared/lib/utils';
 
 interface PriceDisplayProps {
   readonly price: number;

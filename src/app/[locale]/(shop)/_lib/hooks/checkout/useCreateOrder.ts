@@ -6,14 +6,10 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
 import { orderActions } from '@/app/[locale]/(shop)/_lib/api/order';
+import { orderKeys } from '@/app/[locale]/(shop)/_lib/hooks/orders/orderKeys';
 import { clearCart, useCart } from '@/app/[locale]/(shop)/_lib/hooks/useCart';
 import type { CheckoutInput } from '@/app/[locale]/(shop)/_lib/schemas/checkout';
 import { ApiError } from '@/shared/lib/errors/api-error';
-
-const orderKeys = {
-  all: ['orders'] as const,
-  list: () => [...orderKeys.all, 'list'] as const,
-};
 
 export const useCreateOrder = (locale: string) => {
   const qc = useQueryClient();

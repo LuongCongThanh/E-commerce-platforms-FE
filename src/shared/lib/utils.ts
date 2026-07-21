@@ -4,7 +4,6 @@ import { vi } from 'date-fns/locale';
 import { twMerge } from 'tailwind-merge';
 
 import { APP_CONFIG } from '@/shared/constants/app-config';
-import { type ProductFilter, ProductFilterSchema } from '@/shared/types/filter';
 
 function isQueryValue(value: unknown): value is string | number | boolean {
   return typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean';
@@ -59,16 +58,6 @@ export function buildQueryString(params: Record<string, unknown>): string {
   }
 
   return searchParams.toString();
-}
-
-export function parseSearchParams(searchParams: URLSearchParams): ProductFilter {
-  const rawEntries = Object.fromEntries(searchParams.entries());
-  return ProductFilterSchema.parse(rawEntries);
-}
-
-export function calculateDiscountPercent(originalPrice: number, discountedPrice: number): number {
-  if (originalPrice <= 0 || discountedPrice >= originalPrice) return 0;
-  return Math.round(((originalPrice - discountedPrice) / originalPrice) * 100);
 }
 
 export function truncateText(text: string, maxLength: number): string {

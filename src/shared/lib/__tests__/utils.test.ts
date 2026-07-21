@@ -2,13 +2,11 @@ import { describe, expect, it } from 'vitest';
 
 import {
   buildQueryString,
-  calculateDiscountPercent,
   cn,
   formatCurrency,
   formatDate,
   formatDateTime,
   getDefaultPageSize,
-  parseSearchParams,
   slugify,
   truncateText,
   validateVietnamesePhone,
@@ -95,41 +93,6 @@ describe('buildQueryString', () => {
 
   it('skips null and empty items inside arrays', () => {
     expect(buildQueryString({ tags: ['a', '', null, 'b'] })).toBe('tags=a&tags=b');
-  });
-});
-
-describe('parseSearchParams', () => {
-  it('parses supported filter params', () => {
-    const params = new URLSearchParams('search=ao&page=2&inStock=true&ordering=price');
-
-    expect(parseSearchParams(params)).toEqual({
-      search: 'ao',
-      page: 2,
-      pageSize: 20,
-      inStock: true,
-      ordering: 'price',
-    });
-  });
-
-  it('treats "false" as false', () => {
-    const params = new URLSearchParams('inStock=false');
-
-    expect(parseSearchParams(params).inStock).toBe(false);
-  });
-});
-
-describe('calculateDiscountPercent', () => {
-  it('returns rounded discount percent', () => {
-    expect(calculateDiscountPercent(200000, 150000)).toBe(25);
-  });
-
-  it('returns zero when discounted price is not lower', () => {
-    expect(calculateDiscountPercent(100000, 100000)).toBe(0);
-  });
-
-  it('returns zero when originalPrice is zero or negative', () => {
-    expect(calculateDiscountPercent(0, 0)).toBe(0);
-    expect(calculateDiscountPercent(-1, 0)).toBe(0);
   });
 });
 

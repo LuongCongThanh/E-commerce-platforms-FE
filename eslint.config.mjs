@@ -60,6 +60,10 @@ const eslintConfig = [
           type: 'shared',
           pattern: 'src/shared/**',
         },
+        {
+          type: 'core-session',
+          pattern: 'src/core/session/**',
+        },
       ],
       'boundaries/ignore': ['**/*.test.*', '**/*.spec.*', '**/*.d.ts', '.next/**'],
     },
@@ -189,18 +193,18 @@ const eslintConfig = [
             },
             {
               target: './src/shared/constants/**/*',
-              from: ['./src/shared/components/**/*', './src/shared/hooks/**/*', './src/shared/stores/**/*', './src/shared/lib/**/*'],
-              message: 'Shared constants must stay foundational and cannot depend on UI, hooks, stores, or lib code.',
+              from: ['./src/shared/components/**/*', './src/shared/hooks/**/*', './src/shared/lib/**/*'],
+              message: 'Shared constants must stay foundational and cannot depend on UI, hooks, or lib code.',
             },
             {
               target: './src/shared/types/**/*',
-              from: ['./src/shared/components/**/*', './src/shared/hooks/**/*', './src/shared/stores/**/*', './src/shared/lib/**/*'],
-              message: 'Shared types must remain dependency-light and cannot import UI, hooks, stores, or lib code.',
+              from: ['./src/shared/components/**/*', './src/shared/hooks/**/*', './src/shared/lib/**/*'],
+              message: 'Shared types must remain dependency-light and cannot import UI, hooks, or lib code.',
             },
             {
-              target: ['./src/shared/hooks/**/*', './src/shared/stores/**/*'],
+              target: './src/shared/hooks/**/*',
               from: './src/shared/components/**/*',
-              message: 'Hooks and stores must not depend on shared UI components.',
+              message: 'Hooks must not depend on shared UI components.',
             },
             {
               target: './src/shared/lib/**/*',
@@ -209,13 +213,8 @@ const eslintConfig = [
             },
             {
               target: './src/shared/components/base/**/*',
-              from: ['./src/shared/components/common/**/*', './src/shared/components/layouts/**/*', './src/shared/components/skeletons/**/*'],
+              from: './src/shared/components/common/**/*',
               message: 'Base UI primitives cannot depend on higher-level shared components.',
-            },
-            {
-              target: ['./src/shared/components/common/**/*', './src/shared/components/skeletons/**/*'],
-              from: './src/shared/components/layouts/**/*',
-              message: 'Common and skeleton components cannot depend on layout components.',
             },
           ],
         },
@@ -322,10 +321,15 @@ const eslintConfig = [
           default: 'disallow',
           policies: [
             { from: { element: { type: 'shared' } }, allow: { to: { element: { type: 'shared' } } } },
+            { from: { element: { type: 'core-session' } }, allow: { to: { element: { type: 'shared' } } } },
             {
               from: { element: { type: 'app-feature' } },
               allow: {
-                to: [{ element: { type: 'shared' } }, { element: { type: 'app-feature', captured: { group: '{{from.captured.group}}' } } }],
+                to: [
+                  { element: { type: 'shared' } },
+                  { element: { type: 'core-session' } },
+                  { element: { type: 'app-feature', captured: { group: '{{from.captured.group}}' } } },
+                ],
               },
             },
           ],
