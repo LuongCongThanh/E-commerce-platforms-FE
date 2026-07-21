@@ -17,23 +17,48 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<NavCategory>(NAV_CATEGORIES[0]);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
-  const handleMouseEnter = () => {
+  const openMenu = () => {
     if (timeoutRef.current !== null) {
       clearTimeout(timeoutRef.current);
     }
     setIsOpen(true);
   };
 
-  const handleMouseLeave = () => {
+  const closeMenu = () => {
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
     }, 150); // slight delay to prevent accidental closing
   };
 
+  const handleBlur = (event: React.FocusEvent<HTMLElement>) => {
+    if (navRef.current?.contains(event.relatedTarget) !== true) {
+      closeMenu();
+    }
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'Escape') {
+      setIsOpen(false);
+      triggerRef.current?.focus();
+    }
+  };
+
   return (
-    <nav className="relative" aria-label="Danh mục sản phẩm" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <nav
+      ref={navRef}
+      className="relative"
+      aria-label="Danh mục sản phẩm"
+      onMouseEnter={openMenu}
+      onMouseLeave={closeMenu}
+      onFocus={openMenu}
+      onBlur={handleBlur}
+      onKeyDown={handleKeyDown}
+    >
       <button
+        ref={triggerRef}
         type="button"
         aria-expanded={isOpen}
         className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors"
@@ -49,7 +74,7 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 5, scale: 0.98 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-popover absolute top-full -left-16 z-50 mt-2 w-150 overflow-hidden rounded-xl border shadow-md"
+            className="bg-popover absolute top-full -left-16 z-(--z-dropdown) mt-2 w-150 overflow-hidden rounded-xl border shadow-md"
           >
             <div className="flex h-90">
               {/* Left Column: Categories */}
@@ -64,12 +89,15 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
                           onMouseEnter={() => {
                             setActiveCategory(cat);
                           }}
+                          onFocus={() => {
+                            setActiveCategory(cat);
+                          }}
                           className={`relative z-10 flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                             isActive ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
                           }`}
                         >
                           <span className="flex items-center gap-2.5">
-                            <span className="text-base">{cat.icon}</span>
+                            <cat.icon className="size-4" />
                             {cat.name}
                           </span>
                           <ChevronRight className={`size-3.5 transition-opacity ${isActive ? 'opacity-100' : 'opacity-0'}`} />
@@ -101,7 +129,7 @@ export function DesktopMegaMenu({ locale }: DesktopMegaMenuProps) {
                   >
                     <div className="mb-6 flex items-center justify-between">
                       <h3 className="text-foreground flex items-center gap-2 text-lg font-bold">
-                        <span>{activeCategory.icon}</span>
+                        <activeCategory.icon className="size-4.5" />
                         {activeCategory.name}
                       </h3>
                       <Link

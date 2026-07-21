@@ -29,7 +29,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
   return (
     <div className="flex flex-col gap-4 lg:flex-row">
       {/* Main image */}
-      <div className="group relative aspect-square w-full overflow-hidden rounded-xl bg-neutral-50 lg:flex-1">
+      <div className="bg-muted group relative aspect-square w-full overflow-hidden rounded-xl lg:flex-1">
         <AnimatePresence mode="wait">
           <motion.div
             key={selected}
@@ -57,7 +57,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
               type="button"
               onClick={prev}
               aria-label="Ảnh trước"
-              className="absolute top-1/2 left-3 flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100 hover:bg-black/60"
+              className="absolute top-1/2 left-3 flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white opacity-100 backdrop-blur-sm transition-opacity hover:bg-black/60 lg:opacity-0 lg:group-hover:opacity-100"
             >
               <ChevronLeft className="size-5" />
             </button>
@@ -65,7 +65,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
               type="button"
               onClick={next}
               aria-label="Ảnh tiếp theo"
-              className="absolute top-1/2 right-3 flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100 hover:bg-black/60"
+              className="absolute top-1/2 right-3 flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white opacity-100 backdrop-blur-sm transition-opacity hover:bg-black/60 lg:opacity-0 lg:group-hover:opacity-100"
             >
               <ChevronRight className="size-5" />
             </button>
@@ -110,7 +110,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
               }}
               aria-label={`Xem ảnh ${(index + 1).toString()}`}
               className={cn(
-                'relative size-20 shrink-0 overflow-hidden rounded-lg border-2 bg-neutral-50 transition-all duration-200',
+                'bg-muted relative size-20 shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-200',
                 selected === index ? 'border-foreground' : 'border-transparent opacity-60 hover:opacity-100',
               )}
             >

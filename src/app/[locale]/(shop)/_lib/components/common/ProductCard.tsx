@@ -66,7 +66,7 @@ export function ProductCard({
     <Link href={`/${locale}/products/${slug}`} className="group block" data-product-id={String(id)}>
       <div className="bg-card overflow-hidden rounded-xl border shadow-sm transition-shadow hover:shadow-md">
         {/* Image */}
-        <div className="relative aspect-square overflow-hidden bg-neutral-50">
+        <div className="bg-muted relative aspect-square overflow-hidden">
           <Image
             src={coverImage}
             alt={name}

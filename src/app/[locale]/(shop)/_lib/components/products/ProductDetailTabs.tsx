@@ -1,6 +1,6 @@
 'use client';
 
-import { Star } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/shared/components/base/accordion';
 import { cn } from '@/shared/lib/utils';
@@ -58,10 +58,22 @@ export function ProductDetailTabs({ description, rating, reviewCount }: ProductD
         <AccordionContent className="pb-6">
           <p className="text-muted-foreground text-base leading-relaxed">{description}</p>
           <ul className="text-muted-foreground mt-4 space-y-2 text-sm">
-            <li>✓ Chất liệu cao cấp, bền đẹp theo thời gian</li>
-            <li>✓ Thiết kế thời thượng, phù hợp mọi dịp</li>
-            <li>✓ Thoáng mát, thoải mái khi mặc suốt ngày dài</li>
-            <li>✓ Form chuẩn, đa dạng size từ S đến XL</li>
+            <li className="flex items-center gap-2">
+              <Check className="text-success-700 size-4 shrink-0" />
+              Chất liệu cao cấp, bền đẹp theo thời gian
+            </li>
+            <li className="flex items-center gap-2">
+              <Check className="text-success-700 size-4 shrink-0" />
+              Thiết kế thời thượng, phù hợp mọi dịp
+            </li>
+            <li className="flex items-center gap-2">
+              <Check className="text-success-700 size-4 shrink-0" />
+              Thoáng mát, thoải mái khi mặc suốt ngày dài
+            </li>
+            <li className="flex items-center gap-2">
+              <Check className="text-success-700 size-4 shrink-0" />
+              Form chuẩn, đa dạng size từ S đến XL
+            </li>
           </ul>
         </AccordionContent>
       </AccordionItem>

@@ -1,3 +1,6 @@
+import type { LucideIcon } from 'lucide-react';
+import { Flame, Footprints, Shirt, ShoppingBag, Watch } from 'lucide-react';
+
 export interface NavSubCategory {
   slug: string;
   name: string;
@@ -6,7 +9,7 @@ export interface NavSubCategory {
 export interface NavCategory {
   slug: string;
   name: string;
-  icon: string;
+  icon: LucideIcon;
   productCount: number;
   sub: NavSubCategory[];
 }
@@ -15,7 +18,7 @@ export const NAV_CATEGORIES: [NavCategory, ...NavCategory[]] = [
   {
     slug: 'ao',
     name: 'Áo',
-    icon: '👕',
+    icon: Shirt,
     productCount: 120,
     sub: [
       { slug: 'ao/ao-thun', name: 'Áo thun' },
@@ -29,7 +32,7 @@ export const NAV_CATEGORIES: [NavCategory, ...NavCategory[]] = [
   {
     slug: 'quan',
     name: 'Quần',
-    icon: '👖',
+    icon: Shirt,
     productCount: 85,
     sub: [
       { slug: 'quan/quan-jeans', name: 'Quần jeans' },
@@ -42,7 +45,7 @@ export const NAV_CATEGORIES: [NavCategory, ...NavCategory[]] = [
   {
     slug: 'giay',
     name: 'Giày',
-    icon: '👟',
+    icon: Footprints,
     productCount: 64,
     sub: [
       { slug: 'giay/giay-the-thao', name: 'Giày thể thao' },
@@ -55,7 +58,7 @@ export const NAV_CATEGORIES: [NavCategory, ...NavCategory[]] = [
   {
     slug: 'tui',
     name: 'Túi xách',
-    icon: '👜',
+    icon: ShoppingBag,
     productCount: 48,
     sub: [
       { slug: 'tui/balo', name: 'Balo' },
@@ -68,7 +71,7 @@ export const NAV_CATEGORIES: [NavCategory, ...NavCategory[]] = [
   {
     slug: 'phu-kien',
     name: 'Phụ kiện',
-    icon: '⌚',
+    icon: Watch,
     productCount: 200,
     sub: [
       { slug: 'phu-kien/dong-ho', name: 'Đồng hồ' },
@@ -82,7 +85,7 @@ export const NAV_CATEGORIES: [NavCategory, ...NavCategory[]] = [
   {
     slug: 'sale',
     name: 'Sale',
-    icon: '🔥',
+    icon: Flame,
     productCount: 310,
     sub: [
       { slug: 'sale/flash-sale', name: 'Flash Sale' },

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-import { Menu } from 'lucide-react';
+import { Flame, Menu } from 'lucide-react';
 
 import { NAV_CATEGORIES } from '@/app/[locale]/(shop)/_lib/data/nav-categories';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/shared/components/base/accordion';
@@ -49,7 +49,7 @@ export function MobileNav({ locale }: MobileNavProps) {
               <AccordionItem value={cat.slug} key={cat.slug} className="border-b">
                 <AccordionTrigger className="px-2 py-3 text-sm font-medium hover:no-underline">
                   <div className="flex items-center gap-3">
-                    <span className="text-lg">{cat.icon}</span>
+                    <cat.icon className="size-5" />
                     <span className="text-foreground">{cat.name}</span>
                   </div>
                 </AccordionTrigger>
@@ -90,7 +90,7 @@ export function MobileNav({ locale }: MobileNavProps) {
               }}
               className="text-brand-600 hover:bg-brand-50 flex items-center gap-3 rounded-lg px-2 py-3 text-sm font-bold transition-colors"
             >
-              <span className="text-lg">🔥</span>
+              <Flame className="size-5" />
               Flash Sale
             </Link>
           </div>

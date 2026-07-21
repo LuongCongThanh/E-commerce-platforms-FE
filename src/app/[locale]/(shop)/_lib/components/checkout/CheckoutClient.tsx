@@ -46,31 +46,43 @@ export function CheckoutClient() {
         <h2 className="mb-4 text-lg font-semibold">{t('shippingAddress')}</h2>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-2">
-            <label className="text-sm font-medium">{t('fullName')}</label>
-            <Input {...register('fullName')} placeholder="Nguyễn Văn A" />
+            <label htmlFor="fullName" className="text-sm font-medium">
+              {t('fullName')}
+            </label>
+            <Input id="fullName" {...register('fullName')} placeholder="Nguyễn Văn A" />
             {errors.fullName !== undefined && <p className="text-error-500 text-xs">{t(`errors.${errors.fullName.message ?? 'required'}`)}</p>}
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium">{t('phoneNumber')}</label>
-            <Input {...register('phoneNumber')} placeholder="0901234567" />
+            <label htmlFor="phoneNumber" className="text-sm font-medium">
+              {t('phoneNumber')}
+            </label>
+            <Input id="phoneNumber" {...register('phoneNumber')} placeholder="0901234567" />
             {errors.phoneNumber !== undefined && <p className="text-error-500 text-xs">{t(`errors.${errors.phoneNumber.message ?? 'required'}`)}</p>}
           </div>
           <div className="col-span-full space-y-2">
-            <label className="text-sm font-medium">{t('address')}</label>
-            <Input {...register('address')} placeholder="123 Đường ABC..." />
+            <label htmlFor="address" className="text-sm font-medium">
+              {t('address')}
+            </label>
+            <Input id="address" {...register('address')} placeholder="123 Đường ABC..." />
             {errors.address !== undefined && <p className="text-error-500 text-xs">{t(`errors.${errors.address.message ?? 'required'}`)}</p>}
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium">{t('city')}</label>
-            <Input {...register('city')} />
+            <label htmlFor="city" className="text-sm font-medium">
+              {t('city')}
+            </label>
+            <Input id="city" {...register('city')} />
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium">{t('district')}</label>
-            <Input {...register('district')} />
+            <label htmlFor="district" className="text-sm font-medium">
+              {t('district')}
+            </label>
+            <Input id="district" {...register('district')} />
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium">{t('ward')}</label>
-            <Input {...register('ward')} />
+            <label htmlFor="ward" className="text-sm font-medium">
+              {t('ward')}
+            </label>
+            <Input id="ward" {...register('ward')} />
           </div>
         </div>
       </motion.div>
