@@ -4,13 +4,8 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
 import { orderActions } from '@/app/[locale]/(shop)/_lib/api/order';
+import { orderKeys } from '@/app/[locale]/(shop)/_lib/hooks/orders/orderKeys';
 import { ApiError } from '@/shared/lib/errors/api-error';
-
-const orderKeys = {
-  all: ['orders'] as const,
-  list: () => [...orderKeys.all, 'list'] as const,
-  detail: (id: string) => [...orderKeys.all, 'detail', id] as const,
-};
 
 export const useCancelOrder = (id: string) => {
   const qc = useQueryClient();

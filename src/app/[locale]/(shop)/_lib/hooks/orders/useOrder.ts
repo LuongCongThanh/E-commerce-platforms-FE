@@ -3,11 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 
 import { orderActions } from '@/app/[locale]/(shop)/_lib/api/order';
-
-const orderKeys = {
-  all: ['orders'] as const,
-  detail: (id: string) => [...orderKeys.all, 'detail', id] as const,
-};
+import { orderKeys } from '@/app/[locale]/(shop)/_lib/hooks/orders/orderKeys';
 
 export const useOrder = (id: string) =>
   useQuery({
