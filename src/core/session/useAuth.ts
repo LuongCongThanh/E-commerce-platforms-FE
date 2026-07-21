@@ -4,6 +4,7 @@ import { useSyncExternalStore } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { clearAuth, getAuthSnapshot, setAccessToken, setUser, subscribeAuth } from '@/core/session/auth-store';
+import { isAdminRole } from '@/core/session/roles';
 import { ROUTES } from '@/shared/constants/routes';
 import type { User } from '@/shared/types/user';
 
@@ -26,7 +27,7 @@ export function useAuth() {
   const { token, user, status } = useAuthSnapshot();
 
   const isLoggedIn = token != null && token.length > 0;
-  const isAdmin = user?.role === 'admin' || user?.role === 'staff';
+  const isAdmin = isAdminRole(user?.role);
 
   function logout(): void {
     clearAuth();
