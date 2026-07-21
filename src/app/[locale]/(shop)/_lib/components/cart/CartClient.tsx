@@ -19,12 +19,12 @@ export function CartClient({ locale }: CartClientProps) {
   if (items.length === 0) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-6 text-center">
-        <div className="flex size-20 items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-800">
-          <ShoppingBag className="size-10 text-neutral-400" />
+        <div className="bg-muted flex size-20 items-center justify-center rounded-full">
+          <ShoppingBag className="text-muted-foreground size-10" />
         </div>
         <div>
           <h2 className="text-xl font-bold">Giỏ hàng của bạn đang trống</h2>
-          <p className="mt-2 text-sm text-neutral-500">Hãy khám phá các sản phẩm của chúng tôi và thêm vào giỏ hàng!</p>
+          <p className="text-muted-foreground mt-2 text-sm">Hãy khám phá các sản phẩm của chúng tôi và thêm vào giỏ hàng!</p>
         </div>
         <Button asChild size="lg">
           <Link href={`/${locale}/products`}>Khám phá sản phẩm</Link>

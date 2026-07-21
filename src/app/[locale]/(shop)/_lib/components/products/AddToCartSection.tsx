@@ -28,8 +28,9 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
               onClick={() => {
                 setQuantity((prev) => Math.max(1, prev - 1));
               }}
-              className="hover:bg-muted flex size-10 items-center justify-center rounded-lg transition-colors"
+              className="hover:bg-muted flex size-11 items-center justify-center rounded-lg transition-colors"
               disabled={quantity <= 1}
+              aria-label="Giảm số lượng"
             >
               <Minus className="size-4" />
             </button>
@@ -39,8 +40,9 @@ export function AddToCartSection({ product }: AddToCartSectionProps) {
               onClick={() => {
                 setQuantity((prev) => Math.min(maxStock, prev + 1));
               }}
-              className="hover:bg-muted flex size-10 items-center justify-center rounded-lg transition-colors"
+              className="hover:bg-muted flex size-11 items-center justify-center rounded-lg transition-colors"
               disabled={quantity >= maxStock}
+              aria-label="Tăng số lượng"
             >
               <Plus className="size-4" />
             </button>

@@ -5,7 +5,8 @@ import Link from 'next/link';
 
 import { Star } from 'lucide-react';
 
-import { cn, formatCurrency } from '@/shared/lib/utils';
+import { Badge } from '@/shared/components/base/badge';
+import { formatCurrency } from '@/shared/lib/utils';
 import type { BadgeValue } from '@/shared/types/product';
 
 interface BadgeLabels {
@@ -29,11 +30,11 @@ interface ProductCardProps {
   readonly badgeLabels?: Partial<BadgeLabels>;
 }
 
-const BADGE_STYLES: Record<BadgeValue, string> = {
-  'best-seller': 'bg-warning-50 text-warning-700',
-  new: 'bg-info-50 text-info-700',
-  sale: 'bg-brand-50 text-brand-700',
-  'low-stock': 'bg-warning-50 text-warning-700',
+const BADGE_VARIANTS: Record<BadgeValue, 'warning' | 'info' | 'brand'> = {
+  'best-seller': 'warning',
+  new: 'info',
+  sale: 'brand',
+  'low-stock': 'warning',
 };
 
 const DEFAULT_BADGE_LABELS: BadgeLabels = {
@@ -76,9 +77,9 @@ export function ProductCard({
           {badges != null && badges.length > 0 ? (
             <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
               {badges.map((badge) => (
-                <span key={badge} className={cn('rounded-full px-2.5 py-0.5 text-[10px] font-bold tracking-wider uppercase', BADGE_STYLES[badge])}>
+                <Badge key={badge} variant={BADGE_VARIANTS[badge]} className="px-2.5 py-0.5 text-[10px] font-bold tracking-wider uppercase">
                   {resolvedBadgeLabels[badge]}
-                </span>
+                </Badge>
               ))}
             </div>
           ) : null}
