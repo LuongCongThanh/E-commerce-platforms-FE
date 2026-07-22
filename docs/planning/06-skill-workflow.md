@@ -665,7 +665,7 @@ Step 6  /lint-and-validate + /git-pushing
 
 **Ví dụ sử dụng:**
 
-> User: "Đọc docs/05-priority-implementation-backlog.vi.md và implement feature cart"
+> User: "Đọc docs/planning/02-roadmap.md (mục Priority backlog) và implement feature cart"
 
 ```
 Step 1  Đọc backlog doc

@@ -1,3 +1,5 @@
+> 📌 **Không áp dụng trực tiếp cho repo này** — file mô tả quy trình "Solution Architect" tổng quát cho stack NestJS/PostgreSQL/Ant Design/AWS (xem mục 12), không khớp stack thật của repo (Next.js + Django REST + Radix/Tailwind, xem [`architecture/tech-stack.md`](./architecture/tech-stack.md)). Giữ lại vì danh mục ở **Giai đoạn 2 — Front-end Architecture** bên dưới (Module structure, Routing, State ownership, API client, Authentication UI flow, Authorization, Error handling, Design System integration, Performance, Front-end testing) đã được dùng làm khung để tái cấu trúc [`architecture/frontend/`](./architecture/frontend/README.md). Giai đoạn 1, 3, 4, 5 và toàn bộ nội dung backend/cloud/mục 12 không áp dụng cho repo này.
+
 Giai đoạn 1 — Requirements và Solution Overview
 
 Dùng:
@@ -16,7 +18,7 @@ Output:
 - External systems
 - Initial solution options
 - Trade-off matrix
-Giai đoạn 2 — Front-end Architecture
+  Giai đoạn 2 — Front-end Architecture
 
 Dùng:
 
@@ -35,7 +37,7 @@ Output:
 - Design System integration
 - Performance
 - Front-end testing
-Giai đoạn 3 — Data và Back-end Architecture
+  Giai đoạn 3 — Data và Back-end Architecture
 
 Dùng:
 
@@ -82,7 +84,7 @@ Output:
 - Backup
 - Disaster recovery
 - Cost considerations
-Giai đoạn 5 — Documentation và Diagrams
+  Giai đoạn 5 — Documentation và Diagrams
 
 Dùng:
 
@@ -102,9 +104,10 @@ Output:
 - API diagrams
 - ADRs
 - Final architecture handbook
+
 11. Cấu trúc tài liệu Solution Architecture nên tạo
-docs/
-└── architecture/
+    docs/
+    └── architecture/
     ├── README.md
     ├── 01-executive-summary.md
     ├── 02-business-context.md
@@ -114,69 +117,69 @@ docs/
     ├── 06-solution-overview.md
     │
     ├── frontend/
-    │   ├── frontend-overview.md
-    │   ├── module-architecture.md
-    │   ├── routing.md
-    │   ├── state-management.md
-    │   ├── api-integration.md
-    │   ├── authentication.md
-    │   ├── design-system.md
-    │   ├── performance.md
-    │   └── testing.md
+    │ ├── frontend-overview.md
+    │ ├── module-architecture.md
+    │ ├── routing.md
+    │ ├── state-management.md
+    │ ├── api-integration.md
+    │ ├── authentication.md
+    │ ├── design-system.md
+    │ ├── performance.md
+    │ └── testing.md
     │
     ├── backend/
-    │   ├── backend-overview.md
-    │   ├── domain-boundaries.md
-    │   ├── module-boundaries.md
-    │   ├── api-contracts.md
-    │   ├── authentication.md
-    │   ├── authorization.md
-    │   ├── events.md
-    │   ├── transactions.md
-    │   ├── caching.md
-    │   ├── resilience.md
-    │   └── testing.md
+    │ ├── backend-overview.md
+    │ ├── domain-boundaries.md
+    │ ├── module-boundaries.md
+    │ ├── api-contracts.md
+    │ ├── authentication.md
+    │ ├── authorization.md
+    │ ├── events.md
+    │ ├── transactions.md
+    │ ├── caching.md
+    │ ├── resilience.md
+    │ └── testing.md
     │
     ├── data/
-    │   ├── data-architecture.md
-    │   ├── erd.md
-    │   ├── indexing.md
-    │   ├── multi-tenancy.md
-    │   ├── retention.md
-    │   └── migration.md
+    │ ├── data-architecture.md
+    │ ├── erd.md
+    │ ├── indexing.md
+    │ ├── multi-tenancy.md
+    │ ├── retention.md
+    │ └── migration.md
     │
     ├── infrastructure/
-    │   ├── cloud-architecture.md
-    │   ├── network.md
-    │   ├── deployment.md
-    │   ├── ci-cd.md
-    │   ├── observability.md
-    │   ├── disaster-recovery.md
-    │   └── cost.md
+    │ ├── cloud-architecture.md
+    │ ├── network.md
+    │ ├── deployment.md
+    │ ├── ci-cd.md
+    │ ├── observability.md
+    │ ├── disaster-recovery.md
+    │ └── cost.md
     │
     ├── security/
-    │   ├── security-architecture.md
-    │   ├── threat-model.md
-    │   ├── data-protection.md
-    │   └── access-control.md
+    │ ├── security-architecture.md
+    │ ├── threat-model.md
+    │ ├── data-protection.md
+    │ └── access-control.md
     │
     ├── diagrams/
-    │   ├── c4-context.md
-    │   ├── c4-container.md
-    │   ├── c4-components.md
-    │   ├── sequences.md
-    │   └── deployment.md
+    │ ├── c4-context.md
+    │ ├── c4-container.md
+    │ ├── c4-components.md
+    │ ├── sequences.md
+    │ └── deployment.md
     │
     ├── decisions/
-    │   ├── 0001-example.md
-    │   └── README.md
+    │ ├── 0001-example.md
+    │ └── README.md
     │
     └── roadmap/
-        ├── implementation-phases.md
-        ├── risks.md
-        └── migration-plan.md
+    ├── implementation-phases.md
+    ├── risks.md
+    └── migration-plan.md
 12. Prompt hoàn chỉnh nên dùng
-Act as a Solution Architect.
+    Act as a Solution Architect.
 
 Use these skills in sequence:
 
@@ -190,6 +193,7 @@ Use these skills in sequence:
 8. architecture-decision-records
 
 Project stack:
+
 - Frontend: Next.js App Router, React, TypeScript
 - UI: Ant Design and Tailwind CSS
 - State: TanStack Query and project-approved client state
@@ -203,6 +207,7 @@ Produce a complete solution architecture document for the system.
 Do not implement or modify production code.
 
 First analyze:
+
 - Business context
 - Functional requirements
 - Non-functional requirements
@@ -215,11 +220,13 @@ First analyze:
 - Existing codebase and infrastructure
 
 Separate:
+
 - Current architecture: AS-IS
 - Proposed architecture: TO-BE
 - Migration path from AS-IS to TO-BE
 
 Design:
+
 1. System context
 2. Frontend architecture
 3. Backend architecture
@@ -238,6 +245,7 @@ Design:
 16. Risks and trade-offs
 
 Documentation requirements:
+
 - Generate Markdown documents under docs/architecture/
 - Generate C4 Context and Container diagrams
 - Generate selected Component diagrams
@@ -253,6 +261,7 @@ Documentation requirements:
 - Prefer the simplest architecture that satisfies the requirements
 
 For every architectural recommendation provide:
+
 - Problem being solved
 - Decision
 - Alternatives considered

@@ -133,10 +133,13 @@ npm run build
 
 ## Documentation
 
-| File                                                                                           | Contents                                            |
-| ---------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| [01-mvp-overview](./docs/01-mvp-overview.en.md)                                                | Business scope, personas, KPIs, acceptance criteria |
-| [02-roadmap-and-execution-plan](./docs/02-roadmap-and-execution-plan.en.md)                    | Phase plan, delivery gates, RACI, risk register     |
-| [03-technical-stack](./docs/03-technical-stack-skills-and-versions.en.md)                      | Version matrix, skill matrix, decision log          |
-| [04-project-structure](./docs/04-project-structure-guidelines-design-system-conventions.en.md) | Folder conventions, design system, coding standards |
-| [05-priority-backlog](./docs/05-priority-implementation-backlog.en.md)                         | Prioritized implementation backlog                  |
+Bản đồ tài liệu đầy đủ: [`docs/README.md`](./docs/README.md) — chia 2 tầng: **tầng sống** (`docs/architecture/`, phải luôn đúng với code) và **tầng lịch sử** (`docs/planning/`, `docs/reports/`, snapshot tại thời điểm).
+
+| File                                                                             | Contents                                                                                               |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [`docs/architecture/tech-stack.md`](./docs/architecture/tech-stack.md)           | Tech stack theo layer                                                                                  |
+| [`docs/architecture/conventions.md`](./docs/architecture/conventions.md)         | Coding conventions: imports, naming, typing, i18n, SEO, commit                                         |
+| [`docs/architecture/frontend/README.md`](./docs/architecture/frontend/README.md) | Module structure, routing, state, API client, auth, authorization, design system, testing, performance |
+| [`docs/adr/`](./docs/adr/)                                                       | Quyết định kiến trúc (ADR)                                                                             |
+| [`docs/planning/01-mvp-overview.md`](./docs/planning/01-mvp-overview.md)         | Business scope, personas, KPIs, acceptance criteria (snapshot 06/2026)                                 |
+| [`docs/planning/02-roadmap.md`](./docs/planning/02-roadmap.md)                   | Phase plan, delivery gates, RACI, risk register, priority backlog (snapshot 06/2026)                   |
