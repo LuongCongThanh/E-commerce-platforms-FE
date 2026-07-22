@@ -2,7 +2,7 @@
 
 > Tầng sống — quy ước bắt buộc khi viết code trong repo này. Kiến trúc chi tiết (routing, module structure, state, API, auth, design system, testing): [`frontend/README.md`](./frontend/README.md).
 
-Last verified: 2026-07-18
+Last verified: 2026-07-23
 
 ## Imports
 
