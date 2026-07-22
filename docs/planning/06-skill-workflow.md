@@ -674,7 +674,7 @@ Step 1  Đọc backlog doc
 
 Step 2  /concise-planning
   → Checklist:
-    [ ] Zustand cart store với persist middleware (shared/hooks/useCart.ts)
+    [ ] Cart store dùng useSyncExternalStore + module-level state, persist qua localStorage ((shop)/_lib/hooks/useCart.ts) — KHÔNG dùng Zustand
     [ ] Actions addItem / removeItem / updateQuantity / clearCart
     [ ] Component CartDrawer (mở/đóng qua icon ở header)
     [ ] Component CartItemRow (ảnh, tên, quantity stepper, nút xóa)
@@ -686,7 +686,7 @@ Step 2  /concise-planning
 Step 3  Xác nhận checklist với user trước khi code
 
 Step 4  Thực thi:
-  → CartStore    → (Zustand pattern, Flow 2 cho component)
+  → CartStore    → (useSyncExternalStore pattern, không phải Zustand — Flow 2 cho component)
   → CartDrawer   → Flow 2 (component)
   → CartItemRow  → Flow 2 (component)
   → CartBadge    → Flow 2 (component)
