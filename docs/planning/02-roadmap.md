@@ -152,7 +152,7 @@ Voucher engine phức tạp, flash-sale engine thời gian thực, multi-vendor 
 - P1: storefront core ✅, auth core ✅, cart core ✅, checkout COD ✅, order visibility ✅, admin core vận hành được ⬜
 - P2: core regression pass ⬜, SEO/performance/a11y baseline đạt ⬜, monitoring hoạt động production-like ⬜
 
-> Trạng thái feature thực tế hiện nay (khác snapshot trên): xem bảng "Trạng thái feature" ở [`../architecture/frontend/shop-module-structure.md`](../architecture/frontend/shop-module-structure.md) và tiến độ `(admin)` ở [`../architecture/frontend/routing.md`](../architecture/frontend/routing.md#admin-route-group--hiện-trạng-2026-07-23).
+> Trạng thái feature thực tế hiện nay (khác snapshot trên): xem bảng "Trạng thái feature" ở [`../architecture/frontend/shop-module-structure.md`](../architecture/frontend/shop-module-structure.md) và tiến độ `(admin)` ở [`../architecture/frontend/runtime.md`](../architecture/frontend/runtime.md#admin-route-group--hiện-trạng-2026-07-23).
 
 ## Open Risks / Next Actions
 

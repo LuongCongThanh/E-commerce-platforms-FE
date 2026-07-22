@@ -32,7 +32,7 @@ Last verified: 2026-07-18
 - Ưu tiên utility chuẩn v4 hơn arbitrary value.
 - Class được Prettier tự sort (`prettier-plugin-tailwindcss`).
 
-> Design system, error handling, testing: xem [`frontend/design-system.md`](./frontend/design-system.md), [`frontend/api-integration.md`](./frontend/api-integration.md#error-handling), [`frontend/testing.md`](./frontend/testing.md).
+> Design system, testing: xem [`frontend/quality.md`](./frontend/quality.md). Error handling: xem [`frontend/runtime.md`](./frontend/runtime.md#error-handling).
 
 ## i18n
 

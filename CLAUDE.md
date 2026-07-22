@@ -54,7 +54,7 @@ App Router dưới `src/app/[locale]/` với ba route group:
 - `(auth)` — login / register
 - `(admin)` — admin panel được bảo vệ
 
-`middleware.ts` lo hai việc: locale routing qua **next-intl** (mặc định `vi`) và guard phía server bằng cookie `access_token` cho `admin/`, `checkout/`, `orders/`, `profile/` — riêng `admin/*` còn check thêm cookie role (`is_admin`). Đây chỉ là optimistic UX check (không decode/verify JWT), authorization thật do Django enforce lại; chi tiết: `docs/architecture/frontend/authorization.md`.
+`middleware.ts` lo hai việc: locale routing qua **next-intl** (mặc định `vi`) và guard phía server bằng cookie `access_token` cho `admin/`, `checkout/`, `orders/`, `profile/` — riêng `admin/*` còn check thêm cookie role (`is_admin`). Đây chỉ là optimistic UX check (không decode/verify JWT), authorization thật do Django enforce lại; chi tiết: `docs/architecture/frontend/runtime.md#authorization`.
 
 ### Ownership — quy tắc quan trọng nhất
 
