@@ -2,7 +2,7 @@
 
 > Tầng sống — phải phản ánh đúng hiện trạng. Phiên bản cụ thể: xem `package.json` (nguồn sự thật duy nhất, tài liệu này không ghi version để tránh lệch).
 
-Last verified: 2026-07-18
+Last verified: 2026-07-23
 
 ## Stack theo layer
 

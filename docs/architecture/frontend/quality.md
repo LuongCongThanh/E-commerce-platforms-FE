@@ -23,13 +23,13 @@ Gộp 3 hạng mục (Design System integration, Front-end testing, Performance 
 **Seam duy nhất: CI pipeline.** Theo [ADR-0001](../../adr/0001-ci-pipeline-va-seam-kiem-thu-duy-nhat.md): **CI pipeline (GitHub Actions) là seam duy nhất** cho mọi kiểm tra chất lượng — pipeline chỉ orchestrate npm script có sẵn, mọi kiểm tra chạy y hệt ở local. **Playwright là seam duy nhất cho E2E, accessibility (axe-core) và visual regression** — không thêm framework test mới, không dùng dịch vụ ngoài (Chromatic/Percy). Storybook (nếu có) chỉ đóng vai trò documentation, không phải seam kiểm thử.
 
 - **Unit / integration**: Vitest + Testing Library + MSW (mock network tầng handler). Test trong `__tests__/` cạnh module. Test hành vi bên ngoài, không test implementation details.
-- **E2E**: Playwright, 3 browser. Core journeys — đang triển khai theo issue #8.
+- **E2E**: Playwright, 3 browser. Core journeys — chưa hoàn tất — spec gốc ở issue #8 (đã đóng, không còn track chủ động; xem ADR-0001).
 
 ### Quality gates
 
 Trước merge (enforce bởi CI — `.github/workflows/ci.yml`): `npm run lint`, `npm run format:check`, `npm run typecheck`, `npm run test` đều phải pass.
 
-Trước release: `npm run build` pass (hiện chạy ở pre-push hook); core journeys có E2E coverage (`npm run test:e2e`) — đang triển khai theo issue #8.
+Trước release: `npm run build` pass (hiện chạy ở pre-push hook); core journeys có E2E coverage (`npm run test:e2e`) — chưa hoàn tất — spec gốc ở issue #8 (đã đóng, không còn track chủ động; xem ADR-0001).
 
 ### Ghi chú hiện trạng
 
