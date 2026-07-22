@@ -238,20 +238,20 @@ Page (Server Component)
 
 ## Trạng thái feature
 
-| Feature                           | Trạng thái      | Ghi chú                               |
-| --------------------------------- | --------------- | ------------------------------------- |
-| Trang chủ (8 sections)            | ✅ Done         |                                       |
-| Danh sách sản phẩm                | ✅ Done         |                                       |
-| Chi tiết sản phẩm                 | ✅ Done         | SEO + JSON-LD                         |
-| Danh mục + filter sidebar         | ✅ Done         |                                       |
-| Tìm kiếm                          | ✅ Done         |                                       |
-| Giỏ hàng                          | ✅ Done         | `useSyncExternalStore` + localStorage |
-| Checkout (COD)                    | ✅ Done         | Zod validation                        |
-| Lịch sử & chi tiết đơn hàng       | ✅ Done         |                                       |
-| Trang cá nhân                     | ✅ Done (shell) | API chưa nối                          |
-| Flash sale countdown              | 🔧 Partial      | Hook có, UI chưa wire vào live data   |
-| Đánh giá sản phẩm (submit)        | 📋 Planned      |                                       |
-| Wishlist / Yêu thích              | 📋 Planned      |                                       |
-| Mã voucher                        | 📋 Planned      | Schemas ready                         |
-| Thanh toán VNPay/Momo/ZaloPay     | 📋 Planned      | Schemas ready                         |
-| Advanced filter (rating, tồn kho) | 📋 Planned      |                                       |
+| Feature                           | Trạng thái      | Ghi chú                             |
+| --------------------------------- | --------------- | ----------------------------------- |
+| Trang chủ (8 sections)            | ✅ Done         |                                     |
+| Danh sách sản phẩm                | ✅ Done         |                                     |
+| Chi tiết sản phẩm                 | ✅ Done         | SEO + JSON-LD                       |
+| Danh mục + filter sidebar         | ✅ Done         |                                     |
+| Tìm kiếm                          | ✅ Done         |                                     |
+| Giỏ hàng                          | ✅ Done         | Zustand + localStorage (thủ công)   |
+| Checkout (COD)                    | ✅ Done         | Zod validation                      |
+| Lịch sử & chi tiết đơn hàng       | ✅ Done         |                                     |
+| Trang cá nhân                     | ✅ Done (shell) | API chưa nối                        |
+| Flash sale countdown              | 🔧 Partial      | Hook có, UI chưa wire vào live data |
+| Đánh giá sản phẩm (submit)        | 📋 Planned      |                                     |
+| Wishlist / Yêu thích              | 📋 Planned      |                                     |
+| Mã voucher                        | 📋 Planned      | Schemas ready                       |
+| Thanh toán VNPay/Momo/ZaloPay     | 📋 Planned      | Schemas ready                       |
+| Advanced filter (rating, tồn kho) | 📋 Planned      |                                     |

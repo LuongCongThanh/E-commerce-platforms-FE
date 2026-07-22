@@ -1,15 +1,8 @@
 # Coding Conventions
 
-> Tầng sống — quy ước bắt buộc khi viết code trong repo này. Chi tiết cấu trúc từng vùng: [shared-structure.md](./shared-structure.md), [shop-module-structure.md](./shop-module-structure.md).
+> Tầng sống — quy ước bắt buộc khi viết code trong repo này. Kiến trúc chi tiết (routing, module structure, state, API, auth, design system, testing): [`frontend/README.md`](./frontend/README.md).
 
 Last verified: 2026-07-18
-
-## Kiến trúc
-
-- **Thin routes:** page/layout trong `app/[locale]/(group)/` chỉ orchestrate — không chứa business logic. Logic nằm trong `_lib/` của route group (`api/`, `components/`, `hooks/`, `schemas/`, `types/`, `data/`, `queries/`, `store/`). Đặt tên `api/` (không phải `actions/`) — tránh nhầm với Next.js Server Actions vì các file này không có `'use server'`.
-- **Route group ownership:** `(shop)` storefront, `(auth)` đăng nhập/đăng ký, `(admin)` quản trị (middleware guard qua cookie `access_token`). `_lib/` của một group là private — group khác không import chéo.
-- **`(admin)` bắt buộc nest thêm 1 segment `admin/`** (`(admin)/admin/products/page.tsx` → `/{locale}/admin/products`), KHÔNG đặt `page.tsx` trực tiếp dưới `(admin)/` — route group không xuất hiện trong URL, nên đặt trực tiếp sẽ đụng route với `(shop)/products`, `(shop)/orders` đã tồn tại.
-- **Shared boundary:** một file chỉ vào `src/shared/` khi (1) không mang business rule của một module và (2) được dùng thực tế bởi ≥2 route group / flow độc lập. `shared/` không được import từ bất kỳ route group nào (enforce bằng `eslint-plugin-boundaries`). Quy tắc đầy đủ: [shared-structure.md](./shared-structure.md).
 
 ## Imports
 
@@ -29,15 +22,9 @@ Last verified: 2026-07-18
 - Schema-first với Zod ở mọi boundary (API response, env, form).
 - ESLint enforce: `strict-boolean-expressions` (so sánh tường minh với `boolean | undefined` và nullable), không `=== true` thừa với strict boolean, template literal phải convert non-string (`${i.toString()}`).
 
-## Error handling
-
-- HTTP error chuẩn hóa qua class `ApiError` (`shared/lib/errors/`) với helpers `isUnauthorized()`, `isForbidden()`, `isValidation()`.
-- Mutations → toast (qua `notify` của `shared/lib/notification.ts`); Queries → Error Boundary.
-
 ## React
 
 - Không dùng array index làm `key` — dùng id/slug/nội dung unique.
-- Badge sản phẩm dùng union `BadgeValue` (`'best-seller' | 'new' | 'sale' | 'low-stock'`).
 
 ## Tailwind v4
 
@@ -45,23 +32,7 @@ Last verified: 2026-07-18
 - Ưu tiên utility chuẩn v4 hơn arbitrary value.
 - Class được Prettier tự sort (`prettier-plugin-tailwindcss`).
 
-## Design system
-
-- Token-first: color scale + semantic tokens định nghĩa trong `@theme` tại `src/app/globals.css`; không hardcode màu/radius lẻ tẻ.
-- **Visual identity: clean commerce** (từ 2026-07) — phẳng, nền trắng, card `rounded-xl border bg-card shadow-sm`, CTA tối (semantic `--primary` = neutral đậm). Glassmorphism (`glass`/`spatial-*`) đã gỡ bỏ hoàn toàn.
-- **Semantic token (chuẩn shadcn) là ngôn ngữ chính thức khi viết component**: `bg-primary`, `text-muted-foreground`, `bg-popover`… Palette scale (`brand-*`, `neutral-*`…) chỉ dùng để định nghĩa semantic vars trong `:root`/`.dark` và cho bề mặt decorative cần sắc độ cụ thể.
-- **Dải `brand-*` (cam-đỏ)** chỉ dành cho giá, sale, badge khuyến mãi — KHÔNG dùng cho CTA/nav. Không còn scale `primary-*` (đã đổi tên thành `brand`).
-- Radius: dùng bộ shadcn (`rounded-sm/md/lg/xl` từ `--radius`); không tạo radius token riêng lẻ.
-- Theme: **light-only** — `.dark` vars giữ sẵn trong `globals.css` nhưng chưa bật toggle (`defaultTheme="light"`, `enableSystem={false}`).
-- Motion: chỉ fade/translate nhẹ ≤300ms; không animation vô hạn, không 3D transform, không parallax.
-- Tách primitive (`shared/components/base/`) khỏi feature component (`(group)/_lib/components/`).
-- Mobile-first, breakpoint thống nhất.
-
-## Testing
-
-- Unit: utils, hooks, store (Vitest + Testing Library, test trong `__tests__/` cạnh module).
-- Test hành vi bên ngoài, không test implementation details.
-- E2E: core journeys qua Playwright — seam duy nhất cho E2E/a11y/visual (ADR 0001).
+> Design system, testing: xem [`frontend/quality.md`](./frontend/quality.md). Error handling: xem [`frontend/runtime.md`](./frontend/runtime.md#error-handling).
 
 ## i18n
 

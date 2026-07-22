@@ -4,24 +4,23 @@ Tài liệu chia 2 tầng: **tầng sống** (phải luôn đúng với code —
 
 ## Tầng sống
 
-| Đọc gì                                                                  | Ở đâu                                                                              |
-| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Glossary thuật ngữ domain                                               | [`CONTEXT.md`](../CONTEXT.md) (root)                                               |
-| Tech stack theo layer, kiến trúc API client, quality gates              | [`architecture/tech-stack.md`](./architecture/tech-stack.md)                       |
-| Quy ước code: imports, naming, typing, testing, i18n, commit            | [`architecture/conventions.md`](./architecture/conventions.md)                     |
-| Quy tắc shared boundary — cái gì được/không được vào `shared/`          | [`architecture/shared-structure.md`](./architecture/shared-structure.md)           |
-| Cấu trúc chi tiết module shop                                           | [`architecture/shop-module-structure.md`](./architecture/shop-module-structure.md) |
-| Sơ đồ hệ thống theo component (request lifecycle, state, luồng gọi API) | [`architecture/system-diagram.md`](./architecture/system-diagram.md)               |
-| Quyết định kiến trúc (ADR)                                              | [`adr/`](./adr/)                                                                   |
-| Git flow: branching, commit, PR, merge strategy                         | [`CONTRIBUTING.md`](../CONTRIBUTING.md) (root)                                     |
-| Hướng dẫn cho AI agent (issue tracker, triage labels, domain docs)      | [`agents/`](./agents/)                                                             |
+| Đọc gì                                                                                                                        | Ở đâu                                                                  |
+| ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Glossary thuật ngữ domain                                                                                                     | [`CONTEXT.md`](../CONTEXT.md) (root)                                   |
+| Tech stack theo layer                                                                                                         | [`architecture/tech-stack.md`](./architecture/tech-stack.md)           |
+| Quy ước code: imports, naming, typing, i18n, SEO, commit                                                                      | [`architecture/conventions.md`](./architecture/conventions.md)         |
+| Frontend architecture: module structure, routing, state, API client, auth, authorization, design system, testing, performance | [`architecture/frontend/README.md`](./architecture/frontend/README.md) |
+| Quyết định kiến trúc (ADR)                                                                                                    | [`adr/`](./adr/)                                                       |
+| Git flow: branching, commit, PR, merge strategy                                                                               | [`CONTRIBUTING.md`](../CONTRIBUTING.md) (root)                         |
+| Hướng dẫn cho AI agent (issue tracker, triage labels, domain docs)                                                            | [`agents/`](./agents/)                                                 |
 
 ## Tầng lịch sử
 
-| Gì                                                        | Ở đâu                      |
-| --------------------------------------------------------- | -------------------------- |
-| Bộ planning MVP (overview, roadmap, backlog... — 06/2026) | [`planning/`](./planning/) |
-| Báo cáo snapshot có ngày (test report, UI/UX review)      | [`reports/`](./reports/)   |
+| Gì                                                                    | Ở đâu                                                                  |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Bộ planning MVP (overview, roadmap, backlog... — 06/2026)             | [`planning/`](./planning/)                                             |
+| Research tham khảo cho redesign/milestone (không phải stage planning) | [`planning/nike-ui-ux-analysis.md`](./planning/nike-ui-ux-analysis.md) |
+| Báo cáo snapshot có ngày (test report, UI/UX review)                  | [`reports/`](./reports/)                                               |
 
 ## Quy tắc duy trì
 

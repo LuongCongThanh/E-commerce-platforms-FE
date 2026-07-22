@@ -1,6 +1,7 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
+import { isAdminRole } from '@/core/session/roles';
 import { USER_ROLE_COOKIE } from '@/shared/constants/auth-cookies';
 import type { User } from '@/shared/types/user';
 
@@ -55,7 +56,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   });
 
   // Optimistic UX hint cho middleware guard /admin — xem ghi chú ở login/route.ts.
-  response.cookies.set(USER_ROLE_COOKIE, user.role === 'admin' || user.role === 'staff' ? 'true' : 'false', {
+  response.cookies.set(USER_ROLE_COOKIE, isAdminRole(user.role) ? 'true' : 'false', {
     httpOnly: true,
     secure: SECURE,
     sameSite: 'strict',

@@ -34,16 +34,15 @@ CI (`.github/workflows/ci.yml`) chạy lint + format:check + typecheck + unit te
 
 ## Tài liệu chi tiết — đọc trước khi làm việc trong vùng liên quan
 
-| Chủ đề                                          | File                                         |
-| ----------------------------------------------- | -------------------------------------------- |
-| Bản đồ toàn bộ tài liệu                         | `docs/README.md`                             |
-| Glossary thuật ngữ domain                       | `CONTEXT.md`                                 |
-| Tech stack, kiến trúc API client, quality gates | `docs/architecture/tech-stack.md`            |
-| Coding conventions đầy đủ                       | `docs/architecture/conventions.md`           |
-| Shared boundary — cái gì được vào `src/shared/` | `docs/architecture/shared-structure.md`      |
-| Cấu trúc module shop                            | `docs/architecture/shop-module-structure.md` |
-| Quyết định kiến trúc                            | `docs/adr/`                                  |
-| Git flow: branching, commit, PR, merge strategy | `CONTRIBUTING.md`                            |
+| Chủ đề                                                                                                                        | File                                   |
+| ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Bản đồ toàn bộ tài liệu                                                                                                       | `docs/README.md`                       |
+| Glossary thuật ngữ domain                                                                                                     | `CONTEXT.md`                           |
+| Tech stack theo layer                                                                                                         | `docs/architecture/tech-stack.md`      |
+| Coding conventions đầy đủ                                                                                                     | `docs/architecture/conventions.md`     |
+| Frontend architecture: module structure, routing, state, API client, auth, authorization, design system, testing, performance | `docs/architecture/frontend/README.md` |
+| Quyết định kiến trúc                                                                                                          | `docs/adr/`                            |
+| Git flow: branching, commit, PR, merge strategy                                                                               | `CONTRIBUTING.md`                      |
 
 ## Architecture (tóm tắt)
 
@@ -55,7 +54,7 @@ App Router dưới `src/app/[locale]/` với ba route group:
 - `(auth)` — login / register
 - `(admin)` — admin panel được bảo vệ
 
-`middleware.ts` lo hai việc: locale routing qua **next-intl** (mặc định `vi`) và guard phía server bằng cookie `access_token` cho `admin/`, `checkout/`, `orders/`, `profile/`.
+`middleware.ts` lo hai việc: locale routing qua **next-intl** (mặc định `vi`) và guard phía server bằng cookie `access_token` cho `admin/`, `checkout/`, `orders/`, `profile/` — riêng `admin/*` còn check thêm cookie role (`is_admin`). Đây chỉ là optimistic UX check (không decode/verify JWT), authorization thật do Django enforce lại; chi tiết: `docs/architecture/frontend/runtime.md#authorization`.
 
 ### Ownership — quy tắc quan trọng nhất
 
@@ -66,7 +65,7 @@ App Router dưới `src/app/[locale]/` với ba route group:
 
 ### State & HTTP
 
-- Server state: **React Query** (`shared/lib/query-client.ts`). Client state: **`useSyncExternalStore`** + module-level stores. Không dùng Zustand.
+- Server state: **React Query** (`shared/lib/query-client.ts`). Client state: **Zustand** (`create()`, không dùng middleware `persist` — persist localStorage thủ công để né hydration-timing issue với Next.js SSR, xem ADR-0006).
 - HTTP qua `http` object (`shared/lib/http/client.ts`): `http.get/post/put/patch/delete<T>()`, trả `response.data`, lỗi thành `ApiError`. Không gọi axios trực tiếp.
 - Zod schemas validate API responses runtime; types qua `z.infer<>`; `strict: true`.
 
