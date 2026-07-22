@@ -85,7 +85,7 @@ products/page.tsx (Server)
 ```text
 cart/page.tsx (Server)
   └─► CartClient ('use client')
-        ├─► useCart()                    # client state — useSyncExternalStore
+        ├─► useCart()                    # client state — Zustand (useCartStore)
         ├─► (rỗng) EmptyState UI          # khi items.length === 0
         └─► (có hàng) CartTable + CartSummary
 ```
@@ -139,7 +139,7 @@ LoginForm / RegisterForm ('use client')
               └─► POST /api/auth/login       [Next.js Route Handler — src/app/api/auth/login/route.ts]
                     └─► fetch Django /api/auth/login/
                     └─► set-cookie: access_token (httpOnly), refresh_token (httpOnly), is_admin (httpOnly)
-              └─► auth-store: setAccessToken() + setUser()   (useSyncExternalStore, KHÔNG persist localStorage)
+              └─► auth-store: setAccessToken() + setUser()   (Zustand useAuthStore, KHÔNG persist localStorage)
 ```
 
 `route.ts` (login/register) gọi `isAdminRole(user.role)` (`src/core/session/roles.ts` — `role === 'admin' || role === 'staff'`) để set cookie `is_admin`, dùng bởi `middleware.ts` cho guard `/admin/*` — xem [Authorization](#authorization).
@@ -183,12 +183,14 @@ if (ADMIN_PATTERN.test(pathname)) {
 ## State ownership
 
 - **Server state** — sở hữu bởi API: **TanStack Query** (`useProducts()`, `useOrders()`, `useProfile()`, `useOrder()`...). Cache key chuẩn hoá qua `shared/constants/query-keys.ts`. Config tại `shared/lib/query-client.ts`.
-- **Client state** — chỉ tồn tại phía browser: **`useSyncExternalStore`** (React built-in) + module-level store.
-  - Cart: `(shop)/_lib/hooks/useCart.ts` — mảng `CartItem[]`, persist `localStorage` (key `cart-storage`).
-  - Auth: `src/core/session/auth-store.ts` — `{ token, user }`, KHÔNG persist localStorage (chỉ tồn tại trong memory).
+- **Client state** — chỉ tồn tại phía browser: **Zustand** (`create()`, không dùng middleware `persist` — xem [ADR-0006](../../adr/0006-zustand-thay-usesyncexternalstore-cho-client-state.md)).
+  - Cart: `(shop)/_lib/hooks/useCart.ts` — `useCartStore` (`items: CartItem[]`), persist `localStorage` (key `cart-storage`) ghi thủ công trong mỗi action, không qua middleware `persist` của zustand.
+  - Auth: `src/core/session/auth-store.ts` — `useAuthStore` (`{ token, user, status }`), KHÔNG persist localStorage (chỉ tồn tại trong memory).
 - **Local UI state** — `useState`/`useReducer` trong component.
 
-**Không dùng Zustand hay thư viện state ngoài** cho cả 2 nhóm trên (đã xác nhận: `zustand` có trong `package.json` nhưng không được import ở đâu trong `src/` — ứng viên gỡ bỏ khỏi dependencies).
+### Vì sao không dùng middleware `persist` của zustand cho cart
+
+Middleware `persist` tự động rehydrate từ localStorage lúc store khởi tạo — với Next.js SSR, điều này dễ gây hydration mismatch (server render rỗng, client render đầu tiên đã có data từ localStorage, không khớp). Thay vào đó, `useCartStore` khởi tạo `items: []` (khớp SSR), và `useCart()` gọi `initCartFromStorage()` trong `useEffect` (chỉ chạy client-side, sau lần render đầu) để nạp dữ liệu thật — cùng nguyên lý né hydration mismatch mà bản cũ dùng tham số `getServerSnapshot` của `useSyncExternalStore`, chỉ khác cơ chế lưu trữ bên dưới.
 
 ### Vì sao auth store không nằm trong `shared/`
 
@@ -226,7 +228,7 @@ Nhánh A — auth cookie flow (chỉ login/register/logout/refresh)
                 └─► POST /api/auth/login       [Next.js Route Handler — src/app/api/auth/login/route.ts]
                       └─► fetch Django /api/auth/login/
                       └─► set-cookie: access_token + is_admin (httpOnly), refresh_token (httpOnly)
-                └─► auth-store: setAccessToken() + setUser()   (useSyncExternalStore)
+                └─► auth-store: setAccessToken() + setUser()   (Zustand useAuthStore)
 
 Nhánh B — mọi API khác (product/order/profile/forgot-password/reset-password...)
   Component/Hook

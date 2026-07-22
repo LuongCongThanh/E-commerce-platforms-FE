@@ -1,9 +1,9 @@
+import { create } from 'zustand';
+
 import { callAuthRoute } from '@/core/session/auth-route-client';
 import { API } from '@/shared/constants/api-endpoints';
 import { http } from '@/shared/lib/http/client';
 import type { User } from '@/shared/types/user';
-
-type Listener = () => void;
 
 export type AuthStatus = 'initializing' | 'authenticated' | 'anonymous';
 
@@ -13,43 +13,50 @@ export interface AuthSnapshot {
   status: AuthStatus;
 }
 
-let snapshot: AuthSnapshot = { token: null, user: null, status: 'initializing' };
-const listeners = new Set<Listener>();
-
-function notify(): void {
-  listeners.forEach((listener) => {
-    listener();
-  });
+interface AuthState extends AuthSnapshot {
+  setAccessToken: (token: string | null) => void;
+  setUser: (user: User) => void;
+  clearAuth: () => void;
 }
 
-export function subscribeAuth(listener: Listener): () => void {
-  listeners.add(listener);
-  return () => {
-    listeners.delete(listener);
-  };
+export const useAuthStore = create<AuthState>((set) => ({
+  token: null,
+  user: null,
+  status: 'initializing',
+  setAccessToken: (token) => {
+    set({ token });
+  },
+  setUser: (user) => {
+    set({ user, status: 'authenticated' });
+  },
+  clearAuth: () => {
+    set({ token: null, user: null, status: 'anonymous' });
+  },
+}));
+
+export function subscribeAuth(listener: () => void): () => void {
+  return useAuthStore.subscribe(listener);
 }
 
 export function getAuthSnapshot(): AuthSnapshot {
-  return snapshot;
+  const { token, user, status } = useAuthStore.getState();
+  return { token, user, status };
 }
 
 export function getAccessToken(): string | null {
-  return snapshot.token;
+  return useAuthStore.getState().token;
 }
 
 export function setAccessToken(token: string | null): void {
-  snapshot = { ...snapshot, token };
-  notify();
+  useAuthStore.getState().setAccessToken(token);
 }
 
 export function setUser(user: User): void {
-  snapshot = { ...snapshot, user, status: 'authenticated' };
-  notify();
+  useAuthStore.getState().setUser(user);
 }
 
 export function clearAuth(): void {
-  snapshot = { token: null, user: null, status: 'anonymous' };
-  notify();
+  useAuthStore.getState().clearAuth();
 }
 
 export async function refreshAccessToken(): Promise<string> {

@@ -58,7 +58,7 @@ Out-of-scope cho milestone này (xem thêm [Cross-team Dependencies](#cross-team
 - Milestone này là **additive** lên MVP đã chốt (`01-mvp-overview.md`), không thay đổi các luồng core đã hoạt động (catalog, auth, cart, checkout COD, order, admin core).
 - Kế thừa visual language "clean commerce" đã redesign (`07-redesign-clean-commerce.md`) — không quay lại glassmorphism, không đổi CTA tối.
 - Mọi năng lực cần backend mới đều bắt đầu bằng việc **chốt contract/API** với team backend trước khi FE triển khai UI thật; cho tới lúc đó FE có thể build UI với mock/feature flag.
-- Tuân thủ conventions hiện có (`docs/architecture/conventions.md`), import qua `@/*`, không dùng Zustand, HTTP qua `http` client, Zod validate response.
+- Tuân thủ conventions hiện có (`docs/architecture/conventions.md`), import qua `@/*`, client state qua Zustand (xem ADR-0006), HTTP qua `http` client, Zod validate response.
 - Ưu tiên rollout theo tính độc lập kỹ thuật, không theo thứ tự "quan trọng nhất trước": PWA và Scale-readiness không phụ thuộc backend mới nên có thể làm sớm; AI Search/CMS/Analytics/Membership chờ contract.
 
 ## Detailed Spec

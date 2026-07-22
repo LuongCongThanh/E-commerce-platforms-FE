@@ -1,6 +1,8 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
+import { useEffect } from 'react';
+
+import { create } from 'zustand';
 
 export interface CartItem {
   variantId: string;
@@ -20,8 +22,6 @@ interface PersistedCartV1 {
   items: CartItem[];
 }
 
-type Listener = () => void;
-
 function readPersistedCart(): CartItem[] {
   try {
     const raw = localStorage.getItem(CART_STORAGE_KEY);
@@ -35,76 +35,79 @@ function readPersistedCart(): CartItem[] {
   }
 }
 
-// readPersistedCart is SSR-safe via try/catch — localStorage throws ReferenceError in Node.js
-let _items: CartItem[] = readPersistedCart();
-const _listeners = new Set<Listener>();
-
-function getSnapshot(): CartItem[] {
-  return _items;
-}
-
-const EMPTY_CART: CartItem[] = [];
-
-function getServerSnapshot(): CartItem[] {
-  return EMPTY_CART;
-}
-
-function subscribeCart(listener: Listener): () => void {
-  _listeners.add(listener);
-  return () => {
-    _listeners.delete(listener);
-  };
-}
-
-function setItems(updater: (prev: CartItem[]) => CartItem[]): void {
-  _items = updater(_items);
-  const persisted: PersistedCartV1 = { version: CART_STORAGE_VERSION, items: _items };
+function persistCart(items: CartItem[]): void {
+  const persisted: PersistedCartV1 = { version: CART_STORAGE_VERSION, items };
   localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(persisted));
-  _listeners.forEach((l) => {
-    l();
-  });
 }
+
+interface CartState {
+  items: CartItem[];
+  addToCart: (item: CartItem) => void;
+  removeCartItem: (variantId: string) => void;
+  updateQuantity: (variantId: string, quantity: number) => void;
+  clearCart: () => void;
+}
+
+// Khởi tạo rỗng (không đọc localStorage ở module scope) để khớp SSR — dữ liệu
+// thật được nạp qua initCartFromStorage() trong useEffect (client-only, sau lần
+// render đầu tiên), tránh hydration mismatch. Xem ADR-0006.
+export const useCartStore = create<CartState>((set, get) => ({
+  items: [],
+  addToCart: (item) => {
+    const existing = get().items.find((i) => i.variantId === item.variantId);
+    const items =
+      existing === undefined
+        ? [...get().items, item]
+        : get().items.map((i) => (i.variantId === item.variantId ? { ...i, quantity: i.quantity + item.quantity } : i));
+    set({ items });
+    persistCart(items);
+  },
+  removeCartItem: (variantId) => {
+    const items = get().items.filter((i) => i.variantId !== variantId);
+    set({ items });
+    persistCart(items);
+  },
+  updateQuantity: (variantId, quantity) => {
+    const items = get().items.map((i) => (i.variantId === variantId ? { ...i, quantity } : i));
+    set({ items });
+    persistCart(items);
+  },
+  clearCart: () => {
+    set({ items: [] });
+    persistCart([]);
+  },
+}));
 
 export function resetCartState(): void {
-  _items = [];
-  _listeners.forEach((l) => {
-    l();
-  });
+  useCartStore.setState({ items: [] });
 }
 
 export function initCartFromStorage(): void {
-  _items = readPersistedCart();
-  _listeners.forEach((l) => {
-    l();
-  });
-}
-
-export function addToCart(item: CartItem): void {
-  setItems((prev) => {
-    const existing = prev.find((i) => i.variantId === item.variantId);
-    return existing === undefined
-      ? [...prev, item]
-      : prev.map((i) => (i.variantId === item.variantId ? { ...i, quantity: i.quantity + item.quantity } : i));
-  });
-}
-
-export function removeCartItem(variantId: string): void {
-  setItems((prev) => prev.filter((i) => i.variantId !== variantId));
-}
-
-export function updateQuantity(variantId: string, quantity: number): void {
-  setItems((prev) => prev.map((i) => (i.variantId === variantId ? { ...i, quantity } : i)));
+  useCartStore.setState({ items: readPersistedCart() });
 }
 
 export function clearCart(): void {
-  setItems(() => []);
+  useCartStore.getState().clearCart();
 }
 
+let hasHydrated = false;
+
 export function useCart() {
-  const items = useSyncExternalStore(subscribeCart, getSnapshot, getServerSnapshot);
+  useEffect(() => {
+    if (!hasHydrated) {
+      hasHydrated = true;
+      initCartFromStorage();
+    }
+  }, []);
+
+  const items = useCartStore((s) => s.items);
+  const addToCart = useCartStore((s) => s.addToCart);
+  const removeCartItem = useCartStore((s) => s.removeCartItem);
+  const updateQuantity = useCartStore((s) => s.updateQuantity);
+  const clearCartAction = useCartStore((s) => s.clearCart);
 
   const total = items.reduce((s, i) => s + i.price * i.quantity, 0);
   const itemCount = items.reduce((s, i) => s + i.quantity, 0);
 
-  return { items, addToCart, removeCartItem, updateQuantity, clearCart, total, itemCount };
+  return { items, addToCart, removeCartItem, updateQuantity, clearCart: clearCartAction, total, itemCount };
 }

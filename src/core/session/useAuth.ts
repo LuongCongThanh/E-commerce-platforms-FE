@@ -1,9 +1,8 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { clearAuth, getAuthSnapshot, setAccessToken, setUser, subscribeAuth } from '@/core/session/auth-store';
+import { setAccessToken, setUser, useAuthStore } from '@/core/session/auth-store';
 import { isAdminRole } from '@/core/session/roles';
 import { ROUTES } from '@/shared/constants/routes';
 import type { User } from '@/shared/types/user';
@@ -13,18 +12,17 @@ export function login(token: string, userData: User): void {
   setUser(userData);
 }
 
-function useAuthSnapshot() {
-  return useSyncExternalStore(subscribeAuth, getAuthSnapshot, getAuthSnapshot);
-}
-
 export function useIsLoggedIn(): boolean {
-  const { token } = useAuthSnapshot();
+  const token = useAuthStore((s) => s.token);
   return token != null && token.length > 0;
 }
 
 export function useAuth() {
   const router = useRouter();
-  const { token, user, status } = useAuthSnapshot();
+  const token = useAuthStore((s) => s.token);
+  const user = useAuthStore((s) => s.user);
+  const status = useAuthStore((s) => s.status);
+  const clearAuth = useAuthStore((s) => s.clearAuth);
 
   const isLoggedIn = token != null && token.length > 0;
   const isAdmin = isAdminRole(user?.role);

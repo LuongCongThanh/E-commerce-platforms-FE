@@ -65,7 +65,7 @@ App Router dưới `src/app/[locale]/` với ba route group:
 
 ### State & HTTP
 
-- Server state: **React Query** (`shared/lib/query-client.ts`). Client state: **`useSyncExternalStore`** + module-level stores. Không dùng Zustand.
+- Server state: **React Query** (`shared/lib/query-client.ts`). Client state: **Zustand** (`create()`, không dùng middleware `persist` — persist localStorage thủ công để né hydration-timing issue với Next.js SSR, xem ADR-0006).
 - HTTP qua `http` object (`shared/lib/http/client.ts`): `http.get/post/put/patch/delete<T>()`, trả `response.data`, lỗi thành `ApiError`. Không gọi axios trực tiếp.
 - Zod schemas validate API responses runtime; types qua `z.infer<>`; `strict: true`.
 
