@@ -28,5 +28,5 @@ Last verified: 2026-07-18
 
 ## Kiến trúc chi tiết
 
-- API client, error handling, state ownership (server/client, vì sao auth store không ở `shared/`, note `zustand` thừa): [`frontend/runtime.md`](./frontend/runtime.md)
+- API client, error handling, state ownership (server/client, vì sao auth store không ở `shared/`, vì sao không dùng middleware `persist` — xem ADR-0006): [`frontend/runtime.md`](./frontend/runtime.md)
 - Quality gates, coverage gap (issue #10): [`frontend/quality.md`](./frontend/quality.md)
