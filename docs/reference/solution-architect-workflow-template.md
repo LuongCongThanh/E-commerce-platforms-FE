@@ -1,4 +1,4 @@
-> 📌 **Không áp dụng trực tiếp cho repo này** — file mô tả quy trình "Solution Architect" tổng quát cho stack NestJS/PostgreSQL/Ant Design/AWS (xem mục 12), không khớp stack thật của repo (Next.js + Django REST + Radix/Tailwind, xem [`architecture/tech-stack.md`](./architecture/tech-stack.md)). Giữ lại vì danh mục ở **Giai đoạn 2 — Front-end Architecture** bên dưới (Module structure, Routing, State ownership, API client, Authentication UI flow, Authorization, Error handling, Design System integration, Performance, Front-end testing) đã được dùng làm khung để tái cấu trúc [`architecture/frontend/`](./architecture/frontend/README.md). Giai đoạn 1, 3, 4, 5 và toàn bộ nội dung backend/cloud/mục 12 không áp dụng cho repo này.
+> 📌 **Không áp dụng trực tiếp cho repo này** — file mô tả quy trình "Solution Architect" tổng quát cho stack NestJS/PostgreSQL/Ant Design/AWS (xem mục 12), không khớp stack thật của repo (Next.js + Django REST + Radix/Tailwind, xem [`architecture/tech-stack.md`](../architecture/tech-stack.md)). Giữ lại vì danh mục ở **Giai đoạn 2 — Front-end Architecture** bên dưới (Module structure, Routing, State ownership, API client, Authentication UI flow, Authorization, Error handling, Design System integration, Performance, Front-end testing) đã được dùng làm khung để tái cấu trúc [`architecture/frontend/`](../architecture/frontend/README.md). Giai đoạn 1, 3, 4, 5 và toàn bộ nội dung backend/cloud/mục 12 không áp dụng cho repo này.
 
 Giai đoạn 1 — Requirements và Solution Overview
 
@@ -18,6 +18,7 @@ Output:
 - External systems
 - Initial solution options
 - Trade-off matrix
+
   Giai đoạn 2 — Front-end Architecture
 
 Dùng:
@@ -37,6 +38,7 @@ Output:
 - Design System integration
 - Performance
 - Front-end testing
+
   Giai đoạn 3 — Data và Back-end Architecture
 
 Dùng:
