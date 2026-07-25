@@ -1,7 +1,3 @@
-> 📌 **Tài liệu tham khảo (research), không phải một stage trong bộ planning `01`–`08`** — phân tích UI/UX của Nike.com, dùng làm nguồn cảm hứng thị giác cho [`07-redesign-clean-commerce.md`](./07-redesign-clean-commerce.md) (PDP kiểu Nike) và [`08-nike-flagship-expansion.md`](./08-nike-flagship-expansion.md). Không cập nhật lại (snapshot tại thời điểm phân tích).
->
-> ⚠ Ảnh minh hoạ trong file là link tạm `images.openai.com/...` — có thể hết hạn/hỏng theo thời gian; nội dung text vẫn còn giá trị tham khảo dù ảnh không load được.
-
 ![Image](https://images.openai.com/static-rsc-4/nkz-BNVlM-inV6dSXmKrFTBNQfIpfMMQxDSG59vxZ9Hvr5EBgHWeE0tv2DrlDTjmf7W5bYCidYqHmwJ3K3D_DOR7x34mp2K7Huigp4dYVYXULKVs7JAald8A7FxzBSxzmKiLXfg0PFrFHPhzFFeGA9EfbQeigxgRHBibKxyEE4N1pVs8VT74yCsGACK4co8T?purpose=fullsize)
 
 ![Image](https://images.openai.com/static-rsc-4/-FpwgZq7VgoTEJgQUaBAVFRGZNW8lFWX93Rrt81EGWVyebT_IIHxR59SIHXk9W1klkBj190978b_JgR5m7lcRjwP9xfePc8Jl3mr0wkTQbhXjtBayN7p3oMK5zweIUSr-diKSlWUIPp_Cj6qX8LiqJDtUlyV1xssnD-k8ZQUkqbjPYYh7M5YAL2Pbxc2roZ1?purpose=fullsize)
