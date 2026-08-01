@@ -171,6 +171,12 @@ importers:
       '@playwright/test':
         specifier: ^1.61.1
         version: 1.62.1
+      '@repo/eslint-config':
+        specifier: github:LuongCongThanh/fe-shared-packages#path:eslint-config&semver:^1.0.0
+        version: https://codeload.github.com/LuongCongThanh/fe-shared-packages/tar.gz/160af42396d13cf213df5c208d32229c9bb2d870#path:eslint-config(@typescript-eslint/parser@8.65.0(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/utils@8.65.0(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3))(eslint-import-resolver-node@0.3.10)(eslint-import-resolver-typescript@4.4.5)(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3)
+      '@repo/ts-config':
+        specifier: github:LuongCongThanh/fe-shared-packages#path:ts-config&semver:^1.0.0
+        version: https://codeload.github.com/LuongCongThanh/fe-shared-packages/tar.gz/160af42396d13cf213df5c208d32229c9bb2d870#path:ts-config
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.3.3
@@ -1887,6 +1893,16 @@ packages:
 
   '@radix-ui/rect@1.1.3':
     resolution: {integrity: sha512-JtyZR+mqgBibTo8xea3B6ZRmzZiM/YeVBtUkas6zMuXjAlfIFIW2FgqeM9eLyvEaYX66vr6DJMK+4U6LV0KhNw==}
+
+  '@repo/eslint-config@https://codeload.github.com/LuongCongThanh/fe-shared-packages/tar.gz/160af42396d13cf213df5c208d32229c9bb2d870#path:eslint-config':
+    resolution: {path: eslint-config, tarball: https://codeload.github.com/LuongCongThanh/fe-shared-packages/tar.gz/160af42396d13cf213df5c208d32229c9bb2d870}
+    version: 0.0.0
+    peerDependencies:
+      eslint: ^9
+
+  '@repo/ts-config@https://codeload.github.com/LuongCongThanh/fe-shared-packages/tar.gz/160af42396d13cf213df5c208d32229c9bb2d870#path:ts-config':
+    resolution: {path: ts-config, tarball: https://codeload.github.com/LuongCongThanh/fe-shared-packages/tar.gz/160af42396d13cf213df5c208d32229c9bb2d870}
+    version: 0.0.0
 
   '@rolldown/binding-android-arm64@1.2.1':
     resolution: {integrity: sha512-02hOeOSryYxVrOIphmLAsqnCJWxwlzFk+pEt/N/i6OgT3lShHO7xGCU5cpgchRDHboAEbSjzgGh+O/u1GswQmA==}
@@ -7352,6 +7368,27 @@ snapshots:
       '@types/react-dom': 19.2.4(@types/react@19.2.18)
 
   '@radix-ui/rect@1.1.3': {}
+
+  '@repo/eslint-config@https://codeload.github.com/LuongCongThanh/fe-shared-packages/tar.gz/160af42396d13cf213df5c208d32229c9bb2d870#path:eslint-config(@typescript-eslint/parser@8.65.0(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/utils@8.65.0(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3))(eslint-import-resolver-node@0.3.10)(eslint-import-resolver-typescript@4.4.5)(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3)':
+    dependencies:
+      eslint: 9.39.5(jiti@2.7.0)
+      eslint-config-next: 16.2.12(@typescript-eslint/parser@8.65.0(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.65.0(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3))(eslint-import-resolver-node@0.3.10)(eslint@9.39.5(jiti@2.7.0)))(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3)
+      eslint-plugin-boundaries: 7.1.0(@typescript-eslint/parser@8.65.0(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3))(eslint-import-resolver-typescript@4.4.5)(eslint@9.39.5(jiti@2.7.0))
+      eslint-plugin-import-x: 4.17.1(@typescript-eslint/utils@8.65.0(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3))(eslint-import-resolver-node@0.3.10)(eslint@9.39.5(jiti@2.7.0))
+      eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.5(jiti@2.7.0))
+      eslint-plugin-react: 7.37.5(eslint@9.39.5(jiti@2.7.0))
+      eslint-plugin-react-hooks: 7.1.1(eslint@9.39.5(jiti@2.7.0))
+      typescript-eslint: 8.65.0(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3)
+    transitivePeerDependencies:
+      - '@typescript-eslint/parser'
+      - '@typescript-eslint/utils'
+      - eslint-import-resolver-node
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - supports-color
+      - typescript
+
+  '@repo/ts-config@https://codeload.github.com/LuongCongThanh/fe-shared-packages/tar.gz/160af42396d13cf213df5c208d32229c9bb2d870#path:ts-config': {}
 
   '@rolldown/binding-android-arm64@1.2.1':
     optional: true
