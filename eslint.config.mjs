@@ -35,6 +35,9 @@ const eslintConfig = [
       '.claude/**',
       '.agent/**',
       '.agents/**',
+      // Sibling monorepo workspace packages (packages/*) have their own lint
+      // scope once they define it — this app's config only covers itself.
+      'packages/**',
     ],
   },
 
