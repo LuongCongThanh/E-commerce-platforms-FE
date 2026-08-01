@@ -3,7 +3,6 @@ import typescript from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import prettier from 'eslint-config-prettier';
-import importPlugin from 'eslint-plugin-import';
 import vitestPlugin from 'eslint-plugin-vitest';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import tailwindcss from 'eslint-plugin-tailwindcss';
@@ -36,6 +35,9 @@ const eslintConfig = [
       '.claude/**',
       '.agent/**',
       '.agents/**',
+      // Sibling monorepo workspace packages (packages/*) have their own lint
+      // scope once they define it — this app's config only covers itself.
+      'packages/**',
     ],
   },
 
@@ -101,7 +103,6 @@ const eslintConfig = [
     },
     plugins: {
       '@typescript-eslint': typescript,
-      import: importPlugin,
       'simple-import-sort': simpleImportSort,
       tailwindcss,
       'unused-imports': unusedImports,
